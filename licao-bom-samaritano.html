@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Bom Samaritano — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 04 · <span class="ref-tag">Lucas 10:25-37</span></div>
+  <h1>O bom samaritano</h1>
+  <p class="sub">Três pessoas passam pelo mesmo homem ferido, na mesma estrada, uma depois da outra. Avance para ver cada resposta — e a pergunta que Jesus devolve no final, diferente da que lhe fizeram.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A pergunta</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"E quem é o meu próximo?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um especialista na lei pergunta a Jesus o que precisa fazer para herdar a vida eterna. Jesus devolve a pergunta, e o homem responde corretamente: amar a Deus e <em>"amar o próximo como a ti mesmo"</em> (v.27).</p>
+          <p>Mas o texto diz que ele, <em>"querendo justificar-se"</em>, pergunta: <em>"E quem é o meu próximo?"</em> (v.29) — uma pergunta feita para encontrar o limite de quem ele precisa amar, não para ampliar.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a estrada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A cena</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O homem na estrada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus responde com uma história: um homem descia de Jerusalém para Jericó — uma estrada estreita e perigosa, conhecida por assaltos — quando caiu nas mãos de assaltantes. Eles o despojam, o espancam e vão embora, deixando-o caído, meio morto (v.30).</p>
+          <p>Três pessoas, de três grupos diferentes, passam por ali. Toque em cada uma, na ordem em que a história as apresenta:</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o primeiro a passar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M3 17 C3 12.5 6 10.5 9 10.5 C12 10.5 15 12.5 15 17" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">1º a passar</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O sacerdote</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Ora, aconteceu descer pelo mesmo caminho um sacerdote; e, vendo-o, passou de largo."</em> (v.31, paráfrase)</p>
+          <p>Um sacerdote lidava com as leis de pureza ritual do templo — tocar num corpo que parecesse morto o tornaria impuro por dias. A escolha dele tinha uma lógica religiosa por trás.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o segundo a passar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M3 17 C3 12.5 6 10.5 9 10.5 C12 10.5 15 12.5 15 17" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">2º a passar</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O levita</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"E, chegando também um levita àquele lugar, indo, e vendo-o, passou de largo."</em> (v.32, paráfrase)</p>
+          <p>O levita também servia no templo. O texto repete quase a mesma frase do sacerdote — a mesma decisão, tomada duas vezes seguidas, por dois homens com formação religiosa semelhante.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o terceiro a passar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5 -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 C4 12 0 8.5 0 4.8 C0 2 2.2 0 4.8 0 C6.6 0 8.2 1 9 2.4 C9.8 1 11.4 0 13.2 0 C15.8 0 18 2 18 4.8 C18 8.5 14 12 9 16 Z" stroke-width="1.2" transform="scale(0.85) translate(1.3,1)"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">3º a passar</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O samaritano</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Samaritanos e judeus tinham uma rivalidade étnica e religiosa antiga — para a plateia original, ele era o personagem menos provável de parar.</p>
+          <p><em>"Mas um samaritano, que ia de viagem, chegou perto dele, e vendo-o, moveu-se de íntima compaixão."</em> (v.33, paráfrase)</p>
+          <p>Ele limpa e cobre os ferimentos, coloca o homem sobre seu próprio animal, leva-o a uma hospedaria, cuida dele, e no dia seguinte paga o hospedeiro, prometendo cobrir qualquer custo extra ao voltar (v.34-35).</p>
+          <button class="continue-btn" onclick="openStage(6)">Ver a pergunta final</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 6: DESFECHO -->
+    <div class="tl-item locked" data-stage="6">
+      <div class="tl-marker" onclick="openStage(6)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 6 C6 3 8 1.5 9 1.5 C10 1.5 12 3 12 6 C12 8 9 9 9 11.5 M9 15 V15.3" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(6)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(6)">A pergunta que Jesus devolve</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 10:36-37</span>
+          <p>Qual destes três te parece que foi o próximo daquele que caiu nas mãos dos assaltantes? — Aquele que usou de misericórdia para com ele. Vai, e faze da mesma maneira.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Repare no giro: o especialista tinha perguntado <em>"quem é o meu próximo?"</em> — buscando um limite, alguém que ele não precisasse amar. Jesus devolve outra pergunta: <em>"quem agiu como próximo?"</em> — trocando uma categoria de identidade por uma ação concreta. A resposta não depende de quem a pessoa ferida era, e sim de quem escolheu parar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do limite</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da ação</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Definir quem merece primeiro";
+      text.textContent = "\"Quem é o meu próximo?\" já parte de uma régua: existe gente que conta e gente que não conta. É um padrão confortável porque decide o limite do amor antes de qualquer situação real acontecer.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Agir primeiro, categorizar depois";
+      text.textContent = "O samaritano não perguntou se aquele homem era do seu grupo antes de parar. A compaixão veio antes do cálculo. É esse o padrão que a parábola propõe no lugar da pergunta original.";
+    }
+  }
+</script>
+</body>
+</html>

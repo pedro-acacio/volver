@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Ovelha e a Moeda Perdidas — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+  .split-row{ display:flex; gap:10px; margin: 4px 0 16px; }
+  .split-btn{
+    flex:1; padding: 12px 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'Fraunces', serif;
+    font-size:15px; cursor:pointer; transition: all .25s ease;
+  }
+  .split-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .count-row{ display:flex; align-items:baseline; gap:6px; margin: 2px 0 16px; flex-wrap:wrap; }
+  .count-dot{ width:9px; height:9px; border-radius:50%; background: var(--panel-line); }
+  .count-dot.missing{ background: var(--worry); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 03 · <span class="ref-tag">Lucas 15:1-10</span></div>
+  <h1>A ovelha e a moeda perdidas</h1>
+  <p class="sub">Duas histórias curtas, contadas juntas por Jesus, com o mesmo final. Siga a ordem para ver por que ele as contou lado a lado — e o que muda quando é <em>um</em> que falta, não noventa e nove.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M1 1 H17 V13 H1 Z M1 1 L9 8 L17 1" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O motivo</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Por que Jesus conta isso</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Publicanos e pessoas de má fama se aproximavam de Jesus para ouvi-lo. Os fariseus e mestres da lei murmuravam: <em>"este recebe pecadores, e come com eles"</em> (v.1-2, paráfrase) — um comentário feito como crítica, não como elogio.</p>
+          <p>É em resposta a essa murmuração que Jesus conta duas histórias pequenas, quase idênticas em estrutura.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a ovelha</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C11 3 12.5 4.5 12.5 6.5 C12.5 8 11.5 9 10.5 9.5 L10.5 15 L7.5 15 L7.5 9.5 C6.5 9 5.5 8 5.5 6.5 C5.5 4.5 7 3 9 3 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">História 1</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A ovelha perdida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Qual o homem, dentre vós, que, tendo cem ovelhas, e perdendo uma delas, não deixa as noventa e nove no deserto, e vai após a perdida, até que a encontre?"</em> (v.4, paráfrase)</p>
+          <div class="count-row" id="sheepCount"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="toggleSheepFound()" id="sheepBtn">Ver o que acontece quando ele a encontra</button>
+          <p id="sheepResult" style="display:none; margin-top:14px;"><em>"E achando-a, põe-na sobre os ombros, cheio de alegria; e chegando a casa, convoca os amigos e vizinhos, dizendo: alegrai-vos comigo, porque já achei a minha ovelha perdida."</em> (v.5-6, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a moeda</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="2.2" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">História 2</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A moeda perdida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Ou qual a mulher que, tendo dez moedas, se perder uma, não acende a candeia, e varre a casa, e busca com diligência até encontrá-la?"</em> (v.8, paráfrase)</p>
+          <div class="count-row" id="coinCount"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="toggleCoinFound()" id="coinBtn">Ver o que acontece quando ela a encontra</button>
+          <p id="coinResult" style="display:none; margin-top:14px;"><em>"E, achando-a, convoca as amigas e vizinhas, dizendo: alegrai-vos comigo, porque já achei a moeda perdida."</em> (v.9, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o padrão em comum</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7.5 L12.3 10.8 L13.5 15.5 L9 13 L4.5 15.5 L5.7 10.8 L2 7.5 L7 7 Z" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O que as duas têm em comum</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 15:7</span>
+          <p>Digo-vos que assim haverá maior alegria no céu por um pecador que se arrepende, do que por noventa e nove justos que não precisam de arrependimento.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Repare na estrutura repetida: alguém para tudo o que estava fazendo, procura sem pressa até encontrar, e depois chama outras pessoas para comemorar — não em silêncio, em festa. Nas duas histórias, o valor do que se perdeu não é medido pela quantidade que sobrou (99 de 100, 9 de 10), mas pela atenção dada ao que falta.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da contagem</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da busca</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    if (n === 2) buildDots('sheepCount', 100);
+    if (n === 3) buildDots('coinCount', 10);
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function buildDots(containerId, total){
+    const el = document.getElementById(containerId);
+    if (el.dataset.built) return;
+    el.dataset.built = "1";
+    // show a representative set (not literally 100 dots) with one highlighted as missing
+    const display = total === 100 ? 25 : 10;
+    for(let i=0;i<display;i++){
+      const d = document.createElement('div');
+      d.className = 'count-dot' + (i === display-1 ? ' missing' : '');
+      el.appendChild(d);
+    }
+    const label = document.createElement('span');
+    label.style.fontFamily = "'IBM Plex Mono', monospace";
+    label.style.fontSize = "11px";
+    label.style.color = "var(--text-faint)";
+    label.style.marginLeft = "8px";
+    label.textContent = total === 100 ? "99 seguras · 1 perdida" : "9 guardadas · 1 perdida";
+    el.appendChild(label);
+  }
+
+  function toggleSheepFound(){
+    document.getElementById('sheepResult').style.display = 'block';
+    document.getElementById('sheepCount').querySelector('.missing').style.background = 'var(--calm)';
+    document.getElementById('sheepBtn').textContent = "Encontrada.";
+  }
+  function toggleCoinFound(){
+    document.getElementById('coinResult').style.display = 'block';
+    document.getElementById('coinCount').querySelector('.missing').style.background = 'var(--calm)';
+    document.getElementById('coinBtn').textContent = "Encontrada.";
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "\"Já sobrou o suficiente\"";
+      text.textContent = "É fácil pensar que 99 de 100 já é um resultado bom — por que gastar energia com o único que falta? Esse é o padrão que os fariseus estavam usando ao julgar quem merecia a atenção de Jesus.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Cada um vale a busca inteira";
+      text.textContent = "O pastor e a mulher não recalculam se vale a pena procurar — eles simplesmente procuram, porque o que falta importa exatamente por ser único. É esse padrão que explica por que Jesus comia com quem os fariseus evitavam.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha das Parábolas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{
+    display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;
+  }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 52px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:21px; margin:0; }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de lições</div>
+    <h1>As parábolas de Jesus</h1>
+    <p class="lede">Cada parábola vira uma lição curta e interativa, seguindo a ordem cronológica dos acontecimentos do próprio texto, com os padrões mentais que ela expõe destacados ao final. Organizadas aqui pelos mesmos temas com que os Evangelhos as agrupam.</p>
+    <div class="stats-row">
+      <div class="stat"><b>4</b>disponíveis</div>
+      <div class="stat"><b>30+</b>catalogadas</div>
+      <div class="stat"><b>7</b>temas</div>
+    </div>
+  </div>
+
+  <!-- ===== SOBRE O REINO DE DEUS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Sobre o Reino de Deus</h2>
+      <span class="cat-count">8 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O semeador</div>
+        <div class="p-ref">Mateus 13 · Marcos 4 · Lucas 8</div>
+        <p class="p-teaser">A mesma semente, quatro tipos de solo — e o que determina se ela cresce.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O joio e o trigo</div>
+        <div class="p-ref">Mateus 13</div>
+        <p class="p-teaser">Por que o mestre manda esperar a colheita antes de arrancar o joio.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O grão de mostarda</div>
+        <div class="p-ref">Mateus 13 · Marcos 4 · Lucas 13</div>
+        <p class="p-teaser">A menor semente vira a maior árvore do jardim.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O fermento</div>
+        <div class="p-ref">Mateus 13 · Lucas 13</div>
+        <p class="p-teaser">Um pouco, escondido na massa, muda tudo por dentro.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O tesouro escondido</div>
+        <div class="p-ref">Mateus 13</div>
+        <p class="p-teaser">Vender tudo o que se tem por uma única coisa de valor.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A pérola de grande valor</div>
+        <div class="p-ref">Mateus 13</div>
+        <p class="p-teaser">Um mercador que já sabia reconhecer valor, e ainda assim se surpreende.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A rede de pesca</div>
+        <div class="p-ref">Mateus 13</div>
+        <p class="p-teaser">Peixes de todo tipo, recolhidos juntos — a separação vem depois.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A semente que cresce sozinha</div>
+        <div class="p-ref">Marcos 4</div>
+        <p class="p-teaser">O agricultor dorme e acorda; a semente cresce sem que ele entenda como.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PERDÃO E GRAÇA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Sobre perdão e graça</h2>
+      <span class="cat-count">6 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O credor incompassivo</div>
+        <div class="p-ref">Mateus 18</div>
+        <p class="p-teaser">Um servo perdoado de uma dívida enorme, que não perdoa uma pequena.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Os trabalhadores da vinha</div>
+        <div class="p-ref">Mateus 20</div>
+        <p class="p-teaser">O mesmo pagamento para quem trabalhou o dia todo e para quem chegou por último.</p>
+      </div>
+      <a class="p-card available" href="licao-filho-prodigo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O filho pródigo</div>
+        <div class="p-ref">Lucas 15</div>
+        <p class="p-teaser">Dois filhos, dois padrões diferentes de se relacionar com a graça do pai.</p>
+      </a>
+      <a class="p-card available" href="licao-ovelha-moeda-perdidas.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ovelha e a moeda perdidas</div>
+        <div class="p-ref">Mateus 18 · Lucas 15</div>
+        <p class="p-teaser">Por que vale a pena procurar o um, mesmo com noventa e nove seguros.</p>
+      </a>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O fariseu e o publicano</div>
+        <div class="p-ref">Lucas 18</div>
+        <p class="p-teaser">Duas orações no templo — uma sobre si mesmo, outra sobre a própria falta.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== VIGILÂNCIA E PRONTIDÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Sobre vigilância e prontidão</h2>
+      <span class="cat-count">7 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">As dez virgens</div>
+        <div class="p-ref">Mateus 25</div>
+        <p class="p-teaser">Metade levou óleo extra. A outra metade achou que não precisaria.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Os talentos</div>
+        <div class="p-ref">Mateus 25</div>
+        <p class="p-teaser">O medo de arriscar é o que faz um servo enterrar o que recebeu.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">As minas</div>
+        <div class="p-ref">Lucas 19</div>
+        <p class="p-teaser">A mesma quantia, entregue a servos diferentes, rende resultados diferentes.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O servo fiel e o infiel</div>
+        <div class="p-ref">Mateus 24 · Lucas 12</div>
+        <p class="p-teaser">O que muda de comportamento quando ninguém está checando.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O ladrão à noite</div>
+        <div class="p-ref">Mateus 24 · Lucas 12</div>
+        <p class="p-teaser">Ninguém sabe a hora — e é exatamente esse o ponto.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Servos esperando o senhor</div>
+        <div class="p-ref">Lucas 12</div>
+        <p class="p-teaser">Prontos mesmo sem saber se ele volta cedo ou tarde da noite.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A figueira que brota</div>
+        <div class="p-ref">Mateus 24 · Marcos 13 · Lucas 21</div>
+        <p class="p-teaser">Aprender a ler os sinais, do mesmo jeito que se lê uma estação chegando.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AMOR AO PRÓXIMO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Sobre amor ao próximo e caridade</h2>
+      <span class="cat-count">4 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-bom-samaritano.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O bom samaritano</div>
+        <div class="p-ref">Lucas 10</div>
+        <p class="p-teaser">Três pessoas passam pelo mesmo homem ferido. Só uma para.</p>
+      </a>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O rico e Lázaro</div>
+        <div class="p-ref">Lucas 16</div>
+        <p class="p-teaser">Um homem que via o pobre à sua porta todos os dias — e nunca o via de verdade.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O rico insensato</div>
+        <div class="p-ref">Lucas 12</div>
+        <p class="p-teaser">Celeiros maiores para guardar uma vida que ele já não teria.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O mordomo injusto</div>
+        <div class="p-ref">Lucas 16</div>
+        <p class="p-teaser">Um administrador desonesto, elogiado pela esperteza de pensar à frente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ORAÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Sobre oração</h2>
+      <span class="cat-count">2 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O amigo importuno</div>
+        <div class="p-ref">Lucas 11</div>
+        <p class="p-teaser">Bater à porta à meia-noite, até o amigo ceder pela insistência.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A viúva persistente e o juiz injusto</div>
+        <div class="p-ref">Lucas 18</div>
+        <p class="p-teaser">Um juiz sem escrúpulos, vencido pelo cansaço de dizer não repetidamente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== JULGAMENTO E RESPONSABILIDADE ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Sobre julgamento e responsabilidade</h2>
+      <span class="cat-count">6 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Os dois filhos</div>
+        <div class="p-ref">Mateus 21</div>
+        <p class="p-teaser">Um diz sim e não vai. O outro diz não e vai mesmo assim.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Os lavradores maus</div>
+        <div class="p-ref">Mateus 21 · Marcos 12 · Lucas 20</div>
+        <p class="p-teaser">Uma vinha alugada, e arrendatários que decidem ficar com o que não é deles.</p>
+      </div>
+      <a class="p-card available" href="licao-parabola-grande-banquete-v2.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A grande ceia</div>
+        <div class="p-ref">Mateus 22 · Lucas 14</div>
+        <p class="p-teaser">Três convites, três grupos diferentes — e uma cadeira que fica vazia.</p>
+      </a>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">As ovelhas e os cabritos</div>
+        <div class="p-ref">Mateus 25</div>
+        <p class="p-teaser">A separação final, baseada em gestos simples: comida, água, roupa, visita.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A casa sobre a rocha</div>
+        <div class="p-ref">Mateus 7 · Lucas 6</div>
+        <p class="p-teaser">Duas casas, a mesma tempestade — a diferença estava na fundação, antes da chuva.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O credor e os dois devedores</div>
+        <div class="p-ref">Lucas 7</div>
+        <p class="p-teaser">Quem foi perdoado de mais, ama mais — e Jesus usa isso para explicar uma lágrima.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== OUTRAS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Outras</h2>
+      <span class="cat-count">7 parábolas</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A candeia debaixo do alqueire</div>
+        <div class="p-ref">Mateus 5 · Marcos 4 · Lucas 8</div>
+        <p class="p-teaser">Ninguém acende uma luz para escondê-la logo em seguida.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O remendo novo e o vinho novo</div>
+        <div class="p-ref">Mateus 9 · Marcos 2 · Lucas 5</div>
+        <p class="p-teaser">Por que o que é novo nem sempre cabe dentro de uma estrutura velha.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A porta estreita</div>
+        <div class="p-ref">Lucas 13</div>
+        <p class="p-teaser">Esforçar-se para entrar, antes que a porta se feche de vez.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Os lugares de honra no banquete</div>
+        <div class="p-ref">Lucas 14</div>
+        <p class="p-teaser">Escolher o último lugar, para não ser rebaixado publicamente do primeiro.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Contar o custo</div>
+        <div class="p-ref">Lucas 14</div>
+        <p class="p-teaser">A torre e o rei em guerra: dois exemplos sobre calcular antes de começar.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">O bom pastor</div>
+        <div class="p-ref">João 10</div>
+        <p class="p-teaser">A diferença entre quem cuida das ovelhas e quem só está de passagem.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A videira verdadeira</div>
+        <div class="p-ref">João 15</div>
+        <p class="p-teaser">Um ramo só dá fruto enquanto permanece ligado à videira.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>Volver · trilha das parábolas · biblioteca de lições</footer>
+</div>
+</body>
+</html>
