@@ -145,3 +145,35 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   .loop-dot{ animation: none; }
   *{ transition-duration: 0.01ms !important; }
 }
+
+/* ================= RESPONSIVE (mobile / tablet) ================= */
+/* Tablet and small desktop: a bit more breathing room, no structural change needed —
+   .stage-wrap is already a centered, capped reading column at every width above this. */
+@media (max-width: 720px){
+  .stage-wrap{ padding: 0 18px 70px; }
+}
+
+/* Phones: the brand-bar's secondary label and side-by-side compare rows are the two
+   things that don't gracefully reflow at ~375px and under, so they get explicit rules. */
+@media (max-width: 520px){
+  .stage-wrap{ padding: 0 16px 56px; }
+  .brand-bar{ padding: 22px 0 28px; }
+  .brand-track{ display:none; }
+
+  .toggle-row, .split-row{ flex-direction:column; }
+  .toggle-btn, .split-btn{ width:100%; }
+
+  .chip-btn{ min-width:76px; font-size:12px; }
+
+  .tl-item{ padding-left:48px; }
+  .tl-marker{ width:34px; height:34px; }
+  .tl-line{ left:16.5px; top:34px; }
+
+  .verse-card, .tl-card, .outcome{ padding:16px 16px; }
+}
+
+/* Very small phones: tighten typography a notch further. */
+@media (max-width: 360px){
+  .sub{ font-size:14px; }
+  .verse-card p{ font-size:15.5px; }
+}

@@ -48,6 +48,11 @@
 
   .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
   @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
 
   .p-card{
     display:block; background: var(--panel); border:1px solid var(--panel-line);

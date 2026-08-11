@@ -189,6 +189,31 @@
     .loop-dot{ animation: none; }
     *{ transition-duration: 0.01ms !important; }
   }
+
+  /* ================= RESPONSIVE (mobile / tablet) ================= */
+  @media (max-width: 720px){
+    body{ padding: 0 18px 70px; }
+  }
+  @media (max-width: 520px){
+    body{ padding: 0 16px 56px; }
+    .brand-bar{ padding: 22px 0 28px; }
+    .brand-track{ display:none; }
+
+    .toggle-row{ flex-direction:column; }
+    .toggle-btn{ width:100%; }
+
+    .guest-btn, .welcome-btn{ min-width:68px; font-size:11.5px; }
+
+    .tl-item{ padding-left:48px; }
+    .tl-marker{ width:34px; height:34px; }
+    .tl-line{ left:16.5px; top:34px; }
+
+    .verse-card, .tl-card, .outcome{ padding:16px 16px; }
+  }
+  @media (max-width: 360px){
+    .sub{ font-size:14px; }
+    .verse-card p{ font-size:15.5px; }
+  }
 </style>
 </head>
 <body>
