@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Amigo Importuno e a Viúva Persistente — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 23 · <span class="ref-tag">Lucas 11:5-8 · Lucas 18:1-8</span></div>
+  <h1>O amigo importuno e a viúva persistente</h1>
+  <p class="sub">Duas histórias sobre insistir com alguém que, à primeira vista, não parece disposto a ajudar. Avance para ver por que Jesus as usa pra ensinar sobre orar sem desanimar.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O motivo</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Duas histórias sobre não desistir</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus conta duas histórias curtas, em ocasiões diferentes, com o mesmo formato: alguém precisa de algo, e vai insistir com uma pessoa que não parece com vontade nenhuma de ajudar. Avance pra ouvir as duas, na ordem.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o amigo à meia-noite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M11 2 A7 7 0 1 0 11 16 A5.5 5 0 1 1 11 2 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">História 1</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O amigo à meia-noite</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Qual de vós, tendo um amigo, se for ter com ele à meia-noite, e lhe disser: Amigo, empresta-me três pães, pois um amigo meu chegou de viagem, e nada tenho que lhe oferecer?"</em> (v.5-6, paráfrase)</p>
+          <p>O amigo de dentro responde: <em>"Não me incomodes; já a porta está fechada, e os meus filhos estão comigo na cama; não posso levantar-me para tos dar."</em> (v.7, paráfrase)</p>
+          <p><em>"Digo-vos que, ainda que se levante, não lhos dê por ser seu amigo, todavia, por causa da sua importunação, se levantará e lhe dará quantos precisar."</em> (v.8, paráfrase) — não é a amizade que resolve, é insistir batendo à porta.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a viúva e o juiz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">História 2</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A viúva e o juiz injusto</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Havia numa cidade um juiz que nem temia a Deus, nem respeitava homem algum. Havia também naquela cidade uma viúva que ia ter com ele, dizendo: Faze-me justiça contra o meu adversário."</em> (v.2-3, paráfrase)</p>
+          <p>O juiz se recusa, por um bom tempo. Mas depois pensa consigo: <em>"Ainda que não temo a Deus, nem respeito homem, todavia, por esta viúva me molestar, hei de fazer-lhe justiça, para que ela não continue a vir importunar-me."</em> (v.4-5, paráfrase) — ele cede pelo cansaço, não pela consciência.</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o que Jesus tira das duas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7.5 L12.3 10.8 L13.5 15.5 L9 13 L4.5 15.5 L5.7 10.8 L2 7.5 L7 7 Z" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Quanto mais Deus</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 18:7</span>
+          <p>E não fará Deus justiça aos seus escolhidos, que clamam a ele dia e noite, ainda que ele tarde em responder-lhes?</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nenhum dos dois personagens que cedem — o amigo sonolento, o juiz sem escrúpulos — age por amor. Um cede pra se livrar do incômodo; o outro, pelo cansaço de dizer não. Jesus usa exatamente esse contraste: se até quem não se importa acaba respondendo à insistência, quanto mais Deus, que já se importa antes mesmo do primeiro pedido.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de desistir cedo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da insistência confiante</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Parar no primeiro silêncio";
+      text.textContent = "O amigo atrás da porta fechada e o juiz sem escrúpulos dão as duas primeiras respostas possíveis: recusa. Se a leitura parasse aí, faria sentido desistir. Mas as duas histórias continuam depois da primeira recusa — e é aí que mora o ponto.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Continuar batendo, mesmo sem resposta imediata";
+      text.textContent = "A viúva não tinha nenhuma garantia de que o juiz cederia — só continuou voltando. Esse é o padrão que Jesus elogia, e ainda o reforça com um argumento maior: se isso funciona até com quem não se importa, funciona muito mais com quem se importa desde o início.";
+    }
+  }
+</script>
+</body>
+</html>
