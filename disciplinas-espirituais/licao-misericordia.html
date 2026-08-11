@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Misericórdia — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-disciplinas-espirituais.html">Volver</a>
+    <span class="brand-track">Disciplinas Espirituais</span>
+  </div>
+
+  <div class="eyebrow">Lição 04 · <span class="ref-tag">Mateus 6:1-4 · Marcos 12</span></div>
+  <h1>Misericórdia</h1>
+  <p class="sub">Ricos lançam grandes somas no cofre do templo, um som de moedas que se ouve de longe. Uma viúva pobre lança duas moedinhas, quase em silêncio — e Jesus diz que ela deu mais que todos.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O oposto: a trombeta antes da esmola</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus abre este trecho do Sermão do Monte com um alerta geral: "guardai-vos de exercer a vossa justiça diante dos homens, para serdes vistos por eles" (Mateus 6:1). E aplica isso diretamente à generosidade: "quando, pois, deres esmola, não faças tocar trombeta diante de ti, como fazem os hipócritas... para serem glorificados pelos homens" (v.2).</p>
+          <p>A imagem é quase cômica — ninguém literalmente soprava trombetas ao dar esmola — mas descreve com precisão qualquer gesto de generosidade cujo primeiro objetivo é ser notado.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o cofre do templo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O cofre do templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus se senta em frente ao gazofilácio — o cofre das ofertas — e observa como as pessoas lançam dinheiro ali (Marcos 12:41). É uma cena pública por natureza: qualquer um podia ver quanto cada um dava.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, cofreData, 0, 'cofreText')">Os ricos</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, cofreData, 1, 'cofreText')">A viúva pobre</button>
+          </div>
+          <div class="chip-text" id="cofreText">Toque para comparar o que cada um lançou no cofre.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → mais que todos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Deu mais que todos"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus chama os discípulos e vira a régua de julgamento ao contrário: "esta pobre viúva deu mais do que todos os outros que deram para as ofertas. Pois todos deram daquilo que lhes sobrava; mas esta, da sua pobreza, deu tudo o que possuía para o seu sustento" (Marcos 12:43-44).</p>
+          <p>Ele não está medindo a moeda — está medindo o que sobrou depois de dar. É a mesma lógica de Mateus 6:3-4: "não saiba a tua mão esquerda o que faz a tua direita; para que a tua esmola seja dada em secreto; e teu Pai, que vê em secreto, te recompensará." O valor de um gesto de misericórdia nunca esteve no tamanho da moeda nem no tamanho da plateia.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 6:3-4</span>
+          <p>Não saiba a tua mão esquerda o que faz a tua direita; para que a tua esmola seja dada em secreto; e teu Pai, que vê em secreto, te recompensará.</p>
+          <span class="ref">— Jesus, no Sermão do Monte</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A viúva provavelmente nunca soube que sua oferta seria contada durante séculos. Ela deu o que tinha sem esperar reconhecimento, porque não havia reconhecimento algum disponível naquele momento — só a própria consciência de ter dado tudo. É exatamente esse tipo de gesto, invisível por definição, que Jesus chama de "mais que todos".</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da trombeta</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da mão esquerda</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · disciplinas espirituais · lição interativa</footer>
+</div>
+
+<script>
+  const cofreData = [
+    { text: "Lançam grandes somas — dinheiro que, por maior que soe, sai apenas do que lhes sobrava (v.41)." },
+    { text: "Lança duas pequenas moedas, o equivalente a um quadrante — tudo o que tinha para viver naquele dia (v.42)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Dar para que alguém veja o gesto";
+      text.textContent = "Quando o objetivo é ser notado, o valor do gesto se mede pela plateia, não pelo sacrifício — e a viúva, sem ninguém aplaudindo, teria dado 'pouco demais' para valer a pena.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Dar sem que a mão esquerda saiba";
+      text.textContent = "A viúva deu tudo o que tinha sem esperar que alguém contasse. A misericórdia genuína mede o sacrifício, não o aplauso — e por isso quase sempre passa despercebida.";
+    }
+  }
+</script>
+</body>
+</html>

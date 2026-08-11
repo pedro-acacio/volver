@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ceia do Senhor — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-disciplinas-espirituais.html">Volver</a>
+    <span class="brand-track">Disciplinas Espirituais</span>
+  </div>
+
+  <div class="eyebrow">Lição 05 · <span class="ref-tag">1 Coríntios 11:17-34</span></div>
+  <h1>Ceia do Senhor</h1>
+  <p class="sub">A primeira disciplina pública da lista. Numa igreja onde alguns comiam demais e outros passavam fome à mesma mesa, Paulo precisa lembrar o que a Ceia realmente é.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O oposto: uma mesa dividida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Corinto, a Ceia do Senhor era celebrada junto com uma refeição comunitária — e algo tinha dado muito errado nela. Paulo escreve, sem rodeios: "quando vos ajuntais num lugar, não é para comer a ceia do Senhor. Porque, comendo, cada um toma antes a sua própria ceia; e assim um tem fome, e outro embriaga-se" (1 Coríntios 11:20-21).</p>
+          <p>Os que chegavam primeiro — provavelmente os mais ricos, com mais liberdade de horário — comiam tudo antes dos outros chegarem. A mesa que deveria unir virou vitrine de quem tinha mais e quem tinha menos.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a noite em que foi traído</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A noite em que foi traído</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Para corrigir o rumo, Paulo não inventa uma regra nova — ele recorda o que já tinha sido entregue: "que o Senhor Jesus, na noite em que foi traído, tomou o pão; e, tendo dado graças, o partiu e disse: Tomai, comei; isto é o meu corpo que é partido por vós; fazei isto em memória de mim" (1 Coríntios 11:23-24).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, ceiaData, 0, 'ceiaText')">O pão</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, ceiaData, 1, 'ceiaText')">O cálice</button>
+          </div>
+          <div class="chip-text" id="ceiaText">Toque para ver o que Jesus disse sobre cada elemento.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → examine-se a si mesmo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Examine-se a si mesmo"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Paulo não termina no ritual em si — ele acrescenta uma exigência interna: "examine-se, pois, o homem a si mesmo, e, assim, coma deste pão e beba deste copo" (1 Coríntios 11:28). A mesma refeição que devia unir os coríntios exigia, de cada um, o exame da própria atitude antes de participar.</p>
+          <p>A Ceia não é um ritual que funciona automaticamente, independente de como se chega até ela — nem uma refeição comum onde cada um cuida apenas de si. É memória e comunhão ao mesmo tempo: lembrar o corpo partido de Cristo, e reconhecer os outros à mesa como parte desse mesmo corpo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Coríntios 11:26</span>
+          <p>Porque, todas as vezes que comerdes este pão e beberdes este copo, anunciais a morte do Senhor, até que ele venha.</p>
+          <span class="ref">— Paulo, aos Coríntios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Anunciar" é um verbo público — a Ceia não é uma devoção privada, é um gesto que a igreja faz junto, em voz alta, lembrando a mesma coisa ao mesmo tempo. Foi exatamente essa unidade que os coríntios quebraram ao deixar a mesa virar palco de diferença social.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da mesa dividida</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da memória em comum</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · disciplinas espirituais · lição interativa</footer>
+</div>
+
+<script>
+  const ceiaData = [
+    { text: "\"Isto é o meu corpo que é partido por vós; fazei isto em memória de mim\" (v.24)." },
+    { text: "\"Este copo é o novo testamento no meu sangue; fazei isto, todas as vezes que o beberdes, em memória de mim\" (v.25)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Cada um cuida da própria ceia";
+      text.textContent = "Quando a mesa reflete quem chegou primeiro ou quem tem mais, ela deixa de anunciar o corpo partido de Cristo e passa a anunciar as diferenças entre quem está sentado nela.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma mesa, uma memória, examinada antes";
+      text.textContent = "Paulo pede exame próprio antes da mesa comum — não para excluir ninguém, mas para que a Ceia volte a anunciar o que sempre foi: um só corpo, partido por todos igualmente.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha das Disciplinas Espirituais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{
+    display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;
+  }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 52px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:8px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:21px; margin:0; }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; }
+  .cat-sub{ font-size:13px; color: var(--text-dim); line-height:1.55; margin: 12px 0 18px; max-width:56ch; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de lições</div>
+    <h1>Disciplinas Espirituais</h1>
+    <p class="lede">Seis práticas que atravessam toda a Bíblia, separadas aqui como pessoais e públicas. Cada lição parte do alerta de Jesus no Sermão do Monte contra a espiritualidade de fachada — "guardai-vos de exercer a vossa justiça diante dos homens, para serdes vistos por eles" — antes de mostrar como a prática genuína realmente aparece.</p>
+    <div class="stats-row">
+      <div class="stat"><b>6</b>disponíveis</div>
+      <div class="stat"><b>6</b>catalogadas</div>
+      <div class="stat"><b>2</b>temas</div>
+    </div>
+  </div>
+
+  <!-- ===== DISCIPLINAS PESSOAIS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Disciplinas pessoais</h2>
+      <span class="cat-count">4 lições</span>
+    </div>
+    <p class="cat-sub">Praticadas a sós, em secreto — a marca comum às quatro é que ninguém precisa saber que aconteceram para que tenham valido a pena.</p>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-leitura-e-meditacao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Leitura e Meditação nas Escrituras</div>
+        <div class="p-ref">Josué 1:8 · Atos 17</div>
+        <p class="p-teaser">A mesma pregação, em duas cidades — uma delas examinava as Escrituras todos os dias antes de reagir.</p>
+      </a>
+      <a class="p-card available" href="licao-oracao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Oração</div>
+        <div class="p-ref">Mateus 6:5-13 · Marcos 1</div>
+        <p class="p-teaser">De madrugada, ainda escuro, um homem se levanta sozinho para orar — antes de qualquer multidão pedir algo dele.</p>
+      </a>
+      <a class="p-card available" href="licao-jejum.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Jejum</div>
+        <div class="p-ref">Mateus 6:16-18 · Mateus 4</div>
+        <p class="p-teaser">Quarenta dias sem comer, e a primeira tentação é sobre pão — a resposta define o que o jejum sempre quis dizer.</p>
+      </a>
+      <a class="p-card available" href="licao-misericordia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Misericórdia</div>
+        <div class="p-ref">Mateus 6:1-4 · Marcos 12</div>
+        <p class="p-teaser">Ricos lançam grandes somas no cofre do templo. Uma viúva lança duas moedinhas — e Jesus diz que ela deu mais que todos.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== DISCIPLINAS PÚBLICAS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Disciplinas públicas</h2>
+      <span class="cat-count">2 lições</span>
+    </div>
+    <p class="cat-sub">Praticadas junto com outros — não porque exigem plateia, mas porque foram desenhadas para serem vividas em comunidade, não isoladamente.</p>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-ceia-do-senhor.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Ceia do Senhor</div>
+        <div class="p-ref">1 Coríntios 11:17-34</div>
+        <p class="p-teaser">Numa igreja onde alguns comiam demais e outros passavam fome à mesma mesa, Paulo lembra o que a Ceia realmente é.</p>
+      </a>
+      <a class="p-card available" href="licao-vida-em-comunidade.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Vida em Comunidade</div>
+        <div class="p-ref">Hebreus 10:24-25 · Atos 2</div>
+        <p class="p-teaser">Uma igreja que perseverava junta na doutrina, na oração, no partir do pão — todos os dias, sem exceção.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha das disciplinas espirituais · biblioteca de lições</footer>
+</div>
+</body>
+</html>
