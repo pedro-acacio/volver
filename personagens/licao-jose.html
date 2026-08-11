@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>José — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 01 · <span class="ref-tag">Gênesis 37-50</span></div>
+  <h1>José</h1>
+  <p class="sub">Uma história em cinco movimentos — o favorito odiado, a venda pelos irmãos, a injustiça no Egito, a ascensão ao trono e o reencontro. Avance na ordem para ver o padrão que atravessa tudo, mesmo quando ninguém percebe.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 L9 3 L15 15 Z" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O favorito odiado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>José é o filho da velhice de Jacó, e o pai o ama mais que a todos os outros irmãos — a ponto de mandar fazer para ele uma túnica especial, diferente da dos demais (v.3). Os irmãos percebem a diferença e passam a odiá-lo, incapazes de lhe falar em paz (v.4).</p>
+          <p>José tem dois sonhos: em um, os feixes de trigo dos irmãos se curvam diante do seu; no outro, o sol, a lua e onze estrelas se inclinam diante dele. Ele conta os dois — ao pai e aos irmãos — e o ciúme só cresce (v.5-11).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a cova e a venda</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 16 C3 10 5 6 9 6 C13 6 15 10 15 16 Z" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A cova e a venda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jacó manda José até os irmãos, que pastoreavam longe de casa. Vendo-o chegar de longe, eles tramam contra ele antes mesmo que se aproxime (v.18-20). Toque, na ordem, para ver como o plano muda:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, joseData, 0, 'joseText')">Matá-lo</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, joseData, 1, 'joseText')">Lançá-lo na cova</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, joseData, 2, 'joseText')">Vendê-lo</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, joseData, 3, 'joseText')">Mentir ao pai</button>
+          </div>
+          <div class="chip-text" id="joseText">Toque em cada item para acompanhar o plano dos irmãos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → injustiçado no Egito</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="3" y="3" width="12" height="12" rx="1.5" stroke-width="1.4"/>
+          <path d="M3 9 H15" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Injustiçado, mas não abandonado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Vendido a Potifar, oficial de Faraó, José prospera como escravo — o texto repete que isso acontece porque "o Senhor era com José" (39:2-6).</p>
+          <p>A mulher de Potifar o assedia repetidas vezes. Ele recusa: "Como pois faria eu tamanha maldade, e pecaria contra Deus?" (v.9). Rejeitada, ela o acusa falsamente, e ele é preso sem julgamento (v.7-20).</p>
+          <p>Mesmo na prisão, ele ganha a confiança do carcereiro e interpreta os sonhos do copeiro e do padeiro de Faraó. O copeiro, liberto como José previu, promete lembrar-se dele — e esquece por dois anos inteiros (40:1-23).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="revealSpeech(this)">Ver o padrão que se repete três vezes</button>
+          </div>
+          <div class="chip-text" id="speechText">"O Senhor era com José" — repetido em Gênesis 39:2, 39:21 e 39:23, exatamente nos três momentos em que ele perde tudo: a casa do pai, a casa de Potifar, a liberdade na prisão.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → do calabouço ao trono</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 15 V9 H13 V15 M9 15 V11" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 9 L9 3 L14 9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Do calabouço ao trono</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dois anos depois, Faraó tem sonhos que nenhum sábio do Egito consegue interpretar. Só então o copeiro se lembra de José (41:1-13).</p>
+          <p>Tirado da prisão às pressas, José interpreta: sete vacas gordas e sete magras, sete espigas cheias e sete mirradas — sete anos de fartura seguidos de sete anos de fome. Ele ainda propõe um plano para atravessar a crise (41:14-36).</p>
+          <p>Faraó o põe sobre todo o Egito: "Só no trono serei eu maior do que tu" (41:37-44). José tinha trinta anos — treze depois de ser vendido pelos próprios irmãos (41:46).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o reencontro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O reencontro e o perdão</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A fome que José previu chega também a Canaã. Os irmãos descem ao Egito para comprar mantimento e se curvam diante do governador sem reconhecê-lo — cumprindo, sem saber, o sonho que os fez odiá-lo vinte anos antes (42:1-6).</p>
+          <p>Depois de testá-los, José não aguenta mais se conter e chora antes de se revelar: "Eu sou José, vosso irmão, a quem vendestes para o Egito" (45:1-4). Os irmãos ficam apavorados, esperando a vingança que julgavam merecer.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Gênesis 50:19-20</span>
+          <p>Não temais, pois, porventura, estou eu em lugar de Deus? Vós, na verdade, intentastes o mal contra mim; porém Deus o tornou em bem, para fazer o que se vê hoje, para conservar muita gente com vida.</p>
+          <span class="ref">— José, aos irmãos, depois da morte de Jacó</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Treze anos de escravidão e prisão injusta dariam a José todo o direito de acertar contas quando o poder finalmente virou a seu favor. Ele escolhe outra coisa. A pergunta que a história deixa é a mesma para quem ouve: o que fazer com o poder de retribuir o mal que sofremos, quando finalmente ele chega às nossas mãos?</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da amargura</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do propósito</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const joseData = [
+    { text: "\"Vamos, matemo-lo, e lancemo-lo numa destas covas... e veremos que será dos seus sonhos.\" (v.20, paráfrase)" },
+    { text: "Rúben convence os irmãos a não matá-lo, e sim lançá-lo vivo numa cisterna vazia, no deserto — planejando resgatá-lo depois, sem que os outros soubessem (v.21-22)." },
+    { text: "Enquanto comem, veem uma caravana de mercadores a caminho do Egito e vendem José por vinte moedas de prata (v.25-28)." },
+    { text: "Mergulham a túnica de José no sangue de um bode e a levam a Jacó, que conclui que uma fera devorou o filho (v.31-33)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function revealSpeech(btn){
+    document.getElementById('speechText').style.display = 'block';
+    btn.classList.add('active');
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Guardar a conta do que se perdeu";
+      text.textContent = "José teria motivo de sobra para usar o trono para se vingar dos irmãos que o venderam. Enquanto o poder existe para acertar contas, o passado nunca solta quem o carrega — a cisterna continua aberta por dentro, mesmo depois de vinte anos.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ver um propósito maior que a dor";
+      text.textContent = "José nomeia o mal que os irmãos fizeram sem negá-lo — e ainda assim escolhe enxergar um bem maior por trás dele. É esse o padrão que a história convida a imitar: o poder de retribuir usado para prover, não para cobrar.";
+    }
+  }
+</script>
+</body>
+</html>
