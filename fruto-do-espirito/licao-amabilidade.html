@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amabilidade — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-fruto-do-espirito.html">Volver</a>
+    <span class="brand-track">Fruto do Espírito</span>
+  </div>
+
+  <div class="eyebrow">Lição 05 · <span class="ref-tag">Gálatas 5:22-23 · Rute 2</span></div>
+  <h1>Amabilidade</h1>
+  <p class="sub">Na tradução clássica, "benignidade". Uma viúva estrangeira cata espigas no chão para não morrer de fome. Um homem que não precisava notá-la, nota.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O oposto: gentileza calculada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Entre as obras da carne está a "inveja" (Gálatas 5:21) — um jeito de medir os outros pelo que eles têm e eu não tenho, ou pelo que eles podem me dar de volta. É fácil ser gentil com quem pode retribuir o favor.</p>
+          <p>Amabilidade — benignidade — é outra coisa: gentileza que se inclina justamente para quem está em posição mais fraca, sem ter como retribuir nada. Rute é viúva, estrangeira, moabita numa terra que desconfiava de moabitas, sem nenhum capital social (Rute 1-2).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o campo de Boaz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O campo de Boaz</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Rute vai catar espigas atrás dos ceifeiros — direito legal dos pobres na lei de Israel, mas ninguém garantia que seria tratada bem por isso. "Por acaso", ela cai no campo que pertence a Boaz, parente de seu falecido sogro (2:1-3).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, boazData, 0, 'boazText')">Ordena aos moços</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, boazData, 1, 'boazText')">Manda deixar cair de propósito</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, boazData, 2, 'boazText')">Convida à mesa</button>
+          </div>
+          <div class="chip-text" id="boazText">Toque para ver cada gesto de Boaz em direção a alguém que não podia retribuir nada.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → "por que achei favor?"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Por que achei eu favor aos teus olhos?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Rute pergunta exatamente isso — por que ele, um homem de posses, está sendo tão bom com ela, uma estrangeira (2:10). A resposta de Boaz é reveladora: ele já tinha ouvido tudo o que ela fez por Noemi, deixando "pai e mãe e a terra do teu nascimento" para seguir uma sogra viúva (v.11).</p>
+          <p>A bondade dele responde a uma bondade que ele testemunhou — mas ele a estende sem que ela peça nada além do direito legal mínimo. É a diferença entre fazer o mínimo exigido e ir além dele por vontade própria.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Efésios 4:32</span>
+          <p>Antes, sede uns para com os outros benignos, misericordiosos, perdoando-vos uns aos outros, como também Deus vos perdoou em Cristo.</p>
+          <span class="ref">— Paulo, aos Efésios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A benignidade de Boaz para com Rute se torna, mais tarde, a linhagem que leva a Davi e, depois, a Jesus (Rute 4:13-22) — a gentileza estendida a quem não tinha como pagar volta multiplicada gerações depois, de um jeito que Boaz nunca poderia calcular no dia em que mandou deixar cair as espigas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do cálculo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · fruto do Espírito · lição interativa</footer>
+</div>
+
+<script>
+  const boazData = [
+    { text: "\"Não vá colher a outro campo... ajunta-te às minhas moças\" — abre acesso além do que a lei exigia dele (v.8-9)." },
+    { text: "Instrui os moços a deixar cair punhados de propósito, para que ela colha mais sem perceber que está sendo ajudada (v.15-16)." },
+    { text: "Convida-a a comer pão molhado em vinagre junto com os ceifeiros, e ainda lhe estende grão tostado (v.14)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Gentil só com quem pode retribuir";
+      text.textContent = "Essa gentileza mede o retorno antes de agir — e simplesmente não aparece diante de quem, como Rute no campo, não tem absolutamente nada para oferecer de volta.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Gentileza que se inclina para quem não tem como retribuir";
+      text.textContent = "Boaz notou uma estrangeira sem capital social nenhum e agiu mesmo assim. O fruto do Espírito estende a mão antes de calcular o retorno.";
+    }
+  }
+</script>
+</body>
+</html>

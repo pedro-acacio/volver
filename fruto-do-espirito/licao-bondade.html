@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bondade — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-fruto-do-espirito.html">Volver</a>
+    <span class="brand-track">Fruto do Espírito</span>
+  </div>
+
+  <div class="eyebrow">Lição 06 · <span class="ref-tag">Gálatas 5:22-23 · Atos 9</span></div>
+  <h1>Bondade</h1>
+  <p class="sub">Em Jope, uma mulher morre. As viúvas que a cercam não mostram elogios — mostram túnicas que ela mesma costurou, ainda nas mãos delas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O oposto: bondade como evento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>É fácil confundir bondade com um gesto isolado, bonito o bastante para ser notado. A bondade-fruto é diferente: não é um evento, é um tecido — o tipo de vida que produz bem de forma tão constante que vira parte do que os outros lembram quando pensam em você.</p>
+          <p>Em Jope morava "uma discípula por nome Tabita, que traduzido se diz Dorcas; esta era rica em boas obras e esmolas que fazia" (Atos 9:36). Repare no tempo verbal: não "fez uma boa obra", mas "era rica em" — um estado contínuo, não um episódio.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a morte de Dorcas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As túnicas nas mãos das viúvas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dorcas adoece e morre. Os discípulos, ouvindo que Pedro está numa cidade próxima, mandam chamá-lo às pressas (v.37-38). Quando ele chega ao cenáculo onde o corpo está preparado, encontra a cena que resume quem ela era:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, dorData, 0, 'dorText')">O que Pedro encontra</button>
+          </div>
+          <div class="chip-text" id="dorText">Toque para ver a cena.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que a ressurreição confirma</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que a ressurreição confirma</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro põe todos para fora, ajoelha-se, ora, e diz: "Tabita, levanta-te." Ela abre os olhos e se senta (v.40). É um dos poucos milagres de ressurreição do Novo Testamento fora dos evangelhos — mas o texto passou o dobro do espaço descrevendo as túnicas que ela costurou do que descrevendo o próprio milagre.</p>
+          <p>A ordem importa: primeiro Lucas registra a vida de bondade constante, depois o milagre. A ressurreição não cria o valor da vida dela — confirma o que já estava ali antes de qualquer plateia.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Gálatas 6:9-10</span>
+          <p>E não nos cansemos de fazer bem, pois a seu tempo ceifaremos, se não houvermos desfalecido. Por isso, enquanto temos tempo, façamos bem a todos.</p>
+          <span class="ref">— Paulo, aos Gálatas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Não nos cansemos" pressupõe algo repetido, não um único gesto. Dorcas não tinha como saber que seria lembrada por túnicas costuradas para viúvas pobres — ela simplesmente continuou fazendo isso sem plateia, até o dia em que a plateia apareceu ao redor de seu leito de morte.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do gesto isolado</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · fruto do Espírito · lição interativa</footer>
+</div>
+
+<script>
+  const dorData = [
+    { text: "\"Todas as viúvas... mostravam, chorando, as túnicas e mais vestidos que Dorcas fizera quando estava com elas\" (v.39) — prova viva de uma vida gasta em fazer o bem, sem que ninguém tivesse pedido registro disso." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O bem feito para ser visto";
+      text.textContent = "Quando a bondade depende de plateia, ela some justamente nos momentos comuns e sem testemunhas — que são a maior parte da vida de qualquer pessoa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O bem feito sem ninguém contando";
+      text.textContent = "Dorcas costurou túnicas sem saber que um dia seriam mostradas como prova de sua vida. O fruto do Espírito faz o bem porque é isso que se tornou, não porque alguém está anotando.";
+    }
+  }
+</script>
+</body>
+</html>

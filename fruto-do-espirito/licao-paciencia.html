@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paciência — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-fruto-do-espirito.html">Volver</a>
+    <span class="brand-track">Fruto do Espírito</span>
+  </div>
+
+  <div class="eyebrow">Lição 04 · <span class="ref-tag">Gálatas 5:22-23 · 1 Samuel 24 e 26</span></div>
+  <h1>Paciência</h1>
+  <p class="sub">Na tradução clássica, "longanimidade" — ira longa de se acender. Duas vezes Davi tem Saul à mercê de sua espada. Duas vezes ele guarda a espada.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O oposto: acertar contas agora</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Entre as obras da carne, Paulo lista "iras, pelejas" (Gálatas 5:20) — o padrão de resolver a ofensa no calor do momento, assim que o poder para fazê-lo aparece. Longanimidade é literalmente "ira longa": o oposto de explodir na primeira oportunidade.</p>
+          <p>Davi já foi ungido rei por Samuel (1 Samuel 16), mas Saul — o rei atual — passa anos caçando-o pelo deserto por ciúme e medo. A promessa de Deus já é certa. A pergunta é o que Davi faz com o tempo entre a promessa e o cumprimento.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a caverna de En-Gedi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A caverna de En-Gedi</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Saul entra sozinho numa caverna do deserto de En-Gedi para descansar — sem saber que Davi e seus homens estão escondidos no fundo dela (1 Samuel 24:1-3). Os homens de Davi sussurram: é o dia que o SENHOR prometeu, entregando o inimigo em suas mãos.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, cavData, 0, 'cavText')">O que os homens dizem</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, cavData, 1, 'cavText')">O que Davi faz</button>
+          </div>
+          <div class="chip-text" id="cavText">Toque para comparar o conselho recebido com a ação de Davi.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o acampamento à noite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O acampamento, de novo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Capítulos depois, a mesma cena se repete quase palavra por palavra. Davi entra à noite no próprio acampamento de Saul, encontra o rei dormindo com a lança fincada ao lado da cabeça. Abisai sussurra: "Deus te entregou hoje nas mãos o teu inimigo... não repetirei o golpe" (1 Samuel 26:8).</p>
+          <p>Davi recusa outra vez — "quem estenderá a mão contra o ungido do SENHOR e será inocente?" (v.9) — e leva apenas a lança e o jarro de água como prova de que esteve lá e poupou. Duas chances idênticas, duas vezes a mesma escolha.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Gálatas 5:22-23</span>
+          <p>Mas o fruto do Espírito é: amor, gozo, paz, longanimidade, benignidade, bondade, fé, mansidão, temperança. Contra estas coisas não há lei.</p>
+          <span class="ref">— Paulo, aos Gálatas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Davi já tinha a promessa — seria rei de qualquer forma. O que a longanimidade poupou não foi o trono; foi o tipo de rei que ele seria ao chegar lá. Tiago resume o princípio: "a paciência tem a sua obra perfeita, para que sejais perfeitos e completos" (Tiago 1:4) — algo se forma no tempo de espera que não se forma tomando o atalho.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da primeira chance</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · fruto do Espírito · lição interativa</footer>
+</div>
+
+<script>
+  const cavData = [
+    { text: "\"Eis aqui o dia... faze-lhe como parecer bem aos teus olhos\" — o texto até soa como se Deus estivesse oferecendo a chance (v.4)." },
+    { text: "Corta apenas a orla do manto de Saul escondido, e mesmo assim seu coração o reprende por isso (v.4-5)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Resolver assim que o poder chega às mãos";
+      text.textContent = "Cada chance vira um teste que precisa ser vencido na hora — e o alívio de acertar as contas dura só até a próxima ofensa reabrir a mesma vontade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Guardar a espada mesmo tendo o direito de usá-la";
+      text.textContent = "Davi teve o poder duas vezes e escolheu esperar duas vezes. O fruto do Espírito confia que a promessa se cumpre sem precisar antecipar o relógio à força.";
+    }
+  }
+</script>
+</body>
+</html>

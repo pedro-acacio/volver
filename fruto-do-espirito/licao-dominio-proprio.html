@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domínio Próprio — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-fruto-do-espirito.html">Volver</a>
+    <span class="brand-track">Fruto do Espírito</span>
+  </div>
+
+  <div class="eyebrow">Lição 09 · <span class="ref-tag">Gálatas 5:22-23 · Gênesis 39</span></div>
+  <h1>Domínio Próprio</h1>
+  <p class="sub">Na tradução clássica, "temperança" — o último fruto listado, o freio que falta a todas as obras da carne que Paulo acabou de nomear. Um homem foge de uma casa vazia deixando a própria capa para trás.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O oposto: ceder porque ninguém vai saber</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A lista de obras da carne em Gálatas 5:19-21 começa justamente pelo que domínio próprio deveria conter: "adultério, prostituição, impureza, lascívia... bebedices, glutonarias". São todas formas de um mesmo padrão — apetite sem freio, satisfeito porque o freio simplesmente não existe.</p>
+          <p>José, ainda adolescente quando foi vendido pelos próprios irmãos, é agora escravo na casa de Potifar, oficial de Faraó — "formoso de porte e formoso à vista" (Gênesis 39:6). É nessa casa que o teste chega, dia após dia, sem que ninguém de fora esteja olhando.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → dia após dia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Dia após dia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A mulher de Potifar assedia José repetidamente — não uma vez, mas "dia após dia" (39:10). Ele tem tudo a favor de ceder: está sozinho numa casa que não é sua, com uma autoridade que poderia arruiná-lo se recusasse, e ninguém saberia se dissesse sim.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, potData, 0, 'potText')">A pressão</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, potData, 1, 'potText')">A razão que José dá</button>
+          </div>
+          <div class="chip-text" id="potText">Toque para ver a pressão e a resposta de José.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a capa deixada para trás</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A capa deixada para trás</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Num dia em que ninguém mais está na casa, ela o agarra pela capa. José literalmente abre mão do próprio manto e foge, deixando-o na mão dela (39:11-12) — recusa até no último segundo, quando fugir já custa alguma coisa concreta e visível.</p>
+          <p>A consequência é imediata e injusta: acusado falsamente, ele é preso sem julgamento (39:13-20). O domínio próprio não o poupou do preço. <a href="../personagens/licao-jose.html">A história completa de José</a> mostra o que veio depois disso — mas aqui, no momento da escolha, ele ainda não sabe que vai dar certo no fim.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Coríntios 10:13</span>
+          <p>Não veio sobre vós tentação, senão humana; mas fiel é Deus, que não vos deixará tentar acima do que podeis, antes, com a tentação, dará também o escape, para que a possais suportar.</p>
+          <span class="ref">— Paulo, aos Coríntios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>José não teve uma força especial que outros não têm — ele teve uma razão clara antes do momento de pressão: "como pois faria eu tamanha maldade, e pecaria contra Deus?" (39:9). O domínio próprio raramente é vencido na hora do teste; é decidido antes dele, na pergunta que já foi respondida com antecedência.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do "ninguém vai saber"</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · fruto do Espírito · lição interativa</footer>
+</div>
+
+<script>
+  const potData = [
+    { text: "\"Dia após dia\" ela insiste, sozinha com ele numa casa onde ninguém mais veria (v.10-11)." },
+    { text: "\"Como pois faria eu tamanha maldade, e pecaria contra Deus?\" — a pergunta não é sobre Potifar descobrir, é sobre quem está de fato assistindo (v.9)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ceder quando o preço da recusa some";
+      text.textContent = "Sem ninguém olhando, o freio some junto — e o padrão fica mais fraco a cada vez que a resposta certa depende de quem está por perto.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Recusar mesmo sabendo que vai custar caro";
+      text.textContent = "José fugiu deixando a própria capa para trás, sabendo que aquilo poderia se voltar contra ele — e se voltou. O fruto do Espírito responde à pergunta de quem está olhando antes da pressão chegar.";
+    }
+  }
+</script>
+</body>
+</html>

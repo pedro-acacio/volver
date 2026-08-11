@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paz — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-fruto-do-espirito.html">Volver</a>
+    <span class="brand-track">Fruto do Espírito</span>
+  </div>
+
+  <div class="eyebrow">Lição 03 · <span class="ref-tag">Gálatas 5:22-23 · Marcos 4</span></div>
+  <h1>Paz</h1>
+  <p class="sub">Um barco, uma tempestade, e um homem dormindo na popa. A pergunta que ele faz aos discípulos, depois de acalmar o mar, não é sobre o vento.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A paz que depende do mar calmo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Entre as obras da carne, Paulo lista "inimizades, contendas... iras, pelejas, dissensões" (Gálatas 5:20) — o padrão de uma paz que só existe enquanto nada ameaça, e desmorona no primeiro sinal de perigo real.</p>
+          <p>A paz que Jesus promete é diferente por definição: "Deixo-vos a paz, a minha paz vos dou; não vo-la dou como o mundo a dá" (João 14:27). O mundo dá paz condicionada à ausência de tempestade. Ele oferece outra coisa.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a tempestade no lago</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A tempestade no lago</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>À noite, atravessando o mar da Galileia, "se levanta uma grande tempestade de vento, e as ondas lançavam-se dentro do barco, de sorte que já se enchia" (Marcos 4:37). Jesus está na popa, dormindo sobre um travesseiro — no meio da mesma tempestade que aterroriza os discípulos, muitos deles pescadores experientes.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, marData, 0, 'marText')">Os discípulos</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, marData, 1, 'marText')">Jesus</button>
+          </div>
+          <div class="chip-text" id="marText">Toque para comparar a reação de cada um à mesma tempestade.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → "cala-te, aquieta-te"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A pergunta que não é sobre o vento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Acordado à força — "Mestre, não se te dá que pereçamos?" — Jesus se levanta, repreende o vento e diz ao mar: "Cala-te, aquieta-te." E logo se fez grande bonança (v.38-39).</p>
+          <p>Só depois ele faz a pergunta que interessa: "Por que sois assim tímidos? Como não tendes fé?" (v.40). Note a ordem: o mar já estava calmo quando ele pergunta isso. A questão nunca foi se a tempestade ia passar — foi onde estava ancorada a paz deles enquanto ela durava.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Filipenses 4:6-7</span>
+          <p>E a paz de Deus, que excede todo o entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus.</p>
+          <span class="ref">— Paulo, aos Filipenses</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Que excede todo o entendimento" é exatamente a marca dessa paz: ela não faz sentido do ponto de vista da circunstância. Um barco meio afundado não é motivo racional para calma — a menos que a calma esteja ancorada em quem está dentro do barco, não no estado do mar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do mar calmo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · fruto do Espírito · lição interativa</footer>
+</div>
+
+<script>
+  const marData = [
+    { text: "Em pânico, certos de que vão morrer, acordam Jesus com uma acusação disfarçada de pergunta: \"não se te dá que pereçamos?\" (v.38)." },
+    { text: "Dormindo na popa, sobre um travesseiro, no meio da mesma tempestade — sua paz não dependia do mar estar calmo (v.38)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Calmo só enquanto nada ameaça";
+      text.textContent = "Essa paz é reconstruída do zero a cada nova ameaça — e falha exatamente quando a tempestade é grande o bastante para importar de verdade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ancorado em quem está no barco";
+      text.textContent = "Jesus dormiu em meio à tempestade porque sua paz nunca esteve no estado do mar. O fruto do Espírito não exige que a água acalme primeiro.";
+    }
+  }
+</script>
+</body>
+</html>

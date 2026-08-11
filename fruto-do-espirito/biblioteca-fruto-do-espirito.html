@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha do Fruto do Espírito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{
+    display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;
+  }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 52px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:21px; margin:0; }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de lições</div>
+    <h1>Fruto do Espírito</h1>
+    <p class="lede">As nove características de Gálatas 5:22-23, cada uma numa lição curta e interativa: primeiro o padrão que a carne produz no lugar dela, depois uma cena bíblica concreta onde a característica aparece em ação, e por fim o padrão que ela interrompe.</p>
+    <div class="stats-row">
+      <div class="stat"><b>9</b>disponíveis</div>
+      <div class="stat"><b>9</b>catalogados</div>
+      <div class="stat"><b>1</b>tema</div>
+    </div>
+  </div>
+
+  <!-- ===== OS NOVE FRUTOS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Os nove frutos</h2>
+      <span class="cat-count">Gálatas 5:22-23</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-amor.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Amor</div>
+        <div class="p-ref">Gálatas 5:22 · João 13</div>
+        <p class="p-teaser">Lavar os pés de quem já tinha combinado a traição — o amor como iniciativa, não como resposta a quem merece.</p>
+      </a>
+      <a class="p-card available" href="licao-alegria.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Alegria</div>
+        <div class="p-ref">Gálatas 5:22 · Atos 16</div>
+        <p class="p-teaser">Cantar hinos à meia-noite com os pés presos em troncos — antes de qualquer sinal de que a prisão ia se abrir.</p>
+      </a>
+      <a class="p-card available" href="licao-paz.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Paz</div>
+        <div class="p-ref">Gálatas 5:22 · Marcos 4</div>
+        <p class="p-teaser">Dormindo na popa em meio à tempestade — uma paz que nunca dependeu do mar estar calmo.</p>
+      </a>
+      <a class="p-card available" href="licao-paciencia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Paciência</div>
+        <div class="p-ref">Gálatas 5:22 · 1 Samuel 24 e 26</div>
+        <p class="p-teaser">Duas vezes com a espada na mão e o inimigo à mercê. Duas vezes Davi guarda a espada.</p>
+      </a>
+      <a class="p-card available" href="licao-amabilidade.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Amabilidade</div>
+        <div class="p-ref">Gálatas 5:22 · Rute 2</div>
+        <p class="p-teaser">Uma viúva estrangeira sem nada para retribuir, e um homem que manda deixar cair espigas de propósito.</p>
+      </a>
+      <a class="p-card available" href="licao-bondade.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Bondade</div>
+        <div class="p-ref">Gálatas 5:22 · Atos 9</div>
+        <p class="p-teaser">As túnicas que as viúvas mostram, chorando, resumem uma vida inteira de bem feito sem plateia.</p>
+      </a>
+      <a class="p-card available" href="licao-fidelidade.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Fidelidade</div>
+        <div class="p-ref">Gálatas 5:22 · Daniel 1 e 6</div>
+        <p class="p-teaser">Dez dias de legumes sem plateia, décadas atrás — e o mesmo hábito diante da cova dos leões.</p>
+      </a>
+      <a class="p-card available" href="licao-mansidao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Mansidão</div>
+        <div class="p-ref">Gálatas 5:23 · Números 12</div>
+        <p class="p-teaser">O homem mais poderoso da terra, descrito como o mais manso — força inteira, guardada quando mais doeria usá-la.</p>
+      </a>
+      <a class="p-card available" href="licao-dominio-proprio.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Domínio Próprio</div>
+        <div class="p-ref">Gálatas 5:23 · Gênesis 39</div>
+        <p class="p-teaser">Fugir de uma casa vazia deixando a própria capa para trás, sabendo que ninguém mais estava olhando.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha do fruto do Espírito · biblioteca de lições</footer>
+</div>
+</body>
+</html>
