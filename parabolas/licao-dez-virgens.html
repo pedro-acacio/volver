@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As Dez Virgens — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 14 · <span class="ref-tag">Mateus 25:1-13</span></div>
+  <h1>As dez virgens</h1>
+  <p class="sub">Dez moças esperam um noivo que demora. Cinco levaram óleo extra; cinco não. Avance para ver por que essa diferença, pequena no começo, decide quem entra na festa.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 6 6 6 9 C6 11 7.5 12.5 9 12.5 C10.5 12.5 12 11 12 9 C12 6 9 2 9 2 Z" stroke-width="1.2"/>
+          <path d="M9 12.5 V16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O cenário</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Dez lâmpadas, dois preparos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dez moças saem para receber o noivo, cada uma com sua candeia (v.1). Cinco delas são chamadas de sábias, cinco de loucas — e a diferença aparece de imediato: <em>"as loucas, tomando as suas lâmpadas, não levaram azeite consigo; mas as prudentes levaram azeite em suas vasilhas, com as suas lâmpadas."</em> (v.3-4, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a demora</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 5 V9 L11.5 10.5" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A demora</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O noivo demora, todas adormecem</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"E, tardando o esposo, tosquenejaram todas, e adormeceram."</em> (v.5, paráfrase) — repare: dormir não é o erro da história. Sábias e loucas dormem igual, esperando a mesma pessoa.</p>
+          <p>À meia-noite, um grito: <em>"Aí vem o esposo, saí-lhe ao encontro."</em> (v.6, paráfrase) Todas se levantam e ajeitam suas lâmpadas — é só aí que a diferença aparece.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → sábias e loucas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 10 V10.3" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="9" cy="8" r="6.5" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">A diferença</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Dá-nos do vosso azeite"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada grupo pra ver o que acontece quando as lâmpadas precisam ser reacesas:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, virgemData, 0, 'virgemText')">As loucas</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, virgemData, 1, 'virgemText')">As sábias</button>
+          </div>
+          <div class="chip-text" id="virgemText">Toque em cada grupo para ver o que fazem quando as lâmpadas começam a apagar.</div>
+          <button class="continue-btn" onclick="openStage(4)">Ver quem entra na festa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 16 H16 M2 16 V7 L9 2 L16 7 V16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A porta que já estava fechada</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 25:13</span>
+          <p>Vigiai, pois, porque não sabeis o dia nem a hora em que o Filho do homem há de vir.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Enquanto as loucas saem para comprar azeite, o noivo chega. As que estavam prontas entram com ele para a festa, <em>"e fechou-se a porta"</em> (v.10, paráfrase). Quando as outras voltam e pedem para entrar, a resposta é: <em>"Não vos conheço."</em> (v.12, paráfrase)</p>
+          <p>O óleo que faltou não podia ser emprestado na hora — era algo que precisava ter sido preparado antes, sem saber exatamente quando seria necessário.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da prontidão emprestada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do óleo reservado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const virgemData = [
+    { text: "\"Dá-nos do vosso azeite, porque as nossas lâmpadas se apagam.\" As sábias respondem: \"Não seja caso que nos falte a nós e a vós; ide antes aos que vendem, e comprai-o para vós.\" (v.8-9, paráfrase) Enquanto isso, o tempo passa." },
+    { text: "As sábias não recusam por egoísmo — não há azeite suficiente para dividir e ainda chegar a tempo. A preparação delas não podia ser repartida no último minuto, só usada." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Contar em pedir emprestado na hora";
+      text.textContent = "As virgens loucas não fizeram nada de errado durante a espera — dormiram como todo mundo. O erro tinha acontecido antes, na hora de sair de casa, e nenhuma pressa depois conseguiu consertá-lo a tempo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Preparar o que ninguém pode emprestar";
+      text.textContent = "As virgens sábias não sabiam a que horas o noivo chegaria — só sabiam que precisavam estar prontas independente da hora. É esse o padrão que a parábola propõe: preparar antes, sem saber exatamente quando vai precisar.";
+    }
+  }
+</script>
+</body>
+</html>

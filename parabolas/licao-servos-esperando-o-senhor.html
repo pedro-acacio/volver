@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servos Esperando o Senhor — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 18 · <span class="ref-tag">Lucas 12:35-38</span></div>
+  <h1>Servos esperando o senhor</h1>
+  <p class="sub">Servos de lâmpadas acesas, prontos pra abrir a porta assim que o senhor bater, vindo de uma festa de casamento. Avance para ver o que ele faz quando os encontra assim — algo que ninguém esperava.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 6 6 6 9 C6 11 7.5 12.5 9 12.5 C10.5 12.5 12 11 12 9 C12 6 9 2 9 2 Z" stroke-width="1.2"/>
+          <path d="M9 12.5 V16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A postura</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Prontos para abrir assim que ele bater</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Estejam cingidos os vossos lombos, e acesas as vossas candeias; e sede vós semelhantes aos homens que esperam o seu senhor, quando houver de voltar das bodas, para que, quando vier, e bater, logo possam abrir-lhe."</em> (v.35-36, paráfrase)</p>
+          <p>Não é uma espera qualquer — é a postura de quem já está pronto pra agir no instante em que a batida na porta acontecer, sem precisar se preparar às pressas naquela hora.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o que acontece quando ele chega</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2: DESFECHO -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 H16 M4 12 V16 H14 V12 M2 12 L9 3 L16 12" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O senhor que serve os que esperaram</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 12:37</span>
+          <p>Bem-aventurados aqueles servos, os quais o Senhor, quando vier, achar vigiando! [...] Fá-los-á reclinar-se à mesa, e, chegando-se, os servirá.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É uma inversão que a plateia original não esperava: o senhor que retorna não manda os servos prontos servirem a ele — ele mesmo se cinge e os serve. E o texto ainda repete a mesma bênção duas vezes, para quem for encontrado pronto na segunda vigília da noite, ou até na terceira (v.38) — não importa se a demora foi curta ou longa, o que conta é ser encontrado esperando.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de vigiar por obrigação</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de vigiar por quem se espera</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Vigiar como quem cumpre tarefa";
+      text.textContent = "É possível manter a lâmpada acesa só porque foi mandado, contando as horas, esperando que a tarefa termine logo. Esse padrão sustenta a postura certa por fora, mas transforma a espera em peso.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Vigiar como quem quer ver a porta abrir";
+      text.textContent = "A recompensa da parábola — o senhor servindo quem esperou — só faz sentido se a espera vier de quem quer genuinamente vê-lo chegar, não de quem está só cumprindo escala. É esse afeto que transforma vigilância em algo sustentável, mesmo numa segunda ou terceira vigília da noite.";
+    }
+  }
+</script>
+</body>
+</html>

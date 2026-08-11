@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Ladrão à Noite e o Servo Fiel — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 17 · <span class="ref-tag">Mateus 24:42-51</span></div>
+  <h1>O ladrão à noite e o servo fiel</h1>
+  <p class="sub">Duas comparações curtas, contadas em sequência, sobre o mesmo problema: como agir quando não se sabe a hora exata de algo importante acontecer.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M11 2 A7 7 0 1 0 11 16 A5.5 5 0 1 1 11 2 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">1ª comparação</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O ladrão que não avisa a hora</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Vigiai, pois, porque não sabeis a que hora há de vir o vosso Senhor. Sabei, porém, isto: se o pai de família soubesse a que vigília da noite havia de vir o ladrão, vigiaria, e não deixaria minar a sua casa."</em> (v.42-43, paráfrase)</p>
+          <p>Ninguém prepara a casa contra um ladrão só depois de saber exatamente quando ele vem — a preparação só funciona porque a hora é desconhecida.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os dois servos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">2ª comparação</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O servo fiel e o servo mau</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Portanto, vós também estai apercebidos; porque o Filho do homem há de vir à hora em que não penseis."</em> (v.44, paráfrase) A partir daqui, Jesus descreve dois tipos de servo, deixados no comando enquanto o senhor está fora. Toque em cada um:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="selectChip(this, servoData, 0, 'servoText')">O servo fiel</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, servoData, 1, 'servoText')">O servo mau</button>
+          </div>
+          <div class="chip-text" id="servoText">Toque em cada servo para ver como ele usa o tempo em que o senhor está fora.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 2 A7 7 0 0 1 9 16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Achado fazendo, não achado esperando</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 24:46</span>
+          <p>Bem-aventurado aquele servo que o Senhor, quando vier, achar fazendo assim.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>As duas comparações apontam para o mesmo lugar: prontidão não é ficar parado esperando um sinal, é continuar fazendo o que já deveria estar sendo feito, na hora em que ninguém está checando. O servo mau não é condenado por um erro pontual — é condenado por decidir, a partir da suposta demora do senhor, que podia parar de agir direito.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do "ainda demora"</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do serviço contínuo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const servoData = [
+    { text: "\"Quem é, pois, o servo fiel e prudente, que o seu senhor pôs sobre os seus domésticos, para lhes dar o sustento a seu tempo?\" (v.45, paráfrase) — continua fazendo exatamente o que deveria, sem precisar de supervisão." },
+    { text: "\"Aquele mau servo diz consigo: O meu senhor tarda em vir; e começa a espancar os seus conservos, e a comer e beber com os ébrios.\" (v.48-49, paráfrase) A suposta demora vira justificativa pra parar de agir direito." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Relaxar porque ainda não chegou a hora";
+      text.textContent = "O servo mau não decide de uma vez parar de servir — ele calcula que ainda há tempo, e usa esse cálculo para justificar cada escolha ruim seguinte. É um padrão que se sustenta enquanto a incerteza sobre o prazo continuar disponível.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Fazer o de sempre, prazo ou não";
+      text.textContent = "O servo fiel não parece estar vigiando um relógio — está ocupado fazendo o trabalho que já lhe cabia antes de qualquer expectativa sobre a volta do senhor. É esse o padrão que as duas comparações elogiam: continuar, independente do prazo.";
+    }
+  }
+</script>
+</body>
+</html>

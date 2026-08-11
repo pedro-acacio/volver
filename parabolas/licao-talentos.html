@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os Talentos — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 15 · <span class="ref-tag">Mateus 25:14-30</span></div>
+  <h1>Os talentos</h1>
+  <p class="sub">Um homem parte de viagem e deixa bens com três servos, cada um segundo sua capacidade. Avance para ver o que cada um faz com o que recebeu — e por que o medo é o único erro que o dono não perdoa.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 16 L16 2 M9 2 H16 V9" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A partida</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Bens divididos por capacidade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um homem, prestes a viajar, chama seus servos e confia seus bens a eles. Cada um recebe um valor diferente — <em>"a cada um segundo a sua capacidade"</em> (v.15, paráfrase) — cinco talentos, dois talentos, um talento. Depois, ele parte.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o que cada um fez</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="2.3" stroke-width="1.2"/>
+          <circle cx="12" cy="6" r="2.3" stroke-width="1.2"/>
+          <circle cx="9" cy="12.5" r="2.3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Enquanto ele viaja</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Três servos, três escolhas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada servo, na ordem em que o texto os apresenta:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="selectChip(this, servoData, 0, 'servoText')">5 talentos</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, servoData, 1, 'servoText')">2 talentos</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, servoData, 2, 'servoText')">1 talento</button>
+          </div>
+          <div class="chip-text" id="servoText">Toque em cada servo para ver o que ele fez com o que recebeu.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o retorno</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+          <path d="M6 9 L8.5 11.5 L12.5 6.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">O retorno</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Entra no gozo do teu senhor"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O senhor volta e pede contas. Ao servo dos cinco talentos, que trouxe mais cinco, e ao dos dois, que trouxe mais dois, ele diz exatamente a mesma frase: <em>"Bem está, servo bom e fiel [...] entra no gozo do teu senhor."</em> (v.21, 23, paráfrase) — a recompensa não depende do valor absoluto, e sim da fidelidade com o que cada um recebeu.</p>
+          <p>O terceiro devolve só o que recebeu: <em>"Sabendo eu que és um homem duro [...] tive medo, e escondi na terra o teu talento; aqui tens o que é teu."</em> (v.24-25, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V2 M9 2 L4 7 M9 2 L14 7" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O talento que ficou parado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 25:29</span>
+          <p>Porque a qualquer que tiver será dado, e terá em abundância; mas ao que não tiver, até aquilo que tem lhe será tirado.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O senhor não repreende o terceiro servo por ter ganhado pouco — repreende por não ter feito nada. O medo dele, disfarçado de cautela, foi o único caminho que garantiu, com certeza, que nada cresceria. O talento é tomado dele e dado ao que tinha dez (v.28).</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do medo que enterra</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do risco que multiplica</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const servoData = [
+    { text: "Foi imediatamente negociar com os cinco talentos, e ganhou outros cinco (v.16, paráfrase). Nenhuma hesitação registrada no texto." },
+    { text: "Do mesmo jeito, ganhou outros dois com os dois que recebeu (v.17, paráfrase) — proporcionalmente, o mesmo resultado do primeiro." },
+    { text: "Foi, cavou um buraco na terra, e escondeu o dinheiro do seu senhor (v.18, paráfrase). Nenhum risco, nenhum ganho — e, como se vê depois, nenhuma segurança real." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Enterrar pra não arriscar perder";
+      text.textContent = "O terceiro servo descreve o próprio senhor como duro demais para arriscar errar diante dele. Esse padrão parece prudente, mas na prática garante o único resultado que a prudência deveria evitar: nada aconteceu com o que foi confiado.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Usar o que foi confiado, mesmo sem garantia";
+      text.textContent = "Os dois primeiros servos não sabiam se o negócio ia dar certo — só sabiam que guardar embaixo da terra não era a única opção. A recompensa deles não veio do tamanho do resultado, veio de terem agido com o que receberam.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As Minas — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 16 · <span class="ref-tag">Lucas 19:11-27</span></div>
+  <h1>As minas</h1>
+  <p class="sub">Um nobre parte para receber um reino que parte do povo não quer que ele tenha. Antes de ir, entrega a mesma quantia a dez servos. Avance para ver o que cada um faz enquanto ele está fora.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7.5 L12.3 10.8 L13.5 15.5 L9 13 L4.5 15.5 L5.7 10.8 L2 7.5 L7 7 Z" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A partida</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um reino contestado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus conta essa parábola porque a multidão pensava que o Reino de Deus apareceria imediatamente (v.11). Um homem nobre parte para uma terra distante, para receber um reino, e depois voltar (v.12).</p>
+          <p>Antes de partir, chama dez servos, dá a cada um uma mina — a mesma quantia, igual para todos — e diz: <em>"Negociai até que eu venha."</em> (v.13, paráfrase) Mas seus concidadãos o odeiam, e mandam atrás dele uma mensagem: <em>"Não queremos que este reine sobre nós."</em> (v.14, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → enquanto ele está fora</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="2.3" stroke-width="1.2"/>
+          <circle cx="4" cy="9" r="2.3" stroke-width="1.2"/>
+          <circle cx="14" cy="9" r="2.3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O mesmo valor, dez vezes</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Nem todos negociam igual</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diferente da parábola dos talentos, aqui todos recebem exatamente a mesma quantia — uma mina cada. O que muda não é a capacidade dada, é o que cada um decide fazer com uma oportunidade igual.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="selectChip(this, servoData, 0, 'servoText')">1º servo</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, servoData, 1, 'servoText')">2º servo</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, servoData, 2, 'servoText')">3º servo</button>
+          </div>
+          <div class="chip-text" id="servoText">Toque em cada servo para ver o que fez com a mina.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o retorno</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V2 M9 2 L4 7 M9 2 L14 7" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O medo que ele mesmo confessou</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 19:22</span>
+          <p>Pela tua própria boca te julgarei, servo mau. Sabias que eu sou homem rigoroso... por que, então, não puseste o meu dinheiro no banco?</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Já rei, ele volta e chama os servos para prestar contas. O que rendeu dez minas recebe dez cidades para governar; o que rendeu cinco, cinco cidades — a recompensa é proporcional ao que cada um multiplicou, não igual entre todos (v.16-19). O terceiro devolve a mina intacta, guardada num pano, e explica: <em>"Tinha medo de ti, porquanto és homem rigoroso."</em> (v.20-21, paráfrase) O rei usa as próprias palavras dele contra ele — se sabia disso, tinha ainda mais motivo para agir, não para travar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do medo que esconde</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do uso que multiplica</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const servoData = [
+    { text: "\"Senhor, a tua mina rendeu dez minas.\" (v.16, paráfrase) — multiplicou por dez o que recebeu, enquanto o rei ainda estava fora, sem qualquer garantia de que ele voltaria a tempo de reconhecer isso." },
+    { text: "\"Senhor, a tua mina rendeu cinco minas.\" (v.18, paráfrase) — um resultado menor que o primeiro, mas construído do mesmo jeito: usando o que tinha, sem esperar o retorno do senhor para começar." },
+    { text: "Guardou a mina enrolada num pano, sem arriscar nada (v.20, paráfrase). O motivo declarado não foi preguiça — foi medo do próprio senhor." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Guardar por medo de errar diante dele";
+      text.textContent = "O terceiro servo não perdeu a mina — devolveu exatamente o que recebeu. Mas tratar a ausência do senhor como motivo pra travar, em vez de agir, transforma cautela em desperdício disfarçado de responsabilidade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Negociar mesmo sem o senhor por perto";
+      text.textContent = "Os dois primeiros servos agiram sem saber quando o rei voltaria, e sem ele supervisionando cada decisão. O padrão que a parábola valoriza não é ter mais talento — é usar o que foi confiado enquanto ninguém está checando.";
+    }
+  }
+</script>
+</body>
+</html>
