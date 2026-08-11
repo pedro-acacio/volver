@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha dos Livros da Bíblia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{
+    display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;
+  }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .testament{ margin-top: 60px; }
+  .testament-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:6px;
+    border-bottom:2px solid var(--gold); padding-bottom:16px;
+  }
+  .testament-title{ font-family:'Fraunces', serif; font-weight:600; font-size:clamp(22px,4vw,27px); margin:0; }
+  .testament-count{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--gold); margin-left:auto; white-space:nowrap; }
+
+  .category{ margin-top: 40px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head, .testament-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count, .testament-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de lições</div>
+    <h1>Livros da Bíblia</h1>
+    <p class="lede">Cada livro ganha uma lição curta e interativa, apresentando seu contexto, estrutura e mensagem central. Organizados aqui por testamento e gênero literário, na ordem em que aparecem no cânon.</p>
+    <div class="stats-row">
+      <div class="stat"><b>0</b>disponíveis</div>
+      <div class="stat"><b>66</b>catalogados</div>
+      <div class="stat"><b>2</b>testamentos</div>
+    </div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- ===== ANTIGO TESTAMENTO ===== -->
+  <!-- ===================================================== -->
+  <div class="testament">
+    <div class="testament-head">
+      <h2 class="testament-title">Antigo Testamento</h2>
+      <span class="testament-count">39 livros</span>
+    </div>
+
+    <!-- ===== PENTATEUCO ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Pentateuco</h3>
+        <span class="cat-count">5 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Gênesis</div>
+          <div class="p-ref">Origens</div>
+          <p class="p-teaser">Do princípio ao poço do Egito: a criação, a queda e as promessas que atravessam gerações.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Êxodo</div>
+          <div class="p-ref">Origens</div>
+          <p class="p-teaser">Um povo escravo vira nação livre, e um monte no deserto define como viver com Deus.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Levítico</div>
+          <div class="p-ref">Origens</div>
+          <p class="p-teaser">O manual de uma nação recém-liberta para se aproximar de um Deus santo sem morrer nisso.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Números</div>
+          <div class="p-ref">Origens</div>
+          <p class="p-teaser">Quarenta anos de deserto — e o que uma geração perdeu por não confiar na terra prometida.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Deuteronômio</div>
+          <div class="p-ref">Origens</div>
+          <p class="p-teaser">O último discurso de Moisés, repetindo a lei a uma geração nova, à beira da terra prometida.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HISTÓRICOS ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Históricos</h3>
+        <span class="cat-count">12 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Josué</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">A conquista da terra prometida, um muro que cai e uma promessa que finalmente se cumpre.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Juízes</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">Um ciclo que se repete: pecado, opressão, clamor, libertador — e o pecado de novo.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Rute</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">Fome, luto e lealdade estrangeira que terminam dentro da própria linhagem de Davi.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Samuel</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">O fim dos juízes, o primeiro rei escolhido pelo povo, e o pastor ungido em segredo.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Samuel</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">O reinado de Davi, sua maior queda, e as consequências que perseguem sua casa.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Reis</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">Salomão constrói o templo; o reino se divide; Elias enfrenta os profetas de Baal.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Reis</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">A queda de Israel e depois de Judá — o preço final de reis que não ouviram os profetas.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Crônicas</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">A história de Davi recontada, com o olhar voltado ao templo e ao culto que viria.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Crônicas</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">Os reis de Judá revisitados, até o exílio e o decreto que permite o retorno.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Esdras</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">O retorno do exílio e a reconstrução do templo, tijolo por tijolo, oposição por oposição.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Neemias</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">Um copeiro no exílio reconstrói os muros de Jerusalém em 52 dias, apesar da sabotagem.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Ester</div>
+          <div class="p-ref">Históricos</div>
+          <p class="p-teaser">Uma rainha escondida usa a posição que tem no exato momento em que o povo precisa dela.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== POÉTICOS ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Poéticos</h3>
+        <span class="cat-count">5 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Jó</div>
+          <div class="p-ref">Poéticos</div>
+          <p class="p-teaser">Um homem íntegro perde tudo, e a pergunta não é "por quê", mas "quem é Deus mesmo assim".</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Salmos</div>
+          <div class="p-ref">Poéticos</div>
+          <p class="p-teaser">150 orações, louvores e lamentos — o vocabulário emocional de um povo diante de Deus.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Provérbios</div>
+          <div class="p-ref">Poéticos</div>
+          <p class="p-teaser">Sabedoria prática, ditado curto por ditado curto, para viver bem no dia a dia.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Eclesiastes</div>
+          <div class="p-ref">Poéticos</div>
+          <p class="p-teaser">"Tudo é vaidade" — um rei experimenta tudo o que a vida oferece e aponta para o que fica.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Cânticos dos Cânticos</div>
+          <div class="p-ref">Poéticos</div>
+          <p class="p-teaser">Um poema de amor entre um casal, celebrando o desejo dentro da aliança.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PROFETAS MAIORES ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Profetas maiores</h3>
+        <span class="cat-count">5 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Isaías</div>
+          <div class="p-ref">Profetas maiores</div>
+          <p class="p-teaser">Juízo e consolo lado a lado, com o retrato mais claro do Antigo Testamento do Servo sofredor.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Jeremias</div>
+          <div class="p-ref">Profetas maiores</div>
+          <p class="p-teaser">O profeta chorão, avisando um reino que não quer ouvir, até ver Jerusalém cair.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Lamentações</div>
+          <div class="p-ref">Profetas maiores</div>
+          <p class="p-teaser">Cinco poemas de luto sobre as ruínas de Jerusalém — e uma fidelidade que "se renova cada manhã".</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Ezequiel</div>
+          <div class="p-ref">Profetas maiores</div>
+          <p class="p-teaser">Visões estranhas e um vale de ossos secos, anunciando julgamento e depois restauração.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Daniel</div>
+          <div class="p-ref">Profetas maiores</div>
+          <p class="p-teaser">Fiel na corte de um império pagão, da cova dos leões às visões do fim dos tempos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PROFETAS MENORES ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Profetas menores</h3>
+        <span class="cat-count">12 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Oséias</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Um casamento partido vira metáfora viva da fidelidade de Deus a um povo infiel.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Joel</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Um exército de gafanhotos, um chamado ao arrependimento, e a promessa de um Espírito derramado.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Amós</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Um pastor do interior denuncia a injustiça social escondida por trás da religiosidade de fachada.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Obadias</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">O livro mais curto do Antigo Testamento — um julgamento contra o orgulho de Edom.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Jonas</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Fugiu do chamado, foi engolido pelo próprio "não", e ainda assim recebeu uma segunda chance.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Miquéias</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Julgamento sobre líderes corruptos, e a pergunta que resume tudo: agir com justiça, amar a misericórdia, andar humildemente.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Naum</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">A queda anunciada de Nínive, a mesma cidade que se arrependeu no tempo de Jonas.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Habacuque</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Um profeta que discute com Deus sobre a injustiça, até aprender a viver pela fé.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Sofonias</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">O dia do Senhor anunciado como juízo — e como esperança para um remanescente fiel.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Ageu</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Um povo que reconstruiu a própria casa e esqueceu de terminar o templo — até ser lembrado.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Zacarias</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">Visões noturnas cheias de esperança messiânica para um povo recém-voltado do exílio.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Malaquias</div>
+          <div class="p-ref">Profetas menores</div>
+          <p class="p-teaser">A última palavra do Antigo Testamento — um povo cansado, e um Deus que não desiste.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- ===== NOVO TESTAMENTO ===== -->
+  <!-- ===================================================== -->
+  <div class="testament">
+    <div class="testament-head">
+      <h2 class="testament-title">Novo Testamento</h2>
+      <span class="testament-count">27 livros</span>
+    </div>
+
+    <!-- ===== EVANGELHOS ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Evangelhos</h3>
+        <span class="cat-count">4 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Mateus</div>
+          <div class="p-ref">Evangelhos</div>
+          <p class="p-teaser">Jesus apresentado como o Rei prometido, cumprindo as Escrituras judaicas passo a passo.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Marcos</div>
+          <div class="p-ref">Evangelhos</div>
+          <p class="p-teaser">O evangelho mais rápido — um Jesus de ação, servo que dá a vida em resgate de muitos.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Lucas</div>
+          <div class="p-ref">Evangelhos</div>
+          <p class="p-teaser">Um médico grego escreve com cuidado especial pelos marginalizados, pobres e estrangeiros.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">João</div>
+          <div class="p-ref">Evangelhos</div>
+          <p class="p-teaser">Sete sinais e sete "eu sou" — o evangelho escrito "para que creiais que Jesus é o Cristo".</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HISTÓRICO ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Histórico</h3>
+        <span class="cat-count">1 livro</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Atos</div>
+          <div class="p-ref">Histórico</div>
+          <p class="p-teaser">Do Pentecostes até Roma — como um punhado de discípulos virou uma igreja que atravessou o Império.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CARTAS PAULINAS ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Cartas paulinas</h3>
+        <span class="cat-count">13 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Romanos</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">O tratado mais completo de Paulo sobre pecado, graça e justificação pela fé.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Coríntios</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Paulo corrige divisões, imoralidade e confusão numa igreja talentosa, mas desordenada.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Coríntios</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">A carta mais pessoal de Paulo, defendendo seu ministério em meio ao sofrimento.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Gálatas</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">"Livres para quê" — o evangelho da graça contra quem queria acrescentar a lei a ele.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Efésios</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">A identidade do crente em Cristo, e como isso muda a forma de viver em comunidade.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Filipenses</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">"Alegrai-vos" escrito de uma prisão — o segredo do contentamento em qualquer circunstância.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Colossenses</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Cristo é supremo sobre tudo — a resposta de Paulo a filosofias que o diminuíam.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Tessalonicenses</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Encorajamento a uma igreja jovem, com esperança viva na volta de Cristo.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Tessalonicenses</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Corrige mal-entendidos sobre o dia do Senhor e chama à perseverança no trabalho.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Timóteo</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Instruções pastorais a um jovem líder sobre ordem, doutrina e caráter na igreja.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Timóteo</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">A última carta de Paulo, um testemunho final antes da execução: "combati o bom combate".</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Tito</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Como organizar uma igreja recém-plantada em Creta, com líderes de caráter íntegro.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Filemom</div>
+          <div class="p-ref">Cartas paulinas</div>
+          <p class="p-teaser">Um pedido pessoal de Paulo: que um escravo fugitivo seja recebido de volta como irmão.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CARTAS GERAIS ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Cartas gerais</h3>
+        <span class="cat-count">8 livros</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Hebreus</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Cristo é superior — aos anjos, a Moisés, ao sacerdócio antigo — o argumento para não desistir da fé.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Tiago</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Fé que se prova em obras — sabedoria prática para uma vida cristã coerente.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 Pedro</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Como viver com esperança em meio ao sofrimento e à perseguição como estrangeiros no mundo.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 Pedro</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Um alerta final contra falsos mestres, e a certeza da volta de Cristo.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">1 João</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Testes de vida verdadeira: andar na luz, amar de fato, e crer que Jesus é o Filho de Deus.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">2 João</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Um bilhete curto sobre andar na verdade e no amor, e cuidado com falsos mestres.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">3 João</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Elogio à hospitalidade de Gaio, e uma advertência sobre a arrogância de Diótrefes.</p>
+        </div>
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Judas</div>
+          <div class="p-ref">Cartas gerais</div>
+          <p class="p-teaser">Um chamado urgente a lutar pela fé diante de mestres que distorciam a graça de Deus.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PROFÉTICO ===== -->
+    <div class="category">
+      <div class="cat-head">
+        <h3 class="cat-title">Profético</h3>
+        <span class="cat-count">1 livro</span>
+      </div>
+      <div class="card-grid">
+        <div class="p-card locked"><span class="badge off">Em breve</span>
+          <div class="p-title">Apocalipse</div>
+          <div class="p-ref">Profético</div>
+          <p class="p-teaser">Visões do fim, cartas a sete igrejas, e a promessa final: Cristo vence, e faz tudo novo.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · biblioteca de lições</footer>
+</div>
+</body>
+</html>
