@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Grão de Mostarda e o Fermento — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 07 · <span class="ref-tag">Mateus 13:31-33</span></div>
+  <h1>O grão de mostarda e o fermento</h1>
+  <p class="sub">Duas comparações curtas, contadas uma depois da outra, sobre coisas pequenas demais para chamar atenção — até que, de repente, mudam tudo à sua volta.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="2" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O motivo</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Duas comparações, o mesmo ponto</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de explicar a parábola do semeador aos discípulos, Jesus continua descrevendo como é o Reino dos Céus — agora com duas histórias bem mais curtas, quase adivinhas, contadas em sequência (v.31,33).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o grão de mostarda</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 17 V10 M9 10 L5 5 M9 10 L13 5 M9 13 L4 9 M9 13 L14 9" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">1ª comparação</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O grão de mostarda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O Reino dos Céus é semelhante a um grão de mostarda, que um homem, tomando-o, semeou no seu campo; e é, na verdade, a menor de todas as sementes."</em> (v.31-32a, paráfrase)</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="revealText('mostardaText', this)">Ver o que esse grão vira</button>
+          </div>
+          <div class="chip-text" id="mostardaText" style="display:none;">"Mas, crescendo, é a maior das hortaliças, e faz-se árvore, de tal maneira que vêm as aves do céu, e se aninham nos seus ramos" (v.32b, paráfrase). A planta que veio da menor semente cresce o bastante para dar abrigo a outros.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o fermento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 8 H16 C16 12.5 13 16 9 16 C5 16 2 12.5 2 8 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">2ª comparação</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O fermento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O Reino dos Céus é semelhante ao fermento que uma mulher, tomando-o, escondeu em três medidas de farinha, até que tudo levedou."</em> (v.33, paráfrase)</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="revealText('fermentoText', this)">Ver o que acontece com a massa</button>
+          </div>
+          <div class="chip-text" id="fermentoText" style="display:none;">O fermento não aparece de fora — some dentro da massa, escondido. Mas é suficiente para levedar as três medidas inteiras, uma quantidade grande o bastante para alimentar uma família extensa. Nada muda visivelmente por fora; por dentro, tudo muda.</div>
+          <button class="continue-btn" onclick="openStage(4)">Ver o padrão em comum</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.5" stroke-width="1.3"/>
+          <path d="M9 1 V4 M9 14 V17 M1 9 H4 M14 9 H17" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Pequeno, escondido, e depois inegável</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 13:20-21</span>
+          <p>A que compararei o Reino de Deus? É semelhante ao fermento que uma mulher tomou e escondeu em três medidas de farinha, até que tudo ficou levedado.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>As duas comparações têm a mesma forma: algo pequeno ou invisível, um tempo em que nada parece estar acontecendo, e depois um resultado grande demais pra explicar só pelo tamanho do começo. Nenhuma das duas descreve um crescimento instantâneo — as duas pedem tempo escondido antes de qualquer prova visível.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da pressa</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da semente</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revealText(id, btn){
+    document.getElementById(id).style.display = 'block';
+    btn.classList.add('active');
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Precisar ver pra crer que está funcionando";
+      text.textContent = "Quando nada parece estar mudando, é fácil concluir que nada está acontecendo — e abandonar exatamente na fase invisível, que é a fase em que o grão de mostarda e o fermento ainda pareciam pequenos demais para importar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Confiar no que ainda não apareceu";
+      text.textContent = "O grão de mostarda cresce enquanto ninguém está vendo, e o fermento trabalha escondido dentro da massa. É esse o padrão que as duas comparações propõem: deixar o tempo fazer a parte que a pressa não consegue apressar.";
+    }
+  }
+</script>
+</body>
+</html>

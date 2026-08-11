@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Joio e o Trigo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 06 · <span class="ref-tag">Mateus 13:24-30, 36-43</span></div>
+  <h1>O joio e o trigo</h1>
+  <p class="sub">Um campo de trigo bom, e um inimigo que semeia joio no meio dele, à noite, sem que ninguém veja. Avance para ver por que o dono manda esperar a colheita, em vez de arrancar o joio agora.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V6" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M2 16 H16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O campo</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Trigo bom, semeado de dia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus conta outra parábola sobre o Reino dos Céus: um homem semeou boa semente no seu campo (v.24, paráfrase).</p>
+          <p>É um começo simples — um campo, uma semente boa, um dono que fez tudo certo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o inimigo, de noite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M11 2 A7 7 0 1 0 11 16 A5.5 5 0 1 1 11 2 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A noite</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O inimigo semeia joio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Mas, enquanto todos dormiam, veio o inimigo dele, semeou joio no meio do trigo, e foi embora (v.25, paráfrase) — o joio é uma erva daninha que, ainda nova, é quase idêntica ao trigo, difícil de distinguir até crescer.</p>
+          <p>Quando a plantação cresce e dá fruto, o joio aparece também (v.26). Os servos vão ao dono: <em>"Não semeaste boa semente no teu campo? De onde, pois, tem joio?"</em> Ele responde: <em>"Um inimigo fez isso."</em> (v.27-28a, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o pedido dos servos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 2 H14 L9 9 L14 16 H4 L9 9 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">O pedido</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Queres que o arranquemos?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os servos perguntam se devem sair arrancando o joio ali mesmo (v.28b, paráfrase). É a reação mais óbvia: viram o problema, querem resolvê-lo na hora.</p>
+          <p><em>"Não; para que ao colher o joio não arranqueis também com ele o trigo. Deixai crescer ambos juntos até à ceifa."</em> (v.29-30a, paráfrase)</p>
+          <p>O dono não nega que há joio. Ele nega que arrancar agora seja seguro — debaixo da terra, as raízes já podem estar entrelaçadas.</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 C4 6 10 2 16 4 C13 6 11 10 9 15" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A separação fica para o tempo certo</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 13:30</span>
+          <p>Deixai crescer ambos juntos até à ceifa; e, ao tempo da ceifa, direi aos ceifeiros: colhei primeiro o joio, e ajuntai-o em molhos para o queimar; o trigo, porém, ajuntai-o no meu celeiro.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Mais tarde, em particular, Jesus explica a cena aos discípulos: o campo é o mundo, a boa semente são os que pertencem ao Reino, o joio é obra do inimigo, e a ceifa é o fim dos tempos, quando os anjos farão a separação (v.36-43, paráfrase resumida). A tarefa de distinguir joio de trigo nunca foi dos servos — era do dono do campo, e só chegaria depois.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de arrancar agora</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de esperar a ceifa</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Certeza precoce";
+      text.textContent = "Achar que já dá pra distinguir com segurança o joio do trigo — e agir sobre essa certeza — é um padrão que se sente responsável e vigilante, mas arrisca arrancar justamente o que ainda estava criando raiz.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Confiar num tempo que não é agora";
+      text.textContent = "Deixar crescer junto não é indiferença — é reconhecer que a separação final exige uma clareza que ainda não existe no meio da lavoura. O dono do campo vê o que os servos, no chão, não conseguem ver.";
+    }
+  }
+</script>
+</body>
+</html>

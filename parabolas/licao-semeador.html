@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Semeador — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 05 · <span class="ref-tag">Mateus 13:1-23</span></div>
+  <h1>O semeador</h1>
+  <p class="sub">A mesma semente, lançada por um semeador, cai em quatro tipos de solo diferentes. Avance para ver o que acontece com cada um — e por que só um deles produz fruto.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4" r="1.6" stroke-width="1.2"/>
+          <path d="M9 6 L4 15 M9 6 L9 16 M9 6 L14 15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O cenário</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma multidão à beira do mar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus estava à beira do mar da Galileia, e uma multidão tão grande se ajuntou que ele entrou num barco e se sentou, enquanto o povo ficava na praia (v.1-2, paráfrase).</p>
+          <p>Foi dali que ele contou a parábola do semeador — a primeira de uma série de histórias curtas sobre como é o Reino dos Céus.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a semente e os solos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M1 13 H17" stroke-width="1.4"/>
+          <path d="M5 13 V16 M9 13 V16 M13 13 V16" stroke-width="1"/>
+          <circle cx="9" cy="8" r="1.6" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A parábola</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um semeador saiu a semear</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Eis que o semeador saiu a semear. E, quando semeava, uma parte da semente caiu..."</em> (v.3-4, paráfrase) — e daí em diante, o destino de cada punhado depende só de onde caiu. Toque em cada solo, na ordem:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, soloData, 0, 'soloText')">À beira do caminho</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, soloData, 1, 'soloText')">No pedregal</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, soloData, 2, 'soloText')">Entre espinhos</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, soloData, 3, 'soloText')">Em boa terra</button>
+          </div>
+          <div class="chip-text" id="soloText">Toque em cada solo para ver o que a semente encontra ali.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver o que Jesus quis dizer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 L6 3 M9 5 L12 3 M9 9 L6 7 M9 9 L12 7 M9 13 L6 11 M9 13 L12 11" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O mesmo som, quatro respostas diferentes</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 13:23</span>
+          <p>O que foi semeado em boa terra é aquele que ouve a palavra, entende, e frutifica de verdade — um a cem, outro a sessenta, outro a trinta.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A diferença entre os quatro solos não está na semente — é a mesma em todos. E também não está inteiramente sob controle de quem ouve: caminho batido, pedra e espinhos já estavam ali antes da semente cair. Ainda assim, o texto distingue quem "entende" de quem apenas "ouve" — como se prestar atenção de verdade já fosse parte do preparo do terreno.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do espinho</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da boa terra</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const soloData = [
+    { text: "A semente cai no caminho batido, e os pássaros vêm e a comem antes que possa brotar (v.4). É como ouvir a palavra sem entender — o mal a arrebata do coração antes que crie raiz (v.19, paráfrase)." },
+    { text: "A semente brota depressa, porque a terra é rasa — mas sem raiz profunda, o sol a queima assim que nasce (v.5-6). É como receber a palavra com alegria, mas sem firmeza: ao primeiro aperto ou perseguição, a pessoa desiste (v.20-21, paráfrase)." },
+    { text: "A semente cresce, mas os espinhos crescem junto e a sufocam (v.7). É como ouvir a palavra e deixar que as preocupações da vida e o encanto das riquezas a asfixiem, até que ela não produz nada (v.22, paráfrase)." },
+    { text: "A semente cai em terra boa e produz — uma trinta, outra sessenta, outra cem vezes mais (v.8). É como ouvir a palavra, entendê-la de verdade, e deixar que ela frutifique sem pressa (v.23, paráfrase)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Sufocado antes de frutificar";
+      text.textContent = "As preocupações do dia a dia e o desejo por mais do que já se tem não parecem inimigas da fé — crescem junto, devagar, quase sem se notar, até que a atenção que sobra pra o que realmente importa já não é suficiente.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Atenção que deixa crescer";
+      text.textContent = "A boa terra não é isenta de dificuldade — é apenas terra que não está ocupada demais para deixar a semente crescer. Entender a palavra, no fim, é uma questão de espaço mais do que de esforço.";
+    }
+  }
+</script>
+</body>
+</html>

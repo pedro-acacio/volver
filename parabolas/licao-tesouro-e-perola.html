@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Tesouro Escondido e a Pérola — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 08 · <span class="ref-tag">Mateus 13:44-46</span></div>
+  <h1>O tesouro escondido e a pérola de grande valor</h1>
+  <p class="sub">Um homem tropeça na sorte. Outro passou a vida inteira procurando. Os dois, ao encontrar o que valia mais do que tudo, reagem exatamente da mesma forma.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L16 9 L9 16 L2 9 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O motivo</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Duas histórias, uma decisão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus conta mais duas comparações curtas sobre o Reino dos Céus — dessa vez, sobre o que alguém está disposto a soltar quando encontra algo de valor incomparável (v.44-46).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o tesouro no campo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 8 H16 V15 H2 Z M2 8 L4 3 H14 L16 8" stroke-width="1.3"/>
+          <circle cx="9" cy="11.5" r="1.2" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">1ª história</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O tesouro escondido no campo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O Reino dos Céus é semelhante a um tesouro escondido num campo, que um homem achou e escondeu; e, pela alegria dele, vai, vende tudo quanto tem, e compra aquele campo."</em> (v.44, paráfrase)</p>
+          <p>Repare: ele não estava procurando um tesouro. Estava, provavelmente, trabalhando o campo de outra pessoa, e encontrou por acaso algo que mudaria tudo.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="revealText('tesouroText', this)">Ver o que ele faz depois de encontrar</button>
+          </div>
+          <div class="chip-text" id="tesouroText" style="display:none;">Ele esconde o tesouro de novo — para garantir que ninguém mais o encontre antes dele — e vende tudo o que tem, sem hesitar, para poder comprar aquele campo específico. O texto marca bem o motivo: "pela alegria dele" (v.44). Não é sacrifício amargo; é o preço que a alegria torna óbvio.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a pérola</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="10" r="3" stroke-width="1.3"/>
+          <path d="M2 10 C2 6 5 3 9 3 C13 3 16 6 16 10" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">2ª história</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A pérola de grande valor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Também o Reino dos Céus é semelhante ao homem, negociante, que busca boas pérolas; e, encontrando uma pérola de grande valor, foi, vendeu tudo quanto tinha, e a comprou."</em> (v.45-46, paráfrase)</p>
+          <p>A diferença começa antes da descoberta: esse homem já era um negociante de pérolas — sabia reconhecer valor, e estava procurando ativamente, talvez havia anos. Mesmo assim, quando encontra a pérola certa, a reação é idêntica à do primeiro homem: vender tudo, sem negociar consigo mesmo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o que as duas têm em comum</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L16 9 L9 16 L2 9 Z" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="1.8" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O mesmo preço, dois caminhos até ele</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 13:44</span>
+          <p>Pela alegria dele, vai, vende tudo quanto tem, e compra aquele campo.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Um encontra por acaso; o outro, depois de procurar a vida inteira. Um já tinha experiência para reconhecer valor; o outro só teve a sorte de cavar no lugar certo. Mas as duas histórias terminam do mesmo jeito: vender tudo, sem que o texto registre uma única palavra de hesitação. O valor do que foi encontrado é medido pela reação, não pelo esforço que levou até ele.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do apego</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da alegria</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revealText(id, btn){
+    document.getElementById(id).style.display = 'block';
+    btn.classList.add('active');
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Calcular a perda antes de sentir o valor";
+      text.textContent = "É possível olhar pra tudo que se teria que soltar — e travar ali, pesando o que se perde antes de considerar o que se ganha. Esse padrão protege o que já se tem, mas também impede de reconhecer quando algo vale mais do que a soma de tudo isso.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Vender tudo sem se sentir em falta";
+      text.textContent = "Nas duas histórias, ninguém é forçado a vender — a alegria antecipa a decisão. Esse é o padrão que a dupla de parábolas propõe: quando o valor é reconhecido de verdade, soltar o resto deixa de parecer perda.";
+    }
+  }
+</script>
+</body>
+</html>

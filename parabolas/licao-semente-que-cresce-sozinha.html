@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Semente que Cresce Sozinha — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 10 · <span class="ref-tag">Marcos 4:26-29</span></div>
+  <h1>A semente que cresce sozinha</h1>
+  <p class="sub">Um agricultor lança a semente na terra — e depois dorme e acorda, dia após dia, sem entender como ela cresce. Avance para ver o que cabe a ele, e o que nunca coube.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="3" r="1.5" stroke-width="1.2"/>
+          <path d="M9 5 V16" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="1 3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O plantio</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Ele lança a semente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O Reino de Deus é assim como se um homem lançasse semente à terra."</em> (v.26, paráfrase)</p>
+          <p>É só isso que o texto atribui ao agricultor no começo: lançar a semente. O verbo é simples, o gesto é rápido — o resto da parábola não depende mais dele.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a espera</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 2 A7 7 0 0 1 9 16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A espera</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Ele dorme e acorda, dia após dia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"E dormisse e se levantasse de noite e de dia, e a semente brotasse e crescesse, sem ele saber como."</em> (v.27, paráfrase)</p>
+          <p>Repare no ritmo: dormir, acordar, dormir, acordar — a vida normal do agricultor continua, sem que ele monte guarda sobre o canteiro. E o texto é direto sobre o motivo: ele não sabe como a semente cresce. Não é falta de atenção; é que esse processo nunca esteve ao alcance dele para entender ou controlar.</p>
+          <p><em>"Porque a terra por si mesma frutifica, primeiro a erva, depois a espiga, depois o grão cheio na espiga."</em> (v.28, paráfrase) O crescimento acontece em etapas, sem pular nenhuma, e sem pedir licença.</p>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 L6 3 M9 5 L12 3 M9 9 L6 7 M9 9 L12 7 M9 13 L6 11 M9 13 L12 11" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A foice, quando chega a hora</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Marcos 4:29</span>
+          <p>E, quando o fruto já se mostra, mete-lhe logo a foice, porque é chegada a ceifa.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O agricultor volta a agir só no fim — e de novo com um gesto simples: colher. Entre semear e colher, a parte que sustenta tudo — a terra frutificando por si mesma — nunca dependeu dele. É uma parábola curta sobre os limites reais do que cabe a uma pessoa fazer, e o tanto de crescimento que só acontece quando ninguém está segurando as pontas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de vigiar sem soltar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do agricultor que dorme</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Achar que dormir é falhar";
+      text.textContent = "Se o crescimento parece depender de vigilância constante, dormir vira uma ameaça — como se tirar os olhos da terra por uma noite pudesse fazer a semente parar de crescer. Esse padrão mantém a pessoa acordada por um processo que nunca esteve sob o controle dela.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Fazer a parte que cabe, e descansar";
+      text.textContent = "O agricultor da parábola faz exatamente duas coisas: semear e colher. No meio, ele dorme normalmente, porque o crescimento não é responsabilidade dele. Confiar nesse padrão não é passividade — é reconhecer com precisão onde termina o que se pode fazer.";
+    }
+  }
+</script>
+</body>
+</html>
