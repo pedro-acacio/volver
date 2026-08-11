@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Batismo de Jesus — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-trindade.html">Volver</a>
+    <span class="brand-track">A Trindade</span>
+  </div>
+
+  <div class="eyebrow">Contexto bíblico · <span class="ref-tag">Mateus 3:13-17</span></div>
+  <h1>O Batismo de Jesus</h1>
+  <p class="sub">Um único instante, à beira do rio Jordão, em que as três pessoas da Trindade aparecem ao mesmo tempo, distintas umas das outras — o Filho na água, o Espírito descendo, o Pai falando do céu.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 C5 9 8 9 9 12 C10 9 13 9 16 12" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Contexto</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Eu é que preciso ser batizado por ti"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>João Batista prega no deserto e batiza no Jordão um batismo de arrependimento (Mateus 3:1-6). Quando Jesus chega para ser batizado por ele, João tenta impedir: "Eu é que preciso ser batizado por ti, e vens tu a mim?" (v.14) — reconhecendo que não faz sentido ele batizar quem não tem pecado algum para se arrepender.</p>
+          <p>Jesus insiste: "Deixa por agora, porque assim nos convém cumprir toda a justiça" (v.15). Ele não é batizado porque precisa — é batizado para se identificar com o povo que veio salvar, no início público do seu ministério.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o instante das três pessoas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 6 6 9 9 11 C12 9 12 6 9 3 Z" stroke-width="1.3"/>
+          <path d="M9 11 V15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O momento</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O instante das três pessoas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"E, batizado que foi Jesus, saiu logo da água, e eis que se lhe abriram os céus, e viu o Espírito de Deus descendo como pomba e vindo sobre ele. E eis uma voz dos céus, que dizia: Este é o meu Filho amado, em quem me comprazo" (v.16-17).</p>
+          <p>Três versículos, um só instante, três pessoas distintas e ativas ao mesmo tempo. Toque em cada uma:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, batismoData, 0, 'batismoText')">O Filho</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, batismoData, 1, 'batismoText')">O Espírito</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, batismoData, 2, 'batismoText')">O Pai</button>
+          </div>
+          <div class="chip-text" id="batismoText">Toque em cada pessoa para ver o que o texto diz dela nesse instante.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → por que isso importa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="12" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="9" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Por que importa</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Três, não uma pessoa em três fases</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Esse texto sozinho já derruba a ideia de que Pai, Filho e Espírito são a mesma pessoa aparecendo em momentos diferentes, como se Deus trocasse de máscara: aqui as três aparecem juntas, no mesmo evento, cada uma fazendo algo diferente — um é batizado, outro desce, outro fala. Não são três atuações sucessivas do mesmo ator; são três pessoas presentes ao mesmo tempo.</p>
+          <p>Ao mesmo tempo, o texto não descreve três deuses agindo cada um por conta própria: o Pai declara sua aprovação sobre o Filho, e o Espírito o unge para a missão que começa ali (comparar Lucas 4:18, "o Espírito do Senhor está sobre mim, porque me ungiu"). Distinção de pessoa, unidade de propósito e de essência — o mesmo Deus, revelado em três.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 3:16-17</span>
+          <p>E, batizado que foi Jesus, saiu logo da água, e eis que se lhe abriram os céus, e viu o Espírito de Deus descendo como pomba e vindo sobre ele. E eis uma voz dos céus, que dizia: Este é o meu Filho amado, em quem me comprazo.</p>
+          <span class="ref">— Mateus, sobre o batismo de Jesus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A tradição protestante não trata a Trindade como uma fórmula filosófica importada — trata como o retrato mais fiel de cenas como esta, onde a própria Bíblia mostra as três pessoas simultaneamente presentes, distintas, e ainda assim um só Deus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão das máscaras</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão das três pessoas</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · a Trindade · lição interativa</footer>
+</div>
+
+<script>
+  const batismoData = [
+    { text: "\"Batizado que foi Jesus, saiu logo da água\" — o Filho, plenamente Deus e plenamente homem, sendo batizado no rio (v.16a)." },
+    { text: "\"Viu o Espírito de Deus descendo como pomba e vindo sobre ele\" — o Espírito Santo desce visivelmente sobre o Filho (v.16b)." },
+    { text: "\"Eis uma voz dos céus, que dizia: Este é o meu Filho amado, em quem me comprazo\" — o Pai fala do céu sobre o Filho (v.17)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um só ator, três papéis";
+      text.textContent = "Se Pai, Filho e Espírito fossem a mesma pessoa em disfarces diferentes, o batismo de Jesus seria impossível de narrar — não dá pra um único ator estar na água, descer do céu como pomba e falar do céu ao mesmo tempo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Três pessoas, uma só cena";
+      text.textContent = "O texto só faz sentido com três pessoas distintas presentes ao mesmo tempo — e ainda assim é a revelação de um só Deus, agindo com um só propósito sobre o Filho que acabou de ser batizado.";
+    }
+  }
+</script>
+</body>
+</html>

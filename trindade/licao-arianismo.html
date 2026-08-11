@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arianismo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-trindade.html">Volver</a>
+    <span class="brand-track">A Trindade</span>
+  </div>
+
+  <div class="eyebrow">Heresia · <span class="ref-tag">Concílio de Niceia, 325 d.C.</span></div>
+  <h1>Arianismo</h1>
+  <p class="sub">"Houve quando ele não existia" — a frase que resume a heresia mais combatida da história da igreja: a ideia de que o Filho é uma criatura, não Deus eterno.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="3.5" stroke-width="1.3"/>
+          <path d="M4 16 C4 11.5 6 9 9 9 C12 9 14 11.5 14 16" stroke-width="1.3"/>
+          <path d="M3 3 L15 15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A origem</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um presbítero, uma frase, um império dividido</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No início do século IV, Ário, presbítero da igreja de Alexandria, começa a ensinar que o Filho — o Verbo (Logos) — não é eterno como o Pai. Para Ário, o Filho é a primeira e mais excelente de todas as criaturas de Deus, feito "do nada", antes do tempo, mas ainda assim feito. Sua frase de efeito resumia tudo: "houve quando ele não existia".</p>
+          <p>A ideia se espalha rápido pelo Império Romano — não como uma discussão de teólogos isolados, mas como uma controvérsia pública que divide cidades inteiras. É séria o bastante para o imperador Constantino convocar bispos de todo o império para resolvê-la.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a resposta de Niceia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 H15 M9 15 V3 L15 8 L9 12" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A resposta</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O Credo Niceno</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em 325 d.C., mais de 300 bispos se reúnem no Concílio de Niceia. Atanásio, ainda jovem diácono, se torna a voz principal contra Ário. O concílio formula um credo com termos escolhidos exatamente para fechar as brechas que Ário explorava:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, arioData, 0, 'arioText')">"Gerado, não criado"</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, arioData, 1, 'arioText')">"Consubstancial ao Pai"</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, arioData, 2, 'arioText')">"Antes de todos os séculos"</button>
+          </div>
+          <div class="chip-text" id="arioText">Toque em cada expressão do credo para ver o que ela recusa.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a base bíblica</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">A base bíblica</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que o texto já dizia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Niceia não inventou uma doutrina nova — formalizou o que o texto bíblico já afirmava havia três séculos. João abre seu evangelho dizendo: "No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus... Todas as coisas foram feitas por intermédio dele, e sem ele nada do que foi feito se fez" (João 1:1,3) — se todas as coisas foram feitas por ele, ele mesmo não pode estar na lista das coisas criadas.</p>
+          <p>Paulo escreve algo parecido em Colossenses 1:16-17: "porque nele foram criadas todas as coisas... ele é antes de todas as coisas, e nele subsistem todas as coisas". Hoje, versões modernas do argumento ariano ainda aparecem — por exemplo, no ensino das Testemunhas de Jeová de que Jesus seria uma criatura angelical, não Deus eterno.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 1:1,3</span>
+          <p>No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus... Todas as coisas foram feitas por intermédio dele, e sem ele nada do que foi feito se fez.</p>
+          <span class="ref">— João, abrindo seu evangelho</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Se o Filho fosse criado, a salvação que ele oferece também estaria em dúvida: uma criatura não pode reconciliar criaturas com o Criador infinito. É por isso que a igreja tratou o arianismo não como um detalhe acadêmico, mas como uma ameaça ao próprio evangelho.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do Filho criado</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do Filho eterno</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · a Trindade · lição interativa</footer>
+</div>
+
+<script>
+  const arioData = [
+    { text: "\"Gerado, não criado\" recusa a ideia de que o Filho tenha sido feito \"do nada\", como as criaturas — geração aponta para uma relação eterna dentro da própria natureza de Deus, não um ato de criação no tempo." },
+    { text: "\"Consubstancial ao Pai\" (homoousios, em grego) afirma que o Filho compartilha a mesma substância, a mesma natureza divina do Pai — não uma substância parecida, ou inferior." },
+    { text: "\"Antes de todos os séculos\" recusa diretamente o slogan de Ário — não houve um momento antes do qual o Filho não existia, porque ele está fora do tempo, junto com o Pai." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma criatura excelente, mas criatura";
+      text.textContent = "Se o Filho é a mais excelente das criaturas, mas ainda assim criatura, ele não pode ser o ponto em que a humanidade criada se reconcilia com o Deus infinito e incriado — falta exatamente o elo que só Deus mesmo pode fornecer.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Deus mesmo, vindo salvar";
+      text.textContent = "Se o Filho é plenamente Deus, eterno como o Pai, então a cruz não é um sacrifício de segunda categoria oferecido por um ser inferior — é o próprio Deus assumindo, em pessoa, o custo da salvação.";
+    }
+  }
+</script>
+</body>
+</html>

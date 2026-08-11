@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triteísmo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-trindade.html">Volver</a>
+    <span class="brand-track">A Trindade</span>
+  </div>
+
+  <div class="eyebrow">Heresia · <span class="ref-tag">Deuteronômio 6:4</span></div>
+  <h1>Triteísmo</h1>
+  <p class="sub">O erro simétrico ao modalismo: separar tanto as três pessoas que elas viram, na prática, três deuses distintos — quebrando exatamente a confissão que Israel repetia todos os dias.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="5" cy="9" r="3" stroke-width="1.2"/>
+          <circle cx="13" cy="9" r="3" stroke-width="1.2"/>
+          <circle cx="9" cy="4" r="3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A origem</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O extremo oposto ao modalismo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Se o modalismo une demais as pessoas, o triteísmo faz o inverso: separa tanto o Pai, o Filho e o Espírito Santo que eles deixam de ser um só Deus em três pessoas e passam a ser tratados como três seres divinos distintos, cada um com sua própria essência — na prática, três deuses trabalhando em equipe.</p>
+          <p>No século VI, o filósofo cristão João Filopono, de Alexandria, foi acusado exatamente disso: ao aplicar categorias filosóficas gregas à Trindade — tratando Pai, Filho e Espírito como três indivíduos que compartilham uma mesma "espécie" divina, do jeito que três pessoas humanas compartilham a natureza humana — ele acabou multiplicando a essência de Deus em três essências particulares, ainda que semelhantes.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → por que a analogia falha</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 16" stroke-width="1.3" stroke-dasharray="2 2"/>
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O erro</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Por que a analogia falha</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Três pessoas humanas — como Pedro, Tiago e João — são três instâncias separadas da mesma natureza humana: cada um tem sua própria porção individual de "humanidade", por isso são três seres, não um só. Se Pai, Filho e Espírito fossem "três instâncias" da natureza divina do mesmo jeito, o resultado inevitável seriam três deuses — exatamente o erro do triteísmo.</p>
+          <p>A doutrina ortodoxa da Trindade evita essa armadilha ao afirmar algo mais estreito e mais estranho à lógica humana comum: não são três porções de divindade, é uma só essência divina, numericamente única, subsistindo simultaneamente em três pessoas. Não é uma analogia perfeita de nada que existe no mundo criado — é por isso que é chamado de mistério, não de charada a ser resolvida com comparações humanas.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que Israel repetia todo dia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="2.4" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Por que importa</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"O Senhor nosso Deus é um só"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Ouve, Israel, o Senhor nosso Deus é um só Senhor" (Deuteronômio 6:4) — o Shemá, a confissão mais repetida da fé judaica, recitada diariamente. Jesus a cita como o maior de todos os mandamentos (Marcos 12:29). Nenhuma leitura da Trindade que resulte em três deuses pode se sustentar diante dessa base.</p>
+          <p>Tiago é ainda mais direto: "Tu crês que Deus é um só; fazes bem; os demônios também creem, e estremecem" (Tiago 2:19) — a unicidade de Deus não é um detalhe negociável em nome de explicar melhor as três pessoas. A doutrina cristã da Trindade nunca abandonou o monoteísmo do Antigo Testamento — ela afirma que é exatamente esse Deus único quem se revela como Pai, Filho e Espírito Santo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Deuteronômio 6:4</span>
+          <p>Ouve, Israel, o Senhor nosso Deus é um só Senhor.</p>
+          <span class="ref">— O Shemá, confissão central de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A Trindade não substitui o monoteísmo bíblico por um politeísmo educado a três — ela é a forma como o próprio Deus único de Israel se revelou plenamente, no tempo, sem deixar de ser um só Deus em momento nenhum.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de três deuses</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de um só Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · a Trindade · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma equipe de três divindades";
+      text.textContent = "Se Pai, Filho e Espírito fossem três seres divinos separados, o cristianismo teria abandonado o monoteísmo que herdou de Israel — e a acusação de idolatria que os primeiros cristãos enfrentavam faria sentido.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O mesmo Deus único, revelado em três";
+      text.textContent = "A Trindade insiste em manter as duas verdades juntas, por mais estranho que soe à lógica humana: um só Deus, sem divisão de essência, e três pessoas reais, sem confusão entre elas.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías viu a glória de Jesus — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-trindade.html">Volver</a>
+    <span class="brand-track">A Trindade</span>
+  </div>
+
+  <div class="eyebrow">Contexto bíblico · <span class="ref-tag">Isaías 6 · João 12:41</span></div>
+  <h1>Isaías viu a glória de Jesus</h1>
+  <p class="sub">Setecentos anos antes de Belém, um profeta viu "o Senhor" num trono altíssimo, sublime, cercado de serafins gritando "Santo, santo, santo". O Novo Testamento diz de quem era essa glória.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7 L12 10.5 L13.5 16 L9 12.5 L4.5 16 L6 10.5 L2 7 L7 7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Contexto</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A visão de Isaías no templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"No ano em que morreu o rei Uzias, eu vi o Senhor assentado sobre um trono alto e sublime; e as abas do seu manto enchiam o templo" (Isaías 6:1). Serafins voam ao redor, cobrindo o rosto, clamando uns aos outros: "Santo, santo, santo é o Senhor dos Exércitos; toda a terra está cheia da sua glória!" (v.3).</p>
+          <p>Diante disso, Isaías não se sente privilegiado — se sente condenado: "Ai de mim! Porque sou homem de lábios impuros... os meus olhos viram o Rei, o Senhor dos Exércitos" (v.5). Ver a Deus face a face era, na compreensão judaica, algo que deveria matar um pecador na hora.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o que João diz sobre essa cena</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="7" r="4.5" stroke-width="1.3"/>
+          <path d="M9 11.5 V15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A citação</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O que João diz sobre essa cena</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No fim do capítulo 12, depois de narrar como o povo via os sinais de Jesus e mesmo assim não cria, João cita duas vezes o livro de Isaías para explicar essa descrença (João 12:38-40) — inclusive Isaías 6:10, tirado exatamente do capítulo da visão do trono. Então ele escreve uma frase que muda tudo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, isaiasData, 0, 'isaiasText')">O que Isaías viu</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, isaiasData, 1, 'isaiasText')">O que João afirma</button>
+          </div>
+          <div class="chip-text" id="isaiasText">Toque para comparar os dois textos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → por que isso importa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16 M2 9 H16" stroke-width="1.2"/>
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Por que importa</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um profeta viu Jesus antes de Belém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Isaías 6, quem está no trono é chamado de "o Senhor dos Exércitos" — YHWH Tsevaot, o próprio nome do Deus de Israel. João, sob inspiração, afirma que a glória que Isaías viu ali era a glória de Jesus. Isso só faz sentido se Jesus já existia, já era plenamente Deus, séculos antes de nascer em Belém.</p>
+          <p>É um dos testemunhos mais diretos do Novo Testamento contra qualquer ideia de que o Filho tenha começado a existir num certo ponto — a mesma questão que, três séculos depois, o Concílio de Niceia teria que enfrentar de frente diante da heresia de Ário.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 12:41</span>
+          <p>Isaías disse isso quando viu a glória dele, e falou a respeito dele.</p>
+          <span class="ref">— O evangelho de João, sobre a visão de Isaías 6</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O Antigo e o Novo Testamento não contam duas histórias diferentes sobre Deus — contam a mesma, em capítulos diferentes. O trono que Isaías viu e o Filho que nasceu em Belém são a mesma glória, no mesmo Deus eterno.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do Jesus recente</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do Jesus eterno</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · a Trindade · lição interativa</footer>
+</div>
+
+<script>
+  const isaiasData = [
+    { text: "Isaías 6:1-5 — \"Eu vi o Senhor assentado sobre um trono alto e sublime... o Senhor dos Exércitos\" — o próprio Deus de Israel, num templo cheio da sua glória." },
+    { text: "João 12:41 — \"Isaías disse isso quando viu a glória dele [de Jesus], e falou a respeito dele\" — identificando explicitamente o Senhor do trono com Jesus Cristo." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um Filho que começou em Belém";
+      text.textContent = "Se o Filho passasse a existir apenas com o nascimento, João não poderia dizer que Isaías, setecentos anos antes, já tinha visto a glória dele no templo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um Filho visto antes de nascer";
+      text.textContent = "João lê a visão de Isaías 6 e afirma sem rodeios: era a glória de Jesus. O Filho já era Deus, já reinava, muito antes de tomar carne — não é uma divindade concedida depois, mas eterna.";
+    }
+  }
+</script>
+</body>
+</html>

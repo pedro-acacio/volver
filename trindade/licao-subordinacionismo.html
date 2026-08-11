@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subordinacionismo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-trindade.html">Volver</a>
+    <span class="brand-track">A Trindade</span>
+  </div>
+
+  <div class="eyebrow">Heresia · <span class="ref-tag">Concílio de Constantinopla, 381 d.C.</span></div>
+  <h1>Subordinacionismo</h1>
+  <p class="sub">Um erro mais sutil que o arianismo: aceitar que o Filho e o Espírito são divinos, mas tratá-los como versões "menores" de Deus — confundindo ordem de relação com hierarquia de essência.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4" r="3" stroke-width="1.3"/>
+          <circle cx="9" cy="12" r="2.2" stroke-width="1.2"/>
+          <circle cx="9" cy="17" r="1.4" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A origem</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um erro mais sutil</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diferente do arianismo, que nega que o Filho seja Deus, o subordinacionismo aceita que Filho e Espírito são, de algum modo, divinos — mas os trata como deuses "menores", inferiores em natureza ao Pai, e não apenas diferentes na função que exercem. Elementos dessa ideia já apareciam em teólogos pré-nicenos, e sobreviveram mesmo depois de Niceia (325 d.C.) resolver a questão do Filho, migrando para uma nova disputa: a divindade plena do Espírito Santo.</p>
+          <p>Um grupo chamado pelos adversários de "pneumatômacos" — literalmente, "combatentes do Espírito" — negava que o Espírito Santo fosse plenamente Deus, tratando-o como uma força ou um ser divino de segunda categoria. Foi para resolver essa disputa que o Concílio de Constantinopla, em 381 d.C., expandiu o credo niceno, afirmando também a plena divindade do Espírito Santo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → ordem não é hierarquia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15 M3 9 H15 M3 12 H15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A distinção</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Ordem de relação, não hierarquia de valor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A Bíblia realmente descreve uma ordem entre as pessoas: o Filho é "gerado" do Pai, o Espírito "procede" do Pai, o Filho obedece a missão que o Pai lhe dá, o Espírito é enviado pelo Pai e pelo Filho. Isso é real — mas descreve como as pessoas se relacionam eternamente entre si, não uma escala de quanto cada uma é Deus.</p>
+          <p>É a mesma distinção que aparece dentro da própria missão de Jesus na terra: ele se submete à vontade do Pai (João 6:38) sem deixar de ser plenamente Deus enquanto faz isso — do mesmo jeito que um filho pode obedecer ao pai sem ser menos humano que ele. Confundir ordem de relação com hierarquia de essência é o erro que o subordinacionismo comete.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a base bíblica</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">A base bíblica</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Igual em essência, cena após cena</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sobre o Filho: "Eu e o Pai somos um" (João 10:30); "quem me vê a mim vê o Pai" (João 14:9); e Paulo escreve que Cristo, "sendo em forma de Deus, não teve por usurpação ser igual a Deus" (Filipenses 2:6) — ele já era plenamente igual ao Pai antes de se esvaziar por missão, não se tornou igual depois.</p>
+          <p>Sobre o Espírito: Paulo o compara diretamente ao próprio pensamento de Deus — "quem, dentre os homens, sabe as coisas do homem, senão o espírito do homem, que nele está? Assim também ninguém sabe as coisas de Deus, senão o Espírito de Deus" (1 Coríntios 2:11). E em Atos 5:3-4, mentir ao Espírito Santo é chamado, na mesma frase, de mentir a Deus — sem distinção de grau.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Filipenses 2:6</span>
+          <p>[Cristo Jesus,] sendo em forma de Deus, não teve por usurpação ser igual a Deus.</p>
+          <span class="ref">— Paulo, aos filipenses</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A igualdade do Filho com o Pai não é uma conquista nem uma promoção — é o ponto de partida, algo que ele já possuía plenamente antes de se esvaziar para vir salvar. O mesmo vale para o Espírito: sua obra na vida do crente não é a de um agente menor, é a presença do próprio Deus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão dos deuses menores</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da igualdade plena</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · a Trindade · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma escala de divindade";
+      text.textContent = "Se o Filho e o Espírito fossem versões menores de Deus, a obediência do Filho ao Pai e o envio do Espírito deixariam de ser relação e passariam a ser hierarquia de valor — o que nenhum dos textos que os descrevem realmente sustenta.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ordem sem desigualdade";
+      text.textContent = "O Filho obedece e o Espírito é enviado sem que isso os torne menos Deus — do mesmo jeito que a ordem dentro de uma família não mede o valor de cada pessoa nela. As três pessoas permanecem plenamente iguais em essência, cada uma com seu papel próprio.";
+    }
+  }
+</script>
+</body>
+</html>

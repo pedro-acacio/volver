@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha da Trindade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 20px; display:flex; gap:36px; align-items:center; flex-wrap:wrap; }
+  .hero-text{ flex:1; min-width:260px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .shield{ width:212px; flex-shrink:0; margin:0 auto; }
+  .shield-lbl{ font-family:'Fraunces', serif; font-size:16px; fill: var(--text); font-weight:600; }
+  .shield-lbl-sm{ font-family:'Fraunces', serif; font-size:12.5px; fill: var(--text); font-weight:600; }
+  .shield-rel{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; fill: var(--gold); letter-spacing:.04em; }
+  .shield-rel-sm{ font-family:'IBM Plex Mono', monospace; font-size:9px; fill: var(--gold); letter-spacing:.02em; }
+
+  .stats-row{
+    display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;
+  }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 52px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:8px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:21px; margin:0; }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; }
+  .cat-sub{ font-size:13px; color: var(--text-dim); line-height:1.55; margin: 12px 0 18px; max-width:56ch; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+    .hero{ justify-content:center; text-align:center; }
+    .lede{ margin:0 auto; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.warn{ background: rgba(168,92,107,0.15); color: var(--worry); border:1px solid rgba(168,92,107,0.4); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="eyebrow">Trilha de lições</div>
+      <h1>A Trindade</h1>
+      <p class="lede">Um só Deus, eternamente três pessoas — Pai, Filho e Espírito Santo — cada uma plenamente Deus, nenhuma delas as outras duas. É a doutrina que a Reforma recebeu dos credos antigos como fiel resumo das Escrituras, não como acréscimo a elas. Esta trilha reúne os contextos bíblicos onde ela aparece e as heresias históricas que tentaram simplificá-la.</p>
+      <div class="stats-row">
+        <div class="stat"><b>8</b>disponíveis</div>
+        <div class="stat"><b>8</b>catalogadas</div>
+        <div class="stat"><b>2</b>temas</div>
+      </div>
+    </div>
+
+    <svg class="shield" viewBox="0 0 320 350">
+      <line x1="65" y1="70" x2="255" y2="70" stroke="var(--gold)" stroke-width="1.4" opacity="0.55"/>
+      <line x1="255" y1="70" x2="160" y2="280" stroke="var(--gold)" stroke-width="1.4" opacity="0.55"/>
+      <line x1="160" y1="280" x2="65" y2="70" stroke="var(--gold)" stroke-width="1.4" opacity="0.55"/>
+      <line x1="105" y1="98" x2="128" y2="118" stroke="var(--panel-line)" stroke-width="1.4"/>
+      <line x1="215" y1="98" x2="192" y2="118" stroke="var(--panel-line)" stroke-width="1.4"/>
+      <line x1="160" y1="230" x2="160" y2="176" stroke="var(--panel-line)" stroke-width="1.4"/>
+
+      <text x="160" y="63" text-anchor="middle" class="shield-rel">NÃO É</text>
+      <text x="219" y="167" text-anchor="middle" class="shield-rel" transform="rotate(-65.7 219 167)">NÃO É</text>
+      <text x="101" y="167" text-anchor="middle" class="shield-rel" transform="rotate(65.7 101 167)">NÃO É</text>
+
+      <text x="116" y="112" text-anchor="middle" class="shield-rel-sm">É</text>
+      <text x="204" y="112" text-anchor="middle" class="shield-rel-sm">É</text>
+      <text x="160" y="207" text-anchor="middle" class="shield-rel-sm">É</text>
+
+      <circle cx="65" cy="70" r="50" fill="var(--panel)" stroke="var(--gold)" stroke-width="1.6"/>
+      <circle cx="255" cy="70" r="50" fill="var(--panel)" stroke="var(--gold)" stroke-width="1.6"/>
+      <circle cx="160" cy="280" r="50" fill="var(--panel)" stroke="var(--gold)" stroke-width="1.6"/>
+      <circle cx="160" cy="140" r="36" fill="var(--bg)" stroke="var(--gold)" stroke-width="1.8"/>
+
+      <text x="65" y="76" text-anchor="middle" class="shield-lbl">Pai</text>
+      <text x="255" y="76" text-anchor="middle" class="shield-lbl">Filho</text>
+      <text x="160" y="275" text-anchor="middle" class="shield-lbl-sm">Espírito</text>
+      <text x="160" y="291" text-anchor="middle" class="shield-lbl-sm">Santo</text>
+      <text x="160" y="146" text-anchor="middle" class="shield-lbl">Deus</text>
+    </svg>
+  </div>
+
+  <!-- ===== CONTEXTOS BÍBLICOS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Contextos bíblicos</h2>
+      <span class="cat-count">4 lições</span>
+    </div>
+    <p class="cat-sub">Passagens onde as três pessoas aparecem juntas, ou onde o Antigo e o Novo Testamento se encaixam para revelar a mesma coisa — a base da doutrina, direto do texto.</p>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-batismo-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O Batismo de Jesus</div>
+        <div class="p-ref">Mateus 3:16-17</div>
+        <p class="p-teaser">O Filho é batizado, o Pai fala do céu, o Espírito desce como pomba — as três pessoas presentes no mesmo instante.</p>
+      </a>
+      <a class="p-card available" href="licao-grande-comissao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A Grande Comissão</div>
+        <div class="p-ref">Mateus 28:18-20</div>
+        <p class="p-teaser">"Batizando-os em nome do Pai, e do Filho, e do Espírito Santo" — um só nome, para três pessoas.</p>
+      </a>
+      <a class="p-card available" href="licao-isaias-e-joao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Isaías viu a glória de Jesus</div>
+        <div class="p-ref">Isaías 6 · João 12:41</div>
+        <p class="p-teaser">Setecentos anos antes, um profeta viu "o Senhor assentado sobre um trono alto" — e João diz de quem era a glória.</p>
+      </a>
+      <a class="p-card available" href="licao-bencao-apostolica.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A Bênção Apostólica</div>
+        <div class="p-ref">2 Coríntios 13:14</div>
+        <p class="p-teaser">Graça, amor e comunhão — a despedida mais repetida da igreja cristã já nomeia as três pessoas em uma frase.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== HERESIAS E DISTORÇÕES ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h2 class="cat-title">Heresias e distorções</h2>
+      <span class="cat-count">4 lições</span>
+    </div>
+    <p class="cat-sub">Quatro formas históricas de simplificar demais a Trindade — cada uma resolvendo a tensão do mistério ao custo de negar uma parte do que a Bíblia realmente ensina.</p>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-arianismo.html"><span class="badge warn">Heresia</span>
+        <div class="p-title">Arianismo</div>
+        <div class="p-ref">Concílio de Niceia, 325 d.C.</div>
+        <p class="p-teaser">"Houve quando ele não existia" — Ário ensinava que o Filho foi criado, não é eterno como o Pai.</p>
+      </a>
+      <a class="p-card available" href="licao-modalismo.html"><span class="badge warn">Heresia</span>
+        <div class="p-title">Modalismo</div>
+        <div class="p-ref">Sabélio, séc. III</div>
+        <p class="p-teaser">Pai, Filho e Espírito como três máscaras do mesmo Deus em momentos diferentes — não três pessoas ao mesmo tempo.</p>
+      </a>
+      <a class="p-card available" href="licao-triteismo.html"><span class="badge warn">Heresia</span>
+        <div class="p-title">Triteísmo</div>
+        <div class="p-ref">Deuteronômio 6:4</div>
+        <p class="p-teaser">O erro oposto ao modalismo: tratar Pai, Filho e Espírito como três deuses distintos, quebrando o "Deus é um só".</p>
+      </a>
+      <a class="p-card available" href="licao-subordinacionismo.html"><span class="badge warn">Heresia</span>
+        <div class="p-title">Subordinacionismo</div>
+        <div class="p-ref">Concílio de Constantinopla, 381 d.C.</div>
+        <p class="p-teaser">Fazer do Filho e do Espírito deuses "menores" que o Pai em natureza — não só em papel dentro da Trindade.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha da Trindade · biblioteca de lições</footer>
+</div>
+</body>
+</html>

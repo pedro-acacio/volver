@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Bênção Apostólica — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-trindade.html">Volver</a>
+    <span class="brand-track">A Trindade</span>
+  </div>
+
+  <div class="eyebrow">Contexto bíblico · <span class="ref-tag">2 Coríntios 13:14</span></div>
+  <h1>A Bênção Apostólica</h1>
+  <p class="sub">A despedida mais repetida da igreja cristã — usada até hoje ao fim de cultos — nomeia as três pessoas da Trindade numa única frase, sem nenhum tom de debate: Paulo não está argumentando a doutrina, está pressupondo ela.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 3 H15 V13 H7 L3 16 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Contexto</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O fim de uma carta difícil</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>2 Coríntios é a carta mais pessoal de Paulo — ele defende sua autoridade apostólica diante de opositores que a atacavam, fala abertamente de sofrimentos e fraquezas, e termina com um chamado direto: "Examinai-vos a vós mesmos, se permaneceis na fé" (13:5), avisando que, se for preciso, vai agir com rigor ao chegar (v.1-2).</p>
+          <p>É uma carta de tensão do início ao fim. E mesmo assim, a última frase que Paulo escreve antes de assinar não é uma ameaça — é uma bênção, curta e cheia de conteúdo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a bênção em si</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 4 6 4 10.5 C4 13.5 6.2 16 9 16 C11.8 16 14 13.5 14 10.5 C14 6 9 2 9 2 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A bênção</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Graça, amor e comunhão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"A graça do Senhor Jesus Cristo, e o amor de Deus, e a comunhão do Espírito Santo sejam com vós todos. Amém" (13:14). Três pessoas, três dons diferentes, uma só frase. Toque em cada um:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, bencaoData, 0, 'bencaoText')">A graça do Filho</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, bencaoData, 1, 'bencaoText')">O amor do Pai</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, bencaoData, 2, 'bencaoText')">A comunhão do Espírito</button>
+          </div>
+          <div class="chip-text" id="bencaoText">Toque em cada pessoa para ver o que Paulo atribui a ela.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → por que isso importa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 V6 M9 14 V3 M15 14 V9" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Por que importa</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Doutrina sem tom de debate</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nenhum concílio ainda tinha formalizado a palavra "Trindade" quando Paulo escreveu essa frase, em meados do primeiro século. Ele não está expondo uma tese nova nem se defendendo de uma acusação de heresia — está apenas se despedindo, do jeito mais natural, com uma bênção trinitária que qualquer coríntio da igreja reconheceria sem estranhar.</p>
+          <p>É esse tipo de evidência que mais convence os protestantes de que a Trindade não foi inventada por teólogos depois: ela já estava presente, pressuposta e vivida, na linguagem devocional mais comum da igreja apostólica — décadas antes de qualquer disputa formal sobre o assunto.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">2 Coríntios 13:14</span>
+          <p>A graça do Senhor Jesus Cristo, e o amor de Deus, e a comunhão do Espírito Santo sejam com vós todos. Amém.</p>
+          <span class="ref">— Paulo, encerrando a carta aos coríntios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Uma carta cheia de correção e confronto termina com uma bênção que só faz sentido se as três pessoas são igualmente Deus, igualmente capazes de abençoar, e igualmente dignas de serem invocadas juntas sobre a igreja.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da doutrina tardia</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da fé apostólica</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · a Trindade · lição interativa</footer>
+</div>
+
+<script>
+  const bencaoData = [
+    { text: "\"A graça do Senhor Jesus Cristo\" — o Filho, fonte do favor imerecido que salva (comparar Efésios 2:8)." },
+    { text: "\"O amor de Deus\" — o Pai, cuja iniciativa de amor está por trás de toda a obra de salvação (comparar João 3:16)." },
+    { text: "\"A comunhão do Espírito Santo\" — o Espírito, que une os crentes uns aos outros e a Deus (comparar Filipenses 2:1)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma ideia formulada em concílio";
+      text.textContent = "Se a Trindade fosse uma invenção teológica tardia, seria estranho encontrá-la, décadas antes de qualquer concílio, numa despedida de carta tão corriqueira quanto essa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma fé já vivida antes de ser formulada";
+      text.textContent = "Paulo abençoa em nome das três pessoas com a mesma naturalidade com que fecharia qualquer carta — porque a igreja apostólica já cria e vivia isso, muito antes de precisar defini-lo formalmente.";
+    }
+  }
+</script>
+</body>
+</html>
