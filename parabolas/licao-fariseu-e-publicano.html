@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Fariseu e o Publicano — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+  .split-row{ display:flex; gap:10px; margin: 4px 0 16px; }
+  .split-btn{
+    flex:1; padding: 12px 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'Fraunces', serif;
+    font-size:15px; cursor:pointer; transition: all .25s ease;
+  }
+  .split-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 13 · <span class="ref-tag">Lucas 18:9-14</span></div>
+  <h1>O fariseu e o publicano</h1>
+  <p class="sub">Dois homens sobem ao templo pra orar, no mesmo dia. Toque em cada um para ouvir sua oração — e veja qual dos dois volta pra casa em paz com Deus.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V6" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 16 H14" stroke-width="1.3"/>
+          <path d="M9 6 L5 2 M9 6 L13 2" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Pra quem</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Contada pra quem confiava em si mesmo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus conta essa parábola especificamente <em>"a alguns que confiavam em si mesmos, crendo que eram justos, e desprezavam os outros"</em> (v.9, paráfrase) — o alvo da história já está anunciado antes dela começar.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os dois homens</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A cena</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Dois homens, duas orações</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Dois homens subiram ao templo para orar: um fariseu, e o outro publicano."</em> (v.10, paráfrase) O fariseu era referência de disciplina religiosa; o publicano cobrava impostos para Roma, e era visto como colaborador desonesto do povo. Toque em cada um para ouvir sua oração:</p>
+          <div class="split-row">
+            <button class="split-btn" id="btnFariseu" onclick="showPray('fariseu')">O fariseu</button>
+            <button class="split-btn" id="btnPublicano" onclick="showPray('publicano')">O publicano</button>
+          </div>
+          <div class="chip-text" id="prayText">Toque em um dos dois para ouvir o que ele diz a Deus.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver quem volta justificado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7.5 L12.3 10.8 L13.5 15.5 L9 13 L4.5 15.5 L5.7 10.8 L2 7.5 L7 7 Z" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que desce justificado pra casa</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 18:14</span>
+          <p>Digo-vos que este desceu justificado para sua casa, e não aquele; porque qualquer que a si mesmo se exaltar será humilhado, e aquele que a si mesmo se humilhar será exaltado.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O fariseu não menciona pedido nenhum — a oração dele é uma lista de comparações favoráveis, com Deus como plateia. O publicano não tem lista nenhuma para apresentar; só um pedido, curto, sem tentar equilibrar a própria conta antes de pedir. É esse o único que Jesus diz que voltou justificado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da lista de méritos</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do pedido simples</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showPray(who){
+    document.getElementById('btnFariseu').classList.remove('active');
+    document.getElementById('btnPublicano').classList.remove('active');
+    const text = document.getElementById('prayText');
+    if (who === 'fariseu'){
+      document.getElementById('btnFariseu').classList.add('active');
+      text.textContent = "\"Ó Deus, graças te dou, que não sou como os demais homens, roubadores, injustos, adúlteros, nem ainda como este publicano; jejuo duas vezes na semana, e dou dízimos de tudo quanto possuo.\" (v.11-12, paráfrase) — de pé, em posição de destaque, comparando-se a todos ao redor.";
+    } else {
+      document.getElementById('btnPublicano').classList.add('active');
+      text.textContent = "De longe, sem nem ousar levantar os olhos ao céu, batendo no peito: \"Ó Deus, sê propício a mim, pecador.\" (v.13, paráfrase) — sem comparação com ninguém, só um pedido.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Orar apresentando provas";
+      text.textContent = "A oração do fariseu não é mentirosa — ele provavelmente fazia mesmo o que dizia. O problema é a forma: uma lista de créditos, comparada com o débito alheio, como se a proximidade com Deus fosse algo a se conquistar por pontuação.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Pedir sem currículo";
+      text.textContent = "O publicano não tem nada de bom pra listar, e não tenta inventar. A oração dele é curta porque não tem tempo perdido comparando com o fariseu ao lado. Esse é o padrão que a parábola aprova: chegar sem currículo, e pedir mesmo assim.";
+    }
+  }
+</script>
+</body>
+</html>

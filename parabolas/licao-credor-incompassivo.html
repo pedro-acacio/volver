@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Credor Incompassivo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+  .scale-row{ display:flex; align-items:center; gap:14px; margin: 14px 0; flex-wrap:wrap; }
+  .scale-item{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); }
+  .scale-item b{ display:block; color: var(--gold); font-size:15px; font-family:'Fraunces', serif; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 11 · <span class="ref-tag">Mateus 18:21-35</span></div>
+  <h1>O credor incompassivo</h1>
+  <p class="sub">Um servo perdoado de uma dívida impossível de pagar, que sai e prende um colega por uma dívida pequena. Avance para ver o que o rei tinha em mente ao perdoar — e o que o servo esqueceu.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A pergunta</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Quantas vezes devo perdoar?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro pergunta a Jesus quantas vezes deve perdoar quem peca contra ele — "até sete vezes?" (v.21). Jesus responde: <em>"Não te digo que até sete; mas até setenta vezes sete."</em> (v.22, paráfrase) — não é um número pra guardar contagem, é o oposto: parar de contar.</p>
+          <p>Para explicar o porquê, ele conta uma história sobre dois credores muito diferentes.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o primeiro credor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 5 V13 M6.5 7 H11.5 M6.5 11 H11.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O acerto de contas</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Uma dívida impossível de pagar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um rei decide acertar as contas com seus servos. Um deles devia dez mil talentos — uma quantia tão grande que o próprio texto a usa como exagero deliberado (v.23-24).</p>
+          <div class="scale-row">
+            <div class="scale-item"><b>10.000 talentos</b>décadas de trabalho pra pagar</div>
+            <div class="scale-item"><b>100 denários</b>cerca de 100 dias de trabalho</div>
+          </div>
+          <p>Como ele não tem como pagar, o rei ordena que ele, a esposa, os filhos e tudo o que possui sejam vendidos (v.25). O servo se prostra: <em>"Senhor, sê generoso para comigo, e tudo te pagarei."</em> (v.26, paráfrase) — uma promessa impossível de cumprir, e ainda assim: <em>"O senhor daquele servo, movido de íntima compaixão, soltou-o e perdoou-lhe a dívida."</em> (v.27, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o segundo devedor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+          <path d="M8 8 L11 10" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Logo depois</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O mesmo servo, um colega devedor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Saindo dali, esse mesmo servo encontra um colega que lhe devia cem denários — uma fração mínima do que ele acabara de ser perdoado. Ele o segura pelo pescoço: <em>"Paga-me o que me deves."</em> (v.28, paráfrase)</p>
+          <p>O colega usa quase as mesmas palavras que ele mesmo tinha usado com o rei: <em>"Sê generoso para comigo, e tudo te pagarei."</em> (v.29, paráfrase) Mas ele se recusa, e o manda prender até que pague a dívida (v.30).</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 6 C6 3 8 1.5 9 1.5 C10 1.5 12 3 12 6 C12 8 9 9 9 11.5 M9 15 V15.3" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A dívida que ele esqueceu ter perdoado a si</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 18:33</span>
+          <p>Não devias tu, igualmente, ter compaixão do teu companheiro, como eu também tive compaixão de ti?</p>
+          <span class="ref">— paráfrase, pergunta do rei</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Outros servos veem a cena e contam tudo ao rei, indignados (v.31). O rei chama o primeiro servo de volta: <em>"Servo mau, perdoei-te toda aquela dívida, porque me suplicaste."</em> (v.32, paráfrase) E entrega o servo aos torturadores até que pague tudo (v.34).</p>
+          <p>O que muda entre as duas cenas não é a lógica — nas duas, alguém devia mais do que podia pagar, e pediu paciência. Muda só quem está do outro lado da mesa: primeiro, o servo estava sendo perdoado; depois, ele podia perdoar, e escolheu cobrar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da dívida lembrada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da dívida esquecida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Cobrar o que ainda é pequeno";
+      text.textContent = "Cem denários realmente eram uma dívida real — o servo não estava inventando nada. Mas tratar uma dívida pequena com o rigor que ele mesmo escapou por pouco é um padrão que separa a própria história da história do outro, como se fossem casos diferentes.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Perdoar a partir do que já foi perdoado";
+      text.textContent = "A parábola não pede pra fingir que a dívida pequena não existe — pede pra lembrar de qual dívida maior já foi cancelada antes dela. É essa lembrança, mais do que boa vontade, que sustenta o padrão que Jesus propõe a Pedro.";
+    }
+  }
+</script>
+</body>
+</html>

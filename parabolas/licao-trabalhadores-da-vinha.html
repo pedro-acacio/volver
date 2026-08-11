@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os Trabalhadores da Vinha — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 12 · <span class="ref-tag">Mateus 20:1-16</span></div>
+  <h1>Os trabalhadores da vinha</h1>
+  <p class="sub">Um dono de vinha contrata trabalhadores em cinco horários diferentes do dia — e paga o mesmo a todos. Avance para ver a reação de quem trabalhou mais, e o que o dono responde.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 5 V9 L12 11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O dia</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Cinco chamados, cinco horários</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um dono de propriedade sai de manhã cedo para contratar trabalhadores para sua vinha. Com o primeiro grupo, ele combina um denário pelo dia (v.1-2) — um valor justo, aceito por ambos os lados.</p>
+          <p>Ele volta à praça em quatro outros horários do dia, e cada vez encontra gente parada, sem trabalho. Toque em cada horário, na ordem:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, horaData, 0, 'horaText')">9h da manhã</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, horaData, 1, 'horaText')">Meio-dia</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, horaData, 2, 'horaText')">15h</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, horaData, 3, 'horaText')">17h · quase no fim</button>
+          </div>
+          <div class="chip-text" id="horaText">Toque em cada horário para ver o convite feito a cada grupo.</div>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o pagamento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <path d="M9 5.5 V12.5 M6.8 7 H11.2 M6.8 11 H11.2" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O pagamento</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O último recebe primeiro — e recebe igual</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No fim do dia, o dono manda pagar todos, começando pelos últimos contratados (v.8). Quem trabalhou só uma hora recebe um denário inteiro (v.9) — o mesmo valor combinado com o primeiro grupo, que trabalhou o dia inteiro sob o sol.</p>
+          <p>Quando chega a vez dos primeiros, eles esperam receber mais — e recebem exatamente o mesmo denário (v.10). <em>"E, ao recebê-lo, murmuravam contra o pai de família."</em> (v.11, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(3)">Ver a resposta do dono</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 C4 12 0 8.5 0 4.8 C0 2 2.2 0 4.8 0 C6.6 0 8.2 1 9 2.4 C9.8 1 11.4 0 13.2 0 C15.8 0 18 2 18 4.8 C18 8.5 14 12 9 16 Z" stroke-width="1.2" transform="scale(0.85) translate(1.3,1)"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"É mau o teu olho, porque eu sou bom?"</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 20:13-15</span>
+          <p>Amigo, não te faço agravo; não combinaste tu comigo por um denário? [...] Ou não me é lícito fazer o que quero do que é meu? Ou é mau o teu olho, porque eu sou bom?</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O dono não nega o que foi combinado — ele cumpriu exatamente o que prometeu ao primeiro grupo. O que os trabalhadores da manhã perdem não é o valor combinado; é a sensação de vantagem que tinham antes de ver o que os outros receberam. A murmuração só nasce na comparação, não no contrato.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da comparação</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do combinado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const horaData = [
+    { text: "'Ide também vós para a vinha, e dar-vos-ei o que for justo' — sem um valor fixo combinado, só uma promessa de justiça (v.3-4, paráfrase)." },
+    { text: "O dono sai de novo e encontra outros parados na praça, e os envia com a mesma promessa (v.5, paráfrase)." },
+    { text: "Mais uma saída, mais gente parada — o dia já está avançado, e ele continua chamando (v.5, paráfrase)." },
+    { text: "'Por que estais aqui todo o dia ociosos?' — 'Porque ninguém nos contratou.' Mesmo faltando pouco mais de uma hora, ele os manda também (v.6-7, paráfrase)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Medir o que recebi pelo que o outro recebeu";
+      text.textContent = "O denário do primeiro grupo era justo até o momento em que viram o denário do último grupo. Esse padrão transforma um acordo cumprido em injustiça só porque outra pessoa foi tratada com a mesma generosidade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Honrar o que foi combinado comigo";
+      text.textContent = "O dono pergunta se o próprio olhar é que ficou mau diante da bondade alheia. Esse padrão mede a própria vida pelo que foi prometido a ela, e deixa a generosidade recebida por outra pessoa ser dela, sem que isso precise tirar nada da sua.";
+    }
+  }
+</script>
+</body>
+</html>
