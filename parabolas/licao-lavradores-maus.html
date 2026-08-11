@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os Lavradores Maus — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 25 · <span class="ref-tag">Mateus 21:33-46</span></div>
+  <h1>Os lavradores maus</h1>
+  <p class="sub">Um dono aluga sua vinha e viaja. A cada mensageiro que envia para receber os frutos, os lavradores respondem pior. Avance para ver até onde vai essa escalada — e o que ela custa a eles.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V6" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M2 16 H16" stroke-width="1.3"/>
+          <path d="M9 6 L5 2 M9 6 L13 2" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A vinha</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Tudo preparado, depois alugado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um dono planta uma vinha, cerca com uma sebe, cava um lagar, constrói uma torre — investe pesado antes de sequer ver o primeiro fruto. Depois, aluga a vinha a uns lavradores, e viaja para longe (v.33, paráfrase).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os servos enviados</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="2.3" stroke-width="1.2"/>
+          <circle cx="12" cy="6" r="2.3" stroke-width="1.2"/>
+          <circle cx="9" cy="12.5" r="2.3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A colheita</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Cada mensageiro tratado pior que o anterior</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na época da colheita, ele manda servos para receber os frutos que lhe cabiam. Os lavradores espancam um, matam outro, apedrejam um terceiro (v.34-35, paráfrase). Ele manda ainda mais servos que os primeiros — e recebem o mesmo tratamento (v.36, paráfrase).</p>
+          <p>Repare que o dono não desiste depois da primeira violência — continua enviando, como se ainda esperasse alguma resposta diferente.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o filho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="5" r="3" stroke-width="1.2"/>
+          <path d="M3 17 C3 12.5 6 10.5 9 10.5 C12 10.5 15 12.5 15 17" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">O último recurso</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Terão respeito ao meu filho"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Por fim, enviou-lhes seu filho, dizendo: Terão respeito a meu filho."</em> (v.37, paráfrase) Mas os lavradores pensam diferente: <em>"Este é o herdeiro; vinde, matemo-lo, e apoderemo-nos da sua herança."</em> (v.38, paráfrase) Eles o lançam fora da vinha e o matam (v.39).</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 C4 6 10 2 16 4 C13 6 11 10 9 15" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A vinha entregue a outros lavradores</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 21:42</span>
+          <p>A pedra que os edificadores rejeitaram, essa foi posta como cabeça de esquina.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus pergunta aos ouvintes o que o dono da vinha fará com aqueles lavradores quando voltar. Eles mesmos respondem: destruirá aqueles homens maus, e arrendará a vinha a outros, que lhe deem os frutos a seu tempo (v.40-41, paráfrase). Os lavradores tratavam a vinha como se já fosse deles, esquecendo que só a estavam cultivando — cada recusa em entregar o fruto era, na prática, uma tentativa de tomar posse do que nunca tinha sido deles.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de tomar posse do que não é seu</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de dar os frutos a seu tempo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Confundir cuidar com ser dono";
+      text.textContent = "Os lavradores cuidaram tanto da vinha, por tanto tempo, que passaram a tratá-la como propriedade própria. Esse padrão transforma responsabilidade temporária em posse imaginária — e reage com violência a qualquer lembrete de que a vinha nunca foi deles.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Entregar o fruto quando chega a hora";
+      text.textContent = "A vinha nova, entregue a outros lavradores, recebe a mesma condição desde o início: dar os frutos a seu tempo. É esse o padrão simples que evita toda a escalada da história — lembrar de quem é o dono, e agir de acordo.";
+    }
+  }
+</script>
+</body>
+</html>

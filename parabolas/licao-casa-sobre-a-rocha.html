@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Casa Sobre a Rocha — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+  .split-row{ display:flex; gap:10px; margin: 4px 0 16px; }
+  .split-btn{
+    flex:1; padding: 12px 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'Fraunces', serif;
+    font-size:15px; cursor:pointer; transition: all .25s ease;
+  }
+  .split-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 27 · <span class="ref-tag">Mateus 7:24-27</span></div>
+  <h1>A casa sobre a rocha</h1>
+  <p class="sub">Duas casas, construídas por quem ouviu exatamente as mesmas palavras. A mesma tempestade cai sobre as duas. Toque em cada uma para ver o que decide se ela resiste ou desaba.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O mesmo ponto de partida</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Duas pessoas, as mesmas palavras ouvidas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Todo aquele, pois, que ouve estas minhas palavras, e as pratica, será comparado a um homem prudente, que edificou a sua casa sobre a rocha."</em> (v.24, paráfrase) <em>"E aquele que ouve estas minhas palavras, e não as pratica, será comparado a um homem insensato, que edificou a sua casa sobre a areia."</em> (v.26, paráfrase)</p>
+          <p>Repare: os dois ouviram a mesma coisa. Nenhum deles é descrito como ignorante da mensagem — a diferença acontece depois de ouvir.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a tempestade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 H16 M4 12 V16 H14 V12 M2 12 L9 3 L16 12" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A tempestade</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A mesma chuva, o mesmo vento, dois resultados</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada casa para ver o que acontece quando a tempestade chega:</p>
+          <div class="split-row">
+            <button class="split-btn" id="btnRocha" onclick="showCasa('rocha')">Casa sobre a rocha</button>
+            <button class="split-btn" id="btnAreia" onclick="showCasa('areia')">Casa sobre a areia</button>
+          </div>
+          <div class="chip-text" id="casaText">Toque em uma das duas casas para ver o que a tempestade faz com ela.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M6 9 L8.5 11.5 L12.5 6.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A diferença estava na fundação, antes da chuva</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 7:24</span>
+          <p>Todo aquele, pois, que ouve estas minhas palavras, e as pratica, compará-lo-ei ao homem prudente, que edificou a sua casa sobre a rocha.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Ninguém escolhe a fundação da própria casa no meio da tempestade — a essa altura, já é tarde demais. A escolha acontece antes, no momento silencioso de decidir se o que foi ouvido vira prática ou só fica guardado. A tempestade não cria a diferença entre as duas casas; ela só revela uma diferença que já existia.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de ouvir sem praticar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ouvir e agir</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showCasa(qual){
+    document.getElementById('btnRocha').classList.remove('active');
+    document.getElementById('btnAreia').classList.remove('active');
+    const text = document.getElementById('casaText');
+    if (qual === 'rocha'){
+      document.getElementById('btnRocha').classList.add('active');
+      text.textContent = "\"E desceu a chuva, e correram rios, e assopraram ventos, e combateram aquela casa, e não caiu, porque estava fundada sobre a rocha.\" (v.25, paráfrase)";
+    } else {
+      document.getElementById('btnAreia').classList.add('active');
+      text.textContent = "\"E desceu a chuva, e correram rios, e assopraram ventos, e deram com ímpeto contra aquela casa, e caiu, e foi grande a sua ruína.\" (v.27, paráfrase)";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Confundir ouvir com estar preparado";
+      text.textContent = "O homem insensato não é descrito como alguém que rejeitou a mensagem — ele a ouviu, do mesmo jeito que o outro. O padrão que o deixa vulnerável é achar que ouvir já basta, sem transformar isso em prática antes que a tempestade chegue.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Praticar enquanto o tempo está calmo";
+      text.textContent = "A casa sobre a rocha não foi construída durante a tempestade — foi construída antes, num dia comum, sem pressão nenhuma. É esse o padrão que a parábola valoriza: transformar o que se ouve em prática enquanto ainda há tempo de escolher a fundação.";
+    }
+  }
+</script>
+</body>
+</html>

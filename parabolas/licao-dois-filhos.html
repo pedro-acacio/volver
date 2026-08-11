@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os Dois Filhos — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 24 · <span class="ref-tag">Mateus 21:28-32</span></div>
+  <h1>Os dois filhos</h1>
+  <p class="sub">Um pai pede a dois filhos que trabalhem na vinha. Um diz sim e não vai. O outro diz não e vai mesmo assim. Avance para ver qual dos dois Jesus considera ter feito a vontade do pai.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">O pedido</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Vai trabalhar hoje na vinha"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um homem tinha dois filhos. Ele vai ao primeiro: <em>"Filho, vai trabalhar hoje na vinha."</em> (v.28, paráfrase) — o mesmo pedido, mais tarde, é feito ao segundo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as duas respostas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V6" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M2 16 H16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">As respostas</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Palavras e ações não combinam</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada filho para ver a resposta dele:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="selectChip(this, filhoData, 0, 'filhoText')">O primeiro filho</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, filhoData, 1, 'filhoText')">O segundo filho</button>
+          </div>
+          <div class="chip-text" id="filhoText">Toque em cada filho para ver o que ele diz — e o que ele faz depois.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M6 9 L8.5 11.5 L12.5 6.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Qual dos dois fez a vontade do pai?</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 21:31</span>
+          <p>Qual dos dois fez a vontade do pai? Disseram-lhe eles: O primeiro. Disse-lhes Jesus: Em verdade vos digo que os publicanos e as meretrizes entram adiante de vós no Reino de Deus.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus conta essa parábola pra líderes religiosos que se consideravam obedientes por profissão, mas rejeitaram o chamado ao arrependimento — enquanto pessoas vistas como pecadoras notórias o aceitaram. O critério que decide não é a resposta dada no início, é o que realmente aconteceu depois dela.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da promessa vazia</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do arrependimento que age</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const filhoData = [
+    { text: "\"Não quero\", respondeu — mas depois, arrependido, foi (v.29, paráfrase). A primeira palavra dele foi recusa; a última atitude foi obediência." },
+    { text: "\"Eu vou, senhor\", respondeu — mas não foi (v.30, paráfrase). A primeira palavra dele foi a certa; a atitude nunca chegou a acontecer." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Responder certo e parar por aí";
+      text.textContent = "O segundo filho não teve intenção de enganar o pai — provavelmente pretendia mesmo ir. Mas dizer a coisa certa alivia a cobrança do momento, e esse alívio pode ser confundido com ter cumprido a tarefa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Corrigir o rumo depois do primeiro não";
+      text.textContent = "O primeiro filho não fica bem na primeira resposta — mas muda de ideia antes de a história terminar. Esse é o padrão que Jesus elogia: o valor está em onde a pessoa termina, não em como ela começa.";
+    }
+  }
+</script>
+</body>
+</html>

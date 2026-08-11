@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As Ovelhas e os Cabritos — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 26 · <span class="ref-tag">Mateus 25:31-46</span></div>
+  <h1>As ovelhas e os cabritos</h1>
+  <p class="sub">A separação final descrita por Jesus não depende de doutrina recitada — depende de gestos simples, feitos ou não feitos, por quem nem sempre percebeu a quem estava servindo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 2 V16 M2 9 H16" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A cena</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Todas as nações, um único trono</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quando o Filho do homem vier em sua glória, com todos os anjos, se assentará no trono e todas as nações serão reunidas diante dele — e ele as separará umas das outras, como o pastor separa as ovelhas dos cabritos (v.31-33, paráfrase).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os gestos que contam</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 6 6 6 9 C6 11 7.5 12.5 9 12.5 C10.5 12.5 12 11 12 9 C12 6 9 2 9 2 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A ovelhas, à direita</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Quando fizeste isso, foi a mim"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao grupo da direita, o rei lista o que fizeram: deram de comer a quem tinha fome, deram de beber a quem tinha sede, acolheram o estrangeiro, vestiram quem estava nu, visitaram o doente, foram ao preso (v.35-36, paráfrase). Toque em cada gesto:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="selectChip(this, gestoData, 0, 'gestoText')">Fome e sede</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, gestoData, 1, 'gestoText')">Estrangeiro e nudez</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, gestoData, 2, 'gestoText')">Doença e prisão</button>
+          </div>
+          <div class="chip-text" id="gestoText">Toque em cada dupla de gestos para ver a resposta dos justos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.3"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.3" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Quando te vimos assim?"</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 25:40</span>
+          <p>Em verdade vos digo que, quando o fizestes a um destes meus pequeninos irmãos, a mim o fizestes.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Os dois grupos fazem a mesma pergunta: <em>"Quando te vimos com fome... com sede... estrangeiro... nu... doente... preso?"</em> (v.37-39, 44, paráfrase) Nenhum dos dois lados sabia, no momento do gesto, que estava lidando com o próprio Rei. A diferença entre eles não foi ter reconhecido isso — foi ter agido, ou não, mesmo sem saber.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de precisar reconhecer pra agir</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de servir sem saber que era a ele</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const gestoData = [
+    { text: "\"Porque tive fome, e me destes de comer; tive sede, e me destes de beber.\" (v.35, paráfrase) — necessidades básicas, atendidas sem cerimônia." },
+    { text: "\"Era estrangeiro, e me acolhestes; estava nu, e me vestistes.\" (v.35-36, paráfrase) — acolher quem não pertence, cobrir quem está exposto." },
+    { text: "\"Estive enfermo, e me visitastes; estive preso, e fostes ver-me.\" (v.36, paráfrase) — presença, mesmo quando não há nada prático a resolver." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Esperar um sinal antes de agir";
+      text.textContent = "É tentador pensar que ajudaríamos mais, ou melhor, se soubéssemos que o gesto tinha peso espiritual. Mas os dois grupos da parábola agiram — ou deixaram de agir — sem esse sinal. Esperar por ele é, na prática, um jeito de adiar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Servir quem está na frente, sem precisar de prova";
+      text.textContent = "As ovelhas da parábola não sabiam a quem estavam servindo — só viram alguém com fome, ou frio, ou sozinho, e agiram. É esse o padrão que a passagem valoriza: o gesto concreto, feito antes de qualquer reconhecimento.";
+    }
+  }
+</script>
+</body>
+</html>
