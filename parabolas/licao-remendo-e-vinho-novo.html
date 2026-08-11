@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Remendo Novo e o Vinho Novo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 30 · <span class="ref-tag">Mateus 9:16-17</span></div>
+  <h1>O remendo novo e o vinho novo</h1>
+  <p class="sub">Duas imagens simples sobre o que acontece quando se tenta encaixar algo novo dentro de uma estrutura velha demais pra recebê-lo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A pergunta</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Por que os discípulos não jejuam?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Perguntam a Jesus por que os discípulos de João e dos fariseus jejuam, mas os dele não (v.14, paráfrase). Ele responde com duas imagens curtas, do dia a dia, sobre o que é próprio de cada momento.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as duas imagens</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 8 H16 C16 12.5 13 16 9 16 C5 16 2 12.5 2 8 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">As imagens</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O remendo e o odre</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada imagem, na ordem em que Jesus as usa:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, imgData, 0, 'imgText')">O remendo novo</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, imgData, 1, 'imgText')">O vinho novo</button>
+          </div>
+          <div class="chip-text" id="imgText">Toque em cada imagem para ver o que acontece quando o novo é forçado dentro do velho.</div>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.5" stroke-width="1.3"/>
+          <path d="M9 1 V4 M9 14 V17 M1 9 H4 M14 9 H17" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O novo pede um espaço próprio</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 9:17</span>
+          <p>Põe-se o vinho novo em odres novos, e ambos se conservam.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nas duas imagens, o problema não é o remendo nem o vinho em si — é a combinação forçada. O tecido velho não tem elasticidade pra acompanhar o encolhimento do remendo novo; o odre velho não tem flexibilidade pra suportar a fermentação do vinho novo. Nos dois casos, o resultado é pior do que se cada coisa tivesse ficado no seu lugar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de forçar o encaixe</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do espaço novo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const imgData = [
+    { text: "\"Ninguém põe remendo de pano novo em veste velha, porque o remendo novo rompe o velho, e faz-se maior a rotura.\" (v.16, paráfrase) — o próprio conserto acaba piorando o rasgo original." },
+    { text: "\"Nem se põe vinho novo em odres velhos; do contrário, os odres se rompem, o vinho se derrama, e os odres se perdem.\" (v.17, paráfrase) — a estrutura velha não aguenta o processo do que é novo, e os dois se perdem juntos." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Manter a forma antiga a qualquer custo";
+      text.textContent = "Insistir em encaixar algo novo dentro de uma estrutura que não foi pensada pra ele parece economia — usar o que já existe — mas as duas imagens mostram que o resultado costuma ser perder as duas coisas, a velha e a nova.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Reconhecer quando é hora de um odre novo";
+      text.textContent = "As duas imagens não condenam o velho nem exaltam o novo por si só — apontam pra sabedoria de dar a cada coisa o espaço certo. Esse padrão permite que o novo cresça sem destruir o que já existia, e vice-versa.";
+    }
+  }
+</script>
+</body>
+</html>

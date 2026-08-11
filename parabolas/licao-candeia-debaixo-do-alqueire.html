@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Candeia Debaixo do Alqueire — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 29 · <span class="ref-tag">Mateus 5:14-16</span></div>
+  <h1>A candeia debaixo do alqueire</h1>
+  <p class="sub">Ninguém acende uma candeia pra depois escondê-la. Avance para ver por que Jesus trata esconder a própria luz como algo tão absurdo quanto isso.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.5" stroke-width="1.3"/>
+          <path d="M9 1 V4 M9 14 V17 M1 9 H4 M14 9 H17" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A afirmação</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Vós sois a luz do mundo"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Vós sois a luz do mundo; não se pode esconder uma cidade edificada sobre um monte."</em> (v.14, paráfrase) Jesus não está dando uma instrução — está descrevendo um fato: uma cidade no alto de um monte simplesmente não passa despercebida, quer alguém queira ou não.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a candeia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 2 H12 V6 C12 8 10.5 9 9 9 C7.5 9 6 8 6 6 Z" stroke-width="1.2"/>
+          <path d="M9 9 V15" stroke-width="1.2"/>
+          <path d="M4 15 H14" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O absurdo</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Acender e depois esconder</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Ninguém acende uma candeia e a coloca debaixo do alqueire, mas no velador, e alumia a todos que estão na casa."</em> (v.15, paráfrase) A pergunta que a passagem de Marcos faz é ainda mais direta: <em>"Vem porventura a candeia para ser posta debaixo do alqueire, ou debaixo da cama? Não é para ser posta no velador?"</em> (Marcos 4:21, paráfrase)</p>
+          <p>O ato de acender já pressupõe o propósito de iluminar — escondê-la depois desfaz o próprio motivo de tê-la acendido.</p>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 L6 3 M9 5 L12 3 M9 9 L6 7 M9 9 L12 7 M9 13 L6 11 M9 13 L12 11" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Uma luz que existe pra ser vista</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 5:16</span>
+          <p>Assim resplandeça a vossa luz diante dos homens, para que vejam as vossas boas obras, e glorifiquem a vosso Pai que está nos céus.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Esconder a própria luz costuma parecer humildade, ou segurança — mas a parábola trata isso como desperdício, não como virtude. A luz não foi acesa pra ficar reservada; foi acesa pra iluminar quem está por perto.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de esconder a luz</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de deixá-la no lugar certo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Diminuir por parecer mais seguro";
+      text.textContent = "Colocar a candeia debaixo do alqueire evita chamar atenção — mas também apaga o propósito de tê-la acendido. Esse padrão troca o risco de ser visto pela certeza de não iluminar nada.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Deixar a luz onde ela já foi posta";
+      text.textContent = "A candeia não precisa se esforçar pra brilhar mais — só precisa ficar no velador, em vez de ser escondida. É esse o padrão simples que a parábola propõe: não inventar mais luz, só parar de escondê-la.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Porta Estreita — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 31 · <span class="ref-tag">Lucas 13:22-30</span></div>
+  <h1>A porta estreita</h1>
+  <p class="sub">Alguém pergunta a Jesus quantos serão salvos. Ele não responde com um número — responde com um convite pra agir agora, antes que a porta feche.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A pergunta</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"São poucos os que se salvam?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Alguém pergunta: <em>"Senhor, são poucos os que se salvam?"</em> (v.23, paráfrase) — uma pergunta sobre números, sobre estatística. Jesus responde de outro jeito.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a resposta dele</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 2 V16 M12 2 V16 M6 9 H12" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A resposta</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Esforçai-vos por entrar"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Esforçai-vos por entrar pela porta estreita; porque eu vos digo que muitos procurarão entrar, e não poderão."</em> (v.24, paráfrase) Em vez de um número, Jesus devolve uma ação: esforçar-se agora, em vez de calcular a probabilidade dos outros.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a porta que fecha</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 H16 M4 12 V16 H14 V12 M2 12 L9 3 L16 12" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">A cena</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Não sei donde sois"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus descreve o que acontece depois que <em>"o pai de família se levantar, e fechar a porta"</em>: gente do lado de fora bate, dizendo <em>"Senhor, Senhor, abre-nos"</em> — e ele responde: <em>"Não sei donde sois."</em> (v.25, paráfrase)</p>
+          <p>Eles insistem: <em>"Comemos e bebemos na tua presença, e tu ensinaste nas nossas ruas."</em> (v.26, paráfrase) — ou seja, estar por perto, ter assistido, ter convivido. Mesmo assim, a resposta se repete (v.27).</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V2 M9 2 L4 7 M9 2 L14 7" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Últimos que serão primeiros</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 13:30</span>
+          <p>Eis que há últimos que serão primeiros, e primeiros que serão últimos.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A cena termina com gente vendo Abraão, Isaque, Jacó e os profetas dentro, e eles mesmos do lado de fora, chorando (v.28-29, paráfrase). Estar perto de Jesus — assistir, ouvir, conviver — nunca substitui entrar pela porta estreita. A proximidade não é a mesma coisa que o esforço que a pergunta original pedia.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de contar com a proximidade</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do esforço real</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Confundir estar perto com ter entrado";
+      text.textContent = "Quem bate na porta fechada tem argumentos reais: comeram, beberam, ouviram os ensinamentos de perto. Esse padrão troca a ação de entrar pelo conforto de ter estado por perto o tempo todo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Agir enquanto a porta ainda está aberta";
+      text.textContent = "\"Esforçai-vos por entrar\" é um verbo no presente — não pede pra ter estado perto no passado, pede uma ação agora. É esse o padrão que a parábola valoriza: entrar de fato, em vez de contar com a proximidade.";
+    }
+  }
+</script>
+</body>
+</html>

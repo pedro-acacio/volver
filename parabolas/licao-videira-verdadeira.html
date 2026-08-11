@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Videira Verdadeira — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 35 · <span class="ref-tag">João 15:1-8</span></div>
+  <h1>A videira verdadeira</h1>
+  <p class="sub">Um ramo não produz fruto por esforço próprio — produz enquanto permanece ligado à videira. Avance para ver o que Jesus tira dessa imagem simples sobre onde o fruto realmente nasce.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 17 V10 M9 10 L5 5 M9 10 L13 5 M9 13 L4 9 M9 13 L14 9" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A videira e o lavrador</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Meu Pai é o lavrador"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Eu sou a videira verdadeira, e meu Pai é o lavrador. Toda a vara em mim que não dá fruto, ele a corta; e toda a que dá fruto, ele a limpa, para que dê mais fruto ainda."</em> (v.1-2, paráfrase)</p>
+          <p>Repare que a ação — cortar, limpar — é sempre do lavrador. O ramo não decide sozinho quanto vai produzir.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → permanecer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="2.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A condição</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Sem mim nada podeis fazer"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Permanecei em mim, e eu permanecerei em vós; como a vara de si mesma não pode dar fruto, se não permanecer na videira, assim também vós, se não permanecerdes em mim."</em> (v.4, paráfrase)</p>
+          <p><em>"Eu sou a videira, vós as varas [...] porque sem mim nada podeis fazer."</em> (v.5, paráfrase) — o fruto nunca é descrito como esforço isolado do ramo, é consequência de estar ligado.</p>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 L6 3 M9 5 L12 3 M9 9 L6 7 M9 9 L12 7 M9 13 L6 11 M9 13 L12 11" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O fruto que glorifica o Pai</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 15:8</span>
+          <p>Nisto é glorificado meu Pai, em que deis muito fruto; e assim sereis meus discípulos.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus também descreve o outro lado: quem não permanece é lançado fora, como o ramo que seca e é queimado (v.6, paráfrase) — uma imagem dura, mas consistente com o resto: o ramo separado da videira não tem função nenhuma além de ser combustível. O fruto nunca foi o objetivo direto de esforço; é o resultado natural de permanecer ligado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do esforço isolado</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de permanecer ligado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Tentar produzir fruto por conta própria";
+      text.textContent = "Um ramo cortado da videira pode parecer, por um tempo, que ainda está bem — mas sem a fonte, não tem como sustentar fruto nenhum. Esse padrão confunde esforço isolado com produtividade real.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Deixar o fruto vir como consequência";
+      text.textContent = "Permanecer ligado à videira não é uma tarefa a mais — é a condição que já contém o fruto dentro dela. Esse padrão troca esforço isolado por permanência, e deixa o resultado ser consequência, não meta.";
+    }
+  }
+</script>
+</body>
+</html>

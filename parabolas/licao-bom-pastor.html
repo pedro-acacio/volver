@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Bom Pastor — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 34 · <span class="ref-tag">João 10:1-18</span></div>
+  <h1>O bom pastor</h1>
+  <p class="sub">Ovelhas que reconhecem a voz de quem cuida delas, e fogem de estranhos. Avance para ver a diferença entre quem cuida por vocação e quem só está de passagem.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 16 H16 M2 16 V7 L9 2 L16 7 V16" stroke-width="1.3"/>
+          <path d="M9 16 V10 H12 V16" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A porta</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Quem entra pela porta, e quem sobe pelo muro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Aquele que não entra pela porta no aprisco das ovelhas, mas sobe por outra parte, esse é ladrão e salteador. Mas aquele que entra pela porta é o pastor das ovelhas."</em> (v.1-2, paráfrase)</p>
+          <p><em>"E as ovelhas ouvem a sua voz; e chama pelo nome as suas ovelhas, e as conduz para fora."</em> (v.3, paráfrase) — um relacionamento pessoal, não anônimo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a voz conhecida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 6 6 6 9 C6 11 7.5 12.5 9 12.5 C10.5 12.5 12 11 12 9 C12 6 9 2 9 2 Z" stroke-width="1.2"/>
+          <path d="M9 12.5 V16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O reconhecimento</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Não seguirão o estranho"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"As ovelhas o seguem, porque conhecem a sua voz. Mas de modo nenhum seguirão o estranho, antes fugirão dele; porque não conhecem a voz dos estranhos."</em> (v.4-5, paráfrase)</p>
+          <p>É aqui que Jesus se identifica diretamente: <em>"Eu sou a porta das ovelhas"</em> (v.7, paráfrase), e mais adiante: <em>"Eu sou o bom pastor."</em> (v.11, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o mercenário</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="9" r="3" stroke-width="1.3" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">O contraste</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O mercenário foge, o pastor fica</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada figura pra ver como cada uma reage diante do perigo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, figData, 0, 'figText')">O mercenário</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, figData, 1, 'figText')">O bom pastor</button>
+          </div>
+          <div class="chip-text" id="figText">Toque em cada figura para ver o que ela faz quando o lobo aparece.</div>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M9 2 A7 7 0 0 1 9 16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Um rebanho, um pastor</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 10:14-15</span>
+          <p>Eu sou o bom pastor, e conheço as minhas ovelhas, e das minhas sou conhecido. [...] E dou a minha vida pelas ovelhas.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A diferença entre o mercenário e o bom pastor não aparece em dias tranquilos — os dois cuidam bem quando não há risco nenhum. Ela só fica visível quando o lobo aparece: um foge porque as ovelhas não são realmente suas responsabilidade; o outro fica, porque elas são.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do mercenário</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do bom pastor</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  const figData = [
+    { text: "\"O mercenário, que não é pastor, de quem não são as ovelhas, vendo vir o lobo, deixa as ovelhas e foge; e o lobo as arrebata e dispersa.\" (v.12, paráfrase) — o cuidado dele durava só enquanto fosse seguro." },
+    { text: "\"O bom pastor dá a sua vida pelas ovelhas.\" (v.11, paráfrase) Ele conhece cada uma, e é conhecido por elas — o vínculo é o que sustenta a permanência, mesmo com risco real." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Cuidar só enquanto for seguro";
+      text.textContent = "O mercenário não é descrito como alguém mau — é alguém sem vínculo real com o que cuida. Esse padrão sustenta presença até o primeiro sinal de risco real, e desaparece exatamente quando mais faria diferença.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ficar porque o vínculo é real";
+      text.textContent = "O bom pastor não fica porque calculou que valia o risco — fica porque conhece cada ovelha pelo nome. É esse tipo de vínculo, não o cálculo de risco, que sustenta permanência quando o lobo aparece.";
+    }
+  }
+</script>
+</body>
+</html>
