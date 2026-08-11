@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Rico Insensato — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 21 · <span class="ref-tag">Lucas 12:16-21</span></div>
+  <h1>O rico insensato</h1>
+  <p class="sub">Uma colheita tão boa que não cabe nos celeiros. Avance para ver o plano que um homem faz sozinho, com sua própria alma — e a pergunta que ele nunca chega a se fazer.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 L6 3 M9 5 L12 3 M9 9 L6 7 M9 9 L12 7 M9 13 L6 11 M9 13 L12 11" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A colheita</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A terra rendeu além do esperado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A terra de um homem rico produz com muita fartura. Ele pensa consigo mesmo: <em>"Que farei, pois não tenho onde ajuntar os meus frutos?"</em> (v.16-17, paráfrase) — um problema que a maioria gostaria de ter.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o plano</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 8 H16 V15 H2 Z M2 8 L4 3 H14 L16 8" stroke-width="1.3"/>
+          <path d="M9 3 V8" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">O plano</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Alma, tens muitos bens"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Farei isto: derribarei os meus celeiros, e edificarei outros maiores, e ajuntarei ali todos os meus frutos e os meus bens. E direi à minha alma: Alma, tens muitos bens guardados para muitos anos; descansa, come, bebe, regala-te."</em> (v.18-19, paráfrase)</p>
+          <p>Repare no pronome que se repete: <em>meus</em> celeiros, <em>meus</em> frutos, <em>meus</em> bens. A conversa inteira acontece entre ele e a própria alma — ninguém mais é consultado, nem mencionado.</p>
+          <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3: DESFECHO -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"De quem será o que preparaste?"</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 12:20</span>
+          <p>Louco, esta noite te pedirão a tua alma; e o que tens preparado, para quem será?</p>
+          <span class="ref">— paráfrase, resposta de Deus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O plano do homem não previa uma única variável: a própria vida acabando antes do plano se cumprir. Toda a segurança que ele tinha construído — celeiros maiores, anos garantidos — dependia de uma coisa que nunca esteve sob seu controle.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Lucas 12:21</span>
+          <p>Assim é o que ajunta tesouros para si mesmo, e não é rico para com Deus.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A parábola não condena a colheita boa, nem o descanso — condena medir a própria vida só pelo tamanho do celeiro, como se isso bastasse.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do planejamento sozinho</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da riqueza pra Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Planejar como se o tempo fosse garantido";
+      text.textContent = "O homem da parábola não fez nada ilegal ou cruel — só assumiu, sem perceber, que teria os \"muitos anos\" que estava planejando. Esse padrão constrói segurança real em cima de uma suposição que ninguém pode garantir.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Acumular algo que não depende do celeiro";
+      text.textContent = "Ser \"rico para com Deus\" é a régua que a parábola propõe no lugar do tamanho do celeiro — uma riqueza que não desaparece se a colheita for menor, ou se a vida for mais curta do que o planejado.";
+    }
+  }
+</script>
+</body>
+</html>

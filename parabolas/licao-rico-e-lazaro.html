@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Rico e Lázaro — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-parabolas.html">Volver</a>
+    <span class="brand-track">Parábolas de Jesus</span>
+  </div>
+
+  <div class="eyebrow">Lição 20 · <span class="ref-tag">Lucas 16:19-31</span></div>
+  <h1>O rico e Lázaro</h1>
+  <p class="sub">Um homem rico via o mesmo mendigo, todos os dias, caído no próprio portão. Avance para ver o que muda depois da morte dos dois — e o que já podia ter sido visto antes.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 16 H16 M2 16 V7 L9 2 L16 7 V16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">A vida dos dois</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um portão, dois destinos separados</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um homem rico se vestia de púrpura e linho fino, banqueteando-se todos os dias com esplendor (v.19). No portão da casa dele, deitado, havia um mendigo chamado Lázaro, coberto de chagas, desejando alimentar-se das migalhas que caíam da mesa do rico — e até os cães vinham lamber suas feridas (v.20-21, paráfrase).</p>
+          <p>Repare que os dois não estão em lugares distantes um do outro: é o mesmo portão, todos os dias.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a morte dos dois</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.3"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.3" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">A virada</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Os dois morrem — e tudo se inverte</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Lázaro morre, e é levado pelos anjos para junto de Abraão (v.22a, paráfrase). O rico também morre, e é sepultado — mas, no lugar dos mortos, em tormento, ele ergue os olhos e vê Lázaro, de longe, ao lado de Abraão (v.22b-23, paráfrase).</p>
+          <p>A posição dos dois se inverte por completo: quem estava caído no portão agora está confortado; quem tinha tudo agora não tem nada.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o pedido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 9 H16" stroke-width="1.3"/>
+          <path d="M2 9 C2 9 4 5 4 9 C4 13 6 13 6 9" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">O pedido</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um abismo que não existia antes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Pai Abraão, tem misericórdia de mim, e manda a Lázaro que molhe a ponta do dedo em água, e me refresque a língua."</em> (v.24, paráfrase) — mesmo ali, o rico ainda fala de Lázaro como alguém que existe pra servir a ele.</p>
+          <p>Abraão responde: <em>"Filho, lembra-te de que recebeste os teus bens em tua vida, e Lázaro, os males; agora, porém, ele é consolado, e tu atormentado. E, além de tudo isso, entre nós e vós está posto um grande abismo."</em> (v.25-26, paráfrase)</p>
+          <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"Já têm Moisés e os profetas"</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 16:31</span>
+          <p>Se não ouvem a Moisés e aos profetas, tampouco acreditarão, ainda que algum ressuscite dentre os mortos.</p>
+          <span class="ref">— paráfrase</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O rico pede então que Lázaro seja enviado para avisar seus cinco irmãos, para que não acabem no mesmo lugar (v.27-28). Abraão responde que eles já têm Moisés e os profetas — já têm, na própria vida, tudo o que precisariam pra ver o que o rico só viu tarde demais. O problema nunca foi falta de informação: era o hábito de olhar para o portão e não ver quem estava ali.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da cegueira treinada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ver quem já está ali</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · parábolas de Jesus · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ver todo dia sem realmente ver";
+      text.textContent = "O rico não precisou de um relato de terceiros sobre Lázaro — ele o via, com os próprios olhos, no seu próprio portão, todos os dias. Repetição pode virar familiaridade, e familiaridade pode virar um jeito de deixar de enxergar o que está bem na frente.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Reconhecer quem já está na porta";
+      text.textContent = "A parábola não pede uma revelação especial pra agir direito — pede atenção ao que já estava visível o tempo todo. O padrão que ela propõe não exige mais informação, exige parar de tratar como invisível quem está bem ali.";
+    }
+  }
+</script>
+</body>
+</html>
