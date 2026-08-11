@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jezabel — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 33 · <span class="ref-tag">1 Reis 16 · 18-19 · 21</span></div>
+  <h1>Jezabel</h1>
+  <p class="sub">Uma rainha que manda matar por uma vinha que não era sua, e persegue o profeta que a desafiou até ele pedir para morrer. Poder sem limite, usado sem limite — até se voltar contra quem o exercia assim.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 6 L15 6.5 L12 9.5 L13 14 L9 11.5 L5 14 L6 9.5 L3 6.5 L7 6 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma rainha estrangeira, um culto novo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jezabel é princesa da Fenícia, casada com Acabe, rei de Israel, numa aliança política (1 Reis 16:31). Ela traz consigo o culto a Baal e Aserá, e o texto observa que Acabe "fez ainda mais para irar ao Senhor Deus de Israel do que todos os reis de Israel que houve antes dele" (16:33) — em boa parte por sua influência.</p>
+          <p>Ela não se contenta em introduzir um culto paralelo: manda matar sistematicamente os profetas do Senhor (18:4), a ponto de o servo Obadias precisar escondê-los em cavernas para salvá-los. Ela mesma sustenta 450 profetas de Baal e 400 de Aserá à sua própria mesa (18:19).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → depois do Carmelo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 L14 5 M14 15 L4 5" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Depois do Carmelo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No monte Carmelo, o profeta Elias desafia os 450 profetas de Baal a um confronto público — só um dos dois deuses responderia com fogo do céu. Baal fica em silêncio; o Senhor consome o sacrifício de Elias, mesmo encharcado de água (18:20-39). Os profetas de Baal são mortos ali mesmo, uma derrota pública e humilhante para o culto que Jezabel sustentava.</p>
+          <p>A resposta dela não é reconsiderar — é ameaçar: manda um mensageiro dizer a Elias "façam-me os deuses o que quiserem, e outro tanto, se amanhã a estas horas eu não puser a tua vida como a vida de um deles" (19:2). Elias, que acabara de ver fogo descer do céu diante de toda a nação, foge apavorado para o deserto e pede para morrer (19:3-4) — um único recado de Jezabel desfaz o que uma vitória inteira tinha construído.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a vinha de Nabote</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V13" stroke-width="1.3"/>
+          <path d="M9 4 C9 4 6 5 5 8 M9 6 C9 6 12 7 13 10" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A vinha de Nabote</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Acabe quer comprar a vinha de Nabote, vizinha ao palácio, mas Nabote recusa vender a herança da família (21:1-3). Acabe fica emburrado e se recusa a comer — e Jezabel pergunta, com desprezo: "não fazes tu agora o governo sobre Israel?" (21:7). Ela mesma resolve o problema.</p>
+          <p>Em nome de Acabe, ela escreve cartas ordenando um jejum público e sentando Nabote em lugar de honra, com dois homens vis pagos para testemunhar falsamente que ele blasfemou contra Deus e o rei. Nabote é apedrejado até a morte com base num testemunho comprado (21:8-13). Jezabel avisa Acabe: "levanta-te, e possui a vinha de Nabote... porque Nabote já não vive, mas é morto" (21:15).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a queda anunciada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L9 10 M9 10 L5 15 M9 10 L13 15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A queda anunciada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Elias vai ao encontro de Acabe na própria vinha roubada e anuncia o julgamento de Deus sobre a casa dele — e especificamente sobre Jezabel: "Também da Jezabel falou o Senhor, dizendo: Os cães comerão a Jezabel junto ao antemuro de Jezreel" (21:23).</p>
+          <p>A sentença se cumpre anos depois, em 2 Reis 9. Quando Jeú se aproxima como o novo rei ungido para julgar a casa de Acabe, Jezabel se maquia e se enfeita para encará-lo pela janela, sem demonstrar medo. Por ordem de Jeú, os próprios eunucos dela a lançam pela janela; ela morre no local, e cães comem seu corpo antes que possa ser sepultada — exatamente como Elias tinha anunciado décadas antes (2Rs9:30-37).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Reis 21:25</span>
+          <p>Na verdade nunca houve ninguém como Acabe, que se vendesse para praticar o que era mau aos olhos do Senhor, a quem Jezabel, sua mulher, incitava.</p>
+          <span class="ref">— Resumo bíblico sobre a influência de Jezabel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jezabel tinha o poder de uma rainha e usou cada centímetro dele sem limite algum — para promover o próprio culto, silenciar quem discordava e roubar o que não era seu por meio de um testemunho falso. A história não guarda dela um único momento de reconsideração: da introdução do culto a Baal até a janela em Jezreel, o padrão nunca muda, só as consequências se acumulam.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do poder sem limite</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da integridade de Nabote</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Usar o poder para esmagar quem se opõe";
+      text.textContent = "Jezabel nunca precisou negociar — bastava ordenar. Mas um poder que só sabe esmagar quem discorda acaba encontrando, mais cedo ou mais tarde, alguém com mais poder ainda para se voltar contra ele.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Recusar vender o que não é seu para vender";
+      text.textContent = "Nabote tinha diante de si uma oferta gorda do próprio rei e recusou, porque a vinha era herança da sua família, não uma posse qualquer à venda. Custou a vida dele — mas ele nunca abriu mão de decidir por si mesmo o que fazer com o que Deus lhe tinha confiado.";
+    }
+  }
+</script>
+</body>
+</html>

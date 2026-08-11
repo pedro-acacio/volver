@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maria, mãe de Jesus — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 20 · <span class="ref-tag">Lucas 1-2</span></div>
+  <h1>Maria, mãe de Jesus</h1>
+  <p class="sub">"Eis aqui a serva do Senhor" — dita antes de entender qualquer coisa do que aquele chamado ainda custaria.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7 L12 10.5 L13.5 16 L9 12.5 L4.5 16 L6 10.5 L2 7 L7 7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A visita do anjo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Maria é uma jovem de Nazaré, na Galileia, noiva de um carpinteiro chamado José, quando o anjo Gabriel a visita: "Salve, agraciada; o Senhor é contigo; bendita és tu entre as mulheres" (Lucas 1:28). Ela se perturba com a saudação, tentando entender o que significava (v.29).</p>
+          <p>Gabriel anuncia que ela conceberá um filho pelo Espírito Santo, que ele será chamado Filho do Altíssimo, e reinará para sempre na casa de Davi (v.30-33). Maria pergunta, com razão prática: "como se fará isso? pois não conheço homem" (v.34). A resposta do anjo aponta para um milagre, não para uma explicação natural — e conclui: "porque para Deus nada é impossível" (v.37).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "eis aqui a serva do Senhor"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C9 15 3 10 3 6 C3 3.5 5 2 7 2 C8 2 8.7 2.6 9 3.3 C9.3 2.6 10 2 11 2 C13 2 15 3.5 15 6 C15 10 9 15 9 15 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Eis aqui a serva do Senhor"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Maria responde sem exigir mais explicações: "eis aqui a serva do Senhor; cumpra-se em mim segundo a tua palavra" (v.38). É uma aceitação com custo real — uma gravidez fora do casamento podia significar rejeição por José, vergonha pública, até risco de apedrejamento sob a lei (comparar Deuteronômio 22:23-24).</p>
+          <p>Ela viaja às pressas para visitar a prima Isabel, também grávida por milagre (do futuro João Batista), e as duas se encontram com alegria profética — o bebê de Isabel salta no ventre ao som da voz de Maria (1:39-45). Ali, Maria canta o Magnificat: "a minha alma engrandece ao Senhor... porque fez em mim grandes coisas o Poderoso" (1:46-49).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, mariaData, 0, 'mariaText')">"Os poderosos derrubou"</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, mariaData, 1, 'mariaText')">"Os famintos encheu de bens"</button>
+          </div>
+          <div class="chip-text" id="mariaText">Toque para ver trechos do Magnificat, o cântico de Maria.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → uma manjedoura em Belém</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 H14 V9 L9 5 L4 9 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Uma manjedoura em Belém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um recenseamento ordenado por César Augusto obriga José a viajar com Maria, já perto do parto, de Nazaré até Belém — a cidade de Davi, cumprindo, sem que ninguém tivesse planejado politicamente, a profecia de Miquéias 5:2 sobre a origem do Messias. Não há lugar na hospedaria; o filho nasce, é enfaixado, e colocado numa manjedoura (2:1-7).</p>
+          <p>Enquanto isso, pastores nos campos ao redor recebem a visita de anjos anunciando o nascimento, e vão correndo ver — "e todos os que ouviram se maravilharam do que os pastores lhes diziam. Mas Maria guardava todas estas coisas, conferindo-as em seu coração" (2:17-19). Ela não reage com espetáculo; processa em silêncio o que está vivendo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a profecia de Simeão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M5 6 L13 6" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A profecia de Simeão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No ritual de apresentação do menino no templo — quarenta dias depois, conforme a lei (Levítico 12) — um homem idoso chamado Simeão, "justo e temente a Deus", a quem tinha sido revelado que não morreria sem ver o Cristo, toma o menino nos braços e louva a Deus (Lucas 2:25-32).</p>
+          <p>Mas então ele se volta para Maria com uma palavra que mistura alegria e advertência: "eis que este é posto para queda e elevação de muitos em Israel, e para sinal que será contradito... e uma espada traspassará também a tua própria alma" (2:34-35). No mesmo templo onde ela oferece o sacrifício de purificação de uma família pobre (2:24, comparar Levítico 12:8), Maria já ouve o primeiro anúncio explícito do sofrimento que a espera.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 1:38</span>
+          <p>E disse Maria: Eis aqui a serva do Senhor; cumpra-se em mim segundo a tua palavra. E o anjo ausentou-se dela.</p>
+          <span class="ref">— Maria, ao anjo Gabriel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Maria diz "sim" antes de saber sobre a manjedoura, antes de saber sobre a espada anunciada por Simeão, antes de imaginar que veria o próprio filho morrer numa cruz décadas depois (João 19:25-27). O consentimento vem primeiro; o entendimento completo do custo, muito depois — ou nunca por inteiro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de exigir entender antes</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da entrega antecipada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const mariaData = [
+    { text: "\"Derribou os poderosos dos seus tronos, e elevou os humildes\" (1:52) — o cântico de uma jovem sem poder algum, anunciando uma reviravolta que ela mesma ainda não via completa." },
+    { text: "\"Encheu de bens os famintos, e despediu vazios os ricos\" (1:53) — a mesma lógica de reversão que marcaria, décadas depois, o ensino do próprio filho dela." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Só aceitar depois de entender tudo";
+      text.textContent = "Se Maria tivesse exigido entender cada consequência antes de responder, teria uma lista impossível: vergonha pública, uma manjedoura, uma espada anunciada, uma cruz — nenhum \"sim\" resistiria a essa lista de antemão.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Dizer sim antes de ver o preço inteiro";
+      text.textContent = "Maria responde ao chamado com o que sabe naquele momento, e vai processando o resto — \"guardando estas coisas em seu coração\" — conforme elas chegam, uma de cada vez, ao longo dos anos.";
+    }
+  }
+</script>
+</body>
+</html>

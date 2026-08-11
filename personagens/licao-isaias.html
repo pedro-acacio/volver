@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaías — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 15 · <span class="ref-tag">Isaías 6</span></div>
+  <h1>Isaías</h1>
+  <p class="sub">"Ai de mim!" antes de "eis-me aqui" — a ordem que o chamado sempre segue. Ninguém se oferece de verdade para servir antes de ser confrontado com a própria condição.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 C6 5 12 5 15 15" stroke-width="1.3"/>
+          <circle cx="9" cy="6" r="3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O trono alto e sublime</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"No ano em que morreu o rei Uzias" — um marco de luto nacional, o fim de um reinado longo e próspero — Isaías tem uma visão: "vi ao Senhor assentado sobre um trono alto e sublime; e as abas do seu manto enchiam o templo" (Isaías 6:1). Serafins voam ao redor, cobrindo o rosto e os pés com as próprias asas, clamando uns aos outros: "Santo, santo, santo é o Senhor dos Exércitos; toda a terra está cheia da sua glória" (v.3). As portas do templo tremem, e a casa se enche de fumaça.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "Ai de mim!"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V11" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="9" cy="14.5" r="0.9" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Homem de lábios impuros"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante da santidade absoluta que enche o templo, Isaías não reage com admiração distante — reage com terror pela própria condição: "Ai de mim! Porque estou perdido; porque sou homem de lábios impuros, e habito no meio de um povo de impuros lábios; e os meus olhos viram o Rei, o Senhor dos Exércitos" (v.5).</p>
+          <p>Na compreensão judaica, ver a Deus face a face deveria ser fatal para um pecador. Isaías não pede para servir — pede, em desespero, para não morrer ali mesmo. É desse ponto de total desqualificação, não de mérito, que a cena continua.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a brasa do altar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 6 8 6 11 C6 13.5 7.5 15 9 15 C10.5 15 12 13.5 12 11 C12 8 9 3 9 3 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"O teu pecado está expiado"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um dos serafins voa até Isaías com uma brasa viva, tomada com uma tenaz do próprio altar do templo, e toca sua boca — o mesmo lugar de onde saiu a confissão de impureza: "Eis que isto tocou os teus lábios; e a tua iniquidade foi tirada, e expiado o teu pecado" (v.7).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, isaiasData, 0, 'isaiasText')">O que a brasa vem do altar</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, isaiasData, 1, 'isaiasText')">O que muda depois disso</button>
+          </div>
+          <div class="chip-text" id="isaiasText">Toque para ver o que essa purificação significa.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → "Eis-me aqui"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 V3 M5 7 L9 3 L13 7" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Um envio que ele já sabia ser difícil</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Só depois de purificado é que Isaías ouve a voz de Deus perguntando: "A quem enviarei, e quem irá por nós?" (v.8) — e responde de imediato e livremente, sem hesitação: "Eis-me aqui, envia a mim". A pergunta não foi endereçada a ele especificamente; ele se oferece.</p>
+          <p>A resposta de Deus não é um chamado fácil: ele deve pregar a um povo que vai ouvir sem entender e olhar sem perceber, "até que as cidades sejam assoladas e não haja morador" (v.9-11). Isaías aceita a missão sabendo, desde o início, que a maior parte do trabalho será rejeitada — e mesmo assim diz sim.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Isaías 6:8</span>
+          <p>Depois disto, ouvi a voz do Senhor, que dizia: A quem enviarei, e quem irá por nós? Então disse eu: Eis-me aqui, envia a mim.</p>
+          <span class="ref">— Isaías, no templo, depois de ser purificado</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Entre o "Ai de mim!" e o "Eis-me aqui" existe uma única ação — a brasa do altar. Isaías não se torna digno de servir por esforço próprio; ele é purificado primeiro, e só depois se oferece. A disposição de servir nasce da purificação recebida, não a antecede.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do mérito primeiro</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da purificação primeiro</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const isaiasData = [
+    { text: "A brasa não vem de um fogo qualquer — vem do altar do sacrifício, o mesmo lugar onde o pecado do povo já era simbolicamente tratado desde antes (comparar Levítico 16)." },
+    { text: "O texto marca a mudança com precisão: \"a tua iniquidade foi tirada\" — não minimizada, não ignorada, mas removida antes de qualquer chamado ser feito." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Servir para provar que se é digno";
+      text.textContent = "Se Isaías tivesse se oferecido antes de reconhecer sua impureza, o \"eis-me aqui\" teria sido uma tentativa de merecer o lugar — e o peso de provar isso nunca teria fim.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Servir porque já foi purificado";
+      text.textContent = "A resposta de Isaías é livre e imediata exatamente porque já não tem nada a provar — a brasa já fez o trabalho antes da pergunta ser feita.";
+    }
+  }
+</script>
+</body>
+</html>

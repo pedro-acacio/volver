@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golias — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 32 · <span class="ref-tag">1 Samuel 17</span></div>
+  <h1>Golias</h1>
+  <p class="sub">Quarenta dias desafiando um exército inteiro, confiando no próprio tamanho — até um pastor recusar a lógica óbvia da força e da armadura.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M4 4 L6.5 7 M14 4 L11.5 7" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="9" cy="10" r="4" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Quarenta dias de desafio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os exércitos de Israel e dos filisteus se posicionam em montes opostos, separados por um vale. Todos os dias, pela manhã e à tarde, um campeão filisteu de altura descomunal — "seis côvados e um palmo", cerca de 2,90 metros — se apresenta no meio do vale gritando um desafio: um duelo individual decidiria a guerra inteira (17:4-10).</p>
+          <p>"Ouvindo Saul e todo o Israel estas palavras do filisteu, espantaram-se e temeram em grande maneira" (17:11). O desafio se repete por quarenta dias seguidos, e ninguém no exército inteiro se apresenta (17:16).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → um pastor no meio do exército</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V9 C4 6 6.5 4 9 4 C11.5 4 14 6 14 9 V15" stroke-width="1.3"/>
+          <path d="M4 15 H14" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um pastor no meio do exército</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Davi, ainda jovem, não é soldado — foi enviado pelo pai apenas para levar comida aos irmãos mais velhos que serviam no exército (17:17-19). Ao chegar, ouve o desafio de Golias pela primeira vez e faz uma pergunta que ninguém mais estava fazendo: "quem é este filisteu, incircunciso, para afrontar os exércitos do Deus vivo?" (17:26).</p>
+          <p>Seu irmão mais velho Eliabe se irrita com ele, acusando-o de soberba e curiosidade vazia (17:28) — mas Davi insiste em se apresentar a Saul, oferecendo-se para lutar. Toque para ver o que Saul e Davi dizem um ao outro:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, goliasData, 0, 'goliasText')">A objeção de Saul</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, goliasData, 1, 'goliasText')">A resposta de Davi</button>
+          </div>
+          <div class="chip-text" id="goliasText">Toque para ver a conversa entre Saul e Davi antes do duelo.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a armadura recusada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="5" y="3" width="8" height="10" rx="1" stroke-width="1.3"/>
+          <path d="M4 3 L14 13 M14 3 L4 13" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A armadura recusada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Saul veste Davi com sua própria armadura de bronze e capacete — o equipamento do próprio rei. Davi tenta andar e não consegue: "não poderei andar com isto, porque nunca o experimentei" (17:39). Ele a tira e desce ao vale como sempre fez com os leões e ursos que atacavam seu rebanho: com um cajado, uma funda e cinco pedras lisas do ribeiro (17:40).</p>
+          <p>Golias, ao ver quem vem ao seu encontro, se sente insultado: "Sou eu algum cão, para que venhas a mim com paus?" — e o amaldiçoa pelos seus deuses (17:43-44). Davi responde sem se intimidar: "Tu vens a mim com espada, com lança e com escudo; porém eu venho a ti em nome do Senhor dos Exércitos... hoje mesmo o Senhor te entregará nas minhas mãos" (17:45-46).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a pedra e a queda</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="1.6" fill="currentColor" stroke="none"/>
+          <path d="M2 9 C4 6 7 9 9 9 C11 9 14 6 16 9" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A pedra e a queda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enquanto Golias avança, Davi corre em sua direção — não espera parado. Ele tira uma pedra do alforje, lança com a funda, e ela se crava na testa do gigante, que cai de rosto em terra (17:48-49). O texto observa: "assim venceu Davi o filisteu com uma funda e uma pedra... e não havia espada na mão de Davi" (17:50).</p>
+          <p>Ele usa a própria espada de Golias para decapitá-lo. Vendo seu campeão morto, o exército filisteu inteiro entra em pânico e foge — o exército de Israel os persegue com uma vitória completa (17:51-52).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Samuel 17:45</span>
+          <p>Tu vens a mim com espada, com lança e com escudo; porém eu venho a ti em nome do Senhor dos Exércitos, o Deus do exército de Israel, a quem tens afrontado.</p>
+          <span class="ref">— Davi, a Golias, antes do duelo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Golias tinha tudo o que costuma decidir uma disputa: altura, armadura, experiência de guerra, reputação. Davi tinha uma funda, cinco pedras e uma frase repetida ao longo de toda a sua vida: o mesmo Deus que o livrou do leão e do urso não faltaria diante de um homem só porque ele era grande (17:37).</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da confiança no tamanho</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da fé no nome do Senhor</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const goliasData = [
+    { text: "Saul objeta: \"Não poderás ir a este filisteu, para pelejar contra ele, porque tu ainda és moço, e ele homem de guerra desde a sua mocidade\" (17:33)." },
+    { text: "Davi responde contando como já matou um leão e um urso defendendo o próprio rebanho: \"o Senhor, que me livrou das garras do leão e das garras do urso, esse me livrará da mão deste filisteu\" (17:34-37)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Zombar de quem parece pequeno demais";
+      text.textContent = "Golias mediu Davi pela altura, pela idade e pelas armas que carregava — e por essa régua, o duelo já estava decidido antes de começar. Confiar só no que se pode medir a olho nu deixa qualquer um cego para o que realmente está em jogo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ir com o que já proveu antes";
+      text.textContent = "Davi não inventou uma confiança nova diante de Golias — ele repetiu a mesma fé que já tinha testado contra o leão e o urso, no anonimato de um campo, muito antes de qualquer plateia estar olhando.";
+    }
+  }
+</script>
+</body>
+</html>

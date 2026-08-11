@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moisés — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 05 · <span class="ref-tag">Êxodo 2-14</span></div>
+  <h1>Moisés</h1>
+  <p class="sub">Um homem que fugiu da própria vocação por quarenta anos, até uma sarça que não se apagava — e que segue objetando mesmo depois de Deus responder cada uma de suas desculpas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 5 H15 V13 H3 Z" stroke-width="1.3"/>
+          <path d="M3 5 L9 10 L15 5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Salvo das águas, fugitivo no deserto</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés nasce sob o decreto de Faraó que mandava matar todo menino hebreu recém-nascido (Êxodo 1:22). Sua mãe o esconde por três meses e depois o coloca numa cesta no rio Nilo; a própria filha de Faraó o encontra e o cria dentro do palácio egípcio (2:1-10) — o futuro libertador de Israel crescendo como neto adotivo do mesmo trono que tentou matá-lo.</p>
+          <p>Já adulto, Moisés vê um egípcio espancando um hebreu, mata o egípcio e o esconde na areia. Quando percebe que o crime já é conhecido, foge para o deserto de Midiã, com medo de Faraó (2:11-15). O homem que um dia vai confrontar o rei mais poderoso do mundo antigo começa fugindo dele.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a sarça que não se apagava</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 8 6 11 9 15 C12 11 12 8 9 3 Z" stroke-width="1.2"/>
+          <path d="M4 15 H14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A sarça que não se apagava</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quarenta anos depois, já pastoreando as ovelhas do sogro em Midiã, Moisés se depara com uma sarça em chamas que não se consome. Ali, Deus o chama para tirar Israel do Egito — e Moisés responde com uma série de objeções, uma atrás da outra (3:1-4:17). Toque para ver as desculpas e as respostas:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, moisesData, 0, 'moisesText')">"Quem sou eu?"</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, moisesData, 1, 'moisesText')">"Qual é o teu nome?"</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, moisesData, 2, 'moisesText')">"Não sou eloquente"</button>
+          </div>
+          <div class="chip-text" id="moisesText">Toque em cada objeção de Moisés para ver como Deus responde.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o confronto com Faraó</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V14 H4 Z" stroke-width="1.4"/>
+          <path d="M4 9 H14" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O confronto com Faraó</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés volta ao Egito com Arão, seu irmão, falando por ele. Diante de Faraó, a mensagem é direta: "Deixa ir o meu povo" (5:1). Faraó recusa, e aumenta a carga de trabalho sobre os hebreus escravizados como retaliação (5:2-9) — a primeira resposta ao pedido de libertação é mais sofrimento, não menos.</p>
+          <p>Segue-se uma série de dez pragas — sangue, rãs, piolhos, moscas, peste no gado, úlceras, saraiva, gafanhotos, trevas e, por fim, a morte dos primogênitos — cada uma atingindo diretamente algo que o Egito adorava como divindade (7:14-12:30). A cada praga, Faraó cede um pouco e depois "endurece o coração" de novo, até a décima praga finalmente quebrar sua resistência.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o mar se abre</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 9 C2 9 6 5 9 9 C12 13 16 9 16 9" stroke-width="1.3" fill="none"/>
+          <path d="M9 3 V9" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O mar se abre</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de libertar o povo, Faraó muda de ideia mais uma vez e persegue os israelitas com seu exército, encurralando-os entre o deserto e o Mar Vermelho (14:1-9). O povo entra em pânico e se volta contra Moisés: "Não é isto o que te falávamos no Egito?... Melhor nos fora servir aos egípcios" (14:11-12).</p>
+          <p>Moisés responde: "Não temais; estai quietos, e vede o livramento do Senhor" (14:13). Ele estende a mão sobre o mar, e "o Senhor fez retirar o mar por forte vento oriental toda aquela noite... e as águas se dividiram" (14:21). Israel atravessa em terra seca; o exército egípcio, tentando seguir, é engolido quando as águas retornam (14:22-28).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Êxodo 3:11-12</span>
+          <p>Então, disse Moisés a Deus: Quem sou eu, para que vá a Faraó e tire do Egito os filhos de Israel? E ele disse: Certamente eu serei contigo.</p>
+          <span class="ref">— Diálogo na sarça ardente</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Deus nunca corrige a avaliação que Moisés faz de si mesmo — não discorda que ele seja inadequado, gago, inseguro. A resposta muda completamente o assunto: a missão nunca dependeu da capacidade de Moisés, dependia da presença prometida. "Certamente serei contigo" é a única credencial que ele recebe antes de partir.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da insegurança</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da presença prometida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const moisesData = [
+    { text: "\"Quem sou eu, para que vá a Faraó?\" (3:11) — Deus não responde elogiando a capacidade de Moisés, responde: \"Certamente eu serei contigo\" (3:12). A questão nunca foi quem Moisés era." },
+    { text: "\"Eis que quando eu for aos filhos de Israel... e me perguntarem: Qual é o seu nome? que lhes direi?\" (3:13) — Deus revela seu nome: \"Eu Sou o que Sou\" (3:14), a base de toda a autoridade da missão." },
+    { text: "\"Ó Senhor, eu não sou homem eloquente... sou pesado de boca e pesado de língua\" (4:10) — Deus oferece Arão como porta-voz (4:14-16), mas a irritação divina no texto sugere que a objeção já tinha ido longe demais." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Esperar se sentir capaz primeiro";
+      text.textContent = "Moisés passou quarenta anos no deserto depois de fugir da própria identidade — e mesmo diante da sarça, sua primeira reação continua sendo listar tudo que o desqualifica para a tarefa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Agir apoiado na presença, não na capacidade";
+      text.textContent = "\"Certamente serei contigo\" nunca resolveu a insegurança de Moisés — ele continua gago até o fim. O que muda é que a missão não estava apoiada na eloquência dele, estava apoiada em quem prometeu estar junto.";
+    }
+  }
+</script>
+</body>
+</html>

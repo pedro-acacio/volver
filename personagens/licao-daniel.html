@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 14 · <span class="ref-tag">Daniel 1-6</span></div>
+  <h1>Daniel</h1>
+  <p class="sub">Fiel nos pequenos detalhes da comida, ainda jovem e cativo — décadas antes de ser fiel na cova dos leões, já idoso. A segunda fidelidade só existe porque a primeira já estava lá.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="7" rx="1" stroke-width="1.3"/>
+          <path d="M9 7 V4" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um teste simples com vegetais</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ainda jovem, Daniel é levado cativo de Jerusalém para a Babilônia, junto com outros jovens nobres selecionados para servir na corte de Nabucodonosor — treinados por três anos, alimentados com a comida e o vinho do próprio rei (Daniel 1:1-5).</p>
+          <p>Daniel "propôs no seu coração não se contaminar" com essa comida (v.8) — provavelmente por causa das leis alimentares judaicas ou por ser oferecida a ídolos. Em vez de recusa dramática, ele propõe um teste discreto e verificável: dez dias comendo só legumes e água, comparando o resultado com os outros jovens. Ao fim do teste, ele e seus três amigos aparecem "de melhor parecer, e mais gordos de carne" que todos (v.15).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o sonho esquecido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 3 4 6 4 9 C4 12 6 15 9 15 C12 15 14 12 14 9 C14 6 12 3 9 3 Z" stroke-width="1.2" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um sonho que ninguém mais lembra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nabucodonosor tem um sonho perturbador — e, para testar se seus sábios são realmente confiáveis, exige que eles não só interpretem o sonho, mas descrevam o próprio conteúdo, que ele se recusa a contar (2:1-13). Nenhum sábio babilônico consegue, e o rei ordena que todos os sábios da cidade sejam mortos, Daniel incluso.</p>
+          <p>Daniel pede tempo, ora com seus amigos, e Deus lhe revela o mistério numa visão noturna. Ele descreve a estátua de metais diferentes (ouro, prata, bronze, ferro) que representa os impérios que se sucederiam — e deixa claro que a revelação não veio de sua própria sabedoria: "Este mistério não se manifestou a mim por sabedoria... mas para que a interpretação se fizesse notória ao rei" (v.30).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a fidelidade que não mudou com a idade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="4" width="10" height="10" stroke-width="1.3"/>
+          <path d="M6 6 L12 12 M12 6 L6 12" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um decreto feito sob medida contra ele</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Décadas depois — Daniel já idoso, servindo agora sob o rei Dario — seus colegas de governo, invejosos de sua excelência, tramam um decreto que proíbe orar a qualquer deus ou homem além do rei por trinta dias, sabendo exatamente qual é o hábito de Daniel (6:1-9).</p>
+          <p>Ao saber do decreto assinado, Daniel não muda nada: "as suas janelas estavam abertas no seu quarto do lado de Jerusalém, e três vezes no dia se punha de joelhos, e orava, e dava graças diante do seu Deus, como também dantes costumava fazer" (v.10). "Como dantes costumava fazer" — o mesmo hábito discreto de décadas antes, mantido apesar do risco agora ser a morte.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a cova dos leões</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 C3 9 6 6 9 6 C12 6 15 9 15 14" stroke-width="1.3"/>
+          <circle cx="7" cy="10" r="0.7" fill="currentColor" stroke="none"/>
+          <circle cx="11" cy="10" r="0.7" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"O teu Deus... te livrará"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dario, apesar de gostar de Daniel, é forçado pela própria lei que assinou a lançá-lo na cova dos leões — mas diz a ele, contra sua vontade: "O teu Deus, a quem tu continuamente serves, ele te livrará" (6:16). O rei passa a noite em jejum, sem conseguir dormir.</p>
+          <p>De manhã cedo, correndo até a cova, Dario grita perguntando se Daniel sobreviveu. A resposta: "O meu Deus enviou o seu anjo, e fechou a boca dos leões, para que não me fizessem dano; porque perante ele se achou em mim inocência" (v.21-22). Os mesmos homens que tramaram contra Daniel são lançados na cova em seu lugar.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Daniel 6:10</span>
+          <p>As suas janelas estavam abertas no seu quarto do lado de Jerusalém, e três vezes no dia se punha de joelhos, e orava, e dava graças diante do seu Deus, como também dantes costumava fazer.</p>
+          <span class="ref">— Sobre Daniel, já idoso, diante do decreto que o condenava</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Como também dantes costumava fazer" é a frase que liga o jovem que recusou a comida do rei ao ancião que enfrentou os leões — a mesma fidelidade discreta, mantida por hábito ao longo de décadas, é o que sustenta Daniel exatamente no momento em que o risco deixa de ser social e passa a ser fatal.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da fé de ocasião</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do hábito sustentado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Fiel só quando é fácil";
+      text.textContent = "Se Daniel tivesse abandonado o hábito de orar assim que o risco apareceu, décadas de fidelidade discreta teriam terminado exatamente no momento em que mais importavam.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Fiel porque já era o costume";
+      text.textContent = "Daniel não decide, na hora do decreto, ser corajoso — ele simplesmente continua fazendo o que já fazia havia anos. A coragem visível na cova dos leões só existe porque a fidelidade invisível já estava construída antes.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaqueu — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 26 · <span class="ref-tag">Lucas 19:1-10</span></div>
+  <h1>Zaqueu</h1>
+  <p class="sub">Um homem rico demais para ser amado e pequeno demais para ver por cima da multidão — até subir numa árvore só para espiar, e ser visto por completo em troca.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M6 9 H12 M9 6 V12" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Rico, chefe e desprezado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Zaqueu era chefe dos publicanos em Jericó — o cobrador-chefe dos impostos romanos numa cidade cheia de comércio. O cargo o tornava rico, mas também o tornava um traidor aos olhos do próprio povo: publicanos enriqueciam cobrando a mais de compatriotas para entregar a Roma, e eram tratados como pecadores públicos, colaboradores do invasor (Lucas 19:2,7).</p>
+          <p>Quando Jesus passa por Jericó, uma multidão enorme se ajunta. Zaqueu quer vê-lo — mas o texto é direto sobre o obstáculo: "não podia, por causa da multidão, porque era de pequena estatura" (v.3). Nem o dinheiro nem o cargo resolvem esse problema específico.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a figueira brava</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V8 M9 8 C5 8 4 4 4 2 M9 8 C13 8 14 4 14 2" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A figueira brava</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sem conseguir ver por cima das cabeças, Zaqueu corre à frente da multidão e sobe numa figueira brava (um sicômoro) — uma árvore baixa e de galhos largos, fácil de escalar, mas nada digna para um homem da sua posição social. Ele não pensa duas vezes: "correu adiante, e subiu a uma figueira brava para o ver" (v.4).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, zaqueuData, 0, 'zaqueuText')">O que Zaqueu esperava</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, zaqueuData, 1, 'zaqueuText')">O que Jesus faz</button>
+          </div>
+          <div class="chip-text" id="zaqueuText">Toque para comparar a expectativa de Zaqueu com a reação de Jesus.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a murmuração da multidão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="5" cy="9" r="2.4" stroke-width="1.2"/>
+          <circle cx="13" cy="9" r="2.4" stroke-width="1.2"/>
+          <circle cx="9" cy="5" r="2.4" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A murmuração da multidão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus chega embaixo da árvore, olha para cima e o chama pelo nome: "Zaqueu, desce depressa, porque hoje me convém pousar em tua casa" (v.5) — um convite que Zaqueu nunca pediu em voz alta, mas que responde exatamente ao que ele queria de verdade.</p>
+          <p>A reação da multidão é imediata: "todos murmuravam, dizendo que entrara para ser hóspede de um homem pecador" (v.7). Jesus escolhe publicamente a casa do homem mais malvisto da cidade, na frente de todos que o desprezavam.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a resposta de Zaqueu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L14 4 M14 4 H8 M14 4 V10" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A resposta de Zaqueu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dentro de casa, sem que ninguém peça, Zaqueu se levanta e declara: "Eis aqui, Senhor, dou aos pobres metade dos meus bens; e, se em alguma coisa tenho defraudado alguém, o restituo quadruplicado" (v.8) — muito além do que a lei judaica exigia para restituição de roubo (Êxodo 22:1 pedia o dobro, no máximo).</p>
+          <p>Jesus responde declarando algo público e definitivo: "hoje veio a salvação a esta casa... Porque o Filho do homem veio buscar e salvar o que se havia perdido" (v.9-10). O encontro que começou com curiosidade escondida numa árvore termina em transformação declarada diante de toda a cidade.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Lucas 19:9-10</span>
+          <p>Disse-lhe Jesus: Hoje veio a salvação a esta casa, pois também este é filho de Abraão. Porque o Filho do homem veio buscar e salvar o que se havia perdido.</p>
+          <span class="ref">— Jesus, na casa de Zaqueu</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Zaqueu só queria ver de longe, sem ser visto, escondido atrás de folhas. Jesus olhou para cima, o chamou pelo nome e convidou-se para dentro da casa dele — a mesma dinâmica que se repete em quase todo encontro dos evangelhos: quem se aproxima por curiosidade acaba sendo alcançado além do que esperava.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de ver de longe</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ser visto de perto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const zaqueuData = [
+    { text: "Zaqueu só esperava um vislumbre rápido de Jesus passando na rua — nada mais que isso, escondido atrás dos galhos, sem chamar atenção (v.3-4)." },
+    { text: "Jesus para embaixo da árvore, olha para cima e o chama pelo nome, convidando-se para a casa dele publicamente, na frente de toda a multidão (v.5)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Curiosidade escondida atrás de galhos";
+      text.textContent = "Zaqueu podia ter descido da árvore antes de ser visto, satisfeito com um relance rápido e seguro — voltando para a mesma vida rica e isolada de sempre, sem se arriscar a ser notado por ninguém.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Visto por completo, mudado por completo";
+      text.textContent = "Jesus não deixou Zaqueu ficar escondido na árvore. Ser chamado pelo nome, na frente de todos, foi exatamente o que abriu espaço para uma restituição pública que nenhuma lei exigia — só a graça recebida de perto provoca isso.";
+    }
+  }
+</script>
+</body>
+</html>

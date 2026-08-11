@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paulo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 24 · <span class="ref-tag">Atos 9 · 22 · 26</span></div>
+  <h1>Paulo</h1>
+  <p class="sub">Foi ao encontro dos cristãos de Damasco com cartas de prisão nas mãos — e uma luz no caminho reescreveu o resto da sua história. O perseguidor mais zeloso vira o missionário mais fecundo do Novo Testamento.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 4 V9 C15 13 12 16 9 17 C6 16 3 13 3 9 V4 Z" stroke-width="1.3"/>
+          <path d="M6.5 9 L8.2 10.7 L11.5 7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O perseguidor zeloso</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes de ser Paulo, ele é Saulo de Tarso, fariseu treinado aos pés do respeitado mestre Gamaliel (Atos 22:3), convicto de que perseguir os seguidores de Jesus era um ato de fidelidade a Deus. Ele está presente e consente na morte de Estêvão, o primeiro mártir cristão, guardando as capas de quem o apedrejava (Atos 7:58-8:1).</p>
+          <p>Dali em diante, ele devasta a igreja em Jerusalém, "entrando pelas casas, e, arrastando homens e mulheres, os entregava à prisão" (8:3). Não satisfeito, pede ao sumo sacerdote cartas de autorização para ir a Damasco e trazer presos, algemados, quaisquer discípulos de "o Caminho" que encontrasse ali (9:1-2).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a luz no caminho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 2 L6 5 M9 2 L12 5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 16 L15 4" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A luz no caminho de Damasco</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Perto de Damasco, uma luz do céu o cerca de repente, mais forte que o sol do meio-dia (26:13). Ele cai por terra e ouve uma voz: "Saulo, Saulo, por que me persegues?" (9:4). Ele pergunta quem fala, sem imaginar a resposta: "Eu sou Jesus, a quem tu persegues" (v.5) — o Jesus que ele considerava morto e enterrado está vivo, e cada cristão que Saulo prendia era, de algum jeito, o próprio Jesus sendo atacado.</p>
+          <p>Cego pela luz, ele é levado pela mão até Damasco, e passa três dias sem comer nem beber, apenas orando (9:8-9). O homem que entrava em Damasco para prender está, agora, completamente dependente de outros só para atravessar a porta da cidade.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Ananias hesita e obedece</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 5 9 5 12 C5 14.5 6.8 16 9 16 C11.2 16 13 14.5 13 12 C13 9 9 3 9 3 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Ananias hesita, e depois obedece</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Damasco, um discípulo chamado Ananias recebe uma ordem em visão: ir até a casa onde Saulo está e curar sua cegueira. A reação dele é honesta e compreensível — toque para ver o antes e o depois:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, ananiasData, 0, 'ananiasText')">A hesitação de Ananias</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, ananiasData, 1, 'ananiasText')">A obediência de Ananias</button>
+          </div>
+          <div class="chip-text" id="ananiasText">Toque em cada momento para ver a reação de Ananias.</div>
+          <p>Ananias vai, impõe as mãos sobre Saulo, chamando-o de "irmão" — a primeira pessoa a lhe dar esse nome depois da conversão. Escamas caem dos olhos de Saulo, ele recupera a vista, é batizado e come pela primeira vez em três dias (9:17-19).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o perseguidor que passa a pregar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V14 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 7.5 H11.5 M6.5 10 H11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O perseguidor que passa a pregar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Poucos dias depois, Saulo já está nas sinagogas de Damasco pregando exatamente o que antes tentava destruir: "que este é o Filho de Deus" (9:20). Todos que o ouvem ficam atônitos: "Não é este aquele que perseguia em Jerusalém os que invocavam este nome?" (v.21). A mudança é tão completa que os próprios judeus de Damasco tramam matá-lo, e ele precisa ser baixado da muralha da cidade numa cesta, à noite, para escapar (9:23-25).</p>
+          <p>Décadas depois, diante do rei Agripa, Paulo resume a própria conversão sem esconder o que fazia antes: "eu, na verdade, tinha, na minha opinião, por dever fazer muitas coisas contra o nome de Jesus, o Nazareno... e sendo sobremaneira furioso contra eles, os persegui até nas cidades estranhas" (26:9-11) — e conclui contando como se tornou, ele mesmo, o missionário que levaria esse nome pelo Império inteiro.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O zelo redirecionado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Timóteo 1:15-16</span>
+          <p>Cristo Jesus veio ao mundo para salvar os pecadores, dos quais eu sou o principal. Mas por isso me foi feita misericórdia, para que em mim, que sou o principal, Jesus Cristo mostrasse toda a sua longanimidade, para exemplo dos que haviam de crer nele para a vida eterna.</p>
+          <span class="ref">— Paulo, já apóstolo, escrevendo a Timóteo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Paulo nunca esconde o que foi antes de Damasco — ele o menciona repetidamente, em cartas e discursos, não como vergonha escondida mas como prova viva de que ninguém está longe demais para ser alcançado. O mesmo zelo que o tornava perigoso como perseguidor é, depois, o que o torna incansável como missionário — não trocado por outra coisa, mas redirecionado inteiro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da certeza violenta</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do zelo redirecionado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const ananiasData = [
+    { text: "\"Senhor, a muitos ouvi acerca deste homem, quantos males tem feito aos teus santos em Jerusalém; e aqui tem poder, da parte dos principais dos sacerdotes, para prender todos os que invocam o teu nome\" (9:13-14) — Ananias conhece a reputação de Saulo e teme obedecer." },
+    { text: "Deus responde apenas que Saulo é \"vaso escolhido\" para levar seu nome perante gentios, reis e o próprio povo de Israel (v.15-16). Ananias vai mesmo assim, sem mais garantias além dessa palavra, e chama Saulo de \"irmão\" (v.17)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Convicção sem espaço para ser confrontada";
+      text.textContent = "Saulo estava absolutamente certo de que perseguir cristãos era servir a Deus — a mesma certeza religiosa que, sem espaço para ser questionada, produz violência em nome do que parece justo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A mesma intensidade, outro alvo";
+      text.textContent = "Depois de Damasco, Paulo não fica morno — continua tão inteiro quanto antes, só que agora gastando a mesma energia em construir igrejas pelo Império, em vez de destruí-las.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Carcereiro de Filipos — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 39 · <span class="ref-tag">Atos 16:16-34</span></div>
+  <h1>O Carcereiro de Filipos</h1>
+  <p class="sub">Um terremoto solta as correntes de todos os presos, e ele está prestes a se matar quando ouve, no escuro: "não te faças mal nenhum, que todos aqui estamos".</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="4" width="10" height="10" stroke-width="1.3"/>
+          <path d="M4 7 H14 M7 4 V14" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Presos por libertar uma escrava</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Filipos, Paulo expulsa um espírito de adivinhação de uma jovem escrava que trazia grande lucro aos seus donos. Furiosos com o prejuízo, eles arrastam Paulo e Silas às autoridades, que os mandam açoitar em praça pública e lançar na prisão (16:16-24).</p>
+          <p>O carcereiro recebe ordem estrita de guardá-los bem. Ele os coloca no cárcere mais interno, o mais seguro, e prende seus pés no tronco — uma precaução extra, como se soubesse que qualquer descuido custaria caro demais.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → cânticos à meia-noite</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V13" stroke-width="1.3"/>
+          <circle cx="6" cy="14" r="2" stroke-width="1.1"/>
+          <circle cx="12" cy="14" r="2" stroke-width="1.1"/>
+          <path d="M9 3 C9 3 12 2 13 4" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Cânticos à meia-noite</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Feridos pelos açoites, presos no lugar mais escuro da prisão, Paulo e Silas fazem algo que nenhum dos outros presos esperaria: "orando, cantavam hinos a Deus; e os outros presos os escutavam" (16:25). Não há registro de reclamação, só louvor no meio da injustiça.</p>
+          <p>De repente, um terremoto forte sacode os alicerces da prisão. Todas as portas se abrem de uma vez, e as correntes de todos os presos — não só as de Paulo e Silas — se soltam sozinhas.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → uma espada quase erguida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L9 14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 5 L12 5" stroke-width="1.2"/>
+          <path d="M9 14 L6 16 M9 14 L12 16" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Uma espada quase erguida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O carcereiro acorda, vê as portas da prisão escancaradas, e presume o pior: os presos fugiram. Sob a lei romana, um carcereiro que deixasse presos escaparem enfrentaria a mesma pena que eles receberiam — muitas vezes, morte. Ele saca a espada, pronto para se matar antes de enfrentar essa vergonha.</p>
+          <p>É nesse instante exato — não antes, não depois — que Paulo grita em alta voz de dentro da cela: "não te faças mal nenhum, que todos aqui estamos" (16:28). Nenhum dos presos tinha fugido, apesar de todas as portas abertas e todas as correntes soltas.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → "que me é necessário fazer?"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <path d="M9 6 V9.5 M9 12 V12.3" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"Que me é necessário fazer?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedindo luz, o carcereiro entra tremendo e se lança aos pés de Paulo e Silas. Depois de conduzi-los para fora, faz a pergunta mais direta possível: "senhores, que me é necessário fazer para me salvar?" (16:30).</p>
+          <p>A resposta vem sem rodeios: "crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa" (16:31). Eles falam a palavra do Senhor a ele e a todos os que estavam em sua casa, ainda naquela mesma madrugada.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Atos 16:33-34</span>
+          <p>E, tomando-os consigo, naquela mesma hora da noite, lavou as suas feridas; e logo foi batizado com todos os seus. E, levando-os para sua casa, pôs-lhes a mesa, e alegrou-se muito com toda a sua casa, crendo em Deus.</p>
+          <span class="ref">— Sobre o carcereiro de Filipos, ainda na mesma noite</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Poucas horas antes, esse mesmo homem prendia os pés de Paulo e Silas no tronco sem pensar duas vezes. Agora é ele quem lava as feridas deles, alegre, com toda a casa reunida à mesa. A distância entre a espada erguida contra si mesmo e a mesa posta para celebrar não foi obra de tempo — foi de uma única noite.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do desespero final</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da salvação imediata</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A espada como única saída";
+      text.textContent = "Convencido de que as portas abertas significavam presos fugidos, o carcereiro só via um caminho diante da vergonha que o esperava — e ergueu a espada contra si mesmo sem checar antes se aquilo era mesmo verdade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma voz no escuro, a tempo";
+      text.textContent = "Paulo gritou antes que fosse tarde demais, e a resposta que se seguiu foi tão rápida quanto o desespero que a precedeu — na mesma madrugada, o mesmo homem que temia a própria morte lavava as feridas de quem ele tinha maltratado horas antes.";
+    }
+  }
+</script>
+</body>
+</html>

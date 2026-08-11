@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absalão — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 34 · <span class="ref-tag">2 Samuel 13-18</span></div>
+  <h1>Absalão</h1>
+  <p class="sub">Vingou a irmã, conquistou o coração do povo, e armou uma revolta contra o próprio pai por um trono que ainda não era seu — uma mágoa nunca resolvida virando ambição, degrau por degrau.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V9 L13 12" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Dois anos de silêncio calculado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Tamar, irmã de Absalão, é estuprada pelo meio-irmão Amnom (2 Samuel 13:1-14). Quando Davi, o rei e pai de ambos, ouve o que aconteceu, o texto diz que "ficou mui irado" — mas não faz nada, não pune Amnom de forma alguma (13:21).</p>
+          <p>Absalão não diz palavra alguma a Amnom sobre o assunto, "nem bem nem mal", mas o odeia por dentro (13:22). Durante dois anos inteiros ele espera em silêncio, planejando, até convidar todos os filhos do rei — incluindo Amnom — para uma festa de tosquia de ovelhas, onde manda seus servos matá-lo enquanto está embriagado (13:23-29).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o exílio e o retorno vazio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 L14 14 M4 14 L14 4" stroke-width="1.2"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O exílio e o retorno vazio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Absalão foge para Gesur, terra de seu avô materno, e passa três anos longe (13:37-38). Davi sente saudade dele, mas não o chama de volta. É Joabe, general do exército, quem arquiteta um plano para trazê-lo de volta a Jerusalém — mas mesmo depois de voltar, Absalão passa mais dois anos inteiros sem conseguir ver o rosto do pai (14:24, 14:28).</p>
+          <p>Quando finalmente Davi o recebe, o texto registra um único gesto — "o rei beijou a Absalão" (14:33) — sem qualquer conversa real sobre o que aconteceu, sem restauração de fato. É uma reconciliação de superfície, cinco anos tarde demais, que nunca trata a ferida original.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → roubando o coração do povo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 H15 M4 14 V8 L9 4 L14 8 V14" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Roubando o coração do povo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Absalão passa a se levantar cedo e se posicionar junto ao portão da cidade, onde o povo ia buscar justiça do rei. A cada pessoa com uma causa, ele diz que a causa é boa, mas que "não há ninguém da parte do rei que te ouça" — e promete: "quem me dera que me pusessem por juiz na terra! Então viria a mim todo aquele que tivesse pleito ou causa, e eu lhe faria justiça" (15:2-4).</p>
+          <p>Ele beija a mão de quem se aproximava para se prostrar diante dele, tratando o povo como igual, não como súdito. O texto resume com precisão o que estava acontecendo: "assim furtava Absalão o coração dos homens de Israel" (15:6) — quatro anos desse trabalho silencioso, e ele está pronto para o próximo passo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a revolta e a queda</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V13" stroke-width="1.4"/>
+          <path d="M9 3 C7 5 5 5 4 4 M9 3 C11 5 13 5 14 4" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A revolta e a queda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Absalão se declara rei em Hebrom com um exército crescente, obrigando Davi a fugir de Jerusalém em lágrimas (15:10-30). A revolta cresce ao ponto de Absalão tomar publicamente o palácio e as concubinas do próprio pai, num gesto de humilhação deliberada (16:20-22).</p>
+          <p>Na batalha final na floresta de Efraim, Absalão foge montado numa mula; seus longos cabelos — sua marca de vaidade e beleza (14:25-26) — ficam presos nos galhos de um carvalho, deixando-o suspenso no ar enquanto a mula continua. Joabe o encontra assim e o mata, contra a ordem explícita de Davi para que fosse poupado (18:9-15). Ao saber, Davi se desfaz em luto: "Meu filho Absalão, meu filho, meu filho Absalão! Quem me dera que eu morrera por ti, Absalão, meu filho, meu filho!" (18:33).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">2 Samuel 15:6</span>
+          <p>E, na verdade, fazia Absalão assim a todo o Israel que vinha ao rei a juízo; e assim furtava Absalão o coração dos homens de Israel.</p>
+          <span class="ref">— Narrador, descrevendo os anos de preparação de Absalão</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Entre o estupro de Tamar e a floresta de Efraim se passam anos — e em nenhum momento desse tempo alguém, nem Davi, nem Absalão, nomeia a ferida em voz alta e a trata de verdade. O silêncio calculado de Absalão e o silêncio evasivo de Davi se alimentam mutuamente, até a mágoa não resolvida virar uma ambição pronta para derrubar um reino inteiro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da mágoa não resolvida</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da reconciliação real</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Guardar em silêncio até a mágoa crescer";
+      text.textContent = "Absalão esperou dois anos calados antes de vingar Tamar, e mais sete entre o exílio e a reconciliação de fachada com Davi. Cada ano de silêncio não fez a mágoa desaparecer — só deu tempo para ela se transformar em algo maior e mais destrutivo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Nomear a ferida antes que ela apodreça";
+      text.textContent = "Nem Davi, como pai, nem Absalão, como filho, trataram a ferida de Tamar em voz alta e por completo — um beijo de reconciliação não substitui uma conversa honesta. A história de Absalão fica como um alerta do que acontece quando ninguém dá esse passo a tempo.";
+    }
+  }
+</script>
+</body>
+</html>

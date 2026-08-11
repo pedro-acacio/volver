@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Débora — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 19 · <span class="ref-tag">Juízes 4-5</span></div>
+  <h1>Débora</h1>
+  <p class="sub">Uma juíza que profetiza, lidera um exército e canta a vitória — assumindo a frente exatamente quando quem deveria ir hesitou.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M4 15 H14" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 3 C6 5 6 8 9 9 C12 8 12 5 9 3 Z" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A juíza debaixo da palmeira</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No ciclo dos Juízes, Israel volta a fazer o que era mau aos olhos do Senhor, e é entregue por vinte anos ao domínio cruel de Jabim, rei de Canaã, e seu comandante militar Sísera, dono de 900 carros de ferro (Juízes 4:1-3). Nesse cenário, "Débora, profetisa, mulher de Lapidote, julgava a Israel" — e o povo subia até ela, que se assentava debaixo de uma palmeira entre Ramá e Betel, para julgamento (4:4-5).</p>
+          <p>Ela é ao mesmo tempo juíza (função de liderança e justiça em Israel) e profetisa (voz reconhecida de Deus) — uma combinação incomum no livro dos Juízes, que registra principalmente libertadores homens.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "se fores comigo, irei"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3.2" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="3.2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Se fores comigo, irei"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Débora convoca Baraque com uma ordem clara da parte de Deus: reunir dez mil homens no monte Tabor, onde o Senhor entregaria Sísera e seu exército em suas mãos (4:6-7). A resposta de Baraque é condicional: "se tu fores comigo, irei; porém, se não fores comigo, não irei" (4:8).</p>
+          <p>Débora aceita ir, mas avisa a consequência: "certamente irei contigo, porém não será para tua honra este caminho que empreendes; porque o Senhor venderá Sísera na mão de uma mulher" (4:9) — uma profecia que, no fim, se cumpre de um jeito que ninguém esperava.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a batalha</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 L9 3 L15 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A batalha e a estaca de Jael</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No sinal de Débora, Baraque desce do Tabor com os dez mil homens, e o Senhor desbarata Sísera e todos os seus carros diante deles — Sísera abandona seu próprio carro e foge a pé (4:14-16). Ele busca refúgio na tenda de Jael, mulher de um aliado de seu rei, que o recebe, dá-lhe leite em vez da água pedida, e o cobre para ele dormir, exausto.</p>
+          <p>Enquanto ele dorme, Jael toma uma estaca de tenda e um martelo, e crava a estaca em sua têmpora — cumprindo, de um jeito brutal e inesperado, a profecia de Débora de que a honra da vitória iria para uma mulher, não para Baraque (4:17-22).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o cântico de vitória</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 12 Q6 5 9 12 Q12 5 14 12" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O cântico de vitória</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 5 é o Cântico de Débora, um dos poemas mais antigos da Bíblia — cantado por ela e Baraque juntos, celebrando o Senhor que age quando o povo se dispõe voluntariamente à batalha ("quando os chefes se puseram à frente em Israel, quando o povo se ofereceu voluntariamente, louvai ao Senhor", 5:2). O cântico nomeia tanto a coragem de quem lutou quanto a covardia de quem ficou de fora (5:15-17,23).</p>
+          <p>Depois dessa vitória, "a terra ficou sossegada quarenta anos" (5:31) — o descanso mais longo já registrado no livro dos Juízes até ali.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Juízes 4:9</span>
+          <p>Então disse ela: Certamente irei contigo; porém não será para tua honra este caminho que empreendes; porque o Senhor venderá Sísera na mão de uma mulher.</p>
+          <span class="ref">— Débora, a Baraque</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Débora não buscou o comando militar — ele foi parar em suas mãos porque quem deveria assumir hesitou. Ela não recusa a hesitação de Baraque, mas também não deixa que ela pare a missão: assume o que for preciso, e segue.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da hesitação de Baraque</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da liderança que assume</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Só ir se alguém garantir";
+      text.textContent = "Baraque tinha a ordem direta de Deus e um exército prometido — e ainda assim só aceita ir se Débora for junto. A missão não muda; o que muda é a disposição de carregá-la sozinho.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ir à frente quando é preciso";
+      text.textContent = "Débora não disputa o protagonismo — ela já julgava e profetizava antes da guerra. Mas quando a hesitação de outro ameaça travar a missão, ela vai junto sem se importar em quem fica com a honra.";
+    }
+  }
+</script>
+</body>
+</html>

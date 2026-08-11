@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apolo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 40 · <span class="ref-tag">Atos 18:24-28</span></div>
+  <h1>Apolo</h1>
+  <p class="sub">Já pregava com eloquência e conhecia bem as Escrituras — mas só conhecia metade da história, até um casal o chamar à parte, com respeito, para completar o resto.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 5 C6 3 12 3 15 5 V14 C12 12 6 12 3 14 Z" stroke-width="1.3"/>
+          <path d="M9 5 V14" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Eloquente e poderoso nas Escrituras</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Apolo é judeu, natural de Alexandria — cidade conhecida por sua grande biblioteca e cultura letrada. O texto o descreve sem meias palavras: "homem eloquente e poderoso nas Escrituras... instruído no caminho do Senhor; e, fervoroso de espírito, falava e ensinava diligentemente as coisas do Senhor" (18:24-25).</p>
+          <p>Não é um iniciante hesitante. É alguém que já domina o conteúdo, já ensina com convicção e paixão, já tem presença suficiente para chamar atenção numa sinagoga em Éfeso.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → conhecendo só metade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <path d="M9 2.5 V9 H14" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Conhecendo só metade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Apesar de todo o talento e conhecimento, há uma lacuna importante: Apolo "conhecia somente o batismo de João" (18:25). Ele sabia sobre o arrependimento pregado por João Batista, sobre a preparação do caminho — mas parece não ter conhecimento completo sobre a morte, ressurreição e o Espírito Santo derramado depois de Pentecostes.</p>
+          <p>É uma posição estranha: já é respeitado, já ensina publicamente, e ainda assim está — sem saber — falando com metade da história.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → tomado à parte</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.2"/>
+          <path d="M6 12 C6 12 6 15 9 15 C12 15 12 12 12 12" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Tomado à parte, não corrigido em público</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Priscila e Áquila, um casal que já conhecia Paulo e viajava com ele, ouvem Apolo falar na sinagoga. Poderiam tê-lo interrompido ali mesmo, expondo o erro diante de todos. Em vez disso, escolhem um caminho mais discreto:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, apoloData, 0, 'apoloText')">O que o casal faz</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, apoloData, 1, 'apoloText')">Como Apolo recebe</button>
+          </div>
+          <div class="chip-text" id="apoloText">Toque para ver a correção respeitosa e a resposta a ela.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o que ele fez com a correção</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 L9 3 L15 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 11 H12" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O que ele fez com a correção</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Apolo não se ofende, não desaparece envergonhado, não desiste de ensinar. Viaja para a Acaia com uma carta de recomendação dos irmãos de Éfeso, e ali "muito aproveitou aos que criam pela graça; porque com grande vigor convencia publicamente os judeus, mostrando pelas Escrituras que Jesus era o Cristo" (18:27-28).</p>
+          <p>O homem já talentoso se torna ainda mais eficaz depois de aceitar o que faltava — a correção não o diminuiu, completou o que ele já tinha de bom.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Atos 18:26</span>
+          <p>E este homem começou a falar ousadamente na sinagoga. E, ouvindo-o Priscila e Áquila, o tomaram à parte, e lhe declararam mais precisamente o caminho de Deus.</p>
+          <span class="ref">— Sobre Apolo, em Éfeso</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Anos depois, Apolo já era respeitado o bastante para a igreja de Corinto se dividir entre "eu sou de Paulo" e "eu sou de Apolo" (1 Coríntios 1:12) — o próprio Paulo corrige isso lembrando que ambos são apenas servos, cada um fazendo sua parte, mas é Deus quem dá o crescimento (1Co3:5-6). O talento de Apolo nunca foi o problema; o que fez diferença foi aceitar, com humildade, que ainda tinha o que aprender.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do orgulho fechado</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da humildade ensinável</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const apoloData = [
+    { text: "Priscila e Áquila não o corrigem diante de todos na sinagoga — \"o tomaram à parte, e lhe declararam mais precisamente o caminho de Deus\" (v.26), preservando sua dignidade enquanto completavam o que faltava." },
+    { text: "Apolo recebe a instrução sem resistência registrada, e logo depois parte para pregar com ainda mais eficácia — sinal de que aceitou de verdade, e não apenas por educação." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Talento demais para ser corrigido";
+      text.textContent = "Um pregador já eloquente e respeitado poderia facilmente ter recusado a correção de um casal comum, sem título religioso — e continuado a ensinar apenas metade da verdade, convicto e talentoso, mas incompleto.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Talento disposto a aprender mais";
+      text.textContent = "Apolo aceitou de um casal comum o que faltava ao seu próprio conhecimento, e o resultado não foi menos eficácia — foi mais. A humildade de continuar aprendendo não diminuiu o dom, completou-o.";
+    }
+  }
+</script>
+</body>
+</html>

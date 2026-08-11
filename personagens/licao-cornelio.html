@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cornélio — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 36 · <span class="ref-tag">Atos 10</span></div>
+  <h1>Cornélio</h1>
+  <p class="sub">Um centurião romano, temente a Deus sem ainda conhecer o evangelho — e a visão que derrubou, dos dois lados ao mesmo tempo, a barreira que separava judeus de gentios.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 5 V10 C15 13.5 12.5 16 9 16 C5.5 16 3 13.5 3 10 V5 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um centurião piedoso, mas de fora</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Cornélio é centurião do chamado regimento italiano, estacionado em Cesareia — um oficial romano no meio de um território ocupado. O texto o descreve antes de qualquer outra coisa: "piedoso e temente a Deus com toda a sua casa, e que fazia muitas esmolas ao povo, e de contínuo orava a Deus" (10:2).</p>
+          <p>É uma descrição incomum. Cornélio não era judeu, não tinha se convertido formalmente, não guardava a lei de Moisés por completo — e ainda assim buscava a Deus com uma seriedade que o texto elogia sem reservas. Ele estava, por assim dizer, do lado de fora da porta certa, mas batendo nela havia tempo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → duas visões no mesmo dia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="4" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="4" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Duas visões no mesmo dia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Por volta das três da tarde, um anjo aparece a Cornélio numa visão e diz que suas orações e esmolas subiram como memorial diante de Deus — e manda que ele chame Simão Pedro, hospedado numa casa em Jope (10:3-8).</p>
+          <p>No dia seguinte, enquanto os mensageiros de Cornélio se aproximam de Jope, Pedro sobe ao terraço para orar e tem sua própria visão: um grande lençol descendo do céu, cheio de animais que a lei judaica classificava como impuros, com uma ordem para matar e comer. Toque para ver como Pedro reage:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, corneliData, 0, 'corneliText')">A recusa de Pedro</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, corneliData, 1, 'corneliText')">A resposta do céu</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, corneliData, 2, 'corneliText')">A repetição três vezes</button>
+          </div>
+          <div class="chip-text" id="corneliText">Toque em cada item para acompanhar a visão de Pedro.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → uma casa que Pedro não entraria</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 16 V8 L9 3 L15 8 V16 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M3 8 H15" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Uma casa que Pedro não entraria</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro ainda está pensando no significado da visão quando os mensageiros de Cornélio chegam. O Espírito lhe diz para ir com eles "nada duvidando, porque eu os enviei" (10:20). No dia seguinte, Pedro parte para Cesareia com alguns irmãos de Jope.</p>
+          <p>Ao chegar, ele mesmo reconhece o quanto isso é estranho para um judeu: "vós bem sabeis que não é lícito a um varão judeu ajuntar-se ou chegar-se a estrangeiro; mas Deus mostrou-me que a nenhum homem chame comum ou imundo" (10:28). Cornélio, ansioso, tinha reunido parentes e amigos próximos para ouvir tudo o que Pedro tinha a dizer.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o Espírito desce antes do batismo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V11" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 8 L9 2 L14 8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 14 H14" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O Espírito desce antes do batismo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro prega o essencial do evangelho: Jesus, ungido pelo Espírito, andou fazendo o bem, foi morto e ressuscitou ao terceiro dia, e "todos os profetas dão testemunho de que, por meio do seu nome, todo aquele que nele crê receberá remissão dos pecados" (10:43).</p>
+          <p>Antes mesmo de Pedro terminar de falar, o Espírito Santo cai sobre todos os que ouviam a palavra. Os crentes judeus que acompanhavam Pedro ficam atônitos, "porquanto o dom do Espírito Santo se derramava também sobre os gentios" (10:45) — a mesma evidência visível do Pentecostes, agora sobre quem nunca tinha sido circuncidado.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → a barreira derrubada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A barreira derrubada</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Pedro então pergunta: "pode alguém porventura recusar a água, para que não sejam batizados estes que também, como nós, receberam o Espírito Santo?" (10:47). Cornélio e sua casa são batizados ali mesmo — o batismo vem depois da evidência, não antes dela.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 10:34-35</span>
+          <p>Então Pedro, abrindo a boca, disse: Reconheço, por verdade, que Deus não faz acepção de pessoas; mas que, em toda nação, aquele que o teme e pratica a justiça lhe é aceitável.</p>
+          <span class="ref">— Pedro, na casa de Cornélio</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A barreira não caiu por um argumento humano bem construído. Caiu porque Deus agiu dos dois lados ao mesmo tempo: uma visão para Cornélio, uma visão para Pedro, e o mesmo Espírito derramado sobre gente que a religião de então mantinha separada.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da barreira mantida</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da barreira derrubada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const corneliData = [
+    { text: "Pedro vê o lençol com animais impuros e a ordem para comer, e responde: \"Não, Senhor, porque nunca comi coisa alguma comum e imunda\" (v.14) — reagindo com a categoria religiosa que sempre conheceu." },
+    { text: "Uma voz responde: \"Não chames tu comum ao que Deus purificou\" (v.15) — invertendo a categoria que Pedro tinha por certa desde criança." },
+    { text: "A cena se repete três vezes seguidas antes do lençol ser recolhido ao céu (v.16) — o suficiente para Pedro entender que não era um detalhe passageiro, mas uma mudança real." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Pureza definida por categoria humana";
+      text.textContent = "Se Pedro tivesse seguido só o próprio instinto religioso, teria recusado a casa de Cornélio como recusou o lençol — mantendo uma fronteira que parecia proteger o sagrado, mas na prática excluía quem Deus já tinha aceitado.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Pureza definida por Deus mesmo";
+      text.textContent = "Deus não esperou Pedro mudar de ideia sozinho — moveu os dois lados ao mesmo tempo, com visões paralelas, até a barreira entre judeu e gentio, puro e impuro, deixar de fazer sentido diante do mesmo Espírito derramado sobre todos.";
+    }
+  }
+</script>
+</body>
+</html>

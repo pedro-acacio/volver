@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sansão — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 08 · <span class="ref-tag">Juízes 13-16</span></div>
+  <h1>Sansão</h1>
+  <p class="sub">Força sobre-humana concedida desde o nascimento — e um único segredo revelado que, ao ser tirado dele, tirou tudo o mais junto.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V8 M6 5 L9 8 L12 5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="11.5" r="4" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Separado desde o ventre</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel vive sob domínio filisteu havia quarenta anos quando um anjo aparece à mulher estéril de Manoá, anunciando um filho que será nazireu desde o nascimento — sem tocar em vinho, sem cortar o cabelo, consagrado a Deus para começar a livrar Israel dos filisteus (Juízes 13:2-5).</p>
+          <p>Sansão cresce com uma força sobrenatural nunca explicada em detalhes — apenas atribuída ao "Espírito do Senhor" que o impele repetidas vezes (13:25; 14:6,19; 15:14). Mas desde jovem, ele usa esse dom a serviço de seus próprios interesses: insiste em casar com uma mulher filisteia contra o conselho dos pais, "porque ela me agrada" (14:3).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → força usada, vingança por vingança</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L14 4 M9 3 L15 3 L15 9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um ciclo de vingança pessoal</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O casamento de Sansão termina em traição — sua esposa entrega a resposta de um enigma aos filisteus sob pressão, e ele reage matando trinta homens de Ascalom para pagar a aposta perdida (14:19). A partir daí, sua vida entra num ciclo: os filisteus o ofendem, ele se vinga com violência ainda maior, e o ciclo recomeça.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, sansaoData, 0, 'sansaoText')">As raposas incendiadas</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, sansaoData, 1, 'sansaoText')">A queixada de jumento</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, sansaoData, 2, 'sansaoText')">As portas de Gaza</button>
+          </div>
+          <div class="chip-text" id="sansaoText">Toque em cada episódio para ver como a força vira sempre resposta pessoal, nunca liderança de um povo.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Dalila</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 6 Q9 3 14 6" stroke-width="1.3"/>
+          <path d="M5 6 V13 M9 6 V14 M13 6 V13" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O segredo entregue</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sansão se apaixona por Dalila, subornada pelos chefes filisteus para descobrir o segredo de sua força. Três vezes ele mente sobre a fonte dela, e três vezes ela o testa — até que, "endoidecida" a sua alma "até a morte" pela insistência dela, ele conta a verdade: nunca teve seu cabelo cortado, pelo voto de nazireu (16:15-17).</p>
+          <p>Dalila o faz dormir em seu colo e manda cortar suas sete tranças. "E ele não sabia que o Senhor já se tinha retirado dele" (16:20) — a força não estava no cabelo em si, mas na aliança que o cabelo simbolizava, e que ele já vinha rompendo aos poucos havia anos.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → cego, preso, escarnecido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.3"/>
+          <path d="M4 4 L14 14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Cego, preso, escarnecido</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os filisteus furam os olhos de Sansão, o acorrentam com grilhões de bronze e o põem a girar um moinho na prisão de Gaza — o herói mais forte de Israel reduzido a trabalho de animal (16:21). Ali, no escuro, "o cabelo da sua cabeça começou a crescer, depois de rapado" (v.22) — um detalhe silencioso que prepara o que vem a seguir.</p>
+          <p>Num festival ao deus Dagom, celebrando a captura de Sansão, os filisteus o trazem ao templo para zombar dele diante de milhares. É ali, cego e humilhado, que ele faz sua última oração: "Ó Senhor Jeová, lembra-te de mim, rogo-te, e fortalece-me só esta vez" (16:28).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Juízes 16:30</span>
+          <p>Então, disse Sansão: Morra eu com os filisteus. E, inclinando-se com força, caiu a casa sobre os príncipes, e sobre todo o povo que nela havia; e foram mais os que matou na sua morte do que os que matara em vida.</p>
+          <span class="ref">— O fim de Sansão, no templo de Dagom</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Empurrando as colunas centrais do templo, Sansão derruba o edifício sobre si e sobre os filisteus reunidos ali. É uma vitória — mas também o retrato de uma vida inteira gasta em ciclos pessoais de ofensa e vingança, que só encontra propósito maior no último gesto, quando já não resta mais nada a perder.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do dom para si mesmo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da entrega final</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const sansaoData = [
+    { text: "Depois de perder a aposta do enigma, Sansão amarra tochas acesas ao rabo de trezentas raposas e as solta nas plantações filisteias, destruindo trigais, vinhas e olivais inteiros (15:4-5)." },
+    { text: "Cercado por mil homens em Leí, Sansão pega a queixada fresca de um jumento e mata mil filisteus com ela — puro poder físico usado em autodefesa pessoal, não em campanha de libertação (15:14-17)." },
+    { text: "Em Gaza, cercado durante a noite numa cidade inimiga por causa de uma prostituta, ele arranca as portas da cidade à meia-noite e as carrega para longe, como demonstração de força — sem que isso avance a causa de Israel em nada (16:1-3)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um dom gasto em ciclos pessoais";
+      text.textContent = "Vinte anos de força sobre-humana usados quase inteiramente para vingança pessoal e prazer próprio deixam Sansão, no fim, cego e acorrentado, exatamente onde a série de pequenas concessões o levou.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma última oração, sem mais nada a provar";
+      text.textContent = "É só no momento em que perde tudo — os olhos, a liberdade, a própria força — que Sansão finalmente ora pedindo o dom de volta, não para si, mas para cumprir o propósito para o qual tinha sido separado desde o nascimento.";
+    }
+  }
+</script>
+</body>
+</html>

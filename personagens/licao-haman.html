@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamã — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 35 · <span class="ref-tag">Ester 3-7</span></div>
+  <h1>Hamã</h1>
+  <p class="sub">Construiu uma forca alta o bastante para todos verem — e foi nela que acabou pendurado. Um orgulho ferido por uma ofensa pequena, alimentado até virar um plano de extermínio.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L14 14 M4 14 L4 8 L9 4 L14 8 L14 14" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A reverência que faltou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Hamã é promovido pelo rei Assuero da Pérsia a uma posição acima de todos os outros oficiais, e o rei ordena que todos se curvem diante dele nas portas do palácio (Ester 3:1-2). Um homem se recusa: Mordecai, judeu, primo adotivo da rainha Ester, que não se curva nem presta reverência.</p>
+          <p>Quando os outros oficiais perguntam a Mordecai por que ele desobedece, ele explica que é judeu — indicando uma convicção religiosa contra a reverência idolátrica a um homem. Isso é relatado a Hamã, que "se encheu de furor" (3:5). Mas Hamã decide que punir só Mordecai seria pouco: "não lhe parecia bastante pôr as mãos só em Mordecai" — ele planeja destruir todos os judeus do império inteiro por causa de um único homem (3:6).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o decreto e a sorte lançada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="4" width="4" height="4" rx="0.5" stroke-width="1.2"/>
+          <rect x="10" y="10" width="4" height="4" rx="0.5" stroke-width="1.2"/>
+          <circle cx="6" cy="6" r="0.8" fill="currentColor" stroke="none"/>
+          <circle cx="12" cy="12" r="0.8" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O decreto e a sorte lançada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Hamã lança o "Pur" (a sorte) para escolher o dia do massacre, e convence o rei a assinar um decreto irrevogável para exterminar todos os judeus do império num único dia, oferecendo até pagar uma soma enorme ao tesouro real para isso acontecer (3:7-11). O decreto é enviado a todas as províncias, e "a cidade de Susã estava consternada" (3:15) — enquanto Hamã e o rei se sentam para beber tranquilamente.</p>
+          <p>Mordecai, ao saber, rasga as vestes e se veste de saco e cinza, e pede que Ester interceda junto ao rei — mesmo sabendo que se apresentar sem ser chamada poderia custar a vida dela. Toque para ver a resposta de Mordecai ao medo inicial de Ester:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, hamanData, 0, 'hamanText')">O apelo de Mordecai</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, hamanData, 1, 'hamanText')">A decisão de Ester</button>
+          </div>
+          <div class="chip-text" id="hamanText">Toque para ver a conversa que muda o rumo da história.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a forca preparada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V4 H13" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 4 V7" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A forca preparada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ester convida o rei e Hamã para um banquete — depois outro. Hamã sai exultante, mas ao passar pelo portão e ver Mordecai ainda sem se curvar, sua alegria vira fúria de novo (5:9). Em casa, aconselhado pela esposa Zeres e pelos amigos, manda construir uma forca de vinte e cinco metros de altura especialmente para enforcar Mordecai nela — e planeja pedir ao rei permissão logo na manhã seguinte (5:14).</p>
+          <p>Naquela mesma noite, o rei, sem conseguir dormir, manda ler as crônicas do reino e descobre que Mordecai uma vez o salvou de uma conspiração de assassinato e nunca foi recompensado por isso (6:1-3) — um detalhe esquecido havia anos, relembrado na pior noite possível para Hamã.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a virada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 9 C4 9 9 3 14 9 C9 15 4 9 4 9 Z" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A virada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na manhã seguinte, o rei pergunta a Hamã — que já vinha pedir a forca para Mordecai, mas ainda não teve chance — "que se fará ao homem a cuja honra o rei se agrada?" Hamã, certo de que é sobre si mesmo que o rei fala, sugere as honras mais extravagantes possíveis: vestes reais, o próprio cavalo do rei, e alguém nobre conduzindo-o pelas ruas anunciando sua honra (6:6-9). O rei responde: "faze assim a Mordecai, o judeu" (6:10) — e é o próprio Hamã quem tem de conduzir Mordecai pelas ruas anunciando a honra dele.</p>
+          <p>No segundo banquete de Ester, ela finalmente revela ao rei o plano de extermínio e aponta Hamã como o autor (7:3-6). O rei, furioso, sai ao jardim para pensar; ao voltar, encontra Hamã caído sobre o divã de Ester implorando por sua vida, e interpreta o gesto como um ataque à rainha. Um dos oficiais lembra da forca que Hamã tinha preparado para Mordecai — e o rei ordena que Hamã seja enforcado nela mesma (7:7-10).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Ester 7:10</span>
+          <p>Assim, enforcaram a Hamã na forca que tinha preparado para Mordecai; então, se aplacou o furor do rei.</p>
+          <span class="ref">— Narrador, sobre o fim de Hamã</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Uma única reverência recusada por Mordecai bastou para Hamã planejar o extermínio de um povo inteiro — o desproporcional da resposta é o próprio retrato do que orgulho ferido, alimentado sem limite, é capaz de fazer. Mordecai, por outro lado, nunca precisou de vingança: continuou fiel à sua convicção e a história se resolveu sem que ele tivesse de erguer um dedo contra Hamã.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do orgulho ferido</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da convicção tranquila</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const hamanData = [
+    { text: "Mordecai responde a Ester: \"Não penses tu, dentro em ti mesma, que escaparás na casa do rei mais do que outro qualquer judeu... e quem sabe se não foi para tempo como este que chegaste a este reino?\" (4:13-14)." },
+    { text: "Ester decide se apresentar ao rei sem ser chamada, arriscando a própria vida: \"E, assim, irei ter com o rei, ainda que não seja segundo a lei, e, se perecer, pereci\" (4:16)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Deixar uma ofensa pequena crescer sem limite";
+      text.textContent = "Uma reverência recusada não ameaçava em nada o poder real de Hamã — mas ele deixou a ofensa crescer até virar um plano de extermínio. Orgulho sem limite não sabe medir a proporção certa entre a ferida e a resposta.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Manter a convicção sem precisar de vingança";
+      text.textContent = "Mordecai nunca revidou, nunca tramou contra Hamã — só permaneceu fiel à própria convicção diante da pressão. A reviravolta da história aconteceu sem que ele precisasse fazer nada além de continuar sendo quem já era.";
+    }
+  }
+</script>
+</body>
+</html>

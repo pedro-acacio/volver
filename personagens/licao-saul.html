@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saul — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 10 · <span class="ref-tag">1 Samuel 9-31</span></div>
+  <h1>Saul</h1>
+  <p class="sub">O rei escolhido por ser o que o povo queria ver — e como a desobediência parcial, nunca corrigida, apodrece devagar em desobediência total.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="3.2" stroke-width="1.3"/>
+          <path d="M4 16 C4 11.5 6 9 9 9 C12 9 14 11.5 14 16" stroke-width="1.3"/>
+          <path d="M4 2 H14" stroke-width="1.1" stroke-dasharray="1 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O rei que o povo queria ver</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel pede um rei "como todas as outras nações" (1 Samuel 8:5), e Samuel unge Saul — descrito como "moço e belo... e do ombro para cima sobressaía a todo o povo" (9:2). Fisicamente, ele é exatamente o tipo de rei impressionante que o povo esperava.</p>
+          <p>O início é promissor: o Espírito do Senhor o toma, e ele lidera Israel numa vitória rápida contra os amonitas, sendo confirmado rei diante de todo o povo em Gilgal (11:6-15). Mas a fundação do seu reinado já é sobre o que os outros veem, não sobre o que Deus pede.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a primeira desobediência</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L9 13" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L9 3 L14 6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 4 L14 14" stroke-width="1.2" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Impaciente demais para esperar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Cercado pelos filisteus em Gilgal, Saul recebe instrução de esperar sete dias por Samuel, que viria oferecer o sacrifício antes da batalha. O exército começa a se dispersar de medo, e no sétimo dia, sem Samuel ainda à vista, Saul mesmo oferece o holocausto — função reservada ao sacerdote (13:8-9).</p>
+          <p>Samuel chega logo depois e pergunta o que ele fez. Saul se justifica: o povo se dispersando, os filisteus se ajuntando, Samuel atrasado — "constrangi-me, pois, e ofereci holocausto" (13:11-12). Samuel responde que ele agiu loucamente, e que o reino não passaria para seus descendentes por causa disso (13:13-14).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → obedecer parcialmente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 9 H14" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M4 9 L4 5 M14 9 L14 13" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Obedecer é melhor que sacrificar"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus ordena, através de Samuel, que Saul destrua completamente os amalequitas e todos os seus bens, sem exceção (15:2-3). Saul vence a batalha — mas poupa o rei Agague vivo, e o melhor do gado e das ovelhas, "tudo o que era bom", destruindo só o que era vil e desprezível (15:9).</p>
+          <p>Quando Samuel o confronta, Saul primeiro afirma ter cumprido a ordem do Senhor (15:13), depois se justifica dizendo que o povo poupou os animais "para oferecer em sacrifício ao Senhor teu Deus" (15:15,21). Samuel responde com uma das frases mais citadas do Antigo Testamento: "Eis que o obedecer é melhor do que o sacrificar" (15:22).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o ciúme que consome tudo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 C4 15 4 3 9 3 C14 3 14 15 14 15" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Perseguindo quem Deus escolheu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Rejeitado como rei permanente, Saul assiste ao Espírito do Senhor se afastar dele e um espírito maligno o atormentar (16:14) — justamente enquanto Davi, já ungido em segredo, entra a seu serviço. Depois de Davi matar Golias, as mulheres cantam pelas ruas: "Saul feriu os seus milhares, porém Davi os seus dez milhares" (18:7). Dali em diante, "Saul de si mesmo se guardava de Davi" (18:9), tentando matá-lo repetidas vezes.</p>
+          <p>No fim, desesperado antes de uma batalha decisiva, Saul, que tinha expulsado médiuns e adivinhos do reino, consulta secretamente a médium de En-Dor para convocar o espírito de Samuel (28:6-19). No dia seguinte, ferido em batalha contra os filisteus no monte Gilboa, ele se lança sobre a própria espada (31:1-4).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Samuel 15:22-23</span>
+          <p>Eis que o obedecer é melhor do que o sacrificar; e o atender é melhor do que a gordura de carneiros. Porque a rebelião é como o pecado de feitiçaria, e o porfiar é como iniquidade e idolatria.</p>
+          <span class="ref">— Samuel, a Saul, depois da desobediência com os amalequitas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Saul nunca se rebela de uma vez só — cada desvio parece pequeno e justificável no momento: um sacrifício adiantado por impaciência, uma exceção "razoável" numa ordem de destruição total, um ciúme que começa como mágoa e vira obsessão homicida. É a soma de desobediências parciais, nunca corrigidas com um "pequei" como o de Davi, que constrói a rejeição final.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da obediência parcial</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da obediência completa</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Guardar o que a ordem mandou destruir";
+      text.textContent = "Cada vez que Saul obedece 90% de uma ordem e se justifica pelos outros 10%, ele treina o próprio coração a negociar com Deus em vez de confiar nele — até que a negociação vira hábito, e o hábito vira ruína.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Obedecer sem editar a ordem recebida";
+      text.textContent = "A alternativa que Saul nunca escolhe é simples de descrever e difícil de viver: fazer exatamente o que foi pedido, mesmo quando parece haver uma versão \"melhorada\" e mais razoável à mão.";
+    }
+  }
+</script>
+</body>
+</html>

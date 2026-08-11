@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonas — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 13 · <span class="ref-tag">Jonas 1-4</span></div>
+  <h1>Jonas</h1>
+  <p class="sub">Fugiu do chamado, foi engolido pelo próprio "não" — e ainda assim recebeu uma segunda chance. O problema é que, quando a mesma misericórdia alcança seu inimigo, ele fica furioso.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 13 C6 9 12 9 16 13" stroke-width="1.3" fill="none"/>
+          <path d="M9 4 L9 10" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 6 L9 4 L12 6" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Fugindo na direção contrária</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Levanta-te, e vai a Nínive, aquela grande cidade, e clama contra ela" (Jonas 1:2) — Nínive é a capital da Assíria, o império mais temido e odiado por Israel. Jonas não hesita por medo: ele simplesmente discorda da missão. Em vez de ir para o leste, embarca num navio para Társis, na direção oposta, "fugindo da presença do Senhor" (v.3).</p>
+          <p>Uma tempestade violenta ameaça afundar o navio. Os marinheiros pagãos, apavorados, clamam cada um ao seu próprio deus — enquanto Jonas dorme no porão. O capitão o acorda: "Que tens, dorminhoco? Levanta-te, e clama ao teu Deus" (v.6). Lançada a sorte, todos descobrem que a culpa é dele.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o peixe</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 9 C6 4 12 4 16 9 C12 14 6 14 2 9 Z" stroke-width="1.3"/>
+          <circle cx="6" cy="9" r="0.8" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Engolido pelo próprio "não"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jonas pede aos marinheiros que o lancem ao mar, sabendo que é o único jeito de salvá-los — os mesmos pagãos que oram a deuses estranhos hesitam em fazer isso, remam com força para tentar voltar à terra, e só o lançam ao mar depois de orarem ao Deus de Jonas pedindo para não serem culpados por sangue inocente (v.13-15).</p>
+          <p>"E o Senhor deu ordem a um grande peixe que engolisse a Jonas; e esteve Jonas três dias e três noites nas entranhas do peixe" (v.17). De dentro dele, Jonas ora — não pedindo para sair, mas reconhecendo que já tinha sido salvo: "os que se apegam a vaidades e mentiras abandonam sua misericórdia" (2:8). O peixe o vomita em terra firme.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Nínive se arrepende</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="3" y="6" width="12" height="9" stroke-width="1.3"/>
+          <path d="M3 6 L9 2 L15 6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A cidade inteira se veste de saco</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chamado uma segunda vez, agora Jonas vai — atravessa a "grande cidade de três dias de caminho" pregando uma única frase: "Ainda quarenta dias, e Nínive será subvertida" (3:4). O resultado surpreende até ele: os ninivitas creem em Deus, proclamam jejum, "desde o maior deles até o menor" (v.5), e o próprio rei desce do trono, veste saco e se assenta sobre cinza, ordenando que todos se voltem de seus maus caminhos.</p>
+          <p>"E viu Deus as obras deles, que se converteram do seu mau caminho; e Deus se arrependeu do mal que tinha dito lhes faria, e não o fez" (v.10) — o maior avivamento registrado no Antigo Testamento acontece na capital do maior inimigo de Israel.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a raiva de Jonas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 12 C4 9 6 4 9 4 C12 4 14 9 14 12" stroke-width="1.3"/>
+          <path d="M9 12 V16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A planta de mamona</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em vez de comemorar, Jonas fica indignado: "Ó Senhor, não foi isto o que eu dizia, estando ainda na minha terra? Por isso, me apressei a fugir para Társis; porque sabia que és Deus clemente e misericordioso... e que te arrependes do mal" (4:2). A mesma característica de Deus que salvou Jonas no peixe é a que ele não quer que alcance Nínive.</p>
+          <p>Ele se senta a leste da cidade, esperando para ver o que aconteceria. Deus faz crescer uma planta para lhe dar sombra — Jonas se alegra muito — e no dia seguinte manda uma lagarta que a resseca. Debaixo do sol quente, Jonas outra vez pede para morrer. Deus então pergunta: se Jonas se compadece de uma planta que não plantou, "e não pouparia eu a Nínive, aquela grande cidade, em que há mais de cento e vinte mil pessoas que não sabem discernir entre a mão direita e a esquerda...?" (v.10-11).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Jonas 4:10-11</span>
+          <p>Tiveste tu pena da aparelheira, na qual não trabalhaste, nem a fizeste crescer... e não pouparia eu a Nínive, aquela grande cidade, em que há mais de cento e vinte mil pessoas que não sabem discernir entre a sua mão direita e a esquerda, e também muitos animais?</p>
+          <span class="ref">— A última palavra de Deus a Jonas, em forma de pergunta</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O livro termina sem resposta de Jonas — a pergunta de Deus fica no ar, dirigida tanto a ele quanto a quem lê. É possível ter sido salvo pela mesma misericórdia que se recusa a desejar para o inimigo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da misericórdia reservada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da compaixão que incomoda</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Querer a graça só para si";
+      text.textContent = "Jonas aceita ser resgatado do peixe sem hesitar, mas se recusa a aceitar que o mesmo resgate alcance Nínive — a graça vira propriedade privada, não dom para ser espalhado.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma compaixão maior que a nossa lógica";
+      text.textContent = "Deus se compadece de uma cidade inteira que \"não sabe discernir a mão direita da esquerda\" — a mesma paciência que Jonas recebeu no peixe, ele não consegue desejar para quem considerava inimigo.";
+    }
+  }
+</script>
+</body>
+</html>

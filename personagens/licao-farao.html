@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faraó do Êxodo — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 31 · <span class="ref-tag">Êxodo 5-14</span></div>
+  <h1>Faraó do Êxodo</h1>
+  <p class="sub">Dez pragas, dez avisos, um coração que endurece um pouco mais a cada vez que a dor passa. A história de um homem com poder absoluto sobre um império e nenhum poder sobre a própria teimosia.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 H14 M6 14 V6 H12 V14" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 6 L9 2 L14 6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Quem é o Senhor, para que eu ouça a sua voz?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés e Arão se apresentam a Faraó com um pedido simples, em nome do Deus de Israel: "Deixa ir o meu povo". A resposta é imediata e desdenhosa: "Quem é o Senhor, cuja voz eu ouvirei, para deixar ir a Israel? Não conheço o Senhor, nem tampouco deixarei ir a Israel" (Êxodo 5:1-2).</p>
+          <p>Em vez de ceder, Faraó pune o povo: ordena que os hebreus continuem fazendo a mesma quantidade de tijolos, mas sem receber mais a palha necessária — eles mesmos que a procurem (5:6-9). O primeiro pedido de liberdade só piora as correntes.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as pragas e o padrão que se repete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 5 L9 13 L15 5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M3 5 L3 5.3 M9 13 L9 13.3 M15 5 L15 5.3" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As pragas e o padrão que se repete</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao longo de dez pragas — sangue, rãs, piolhos, moscas, peste no gado, úlceras, saraiva, gafanhotos, trevas e a morte dos primogênitos — o texto descreve o mesmo ciclo se repetindo quase sempre da mesma forma. Toque em cada etapa do ciclo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, faraoData, 0, 'faraoText')">A praga chega</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, faraoData, 1, 'faraoText')">Faraó promete ceder</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, faraoData, 2, 'faraoText')">A praga passa</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, faraoData, 3, 'faraoText')">O coração endurece de novo</button>
+          </div>
+          <div class="chip-text" id="faraoText">Toque em cada etapa para ver como o ciclo se repete praga após praga.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → de quem é o endurecimento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 6 6 10 9 12 C12 10 12 6 9 3 Z" stroke-width="1.3"/>
+          <path d="M9 12 V15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">De quem é o endurecimento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O texto hebraico alterna, praga após praga, entre duas expressões: nas primeiras pragas, é Faraó quem "endurece o seu coração" (8:15, 8:32, 9:34) — uma escolha ativa, repetida. Só nas pragas finais o texto passa a dizer que "o Senhor endureceu o coração de Faraó" (9:12, 10:20, 10:27, 14:8).</p>
+          <p>A leitura mais comum entre os intérpretes é que o padrão descreve algo real sobre a própria natureza da teimosia: um coração que escolhe resistir repetidamente à evidência, sinal após sinal, chega a um ponto em que essa resistência deixa de ser uma escolha nova a cada vez e se torna o estado natural da pessoa — Deus confirma judicialmente o caminho que Faraó já vinha insistindo em seguir sozinho.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a última recusa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 C5 6 13 6 16 12" stroke-width="1.3" fill="none"/>
+          <path d="M2 12 L16 12" stroke-width="1.2" stroke-dasharray="1.5 1.5"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A última recusa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois da décima praga — a morte de todo primogênito do Egito, incluindo o próprio filho de Faraó — ele finalmente libera Israel, à noite, às pressas (12:29-33). Por um instante, o padrão parece quebrado.</p>
+          <p>Mas assim que a dor imediata passa, o padrão volta: "mudou-se o coração de Faraó e dos seus servos para com o povo... Que é isto que fizemos, que deixamos ir a Israel, que não nos sirva mais?" (14:5). Ele reúne seus carros de guerra e persegue o povo até a beira do Mar Vermelho — onde seu exército inteiro é destruído nas águas que haviam se dividido para Israel passar (14:23-28).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Êxodo 8:15</span>
+          <p>Vendo, porém, Faraó que havia descanso, agravou o seu coração, e não os ouviu, como o Senhor tinha dito.</p>
+          <span class="ref">— Sobre a reação de Faraó ao fim da segunda praga</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Faraó teve nove avisos antes do décimo golpe final — cada praga era, em si, uma chance de mudar de rumo antes da catástrofe maior. Moisés, que também tinha motivos de sobra para não confiar em Deus depois de fugir do Egito por décadas, escolhe o caminho oposto ao de Faraó: obedece mesmo relutante, mesmo inseguro, mesmo sem entender tudo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do coração endurecido</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do coração que cede</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const faraoData = [
+    { text: "Uma nova praga cai sobre o Egito — sangue, rãs, piolhos, moscas, peste, úlceras, saraiva, gafanhotos, trevas — sempre poupando a terra de Gósen, onde vivia Israel." },
+    { text: "Sob o peso da praga, Faraó chama Moisés e Arão e promete deixar o povo ir, às vezes pedindo até que orem por ele (8:8, 9:27-28, 10:16-17)." },
+    { text: "Moisés ora, a praga cessa — Deus cumpre exatamente o que prometeu, sem atraso." },
+    { text: "Assim que o alívio chega, \"Faraó agravou o seu coração\" e recusa cumprir o que tinha prometido (8:15, 8:32, 9:34-35) — o ciclo recomeça na praga seguinte." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Resistir até a resistência virar automática";
+      text.textContent = "Nove vezes Faraó viu o poder de Deus agir e recuar diante da sua palavra, e nove vezes escolheu voltar atrás assim que a dor passava. Cada recusa deixava a próxima recusa mais fácil — até não sobrar mais escolha nenhuma, só o hábito de resistir.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ceder antes que o coração endureça";
+      text.textContent = "Moisés também tinha motivos para resistir ao chamado — insegurança, um passado de fracasso, quarenta anos de exílio. Mas cada vez que Deus fala, ele obedece, mesmo hesitante. É essa disposição de ceder cedo, antes que a teimosia vire hábito, que a história de Faraó deixa como advertência ao contrário.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salomão — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 07 · <span class="ref-tag">1 Reis 3-11</span></div>
+  <h1>Salomão</h1>
+  <p class="sub">O homem mais sábio da terra — e como a sabedoria concedida por Deus não bastou, sozinha, para guardar o próprio coração dele.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 13 6 13 10 C13 13 11 15 9 15 C7 15 5 13 5 10 C5 6 9 3 9 3 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um pedido incomum</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Recém-coroado rei depois de Davi, Salomão tem um sonho em Gibeão no qual Deus lhe diz: "Pede o que queres que eu te dê" (1 Reis 3:5). Um rei jovem poderia pedir riqueza, longevidade ou a morte de seus inimigos. Salomão pede outra coisa: "Dá, pois, ao teu servo um coração entendido, para julgar a teu povo, para que eu possa discernir entre o bem e o mal" (v.9).</p>
+          <p>Deus concede — e acrescenta o que ele não pediu: "também te dei o que não pediste, assim riquezas como glória" (v.13). A sabedoria concedida é testada quase de imediato, quando duas mulheres disputam a maternidade de um bebê diante dele, e Salomão propõe dividir a criança ao meio para revelar quem é a verdadeira mãe (v.16-28).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a casa que ele constrói</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L9 13 M4 13 H14 M5 13 V8 H13 V13" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A casa que ele constrói para Deus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Salomão dedica sete anos à construção do templo de Jerusalém (1 Reis 6:38) — o lugar onde a arca da aliança finalmente encontra um endereço fixo, depois de séculos numa tenda móvel. Na dedicação, ele ora publicamente: "Os céus, e até os céus dos céus, te não podem conter, quanto menos esta casa que tenho edificado" (8:27).</p>
+          <p>Sob seu reinado, Israel alcança o auge de sua influência, riqueza e paz territorial — a rainha de Sabá viaja de longe só para testemunhar a sabedoria de que já tinha ouvido falar, e sai impressionada (10:1-9).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → setecentas esposas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.2"/>
+          <circle cx="9" cy="4" r="2.2" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que a sabedoria não guardou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Ora, o rei Salomão amou muitas mulheres estrangeiras" (11:1) — setecentas esposas e trezentas concubinas, muitas delas parte de alianças políticas com nações vizinhas, exatamente o tipo de casamento que a lei de Moisés já tinha alertado contra (Deuteronômio 17:17). Toque em cada consequência:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, salomaoData, 0, 'salomaoText')">O coração desviado</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, salomaoData, 1, 'salomaoText')">Altares para outros deuses</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, salomaoData, 2, 'salomaoText')">A ira do Senhor</button>
+          </div>
+          <div class="chip-text" id="salomaoText">Toque em cada item para ver como o desvio se instala.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o reino dividido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M3 9 H15" stroke-width="1.3" stroke-dasharray="2 2"/>
+          <circle cx="9" cy="9" r="7" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O preço cobrado depois</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus anuncia a Salomão a consequência: "Certamente rasgarei de ti este reino, e o darei ao teu servo" (11:11) — poupando-o em vida, por causa de Davi, mas prometendo que a divisão aconteceria no reinado do filho dele, Roboão. Adversários começam a se levantar ainda durante o próprio reinado de Salomão (v.14-25).</p>
+          <p>No fim da vida, atribui-se a Salomão o livro de Eclesiastes — um homem que teve acesso a tudo o que a riqueza, o prazer e a sabedoria humana podem oferecer, e conclui: "Vaidade de vaidades, tudo é vaidade" (Eclesiastes 1:2), fechando o livro com o que realmente importa: "Teme a Deus, e guarda os seus mandamentos; porque isto é o dever de todo homem" (12:13).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 4:23</span>
+          <p>Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as saídas da vida.</p>
+          <span class="ref">— Atribuído a Salomão</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É irônico e instrutivo que o mesmo homem que escreveu esse provérbio tenha sido, ele próprio, um exemplo de não segui-lo. A sabedoria de Salomão era real, concedida por Deus — mas sabedoria intelectual e guarda do coração não são automaticamente a mesma coisa. Uma pode existir sem a outra.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do dom sem guarda</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da guarda constante</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const salomaoData = [
+    { text: "\"Quando Salomão já era velho, suas mulheres lhe desviaram o coração após outros deuses; e o seu coração não era perfeito para com o Senhor seu Deus, como o coração de Davi, seu pai\" (11:4)." },
+    { text: "Ele chega a construir altares para Quemós e Moloque, deuses de Moabe e Amom, para agradar suas esposas estrangeiras (11:7-8) — o mesmo rei que tinha dedicado o templo do Senhor décadas antes." },
+    { text: "\"Irou-se o Senhor contra Salomão, porquanto o seu coração se tinha desviado do Senhor Deus de Israel\" (11:9) — e anuncia que o reino será dilacerado depois dele." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ter sabedoria e não a aplicar a si mesmo";
+      text.textContent = "Salomão aconselhou reis, resolveu disputas impossíveis e escreveu provérbios sobre guardar o coração — e ainda assim deixou o próprio coração se desviar, devagar, aliança por aliança, sem perceber o desvio a tempo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Guardar o coração todos os dias";
+      text.textContent = "Nenhum dom recebido de Deus — nem sabedoria, nem riqueza, nem sucesso — substitui a vigilância diária sobre o próprio coração. É um cuidado que precisa ser renovado, não uma conquista feita uma vez e esquecida.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 18 · <span class="ref-tag">1 Samuel 1-2</span></div>
+  <h1>Ana</h1>
+  <p class="sub">Anos de súplica silenciosa por um filho — e a coragem de devolver a Deus exatamente o que mais custou pedir.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 6 6 10 9 13 C12 10 12 6 9 3 Z" stroke-width="1.2"/>
+          <path d="M9 13 V16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Provocada ano após ano</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ana é uma das duas esposas de Elcana. A outra, Penina, tem filhos; Ana não tem nenhum — "o Senhor lhe cerrara a madre" (1 Samuel 1:5-6). Elcana a ama e lhe dá porção dobrada nos sacrifícios anuais em Siló, mas isso não apaga a dor: Penina a provoca repetidamente, "para a irritar, porquanto o Senhor cerrara a sua madre" (v.6).</p>
+          <p>Ano após ano, na peregrinação da família ao templo, a provocação se repete, e Ana chora e não come (v.7). Elcana tenta consolá-la com uma pergunta bem-intencionada, mas que não resolve nada: "não te sou eu melhor do que dez filhos?" (v.8).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a oração confundida com bebedeira</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V12.5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A oração confundida com bebedeira</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em profunda amargura de alma, Ana ora ao Senhor e chora abundantemente (v.10). Ela move os lábios, mas sua voz não se ouve — algo incomum o bastante para o sacerdote Eli, observando de longe, concluir que ela estava bêbada, e repreendê-la: "até quando estarás tu embriagada? Aparta de ti o teu vinho" (v.13-14).</p>
+          <p>Ana se defende: "não bebi vinho, nem bebida forte; porém tenho derramado a minha alma perante o Senhor... falei até agora pela multidão de minhas magoas e do meu desgosto" (v.15-16). Eli, corrigido, a abençoa: "vai em paz, e o Deus de Israel te dê a petição que lhe pediste" (v.17).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, anaData, 0, 'anaText')">O voto de Ana</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, anaData, 1, 'anaText')">A resposta de Eli</button>
+          </div>
+          <div class="chip-text" id="anaText">Toque para ver o que Ana pediu e prometeu, e como Eli responde.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Samuel nasce</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="3.5" stroke-width="1.2"/>
+          <path d="M4 16 C4 11.5 6 9 9 9 C12 9 14 11.5 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Samuel nasce</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Aconteceu que, decorrido algum tempo, Ana concebeu, e teve um filho, e chamou o seu nome Samuel, dizendo: Porquanto o pedi ao Senhor" (v.20) — o próprio nome é um lembrete permanente de onde ele veio. Ana não volta à peregrinação seguinte: fica em casa até desmamar o menino, dizendo a Elcana que só então o levará "para que apareça perante o Senhor, e ali fique para sempre" (v.22).</p>
+          <p>É uma decisão que ela já tinha tomado antes mesmo de engravidar — o voto feito em lágrimas no templo não era retórica de desespero, era um compromisso que ela pretendia cumprir de verdade.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → devolvendo o que pediu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V13 M5 9 L9 13 L13 9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Devolvendo o que pediu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Desmamado — provavelmente com uns três anos — Ana leva o próprio Samuel a Siló, junto com uma oferta, e o entrega a Eli: "por este menino orava eu, e o Senhor me concedeu a minha petição... por isso também eu o entreguei ao Senhor; todos os dias que ele viver, ao Senhor será entregue" (1:26-28). Ela não guarda o filho que tanto pediu — devolve.</p>
+          <p>O capítulo 2 registra seu cântico de louvor, cheio de reviravoltas — "os fartos se alugam por pão, e os famintos descansam... a estéril pare sete filhos" (2:5) — palavras que soam quase idênticas às que Maria, mãe de Jesus, cantaria séculos depois no Magnificat.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Samuel 1:27-28</span>
+          <p>Por este menino orava eu, e o Senhor me concedeu a minha petição, que eu lhe tinha pedido. Pelo que também eu o entreguei ao Senhor; todos os dias que ele viver, ao Senhor será entregue.</p>
+          <span class="ref">— Ana, entregando Samuel a Eli</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Ana continua visitando o filho todo ano, levando-lhe uma túnica nova (2:19) — o amor não desaparece com a entrega. Mas o filho que ela mais desejou na vida se torna o profeta que ungiria os primeiros reis de Israel, exatamente porque ela não o guardou só para si.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de guardar para si</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de devolver a Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const anaData = [
+    { text: "Ana promete: se Deus lhe der um filho homem, ela o dará ao Senhor todos os dias da sua vida, e nenhuma navalha passará sobre sua cabeça — um voto nazireu (1:11)." },
+    { text: "Eli, já corrigido por tê-la julgado bêbada, abençoa: \"vai em paz, e o Deus de Israel te dê a petição que lhe pediste\" (1:17) — e Ana come e já não está mais triste (1:18)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Guardar o que custou tanto pedir";
+      text.textContent = "Depois de anos de súplica, seria natural que Ana quisesse manter Samuel só para si, perto, em segurança — o filho tão pedido virando o filho tão guardado.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Devolver o que mais custou pedir";
+      text.textContent = "Ana cumpre o voto exatamente como prometeu, mesmo depois de receber o que queria — o dom recebido não vira posse a ser guardada, vira algo para ser oferecido de volta.";
+    }
+  }
+</script>
+</body>
+</html>

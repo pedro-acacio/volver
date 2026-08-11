@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaque — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 04 · <span class="ref-tag">Gênesis 22 · 24 · 26</span></div>
+  <h1>Isaque</h1>
+  <p class="sub">O filho deitado no altar de outro homem, o casamento respondido em oração antes de acontecer, e — mais tarde — a mesma falha do pai repetida por conta própria: a fé de uma geração precisa se tornar pessoal, falhas incluídas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L16 15 H2 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 8 V11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Deitado no altar de outro homem</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Isaque é jovem forte o bastante para carregar sozinho a lenha do próprio sacrifício monte acima (22:6) — não é uma criança indefesa, é alguém que poderia ter resistido. No caminho, pergunta ao pai onde está o cordeiro. Abraão responde que Deus proverá (22:7-8), e Isaque continua subindo.</p>
+          <p>No altar, Abraão o amarra e ergue a faca — e é detido por um anjo no último instante, com um carneiro preso num arbusto tomando o lugar de Isaque (22:9-13). O texto não registra nenhuma palavra de resistência de Isaque durante todo o episódio: ele confia no pai sem entender o que está acontecendo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → uma esposa respondida em oração</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 6 6 9 9 11 C12 9 12 6 9 3 Z" stroke-width="1.3"/>
+          <path d="M9 11 V15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Uma esposa respondida em oração</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Anos depois, Abraão já idoso envia seu servo mais confiável de volta à terra natal para buscar uma esposa para Isaque — recusando terminantemente que ele se case com uma cananeia (24:1-4). O servo, chegando ao poço da cidade de Naor, faz uma oração bem específica: que a moça que oferecer água tanto a ele quanto aos seus dez camelos seja a escolhida por Deus (24:12-14).</p>
+          <p>Antes mesmo de terminar de orar, Rebeca aparece e faz exatamente isso (24:15-20). O servo reconhece a resposta na hora: "o Senhor guiou-me... no caminho" (24:27). Isaque, esperando em Canaã, a recebe, ama-a, e "assim Isaque foi consolado depois da morte de sua mãe" (24:67) — o casamento chega como um presente pronto, não como uma conquista sua.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, isaqueData, 0, 'isaqueText')">O sinal do servo</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, isaqueData, 1, 'isaqueText')">A resposta de Rebeca</button>
+          </div>
+          <div class="chip-text" id="isaqueText">Toque para ver os detalhes do pedido e da resposta.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a mesma mentira do pai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 3 L15 15 M15 3 L3 15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A mesma mentira do pai</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Décadas antes, Abraão, com medo de ser morto por causa da beleza de Sara, mentiu duas vezes dizendo que ela era sua irmã (Gênesis 12:10-13; 20:1-2). Numa fome, Isaque se muda para Gerar, e — diante do mesmo medo, do mesmo rei filisteu, Abimeleque — faz exatamente a mesma coisa com Rebeca: "É minha irmã", com medo de ser morto por sua causa (26:6-7).</p>
+          <p>O engano é descoberto quando Abimeleque vê Isaque "brincando" com Rebeca de um jeito que só um marido faria (26:8-9). A falha não é original — é herdada, repetida quase palavra por palavra pela geração seguinte, mesmo depois de Isaque ter crescido vendo o pai confiar em Deus no Moriá.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → poços reabertos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 5 V9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Poços reabertos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois do episódio com Abimeleque, Isaque planta lavouras e recebe cem vezes mais do que semeou — prosperidade tão grande que os filisteus, com inveja, entopem de terra todos os poços que o pai de Isaque tinha cavado antes (26:12-15).</p>
+          <p>Em vez de brigar por território novo, Isaque simplesmente reabre, um por um, os poços do pai — e mantém até os mesmos nomes que Abraão tinha dado a eles (26:18). É um retrato pequeno, mas revelador: parte da vocação de Isaque não é abrir caminho novo, é preservar fielmente o que já tinha sido cavado antes dele.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Gênesis 26:24</span>
+          <p>Naquela mesma noite, o Senhor lhe apareceu e disse: Eu sou o Deus de Abraão, teu pai; não temas, porque eu sou contigo, e te abençoarei, e multiplicarei a tua semente por amor de Abraão, meu servo.</p>
+          <span class="ref">— O Senhor, a Isaque, depois do episódio com Abimeleque</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Deus não se apresenta a Isaque como um Deus totalmente novo, mas como "o Deus de Abraão, teu pai" — a mesma fé, a mesma aliança, passada adiante. Isaque herdou tanto a confiança silenciosa do altar quanto o medo mentiroso do pai; a promessa não dependia dele ser perfeito, só de continuar recebendo o que já tinha sido dado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da falha copiada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da fé recebida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const isaqueData = [
+    { text: "O servo pede um sinal bem específico: que a moça certa ofereça água não só a ele, mas a todos os dez camelos — um gesto que exigiria ir e voltar ao poço muitas vezes, provando disposição incomum para servir estranhos (24:12-14)." },
+    { text: "Rebeca corre para dar de beber aos camelos sem que ninguém peça — cumprindo o sinal antes mesmo de o servo terminar de pedir, e revelando exatamente o tipo de generosidade que ele havia orado para encontrar (24:19-20,45)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Repetir o medo herdado";
+      text.textContent = "Isaque cresceu vendo o pai confiar a ponto de subir um monte de faca em punho — e mesmo assim, diante do mesmo medo antigo, mente do mesmo jeito que Abraão já tinha mentido duas vezes antes dele.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Continuar recebendo a mesma promessa";
+      text.textContent = "Apesar da falha repetida, Deus se apresenta a Isaque pelo mesmo nome que usou com Abraão, e renova a mesma aliança. A fé que passa de geração em geração não exige perfeição — só a disposição de continuar recebendo o que já foi prometido.";
+    }
+  }
+</script>
+</body>
+</html>

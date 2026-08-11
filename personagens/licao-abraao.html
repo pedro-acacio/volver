@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abraão — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 02 · <span class="ref-tag">Gênesis 12-22</span></div>
+  <h1>Abraão</h1>
+  <p class="sub">Sair sem saber para onde, esperar um filho por vinte e cinco anos, e depois subir um monte para entregar de volta o próprio milagre — uma fé testada em camadas cada vez mais fundas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 L15 3" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M8 3 H15 V10" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Sair sem saber para onde</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Abrão tem setenta e cinco anos, uma vida montada em Harã, e recebe uma ordem que não vem com mapa: "Sai-te da tua terra, e da tua parentela, e da casa de teu pai, para a terra que eu te mostrarei" (Gênesis 12:1). Não "a terra tal", apenas "a terra que eu te mostrarei" — a instrução chega antes do destino.</p>
+          <p>Junto com a ordem vem uma promessa enorme: "Far-te-ei uma grande nação... e serás uma bênção... em ti serão benditas todas as famílias da terra" (12:2-3). Abrão parte — mas leva Ló, seu sobrinho, contrariando o "da casa de teu pai" que a ordem original deixava claro (12:4-5).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o atalho de Agar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 9 L14 12" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="9" r="7" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O atalho de Agar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dez anos depois de chegar a Canaã, Deus confirma a aliança: um filho próprio, e uma descendência "como as estrelas do céu" (15:4-5). "E creu Abrão no Senhor, e isso lhe foi imputado como justiça" (15:6) — o versículo que Paulo mais tarde vai usar para explicar toda a doutrina da justificação pela fé (Romanos 4:3).</p>
+          <p>Mas Sarai continua estéril, e a espera pesa. Ela propõe um atalho legal para a cultura da época: que Abrão gere um herdeiro através de Agar, sua serva egípcia (16:1-3). Toque para ver o que esse atalho custa:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, abraaoData, 0, 'abraaoText')">O nascimento de Ismael</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, abraaoData, 1, 'abraaoText')">O conflito em casa</button>
+          </div>
+          <div class="chip-text" id="abraaoText">Toque para ver o resultado de resolver a promessa por conta própria.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o filho da promessa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3" stroke-width="1.3"/>
+          <path d="M9 2 V4.5 M9 13.5 V16 M2 9 H4.5 M13.5 9 H16" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O filho da promessa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Treze anos depois do episódio com Agar, quando Abraão já tem noventa e nove anos, Deus muda seu nome — de Abrão, "pai exaltado", para Abraão, "pai de multidões" (17:5) — e repete a promessa de um filho, agora através de Sara. Abraão ri, incrédulo com a própria idade (17:17). Sara, ouvindo a mesma promessa às escondidas, também ri (18:12).</p>
+          <p>Mesmo assim: "Haverá coisa alguma difícil ao Senhor?" (18:14). No tempo certo, Isaque nasce — nome que significa literalmente "riso" (21:1-6). O filho que o casal tentou produzir por conta própria não era o filho da promessa; o filho da promessa vem exatamente quando toda capacidade humana de produzi-lo já tinha se esgotado.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o monte Moriá</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L16 15 H2 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 8 V11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O monte Moriá</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Anos depois, vem o teste mais duro: "Toma agora o teu filho, o teu único filho, Isaque, a quem amas... e oferece-o ali em holocausto" (22:2). É o próprio filho da promessa que Deus pede de volta.</p>
+          <p>Abraão obedece sem discutir. No caminho, quando Isaque pergunta onde está o cordeiro para o sacrifício, Abraão responde: "Deus proverá para si o cordeiro para o holocausto" (22:8) — uma fé que segue sem saber como a história termina. No último instante, um anjo detém sua mão, e um carneiro preso pelos chifres num arbusto toma o lugar de Isaque (22:10-13).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Gênesis 22:14</span>
+          <p>E chamou Abraão o nome daquele lugar de Jeová-Jiré; donde se diz até ao dia de hoje: No monte do Senhor se proverá.</p>
+          <span class="ref">— Abraão, depois de reter a mão sobre o filho</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O mesmo homem que tentou garantir a promessa por conta própria com Agar é quem, anos depois, entrega de volta o milagre que finalmente recebeu — confiando que quem prometeu também sabe prover, mesmo quando o pedido não faz sentido nenhum.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do atalho</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da confiança</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const abraaoData = [
+    { text: "Ismael nasce quando Abrão tem oitenta e seis anos (16:15-16) — um filho real, amado, mas não o filho através de quem a aliança seguiria adiante (17:19-21)." },
+    { text: "Assim que engravida, Agar passa a desprezar Sarai; Sarai, humilhada, trata Agar com dureza, e ela foge para o deserto (16:4-6) — o atalho gera tensão dentro de casa que atravessa gerações." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Resolver a promessa por conta própria";
+      text.textContent = "Quando a espera fica longa demais, o atalho parece sabedoria — mas o filho que Abrão produziu por iniciativa própria trouxe conflito para dentro de casa, não o descanso que a promessa prometia.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Confiar sem controlar o como";
+      text.textContent = "No Moriá, Abraão não tenta entender o pedido — apenas obedece, confiando que quem prometeu o filho também sabe como preservá-lo. É a mesma fé, amadurecida: já não precisa garantir o resultado para obedecer.";
+    }
+  }
+</script>
+</body>
+</html>

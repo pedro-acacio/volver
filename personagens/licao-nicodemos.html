@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicodemos — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 28 · <span class="ref-tag">João 3 · 7 · 19</span></div>
+  <h1>Nicodemos</h1>
+  <p class="sub">Foi conversar com Jesus escondido, de noite, com medo de ser visto — e reaparece, capítulos depois, em plena luz do dia, carregando um presente caro demais para continuar escondido.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 3 A6 6 0 0 0 9 15 Z" fill="currentColor" stroke="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um mestre de Israel, de noite</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nicodemos era fariseu e membro do Sinédrio, o conselho religioso mais alto de Jerusalém — Jesus o chama de "mestre de Israel" (João 3:10), reconhecendo sua posição de destaque. E, mesmo assim, ele procura Jesus "de noite" (v.2) — o texto marca o detalhe, e o evangelho de João volta a mencioná-lo mais tarde exatamente para lembrar o leitor dessa primeira vez escondida (19:39).</p>
+          <p>Ele começa com elogios cautelosos: "sabemos que és Mestre, vindo de Deus" (v.2) — um homem respeitado, testando terreno antes de se comprometer com qualquer coisa maior.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → nascer de novo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C9 15 4 11 4 7 C4 4.5 6 3 9 3 C12 3 14 4.5 14 7 C14 11 9 15 9 15 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Como pode um homem nascer, sendo velho?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus vai direto ao ponto, sem responder ao elogio: "aquele que não nascer de novo não pode ver o reino de Deus" (v.3). Nicodemos reage de forma literal e prática, sem conseguir ainda ver a metáfora: "como pode um homem nascer, sendo velho? porventura pode tornar a entrar no ventre de sua mãe, e nascer?" (v.4).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, nicodemosData, 0, 'nicodemosText')">Nascer da água e do Espírito</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, nicodemosData, 1, 'nicodemosText')">A serpente de bronze</button>
+          </div>
+          <div class="chip-text" id="nicodemosText">Toque para ver como Jesus explica o que Nicodemos ainda não entendia.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → uma defesa tímida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V14 H4 Z" stroke-width="1.4"/>
+          <path d="M7 9 L9 11 L12 6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Uma defesa tímida no Sinédrio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nicodemos só reaparece muitos capítulos depois, quando os principais sacerdotes e fariseus discutem prender Jesus. Ele não faz um discurso corajoso a favor dele — apenas levanta uma objeção processual, cautelosa: "Porventura a nossa lei julga um homem sem primeiro o ouvir e ter conhecimento do que faz?" (7:51).</p>
+          <p>A resposta que recebe é desdenhosa: "Porventura és tu também galileu? Examina e vê que da Galiléia nenhum profeta se levantou" (7:52). Ele não insiste, não é mencionado de novo naquele capítulo — um passo pequeno, arriscado o suficiente para ele, mas ainda longe de uma declaração pública de fé.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → mirra e aloés, em plena luz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M4 9 H14" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="7.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Mirra e aloés, em plena luz</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois da crucificação, quando o corpo de Jesus precisa ser preparado às pressas antes do sábado, Nicodemos aparece pela primeira vez sem esconderijo algum. Ele traz "cerca de cem arráteis" de mirra e aloés (19:39) — uma quantidade extravagante, digna de um sepultamento real, um gasto público e caro, que qualquer um no Sinédrio podia ver e questionar.</p>
+          <p>Ele ajuda José de Arimateia a envolver o corpo e sepultá-lo (v.39-42) — o mesmo homem que uma vez foi conversar escondido de noite agora presta a última homenagem visível a um Jesus já morto, quando não havia mais nada a ganhar politicamente com isso.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 19:39</span>
+          <p>E foi também Nicodemos (aquele que anteriormente se dirigira de noite a Jesus), levando quase cem arráteis de mirra e aloés misturados.</p>
+          <span class="ref">— João, sobre o sepultamento de Jesus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O evangelho de João parece guardar de propósito o detalhe "de noite" só para poder contrastá-lo aqui, no fim, com um gesto totalmente exposto à luz do dia. A jornada de Nicodemos não é de um único encontro — é de anos, do sussurro cauteloso à ação pública mais cara que ele já tinha feito.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da fé escondida</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da fé que amadurece</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const nicodemosData = [
+    { text: "Jesus explica: \"quem não nascer da água e do Espírito não pode entrar no reino de Deus\" (3:5) — um nascimento espiritual, não físico, operado pelo Espírito." },
+    { text: "Jesus compara sua própria morte futura à serpente de bronze que Moisés levantou no deserto (Números 21) — \"assim importa que o Filho do homem seja levantado, para que todo aquele que nele crê não pereça\" (3:14-15)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Voltar sempre depois de escurecer";
+      text.textContent = "Nicodemos podia ter ficado só com a visita noturna — respeitado de dia, curioso de longe à noite, nunca arriscando a própria posição por aquilo em que passou a crer.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Da noite à luz, um passo de cada vez";
+      text.textContent = "Entre a pergunta escondida no capítulo 3 e a mirra pública no capítulo 19, passam-se anos. A fé de Nicodemos não amadurece de uma vez — cresce em etapas, até não precisar mais de escuridão nenhuma.";
+    }
+  }
+</script>
+</body>
+</html>

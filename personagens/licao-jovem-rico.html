@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O jovem rico — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 29 · <span class="ref-tag">Mateus 19:16-22</span></div>
+  <h1>O jovem rico</h1>
+  <p class="sub">Cumpriu cada mandamento desde a juventude e ainda assim sentiu que faltava algo — até Jesus nomear exatamente o que era, e ele preferir ir embora triste a soltar aquilo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 L9 3 L14 15" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 10 H11.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma pergunta feita correndo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O relato de Marcos acrescenta um detalhe que Mateus não tem: ele "correu" até Jesus e se ajoelhou diante dele (Marcos 10:17) — urgência genuína, não uma pergunta casual. "Bom Mestre, que farei de bom para conseguir a vida eterna?" (Mateus 19:16).</p>
+          <p>Era jovem (v.20,22), rico e, segundo Lucas 18:18, também uma autoridade — alguém que já tinha tudo o que a sociedade da época media como sucesso, e mesmo assim sentia que faltava algo importante o bastante para correr atrás de um rabino desconhecido.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "tudo isso tenho guardado"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="3" width="10" height="12" rx="1" stroke-width="1.3"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Tudo isso tenho guardado desde a minha mocidade"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus responde apontando para os mandamentos — não matar, não adulterar, não furtar, não dar falso testemunho, honrar pai e mãe, amar o próximo (v.18-19). O jovem responde sem hesitar: "Tudo isso tenho guardado desde a minha mocidade; que me falta ainda?" (v.20).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, jovemData, 0, 'jovemText')">O que ele já tinha feito</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, jovemData, 1, 'jovemText')">A reação de Jesus</button>
+          </div>
+          <div class="chip-text" id="jovemText">Toque para ver o que o texto registra sobre esse momento.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o pedido específico</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <path d="M9 5.5 V9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O pedido específico</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus não questiona se ele realmente guardou os mandamentos. Vai direto ao que ele não perguntou: "Se queres ser perfeito, vai, vende tudo o que tens, e dá-o aos pobres, e terás um tesouro no céu; e vem, segue-me" (v.21). Marcos acrescenta que Jesus, olhando para ele, o amou antes de dizer isso (Marcos 10:21) — não é um teste hostil, é um convite que aponta com precisão para o único lugar onde ele ainda não tinha obedecido.</p>
+          <p>É a mesma estrutura de outros chamados nos evangelhos — "vem, segue-me" — só que dessa vez o preço de entrada é nomeado antes, não descoberto depois.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → foi-se triste</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M14 4 L4 14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 15 Q9 12 12 12" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"Foi-se triste"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Ouvindo, porém, o jovem esta palavra, retirou-se triste, porque possuía muitas propriedades" (v.22). Ele não discute, não se defende — simplesmente vai embora, e a tristeza registrada é a prova de que ele sabia exatamente o que tinha acabado de recusar.</p>
+          <p>Jesus então comenta aos discípulos: "mais fácil é passar um camelo pelo fundo de uma agulha, do que entrar um rico no reino de Deus" (v.24) — os discípulos ficam espantados, e Jesus completa: "para os homens, isto é impossível, mas para Deus tudo é possível" (v.26).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 19:21-22</span>
+          <p>Disse-lhe Jesus: Se queres ser perfeito, vai, vende tudo o que tens, e dá-o aos pobres, e terás um tesouro no céu; e vem, segue-me. Mas, ouvindo, porém, o jovem esta palavra, retirou-se triste, porque possuía muitas propriedades.</p>
+          <span class="ref">— Jesus e o jovem rico</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Ele cumpriu perfeitamente uma lista externa de regras e ainda assim sentiu que faltava algo — porque a lista nunca tinha tocado o que de fato governava seu coração. Jesus não pediu obediência a mais uma regra; pediu a única coisa que ele ainda não tinha entregado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do cumprimento externo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da entrega completa</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const jovemData = [
+    { text: "Ele guardou os mandamentos \"desde a minha mocidade\" (v.20) — uma vida inteira de disciplina religiosa visível, não uma conversão recente." },
+    { text: "Marcos 10:21 registra que Jesus, olhando para ele, \"o amou\" antes de pedir que vendesse tudo — o pedido não vem de rejeição, vem de um convite direcionado ao ponto exato que faltava." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma lista de caixas marcadas";
+      text.textContent = "É possível cumprir mandamento após mandamento a vida inteira e ainda assim manter um único lugar do coração fora de alcance — exatamente o lugar que continua definindo, por baixo de tudo, quem realmente é o senhor da vida.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Nada retido, nada perdido de vista";
+      text.textContent = "O convite de Jesus nunca foi só \"cumpra mais regras\" — foi \"segue-me\", sem reservas. O que parece perda de tudo é, na verdade, a troca do que sustenta por um tempo pelo único tesouro que Jesus chama de eterno.";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Davi — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 06 · <span class="ref-tag">1 Samuel 16 · 2 Samuel 11-12</span></div>
+  <h1>Davi</h1>
+  <p class="sub">Do campo de ovelhas ao trono de Israel — e do trono a uma queda que só um profeta teve coragem de nomear. Avance para ver o que separa o encobrimento do arrependimento genuíno.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L11 8 L16 8 L12 11 L13.5 16 L9 13 L4.5 16 L6 11 L2 8 L7 8 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O menor dos irmãos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Samuel vai à casa de Jessé, em Belém, para ungir um novo rei em lugar de Saul. Um a um, os filhos mais velhos e mais fortes desfilam diante dele — e Deus rejeita todos: "Não olhes para a sua aparência... porque o Senhor não vê como vê o homem; o homem vê o que está diante dos olhos, porém o Senhor olha para o coração" (1 Samuel 16:7).</p>
+          <p>Só sobra o mais novo, esquecido no campo cuidando das ovelhas. Chamam Davi, e "o Senhor disse: Levanta-te, e unge-o, porque este é" (v.12). Ele é ungido rei ali mesmo, em segredo, anos antes de ocupar o trono de fato.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → um rei estabelecido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 H15 M4 15 V9 L9 5 L14 9 V15" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um rei em repouso, longe da guerra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Anos depois, já rei consolidado sobre Israel, chega a "época em que os reis costumam sair à guerra" — mas Davi fica em Jerusalém, enquanto Joabe e o exército partem sem ele (2 Samuel 11:1). É do terraço de casa, numa tarde ociosa, que ele vê Bate-Seba se banhando e manda chamá-la, embora saiba que ela é casada com Urias, um de seus próprios soldados (v.2-4).</p>
+          <p>Quando descobre que ela está grávida, Davi tenta encobrir o que fez. Toque, na ordem, para ver como o encobrimento escala:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, daviData, 0, 'daviText')">Chama Urias da guerra</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, daviData, 1, 'daviText')">Urias não vai para casa</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, daviData, 2, 'daviText')">A carta para Joabe</button>
+          </div>
+          <div class="chip-text" id="daviText">Toque em cada item para acompanhar a tentativa de encobrimento.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a confrontação de Natã</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V13" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L9 3 L14 6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="15" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Tu és aquele homem"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Urias morre em combate, morto de propósito pela própria ordem de Davi, que manda recuá-lo da frente de batalha nos momentos mais perigosos (11:14-17). Davi toma Bate-Seba por mulher, e "o que Davi fizera pareceu mal aos olhos do Senhor" (v.27).</p>
+          <p>Deus envia o profeta Natã, que conta uma parábola: um homem rico com muitos rebanhos toma a única cordeirinha de um homem pobre para servir a uma visita. Indignado, Davi sentencia: "Vive o Senhor, que digno de morte é o homem que fez isso!" Natã responde com quatro palavras que não deixam escapatória: "Tu és aquele homem" (12:1-7).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o que Davi faz com a acusação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 L14 14 M4 14 L14 4" stroke-width="1.3" stroke-linecap="round" opacity="0.4"/>
+          <path d="M9 3 V15" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O que ele não faz</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante de Natã, Davi não se defende, não culpa Bate-Seba, não minimiza o assassinato de Urias. Responde apenas: "Pequei contra o Senhor" (12:13). Nenhuma negociação, nenhuma explicação — a frase mais curta possível diante da acusação mais grave possível.</p>
+          <p>A tradição atribui a Davi o Salmo 51, escrito depois desse encontro: "Compadece-te de mim, ó Deus, segundo a tua benignidade... Contra ti, contra ti somente pequei, e fiz o que é mau à tua vista" (Salmo 51:1,4). Mesmo assim, as consequências não desaparecem — Natã anuncia que "a espada nunca se apartará da tua casa" (12:10), e o filho nascido daquela união morre.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Salmo 51:10,17</span>
+          <p>Cria em mim, ó Deus, um coração puro, e renova em mim um espírito reto... Os sacrifícios para Deus são o espírito quebrantado; a um coração quebrantado e contrito não desprezarás, ó Deus.</p>
+          <span class="ref">— Davi, depois da confrontação de Natã</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O mesmo homem que planejou um assassinato para encobrir um adultério é chamado, páginas depois, de "homem segundo o coração de Deus" — não porque não tenha caído, mas porque, confrontado, não tentou se justificar. A diferença entre Davi e Saul, ambos reis que pecaram, não é a queda: é o que cada um fez quando foi confrontado com ela.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do encobrimento</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do arrependimento</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const daviData = [
+    { text: "Davi manda chamar Urias da guerra, esperando que ele durma com a esposa e a gravidez pareça dele — mas Urias, por lealdade aos companheiros ainda em combate, se recusa a ir para casa (11:6-11)." },
+    { text: "Depois de embriagar Urias, tentando de novo, Davi ainda assim falha — Urias dorme à porta do palácio, não em casa (v.12-13)." },
+    { text: "Sem alternativas, Davi manda uma carta a Joabe pelo próprio Urias, ordenando que o coloquem na frente mais perigosa da batalha e recuem, para que ele morra (v.14-17)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Encobrir cada vez mais fundo";
+      text.textContent = "Cada tentativa de esconder o adultério exigiu um passo mais grave que o anterior, até terminar em assassinato encoberto — o encobrimento não resolve o pecado, apenas o multiplica.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Confessar sem se justificar";
+      text.textContent = "Diante da acusação mais grave possível, Davi não negocia nem se defende — apenas confessa. É esse coração quebrantado, não a ausência de pecado, que a Bíblia chama de coração segundo Deus.";
+    }
+  }
+</script>
+</body>
+</html>

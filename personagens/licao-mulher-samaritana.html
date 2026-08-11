@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A mulher samaritana — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 27 · <span class="ref-tag">João 4:1-42</span></div>
+  <h1>A mulher samaritana</h1>
+  <p class="sub">Foi ao poço na hora mais quente do dia para não cruzar com ninguém — e voltou correndo, no meio da mesma multidão que evitava, para contar o que tinha acabado de encontrar.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <path d="M9 4 V6 M9 12 V14" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Ao meio-dia, sozinha</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Mulheres costumavam ir buscar água de manhã cedo ou ao entardecer, quando o calor era menor e podiam ir em grupo. Esta mulher vai ao poço de Jacó ao meio-dia, na hora mais quente — sozinha (João 4:6-7). O detalhe sugere alguém evitando as outras mulheres da cidade, não o sol.</p>
+          <p>O texto revela por quê mais adiante: ela já teve cinco maridos, e o homem com quem vive agora não é seu marido (v.18). Numa cidade pequena, isso é o tipo de história que todo mundo conhece — e que ela provavelmente cansou de ouvir sussurrada.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → duas barreiras quebradas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 3 L15 15 M15 3 L3 15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Duas barreiras quebradas de uma vez</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus, cansado da viagem, se assenta junto ao poço e pede: "Dá-me de beber" (v.7). A pergunta dela mede a distância exata que separava os dois: "Como, sendo tu judeu, me pedes de beber a mim, que sou mulher samaritana?" (v.9) — o texto ainda explica ao leitor: "porque os judeus não se comunicavam com os samaritanos" (mesmo versículo).</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, samaritanaData, 0, 'samaritanaText')">A barreira étnica</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, samaritanaData, 1, 'samaritanaText')">A barreira social</button>
+          </div>
+          <div class="chip-text" id="samaritanaText">Toque para ver as duas barreiras que Jesus atravessa numa única pergunta.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → conhecida sem ser condenada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 12 C4 8 6 6 9 6 C12 6 14 8 14 12" stroke-width="1.3"/>
+          <circle cx="9" cy="4.5" r="2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Conhecida sem ser condenada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus fala de uma "água viva" que sacia para sempre (v.10-14). Quando ela pede essa água, Jesus muda de assunto de um jeito preciso: "Vai, chama a teu marido, e vem cá" (v.16) — e quando ela responde que não tem marido, ele confirma que sabe exatamente sua história, sem pronunciar uma só palavra de condenação (v.17-18).</p>
+          <p>Ela reconhece ali um profeta (v.19), tenta desviar para um debate religioso sobre onde adorar (v.20), e Jesus a leva além disso: revela-se como o Messias que ela mesma esperava — "Eu o sou, eu, que falo contigo" (v.26), uma das declarações mais diretas de identidade messiânica de todo o evangelho de João.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o cântaro deixado para trás</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 16 L14 4 M9 3 H15 V9" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O cântaro deixado para trás</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ela larga o cântaro — o próprio motivo de ter ido até ali — e corre de volta à cidade que a evitava havia anos. Em vez de se esconder, chama todo mundo: "Vinde, vede um homem que me disse tudo quanto tenho feito. Não é este o Cristo?" (v.28-29).</p>
+          <p>Muitos samaritanos daquela cidade creram nele "pela palavra da mulher" (v.39) — a mesma pessoa que se escondia ao meio-dia para não cruzar com ninguém se torna a primeira evangelista registrada nos evangelhos, e uma cidade inteira ouve por causa dela.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 4:28-29</span>
+          <p>Deixou, pois, a mulher o seu cântaro, e foi à cidade, e disse àqueles homens: Vinde, vede um homem que me disse tudo quanto tenho feito. Não é este o Cristo?</p>
+          <span class="ref">— A mulher samaritana, voltando do poço</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus não precisou fingir não saber da vida dela para se aproximar — nomeou tudo, sem condenar, e foi exatamente isso que a libertou para deixar de se esconder. A vergonha que a mantinha isolada ao meio-dia virou testemunho ao entardecer.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de se esconder</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ser conhecida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const samaritanaData = [
+    { text: "Judeus e samaritanos tinham séculos de hostilidade religiosa e étnica — samaritanos eram vistos como um povo de sangue e culto misturados, indignos de contato direto (v.9)." },
+    { text: "Um homem, sozinho, não se dirigia a uma mulher desconhecida em público naquela cultura — os próprios discípulos, ao voltar, ficam admirados de encontrá-lo conversando com ela (v.27)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ir ao poço sozinha, todo dia, ao meio-dia";
+      text.textContent = "Evitar as pessoas funciona por um tempo, mas custa isolamento repetido, todos os dias, só para não cruzar com o julgamento de quem já conhece a sua história.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ser conhecida por completo e ainda assim procurada";
+      text.textContent = "Jesus nomeou tudo o que ela tentava esconder e, mesmo assim, ofereceu água viva antes de qualquer coisa. É essa ordem — conhecida primeiro, condenada nunca — que a fez correr de volta em vez de continuar se escondendo.";
+    }
+  }
+</script>
+</body>
+</html>

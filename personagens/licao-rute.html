@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rute — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 16 · <span class="ref-tag">Rute 1-4</span></div>
+  <h1>Rute</h1>
+  <p class="sub">Uma estrangeira enviuvada que escolhe ficar em vez de voltar para casa — e se torna parte da própria linhagem que a recebeu.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 16 M4 6 L9 2 L14 6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Duas viúvas, uma encruzilhada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma família de Belém foge para Moabe por causa de uma fome. Lá, os dois filhos se casam com moabitas — Orfa e Rute — mas em pouco tempo o pai e os dois filhos morrem, deixando três viúvas: Noemi e as duas noras (Rute 1:1-5). Sem marido, sem filhos, sem terra própria, Noemi decide voltar para Belém e libera as noras para voltarem também para a casa de suas mães, em Moabe, onde teriam chance de se casar de novo.</p>
+          <p>Orfa, depois de chorar, beija a sogra e volta. É a escolha razoável — a que qualquer conselheiro recomendaria. Rute não vai.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "o teu povo é o meu povo"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 9 C5 9 3 12 5 15 C7 17 11 17 13 15 C15 12 13 9 13 9" stroke-width="1.2"/>
+          <circle cx="9" cy="5" r="3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"O teu povo é o meu povo"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Noemi insiste — "volta, minha filha, por que irias comigo?" (1:11-13). É nesse ponto que Rute responde com uma das declarações de lealdade mais lembradas da Bíblia:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, ruteData, 0, 'ruteText')">"Aonde fores irei"</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, ruteData, 1, 'ruteText')">"O teu povo é o meu povo"</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, ruteData, 2, 'ruteText')">"O teu Deus é o meu Deus"</button>
+          </div>
+          <div class="chip-text" id="ruteText">Toque em cada trecho do voto de Rute (1:16-17).</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → respigando no campo de Boaz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 H15 M5 15 V9 L9 5 L13 9 V15" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Respigando no campo de Boaz</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>De volta a Belém, sem renda nem terra, Rute sai para respigar — recolher as espigas que os ceifeiros deixavam cair, um direito garantido por lei aos pobres e estrangeiros (Levítico 19:9-10). "Por acaso" ela vai parar exatamente no campo de Boaz, parente do falecido marido de Noemi (2:3).</p>
+          <p>Boaz nota a estrangeira, já ouviu falar do que ela fez por Noemi, e a trata com um favor incomum: manda que deixem cair espigas de propósito para ela, garante água e proteção, e a convida a comer com seus próprios trabalhadores (2:8-16). Rute pergunta por que tanta bondade a uma estrangeira; a resposta de Boaz reconhece exatamente a lealdade que ela escolheu no capítulo 1.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o pedido no terreiro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 H14 M9 14 V4 M6 7 L9 4 L12 7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O pedido no terreiro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Noemi orienta Rute a ir de noite ao terreiro onde Boaz debulhava a cevada, deitar-se a seus pés e pedir que ele exercesse o papel de resgatador (goel) — o parente próximo com direito e dever de redimir a terra e a linhagem da família (3:1-9). É um pedido ousado, mas dentro da lei, não fora dela: Rute está pedindo justiça, não favor.</p>
+          <p>Boaz responde com honra, reconhece que há um parente ainda mais próximo com direito de preferência, resolve o assunto publicamente com esse parente às portas da cidade, e o outro recusa o resgate. Boaz assume o papel, casa-se com Rute, e o filho deles se chama Obede — avô de Jessé, pai de Davi (4:13-17).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Rute 1:16</span>
+          <p>Não me instes para que te deixe, e me aparte de ti; porque aonde quer que tu fores irei eu, e onde quer que pousares, ali pousarei eu; o teu povo é o meu povo, o teu Deus é o meu Deus.</p>
+          <span class="ref">— Rute, a Noemi</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Rute não sabia, ao fazer esse voto, que estava entrando na linhagem do próprio Davi — e, gerações depois, na linhagem de Jesus (Mateus 1:5). Ela só sabia que não ia abandonar quem tinha perdido tudo. A recompensa veio muito depois da escolha, não como condição dela.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da segurança conhecida</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da lealdade que arrisca</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const ruteData = [
+    { text: "\"Aonde quer que tu fores irei eu, e onde quer que pousares, ali pousarei eu\" — ela recusa a segurança de voltar para uma terra e um povo já conhecidos (v.16a)." },
+    { text: "\"O teu povo é o meu povo\" — ela troca sua própria identidade nacional pela de uma sogra estrangeira e empobrecida (v.16b)." },
+    { text: "\"O teu Deus é o meu Deus\" — o voto mais alto de todos: ela abandona os deuses de Moabe pelo Deus de Israel, sem garantia nenhuma de retorno (v.16c)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Voltar para o que já se conhece";
+      text.textContent = "Orfa não fez nada errado ao voltar — foi a escolha razoável. Mas é o tipo de escolha que nunca sai do lugar onde já se estava, mesmo quando esse lugar não tem mais nada a oferecer.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ficar sem saber o que vem depois";
+      text.textContent = "Rute escolhe ficar sem ter ideia de que seria bisavó de um rei. A lealdade dela não era um investimento calculado — era compromisso com uma pessoa, e Deus fez o resto acontecer bem depois da escolha.";
+    }
+  }
+</script>
+</body>
+</html>

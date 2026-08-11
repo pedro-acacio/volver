@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Judas Iscariotes — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 25 · <span class="ref-tag">Mateus 26-27</span></div>
+  <h1>Judas Iscariotes</h1>
+  <p class="sub">Trinta moedas de prata, e o peso que elas ganharam depois que o negócio já estava feito. A história de um dos doze que sentiu remorso, mas nunca voltou para buscar o que Pedro, na mesma noite, recebeu de volta.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 8 C4 5 6 3 9 3 C12 3 14 5 14 8 V14 H4 Z" stroke-width="1.3"/>
+          <path d="M4 8 H14" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O guardião da bolsa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Judas é um dos doze, escolhido e enviado como os outros, com autoridade para pregar e curar (Lucas 9:1-2). Entre suas funções está guardar a bolsa comum do grupo — o dinheiro que sustentava o ministério itinerante de Jesus.</p>
+          <p>João, escrevendo décadas depois, revela um detalhe que os outros evangelhos não registram: quando Maria de Betânia derrama um perfume caríssimo sobre os pés de Jesus, Judas reclama do "desperdício", dizendo que deveria ter sido vendido para dar aos pobres. João acrescenta o motivo real: "não porque tivesse cuidado dos pobres, mas porque era ladrão, e tinha a bolsa, e furtava o que nela se lançava" (João 12:4-6).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o negócio fechado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="2.6" stroke-width="1.3"/>
+          <circle cx="12" cy="9" r="2.6" stroke-width="1.3"/>
+          <circle cx="9" cy="13" r="2.6" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O negócio fechado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pouco antes da Páscoa, Judas vai por conta própria aos principais sacerdotes com uma pergunta direta: "Que me quereis dar, e eu vo-lo entregarei?" (Mateus 26:15). Não é uma armadilha que o pega de surpresa — é ele quem propõe o negócio. Combinam trinta moedas de prata, o preço estipulado na lei para um escravo ferido (Êxodo 21:32), e "desde então buscava oportunidade para o entregar" (v.16).</p>
+          <p>Na última ceia, Jesus já sabe e anuncia que um dos doze o vai trair — cada um pergunta, angustiado, "Porventura sou eu, Senhor?" (v.21-22), inclusive Judas, que pergunta a mesma coisa sem se denunciar diante dos outros (v.25).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o beijo no Getsêmani</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 6 C6 4 7.5 3 9 3 C10.5 3 12 4 12 6 C12 8 9 10 9 10 C9 10 6 8 6 6 Z" stroke-width="1.2"/>
+          <path d="M4 16 L14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O beijo combinado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No jardim do Getsêmani, Judas chega guiando uma multidão armada com espadas e varapaus, enviada pelos principais sacerdotes. Ele já tinha combinado um sinal: "Aquele que eu beijar, esse é; prendei-o" (Mateus 26:48) — usa exatamente o gesto de saudação e afeto entre discípulo e mestre para identificar Jesus aos que vão prendê-lo.</p>
+          <p>Ele se aproxima e diz "Eu te saúdo, Rabi" e o beija (v.49). Jesus responde sem resistência e sem surpresa: "Amigo, a que vieste?" (v.50) — uma palavra de estranha ternura para o momento exato da traição.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o remorso sem retorno</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3" stroke-dasharray="2 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O remorso sem retorno</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Vendo que Jesus foi condenado, Judas é tomado de remorso — o texto grego usa uma palavra que descreve arrependimento emocional intenso, não necessariamente a mudança de coração que a Bíblia normalmente chama de arrependimento. Ele devolve as trinta moedas aos principais sacerdotes, confessando: "Pequei, traindo o sangue inocente" (Mateus 27:3-4).</p>
+          <p>A resposta deles é fria: "Que nos importa a nós? Isso é contigo" (v.4). Sem ninguém para recebê-lo de volta, Judas lança as moedas dentro do templo e vai embora — e se enforca (v.5). Os sacerdotes, escrupulosos demais para pôr "preço de sangue" no tesouro do templo, usam o dinheiro para comprar um campo de oleiro para sepultar estrangeiros (v.6-8).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Duas quedas, duas noites, dois fins</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 27:5</span>
+          <p>E, atirando para o templo as moedas de prata, retirou-se, e foi enforcar-se.</p>
+          <span class="ref">— Sobre o fim de Judas Iscariotes</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Na mesma noite em que Judas fecha o negócio da traição, Pedro jura nunca abandonar Jesus e depois o nega três vezes. Os dois falham gravemente. A diferença não está no tamanho do pecado, mas no que cada um faz com o remorso depois: Pedro chora amargamente e, dias depois, é procurado e restaurado por Jesus à beira do mar. Judas também lamenta — mas devolve o dinheiro a quem não podia perdoá-lo, e nunca busca aquele que podia.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do remorso sem retorno</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão sempre aberto do arrependimento</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Lamentar o resultado, não a raiz";
+      text.textContent = "Judas lamenta o preço que Jesus vai pagar — mas devolve o dinheiro a quem não tinha poder algum de restaurá-lo, e nunca procura aquele contra quem realmente pecou.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Sempre há para onde voltar";
+      text.textContent = "A mesma noite que derrubou Judas também derrubou Pedro. A diferença nunca foi o tamanho da falha — foi que Pedro, mesmo destruído, ainda foi buscar quem podia recebê-lo de volta.";
+    }
+  }
+</script>
+</body>
+</html>

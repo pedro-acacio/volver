@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elias — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 11 · <span class="ref-tag">1 Reis 18-19</span></div>
+  <h1>Elias</h1>
+  <p class="sub">Fogo descendo do céu diante de toda a nação — e, no dia seguinte, um homem debaixo de um zimbro pedindo para morrer. A mesma pessoa, dois extremos, e um Deus que cuida dele em ambos.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 5 7 5 10.5 C5 13 6.8 15 9 15 C11.2 15 13 13 13 10.5 C13 7 9 2 9 2 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Até quando coxeareis?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel vive sob o reinado de Acabe e sua esposa fenícia Jezabel, que introduziu o culto a Baal em massa e mandou matar os profetas do Senhor. Elias reaparece depois de três anos de seca que ele mesmo anunciou, e convoca todo o povo, junto com 450 profetas de Baal, para um confronto público no monte Carmelo: "Até quando coxeareis entre dois pensamentos? Se o Senhor é Deus, segui-o; e, se Baal, segui-o" (1 Reis 18:21).</p>
+          <p>A prova é simples: dois altares, dois bois, e o deus que responder com fogo é o verdadeiro. Os profetas de Baal clamam, dançam, cortam-se com facas a manhã inteira — nada acontece. Elias ainda zomba: "Clamai em altas vozes, porque ele é deus; pode ser que esteja falando, ou que tenha alguma coisa que fazer, ou que intenta alguma viagem; ou, porventura, dorme e despertará" (v.27).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o fogo do céu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 8 L9 8 L11 16 L5 8 L8 8 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O fogo que consome a água</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chegada a hora do sacrifício da tarde, Elias reconstrói o altar do Senhor com doze pedras, cava um fosso ao redor, e — para deixar claro que não há truque — manda encharcar o sacrifício e a lenha com água três vezes, até o fosso transbordar (v.30-35).</p>
+          <p>Ele ora uma única frase curta, sem gritos nem repetição: "Responde-me, Senhor, responde-me, para que este povo conheça que tu, Senhor, és Deus" (v.37). Toque para ver o que acontece:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eliasData, 0, 'eliasText')">O fogo desce</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eliasData, 1, 'eliasText')">O povo reage</button>
+          </div>
+          <div class="chip-text" id="eliasText">Toque para ver a resposta de Deus e do povo.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a fuga para o deserto</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 C4 10 6 6 9 6 C12 6 14 10 14 15" stroke-width="1.3"/>
+          <path d="M9 6 V2" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Já basta, Senhor"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jezabel, ao saber que seus profetas foram mortos depois do Carmelo, jura matar Elias em 24 horas (19:1-2). O mesmo homem que acabou de enfrentar 450 profetas sozinho agora foge sozinho para o deserto, senta-se debaixo de um zimbro e pede para morrer: "Já basta, Senhor; toma a minha vida, pois não sou melhor do que meus pais" (v.4).</p>
+          <p>Deus não o repreende por isso. Um anjo o toca duas vezes, deixando pão e água ao seu lado, dizendo apenas: "Levanta-te e come, porque, para ti, é longa demais esta jornada" (v.7). Elias dorme, come, e caminha quarenta dias até o monte Horebe.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o cicio suave e delicado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12 C6 9 9 9 9 12 C9 9 12 9 15 12" stroke-width="1.2" fill="none"/>
+          <circle cx="9" cy="6" r="2" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Nem no vento, nem no fogo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Numa caverna do Horebe, Deus pergunta a Elias o que ele faz ali. A resposta é a queixa de um homem exausto: "Fui muito zeloso... e restei eu só, e procuram tirar-me a vida" (v.10). Deus manda que ele saia e se ponha diante dele.</p>
+          <p>Vem um vento fortíssimo que despedaça montes — "mas o Senhor não estava no vento". Depois um terremoto — "mas o Senhor não estava no terremoto". Depois um fogo — "mas o Senhor não estava no fogo". E depois disso, "um cicio suave e delicado" (v.11-12). É nesse silêncio quase inaudível, não no espetáculo, que Elias cobre o rosto e ouve a voz de Deus outra vez.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Reis 19:11-12</span>
+          <p>Eis que o Senhor passava, e diante do Senhor vinha um grande e forte vento... mas o Senhor não estava no vento. E, depois do vento, um terremoto; mas o Senhor não estava no terremoto. E, depois do terremoto, um fogo; mas o Senhor não estava no fogo. E, depois do fogo, um cicio suave e delicado.</p>
+          <span class="ref">— A revelação de Deus a Elias, no monte Horebe</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Depois do cicio, Deus não manda Elias voltar sozinho ao ministério — dá-lhe uma tarefa concreta (ungir um sucessor, Eliseu) e revela que ele não estava tão sozinho quanto pensava: "ainda tenho deixado sete mil em Israel, todos os joelhos que não se dobraram diante de Baal" (v.18). O colapso emocional não encerrou o chamado de Elias; só mudou a forma como Deus cuidou dele antes de continuar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do colapso escondido</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do cuidado sem performance</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const eliasData = [
+    { text: "\"Então caiu fogo do Senhor, e consumiu o holocausto, e a lenha, e as pedras, e o pó, e ainda lambeu a água que estava no fosso\" (v.38) — nada restou do sacrifício encharcado." },
+    { text: "\"Vendo isso todo o povo, caíram sobre os seus rostos, e disseram: Só o Senhor é Deus! Só o Senhor é Deus!\" (v.39) — a mesma multidão que hesitava entre dois pensamentos." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Zelo que não admite cansaço";
+      text.textContent = "Se o valor de Elias dependesse de manter o desempenho do Carmelo, o zimbro no deserto seria vergonha a esconder — um profeta forte demais para admitir que quer morrer.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Cuidado antes de qualquer explicação";
+      text.textContent = "Deus alimenta Elias e o deixa dormir antes de perguntar qualquer coisa — o cuidado vem antes do sermão. Só depois de descansado é que ele ouve, no silêncio, a voz que o reconduz à missão.";
+    }
+  }
+</script>
+</body>
+</html>

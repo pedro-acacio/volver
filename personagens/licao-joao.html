@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>João — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 23 · <span class="ref-tag">João 13 · 19 · 21</span></div>
+  <h1>João</h1>
+  <p class="sub">O discípulo que se autodescreve apenas como "aquele a quem Jesus amava" — reclinado ao lado dele na última ceia, e o único dos doze mencionado explicitamente aos pés da cruz. Proximidade demais para conseguir esquecer o que viu.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.3"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.3"/>
+          <path d="M9 9 H9.3" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Reclinado ao peito de Jesus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na última ceia, os convidados comem reclinados, apoiados de lado junto à mesa baixa. João está posicionado literalmente encostado a Jesus — "reclinado sobre o peito de Jesus" (João 13:23) — a posição de maior proximidade e confiança na mesa.</p>
+          <p>Quando Jesus revela que um dos doze o vai trair, os discípulos se entreolham sem saber de quem ele fala. Pedro faz sinal a João para que pergunte discretamente quem é. Só João, dali de perto, consegue sussurrar a pergunta direto ao ouvido de Jesus e receber a resposta em particular: é Judas, a quem Jesus dará o pedaço de pão molhado (v.24-26). João é o único que sabe o nome do traidor antes de ele sair.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → não fugiu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V15" stroke-width="1.4"/>
+          <path d="M4 6 H14" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O único aos pés da cruz</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quando Jesus é preso, "todos os discípulos, deixando-o, fugiram" (Mateus 26:56) — inclusive, provavelmente, o próprio João. Mas algo muda entre a fuga inicial e a execução: no relato da crucificação, é João quem está lá, nomeado explicitamente ao lado da mãe de Jesus junto à cruz (João 19:25-26), enquanto os outros dez seguem ausentes do relato.</p>
+          <p>Dali, ferido e prestes a morrer, Jesus olha para os dois e entrega um ao outro: "Mulher, eis aí o teu filho" — e a João: "Eis aí tua mãe" (v.26-27). "E desde aquela hora o discípulo a tomou para casa" (v.27). No momento mais sombrio de toda a história, Jesus ainda cuida de quem ficaria para trás.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o túmulo vazio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 16 V9 C4 5 6 2 9 2 C12 2 14 5 14 9 V16" stroke-width="1.3"/>
+          <path d="M4 16 H14" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A corrida até o túmulo vazio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No domingo de manhã, Maria Madalena corre avisar Pedro e João que o corpo de Jesus sumiu. Os dois saem correndo juntos — e João registra, com um detalhe curiosamente pessoal, que chegou primeiro: "corriam ambos juntamente, e o outro discípulo correu mais apressadamente do que Pedro, e chegou primeiro ao sepulcro" (João 20:4).</p>
+          <p>Mas ele espera Pedro entrar primeiro no túmulo. Só depois João também entra, "e viu, e creu" (v.8) — a primeira pessoa no relato de João a chegar à fé só pelo que via ali dentro: um túmulo vazio, os panos de linho dobrados, nenhum corpo.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="revealSpeech(this)">Ver como João se identifica no próprio evangelho</button>
+          </div>
+          <div class="chip-text" id="speechText">João nunca se nomeia diretamente em seu próprio evangelho — refere-se a si mesmo repetidamente só como "o discípulo a quem Jesus amava" (13:23, 19:26, 20:2, 21:7,20), uma identidade construída inteira em torno de ser amado por Jesus, não de seus próprios feitos.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → "é o Senhor!"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 C5 9 8 13 11 10 C14 7 16 11 16 11" stroke-width="1.3" fill="none"/>
+          <circle cx="13" cy="5" r="2.4" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"É o Senhor!"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Algum tempo depois, sete discípulos voltam a pescar no mar da Galileia e passam a noite sem pegar nada. De madrugada, um homem na praia manda lançar a rede do outro lado do barco — e a rede enche a ponto de não conseguirem recolhê-la (João 21:1-6).</p>
+          <p>É João, de novo, quem reconhece primeiro: "Então aquele discípulo, a quem Jesus amava, disse a Pedro: É o Senhor" (v.7). A mesma proximidade que o fez reclinar-se ao peito de Jesus na última ceia é o que faz seus olhos reconhecerem Jesus antes de qualquer outro, à distância, na luz fraca do amanhecer.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Perto demais para esquecer</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 19:35</span>
+          <p>E aquele que isto viu o testificou, e o seu testemunho é verdadeiro; e sabe que diz a verdade, para que também vós o creiais.</p>
+          <span class="ref">— João, sobre ter testemunhado a morte de Jesus com os próprios olhos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Décadas mais tarde, já um homem idoso, João ainda escreve como alguém que não conseguiu esquecer o que viu de perto — a mesa, a cruz, o túmulo vazio, a praia ao amanhecer. Todo o evangelho que ele deixa é, no fundo, o relato de quem escolheu ficar perto o suficiente para testemunhar o que os outros preferiram evitar ver.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da distância segura</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da proximidade que arrisca</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revealSpeech(btn){
+    document.getElementById('speechText').style.display = 'block';
+    btn.classList.add('active');
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ver de longe, sem se comprometer";
+      text.textContent = "Se João tivesse ficado como os outros — fugido e mantido distância até tudo se resolver — não haveria ninguém junto à cruz para receber Maria, nem um testemunho ocular tão próximo para escrever depois.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ficar perto o bastante para testemunhar";
+      text.textContent = "João escolhe repetidamente a proximidade — na mesa, na cruz, no túmulo, na praia — mesmo quando isso significa presenciar o que dói. É esse mesmo lugar de perto que o torna testemunha confiável do que viu.";
+    }
+  }
+</script>
+</body>
+</html>

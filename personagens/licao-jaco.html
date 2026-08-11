@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jacó — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 03 · <span class="ref-tag">Gênesis 25-33</span></div>
+  <h1>Jacó</h1>
+  <p class="sub">Um enganador que passa a vida inteira conseguindo as coisas por conta própria — até uma noite em que luta contra alguém que ele não podia vencer, e sai dali com um nome novo e uma marca no corpo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 C3 15 6 4 9 4 C12 4 15 15 15 15" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A primogenitura e a bênção roubadas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jacó nasce segundo, segurando o calcanhar do irmão gêmeo Esaú — seu próprio nome significa "aquele que agarra pelo calcanhar", ou, em sentido figurado, "enganador" (25:24-26). Ainda jovem, aproveita a fome de Esaú depois de um dia de caça para comprar sua primogenitura por um prato de lentilhas (25:29-34).</p>
+          <p>Anos depois, com a ajuda da mãe Rebeca, Jacó se disfarça de Esaú — peles de cabrito nos braços lisos, a comida favorita do pai cego Isaque — e rouba também a bênção paterna que pertencia ao primogênito (27:1-29). Quando Esaú descobre, jura matá-lo (27:41), e Jacó foge de casa.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a escada e o enganador enganado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16 M5 5 H13 M5 9 H13 M5 13 H13" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A escada e o enganador enganado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Fugindo sozinho, Jacó dorme ao relento em Betel e sonha com uma escada que liga a terra ao céu, com anjos subindo e descendo — e o Senhor no topo, repetindo a mesma promessa feita a Abraão e Isaque (28:10-15). Mesmo em fuga, mesmo enganador, a promessa continua de pé.</p>
+          <p>Chegando à casa do tio Labão, Jacó se apaixona por Raquel e trabalha sete anos por ela. Na noite do casamento, Labão troca as filhas no escuro, e Jacó acorda casado com Lia, a irmã mais velha (29:15-25). O enganador da bênção é enganado do mesmo jeito — no escuro, por quem confiava. Toque para ver o desfecho:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, jacoData, 0, 'jacoText')">O acordo com Labão</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, jacoData, 1, 'jacoText')">Vinte anos de trabalho</button>
+          </div>
+          <div class="chip-text" id="jacoText">Toque para ver como Jacó resolve a situação.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a luta em Peniel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="4" stroke-width="1.3"/>
+          <circle cx="12" cy="9" r="4" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A luta em Peniel</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Vinte anos depois, Jacó decide voltar para casa — e Esaú vem ao seu encontro com quatrocentos homens (32:6). Na noite antes do reencontro, sozinho, "lutou com ele um homem até que a alva subia" (32:24). Jacó, o homem que sempre venceu pela esperteza, não consegue vencer essa luta pela força.</p>
+          <p>O homem toca a articulação da coxa de Jacó, deslocando-a, e ainda assim Jacó se agarra: "Não te deixarei ir, se me não abençoares" (32:26). O homem pergunta seu nome — a mesma pergunta que, décadas antes, Isaque cego fizera a um Jacó disfarçado — e desta vez ele responde a verdade, sem disfarce: "Jacó" (32:27).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o nome novo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 16 V9 C4 5 6 3 9 3 C12 3 14 5 14 9 V16" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O nome novo e o reencontro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Não se chamará mais o teu nome Jacó, mas Israel; porque como príncipe lutaste com Deus e com os homens, e prevaleceste" (32:28). Jacó sai de Peniel mancando pelo resto da vida — a mesma luta que o abençoa também o marca (32:31).</p>
+          <p>No dia seguinte, Esaú corre ao seu encontro, o abraça, chora com ele — o irmão que jurara matá-lo o recebe de volta sem vingança (33:4). Jacó havia se preparado para o pior; encontrou graça em vez disso.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Gênesis 32:28</span>
+          <p>E disse: Não se chamará mais o teu nome Jacó, mas Israel; porque como príncipe lutaste com Deus e com os homens, e prevaleceste.</p>
+          <span class="ref">— O homem, a Jacó, em Peniel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Toda a vida de Jacó até essa noite foi construída sobre agarrar, enganar, conquistar por esperteza. Em Peniel, ele finalmente se agarra a alguém que não pode vencer pela força — e é justamente aí que recebe, sem merecer, o que nunca tinha conseguido roubar de verdade: uma bênção que vem de graça.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de agarrar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de receber</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const jacoData = [
+    { text: "Jacó reclama com Labão pela troca, e Labão exige mais sete anos de trabalho por Raquel — Jacó aceita e se casa com ela também, uma semana depois de Lia (29:26-28)." },
+    { text: "No total, Jacó trabalha catorze anos pelas duas irmãs, mais seis pelos próprios rebanhos — vinte anos sendo repetidamente enganado por Labão nos salários (31:38-41), um espelho do que ele mesmo fizera com Esaú." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Conquistar por esperteza";
+      text.textContent = "Da primogenitura à bênção do pai, Jacó passa metade da vida garantindo por conta própria o que já tinha sido prometido a ele de outro jeito — e cada conquista assim vem acompanhada de fuga, medo ou nova traição.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Sair mancando, mas abençoado";
+      text.textContent = "Em Peniel, Jacó não vence a luta — é vencido, e ainda assim recebe a bênção. A marca que carrega pelo resto da vida é o lembrete físico de que essa bênção, ao contrário de todas as outras, ele não conseguiu roubar.";
+    }
+  }
+</script>
+</body>
+</html>

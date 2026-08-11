@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lídia — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 38 · <span class="ref-tag">Atos 16:11-15</span></div>
+  <h1>Lídia</h1>
+  <p class="sub">Vendedora de púrpura à beira de um rio, já buscando a Deus antes de Paulo chegar — e "o Senhor lhe abriu o coração" para completar o que ela já tinha começado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V6 L9 3 L14 6 V15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M4 10 H14" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma comerciante, longe de casa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Lídia é de Tiatira, mas vive em Filipos, colônia romana na Macedônia, onde vende púrpura — um tecido caríssimo, tingido com um corante raro, associado a realeza e riqueza. É uma mulher de negócios independente, com posses suficientes para manter uma casa própria e receber hóspedes.</p>
+          <p>O texto a chama de "temente a Deus" (16:14) — expressão usada para gentios que buscavam o Deus de Israel sem terem se convertido formalmente ao judaísmo. Filipos não tinha sinagoga; a comunidade judaica ali era pequena demais para isso.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a oração à beira do rio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 14 C5 11 8 16 11 13 C13 11 15 13 16 14" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A oração à beira do rio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sem sinagoga, Lídia e outras mulheres se reuniam num lugar de oração improvisado às margens de um rio, fora dos muros da cidade — um costume comum quando não havia estrutura formal disponível. Elas já estavam ali, buscando a Deus, muito antes de Paulo chegar.</p>
+          <p>É a esse grupo de mulheres, reunido por conta própria num sábado comum, que Paulo e seus companheiros se dirigem ao chegar em Filipos: "e, assentando-nos, falamos às mulheres que ali se tinham ajuntado" (16:13).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o coração que se abre</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C9 15 3 10.5 3 6.5 C3 4 5 2.5 7 2.5 C8.3 2.5 9 3.2 9 4 C9 3.2 9.7 2.5 11 2.5 C13 2.5 15 4 15 6.5 C15 10.5 9 15 9 15 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O coração que se abre</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enquanto Lídia ouve, algo acontece que o texto atribui explicitamente a Deus, não a uma decisão apenas dela: "o Senhor lhe abriu o coração para que atendesse ao que Paulo dizia" (16:14). Ela não é convencida por um argumento particularmente hábil — ela é alcançada.</p>
+          <p>A resposta é imediata: ela é batizada, e com ela toda a sua casa — família, servos, todos sob seu teto. Não há hesitação registrada, nenhum período de dúvida prolongada.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a insistência da hospitalidade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M9 3 V15" stroke-width="1.2"/>
+          <rect x="5" y="5" width="8" height="8" rx="1" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A insistência da hospitalidade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois de ser batizada, Lídia insiste, quase sem aceitar recusa: "se haveis julgado que eu seja fiel ao Senhor, entrai em minha casa, e ficai nela. E nos constrangeu a isso" (16:15). O verbo é forte — ela pressiona até eles aceitarem.</p>
+          <p>A casa de Lídia se torna, na prática, a base da missão em Filipos: é para lá que Paulo e Silas retornam depois de serem soltos da prisão, mais adiante no mesmo capítulo (16:40) — e provavelmente o ponto de partida da igreja que Paulo tanto amaria, anos depois, ao escrever a carta aos Filipenses.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Atos 16:14</span>
+          <p>E uma certa mulher, chamada Lídia, vendedora de púrpura, da cidade de Tiatira, e que servia a Deus, nos escutava; e o Senhor lhe abriu o coração para que atendesse ao que Paulo dizia.</p>
+          <span class="ref">— Sobre Lídia, à beira do rio em Filipos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Lídia já orava, já buscava a Deus, já reunia outras mulheres para isso havia quem sabe anos. O evangelho não chega como substituto do que ela já vivia — chega como o que faltava para completar. E ela responde não guardando isso para si, mas abrindo a própria casa para que outros também tivessem lugar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da busca inacabada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da busca completada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Buscar sem nunca chegar";
+      text.textContent = "Lídia poderia ter continuado ano após ano reunindo mulheres à beira do rio, sincera na busca mas sem nunca ouvir a peça que faltava — religiosidade genuína que nunca se completa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Buscar e ter o coração aberto";
+      text.textContent = "Deus não descartou a busca sincera de Lídia — completou-a, abrindo seu coração no exato momento em que Paulo apareceu com a mensagem que faltava, e ela respondeu abrindo, em troca, a própria casa.";
+    }
+  }
+</script>
+</body>
+</html>

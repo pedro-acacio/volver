@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Eunuco Etíope — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 37 · <span class="ref-tag">Atos 8:26-40</span></div>
+  <h1>O Eunuco Etíope</h1>
+  <p class="sub">Lendo Isaías em voz alta numa estrada deserta, sem entender uma palavra do que lia — até alguém aparecer, exatamente ali, para explicar.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 14 C6 6 12 6 16 14" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um oficial estrangeiro, voltando de adorar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ele é um alto funcionário da corte de Candace, rainha da Etiópia — responsável por todo o tesouro real, um homem de posição e poder. Tinha ido a Jerusalém adorar, apesar de não ser judeu, e voltava agora sentado em sua carruagem, lendo em voz alta um rolo do profeta Isaías (8:27-28).</p>
+          <p>É a passagem sobre o Servo sofredor, levado como cordeiro ao matadouro, calado diante de quem o tosquia (Isaías 53:7-8, citada em 8:32-33) — um texto denso, sem contexto explicado, num idioma que não era o dele. Ele lê, mas não entende do que o profeta está falando, nem de quem.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → um homem enviado a uma estrada deserta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 L9 3 L15 15" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 15 L9 9 L12 15" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um homem enviado a uma estrada deserta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um anjo do Senhor diz a Filipe — um dos sete escolhidos para servir a igreja em Atos 6 — para descer até a estrada que vai de Jerusalém a Gaza, descrita no próprio texto como deserta (8:26). Não é o lugar onde alguém esperaria encontrar uma multidão para pregar.</p>
+          <p>Filipe obedece sem perguntas. Chegando lá, o Espírito lhe diz para se aproximar da carruagem que passava. Ele ouve o etíope lendo Isaías em voz alta e pergunta:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eunucoData, 0, 'eunucoText')">A pergunta de Filipe</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eunucoData, 1, 'eunucoText')">A resposta do etíope</button>
+          </div>
+          <div class="chip-text" id="eunucoText">Toque para ver a conversa que abre a porta.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → começando por essa escritura</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Começando por essa escritura"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O eunuco convida Filipe a subir e sentar-se com ele. Pergunta a quem o profeta se referia — a si mesmo, ou a outra pessoa. É a pergunta certa, feita à pessoa certa, no momento certo.</p>
+          <p>"Então Filipe, abrindo a boca, e começando desde esta escritura, lhe anunciou a Jesus" (8:35). Um único versículo de Isaías 53 se torna o ponto de partida para toda a mensagem do evangelho — o Servo sofredor, calado diante do castigo, era o retrato do próprio Cristo que morreria séculos depois.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → água na estrada deserta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 8 4 11 4 13 C4 15.5 6.2 17 9 17 C11.8 17 14 15.5 14 13 C14 11 12 8 9 3 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Água numa estrada deserta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Indo pelo caminho, chegam a um lugar com água. O eunuco não hesita nem pede tempo para pensar: "eis aqui água; que impede que eu seja batizado?" (8:36). Manda parar a carruagem, e os dois descem até a água.</p>
+          <p>Filipe o batiza ali mesmo, sem cerimônia, sem instrução prolongada, sem exigir que ele primeiro voltasse a Jerusalém ou se explicasse diante de uma autoridade religiosa. A resposta à fé recém-nascida vem tão rápido quanto a pergunta que a expressou.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o caminho, cheio de alegria</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O caminho, cheio de alegria</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Assim que saem da água, o Espírito do Senhor arrebata Filipe, e o eunuco não o vê mais. Mas o texto não termina em confusão ou perda — termina em alegria: "e ele seguiu o seu caminho, cheio de alegria" (8:39). O encontro foi breve, mas o suficiente.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 8:30-31</span>
+          <p>E, correndo Filipe, ouviu que lia o profeta Isaías, e disse: Entendes tu o que lês? Ele disse: E como poderei, se alguém não me ensinar?</p>
+          <span class="ref">— O eunuco etíope, a Filipe</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A resposta do eunuco poderia ter sido orgulho disfarçado — "não preciso de ajuda para entender minha própria leitura". Em vez disso, ele reconhece com simplicidade o que lhe falta, e a resposta chega no exato lugar e hora em que ele estava disposto a recebê-la.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da busca sem resposta</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da busca suprida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const eunucoData = [
+    { text: "\"Entendes tu o que lês?\" (v.30) — Filipe não interrompe corrigindo, começa perguntando, deixando espaço para o próprio eunuco reconhecer a lacuna." },
+    { text: "\"E como poderei, se alguém não me ensinar?\" (v.31) — uma resposta sem orgulho, de quem já sabia reconhecer os próprios limites mesmo ocupando um cargo de grande autoridade." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ler sem nunca entender";
+      text.textContent = "Se o eunuco tivesse fingido entender por orgulho, ou se Filipe nunca tivesse sido enviado àquela estrada deserta, ele voltaria para a Etiópia com o mesmo rolo nas mãos e a mesma pergunta sem resposta.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Buscar e ser encontrado no caminho";
+      text.textContent = "Deus não deixou a busca sincera do eunuco sem resposta — enviou alguém para o lugar exato, no momento exato, respondendo exatamente à pergunta que ele já estava fazendo havia páginas.";
+    }
+  }
+</script>
+</body>
+</html>

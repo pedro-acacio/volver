@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliseu — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 12 · <span class="ref-tag">2 Reis 2-6</span></div>
+  <h1>Eliseu</h1>
+  <p class="sub">Pediu uma porção dobrada do espírito do mestre — e passou o resto da vida mostrando o que fez com ela, não num único milagre espetacular, mas numa sequência de cuidados pequenos e concretos.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V4 M4 8 L9 4 L14 8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Porção dobrada do teu espírito"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sabendo que o Senhor está prestes a levar Elias ao céu, Eliseu se recusa a deixá-lo, seguindo-o de Gilgal a Betel, de Betel a Jericó, de Jericó ao Jordão, mesmo quando o próprio Elias tenta dispensá-lo em cada etapa (2 Reis 2:1-6). Cinquenta discípulos dos profetas observam de longe, sabendo o que está para acontecer.</p>
+          <p>No Jordão, Elias divide as águas com o manto, e pergunta a Eliseu o que ele deseja antes de partir. A resposta não é riqueza nem segurança: "Peço-te que duas porções do teu espírito estejam sobre mim" (v.9) — um pedido de herdeiro, o que a lei dava ao filho primogênito, não um pedido de poder para si mesmo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o manto que cai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 10 M4 14 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 6 L9 2 L12 6" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Onde está o Senhor, Deus de Elias?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um redemoinho leva Elias ao céu num carro de fogo, diante dos olhos de Eliseu, que rasga as próprias vestes de luto e pega o manto que caiu de Elias (v.11-13). De volta ao Jordão, sozinho agora, ele repete o gesto do mestre — fere as águas com o manto e pergunta: "Onde está o Senhor, Deus de Elias?" (v.14). As águas se dividem outra vez, e os discípulos dos profetas reconhecem: "o espírito de Elias repousa sobre Eliseu" (v.15).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o azeite e o filho devolvido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 8 C6 5 7.5 3 9 3 C10.5 3 12 5 12 8 C12 11 10.5 13 9 13 C7.5 13 6 11 6 8 Z" stroke-width="1.2"/>
+          <path d="M9 13 V16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Milagres do tamanho de uma casa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diferente do confronto público de Elias no Carmelo, os milagres de Eliseu acontecem em escala doméstica, entre pessoas comuns. Toque em cada um:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eliseuData, 0, 'eliseuText')">A viúva e o azeite</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eliseuData, 1, 'eliseuText')">O filho da sunamita</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, eliseuData, 2, 'eliseuText')">Naamã, o sírio</button>
+          </div>
+          <div class="chip-text" id="eliseuText">Toque em cada milagre para ver como Eliseu cuida de gente comum.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → uma vida inteira de cuidado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="2.5" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="2.5" stroke-width="1.2"/>
+          <path d="M6 9 H12" stroke-width="1" stroke-dasharray="1.5 1.5"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Décadas de ministério, não um só ato</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diferente de Elias, cujo ministério é lembrado por poucos momentos de altíssima intensidade, o de Eliseu se estende por cerca de sessenta anos, atravessando os reinados de vários reis de Israel. Ele aconselha reis em tempo de guerra (2 Reis 3), multiplica pão para cem homens (4:42-44), torna machado perdido flutuante (6:1-7), e continua profetizando até o leito de morte, quando ainda instrui o rei Joás sobre como vencer a Síria (13:14-19).</p>
+          <p>A porção dobrada que ele pediu não virou um evento único e espetacular — virou uma vida inteira de disponibilidade para os problemas concretos das pessoas ao seu redor, geração após geração.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">2 Reis 2:9</span>
+          <p>E sucedeu que, tendo eles passado, disse Elias a Eliseu: Pede-me o que queres que te faça, antes que seja tirado de ti. Então, disse Eliseu: Peço-te que duas porções do teu espírito estejam sobre mim.</p>
+          <span class="ref">— Eliseu, à beira do Jordão, pouco antes de Elias ser arrebatado</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Eliseu não pediu o espírito do mestre para repetir os grandes espetáculos de Elias — pediu para continuar o trabalho que ninguém mais estava vendo: cuidar de viúvas, de crianças doentes, de generais estrangeiros com lepra. A herança que ele recebeu não foi fama, foi disponibilidade constante.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do momento único</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da fidelidade contínua</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const eliseuData = [
+    { text: "Uma viúva endividada está prestes a perder os filhos como escravos. Eliseu manda que ela encha o máximo de vasilhas possível com o pouco azeite que sobrou — o azeite não para de correr até acabarem as vasilhas (4:1-7)." },
+    { text: "Uma mulher de Suném, que hospedava Eliseu regularmente, recebe dele a promessa de um filho apesar da idade avançada do marido. Anos depois, o menino morre repentinamente, e Eliseu o ressuscita ao se deitar sobre ele (4:8-37)." },
+    { text: "Naamã, general sírio leproso, espera um ritual grandioso, mas Eliseu apenas manda, por um mensageiro, que ele se lave sete vezes no Jordão. Irritado no início, Naamã obedece e sai curado (2 Reis 5)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma herança guardada para um só momento";
+      text.textContent = "Se Eliseu tivesse recebido a porção dobrada para um único milagre espetacular, o resto da sua longa vida de profeta teria sido apenas espera por outro palco.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma herança gasta todos os dias";
+      text.textContent = "O espírito que Eliseu recebeu se prova em décadas de atenção a problemas pequenos e domésticos — viúvas, crianças, generais estrangeiros — não em uma única cena grandiosa.";
+    }
+  }
+</script>
+</body>
+</html>

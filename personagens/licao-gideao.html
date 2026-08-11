@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gideão — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-personagens.html">Volver</a>
+    <span class="brand-track">Personagens da Bíblia</span>
+  </div>
+
+  <div class="eyebrow">Lição 09 · <span class="ref-tag">Juízes 6-7</span></div>
+  <h1>Gideão</h1>
+  <p class="sub">"O menor na casa de meu pai" — chamado por Deus exatamente pelo medo que ele tentava esconder, e conduzido, um passo de cada vez, até uma coragem que nunca teria sozinho.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="7" stroke-width="1.3"/>
+          <path d="M6 7 V4 H12 V7" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Escondido no lagar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel vive dominado pelos midianitas, que invadem as colheitas todos os anos e deixam o povo escondido em cavernas nos montes (Juízes 6:1-6). É nesse cenário que um anjo do Senhor encontra Gideão debulhando trigo dentro de um lagar de uvas — escondido, para que os midianitas não vejam e roubem a colheita (v.11).</p>
+          <p>O anjo o saúda: "O Senhor é contigo, homem valente" (v.12). Gideão responde com uma pergunta amarga: "Ah, senhor meu! se o Senhor é conosco, por que, então, nos tem sobrevindo tudo isto?" (v.13). Quando é chamado a salvar Israel, sua resposta é ainda mais direta: "Eis que a minha geração é a mais pobre em Manassés, e eu o menor na casa de meu pai" (v.15).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o pedido de sinais</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L14 6 V12 L9 15 L4 12 V6 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O velocino de lã</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes de agir, Gideão pede confirmação — mais de uma vez. Toque em cada sinal, na ordem em que ele os pediu:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, gideaoData, 0, 'gideaoText')">O fogo da rocha</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, gideaoData, 1, 'gideaoText')">O velocino molhado</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, gideaoData, 2, 'gideaoText')">O velocino seco</button>
+          </div>
+          <div class="chip-text" id="gideaoText">Toque em cada sinal para ver como Deus responde, sem se irritar com o pedido repetido.</div>
+          <p>Deus concede cada sinal pedido, sem repreender a insegurança — um detalhe que muda a leitura do que vem a seguir: o problema nunca foi a falta de provas, era a falta de coragem para agir com as provas que já tinha.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um exército reduzido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="7" stroke-width="1.2" stroke-dasharray="1.5 2"/>
+          <circle cx="9" cy="9" r="2.4" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">De 32 mil para 300</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Gideão reúne 32 mil homens para enfrentar o acampamento midianita. Deus diz que é gente demais: "para que Israel não se glorie contra mim, dizendo: A minha mão me livrou" (7:2). Manda dispensar todo aquele com medo — 22 mil vão embora, restam 10 mil.</p>
+          <p>Ainda é gente demais. Num segundo teste, à beira das águas, Deus separa os que bebem lambendo com a mão, atentos ao redor, dos que se ajoelham para beber direto do rio — e fica um exército de apenas trezentos homens (7:4-8), reduzido justamente para que a vitória não pudesse ser atribuída ao tamanho da força humana.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → trombetas, cântaros e tochas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L8 6 L11 10 L14 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A vitória sem espada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes do ataque, Deus ainda manda Gideão descer ao acampamento inimigo à noite para ouvir um midianita contar um sonho a outro — a interpretação aponta a vitória de Israel, e Gideão, ao ouvir, se prostra em adoração antes de agir (7:9-15).</p>
+          <p>A estratégia final não usa espadas: trezentos homens cercam o acampamento à noite, cada um com uma trombeta numa mão e uma tocha escondida dentro de um cântaro de barro na outra. No sinal combinado, quebram os cântaros, erguem as tochas e gritam: "A espada do Senhor e de Gideão!" (7:16-20). Os midianitas, confusos no escuro, viram a espada uns contra os outros e fogem em pânico.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Juízes 7:2</span>
+          <p>E disse o Senhor a Gideão: É demasiado o povo que está contigo, para que eu dê os midianitas na sua mão; para que Israel não se glorie contra mim, dizendo: A minha mão me livrou.</p>
+          <span class="ref">— Antes da redução do exército</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Do homem escondido num lagar até o líder de uma vitória sem precedentes, Gideão nunca deixa de precisar de confirmação — Deus simplesmente continua concedendo, um passo de cada vez, sem exigir que o medo desapareça de uma vez só antes de agir.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do medo paralisante</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da coragem passo a passo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · personagens da Bíblia · lição interativa</footer>
+</div>
+
+<script>
+  const gideaoData = [
+    { text: "Gideão pede um sinal antes mesmo de aceitar o chamado: oferece comida e a coloca sobre uma rocha; o anjo toca com a ponta do cajado e fogo sobe da rocha, consumindo a oferta (6:17-21)." },
+    { text: "Já convocando o povo para a guerra, ele pede que o orvalho molhe só o velocino de lã, deixando o chão ao redor seco — e assim acontece, ao espremer o velocino ele tira uma bacia cheia de água (6:36-38)." },
+    { text: "Temendo que o primeiro sinal fosse coincidência, pede o oposto: chão molhado de orvalho, velocino seco. Deus concede também esse, sem repreendê-lo pela insistência (6:39-40)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Precisar de certeza total antes de agir";
+      text.textContent = "Se Gideão tivesse esperado o medo desaparecer por completo antes de agir, ele nunca teria saído do lagar — o medo real nunca some de uma vez, ele só recebe, aos poucos, coragem suficiente para o próximo passo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Agir com o pouco que já foi dado";
+      text.textContent = "Deus nunca repreende Gideão por pedir sinais — concede cada um, e o conduz, prova após prova, até um exército reduzido de propósito, para que a vitória fosse claramente d'Ele, e não do tamanho da força humana reunida.";
+    }
+  }
+</script>
+</body>
+</html>
