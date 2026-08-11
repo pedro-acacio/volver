@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Período Interbíblico — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
+      <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
+      <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-livros.html">Volver</a>
+    <span class="brand-track">Lição secreta</span>
+  </div>
+
+  <div class="eyebrow">Entre os testamentos · <span class="ref-tag">≈ 400 anos de silêncio</span></div>
+  <h1>Período Interbíblico</h1>
+  <p class="sub">Entre o último profeta do Antigo Testamento e o primeiro evangelho, a Bíblia fica em silêncio — mas a história não parou. Esta é a lição escondida entre os dois testamentos: o que aconteceu nesses quatro séculos, e como eles prepararam o mundo para Cristo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O silêncio depois de Malaquias</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O último livro profético do Antigo Testamento, Malaquias, é escrito por volta de 430 a.C., ainda sob domínio persa. O povo já voltou do exílio, reconstruiu o templo e os muros de Jerusalém — mas está morno na fé, oferecendo animais defeituosos a Deus e duvidando que valha a pena servi-lo (Malaquias 1-3).</p>
+          <p>Depois dele, nenhum profeta reconhecido fala da parte de Deus por quase quatro séculos. É o período que a tradição protestante chama de "os 400 anos de silêncio" — silêncio profético, não silêncio histórico: impérios sobem e caem, e o palco em que Jesus vai nascer está sendo montado peça por peça.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → impérios que se sucedem</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 3 H15 V7 L9 9 L15 11 V15 H3 V11 L9 9 L3 7 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Impérios que se sucedem</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nenhum profeta fala, mas a política não para. Toque, na ordem, para ver como o mapa muda em volta de Jerusalém:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 0, 'eventsText')">Pérsia</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 1, 'eventsText')">Alexandre e a helenização</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 2, 'eventsText')">A Septuaginta</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 3, 'eventsText')">Antíoco Epifânio</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 4, 'eventsText')">Os Macabeus</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 5, 'eventsText')">Roma toma Jerusalém</button>
+          </div>
+          <div class="chip-text" id="eventsText">Toque em cada item para acompanhar os quatro séculos entre os testamentos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que nasceu no silêncio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.2" stroke-width="1.4"/>
+          <path d="M9 5.5 V9 L11.5 11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que nasceu no silêncio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quando o Novo Testamento começa, ele encontra um mundo religioso já formado — nenhuma dessas peças existia no Antigo Testamento. Toque para conhecer cada uma:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 0, 'groupsText')">A sinagoga</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 1, 'groupsText')">Fariseus e saduceus</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 2, 'groupsText')">Os essênios de Qumran</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 3, 'groupsText')">A esperança messiânica</button>
+          </div>
+          <div class="chip-text" id="groupsText">Toque em cada item para ver o que estava pronto quando Jesus nasceu.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a visão protestante</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A visão protestante sobre os livros desse período</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>É também nesse período que são escritos os livros chamados apócrifos, ou deuterocanônicos: 1 e 2 Macabeus, Tobias, Judite, Eclesiástico (Sirácida), Sabedoria de Salomão, Baruque e acréscimos a Ester e Daniel, entre outros.</p>
+          <p>A Igreja Católica e a Ortodoxa os incluem no cânon bíblico — oficializado pelo Concílio de Trento, em 1546, numa reação direta à Reforma. Os protestantes, seguindo a tradição da Reforma — e, antes dela, estudiosos como Jerônimo, tradutor da Vulgata, que já os distinguia das Escrituras hebraicas — não os consideram inspirados, por razões como:</p>
+          <p>Não faziam parte do cânon hebraico reconhecido pelos próprios judeus da época, testemunhado por Flávio Josefo. Jesus e os apóstolos citam livremente o Antigo Testamento canônico no Novo Testamento, mas nunca citam esses livros como Escritura. Alguns trazem afirmações problemáticas para a teologia reformada, como a oração pelos mortos em 2 Macabeus 12:44-45. E não aparecem nas primeiras listas cristãs de cânon, como a de Melito de Sardes, já no século II.</p>
+          <p>Isso não os torna inúteis — são fontes históricas valiosas: é deles, por exemplo, que vem boa parte do que se sabe sobre a revolta dos Macabeus. A posição protestante é que eles ajudam a entender o contexto, mas não têm autoridade de Escritura inspirada — o que mantém o Antigo Testamento em 39 livros e o Novo em 27, os mesmos 66 catalogados nesta trilha.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → a plenitude dos tempos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A plenitude dos tempos</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Depois de quatro séculos sem um profeta reconhecido, um homem no deserto começa a pregar vestido como Elias, anunciando que o reino está próximo (Mateus 3:1-4). O silêncio profético termina exatamente onde os quatrocentos anos de história — impérios, línguas, sinagogas, expectativa — o deixaram: um mundo pronto.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Gálatas 4:4-5</span>
+          <p>Mas, vindo a plenitude dos tempos, Deus enviou seu Filho, nascido de mulher, nascido sob a lei, para resgatar os que estavam debaixo da lei, a fim de recebermos a adoção de filhos.</p>
+          <span class="ref">— Paulo, aos gálatas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Vistos apenas pela ausência de profetas, os quatrocentos anos entre Malaquias e Mateus parecem um vazio. Vistos pela história que se desenrola por trás do silêncio — uma língua comum, estradas de império, as Escrituras traduzidas em grego, um povo cansado e à espera — eles parecem outra coisa. A pergunta que fica é como ler esse tipo de silêncio.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do abandono</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da providência</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · lição secreta · entre os testamentos</footer>
+</div>
+
+<script>
+  const eventsData = [
+    { text: "O período começa sob o domínio persa — o mesmo império de Esdras e Neemias, relativamente tolerante com a religião e a reconstrução judaica." },
+    { text: "Em 332 a.C., Alexandre, o Grande, conquista a região quase sem resistência. Sua morte prematura divide o império entre generais, e a Judeia passa a ser disputada entre os Ptolomeus, no Egito, e os Selêucidas, na Síria." },
+    { text: "Em Alexandria, por volta de 250 a.C., estudiosos judeus traduzem o Antigo Testamento para o grego — a Septuaginta (LXX). É a versão que os apóstolos vão citar na maior parte das vezes no Novo Testamento." },
+    { text: "Em 167 a.C., o rei selêucida Antíoco IV Epifânio profana o templo, erguendo um altar pagão sobre o altar de Deus e proibindo a prática judaica sob pena de morte." },
+    { text: "A família de Matatias e seu filho Judas Macabeu lidera uma revolta armada contra os selêucidas, reconquista e purifica o templo — origem da festa judaica de Hanucá — e conquista décadas de independência sob a dinastia hasmonaica." },
+    { text: "Em 63 a.C., o general romano Pompeu toma Jerusalém, encerrando a breve independência judaica. É sob esse mesmo império, décadas depois, que Jesus nasce, é julgado e crucificado." }
+  ];
+
+  const groupsData = [
+    { text: "Sem templo durante o exílio babilônico, os judeus começam a se reunir em sinagogas locais para orar e ouvir as Escrituras — um costume que sobrevive à reconstrução do templo e que os próprios apóstolos usam como ponto de partida para pregar (Atos 13:14-15)." },
+    { text: "Nesse período surgem os grupos religiosos que o Novo Testamento encontra prontos: fariseus, rigorosos guardiões da lei oral, e saduceus, ligados ao sacerdócio do templo e céticos quanto à ressurreição." },
+    { text: "Um terceiro grupo, os essênios, se retira para o deserto perto do Mar Morto, em Qumran, à espera de um Messias — e copiando manuscritos que, séculos depois, seriam descobertos como os Manuscritos do Mar Morto, a cópia mais antiga que temos de boa parte do Antigo Testamento." },
+    { text: "A opressão estrangeira contínua alimenta uma expectativa cada vez mais viva por um Messias libertador — o pano de fundo emocional com que o povo judeu recebe, ou rejeita, um carpinteiro de Nazaré séculos depois." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um Deus que foi embora";
+      text.textContent = "Lido apenas pela ausência de profetas, o período interbíblico pode soar como um Deus que se calou e deixou o povo por conta própria durante gerações inteiras — a mesma sensação de quem espera uma resposta que nunca chega.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um Deus que trabalha sem anunciar";
+      text.textContent = "Lido pela história que se desenrola por trás do silêncio — impérios, línguas, estradas, expectativa — o período interbíblico mostra um Deus que continua agindo mesmo quando não fala, preparando em quatro séculos exatamente o mundo em que o Evangelho precisava nascer.";
+    }
+  }
+</script>
+</body>
+</html>

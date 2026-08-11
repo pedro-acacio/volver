@@ -84,6 +84,19 @@
   .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
 
   footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+
+  .interlude{ display:flex; justify-content:center; margin: 54px 0; }
+  .interlude-link{
+    display:flex; flex-direction:column; align-items:center; gap:7px;
+    opacity:.2; transition: opacity .35s ease; cursor:pointer;
+  }
+  .interlude-link:hover, .interlude-link:focus-visible{ opacity:1; }
+  .interlude-icon{ width:18px; height:18px; color: var(--gold); }
+  .interlude-hint{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:.1em;
+    text-transform:uppercase; color: var(--gold); opacity:0; transition: opacity .35s ease;
+  }
+  .interlude-link:hover .interlude-hint, .interlude-link:focus-visible .interlude-hint{ opacity:1; }
 </style>
 </head>
 <body>
@@ -363,6 +376,16 @@
       </div>
     </div>
 
+  </div>
+
+  <div class="interlude">
+    <a class="interlude-link" href="licao-periodo-interbiblico.html" aria-label="Período Interbíblico — lição secreta">
+      <svg class="interlude-icon" viewBox="0 0 18 18" fill="none" stroke="currentColor">
+        <path d="M4 3 H14 V15 H4 Z" stroke-width="1.3"/>
+        <path d="M4 3 L14 15 M14 3 L4 15" stroke-width="1"/>
+      </svg>
+      <span class="interlude-hint">≈ 400 anos de silêncio</span>
+    </a>
   </div>
 
   <!-- ===================================================== -->
