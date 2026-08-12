@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Configurações</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .settings-row{
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    background: var(--panel); border:1px solid var(--panel-line); border-radius:14px;
+    padding:18px 20px; margin-bottom:14px;
+  }
+  .settings-info h3{ font-family:'Fraunces', serif; font-weight:500; font-size:15px; margin:0 0 4px; }
+  .settings-info p{ font-size:12.5px; color: var(--text-dim); margin:0; max-width:42ch; }
+  .settings-btn{
+    flex-shrink:0; padding:10px 18px; border-radius:9px; border:1px solid var(--panel-line);
+    background: var(--bg); color: var(--text); font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px; font-weight:600; cursor:pointer; transition: all .2s ease; white-space:nowrap;
+  }
+  .settings-btn:hover{ border-color: var(--gold); }
+  .settings-btn.danger{ color: var(--worry); border-color: rgba(168,92,107,0.4); }
+  .settings-btn.danger:hover{ border-color: var(--worry); }
+  @media (max-width:520px){
+    .settings-row{ flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="stage-wrap" style="max-width:640px;">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="index.html">Volver</a>
+  </div>
+
+  <div class="eyebrow">Preferências</div>
+  <h1>Configurações</h1>
+  <p class="sub">Ajustes salvos neste navegador — tema, tamanho do texto e os dados de progresso guardados localmente.</p>
+
+  <div class="settings-row">
+    <div class="settings-info"><h3>Tema</h3><p>Alterna entre os modos claro e escuro em todo o site.</p></div>
+    <button id="cfgTheme" class="settings-btn" type="button">Escuro</button>
+  </div>
+
+  <div class="settings-row">
+    <div class="settings-info"><h3>Tamanho do texto</h3><p>Aumenta o texto das lições e páginas para leitura mais confortável.</p></div>
+    <button id="cfgFontSize" class="settings-btn" type="button">Padrão</button>
+  </div>
+
+  <div class="settings-row">
+    <div class="settings-info"><h3>Apagar progresso salvo</h3><p>Remove lições concluídas, em andamento e favoritas salvas neste navegador. Essa ação não pode ser desfeita.</p></div>
+    <button id="cfgClear" class="settings-btn danger" type="button">Apagar</button>
+  </div>
+
+  <footer>Volver · configurações · lição interativa</footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!window.Volver) return;
+
+    var themeBtn = document.getElementById('cfgTheme');
+    function syncTheme(){ themeBtn.textContent = window.Volver.isLightTheme() ? 'Claro' : 'Escuro'; }
+    syncTheme();
+    themeBtn.addEventListener('click', function(){ window.Volver.toggleTheme(); syncTheme(); });
+
+    var fontBtn = document.getElementById('cfgFontSize');
+    function syncFont(){ fontBtn.textContent = window.Volver.isLargeFont() ? 'Grande' : 'Padrão'; }
+    syncFont();
+    fontBtn.addEventListener('click', function(){ window.Volver.toggleFontSize(); syncFont(); });
+
+    var clearBtn = document.getElementById('cfgClear');
+    var confirming = false;
+    var confirmTimer = null;
+    clearBtn.addEventListener('click', function(){
+      if(!confirming){
+        confirming = true;
+        clearBtn.textContent = 'Confirmar (clique de novo)';
+        confirmTimer = setTimeout(function(){ confirming = false; clearBtn.textContent = 'Apagar'; }, 4000);
+        return;
+      }
+      clearTimeout(confirmTimer);
+      window.Volver.clearProgress();
+      confirming = false;
+      clearBtn.textContent = 'Apagado ✓';
+      setTimeout(function(){ clearBtn.textContent = 'Apagar'; }, 2000);
+    });
+  });
+</script>
+<script defer src="volver-app.js"></script>
+</body>
+</html>

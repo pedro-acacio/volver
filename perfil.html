@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Perfil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .profile-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin: 28px 0 8px; }
+  @media (max-width:600px){ .profile-grid{ grid-template-columns:1fr; } }
+  .profile-stat{ background: var(--panel); border:1px solid var(--panel-line); border-radius:14px; padding:20px 22px; text-align:center; }
+  .profile-stat b{ display:block; font-family:'Fraunces', serif; font-weight:600; font-size:30px; color: var(--gold); margin-bottom:6px; }
+  .profile-stat span{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); text-transform:uppercase; letter-spacing:.06em; }
+
+  .profile-section{ margin-top:40px; }
+  .profile-section h2{ font-family:'Fraunces', serif; font-weight:500; font-size:17px; margin:0 0 14px; }
+  .profile-list{ display:flex; flex-direction:column; gap:8px; }
+  .profile-item{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    background: var(--panel); border:1px solid var(--panel-line); border-radius:11px; padding:12px 16px;
+    text-decoration:none; transition: border-color .2s ease;
+  }
+  .profile-item:hover{ border-color: var(--gold); }
+  .profile-item .t{ font-size:13.5px; color: var(--text); }
+  .profile-item .r{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); white-space:nowrap; }
+  .profile-empty{ font-size:13px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="stage-wrap" style="max-width:760px;">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="index.html">Volver</a>
+  </div>
+
+  <div class="eyebrow">Sua jornada</div>
+  <h1>Perfil</h1>
+  <p class="sub">Um resumo do que você já concluiu, do que está em andamento e do que favoritou — tudo salvo neste navegador.</p>
+
+  <div class="profile-grid" id="profileGrid"></div>
+
+  <div class="profile-section">
+    <h2>Concluídas</h2>
+    <div class="profile-list" id="listCompleted"></div>
+  </div>
+
+  <div class="profile-section">
+    <h2>Em andamento</h2>
+    <div class="profile-list" id="listProgress"></div>
+  </div>
+
+  <div class="profile-section">
+    <h2>Favoritas</h2>
+    <div class="profile-list" id="listFavorites"></div>
+  </div>
+
+  <footer>Volver · perfil local · lição interativa</footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    function render(){
+      if(!window.Volver) return;
+      var s = window.Volver.getSummary();
+      document.getElementById('profileGrid').innerHTML =
+        '<div class="profile-stat"><b>' + s.completed.length + '</b><span>Concluídas</span></div>' +
+        '<div class="profile-stat"><b>' + s.inProgress.length + '</b><span>Em andamento</span></div>' +
+        '<div class="profile-stat"><b>' + s.favorites.length + '</b><span>Favoritas</span></div>';
+
+      function renderList(elId, items, emptyText){
+        var el = document.getElementById(elId);
+        if(items.length === 0){ el.innerHTML = '<div class="profile-empty">' + emptyText + '</div>'; return; }
+        el.innerHTML = items.map(function(it){
+          return '<a class="profile-item" href="' + it.href + '"><span class="t">' + it.title + '</span><span class="r">' + (it.ref || '') + '</span></a>';
+        }).join('');
+      }
+      renderList('listCompleted', s.completed, 'Nenhuma lição concluída ainda.');
+      renderList('listProgress', s.inProgress, 'Nenhuma lição em andamento.');
+      renderList('listFavorites', s.favorites, 'Nenhuma lição favoritada ainda.');
+    }
+    if(window.Volver){ render(); } else { window.addEventListener('load', render); }
+  });
+</script>
+<script defer src="volver-app.js"></script>
+</body>
+</html>
