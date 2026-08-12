@@ -254,10 +254,20 @@
     font-family:'IBM Plex Sans', sans-serif; text-decoration:none; transition: background .2s ease, color .2s ease;
   }
   .sidebar-link:hover{ background: rgba(217,164,65,0.08); color: var(--text); }
-  .sidebar-group-label{
-    margin: 12px 12px 2px; font-family:'IBM Plex Mono', monospace; font-size:10.5px;
-    letter-spacing:.08em; text-transform:uppercase; color: var(--text-faint);
+
+  .sidebar-toggle{
+    display:flex; align-items:center; justify-content:space-between; width:100%;
+    padding:10px 12px; border-radius:8px; font-size:13.5px; color: var(--text-dim);
+    font-family:'IBM Plex Sans', sans-serif; background:none; border:none; cursor:pointer;
+    text-align:left; transition: background .2s ease, color .2s ease;
   }
+  .sidebar-toggle:hover{ background: rgba(217,164,65,0.08); color: var(--text); }
+  .sidebar-toggle .chev{ width:9px; height:9px; flex-shrink:0; transition: transform .2s ease; }
+  .sidebar-toggle .chev path{ stroke: var(--text-faint); }
+  .sidebar-toggle.open .chev{ transform: rotate(90deg); }
+
+  .sidebar-lessons{ max-height:0; overflow:hidden; transition: max-height .3s ease; }
+  .sidebar-lessons.open{ max-height:400px; }
   .sidebar-sublink{
     display:block; padding:8px 12px 8px 24px; border-radius:8px; font-size:13px; color: var(--text-faint);
     font-family:'IBM Plex Sans', sans-serif; text-decoration:none; transition: background .2s ease, color .2s ease;
@@ -341,9 +351,9 @@
   <div class="topbar">
     <div class="brand-bar">
       <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
-      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
+      <path d="M9 25 Q9 34 26 35 Q43 34 43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M11 25 L26 8 L41 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
     </svg>
       <span class="brand-word">Volver</span>
     </div>
@@ -1843,9 +1853,9 @@
       <div class="footer-brand">
         <div class="brand-bar">
           <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
-      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
+      <path d="M9 25 Q9 34 26 35 Q43 34 43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M11 25 L26 8 L41 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
     </svg>
           <span class="brand-word">Volver</span>
         </div>

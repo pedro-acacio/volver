@@ -15,9 +15,9 @@
   var MOON_ICON = '<svg class="icon-moon" viewBox="0 0 20 20" fill="none"><path d="M17 12.5A7.5 7.5 0 1 1 7.5 3 6 6 0 0 0 17 12.5Z" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var BACK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M10 3 L4 8 L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var BOAT_SVG = '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
-      '<path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>' +
-      '<path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>' +
+      '<path d="M9 25 Q9 34 26 35 Q43 34 43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round"/>' +
+      '<path d="M11 25 L26 8 L41 25 Z" fill="#D9A441"/>' +
+      '<path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>' +
     '</svg>';
 
   function readJSON(key){
@@ -76,8 +76,7 @@
     return {
       completed: toList(completedMap),
       inProgress: toList(visitedMap, completedKeys),
-      favorites: toList(favMap),
-      recent: toList(visitedMap)
+      favorites: toList(favMap)
     };
   }
 
@@ -95,16 +94,20 @@
         '<button id="volverSidebarClose" class="sidebar-close" type="button" aria-label="Fechar menu">&times;</button>' +
       '</div>' +
       '<div class="sidebar-nav">' +
-        '<a class="sidebar-link" href="' + root + 'index.html">Início</a>' +
-        '<div class="sidebar-group-label">Lições</div>' +
-        '<a class="sidebar-sublink" href="' + root + 'parabolas/biblioteca-parabolas.html">Parábolas</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'livros/biblioteca-livros.html">Livros</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'index.html">Salmos</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'index.html">Provérbios</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'personagens/biblioteca-personagens.html">Personagens</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a>' +
-        '<a class="sidebar-sublink" href="' + root + 'trindade/biblioteca-trindade.html">Trindade</a>' +
+        '<button id="sidebarHomeToggle" class="sidebar-toggle" type="button">' +
+          '<span>Início</span>' +
+          '<svg class="chev" viewBox="0 0 10 10" fill="none"><path d="M3 1 L7 5 L3 9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+        '</button>' +
+        '<div class="sidebar-lessons" id="sidebarLessons">' +
+          '<a class="sidebar-sublink" href="' + root + 'parabolas/biblioteca-parabolas.html">Parábolas</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'livros/biblioteca-livros.html">Livros</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'index.html">Salmos</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'index.html">Provérbios</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'personagens/biblioteca-personagens.html">Personagens</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'trindade/biblioteca-trindade.html">Trindade</a>' +
+        '</div>' +
         '<a class="sidebar-link" href="' + root + 'favoritos.html">Favoritos</a>' +
         '<a class="sidebar-link" href="' + root + 'continue-a-volver.html">Continue a Volver</a>' +
         '<a class="sidebar-link" href="' + root + 'perfil.html">Perfil</a>' +
@@ -135,6 +138,13 @@
     function closeSidebar(){ nav.classList.remove('open'); backdrop.classList.remove('open'); }
     backdrop.addEventListener('click', closeSidebar);
     nav.querySelector('#volverSidebarClose').addEventListener('click', closeSidebar);
+
+    var homeToggle = nav.querySelector('#sidebarHomeToggle');
+    var lessonsPanel = nav.querySelector('#sidebarLessons');
+    homeToggle.addEventListener('click', function(){
+      homeToggle.classList.toggle('open');
+      lessonsPanel.classList.toggle('open');
+    });
 
     var bar = document.querySelector('.brand-bar');
     if(bar && !document.getElementById('volverMenuBtn')){
