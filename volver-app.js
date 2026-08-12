@@ -15,8 +15,8 @@
   var MOON_ICON = '<svg class="icon-moon" viewBox="0 0 20 20" fill="none"><path d="M17 12.5A7.5 7.5 0 1 1 7.5 3 6 6 0 0 0 17 12.5Z" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var BACK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M10 3 L4 8 L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var BOAT_SVG = '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
-      '<path d="M9 25 Q9 34 26 35 Q43 34 43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round"/>' +
-      '<path d="M11 25 L26 8 L41 25 Z" fill="#D9A441"/>' +
+      '<path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '<path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>' +
       '<path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>' +
     '</svg>';
 
@@ -430,7 +430,16 @@
     var el = document.createElement('div');
     el.className = 'intro-splash';
     el.id = 'volverIntroSplash';
-    el.innerHTML = BOAT_SVG + '<div class="intro-word">Volver</div><div class="intro-wake"></div>';
+    el.innerHTML =
+      '<div class="intro-boat-wrap">' +
+        '<svg class="intro-ripples" viewBox="0 0 140 40" fill="none">' +
+          '<ellipse class="ring r1" cx="70" cy="24" rx="26" ry="6"/>' +
+          '<ellipse class="ring r2" cx="70" cy="24" rx="26" ry="6"/>' +
+          '<ellipse class="ring r3" cx="70" cy="24" rx="26" ry="6"/>' +
+        '</svg>' +
+        BOAT_SVG +
+      '</div>' +
+      '<div class="intro-word">Volver</div>';
     document.body.insertBefore(el, document.body.firstChild);
 
     function dismiss(){

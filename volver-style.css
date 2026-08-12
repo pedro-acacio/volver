@@ -333,26 +333,32 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   cursor:pointer; transition: opacity .6s ease;
 }
 .intro-splash.fade-out{ opacity:0; pointer-events:none; }
-.intro-boat{ width:64px; height:64px; animation: boat-bob 2.6s ease-in-out infinite; }
+
+.intro-boat-wrap{ position:relative; width:140px; height:88px; display:flex; align-items:center; justify-content:center; }
+.intro-boat{ position:relative; z-index:1; width:64px; height:64px; animation: boat-bob 2.6s ease-in-out infinite; }
 @keyframes boat-bob{
   0%,100%{ transform:translateY(0) rotate(-2deg); }
-  50%{ transform:translateY(-10px) rotate(2deg); }
+  50%{ transform:translateY(-8px) rotate(2deg); }
+}
+.intro-ripples{ position:absolute; bottom:14px; left:0; width:100%; height:34px; }
+.intro-ripples .ring{
+  fill:none; stroke: var(--gold); stroke-width:1.4; opacity:0;
+  transform-box: fill-box; transform-origin: center;
+  animation: ripple-out 2.6s ease-out infinite;
+}
+.intro-ripples .r2{ animation-delay: .7s; }
+.intro-ripples .r3{ animation-delay: 1.4s; }
+@keyframes ripple-out{
+  0%{ transform: scale(.3); opacity:.55; }
+  100%{ transform: scale(1.6); opacity:0; }
 }
 .intro-word{
   font-family:'Fraunces', serif; font-weight:500; font-size:19px; letter-spacing:.02em;
   color: var(--text); opacity:0; animation: intro-fade .9s ease .35s forwards;
 }
-.intro-wake{ width:100px; height:2px; border-radius:2px; background: var(--panel-line); position:relative; overflow:hidden; }
-.intro-wake::after{
-  content:""; position:absolute; inset:0; background: var(--gold); transform-origin:left;
-  animation: wake-fill 2.6s ease-in-out infinite;
-}
-@keyframes wake-fill{
-  0%,100%{ transform:scaleX(.25); opacity:.45; }
-  50%{ transform:scaleX(1); opacity:1; }
-}
 @keyframes intro-fade{ to{ opacity:1; } }
 @media (prefers-reduced-motion: reduce){
-  .intro-boat, .intro-wake::after{ animation:none; }
+  .intro-boat, .intro-ripples .ring{ animation:none; }
+  .intro-ripples .ring{ opacity:.4; }
   .intro-splash{ transition:none; }
 }
