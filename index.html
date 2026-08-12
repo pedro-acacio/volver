@@ -240,11 +240,17 @@
   .fav-star-card path{ stroke: rgba(233,228,216,0.7); fill:none; transition: all .2s ease; }
   .fav-star-card.active path{ stroke: var(--gold); fill: var(--gold); }
 
-  .visited-badge{
+  .completed-badge{
     position:absolute; top:6px; left:6px; width:20px; height:20px; border-radius:50%;
     background: rgba(124,154,120,0.85); display:flex; align-items:center; justify-content:center; z-index:3;
   }
-  .visited-badge svg{ width:10px; height:10px; }
+  .completed-badge svg{ width:10px; height:10px; }
+
+  .progress-badge{
+    position:absolute; top:6px; left:6px; width:20px; height:20px; border-radius:50%;
+    background: rgba(217,164,65,0.85); display:flex; align-items:center; justify-content:center; z-index:3;
+  }
+  .progress-badge svg{ width:10px; height:10px; }
 
   /* ---- intro splash ---- */
   .intro-splash{
@@ -285,9 +291,8 @@
     <div class="brand-bar">
       <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
       <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M8 24 Q26 18.5 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M26 23 V9" stroke="#D9A441" stroke-width="2" stroke-linecap="round"/>
-      <path d="M26 9 L38.5 16.5 L26 21 Z" fill="#D9A441"/>
+      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
     </svg>
       <span class="brand-word">Volver</span>
     </div>
@@ -1788,9 +1793,8 @@
         <div class="brand-bar">
           <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
       <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M8 24 Q26 18.5 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
-      <path d="M26 23 V9" stroke="#D9A441" stroke-width="2" stroke-linecap="round"/>
-      <path d="M26 9 L38.5 16.5 L26 21 Z" fill="#D9A441"/>
+      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
     </svg>
           <span class="brand-word">Volver</span>
         </div>

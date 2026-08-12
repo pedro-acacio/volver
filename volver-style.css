@@ -228,16 +228,28 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
 .p-card .fav-star-card svg{ width:10px; height:10px; }
 .p-card .fav-star-card path{ stroke: var(--text-faint); }
 
-.visited-badge{
+.completed-badge{
   position:absolute; top:6px; left:6px; width:20px; height:20px; border-radius:50%;
   background: rgba(124,154,120,0.85); display:flex; align-items:center; justify-content:center; z-index:3;
 }
-.visited-badge svg{ width:10px; height:10px; }
+.completed-badge svg{ width:10px; height:10px; }
 
-.visited-tag{
+.progress-badge{
+  position:absolute; top:6px; left:6px; width:20px; height:20px; border-radius:50%;
+  background: rgba(217,164,65,0.85); display:flex; align-items:center; justify-content:center; z-index:3;
+}
+.progress-badge svg{ width:10px; height:10px; }
+
+.completed-tag{
   display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10px;
   letter-spacing:.05em; text-transform:uppercase; color: var(--calm); margin-left:8px;
 }
+.progress-tag{
+  display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10px;
+  letter-spacing:.05em; text-transform:uppercase; color: var(--gold); margin-left:8px;
+}
+
+.continue-btn.done{ background: var(--calm); cursor:default; opacity:.9; }
 
 /* ---- intro splash (homepage only) ---- */
 .intro-splash{

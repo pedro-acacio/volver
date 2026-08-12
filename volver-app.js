@@ -1,19 +1,20 @@
 /* ===== VOLVER — tema, favoritos, progresso e splash de abertura ===== */
 (function(){
   var STORAGE_VISITED = 'volver_visited';
+  var STORAGE_COMPLETED = 'volver_completed';
   var STORAGE_FAV = 'volver_favorites';
   var STORAGE_THEME = 'volver_theme';
   var STORAGE_INTRO = 'volver_intro_seen';
 
   var STAR_ICON = '<svg viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.5 7.5 L18.5 8.3 L14 12.4 L15.2 18.3 L10 15.3 L4.8 18.3 L6 12.4 L1.5 8.3 L7.5 7.5 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>';
   var CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 8.5 L6 12.5 L14 3.5" stroke="#12162A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var CLOCK_ICON = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#12162A" stroke-width="1.6"/><path d="M8 5 V8 L10.5 9.5" stroke="#12162A" stroke-width="1.6" stroke-linecap="round"/></svg>';
   var SUN_ICON = '<svg class="icon-sun" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke-width="1.4"/><path d="M10 1.5V4M10 16v2.5M2.5 10H5M15 10h2.5M4.6 4.6l1.8 1.8M13.6 13.6l1.8 1.8M4.6 15.4l1.8-1.8M13.6 6.4l1.8-1.8" stroke-width="1.4" stroke-linecap="round"/></svg>';
   var MOON_ICON = '<svg class="icon-moon" viewBox="0 0 20 20" fill="none"><path d="M17 12.5A7.5 7.5 0 1 1 7.5 3 6 6 0 0 0 17 12.5Z" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var BOAT_SVG = '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
       '<path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '<path d="M8 24 Q26 18.5 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>' +
-      '<path d="M26 23 V9" stroke="#D9A441" stroke-width="2" stroke-linecap="round"/>' +
-      '<path d="M26 9 L38.5 16.5 L26 21 Z" fill="#D9A441"/>' +
+      '<path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>' +
+      '<path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>' +
     '</svg>';
 
   function readJSON(key){
@@ -84,6 +85,16 @@
   function isFavorite(category, slug){
     return !!readJSON(STORAGE_FAV)[keyOf(category, slug)];
   }
+  function markCompleted(entry){
+    var data = readJSON(STORAGE_COMPLETED);
+    data[keyOf(entry.category, entry.slug)] = {
+      title: entry.title, ref: entry.ref, href: entry.href, category: entry.category, ts: Date.now()
+    };
+    writeJSON(STORAGE_COMPLETED, data);
+  }
+  function isCompleted(category, slug){
+    return !!readJSON(STORAGE_COMPLETED)[keyOf(category, slug)];
+  }
   function categoryFromHref(href){
     var segs = href.split('/');
     return segs.length > 1 ? segs[segs.length - 2] : (pathParts().folder || 'geral');
@@ -92,7 +103,7 @@
   // ---------------- card enhancement: index.html .show-card rows ----------------
   function enhanceShowCards(scope){
     var cards = (scope || document).querySelectorAll('a.show-card[href]');
-    var visited = 0, total = 0;
+    var completed = 0, total = 0;
     cards.forEach(function(card){
       var href = card.getAttribute('href');
       if(!href) return;
@@ -123,23 +134,30 @@
         });
         thumb.appendChild(starBtn);
       }
-      if(isVisited(category, slug)){
-        visited++;
-        if(!thumb.querySelector('.visited-badge')){
+      if(isCompleted(category, slug)){
+        completed++;
+        if(!thumb.querySelector('.completed-badge') && !thumb.querySelector('.progress-badge')){
           var badge = document.createElement('div');
-          badge.className = 'visited-badge';
+          badge.className = 'completed-badge';
           badge.innerHTML = CHECK_ICON;
           thumb.appendChild(badge);
         }
+      } else if(isVisited(category, slug)){
+        if(!thumb.querySelector('.progress-badge') && !thumb.querySelector('.completed-badge')){
+          var pbadge = document.createElement('div');
+          pbadge.className = 'progress-badge';
+          pbadge.innerHTML = CLOCK_ICON;
+          thumb.appendChild(pbadge);
+        }
       }
     });
-    return { visited: visited, total: total };
+    return { completed: completed, total: total };
   }
 
   // ---------------- card enhancement: hub .p-card grids ----------------
   function enhancePCards(scope){
     var cards = (scope || document).querySelectorAll('a.p-card.available[href]');
-    var visited = 0, total = 0;
+    var completed = 0, total = 0;
     var category = pathParts().folder;
     cards.forEach(function(card){
       var href = card.getAttribute('href');
@@ -165,17 +183,24 @@
         });
         refElx.appendChild(starBtn);
       }
-      if(isVisited(category, slug)){
-        visited++;
-        if(refElx && !refElx.querySelector('.visited-tag')){
+      if(isCompleted(category, slug)){
+        completed++;
+        if(refElx && !refElx.querySelector('.completed-tag') && !refElx.querySelector('.progress-tag')){
           var tag = document.createElement('span');
-          tag.className = 'visited-tag';
-          tag.textContent = 'Assistido';
+          tag.className = 'completed-tag';
+          tag.textContent = 'Concluído';
           refElx.appendChild(tag);
+        }
+      } else if(isVisited(category, slug)){
+        if(refElx && !refElx.querySelector('.progress-tag') && !refElx.querySelector('.completed-tag')){
+          var ptag = document.createElement('span');
+          ptag.className = 'progress-tag';
+          ptag.textContent = 'Em andamento';
+          refElx.appendChild(ptag);
         }
       }
     });
-    return { visited: visited, total: total };
+    return { completed: completed, total: total };
   }
 
   // ---------------- lesson page ----------------
@@ -189,7 +214,8 @@
     var title = h1 ? h1.textContent.trim() : document.title;
     var ref = refEl ? refEl.textContent.trim() : '';
     var href = category + '/' + p.file;
-    recordVisit({ category: category, slug: slug, title: title, ref: ref, href: href });
+    var entry = { category: category, slug: slug, title: title, ref: ref, href: href };
+    recordVisit(entry);
 
     var bar = document.querySelector('.brand-bar');
     if(bar && !document.getElementById('volverFavBtn')){
@@ -200,13 +226,36 @@
       favBtn.className = 'fav-star-inline' + (active ? ' active' : '');
       favBtn.innerHTML = STAR_ICON + '<span>' + (active ? 'Favoritado' : 'Favoritar') + '</span>';
       favBtn.addEventListener('click', function(){
-        var now = toggleFavorite({ category: category, slug: slug, title: title, ref: ref, href: href });
+        var now = toggleFavorite(entry);
         favBtn.classList.toggle('active', now);
         favBtn.querySelector('span').textContent = now ? 'Favoritado' : 'Favoritar';
       });
       var track = bar.querySelector('.brand-track');
       if(track){ bar.insertBefore(favBtn, track); } else { bar.appendChild(favBtn); }
     }
+
+    injectFinishButton(entry);
+  }
+
+  function injectFinishButton(entry){
+    var items = document.querySelectorAll('.tl-item');
+    if(items.length === 0 || document.getElementById('volverFinishBtn')) return;
+    var body = items[items.length - 1].querySelector('.tl-body');
+    if(!body) return;
+    var done = isCompleted(entry.category, entry.slug);
+    var btn = document.createElement('button');
+    btn.id = 'volverFinishBtn';
+    btn.type = 'button';
+    btn.className = 'continue-btn' + (done ? ' done' : '');
+    btn.disabled = done;
+    btn.textContent = done ? 'Lição concluída ✓' : 'Finalizar lição';
+    btn.addEventListener('click', function(){
+      markCompleted(entry);
+      btn.classList.add('done');
+      btn.disabled = true;
+      btn.textContent = 'Lição concluída ✓';
+    });
+    body.appendChild(btn);
   }
 
   // ---------------- hub page ----------------
@@ -214,10 +263,10 @@
     var stats = enhancePCards(document);
     if(stats.total === 0) return;
     var statsRow = document.querySelector('.stats-row');
-    if(statsRow && !statsRow.querySelector('.stat-visited')){
+    if(statsRow && !statsRow.querySelector('.stat-completed')){
       var stat = document.createElement('div');
-      stat.className = 'stat stat-visited';
-      stat.innerHTML = '<b>' + stats.visited + '</b>vistas';
+      stat.className = 'stat stat-completed';
+      stat.innerHTML = '<b>' + stats.completed + '</b>concluídas';
       statsRow.appendChild(stat);
     }
   }
@@ -257,6 +306,7 @@
       '</div>' +
       '<div class="row-scroll">' + cardsHtml + '</div>';
     hero.insertAdjacentElement('afterend', section);
+    enhanceShowCards(section);
   }
 
   function enhanceIndexPage(){
@@ -264,8 +314,8 @@
     rows.forEach(function(row){
       var stats = enhanceShowCards(row);
       var countEl = row.querySelector('.row-count');
-      if(stats.visited > 0 && countEl && countEl.dataset.volverDone !== '1'){
-        countEl.textContent += ' · ' + stats.visited + ' vistas';
+      if(stats.completed > 0 && countEl && countEl.dataset.volverDone !== '1'){
+        countEl.textContent += ' · ' + stats.completed + ' concluídas';
         countEl.dataset.volverDone = '1';
       }
     });
@@ -275,7 +325,7 @@
       iconInner: '<path d="M17 3 L20.5 13 L31 13 L22.5 19.5 L26 30 L17 23.5 L8 30 L11.5 19.5 L3 13 L13.5 13 Z" stroke-width="1.4"/>'
     });
     buildDynamicRow({
-      id: 'rowContinuar', title: 'Continuar assistindo', storageKey: STORAGE_VISITED, countSuffix: 'recentes', limit: 10,
+      id: 'rowContinuar', title: 'Continue a Volver', storageKey: STORAGE_VISITED, countSuffix: 'recentes', limit: 10,
       iconInner: '<circle cx="17" cy="17" r="14" stroke-width="1.4"/><path d="M17 9 V17 L23 21" stroke-width="1.4" stroke-linecap="round"/>'
     });
   }
