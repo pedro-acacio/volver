@@ -26,12 +26,6 @@
   function writeJSON(key, obj){
     try{ localStorage.setItem(key, JSON.stringify(obj)); }catch(e){}
   }
-  function escapeHtml(s){
-    return String(s || '').replace(/[&<>"']/g, function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
-  }
-
   function pathParts(){
     var segs = location.pathname.split('/').filter(Boolean);
     var file = segs[segs.length - 1] || 'index.html';
@@ -82,7 +76,8 @@
     return {
       completed: toList(completedMap),
       inProgress: toList(visitedMap, completedKeys),
-      favorites: toList(favMap)
+      favorites: toList(favMap),
+      recent: toList(visitedMap)
     };
   }
 
@@ -110,8 +105,8 @@
         '<a class="sidebar-sublink" href="' + root + 'fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a>' +
         '<a class="sidebar-sublink" href="' + root + 'disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a>' +
         '<a class="sidebar-sublink" href="' + root + 'trindade/biblioteca-trindade.html">Trindade</a>' +
-        '<a class="sidebar-link" href="' + root + 'index.html#rowFavoritos">Favoritos</a>' +
-        '<a class="sidebar-link" href="' + root + 'index.html#rowContinuar">Continue a Volver</a>' +
+        '<a class="sidebar-link" href="' + root + 'favoritos.html">Favoritos</a>' +
+        '<a class="sidebar-link" href="' + root + 'continue-a-volver.html">Continue a Volver</a>' +
         '<a class="sidebar-link" href="' + root + 'perfil.html">Perfil</a>' +
         '<a class="sidebar-link" href="' + root + 'configuracoes.html">Configurações</a>' +
       '</div>' +
@@ -407,44 +402,7 @@
     }
   }
 
-  // ---------------- homepage: rows, dynamic "continuar"/"favoritos" ----------------
-  function buildDynamicRow(cfg){
-    var data = readJSON(cfg.storageKey);
-    var items = Object.keys(data).map(function(k){ return data[k]; });
-    items.sort(function(a, b){ return b.ts - a.ts; });
-    if(cfg.limit) items = items.slice(0, cfg.limit);
-    if(items.length === 0) return;
-    var hero = document.querySelector('.hero-feature');
-    if(!hero || document.getElementById(cfg.id)) return;
-
-    var cardsHtml = items.map(function(it){
-      return '<a class="show-card" href="' + escapeHtml(it.href) + '">' +
-        '<div class="show-thumb">' +
-          '<svg class="show-icon" viewBox="0 0 34 34" fill="none">' + cfg.iconInner + '</svg>' +
-          '<div class="mini-play"><svg width="8" height="10" viewBox="0 0 8 10" fill="none"><polygon points="0,0 8,5 0,10" fill="#D9A441"/></svg></div>' +
-        '</div>' +
-        '<div class="show-info">' +
-          '<div class="show-title">' + escapeHtml(it.title) + '</div>' +
-          '<div class="show-ref">' + escapeHtml(it.ref || '') + '</div>' +
-        '</div>' +
-      '</a>';
-    }).join('');
-
-    var section = document.createElement('section');
-    section.className = 'row';
-    section.id = cfg.id;
-    section.setAttribute('data-has-content', 'true');
-    section.innerHTML =
-      '<div class="row-head">' +
-        '<svg class="row-icon" viewBox="0 0 34 34" fill="none">' + cfg.iconInner + '</svg>' +
-        '<h2 class="row-title">' + cfg.title + '</h2>' +
-        '<span class="row-count">' + items.length + ' ' + cfg.countSuffix + '</span>' +
-      '</div>' +
-      '<div class="row-scroll">' + cardsHtml + '</div>';
-    hero.insertAdjacentElement('afterend', section);
-    enhanceShowCards(section);
-  }
-
+  // ---------------- homepage ----------------
   function enhanceIndexPage(){
     var rows = document.querySelectorAll('.row[data-has-content="true"]');
     rows.forEach(function(row){
@@ -454,15 +412,6 @@
         countEl.textContent += ' · ' + stats.completed + ' concluídas';
         countEl.dataset.volverDone = '1';
       }
-    });
-
-    buildDynamicRow({
-      id: 'rowFavoritos', title: 'Favoritos', storageKey: STORAGE_FAV, countSuffix: 'favoritos',
-      iconInner: '<path d="M17 3 L20.5 13 L31 13 L22.5 19.5 L26 30 L17 23.5 L8 30 L11.5 19.5 L3 13 L13.5 13 Z" stroke-width="1.4"/>'
-    });
-    buildDynamicRow({
-      id: 'rowContinuar', title: 'Continue a Volver', storageKey: STORAGE_VISITED, countSuffix: 'recentes', limit: 10,
-      iconInner: '<circle cx="17" cy="17" r="14" stroke-width="1.4"/><path d="M17 9 V17 L23 21" stroke-width="1.4" stroke-linecap="round"/>'
     });
   }
 
@@ -492,6 +441,7 @@
     if(p.folder === null && p.file === 'index.html'){
       buildIntroSplash();
       enhanceIndexPage();
+      injectSidebar();
     } else if(p.file.indexOf('licao-') === 0){
       injectBackButton();
       enhanceLessonPage();
@@ -499,7 +449,6 @@
       injectBackButton();
       enhanceHubPage();
     }
-    injectSidebar();
   }
 
   if(document.readyState === 'loading'){

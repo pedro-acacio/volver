@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Continue a Volver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .fav-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:28px; }
+  @media (max-width:600px){ .fav-grid{ grid-template-columns:1fr; } }
+  .fav-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; text-decoration:none;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .fav-card:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .fav-card .cat{
+    font-family:'IBM Plex Mono', monospace; font-size:10px; letter-spacing:.06em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:6px; display:flex; align-items:center; gap:6px;
+  }
+  .fav-card .cat .done{ color: var(--calm); }
+  .fav-card .t{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; }
+  .fav-card .r{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); }
+  .fav-empty{ font-size:13px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap" style="max-width:760px;">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 24 Q26 19 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M18 24 L26 8 L34 24 Z" fill="#D9A441"/>
+    </svg>
+    <a class="brand-word" href="index.html">Volver</a>
+  </div>
+
+  <div class="eyebrow">Sua jornada</div>
+  <h1>Continue a Volver</h1>
+  <p class="sub">As lições que você abriu mais recentemente, para retomar de onde parou.</p>
+
+  <div class="fav-grid" id="recentGrid"></div>
+  <div class="fav-empty" id="recentEmpty" style="display:none;">Nenhuma lição aberta ainda. Assim que você começar uma, ela aparece aqui.</div>
+
+  <footer>Volver · continue a volver · lição interativa</footer>
+</div>
+
+<script>
+  var CATEGORY_LABELS = {
+    'parabolas': 'Parábolas', 'livros': 'Livros', 'personagens': 'Personagens',
+    'fruto-do-espirito': 'Fruto do Espírito', 'disciplinas-espirituais': 'Disciplinas Espirituais',
+    'trindade': 'Trindade'
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    function render(){
+      if(!window.Volver) return;
+      var s = window.Volver.getSummary();
+      var completedHrefs = s.completed.map(function(it){ return it.href; });
+      var items = s.recent;
+      var grid = document.getElementById('recentGrid');
+      var empty = document.getElementById('recentEmpty');
+      if(items.length === 0){ empty.style.display = 'block'; return; }
+      grid.innerHTML = items.map(function(it){
+        var done = completedHrefs.indexOf(it.href) !== -1;
+        return '<a class="fav-card" href="' + it.href + '">' +
+          '<div class="cat"><span>' + (CATEGORY_LABELS[it.category] || it.category) + '</span>' + (done ? '<span class="done">· concluída</span>' : '<span>· em andamento</span>') + '</div>' +
+          '<div class="t">' + it.title + '</div>' +
+          '<div class="r">' + (it.ref || '') + '</div>' +
+        '</a>';
+      }).join('');
+    }
+    if(window.Volver){ render(); } else { window.addEventListener('load', render); }
+  });
+</script>
+<script defer src="volver-app.js"></script>
+</body>
+</html>
