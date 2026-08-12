@@ -206,6 +206,76 @@
   @media (max-width:380px){
     .hero-title{ font-size:26px; }
   }
+
+  /* ===== VOLVER — plataforma: tema claro, favoritos, progresso, splash ===== */
+  :root[data-theme="light"]{
+    --bg: #F4EFE1; --panel: #FFFFFF; --panel-line: #E1D8C2;
+    --text: #2B2A24; --text-dim: #5B5748; --text-faint: #938C76;
+    --gold: #AD7A22; --worry: #9C4C5B; --calm: #4F7548;
+  }
+  :root[data-theme="light"] body{
+    background: radial-gradient(ellipse 130% 60% at 50% -10%, #FFFDF6 0%, var(--bg) 55%) !important;
+  }
+
+  .theme-toggle{
+    width:30px; height:30px; border-radius:50%; border:1px solid var(--panel-line);
+    background: var(--panel); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; margin-left:10px; flex-shrink:0; padding:0; transition: border-color .2s ease;
+  }
+  .theme-toggle:hover{ border-color: var(--gold); }
+  .theme-toggle svg{ width:15px; height:15px; }
+  .theme-toggle path, .theme-toggle circle{ stroke: var(--text-dim); }
+  .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
+  :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+
+  .fav-star-card{
+    position:absolute; border:none; cursor:pointer; z-index:3;
+    width:24px; height:24px; border-radius:50%;
+    background: rgba(18,22,42,0.55); backdrop-filter: blur(2px);
+    display:flex; align-items:center; justify-content:center; padding:0;
+    top:6px; right:6px;
+  }
+  .fav-star-card svg{ width:12px; height:12px; }
+  .fav-star-card path{ stroke: rgba(233,228,216,0.7); fill:none; transition: all .2s ease; }
+  .fav-star-card.active path{ stroke: var(--gold); fill: var(--gold); }
+
+  .visited-badge{
+    position:absolute; top:6px; left:6px; width:20px; height:20px; border-radius:50%;
+    background: rgba(124,154,120,0.85); display:flex; align-items:center; justify-content:center; z-index:3;
+  }
+  .visited-badge svg{ width:10px; height:10px; }
+
+  /* ---- intro splash ---- */
+  .intro-splash{
+    position:fixed; inset:0; z-index:9999; background: var(--bg);
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+    cursor:pointer; transition: opacity .6s ease;
+  }
+  .intro-splash.fade-out{ opacity:0; pointer-events:none; }
+  .intro-boat{ width:64px; height:64px; animation: boat-bob 2.6s ease-in-out infinite; }
+  @keyframes boat-bob{
+    0%,100%{ transform:translateY(0) rotate(-2deg); }
+    50%{ transform:translateY(-10px) rotate(2deg); }
+  }
+  .intro-word{
+    font-family:'Fraunces', serif; font-weight:500; font-size:19px; letter-spacing:.02em;
+    color: var(--text); opacity:0; animation: intro-fade .9s ease .35s forwards;
+  }
+  .intro-wake{ width:100px; height:2px; border-radius:2px; background: var(--panel-line); position:relative; overflow:hidden; }
+  .intro-wake::after{
+    content:""; position:absolute; inset:0; background: var(--gold); transform-origin:left;
+    animation: wake-fill 2.6s ease-in-out infinite;
+  }
+  @keyframes wake-fill{
+    0%,100%{ transform:scaleX(.25); opacity:.45; }
+    50%{ transform:scaleX(1); opacity:1; }
+  }
+  @keyframes intro-fade{ to{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){
+    .intro-boat, .intro-wake::after{ animation:none; }
+    .intro-splash{ transition:none; }
+  }
 </style>
 </head>
 <body>
@@ -214,10 +284,11 @@
   <div class="topbar">
     <div class="brand-bar">
       <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
-        <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
-        <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
-        <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
-      </svg>
+      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 24 Q26 18.5 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M26 23 V9" stroke="#D9A441" stroke-width="2" stroke-linecap="round"/>
+      <path d="M26 9 L38.5 16.5 L26 21 Z" fill="#D9A441"/>
+    </svg>
       <span class="brand-word">Volver</span>
     </div>
     <div class="search-wrap">
@@ -1716,10 +1787,11 @@
       <div class="footer-brand">
         <div class="brand-bar">
           <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
-            <circle cx="26" cy="26" r="19" stroke="#2C3459" stroke-width="2.4"/>
-            <path d="M26 7 A19 19 0 0 1 45 26" stroke="#D9A441" stroke-width="2.8" stroke-linecap="round"/>
-            <circle cx="26" cy="26" r="4.5" fill="#D9A441"/>
-          </svg>
+      <path d="M9 24 L15.5 37 H36.5 L43 24" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M8 24 Q26 18.5 44 24" stroke="#D9A441" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M26 23 V9" stroke="#D9A441" stroke-width="2" stroke-linecap="round"/>
+      <path d="M26 9 L38.5 16.5 L26 21 Z" fill="#D9A441"/>
+    </svg>
           <span class="brand-word">Volver</span>
         </div>
         <p class="footer-blurb">Lições curtas que usam textos bíblicos — em ordem cronológica — para nomear padrões mentais automáticos antes de nomear a virtude que os interrompe.</p>
@@ -1781,5 +1853,6 @@
     noResults.style.display = (q && !anyVisible) ? 'block' : 'none';
   });
 </script>
+<script defer src="volver-app.js"></script>
 </body>
 </html>

@@ -177,3 +177,95 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   .sub{ font-size:14px; }
   .verse-card p{ font-size:15.5px; }
 }
+
+/* ===== VOLVER — plataforma: tema claro, favoritos, progresso, splash ===== */
+:root[data-theme="light"]{
+  --bg: #F4EFE1; --panel: #FFFFFF; --panel-line: #E1D8C2;
+  --text: #2B2A24; --text-dim: #5B5748; --text-faint: #938C76;
+  --gold: #AD7A22; --worry: #9C4C5B; --calm: #4F7548;
+}
+:root[data-theme="light"] body{
+  background: radial-gradient(ellipse 120% 80% at 50% -10%, #FFFDF6 0%, var(--bg) 55%) !important;
+}
+
+.theme-toggle{
+  width:30px; height:30px; border-radius:50%; border:1px solid var(--panel-line);
+  background: var(--panel); display:flex; align-items:center; justify-content:center;
+  cursor:pointer; margin-left:10px; flex-shrink:0; padding:0; transition: border-color .2s ease;
+}
+.theme-toggle:hover{ border-color: var(--gold); }
+.theme-toggle svg{ width:15px; height:15px; }
+.theme-toggle path, .theme-toggle circle{ stroke: var(--text-dim); }
+.theme-toggle .icon-sun{ display:none; }
+:root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
+:root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
+
+.fav-star-inline{
+  display:inline-flex; align-items:center; gap:6px; margin-left:10px;
+  border:1px solid var(--panel-line); border-radius:20px; padding:6px 12px; background:none;
+  font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-dim); cursor:pointer;
+  transition: all .2s ease;
+}
+.fav-star-inline svg{ width:13px; height:13px; }
+.fav-star-inline path{ stroke: var(--text-faint); fill:none; transition: all .2s ease; }
+.fav-star-inline.active{ border-color: var(--gold); color: var(--gold); }
+.fav-star-inline.active path{ stroke: var(--gold); fill: var(--gold); }
+
+.fav-star-card{
+  position:absolute; border:none; cursor:pointer; z-index:3;
+  width:24px; height:24px; border-radius:50%;
+  background: rgba(18,22,42,0.55); backdrop-filter: blur(2px);
+  display:flex; align-items:center; justify-content:center; padding:0;
+}
+.fav-star-card svg{ width:12px; height:12px; }
+.fav-star-card path{ stroke: rgba(233,228,216,0.7); fill:none; transition: all .2s ease; }
+.fav-star-card.active path{ stroke: var(--gold); fill: var(--gold); }
+.show-thumb .fav-star-card{ top:6px; right:6px; }
+.p-card .fav-star-card{
+  position:static; display:inline-flex; width:18px; height:18px; margin-left:8px;
+  vertical-align:middle; background: var(--panel-line);
+}
+.p-card .fav-star-card svg{ width:10px; height:10px; }
+.p-card .fav-star-card path{ stroke: var(--text-faint); }
+
+.visited-badge{
+  position:absolute; top:6px; left:6px; width:20px; height:20px; border-radius:50%;
+  background: rgba(124,154,120,0.85); display:flex; align-items:center; justify-content:center; z-index:3;
+}
+.visited-badge svg{ width:10px; height:10px; }
+
+.visited-tag{
+  display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10px;
+  letter-spacing:.05em; text-transform:uppercase; color: var(--calm); margin-left:8px;
+}
+
+/* ---- intro splash (homepage only) ---- */
+.intro-splash{
+  position:fixed; inset:0; z-index:9999; background: var(--bg);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px;
+  cursor:pointer; transition: opacity .6s ease;
+}
+.intro-splash.fade-out{ opacity:0; pointer-events:none; }
+.intro-boat{ width:64px; height:64px; animation: boat-bob 2.6s ease-in-out infinite; }
+@keyframes boat-bob{
+  0%,100%{ transform:translateY(0) rotate(-2deg); }
+  50%{ transform:translateY(-10px) rotate(2deg); }
+}
+.intro-word{
+  font-family:'Fraunces', serif; font-weight:500; font-size:19px; letter-spacing:.02em;
+  color: var(--text); opacity:0; animation: intro-fade .9s ease .35s forwards;
+}
+.intro-wake{ width:100px; height:2px; border-radius:2px; background: var(--panel-line); position:relative; overflow:hidden; }
+.intro-wake::after{
+  content:""; position:absolute; inset:0; background: var(--gold); transform-origin:left;
+  animation: wake-fill 2.6s ease-in-out infinite;
+}
+@keyframes wake-fill{
+  0%,100%{ transform:scaleX(.25); opacity:.45; }
+  50%{ transform:scaleX(1); opacity:1; }
+}
+@keyframes intro-fade{ to{ opacity:1; } }
+@media (prefers-reduced-motion: reduce){
+  .intro-boat, .intro-wake::after{ animation:none; }
+  .intro-splash{ transition:none; }
+}
