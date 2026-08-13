@@ -362,3 +362,80 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   .intro-ripples .ring{ opacity:.4; }
   .intro-splash{ transition:none; }
 }
+
+/* ---- lesson completion celebration ---- */
+.celebrate-backdrop{
+  position:fixed; inset:0; z-index:500; background: rgba(10,12,24,0.72);
+  display:flex; align-items:center; justify-content:center; flex-direction:column;
+  opacity:0; pointer-events:none; transition: opacity .3s ease; padding:20px;
+}
+.celebrate-backdrop.open{ opacity:1; pointer-events:auto; }
+
+.celebrate-burst{ position:relative; width:160px; height:150px; flex-shrink:0; }
+.celebrate-ring{
+  position:absolute; top:50%; left:50%; width:80px; height:80px; margin:-40px 0 0 -40px;
+  border-radius:50%; border:2px solid var(--gold); opacity:0;
+  animation: celebrate-ring-out 1s ease-out forwards;
+}
+.celebrate-ring.r2{ animation-delay:.15s; border-color: var(--calm); }
+@keyframes celebrate-ring-out{
+  0%{ transform:scale(.3); opacity:.8; }
+  100%{ transform:scale(1.6); opacity:0; }
+}
+.celebrate-check{
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0);
+  width:56px; height:56px; border-radius:50%; background: var(--calm);
+  display:flex; align-items:center; justify-content:center;
+  animation: celebrate-check-pop .5s cubic-bezier(.34,1.56,.64,1) .2s forwards;
+}
+.celebrate-check svg{ width:26px; height:26px; }
+@keyframes celebrate-check-pop{ to{ transform:translate(-50%,-50%) scale(1); } }
+.confetti-piece{
+  position:absolute; top:50%; left:50%; width:7px; height:10px; border-radius:1px;
+  opacity:0; animation: confetti-fall 1.1s ease-out forwards;
+}
+@keyframes confetti-fall{
+  0%{ transform:translate(-50%,-50%) rotate(0deg); opacity:1; }
+  100%{ transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) rotate(var(--rot)); opacity:0; }
+}
+
+.celebrate-modal{
+  background: var(--panel); border:1px solid var(--panel-line); border-radius:18px;
+  padding:28px 26px; max-width:340px; width:88vw; text-align:center;
+  opacity:0; transform:translateY(10px); animation: celebrate-modal-in .4s ease .3s forwards;
+  position:relative; margin-top:-16px;
+}
+@keyframes celebrate-modal-in{ to{ opacity:1; transform:translateY(0); } }
+.celebrate-close{
+  position:absolute; top:12px; right:14px; background:none; border:none;
+  color: var(--text-faint); font-size:20px; cursor:pointer; line-height:1; padding:0;
+}
+.celebrate-close:hover{ color: var(--gold); }
+.celebrate-title{ font-family:'Fraunces', serif; font-weight:600; font-size:19px; margin-bottom:6px; }
+.celebrate-sub{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-bottom:22px; }
+.celebrate-actions{ display:flex; flex-direction:column; gap:10px; }
+.celebrate-btn{
+  padding:11px 16px; border-radius:10px; border:1px solid var(--panel-line);
+  background: var(--bg); color: var(--text); font-family:'IBM Plex Sans', sans-serif;
+  font-size:13.5px; font-weight:600; cursor:pointer; transition: all .2s ease;
+  display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
+}
+.celebrate-btn:hover{ border-color: var(--gold); }
+.celebrate-btn.primary{ background: var(--gold); color: var(--bg); border-color: var(--gold); }
+.celebrate-btn.primary:hover{ opacity:.9; }
+@media (prefers-reduced-motion: reduce){
+  .celebrate-ring, .confetti-piece, .celebrate-check, .celebrate-modal{ animation:none; opacity:1; transform:none; }
+}
+
+/* ---- print / "baixar como PDF" via browser print dialog ---- */
+@media print{
+  .volver-sidebar, .sidebar-backdrop, .menu-btn, .back-btn, .theme-toggle,
+  .fav-star-inline, .fav-star-card, .continue-btn, .celebrate-backdrop,
+  .tl-marker, .chip-row, .toggle-row, footer{ display:none !important; }
+  .tl-line{ display:none !important; }
+  .tl-item{ padding-left:0 !important; }
+  .tl-body{ max-height:none !important; opacity:1 !important; overflow:visible !important; margin:10px 0 22px !important; }
+  body{ background:#fff !important; color:#111 !important; }
+  .tl-card, .verse-card, .outcome{ background:#fff !important; border-color:#ccc !important; color:#111 !important; }
+  a{ color:#111 !important; }
+}

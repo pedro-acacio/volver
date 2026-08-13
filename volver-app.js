@@ -395,8 +395,87 @@
       btn.classList.add('done');
       btn.disabled = true;
       btn.textContent = 'Lição concluída ✓';
+      var brandWord = document.querySelector('.brand-word');
+      var brandTrack = document.querySelector('.brand-track');
+      var hubHref = brandWord ? brandWord.getAttribute('href') : 'index.html';
+      var categoryLabel = brandTrack ? brandTrack.textContent.trim() : 'a categoria';
+      celebrateCompletion(entry, hubHref, categoryLabel);
     });
     body.appendChild(btn);
+  }
+
+  function celebrateCompletion(entry, hubHref, categoryLabel){
+    var old = document.getElementById('volverCelebrate');
+    if(old) old.remove();
+
+    var backdrop = document.createElement('div');
+    backdrop.className = 'celebrate-backdrop';
+    backdrop.id = 'volverCelebrate';
+
+    var burst = document.createElement('div');
+    burst.className = 'celebrate-burst';
+    burst.innerHTML =
+      '<div class="celebrate-ring r1"></div>' +
+      '<div class="celebrate-ring r2"></div>' +
+      '<div class="celebrate-check">' + CHECK_ICON + '</div>';
+
+    var colors = ['#D9A441', '#7C9A78', '#A85C6B'];
+    for(var i = 0; i < 12; i++){
+      var p = document.createElement('div');
+      p.className = 'confetti-piece';
+      var angle = Math.random() * Math.PI * 2;
+      var dist = 70 + Math.random() * 70;
+      p.style.setProperty('--dx', (Math.cos(angle) * dist) + 'px');
+      p.style.setProperty('--dy', (Math.sin(angle) * dist - 20) + 'px');
+      p.style.setProperty('--rot', (Math.random() * 360) + 'deg');
+      p.style.background = colors[i % colors.length];
+      p.style.animationDelay = (Math.random() * 0.18) + 's';
+      burst.appendChild(p);
+    }
+
+    var modal = document.createElement('div');
+    modal.className = 'celebrate-modal';
+    modal.innerHTML =
+      '<button class="celebrate-close" id="celebrateClose" type="button" aria-label="Fechar">&times;</button>' +
+      '<div class="celebrate-title">Lição concluída!</div>' +
+      '<div class="celebrate-sub">' + entry.title + (entry.ref ? ' · ' + entry.ref : '') + '</div>' +
+      '<div class="celebrate-actions">' +
+        '<button class="celebrate-btn primary" id="celebrateShare" type="button">Compartilhar</button>' +
+        '<button class="celebrate-btn" id="celebratePdf" type="button">Baixar como PDF</button>' +
+        '<a class="celebrate-btn" href="' + hubHref + '">Voltar para ' + categoryLabel + '</a>' +
+      '</div>';
+
+    backdrop.appendChild(burst);
+    backdrop.appendChild(modal);
+    document.body.appendChild(backdrop);
+    requestAnimationFrame(function(){ backdrop.classList.add('open'); });
+
+    function close(){
+      backdrop.classList.remove('open');
+      setTimeout(function(){ backdrop.remove(); }, 300);
+    }
+    backdrop.addEventListener('click', function(e){ if(e.target === backdrop) close(); });
+    modal.querySelector('#celebrateClose').addEventListener('click', close);
+
+    modal.querySelector('#celebrateShare').addEventListener('click', function(){
+      var shareText = 'Acabei de concluir "' + entry.title + '"' + (entry.ref ? ' (' + entry.ref + ')' : '') + ' no Volver.';
+      var shareUrl = location.href;
+      var shareBtn = modal.querySelector('#celebrateShare');
+      if(navigator.share){
+        navigator.share({ title: entry.title, text: shareText, url: shareUrl }).catch(function(){});
+      } else if(navigator.clipboard){
+        navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(function(){
+          var original = shareBtn.textContent;
+          shareBtn.textContent = 'Copiado!';
+          setTimeout(function(){ shareBtn.textContent = original; }, 1800);
+        });
+      }
+    });
+
+    modal.querySelector('#celebratePdf').addEventListener('click', function(){
+      close();
+      setTimeout(function(){ window.print(); }, 250);
+    });
   }
 
   // ---------------- hub page ----------------
