@@ -27,8 +27,12 @@
   .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:16px; }
 
   .search-wrap{
-    margin-left:auto; position:relative; width:100%; max-width:320px;
+    margin: 0 auto; position:relative; width:100%; max-width:320px;
   }
+  .topbar-logo{
+    display:flex; align-items:center; gap:8px; text-decoration:none; flex-shrink:0;
+  }
+  .topbar-logo .brand-word{ color: var(--text); }
   .search-icon{ position:absolute; left:13px; top:50%; transform:translateY(-50%); width:14px; height:14px; pointer-events:none; }
   .search-icon path, .search-icon circle{ stroke: var(--text-faint); }
   .search-input{
@@ -415,14 +419,7 @@
 <div class="wrap">
 
   <div class="topbar">
-    <div class="brand-bar">
-      <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
-      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
-      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>
-      <span class="brand-word">Volver</span>
-    </div>
+    <div class="brand-bar"></div>
     <div class="search-wrap">
       <svg class="search-icon" viewBox="0 0 18 18" fill="none">
         <circle cx="8" cy="8" r="6" stroke-width="1.5"/>
@@ -430,6 +427,14 @@
       </svg>
       <input type="text" id="searchInput" class="search-input" placeholder="Buscar reflexão, referência ou tema…" autocomplete="off">
     </div>
+    <a class="topbar-logo" href="index.html">
+      <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+      <span class="brand-word">Volver</span>
+    </a>
   </div>
 
   <!-- ===== HERO: APRESENTAÇÃO DA PLATAFORMA ===== -->

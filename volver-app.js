@@ -421,6 +421,30 @@
     body.appendChild(btn);
   }
 
+  function buildPrintOutcomeDual(){
+    if(document.getElementById('printOutcomeDual')) return;
+    var outcomeCard = document.getElementById('outcomeCard');
+    if(!outcomeCard || typeof window.showOutcome !== 'function') return;
+
+    window.showOutcome('worry');
+    var worryTitle = (document.getElementById('outcomeTitle') || {}).textContent || '';
+    var worryText = (document.getElementById('outcomeText') || {}).textContent || '';
+
+    window.showOutcome('calm');
+    var calmTitle = (document.getElementById('outcomeTitle') || {}).textContent || '';
+    var calmText = (document.getElementById('outcomeText') || {}).textContent || '';
+
+    if(!worryTitle || !calmTitle) return;
+
+    var dual = document.createElement('div');
+    dual.id = 'printOutcomeDual';
+    dual.className = 'print-outcome-dual';
+    dual.innerHTML =
+      '<div class="print-outcome-block worry"><span class="poc-tag">Padrão a evitar</span><h3>' + worryTitle + '</h3><p>' + worryText + '</p></div>' +
+      '<div class="print-outcome-block calm"><span class="poc-tag">Padrão a seguir</span><h3>' + calmTitle + '</h3><p>' + calmText + '</p></div>';
+    outcomeCard.insertAdjacentElement('afterend', dual);
+  }
+
   function celebrateCompletion(entry, hubHref, categoryLabel){
     var old = document.getElementById('volverCelebrate');
     if(old) old.remove();
@@ -492,10 +516,7 @@
     });
 
     modal.querySelector('#celebratePdf').addEventListener('click', function(){
-      var outcomeTitle = document.getElementById('outcomeTitle');
-      if(outcomeTitle && !outcomeTitle.textContent && typeof window.showOutcome === 'function'){
-        window.showOutcome('calm');
-      }
+      buildPrintOutcomeDual();
       close();
       setTimeout(function(){ window.print(); }, 250);
     });
@@ -671,6 +692,8 @@
     } else if(p.file.indexOf('biblioteca-') === 0){
       injectBackButton();
       enhanceHubPage();
+    } else {
+      injectBackButton();
     }
   }
 

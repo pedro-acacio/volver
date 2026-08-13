@@ -24,11 +24,14 @@ a{ color: var(--gold); }
 .stage-wrap{ width:100%; max-width:640px; margin:0 auto; padding: 0 20px 80px; }
 
 /* ---- brand header ---- */
+/* layout: back-button (and any middle elements) stay in natural order on the
+   left; the brand mark+word are pushed to order:2 with an auto left-margin
+   so the logo always ends up flush right, whatever else is in the bar. */
 .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 34px; }
-.brand-mark{ width:22px; height:22px; flex-shrink:0; }
-.brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; text-decoration:none; color:var(--text); }
+.brand-mark{ width:22px; height:22px; flex-shrink:0; order:2; margin-left:auto; }
+.brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; text-decoration:none; color:var(--text); order:2; }
 .brand-track{
-  margin-left:auto; font-family:'IBM Plex Mono', monospace; font-size:11px;
+  font-family:'IBM Plex Mono', monospace; font-size:11px;
   color: var(--text-faint); letter-spacing:.06em; text-transform:uppercase;
 }
 
@@ -130,6 +133,8 @@ h1{
 .outcome-visual{ display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:14px; height:56px; }
 .outcome h3{ font-family:'Fraunces', serif; font-weight:500; font-size:16.5px; margin:0 0 8px; }
 .outcome p{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:0; }
+
+.print-outcome-dual{ display:none; }
 
 .loop-dot{ width:11px;height:11px;border-radius:50%; background: var(--worry); animation: spin-loop 2.2s linear infinite; }
 @keyframes spin-loop{ 0%{transform:translateX(-26px);} 50%{transform:translateX(26px);} 100%{transform:translateX(-26px);} }
@@ -514,10 +519,23 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   .toggle-btn.active-worry{ border-color: var(--worry) !important; color: var(--worry) !important; background: rgba(156,76,91,0.08) !important; }
   .toggle-btn.active-calm{ border-color: var(--calm) !important; color: var(--calm) !important; background: rgba(79,117,72,0.08) !important; }
 
-  .outcome{ background: var(--panel) !important; border:1px solid var(--panel-line) !important; break-inside:avoid; page-break-inside:avoid; }
-  .outcome-visual{ display:none !important; }
-  .outcome h3{ color: var(--text) !important; }
-  .outcome p{ color: var(--text-dim) !important; }
+  .outcome{ display:none !important; }
+
+  .print-outcome-dual{
+    display:grid !important; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px;
+    break-inside:avoid; page-break-inside:avoid;
+  }
+  .print-outcome-block{ border-radius:12px; padding:16px 18px; border:1px solid; }
+  .print-outcome-block.worry{ border-color: var(--worry) !important; background: rgba(156,76,91,0.08) !important; }
+  .print-outcome-block.calm{ border-color: var(--calm) !important; background: rgba(79,117,72,0.08) !important; }
+  .poc-tag{
+    display:block; font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.08em;
+    text-transform:uppercase; margin-bottom:6px; font-weight:600;
+  }
+  .print-outcome-block.worry .poc-tag{ color: var(--worry) !important; }
+  .print-outcome-block.calm .poc-tag{ color: var(--calm) !important; }
+  .print-outcome-block h3{ font-family:'Fraunces', serif; font-size:14px; margin:0 0 6px; color: var(--text) !important; }
+  .print-outcome-block p{ font-size:11.5px; line-height:1.5; margin:0; color: var(--text-dim) !important; }
 
   a{ color: var(--gold) !important; text-decoration:none !important; }
 }
