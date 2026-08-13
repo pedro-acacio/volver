@@ -92,6 +92,11 @@ h1{
   font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:600; cursor:pointer;
 }
 
+.finish-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.finish-row .continue-btn{ margin-top:16px; }
+.inline-complete-icons{ display:flex; gap:6px; margin-top:16px; }
+.inline-complete-back{ display:flex; margin:14px auto 0; }
+
 /* ---- generic chip row sub-interaction ---- */
 .chip-row{ display:flex; gap:8px; margin: 4px 0 14px; flex-wrap:wrap; }
 .chip-btn{
@@ -484,7 +489,7 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   body{ color: var(--text) !important; }
 
   .volver-sidebar, .sidebar-backdrop, .menu-btn, .back-btn, .theme-toggle,
-  .fav-star-inline, .fav-star-card, .continue-btn, .celebrate-backdrop,
+  .fav-star-inline, .fav-star-card, .finish-row, .inline-complete-back, .celebrate-backdrop,
   .intro-splash, .chip-row, footer{ display:none !important; }
 
   .brand-bar{ border-bottom:1.5px solid var(--panel-line); padding-bottom:16px; margin-bottom:26px; }

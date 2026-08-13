@@ -401,24 +401,81 @@
     var body = items[items.length - 1].querySelector('.tl-body');
     if(!body) return;
     var done = isCompleted(entry.category, entry.slug);
+
+    var brandWord = document.querySelector('.brand-word');
+    var brandTrack = document.querySelector('.brand-track');
+    var hubHref = brandWord ? brandWord.getAttribute('href') : 'index.html';
+    var categoryLabel = brandTrack ? brandTrack.textContent.trim() : 'a categoria';
+
+    var row = document.createElement('div');
+    row.className = 'finish-row';
+
     var btn = document.createElement('button');
     btn.id = 'volverFinishBtn';
     btn.type = 'button';
     btn.className = 'continue-btn' + (done ? ' done' : '');
     btn.disabled = done;
     btn.textContent = done ? 'Reflexão concluída ✓' : 'Finalizar reflexão';
+    row.appendChild(btn);
+    body.appendChild(row);
+
+    function renderInlineActions(){
+      if(document.getElementById('inlineCompleteIcons')) return;
+      var icons = document.createElement('div');
+      icons.className = 'inline-complete-icons';
+      icons.id = 'inlineCompleteIcons';
+      icons.innerHTML =
+        '<button class="celebrate-icon-btn" id="inlineShareBtn" type="button" title="Compartilhar" aria-label="Compartilhar">' + SHARE_ICON + '</button>' +
+        '<button class="celebrate-icon-btn" id="inlinePdfBtn" type="button" title="Baixar como PDF" aria-label="Baixar como PDF">' + DOWNLOAD_ICON + '</button>';
+      row.appendChild(icons);
+
+      var backBtn = document.createElement('a');
+      backBtn.className = 'celebrate-btn primary inline-complete-back';
+      backBtn.href = hubHref;
+      backBtn.textContent = 'Voltar para ' + categoryLabel;
+      body.insertBefore(backBtn, row.nextSibling);
+
+      bindShareButton(document.getElementById('inlineShareBtn'), entry);
+      bindPdfButton(document.getElementById('inlinePdfBtn'));
+    }
+
+    if(done){ renderInlineActions(); }
+
     btn.addEventListener('click', function(){
       markCompleted(entry);
       btn.classList.add('done');
       btn.disabled = true;
       btn.textContent = 'Reflexão concluída ✓';
-      var brandWord = document.querySelector('.brand-word');
-      var brandTrack = document.querySelector('.brand-track');
-      var hubHref = brandWord ? brandWord.getAttribute('href') : 'index.html';
-      var categoryLabel = brandTrack ? brandTrack.textContent.trim() : 'a categoria';
+      renderInlineActions();
       celebrateCompletion(entry, hubHref, categoryLabel);
     });
-    body.appendChild(btn);
+  }
+
+  function bindShareButton(btn, entry){
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var shareText = 'Acabei de concluir "' + entry.title + '"' + (entry.ref ? ' (' + entry.ref + ')' : '') + ' no Volver.';
+      var shareUrl = location.href;
+      if(navigator.share){
+        navigator.share({ title: entry.title, text: shareText, url: shareUrl }).catch(function(){});
+      } else if(navigator.clipboard){
+        navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(function(){
+          var original = btn.innerHTML;
+          btn.innerHTML = CHECK_ICON;
+          btn.setAttribute('title', 'Copiado!');
+          setTimeout(function(){ btn.innerHTML = original; btn.setAttribute('title', 'Compartilhar'); }, 1800);
+        });
+      }
+    });
+  }
+
+  function bindPdfButton(btn, beforePrint){
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      buildPrintOutcomeDual();
+      if(beforePrint) beforePrint();
+      setTimeout(function(){ window.print(); }, 250);
+    });
   }
 
   function buildPrintOutcomeDual(){
@@ -500,26 +557,8 @@
     backdrop.addEventListener('click', function(e){ if(e.target === backdrop) close(); });
     modal.querySelector('#celebrateClose').addEventListener('click', close);
 
-    modal.querySelector('#celebrateShare').addEventListener('click', function(){
-      var shareText = 'Acabei de concluir "' + entry.title + '"' + (entry.ref ? ' (' + entry.ref + ')' : '') + ' no Volver.';
-      var shareUrl = location.href;
-      var shareBtn = modal.querySelector('#celebrateShare');
-      if(navigator.share){
-        navigator.share({ title: entry.title, text: shareText, url: shareUrl }).catch(function(){});
-      } else if(navigator.clipboard){
-        navigator.clipboard.writeText(shareText + ' ' + shareUrl).then(function(){
-          var original = shareBtn.textContent;
-          shareBtn.textContent = 'Copiado!';
-          setTimeout(function(){ shareBtn.textContent = original; }, 1800);
-        });
-      }
-    });
-
-    modal.querySelector('#celebratePdf').addEventListener('click', function(){
-      buildPrintOutcomeDual();
-      close();
-      setTimeout(function(){ window.print(); }, 250);
-    });
+    bindShareButton(modal.querySelector('#celebrateShare'), entry);
+    bindPdfButton(modal.querySelector('#celebratePdf'), close);
   }
 
   // ---------------- hub page ----------------
