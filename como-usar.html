@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Como usar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .lede{ color:var(--text-dim); font-size:15px; line-height:1.65; max-width:60ch; margin:0 0 44px; }
+
+  .how-section{ margin-bottom:40px; }
+  .how-section h2{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0 0 12px; }
+  .how-section p{ font-size:14px; line-height:1.7; color: var(--text-dim); margin:0 0 12px; }
+  .how-section p:last-child{ margin-bottom:0; }
+  .how-section strong{ color: var(--text); font-weight:600; }
+  .how-anchor{ scroll-margin-top:24px; }
+
+  .compare-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:18px 0 8px; }
+  @media (max-width:640px){ .compare-grid{ grid-template-columns:1fr; } }
+  .compare-card{ border-radius:14px; padding:18px 19px; border:1px solid; }
+  .compare-card.wrong{ background: rgba(168,92,107,0.07); border-color: rgba(168,92,107,0.35); }
+  .compare-card.right{ background: rgba(124,154,120,0.07); border-color: rgba(124,154,120,0.35); }
+  .compare-tag{
+    font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase;
+    display:block; margin-bottom:10px; font-weight:600;
+  }
+  .compare-card.wrong .compare-tag{ color: var(--worry); }
+  .compare-card.right .compare-tag{ color: var(--calm); }
+  .compare-verse{ font-family:'Fraunces', serif; font-style:italic; font-size:14.5px; line-height:1.5; color: var(--text); margin:0 0 6px; }
+  .compare-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); display:block; margin-bottom:10px; }
+  .compare-text{ font-size:13px; line-height:1.6; color: var(--text-dim); margin:0; }
+  .compare-list{ margin:0; padding-left:18px; font-size:13px; line-height:1.7; color: var(--text-dim); }
+  .compare-list li{ margin-bottom:6px; }
+  .compare-list li:last-child{ margin-bottom:0; }
+
+  .flow-box{
+    background: linear-gradient(155deg, rgba(217,164,65,0.09), rgba(124,154,120,0.06));
+    border:1px solid rgba(217,164,65,0.35); border-radius:14px; padding:22px 24px; margin: 46px 0 32px;
+    text-align:center;
+  }
+  .flow-box .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color: var(--gold); display:block; margin-bottom:10px;
+  }
+  .flow-steps{
+    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
+    font-family:'Fraunces', serif; font-size:16px; color: var(--text); margin-bottom:10px;
+  }
+  .flow-steps span.arrow{ color: var(--text-faint); font-family:'IBM Plex Sans', sans-serif; }
+  .flow-box p{ font-size:13px; color: var(--text-dim); margin:0; max-width:52ch; margin-left:auto; margin-right:auto; }
+
+  .how-cta{
+    display:flex; align-items:center; justify-content:center; gap:8px; margin: 8px auto 0;
+    padding:12px 22px; border-radius:10px; background: var(--gold); color: var(--bg);
+    font-family:'IBM Plex Sans', sans-serif; font-size:14px; font-weight:600; text-decoration:none; width:fit-content;
+    transition: opacity .2s ease;
+  }
+  .how-cta:hover{ opacity:.9; }
+</style>
+</head>
+<body>
+<div class="stage-wrap" style="max-width:680px;">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="index.html">Volver</a>
+  </div>
+
+  <div class="eyebrow">Antes de começar</div>
+  <h1>Como usar a Volver</h1>
+  <p class="lede">A Volver não substitui a leitura da Bíblia — ela existe para vir depois dela. Antes de abrir sua primeira reflexão, vale entender o que essa plataforma é, o que ela não é, e como usá-la da maneira certa.</p>
+
+  <div class="how-section">
+    <h2>O que é a Volver</h2>
+    <p>A Volver é uma metodologia para ajudar a mente a se encontrar com os ensinamentos bíblicos, de um jeito visual e interativo. Mas isso não significa que os textos bíblicos foram escritos para uma aplicação pessoal simples, como uma fórmula pronta para encaixar em qualquer situação da sua vida.</p>
+  </div>
+
+  <div class="how-section">
+    <h2>Um aviso necessário</h2>
+    <p>Cada texto bíblico foi escrito a partir de inspiração divina, em épocas, culturas, línguas e contextos muito diferentes dos nossos — com um contexto histórico específico, personagens reais vivendo situações concretas, e propósitos teológicos definidos para aquilo que estava sendo descrito.</p>
+    <p>Esses textos não foram escritos apenas para que alguém, hoje, se sinta bem ou encontre uma resposta pronta comparando-os diretamente com um problema pessoal específico. Ler a Bíblia dessa forma — só atrás de conforto imediato — deixa de fora o que ela realmente é.</p>
+  </div>
+
+  <div class="how-section">
+    <h2>Para que a Bíblia foi escrita</h2>
+    <p>O propósito da Bíblia é revelar quem Deus é — da maneira que Ele mesmo escolheu se revelar aqui na Terra. É por meio dessa revelação, registrada nos textos bíblicos, que podemos estudar, conhecer a Deus verdadeiramente, e viver o nosso dia a dia com obediência e sabedoria a partir do que Ele mostrou de si mesmo. Não a partir do que gostaríamos que o texto dissesse.</p>
+  </div>
+
+  <div class="how-section how-anchor" id="micro-macro">
+    <h2>Microvisão x macrovisão</h2>
+    <p><strong>Microvisão</strong> é olhar só para o versículo isolado — a frase solta, fora do parágrafo, do capítulo, do livro e da história que a cerca. <strong>Macrovisão</strong> é olhar para o texto dentro do seu contexto completo: quem escreveu, para quem, quando, por quê, e como aquele trecho se encaixa no restante do livro e de toda a Bíblia.</p>
+    <p>Sem a macrovisão, é fácil transformar qualquer versículo numa frase de efeito que diz o que a gente já queria ouvir — mesmo que não seja o que o texto realmente ensina.</p>
+  </div>
+
+  <div class="how-section how-anchor" id="exemplo">
+    <h2>Um exemplo: o mesmo versículo, dois usos</h2>
+    <p>Jeremias 29:11 é um dos textos mais citados isoladamente — e um dos mais mal aplicados.</p>
+    <div class="compare-grid">
+      <div class="compare-card wrong">
+        <span class="compare-tag">Leitura solta (microvisão)</span>
+        <p class="compare-verse">"Porque eu bem sei os pensamentos que penso a vosso respeito, diz o Senhor; pensamentos de paz, e não de mal, para vos dar o fim que esperais."</p>
+        <span class="compare-ref">Jeremias 29:11 — citado sozinho</span>
+        <p class="compare-text">Lido assim, vira uma promessa genérica e pessoal: "Deus vai realizar meus planos", "meu negócio vai prosperar", "esse é o versículo que garante o que eu quero" — como se tivesse sido escrito diretamente para a vida de qualquer pessoa, hoje, fora de qualquer contexto.</p>
+      </div>
+      <div class="compare-card right">
+        <span class="compare-tag">Mesmo texto, em contexto (macrovisão)</span>
+        <p class="compare-verse">O mesmo versículo, dentro de Jeremias 29:1-14.</p>
+        <span class="compare-ref">Jeremias 29:1-14</span>
+        <p class="compare-text">É uma carta de Jeremias aos judeus exilados na Babilônia, corrigindo falsos profetas que prometiam um retorno rápido. Deus manda o povo se estabelecer lá — construir casas, plantar, buscar a paz da cidade — porque o exílio duraria setenta anos (v.10). Só então vem a promessa: um plano de bem para restaurar o povo <em>como nação</em>, ao fim daquele tempo determinado. É uma promessa histórica e coletiva, dada a um povo em disciplina — não um cheque em branco individual para qualquer plano pessoal de hoje.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-section how-anchor" id="uso">
+    <h2>Como usar bem a Volver</h2>
+    <p>A Volver é um complemento independente da Bíblia — um auxílio para trazer reflexão, não uma autoridade que ensina o que os textos bíblicos significam.</p>
+    <div class="compare-grid">
+      <div class="compare-card wrong">
+        <span class="compare-tag">Uso que não recomendamos</span>
+        <ul class="compare-list">
+          <li>Abrir uma reflexão sem nunca ter lido a passagem na própria Bíblia.</li>
+          <li>Usar a plataforma como uma "palavra do dia" para um problema específico, tipo horóscopo.</li>
+          <li>Comparar uma situação pessoal diretamente com o texto, sem entender seu contexto histórico e teológico.</li>
+          <li>Parar na reflexão da Volver e nunca abrir a Bíblia de fato.</li>
+          <li>Tratar o padrão apresentado ao final como um veredito bíblico definitivo.</li>
+        </ul>
+      </div>
+      <div class="compare-card right">
+        <span class="compare-tag">Uso recomendado</span>
+        <ul class="compare-list">
+          <li>Ler a passagem indicada na Bíblia antes, no seu contexto — o capítulo, se possível o livro.</li>
+          <li>Abrir a reflexão da Volver depois, como um fechamento para o que já foi lido.</li>
+          <li>Levar o padrão apresentado como ponto de partida para reflexão pessoal e oração — não como resposta final.</li>
+          <li>Buscar mais estudo (igreja, pastores, comentários) quando surgir uma dúvida teológica.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-section">
+    <h2>Por que "reflexão", e não "lição"</h2>
+    <p>Chamávamos cada uma dessas páginas de "lição" — mas o nome dava a entender que a Volver ensina o significado do texto, como se fosse aula. Por isso passamos a chamar de <strong>reflexão</strong>: um espaço para parar, pensar, e deixar o texto que você já leu ecoar na sua vida — não uma aula que substitui o seu próprio estudo da Palavra.</p>
+  </div>
+
+  <div class="flow-box">
+    <span class="tag">Fluxo recomendado</span>
+    <div class="flow-steps"><span>Leia a Bíblia</span><span class="arrow">→</span><span>Conheça o contexto</span><span class="arrow">→</span><span>Reflita com a Volver</span></div>
+    <p>Leia e conheça o assunto que você quer refletir primeiro — depois abra a reflexão para fechar a leitura, não para substituí-la.</p>
+  </div>
+
+  <a class="how-cta" href="index.html">Entrar na Volver</a>
+
+  <footer>Volver · metodologia · como usar</footer>
+</div>
+
+<script defer src="volver-app.js"></script>
+</body>
+</html>

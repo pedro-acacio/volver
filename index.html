@@ -352,6 +352,63 @@
     .intro-ripples .ring{ opacity:.4; }
     .intro-splash{ transition:none; }
   }
+
+  /* ---- fácil acesso: como usar a Volver ---- */
+  .methodology-banner{
+    display:flex; align-items:center; gap:12px; margin:22px 0 6px;
+    padding:14px 18px; border-radius:12px; background: rgba(217,164,65,0.08);
+    border:1px solid rgba(217,164,65,0.3);
+  }
+  .methodology-banner svg{ width:20px; height:20px; flex-shrink:0; }
+  .methodology-banner path, .methodology-banner circle{ stroke: var(--gold); }
+  .methodology-banner p{ margin:0; font-size:12.5px; line-height:1.5; color: var(--text-dim); flex:1; }
+  .methodology-banner strong{ color: var(--text); }
+  .methodology-banner a{
+    flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:600;
+    color: var(--gold); text-decoration:none; white-space:nowrap;
+  }
+  .methodology-banner a:hover{ text-decoration:underline; }
+  @media (max-width:520px){
+    .methodology-banner{ flex-direction:column; align-items:flex-start; }
+  }
+
+  /* ---- carrossel de onboarding (metodologia da Volver) ---- */
+  .onboard-backdrop{
+    position:fixed; inset:0; z-index:9998; background: rgba(10,12,24,0.82);
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition: opacity .3s ease; padding:20px;
+  }
+  .onboard-backdrop.open{ opacity:1; pointer-events:auto; }
+  .onboard-modal{
+    background: var(--panel); border:1px solid var(--panel-line); border-radius:18px;
+    padding:30px 28px; max-width:440px; width:92vw; max-height:82vh; overflow-y:auto;
+  }
+  .onboard-dots{ display:flex; gap:6px; margin-bottom:18px; }
+  .onboard-dot{ width:6px; height:6px; border-radius:50%; background: var(--panel-line); transition: background .2s ease, width .2s ease; }
+  .onboard-dot.active{ background: var(--gold); width:18px; border-radius:4px; }
+  .onboard-eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:10px;
+  }
+  .onboard-title{ font-family:'Fraunces', serif; font-weight:500; font-size:23px; margin:0 0 14px; line-height:1.2; }
+  .onboard-body p{ font-size:14px; line-height:1.65; color: var(--text-dim); margin:0 0 12px; }
+  .onboard-body p:last-child{ margin-bottom:0; }
+  .onboard-body strong{ color: var(--text); }
+  .onboard-body a{ color: var(--gold); font-weight:600; }
+  .onboard-nav{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:24px; }
+  .onboard-btn{
+    padding:11px 20px; border-radius:9px; border:none; cursor:pointer;
+    font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:600; transition: opacity .2s ease;
+  }
+  .onboard-btn.primary{ background: var(--gold); color: var(--bg); margin-left:auto; }
+  .onboard-btn.primary:hover{ opacity:.9; }
+  .onboard-btn.ghost{ background:none; color: var(--text-faint); padding:11px 4px; }
+  .onboard-btn.ghost:hover{ color: var(--text); }
+  .onboard-btn.is-hidden{ visibility:hidden; }
+  @media (max-width:520px){
+    .onboard-modal{ padding:24px 20px; }
+    .onboard-title{ font-size:20px; }
+  }
 </style>
 </head>
 <body>
@@ -371,7 +428,7 @@
         <circle cx="8" cy="8" r="6" stroke-width="1.5"/>
         <path d="M12.5 12.5 L17 17" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      <input type="text" id="searchInput" class="search-input" placeholder="Buscar lição, referência ou tema…" autocomplete="off">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar reflexão, referência ou tema…" autocomplete="off">
     </div>
   </div>
 
@@ -397,7 +454,7 @@
       <p class="hero-hook">Três convites, três grupos diferentes de gente — e uma cadeira que fica vazia no fim. A parábola que expõe o que uma desculpa custa, sem que quem a dá perceba o preço.</p>
       <a class="watch-btn" href="parabolas/licao-parabola-grande-banquete.html">
         <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><polygon class="tri" points="0,0 10,6 0,12"/></svg>
-        Assistir lição
+        Ver reflexão
       </a>
     </div>
   </section>
@@ -2079,13 +2136,13 @@
     </div>
   </section>
 
-  <p class="no-results" id="noResults">Nenhuma lição encontrada. As demais classificações ainda estão em construção.</p>
+  <p class="no-results" id="noResults">Nenhuma reflexão encontrada. As demais classificações ainda estão em construção.</p>
 
   <!-- ===== COMO FUNCIONA ===== -->
   <section class="how">
     <div class="how-head">
       <div class="how-eyebrow">O formato</div>
-      <h2 class="how-title">Como funciona cada lição</h2>
+      <h2 class="how-title">Como funciona cada reflexão</h2>
     </div>
     <div class="how-grid">
       <div class="how-step">
@@ -2094,7 +2151,7 @@
           <path d="M4 4 H14 V14 H4 Z M20 4 H30 V14 H20 Z M4 20 H14 V30 H4 Z M20 20 H30 V30 H20 Z" stroke-width="1.5"/>
         </svg>
         <h3>Escolha uma classificação</h3>
-        <p>Parábolas, Livros, Salmos, Provérbios, Personagens, Fruto do Espírito, Disciplinas Espirituais ou Trindade — cada uma reúne o mesmo tipo de lição curta e interativa.</p>
+        <p>Parábolas, Livros, Salmos, Provérbios, Personagens, Fruto do Espírito, Disciplinas Espirituais ou Trindade — cada uma reúne o mesmo tipo de reflexão curta e interativa.</p>
       </div>
       <div class="how-step">
         <div class="how-num">02</div>
@@ -2137,7 +2194,7 @@
     </svg>
           <span class="brand-word">Volver</span>
         </div>
-        <p class="footer-blurb">Lições curtas que usam textos bíblicos — em ordem cronológica — para nomear padrões mentais automáticos antes de nomear a virtude que os interrompe.</p>
+        <p class="footer-blurb">Reflexões curtas que usam textos bíblicos — em ordem cronológica — para nomear padrões mentais automáticos antes de nomear a virtude que os interrompe.</p>
       </div>
       <div class="footer-col">
         <h4>Explorar</h4>

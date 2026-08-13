@@ -7,6 +7,7 @@
   var STORAGE_THEME = 'volver_theme';
   var STORAGE_INTRO = 'volver_intro_seen';
   var STORAGE_FONTSIZE = 'volver_fontsize';
+  var STORAGE_ONBOARDING = 'volver_onboarding_seen';
 
   var STAR_ICON = '<svg viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.5 7.5 L18.5 8.3 L14 12.4 L15.2 18.3 L10 15.3 L4.8 18.3 L6 12.4 L1.5 8.3 L7.5 7.5 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>';
   var CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 8.5 L6 12.5 L14 3.5" stroke="#12162A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -14,6 +15,9 @@
   var SUN_ICON = '<svg class="icon-sun" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke-width="1.4"/><path d="M10 1.5V4M10 16v2.5M2.5 10H5M15 10h2.5M4.6 4.6l1.8 1.8M13.6 13.6l1.8 1.8M4.6 15.4l1.8-1.8M13.6 6.4l1.8-1.8" stroke-width="1.4" stroke-linecap="round"/></svg>';
   var MOON_ICON = '<svg class="icon-moon" viewBox="0 0 20 20" fill="none"><path d="M17 12.5A7.5 7.5 0 1 1 7.5 3 6 6 0 0 0 17 12.5Z" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var BACK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M10 3 L4 8 L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var SHARE_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 10.5V2M8 2L5 5M8 2L11 5M3 8V12.5C3 13.05 3.45 13.5 4 13.5H12C12.55 13.5 13 13.05 13 12.5V8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var DOWNLOAD_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 2V10.5M8 10.5L5 7.5M8 10.5L11 7.5M3 13H13" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var INFO_ICON = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke-width="1.4"/><path d="M8 7.2V11.3" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="4.9" r="0.9" fill="currentColor" stroke="none"/></svg>';
   var BOAT_SVG = '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
       '<path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
       '<path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>' +
@@ -175,6 +179,19 @@
       else{ location.href = fallback; }
     });
     bar.insertBefore(btn, bar.firstChild);
+  }
+
+  function injectMethodologyBanner(target, beforeEl){
+    if(!target || document.getElementById('volverMethBanner')) return;
+    var root = pathParts().folder ? '../' : '';
+    var banner = document.createElement('div');
+    banner.className = 'methodology-banner';
+    banner.id = 'volverMethBanner';
+    banner.innerHTML =
+      INFO_ICON +
+      '<p><strong>Antes de refletir:</strong> a Volver é um complemento da Bíblia, não um substituto — entenda como usar a plataforma da maneira certa.</p>' +
+      '<a href="' + root + 'como-usar.html">Como usar a Volver →</a>';
+    if(beforeEl){ target.insertBefore(banner, beforeEl); } else { target.appendChild(banner); }
   }
 
   // ---------------- storage helpers ----------------
@@ -389,12 +406,12 @@
     btn.type = 'button';
     btn.className = 'continue-btn' + (done ? ' done' : '');
     btn.disabled = done;
-    btn.textContent = done ? 'Lição concluída ✓' : 'Finalizar lição';
+    btn.textContent = done ? 'Reflexão concluída ✓' : 'Finalizar reflexão';
     btn.addEventListener('click', function(){
       markCompleted(entry);
       btn.classList.add('done');
       btn.disabled = true;
-      btn.textContent = 'Lição concluída ✓';
+      btn.textContent = 'Reflexão concluída ✓';
       var brandWord = document.querySelector('.brand-word');
       var brandTrack = document.querySelector('.brand-track');
       var hubHref = brandWord ? brandWord.getAttribute('href') : 'index.html';
@@ -437,15 +454,17 @@
     modal.className = 'celebrate-modal';
     modal.innerHTML =
       '<button class="celebrate-close" id="celebrateClose" type="button" aria-label="Fechar">&times;</button>' +
-      '<div class="celebrate-title">Lição concluída!</div>' +
+      '<div class="celebrate-head">' +
+        '<div class="celebrate-title">Reflexão concluída!</div>' +
+        '<div class="celebrate-icons">' +
+          '<button class="celebrate-icon-btn" id="celebrateShare" type="button" title="Compartilhar" aria-label="Compartilhar">' + SHARE_ICON + '</button>' +
+          '<button class="celebrate-icon-btn" id="celebratePdf" type="button" title="Baixar como PDF" aria-label="Baixar como PDF">' + DOWNLOAD_ICON + '</button>' +
+        '</div>' +
+      '</div>' +
       '<div class="celebrate-sub">' + entry.title + (entry.ref ? ' · ' + entry.ref : '') + '</div>' +
-      '<div class="celebrate-actions">' +
-        '<button class="celebrate-btn primary" id="celebrateShare" type="button">Compartilhar</button>' +
-        '<button class="celebrate-btn" id="celebratePdf" type="button">Baixar como PDF</button>' +
-        '<a class="celebrate-btn" href="' + hubHref + '">Voltar para ' + categoryLabel + '</a>' +
-      '</div>';
+      '<a class="celebrate-btn primary celebrate-back" href="' + hubHref + '">Voltar para ' + categoryLabel + '</a>';
 
-    backdrop.appendChild(burst);
+    modal.insertBefore(burst, modal.firstChild);
     backdrop.appendChild(modal);
     document.body.appendChild(backdrop);
     requestAnimationFrame(function(){ backdrop.classList.add('open'); });
@@ -473,6 +492,10 @@
     });
 
     modal.querySelector('#celebratePdf').addEventListener('click', function(){
+      var outcomeTitle = document.getElementById('outcomeTitle');
+      if(outcomeTitle && !outcomeTitle.textContent && typeof window.showOutcome === 'function'){
+        window.showOutcome('calm');
+      }
       close();
       setTimeout(function(){ window.print(); }, 250);
     });
@@ -481,6 +504,7 @@
   // ---------------- hub page ----------------
   function enhanceHubPage(){
     var stats = enhancePCards(document);
+    injectMethodologyBanner(document.querySelector('.hero'));
     if(stats.total === 0) return;
     var statsRow = document.querySelector('.stats-row');
     if(statsRow && !statsRow.querySelector('.stat-completed')){
@@ -493,6 +517,9 @@
 
   // ---------------- homepage ----------------
   function enhanceIndexPage(){
+    var wrap = document.querySelector('.wrap');
+    var heroFeature = document.querySelector('.hero-feature');
+    if(wrap && heroFeature){ injectMethodologyBanner(wrap, heroFeature); }
     var rows = document.querySelectorAll('.row[data-has-content="true"]');
     rows.forEach(function(row){
       var stats = enhanceShowCards(row);
@@ -505,7 +532,7 @@
   }
 
   function buildIntroSplash(){
-    if(localStorage.getItem(STORAGE_INTRO) === '1') return;
+    if(localStorage.getItem(STORAGE_INTRO) === '1'){ maybeShowOnboarding(); return; }
     var el = document.createElement('div');
     el.className = 'intro-splash';
     el.id = 'volverIntroSplash';
@@ -525,10 +552,108 @@
       if(el.classList.contains('fade-out')) return;
       el.classList.add('fade-out');
       localStorage.setItem(STORAGE_INTRO, '1');
-      setTimeout(function(){ el.remove(); }, 650);
+      setTimeout(function(){ el.remove(); maybeShowOnboarding(); }, 650);
     }
     el.addEventListener('click', dismiss);
     setTimeout(dismiss, 2200);
+  }
+
+  // ---------------- onboarding carousel ----------------
+  function maybeShowOnboarding(){
+    if(localStorage.getItem(STORAGE_ONBOARDING) === '1') return;
+    buildOnboardingCarousel();
+  }
+
+  function buildOnboardingCarousel(){
+    var slides = [
+      {
+        eyebrow: '1 de 6 · Sobre a Volver',
+        title: 'O que é a Volver',
+        body: '<p>A Volver é uma metodologia para ajudar sua mente a se encontrar com os ensinamentos bíblicos, de um jeito visual e interativo.</p>' +
+              '<p>Mas isso <strong>não</strong> significa que os textos bíblicos foram escritos para uma aplicação pessoal simples — como uma fórmula pronta para qualquer situação da sua vida.</p>'
+      },
+      {
+        eyebrow: '2 de 6 · Um aviso necessário',
+        title: 'Não é sobre se sentir bem',
+        body: '<p>Cada texto bíblico foi escrito por inspiração divina, em épocas, culturas, línguas e contextos muito diferentes dos nossos — com história, personagens reais e propósitos teológicos específicos para o que estava sendo descrito.</p>' +
+              '<p>Não foram escritos apenas para que alguém, hoje, se sinta bem ou compare o texto diretamente com um problema pessoal.</p>'
+      },
+      {
+        eyebrow: '3 de 6 · O propósito',
+        title: 'Conhecer a Deus de verdade',
+        body: '<p>A Bíblia existe para revelar quem Deus é — do jeito que Ele mesmo escolheu se revelar aqui na Terra.</p>' +
+              '<p>É por meio dessa revelação que podemos estudar, conhecer a Deus verdadeiramente, e viver o nosso dia a dia com obediência e sabedoria a partir do que Ele mostrou de si mesmo.</p>'
+      },
+      {
+        eyebrow: '4 de 6 · Contexto importa',
+        title: 'Microvisão x macrovisão',
+        body: '<p><strong>Microvisão</strong> é ler só o versículo solto. <strong>Macrovisão</strong> é ler o texto dentro do seu contexto: quem escreveu, para quem, quando e por quê.</p>' +
+              '<p>Ex.: Jeremias 29:11 citado sozinho vira "promessa de sucesso pessoal" — no contexto (Jr 29:1-14), é uma promessa à nação exilada, cumprida só depois de setenta anos.</p>' +
+              '<p><a href="como-usar.html#exemplo">Veja o exemplo completo →</a></p>'
+      },
+      {
+        eyebrow: '5 de 6 · Como usar',
+        title: 'Um complemento, não um substituto',
+        body: '<p>A Volver não substitui a leitura da Bíblia — ela serve para trazer reflexão <strong>depois</strong> dela.</p>' +
+              '<p>O ideal é ler a passagem primeiro, conhecer o contexto, e só então abrir a reflexão como um fechamento — nunca como a única fonte do que o texto significa.</p>' +
+              '<p><a href="como-usar.html#uso">Veja exemplos certos e errados →</a></p>'
+      },
+      {
+        eyebrow: '6 de 6 · Pronto',
+        title: 'Por isso, "reflexão"',
+        body: '<p>Essas páginas se chamam <strong>reflexão</strong>, não "lição": não é uma aula que ensina o que o texto significa, é um espaço para pensar sobre o que você já leu.</p>' +
+              '<p>Leia a Bíblia, conheça o contexto, depois reflita com a Volver.</p>'
+      }
+    ];
+
+    var i = 0;
+    var backdrop = document.createElement('div');
+    backdrop.className = 'onboard-backdrop';
+    backdrop.id = 'volverOnboard';
+    var dotsHtml = slides.map(function(_, idx){ return '<span class="onboard-dot' + (idx === 0 ? ' active' : '') + '"></span>'; }).join('');
+    backdrop.innerHTML =
+      '<div class="onboard-modal">' +
+        '<div class="onboard-dots">' + dotsHtml + '</div>' +
+        '<div class="onboard-eyebrow" id="onbEyebrow"></div>' +
+        '<h2 class="onboard-title" id="onbTitle"></h2>' +
+        '<div class="onboard-body" id="onbBody"></div>' +
+        '<div class="onboard-nav">' +
+          '<button id="onbBack" class="onboard-btn ghost" type="button">Voltar</button>' +
+          '<button id="onbNext" class="onboard-btn primary" type="button">Avançar</button>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(backdrop);
+    setTimeout(function(){ backdrop.classList.add('open'); }, 20);
+
+    var eyebrowEl = backdrop.querySelector('#onbEyebrow');
+    var titleEl = backdrop.querySelector('#onbTitle');
+    var bodyEl = backdrop.querySelector('#onbBody');
+    var backBtn = backdrop.querySelector('#onbBack');
+    var nextBtn = backdrop.querySelector('#onbNext');
+    var dots = backdrop.querySelectorAll('.onboard-dot');
+    var modalEl = backdrop.querySelector('.onboard-modal');
+
+    function render(){
+      var s = slides[i];
+      eyebrowEl.textContent = s.eyebrow;
+      titleEl.textContent = s.title;
+      bodyEl.innerHTML = s.body;
+      dots.forEach(function(d, idx){ d.classList.toggle('active', idx === i); });
+      backBtn.classList.toggle('is-hidden', i === 0);
+      nextBtn.textContent = i === slides.length - 1 ? 'Entrar na Volver' : 'Avançar';
+      modalEl.scrollTop = 0;
+    }
+    render();
+
+    backBtn.addEventListener('click', function(){
+      if(i > 0){ i--; render(); }
+    });
+    nextBtn.addEventListener('click', function(){
+      if(i < slides.length - 1){ i++; render(); return; }
+      localStorage.setItem(STORAGE_ONBOARDING, '1');
+      backdrop.classList.remove('open');
+      setTimeout(function(){ backdrop.remove(); }, 300);
+    });
   }
 
   // ---------------- boot ----------------

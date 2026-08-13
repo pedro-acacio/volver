@@ -63,7 +63,7 @@
     <div class="profile-list" id="listFavorites"></div>
   </div>
 
-  <footer>Volver · perfil local · lição interativa</footer>
+  <footer>Volver · perfil local · reflexão interativa</footer>
 </div>
 
 <script>
@@ -83,9 +83,9 @@
           return '<a class="profile-item" href="' + it.href + '"><span class="t">' + it.title + '</span><span class="r">' + (it.ref || '') + '</span></a>';
         }).join('');
       }
-      renderList('listCompleted', s.completed, 'Nenhuma lição concluída ainda.');
-      renderList('listProgress', s.inProgress, 'Nenhuma lição em andamento.');
-      renderList('listFavorites', s.favorites, 'Nenhuma lição favoritada ainda.');
+      renderList('listCompleted', s.completed, 'Nenhuma reflexão concluída ainda.');
+      renderList('listProgress', s.inProgress, 'Nenhuma reflexão em andamento.');
+      renderList('listFavorites', s.favorites, 'Nenhuma reflexão favoritada ainda.');
     }
     if(window.Volver){ render(); } else { window.addEventListener('load', render); }
   });
