@@ -56,16 +56,15 @@
     position:relative; border-radius:16px; background: radial-gradient(ellipse 90% 70% at 50% 30%, rgba(217,164,65,0.14), transparent 70%), #171C38;
     min-height:260px; display:flex; align-items:center; justify-content:center; overflow:hidden;
   }
-  .hero-visual .scene{ width:78%; }
-  .hero-visual .scene line, .hero-visual .scene circle{ stroke: var(--panel-line); }
-  .hero-visual .scene .seat-empty{ stroke: var(--gold); stroke-dasharray: 3 3; }
-  .hero-visual .scene .seat-filled{ fill: var(--panel-line); }
-  .play-circle{
-    position:absolute; width:56px; height:56px; border-radius:50%;
-    background: rgba(18,22,42,0.55); border:1.5px solid var(--gold);
-    display:flex; align-items:center; justify-content:center; backdrop-filter: blur(2px);
+  .word-visual .spiral-mark{
+    width:52%; max-width:190px; animation: spin-slow 18s linear infinite; transform-origin:50% 50%;
   }
-  .play-circle svg{ margin-left:3px; }
+  .word-visual .spiral-mark path{ stroke: var(--gold); fill:none; }
+  .word-visual .spiral-mark circle{ fill: var(--gold); }
+  @keyframes spin-slow{ to{ transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){
+    .word-visual .spiral-mark{ animation:none; }
+  }
 
   .hero-info{ padding: 30px 32px 30px 20px; display:flex; flex-direction:column; justify-content:center; }
   @media (max-width:760px){ .hero-info{ padding: 26px 22px 34px; } }
@@ -87,6 +86,7 @@
   }
   .watch-btn:hover{ transform: translateY(-1px); opacity:.92; }
   .watch-btn .tri{ fill: var(--bg); }
+  .watch-btn svg path{ stroke: var(--bg); }
 
   /* ---- rows ---- */
   .row{ margin-top: 48px; }
@@ -432,29 +432,21 @@
     </div>
   </div>
 
-  <!-- ===== HERO EM DESTAQUE ===== -->
+  <!-- ===== HERO: APRESENTAÇÃO DA PLATAFORMA ===== -->
   <section class="hero-feature">
-    <div class="hero-visual" aria-hidden="true">
-      <svg class="scene" viewBox="0 0 220 100" fill="none">
-        <line x1="10" y1="70" x2="210" y2="70" stroke-width="2"/>
-        <circle class="seat-filled" cx="35" cy="70" r="9" stroke-width="1.4" stroke="#2C3459"/>
-        <circle class="seat-filled" cx="80" cy="70" r="9" stroke-width="1.4" stroke="#2C3459"/>
-        <circle class="seat-filled" cx="140" cy="70" r="9" stroke-width="1.4" stroke="#2C3459"/>
-        <circle class="seat-empty" cx="185" cy="70" r="9" fill="none" stroke-width="1.6"/>
+    <div class="hero-visual word-visual" aria-hidden="true">
+      <svg class="spiral-mark" viewBox="0 0 120 120" fill="none">
+        <path d="M60.00,56.00 L60.52,55.65 L61.13,55.37 L61.81,55.18 L62.55,55.10 L63.34,55.12 L64.15,55.27 L64.97,55.55 L65.78,55.95 L66.56,56.49 L67.29,57.17 L67.95,57.96 L68.51,58.88 L68.97,59.90 L69.29,61.02 L69.48,62.21 L69.50,63.46 L69.36,64.74 L69.04,66.04 L68.54,67.33 L67.86,68.58 L67.00,69.77 L65.96,70.88 L64.76,71.87 L63.41,72.72 L61.91,73.41 L60.30,73.93 L58.59,74.24 L56.82,74.35 L54.99,74.22 L53.16,73.86 L51.34,73.26 L49.57,72.42 L47.88,71.35 L46.30,70.04 L44.86,68.52 L43.60,66.79 L42.54,64.88 L41.70,62.81 L41.11,60.61 L40.80,58.31 L40.76,55.95 L41.02,53.55 L41.59,51.16 L42.46,48.81 L43.63,46.55 L45.09,44.41 L46.83,42.43 L48.84,40.65 L51.09,39.10 L53.55,37.82 L56.19,36.83 L58.97,36.16 L61.86,35.83 L64.82,35.85 L67.79,36.24 L70.74,36.99 L73.62,38.12 L76.38,39.61 L78.98,41.45 L81.36,43.62 L83.50,46.11 L85.34,48.86 L86.86,51.87 L88.02,55.08 L88.79,58.44 L89.15,61.93 L89.08,65.47 L88.58,69.03 L87.64,72.54 L86.27,75.96 L84.47,79.23 L82.26,82.29 L79.67,85.09 L76.72,87.60 L73.45,89.75 L69.91,91.51 L66.14,92.84 L62.19,93.72 L58.11,94.12 L53.98,94.03 L49.83,93.43 L45.75,92.32 L41.79,90.71 L38.01,88.61 L34.48,86.05 L31.24,83.04 L28.37,79.64 L25.90,75.87 L23.88,71.79 L22.35,67.46 L21.35,62.93 L20.90,58.26 L21.01,53.53 L21.70,48.80 L22.96,44.15 L24.80,39.64 L27.18,35.34 L30.09,31.32 L33.50,27.65 L37.36,24.39 L41.62,21.59 L46.23,19.31 L51.12,17.58 L56.23,16.44 L61.48,15.92 L66.81,16.03 L72.13,16.80 L77.36,18.21 L82.42,20.25 L87.25,22.92 L91.75,26.17 L95.87,29.96 L99.52,34.27 L102.66,39.01 L105.23,44.15 L107.17,49.59 L108.46,55.28 L109.06,61.12 L108.95,67.04 L108.13,72.95 L106.58,78.76 L104.34,84.38 L101.41,89.74 L97.83,94.74 L93.65,99.31" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="60" cy="60" r="2.6"/>
       </svg>
-      <div class="play-circle">
-        <svg width="16" height="18" viewBox="0 0 16 18" fill="none">
-          <polygon class="tri" points="0,0 16,9 0,18" fill="#D9A441"/>
-        </svg>
-      </div>
     </div>
     <div class="hero-info">
-      <div class="hero-eyebrow"><span class="dot"></span>Em destaque · Mateus 22 · Lucas 14</div>
-      <h1 class="hero-title">A grande ceia</h1>
-      <p class="hero-hook">Três convites, três grupos diferentes de gente — e uma cadeira que fica vazia no fim. A parábola que expõe o que uma desculpa custa, sem que quem a dá perceba o preço.</p>
-      <a class="watch-btn" href="parabolas/licao-parabola-grande-banquete.html">
-        <svg width="10" height="12" viewBox="0 0 10 12" fill="none"><polygon class="tri" points="0,0 10,6 0,12"/></svg>
-        Ver reflexão
+      <div class="hero-eyebrow"><span class="dot"></span>Apresentação da plataforma</div>
+      <h1 class="hero-title">O que significa "Volver"?</h1>
+      <p class="hero-hook">Um verbo raro em português, emprestado do espanhol, com raiz latina — e um propósito por trás da escolha: entender por que essa plataforma existe pra te ajudar a voltar, de novo e de novo, à Palavra.</p>
+      <a class="watch-btn" href="sobre-a-volver.html">
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M8 3L13 8L8 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Descobrir a origem do nome
       </a>
     </div>
   </section>
