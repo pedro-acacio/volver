@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinho e Embriaguez — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-proverbios.html">Volver</a>
+    <span class="brand-track">Provérbios</span>
+  </div>
+
+  <div class="eyebrow">Lição 22 · <span class="ref-tag">Provérbios 20:1 · 23:29-35 · 31:4-7</span></div>
+  <h1>Vinho e embriaguez</h1>
+  <p class="sub">Um dos poucos temas em que o livro descreve o efeito em detalhe — para que a distância pareça menos abstrata.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Escarnecedor e alvoroçador</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O vinho é escarnecedor, a bebida forte é alvoroçadora; e todo aquele que neles errar nunca será sábio"</em> (20:1). O verso não condena a bebida por gosto pessoal — condena o efeito que ela tem sobre o discernimento de quem se deixa levar.</p>
+          <p>"Escarnecedor" e "alvoroçadora" não são adjetivos neutros no livro: são as mesmas palavras usadas para descrever o zombador que não ouve conselho e a confusão que não se controla. O vinho, aqui, é tratado como algo que produz esse mesmo tipo de caráter.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → para quem são os ais?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Para quem são os ais?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Provérbios 23:29-30 monta a cena em duas partes — a pergunta que se repete, e a resposta que fecha tudo de uma vez:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, vinhoData, 0, 'vinhoText')">A pergunta</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, vinhoData, 1, 'vinhoText')">A resposta</button>
+          </div>
+          <div class="chip-text" id="vinhoText">Toque para ver a pergunta e a resposta.</div>
+          <p>Seis perguntas seguidas, quase como um refrão — e a resposta que vem depois não deixa dúvida sobre quem o livro tem em mente.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → descrito por dentro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Descrito por dentro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"...os teus olhos verão coisas estranhas... e dirás: fui espancado, e não o senti; quando despertarei? ainda tornarei a buscá-lo outra vez"</em> (23:33-35). Poucas passagens de Provérbios entram assim na primeira pessoa.</p>
+          <p>O livro não descreve esse ciclo de fora, como quem observa e reprova. Ele deixa a própria pessoa falar — sentindo o golpe sem sentir, prometendo nunca mais e já planejando voltar. É a descrição mais viva que Provérbios faz de qualquer vício, de dentro da experiência.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 20:1</span>
+          <p>O vinho é escarnecedor, a bebida forte é alvoroçadora; e todo aquele que neles errar nunca será sábio.</p>
+          <span class="ref">— Provérbios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Provérbios não descreve a embriaguez como um deslize isolado — descreve um ciclo que engana quem está dentro dele, prometendo esquecer e já buscando voltar. A sabedoria começa reconhecendo esse padrão antes de entrar nele.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de quem se deixa enganar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de manter a clareza</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · provérbios · lição interativa</footer>
+</div>
+
+<script>
+  const vinhoData = [
+    { text: "\"Para quem são os ais? para quem os pesares?... para quem os ferimentos sem causa? para quem os olhos vermelhos?\" (23:29) — a pergunta se repete como quem já sabe a resposta, mas insiste em fazer você chegar a ela sozinho." },
+    { text: "\"Para os que se demoram no vinho, para os que andam buscando bebida misturada\" (23:30) — não é o acaso, é o hábito de se demorar e de continuar buscando." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Fui espancado, e não o senti";
+      text.textContent = "O ciclo engana por dentro: promete esquecimento, entrega ferimento sem causa, e ainda assim faz a pessoa querer voltar a buscá-lo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Nunca será sábio quem nisso errar";
+      text.textContent = "Reconhecer de longe o que o vinho e a bebida forte fazem ao discernimento é o que permite não entrar no ciclo que a Escritura descreve por dentro.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

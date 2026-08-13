@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento e Conselho — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-proverbios.html">Volver</a>
+    <span class="brand-track">Provérbios</span>
+  </div>
+
+  <div class="eyebrow">Lição 19 · <span class="ref-tag">Provérbios 15:22 · 16:3 · 16:9 · 21:5</span></div>
+  <h1>Planejamento e conselho</h1>
+  <p class="sub">Planejar não é falta de fé — mas todo plano, no livro, é entregue a alguém maior antes de ser executado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Quem propõe e quem dirige</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O coração do homem propõe o seu caminho, mas o SENHOR lhe dirige os passos"</em> (16:9). O verso não descarta o planejamento — ele o coloca ao lado de uma direção maior que o próprio plano.</p>
+          <p>Propor um caminho é papel de quem planeja; dirigir os passos dentro dele é algo que o texto reserva a Deus. Planejar e confiar não competem entre si em Provérbios — eles trabalham juntos, um dentro do outro.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → sozinho ou aconselhado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Sozinho ou aconselhado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Provérbios 15:22 compara dois cenários de decisão:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, conselhoData, 0, 'conselhoText')">Sem conselho</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, conselhoData, 1, 'conselhoText')">Com multidão de conselheiros</button>
+          </div>
+          <div class="chip-text" id="conselhoText">Toque para comparar as duas formas de decidir.</div>
+          <p>Decidir sozinho não é apenas mais solitário — é mais arriscado. Sem outros olhos sobre o plano, um ponto cego pode passar despercebido até ser tarde demais para corrigir.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → entregar antes de agir</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Entregar antes de agir</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Entrega ao SENHOR as tuas obras, e teus pensamentos serão estabelecidos"</em> (16:3). Antes de executar, o plano passa por uma entrega — e é essa entrega, não o controle total, que estabelece os pensamentos.</p>
+          <p><em>"Os pensamentos do diligente tendem só à abundância, mas os de todo apressado tendem à pobreza"</em> (21:5). Um bom plano pede as duas coisas ao mesmo tempo: a paciência de quem trabalha com constância e a disposição de entregar o resultado, em vez da pressa de quem decide sozinho e às pressas.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 16:9</span>
+          <p>O coração do homem propõe o seu caminho, mas o SENHOR lhe dirige os passos.</p>
+          <span class="ref">— Provérbios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Planejamento e conselho, em Provérbios, não pedem escolher entre agir e confiar. Pedem propor um caminho com humildade, ouvir a multidão de conselheiros antes de seguir, e entregar cada obra ao SENHOR antes de chamá-la de pronta.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do plano sozinho e apressado</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do plano entregue e aconselhado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · provérbios · lição interativa</footer>
+</div>
+
+<script>
+  const conselhoData = [
+    { text: "\"Os projetos falham por falta de conselho\" (15:22a) — decidir isolado deixa pontos cegos que ninguém mais teve a chance de apontar." },
+    { text: "\"Com a multidão de conselheiros se confirmam\" (15:22b) — mais vozes ao redor de um plano não o atrasam, o testam antes que o custo do erro apareça." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Decidir sozinho e com pressa";
+      text.textContent = "Sem conselho o projeto falha, e o apressado tende à pobreza — o texto liga isolamento e pressa ao mesmo desfecho ruim.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Entregar e ouvir conselho";
+      text.textContent = "Propor o caminho, ouvir a multidão de conselheiros e entregar a obra ao SENHOR — é assim que os pensamentos, segundo o livro, se estabelecem.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

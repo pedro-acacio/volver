@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evitar a Contenda — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-proverbios.html">Volver</a>
+    <span class="brand-track">Provérbios</span>
+  </div>
+
+  <div class="eyebrow">Lição 15 · <span class="ref-tag">Provérbios 17:19 · 20:3</span></div>
+  <h1>Evitar a contenda</h1>
+  <p class="sub">Nem toda briga que aparece precisa ser aceita — às vezes a sabedoria está em nunca entrar nela.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Quem ama a contenda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Quem ama a contenda ama a transgressão, e o que alça a sua porta busca a ruína"</em> (17:19). O versículo não fala de quem, ocasionalmente, se vê envolvido num conflito — fala de quem gosta disso, de quem procura a briga como se fosse um hábito de vida.</p>
+          <p>E a consequência não é descrita como azar. É descrita como busca: quem constrói a própria porta alta demais, provocando e se expondo, está literalmente convidando a ruína a entrar. O padrão não é uma personalidade curiosa — é um caminho perigoso.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → honra em se afastar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Honra em se afastar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Provérbios 20:3 inverte a expectativa comum: entrar em toda briga não é força, e se afastar não é fraqueza.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, honraData, 0, 'honraText')">O insensato</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, honraData, 1, 'honraText')">O homem honrado</button>
+          </div>
+          <div class="chip-text" id="honraText">Toque para comparar quem entra na briga e quem se afasta dela.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → por que é tão difícil deixar passar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Por que é tão difícil deixar passar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O insensato que "se entremeterá" em toda contenda (20:3) não consegue deixar passar uma provocação porque o silêncio, para ele, parece derrota. Responder, revidar, ter a última palavra — tudo isso soa como a única forma de manter a própria honra intacta.</p>
+          <p>Mas quem ama a contenda (17:19) acaba descobrindo, tarde demais, que a porta alta que construiu para se defender é a mesma que deixou a ruína entrar. O sábio entende algo diferente: nem toda briga vale ser vencida, e recuar de uma provocação não é fraqueza — é reconhecer que a própria honra não depende de vencer todas as disputas.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 20:3</span>
+          <p>Honra é do homem desviar-se de contendas, mas todo insensato se entremeterá nelas.</p>
+          <span class="ref">— Provérbios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Não é sobre evitar todo conflito a qualquer custo — é sobre reconhecer que nem toda provocação merece resposta. A sabedoria de Provérbios está em saber distinguir a briga que precisa ser enfrentada da que simplesmente precisa ser deixada passar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de entrar em toda briga</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de desviar-se dela</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · provérbios · lição interativa</footer>
+</div>
+
+<script>
+  const honraData = [
+    { text: "\"Todo insensato se entremeterá nelas\" (20:3b) — não consegue deixar uma provocação passar sem resposta." },
+    { text: "\"Honra é do homem desviar-se de contendas\" (20:3a) — a honra está em recuar, não em vencer todas as disputas." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A porta alta demais";
+      text.textContent = "Constrói defesas para toda provocação — e acaba abrindo espaço para a própria ruína entrar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A honra de não entrar";
+      text.textContent = "Reconhece que nem toda disputa precisa ser vencida — e encontra ali uma honra que não depende de provar nada.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

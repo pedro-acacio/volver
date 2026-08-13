@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nem Pobreza, Nem Riqueza — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-proverbios.html">Volver</a>
+    <span class="brand-track">Provérbios</span>
+  </div>
+
+  <div class="eyebrow">Lição 11 · <span class="ref-tag">Provérbios 30:7-9</span></div>
+  <h1>Nem pobreza, nem riqueza</h1>
+  <p class="sub">Uma oração rara no meio de tantos ditos — Agur pede o equilíbrio, não a abundância.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Duas coisas te pedi</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Duas coisas te pedi; não mas negues, antes que eu morra: afasta de mim a vaidade e a palavra mentirosa"</em> (30:7-8a).</p>
+          <p>Agur, autor deste capítulo, é uma figura que só aparece aqui — não se sabe mais nada sobre ele fora deste "duas coisas te pedi". É uma mudança notável de tom: depois de tantos ditos que afirmam como as coisas são, alguém finalmente para para orar, pedindo, com humildade, algo bem específico.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → nem uma coisa, nem outra</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Nem uma coisa, nem outra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Não me dês nem a pobreza nem a riqueza; mantém-me do pão que me é necessário"</em> (30:8b) — o pedido não é por conforto, é por equilíbrio. E o motivo fica claro quando Agur explica o que cada extremo ameaça:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, extremosData, 0, 'extremosText')">A pobreza</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, extremosData, 1, 'extremosText')">A riqueza</button>
+          </div>
+          <div class="chip-text" id="extremosText">Toque para ver o que cada extremo ameaça.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que os dois extremos ameaçam</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que os dois extremos ameaçam</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Para que porventura de farto não te negue, e diga: Quem é o SENHOR? Ou que, empobrecido, não venha a furtar, e tome o nome de Deus em vão"</em> (30:9).</p>
+          <p>Riqueza e pobreza chegam por caminhos opostos, mas ameaçam o mesmo alvo: a lealdade a Deus. Uma tenta pela autossuficiência, a outra pela desesperação — e Agur, sabendo disso, pede para nunca precisar testar nenhuma das duas.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 30:8-9</span>
+          <p>Não me dês nem a pobreza nem a riqueza; mantém-me do pão que me é necessário; para que porventura de farto não te negue, e diga: Quem é o SENHOR?</p>
+          <span class="ref">— Agur, filho de Jaque</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É uma das únicas orações registradas em meio a centenas de ditos declarativos — e talvez por isso ela se destaque tanto. Agur não pede uma vida sem dificuldade, pede uma vida sem os dois extremos que mais testam a fidelidade: a fartura que esquece Deus e a falta que rouba dEle.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão dos extremos</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do suficiente</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · provérbios · lição interativa</footer>
+</div>
+
+<script>
+  const extremosData = [
+    { text: "\"Que, empobrecido, não venha a furtar, e tome o nome de Deus em vão\" (30:9b) — a necessidade extrema pode empurrar até a integridade para o desespero." },
+    { text: "\"Para que porventura de farto não te negue, e diga: Quem é o SENHOR?\" (30:9a) — a fartura pode inflar a ilusão de que ninguém mais é necessário." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Viver entre o excesso e a falta";
+      text.textContent = "Tanto a fartura quanto a escassez, levadas ao limite, empurram para longe de Deus — cada uma a seu próprio jeito.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Pedir só o pão necessário";
+      text.textContent = "Um pedido modesto e específico: nem tanto que esqueça quem provê, nem tão pouco que precise trair para sobreviver.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

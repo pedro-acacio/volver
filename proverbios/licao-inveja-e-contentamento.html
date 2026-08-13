@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inveja e Contentamento — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-proverbios.html">Volver</a>
+    <span class="brand-track">Provérbios</span>
+  </div>
+
+  <div class="eyebrow">Lição 14 · <span class="ref-tag">Provérbios 14:30 · 23:17 · 27:4</span></div>
+  <h1>Inveja e contentamento</h1>
+  <p class="sub">Provérbios descreve a inveja não como pecado abstrato, mas como uma doença física — apodrecendo os ossos por dentro.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Podridão nos ossos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O coração tranquilo é a vida da carne, mas a inveja é a podridão dos ossos"</em> (14:30). O livro não escolhe uma metáfora moral discreta — escolhe uma imagem físico, quase clínica: algo que corrói de dentro para fora, devagar, invisível até doer.</p>
+          <p>Não é apenas um sentimento desagradável que passa. É descrita como um processo que consome a própria estrutura de quem a carrega, enquanto o coração tranquilo faz o oposto: sustenta a vida em vez de esvaziá-la.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o que fazer com o coração</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O que fazer com o coração</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Provérbios 23:17 não manda apenas suprimir a inveja — aponta para onde direcionar o coração no lugar dela. E é específico sobre o alvo: a inveja de quem parece prosperar fazendo o errado.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, coracaoData, 0, 'coracaoText')">Invejar os pecadores</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, coracaoData, 1, 'coracaoText')">Conservar-se no temor do SENHOR</button>
+          </div>
+          <div class="chip-text" id="coracaoText">Toque para comparar os dois destinos possíveis do coração.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → mais perigosa que a ira</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Mais perigosa que a ira</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Cruel é o furor e a ira impetuosa, mas quem poderá resistir à inveja?"</em> (27:4). A pergunta é retórica, e a resposta implícita é desconfortável: a ira, por mais violenta que pareça, é visível — alguém pode se defender dela, confrontá-la, esperar que passe.</p>
+          <p>A inveja não. Ela não anuncia sua chegada, não se declara, não dá o rosto de um adversário. Corrói por dentro enquanto por fora tudo parece calmo — e é exatamente por isso que o livro a trata como mais perigosa que a fúria mais impetuosa.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 14:30</span>
+          <p>O coração tranquilo é a vida da carne, mas a inveja é a podridão dos ossos.</p>
+          <span class="ref">— Provérbios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O contentamento que Provérbios recomenda não nasce de fingir que a prosperidade alheia não existe. Nasce de um coração que já decidiu onde ancorar — no temor do SENHOR, e não na comparação constante com o que o outro tem. Um sustenta a vida; o outro apodrece o que deveria sustentá-la.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da inveja</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do coração tranquilo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · provérbios · lição interativa</footer>
+</div>
+
+<script>
+  const coracaoData = [
+    { text: "\"Não tenha o teu coração inveja dos pecadores\" (23:17a) — o alvo específico é quem parece prosperar fazendo o errado." },
+    { text: "\"Antes conserva-te no temor do SENHOR todo o dia\" (23:17b) — a alternativa não é indiferença, é uma âncora diária e deliberada." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A comparação que nunca se sacia";
+      text.textContent = "Mede a própria vida pela do outro — e cada ganho alheio vira mais uma perda silenciosa por dentro.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O coração que já sabe onde ancorar";
+      text.textContent = "Encontra sua medida no temor do SENHOR, não na conta do que o outro tem — e por isso permanece de pé.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

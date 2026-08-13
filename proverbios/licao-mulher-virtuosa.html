@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Mulher Virtuosa — Lição Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-proverbios.html">Volver</a>
+    <span class="brand-track">Provérbios</span>
+  </div>
+
+  <div class="eyebrow">Lição 12 · <span class="ref-tag">Provérbios 31:10-31</span></div>
+  <h1>A mulher virtuosa</h1>
+  <p class="sub">O livro termina não com outro dito curto, mas com um poema inteiro — um retrato de tudo o que veio antes, em uma única pessoa.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um valor que excede rubis</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Mulher virtuosa, quem a achará? O seu valor muito excede o de rubins... ela lhe faz bem, e não mal, todos os dias da sua vida"</em> (31:10-12).</p>
+          <p>O livro termina do jeito que talvez devesse ter começado: não com outro conselho abstrato, mas com um retrato concreto. Tudo o que Provérbios chamou de sabedoria, diligência, palavra prudente — aqui ganha rosto, mãos e rotina.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → trabalho que sustenta e trabalho que gera</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Trabalho que sustenta e trabalho que gera</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O poema não a descreve presa a um único papel — ela sustenta a casa e também gera renda própria, ao mesmo tempo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, trabalhoData, 0, 'trabalhoText')">Para dentro de casa</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, trabalhoData, 1, 'trabalhoText')">Para fora de casa</button>
+          </div>
+          <div class="chip-text" id="trabalhoText">Toque para comparar as duas frentes de trabalho.</div>
+          <p>Ela não é uma coisa ou outra — provedora doméstica ou agente econômica. É as duas, ao mesmo tempo, sem contradição.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → vestida de força e sabedoria</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Vestida de força e sabedoria</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Força e glória são o seu vestido, e ela se ri do dia futuro. Abre a sua boca com sabedoria, e a lei da benignidade está na sua língua. Atenta pelo bom andamento da sua casa, e não come o pão da preguiça"</em> (31:25-27).</p>
+          <p>Repare no que a veste: não é descrita por seu rosto, mas por força, sabedoria e benignidade. É uma escolha deliberada do poema — e ele mesmo vai deixar isso explícito duas estrofes à frente.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Provérbios 31:30</span>
+          <p>Enganosa é a graça e vã a formosura, mas a mulher que teme ao SENHOR, essa será louvada.</p>
+          <span class="ref">— Provérbios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Depois de trinta e um versos descrevendo mãos, negócios, força e sabedoria, o poema chega ao contraste que sustentava tudo: aparência é passageira, mas o temor do SENHOR é o que realmente marca uma vida — e é isso, no fim, que este retrato inteiro estava celebrando.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da aparência</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do temor do SENHOR</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · provérbios · lição interativa</footer>
+</div>
+
+<script>
+  const trabalhoData = [
+    { text: "\"Busca lã e linho... levanta-se ainda de noite, e dá mantimento à sua casa\" (31:13-15) — o trabalho que ninguém vê de fora, mas que sustenta tudo por dentro." },
+    { text: "\"Considera uma herdade, e adquire-a; planta uma vinha... percebendo que o seu tráfico é bom, vende cintas aos mercadores\" (31:16-19,24) — o mesmo par de mãos negocia, planta e gera lucro, para além dos limites da casa." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ser medida pela formosura";
+      text.textContent = "\"Enganosa é a graça e vã a formosura\" (31:30a) — um critério que muda com a luz, com a idade, com o olhar de quem julga.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ser medida pelo temor do SENHOR";
+      text.textContent = "\"A mulher que teme ao SENHOR, essa será louvada\" (31:30b) — um critério que não desbota, porque não depende da aparência.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
