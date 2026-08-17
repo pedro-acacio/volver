@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idolatria e feitiçaria — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-fruto-do-espirito.html">Volver</a>
+    <span class="brand-track">Fruto do Espírito</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 11 · <span class="ref-tag">Gálatas 5:20a · Êxodo 32</span></div>
+  <h1>Idolatria e feitiçaria</h1>
+  <p class="sub">Enquanto o libertador está no monte, o povo que ele libertou pede a outro deus — um que se possa ver, tocar e controlar.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A obra da carne: um deus controlável</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois de listar os pecados do corpo, Paulo nomeia os do culto: "idolatria, feitiçarias" (Gálatas 5:20a). Idolatria não começa, em geral, como rejeição aberta de Deus — começa como impaciência com o Deus que não se deixa ver nem apressar, e o desejo de substituí-lo por algo que se possa segurar.</p>
+          <p>Moisés está no monte Sinai havia semanas, recebendo diretamente de Deus a lei da aliança. Lá embaixo, o povo que atravessou o mar a pé seco começa a duvidar que ele volte.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o pedido ao pé do monte</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O pedido ao pé do monte</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O povo vai a Arão e diz: "levanta-te, faze-nos deuses que vão adiante de nós; porque quanto a este Moisés... não sabemos o que lhe aconteceu" (Êxodo 32:1). Não é ateísmo — é impaciência de esperar um Deus invisível, trocado por um deus fabricado que se pode ver hoje mesmo.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, exoData, 0, 'exoText')">O pedido do povo</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, exoData, 1, 'exoText')">O que Deus já tinha feito</button>
+          </div>
+          <div class="chip-text" id="exoText">Toque para comparar a impaciência do povo com o que Deus já havia provado.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → trocar o resgatador</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Trocar quem os resgatou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Arão funde as joias do povo e molda um bezerro de ouro. E então vem a linha que expõe o coração do pecado: "estes são os teus deuses, ó Israel, que te tiraram da terra do Egito" (Êxodo 32:4). Uma imagem feita à mão, naquele mesmo instante, recebe o crédito pelo mar aberto, pelas pragas, pela libertação inteira.</p>
+          <p>Não é apenas trocar de religião — é atribuir a uma coisa fabricada o que só o Deus vivo tinha feito. Quando Moisés desce e vê a festa em torno do ídolo, quebra as tábuas da lei ali mesmo (v.19): a aliança já estava rompida antes de qualquer palavra ser dita.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Gálatas 5:20a</span>
+          <p>Idolatria, feitiçarias...</p>
+          <span class="ref">— Paulo, aos gálatas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Idolatria é, no fundo, infidelidade de aliança — trocar quem prometeu e cumpriu por algo que promete menos mas entrega mais rápido. Este mesmo hub já contou a história de Daniel, que recusou trocar sua lealdade a Deus mesmo sob a ameaça direta da cova dos leões: <a href="licao-fidelidade.html">Fidelidade</a>.</p>
+          <p>Israel não aguentou esperar semanas por um Deus invisível no monte. Daniel manteve a janela aberta para Jerusalém e orou três vezes ao dia mesmo sabendo da lei que o condenaria (Daniel 6:10). A mesma pressão — o silêncio ou a demora de Deus — recebe respostas opostas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da obra da carne</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · fruto do Espírito · reflexão interativa</footer>
+</div>
+
+<script>
+  const exoData = [
+    { text: "\"Levanta-te, faze-nos deuses que vão adiante de nós\" — a espera pelo Deus invisível vira impaciência (v.1)." },
+    { text: "O mesmo povo tinha acabado de atravessar o mar a pé seco, sustentado por esse Deus invisível havia semanas." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Buscar um deus controlável e visível";
+      text.textContent = "Quando esperar parece longo demais, o coração fabrica um substituto que se pode ver e controlar — e dá a ele o crédito que só pertence a quem realmente resgatou.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Fidelidade ao Deus invisível que já resgatou";
+      text.textContent = "A fidelidade não exige ver para continuar leal — ela lembra o que Deus já fez e mantém a aliança mesmo quando a resposta demora.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
