@@ -175,8 +175,7 @@
     btn.setAttribute('aria-label', 'Voltar');
     btn.innerHTML = BACK_ICON + '<span>Voltar</span>';
     btn.addEventListener('click', function(){
-      if(history.length > 1){ history.back(); }
-      else{ location.href = fallback; }
+      location.href = fallback;
     });
     bar.insertBefore(btn, bar.firstChild);
   }
