@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deus meu, Deus meu — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-salmos.html">Volver</a>
+    <span class="brand-track">Salmos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 23 · <span class="ref-tag">Salmo 22</span></div>
+  <h1>Deus meu, Deus meu</h1>
+  <p class="sub">Escrito por Davi séculos antes da crucificação — e ainda assim, palavra por palavra, o salmo que Jesus cita na cruz (Mateus 27:46) e que descreve detalhes da própria crucificação.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Por que me desamparaste?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Deus meu, Deus meu, por que me desamparaste? Por que te alongas do meu auxílio, e das palavras do meu bramido?"</em> (v.1)</p>
+          <p>Essas são as mesmas palavras que Jesus grita na cruz (Mateus 27:46, Marcos 15:34) — um lamento que começa em abandono aparente, sem suavizar a dor antes de nomeá-la.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o lamento e a profecia física</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Lamento e profecia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O salmo descreve a angústia, e depois detalhes físicos surpreendentemente específicos:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, desamparoData, 0, 'desamparoText')">O lamento</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, desamparoData, 1, 'desamparoText')">Detalhes proféticos</button>
+          </div>
+          <div class="chip-text" id="desamparoText">Toque para comparar o lamento e a profecia física.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → da angústia à proclamação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Anunciarei o teu nome a meus irmãos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Anunciarei o teu nome a meus irmãos; no meio da congregação te louvarei... Todos os términos da terra se lembrarão, e se converterão ao SENHOR."</em> (v.22, 27)</p>
+          <p>O mesmo salmo que começa em abandono termina em proclamação global — de um grito de dor isolado para uma visão de "todos os términos da terra" voltando-se a Deus. O padrão do lamento que vira louvor, visto em outros salmos, aqui alcança sua forma mais completa: da cruz à ressurreição, do abandono à vitória anunciada às nações.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Salmo 22:24</span>
+          <p>Porque não desprezou nem abominou a aflição do aflito, nem escondeu dele o seu rosto; antes, quando ele clamou, o ouviu.</p>
+          <span class="ref">— Salmos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O grito de abandono do primeiro versículo não é a última palavra do salmo — e não foi a última palavra da cruz. O mesmo Deus que pareceu ausente no momento mais escuro é declarado, poucos versos depois, como aquele que ouviu o clamor o tempo todo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de ler só o abandono</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ler o salmo inteiro</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · salmos · reflexão interativa</footer>
+</div>
+
+<script>
+  const desamparoData = [
+    { text: "\"Derramado estou como água... a minha força se secou como um caco\" (v.14-15) — a angústia descrita em termos físicos de esgotamento total." },
+    { text: "\"Traspassaram-me as mãos e os pés... repartiram entre si as minhas vestes, e sobre a minha túnica lançaram sortes\" (v.16, 18) — escrito cerca de mil anos antes da crucificação romana, um método de execução que nem existia em Israel na época de Davi." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Só o abandono";
+      text.textContent = "Para na primeira linha, e vê apenas desespero, sem chegar ao resto do salmo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O salmo inteiro";
+      text.textContent = "Acompanha o texto até o fim, onde o mesmo Deus que pareceu ausente é proclamado fiel — e a dor, sem ser negada, se torna a base de um louvor que alcança as nações.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

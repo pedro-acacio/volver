@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como a corça anseia — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-salmos.html">Volver</a>
+    <span class="brand-track">Salmos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 14 · <span class="ref-tag">Salmo 42</span></div>
+  <h1>Como a corça anseia</h1>
+  <p class="sub">Escrito por alguém longe do templo, sentindo falta do lugar onde costumava adorar — um salmo sobre a distância entre a saudade de Deus e a experiência atual dele.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A minha alma tem sede de Deus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Como a corça brama pelas correntes das águas, assim suspira a minha alma por ti, ó Deus. A minha alma tem sede de Deus, do Deus vivo."</em> (v.1-2)</p>
+          <p>A imagem é de urgência física — sede, não preferência. O salmista não está apenas triste; está desesperado por uma proximidade com Deus que, no momento, não consegue sentir.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → memória e presente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Memória e presente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O salmo compara o que ele lembra com o que sente agora:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, salmo42Data, 0, 'salmo42Text')">O que ele sente agora</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, salmo42Data, 1, 'salmo42Text')">O que ele lembra</button>
+          </div>
+          <div class="chip-text" id="salmo42Text">Toque para comparar memória e presente.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a pergunta que ele faz a si mesmo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Por que estás abatida, ó minha alma?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Por que estás abatida, ó minha alma, e por que te perturbas dentro de mim? Espera em Deus, pois ainda o louvarei."</em> (v.5)</p>
+          <p>O salmo faz algo incomum — o autor se dirige à própria alma, como se pudesse discutir com ela. Não finge que o sentimento de abatimento já passou; ao contrário, pergunta a si mesmo por que ainda está ali, e escolhe, mesmo assim, esperar. (O mesmo refrão se repete no v.11, fechando o salmo.)</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Salmo 42:11</span>
+          <p>Por que estás abatida, ó minha alma, e por que te perturbas dentro de mim? Espera em Deus, pois ainda o louvarei.</p>
+          <span class="ref">— Salmos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O Salmo 42 não resolve a saudade nem apaga a distância entre a memória boa e o presente difícil. Mas mostra alguém que discute com a própria alma em vez de simplesmente ser arrastado por ela — e escolhe esperar, mesmo sem o sentimento ter mudado ainda.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de ser levado pelo sentimento</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de argumentar com o próprio sentimento</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · salmos · reflexão interativa</footer>
+</div>
+
+<script>
+  const salmo42Data = [
+    { text: "\"As minhas lágrimas têm sido o meu alimento de dia e de noite, enquanto me dizem: Onde está o teu Deus?\" (v.3) — a distância entre a memória boa e a experiência presente é o próprio motivo do lamento." },
+    { text: "\"Lembro-me destas coisas... como eu ia com a multidão, e com ela entrava na casa de Deus, com voz de alegria\" (v.4) — a memória de adoração vivida, cheia de som e comunidade." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Levado pelo sentimento";
+      text.textContent = "Aceita o abatimento como veredito final sobre a situação, sem questionar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Argumenta com o sentimento";
+      text.textContent = "Como o salmista, pergunta à própria alma por que está assim — e escolhe esperar em Deus mesmo sem o sentimento ter mudado ainda.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

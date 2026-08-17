@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Senhor disse ao meu Senhor — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-salmos.html">Volver</a>
+    <span class="brand-track">Salmos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 24 · <span class="ref-tag">Salmo 110</span></div>
+  <h1>O Senhor disse ao meu Senhor</h1>
+  <p class="sub">O salmo mais citado no Novo Testamento — Jesus o usa para desafiar os fariseus (Mateus 22:41-45), e os apóstolos o citam repetidas vezes para descrever a exaltação de Cristo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Assenta-te à minha direita</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Disse o SENHOR ao meu Senhor: Assenta-te à minha direita, até que ponha os teus inimigos por escabelo dos teus pés."</em> (v.1)</p>
+          <p>No hebraico, o versículo tem duas palavras diferentes para "Senhor" — Davi, o rei, chama alguém "meu Senhor", convidado a se assentar no lugar de honra ao lado de Deus. Jesus usa exatamente esse verso para perguntar aos fariseus como o Cristo pode ser, ao mesmo tempo, filho de Davi e Senhor de Davi (Mateus 22:41-45) — só fazendo sentido se esse "Senhor" for divino.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → rei e sacerdote no mesmo salmo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Rei e sacerdote</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O mesmo salmo descreve duas funções que nenhum rei de Israel podia acumular:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, senhorData, 0, 'senhorText')">Rei</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, senhorData, 1, 'senhorText')">Sacerdote</button>
+          </div>
+          <div class="chip-text" id="senhorText">Toque para comparar as duas funções.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o dia do seu poder</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">No dia do teu poder</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O teu povo será mui voluntário no dia do teu poder, nos ornamentos de santidade."</em> (v.3)</p>
+          <p>O salmo termina numa cena de vitória final e de um povo que segue esse Rei-Sacerdote de boa vontade, não por coerção — a mesma disposição voluntária que aparece em outros salmos de louvor genuíno, agora dirigida especificamente ao Rei prometido.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Salmo 110:1</span>
+          <p>Disse o SENHOR ao meu Senhor: Assenta-te à minha direita, até que ponha os teus inimigos por escabelo dos teus pés.</p>
+          <span class="ref">— Salmos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Um salmo escrito por um rei, sobre um Rei maior que ele mesmo — Senhor e Sacerdote ao mesmo tempo, sentado no lugar de honra e destinado à vitória final. Jesus não precisou forçar essa leitura sobre o texto; ele apenas apontou para o que já estava ali, séculos antes.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de ler os Salmos sem ver Cristo neles</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ler os Salmos à luz de Cristo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · salmos · reflexão interativa</footer>
+</div>
+
+<script>
+  const senhorData = [
+    { text: "Assentado à direita de Deus, governando \"no meio dos teus inimigos\" (v.1-3) — autoridade régia, sobre nações." },
+    { text: "\"Tu és sacerdote para sempre, segundo a ordem de Melquisedeque\" (v.4) — uma função que nenhum rei de Israel podia acumular por lei, já que reis vinham de Judá e sacerdotes de Levi. O livro de Hebreus (cap. 5-7) desenvolve esse verso inteiro para explicar quem é Cristo." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Sem ver Cristo";
+      text.textContent = "Trata os Salmos só como poesia religiosa antiga, sem conexão com o resto da história bíblica.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "À luz de Cristo";
+      text.textContent = "Como o próprio Jesus fez com este salmo (Mateus 22:41-45), lê o Rei prometido em todo o saltério — do lamento mais escuro (Salmo 88) ao louvor mais alto (Salmo 145), tudo aponta, de um jeito ou de outro, para ele.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

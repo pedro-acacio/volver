@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Às margens dos rios de Babilônia — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-salmos.html">Volver</a>
+    <span class="brand-track">Salmos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 18 · <span class="ref-tag">Salmo 137</span></div>
+  <h1>Às margens dos rios de Babilônia</h1>
+  <p class="sub">Escrito no exílio, longe de casa — um dos salmos mais difíceis do saltério, terminando com palavras de raiva crua que a maioria das leituras públicas evita.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Como cantaríamos a canção do Senhor em terra estranha?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Junto aos rios da Babilônia, ali nos assentamos e choramos, quando nos lembramos de Sião... Como cantaríamos a canção do SENHOR em terra estranha?"</em> (v.1, 4)</p>
+          <p>Os captores pedem uma canção de alegria (v.3), e a resposta do salmo é que certas canções não podem ser forçadas — a dor do exílio torna impossível fingir uma alegria que não existe naquele momento.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → memória e lealdade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Memória e lealdade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O salmo mostra o que ele recusa esquecer, e a raiva que vem logo depois:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, salmo137Data, 0, 'salmo137Text')">A raiva final</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, salmo137Data, 1, 'salmo137Text')">O que ele recusa esquecer</button>
+          </div>
+          <div class="chip-text" id="salmo137Text">Toque para comparar raiva e lealdade.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que fazer com esse salmo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um lamento sem filtro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Este salmo não ensina a desejar violência contra ninguém — ensina algo diferente: que a Bíblia tem espaço para a raiva bruta de quem perdeu tudo, sem exigir que ela seja primeiro filtrada ou suavizada antes de ser dita a Deus. O lamento honesto, aqui, é levado até o fim, mesmo na parte que incomoda.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Salmo 137:1</span>
+          <p>Junto aos rios da Babilônia, ali nos assentamos e choramos, quando nos lembramos de Sião.</p>
+          <span class="ref">— Salmos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O Salmo 137 não pede desculpas pela intensidade da dor nem pela raiva que vem dela. Ensina, ao contrário, que a oração honesta pode carregar tudo isso até Deus — sem precisar ser editada antes.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de filtrar a raiva antes de orar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de levar a raiva bruta a Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · salmos · reflexão interativa</footer>
+</div>
+
+<script>
+  const salmo137Data = [
+    { text: "Versos duros contra os que destruíram a cidade (v.8-9) — palavras que a maioria das leituras públicas pula, mas que o texto mantém, sem editar." },
+    { text: "\"Se eu me esquecer de ti, Jerusalém, esqueça-se a minha destra... prefira eu Jerusalém à minha maior alegria\" (v.5-6) — a lealdade ao lugar perdido é descrita como algo que vale mais que a própria capacidade de tocar música." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Filtrar a raiva";
+      text.textContent = "Só ora com palavras \"aceitáveis\", escondendo a raiva real por trás de frases educadas.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Levar a raiva bruta a Deus";
+      text.textContent = "Como o Salmo 137, entrega a Deus a dor exatamente como ela é sentida — e deixa que seja ele, não a plateia, a julgar o que fazer com ela.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

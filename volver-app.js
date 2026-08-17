@@ -105,7 +105,7 @@
         '<div class="sidebar-lessons" id="sidebarLessons">' +
           '<a class="sidebar-sublink" href="' + root + 'parabolas/biblioteca-parabolas.html">Parábolas</a>' +
           '<a class="sidebar-sublink" href="' + root + 'livros/biblioteca-livros.html">Livros</a>' +
-          '<a class="sidebar-sublink" href="' + root + 'index.html">Salmos</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'salmos/biblioteca-salmos.html">Salmos</a>' +
           '<a class="sidebar-sublink" href="' + root + 'proverbios/biblioteca-proverbios.html">Provérbios</a>' +
           '<a class="sidebar-sublink" href="' + root + 'personagens/biblioteca-personagens.html">Personagens</a>' +
           '<a class="sidebar-sublink" href="' + root + 'fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a>' +

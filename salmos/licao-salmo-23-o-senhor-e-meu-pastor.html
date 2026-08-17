@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Senhor é meu pastor — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-salmos.html">Volver</a>
+    <span class="brand-track">Salmos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 04 · <span class="ref-tag">Salmo 23</span></div>
+  <h1>O Senhor é meu pastor</h1>
+  <p class="sub">O salmo mais conhecido da Bíblia usa uma única imagem — o pastor e a ovelha — para atravessar tudo, do repouso ao vale da sombra da morte.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Nada me faltará</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O SENHOR é o meu pastor; nada me faltará. Deitar-me faz em verdes pastos, guia-me mansamente a águas tranquilas."</em> (v.1-2)</p>
+          <p>A confiança do salmo começa numa imagem doméstica — um pastor que conhece cada necessidade da ovelha antes que ela precise pedir. "Nada me faltará" não é uma promessa de fartura, mas de suficiência: o que for necessário, será dado.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os dois cenários do salmo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Os dois cenários</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O salmo passa por dois cenários bem diferentes:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, pastorData, 0, 'pastorText')">O vale da sombra da morte</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, pastorData, 1, 'pastorText')">Verdes pastos</button>
+          </div>
+          <div class="chip-text" id="pastorText">Toque para comparar os dois cenários.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a mesa preparada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Preparas uma mesa perante mim</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Preparas uma mesa perante mim na presença dos meus inimigos, unges a minha cabeça com óleo, o meu cálice transborda."</em> (v.5)</p>
+          <p>A imagem muda de pastor para anfitrião — mas o ponto continua o mesmo. A mesa é posta "na presença dos meus inimigos": a provisão de Deus não espera que o perigo passe primeiro.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Salmo 23:1</span>
+          <p>O SENHOR é o meu pastor; nada me faltará.</p>
+          <span class="ref">— Salmos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nem sempre estamos nos verdes pastos. Mas o salmo insiste que o mesmo pastor que guia a águas tranquilas é quem acompanha pelo vale — e a confiança não depende de qual cenário estamos vivendo agora.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da ovelha que confia só no cenário seguro</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da ovelha que confia no pastor</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · salmos · reflexão interativa</footer>
+</div>
+
+<script>
+  const pastorData = [
+    { text: "\"Não temerei mal algum, porque tu estás comigo\" (v.4) — a confiança não é testada nos verdes pastos, mas no vale. E é lá que o salmo a afirma com mais força." },
+    { text: "Águas tranquilas, a alma restaurada, veredas de justiça (v.2-3) — o pastor guia mesmo quando não há perigo à vista." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Confiar só no cenário seguro";
+      text.textContent = "Confia enquanto tudo vai bem — e vacila assim que aparece o vale.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Confiar no pastor";
+      text.textContent = "Confia porque conhece quem guia, não porque conhece o caminho à frente.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
