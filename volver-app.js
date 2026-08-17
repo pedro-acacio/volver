@@ -5,7 +5,6 @@
   var STORAGE_STAGE = 'volver_stage';
   var STORAGE_FAV = 'volver_favorites';
   var STORAGE_THEME = 'volver_theme';
-  var STORAGE_INTRO = 'volver_intro_seen';
   var STORAGE_FONTSIZE = 'volver_fontsize';
   var STORAGE_ONBOARDING = 'volver_onboarding_seen';
 
@@ -591,7 +590,6 @@
   }
 
   function buildIntroSplash(){
-    if(localStorage.getItem(STORAGE_INTRO) === '1'){ maybeShowOnboarding(); return; }
     var el = document.createElement('div');
     el.className = 'intro-splash';
     el.id = 'volverIntroSplash';
@@ -610,7 +608,6 @@
     function dismiss(){
       if(el.classList.contains('fade-out')) return;
       el.classList.add('fade-out');
-      localStorage.setItem(STORAGE_INTRO, '1');
       setTimeout(function(){ el.remove(); maybeShowOnboarding(); }, 650);
     }
     el.addEventListener('click', dismiss);
