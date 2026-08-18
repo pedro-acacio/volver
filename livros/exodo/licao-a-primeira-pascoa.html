@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Primeira Páscoa — Êxodo 12—13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-exodo.html">Volver</a>
+    <span class="brand-track">Êxodo · I. Deus liberta seu povo</span>
+  </div>
+
+  <div class="eyebrow">Libertação · <span class="ref-tag">Êxodo 12—13</span></div>
+  <h1>A primeira Páscoa</h1>
+  <p class="sub">Não bastava estar em Gósen. Nesta última noite, cada família precisava agir — matar o cordeiro e passar o sangue na própria porta — para que a morte passasse por cima da própria casa.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 3 4 7 4 10 C4 13.5 6.5 16 9 16 C11.5 16 14 13.5 14 10 C14 7 12 3 9 3 Z" stroke-width="1.3"/>
+          <path d="M9 8 V13" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">As instruções da Páscoa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus dá instruções detalhadas: cada família deveria separar um cordeiro sem defeito no décimo dia do mês, guardá-lo até o décimo quarto, matá-lo ao entardecer, e passar o sangue nas duas ombreiras e na verga da porta de casa. A carne seria assada e comida com pão sem fermento e ervas amargas, e o povo deveria comê-la já pronto para partir — "os rins cingidos, os sapatos nos pés, e o cajado na mão... apressadamente" (12.11).</p>
+          <p>A instrução central é essa: "o sangue vos será por sinal nas casas em que estiverdes; vendo eu o sangue, passarei por cima de vós, e não haverá entre vós praga de mortandade, quando eu ferir a terra do Egito" (12.13). Não bastava estar em Gósen, como nas pragas anteriores — cada casa precisava do sangue visível na própria porta.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a décima praga e a saída</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M9 3 L15 9 L9 15" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A décima praga e a saída</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>À meia-noite, o Senhor fere todo primogênito do Egito, "desde o primogênito de faraó, que se assentava sobre o seu trono, até o primogênito do cativo... e até todo o primogênito dos animais" (12.29). "Não havia casa em que não houvesse um morto" (12.30) — e faraó, quebrado pela dor, chama Moisés e Arão ainda de noite e finalmente liberta o povo, sem nenhuma condição.</p>
+          <p>Os próprios egípcios, apressando os israelitas para que saíssem logo, lhes dão prata, ouro e roupas — cumprindo a promessa feita séculos antes a Abraão de que sairiam com grandes posses (Gênesis 15.14). Israel parte exatamente quatrocentos e trinta anos depois de entrar no Egito, mais de seiscentos mil homens a pé, além de mulheres e crianças, junto com "muita mistura de gente" que também se junta a eles.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a lei da Páscoa e os primogênitos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A lei da Páscoa e os primogênitos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus institui a Páscoa como uma celebração perpétua, a ser guardada geração após geração, junto com a Festa dos Pães sem Fermento por sete dias. E ordena que todo primogênito — de homem ou de animal — seja consagrado a ele, "porque tudo o que abre a madre é meu" (13.2), diretamente ligado à noite em que o Senhor poupou os primogênitos de Israel enquanto feriu os do Egito.</p>
+          <p>Essa memória deveria ser "por sinal na tua mão, e por memorial entre teus olhos" (13.9) — a mesma linguagem que, mais tarde, descreveria como a lei inteira deveria ser lembrada. A Páscoa se torna, desde o início, o evento fundador que define a identidade de Israel: um povo que existe porque Deus os poupou quando poderia ter feito diferente.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a nuvem e a coluna de fogo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12 Q9 8 15 12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 3 V9" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A nuvem e a coluna de fogo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em vez do caminho mais curto para Canaã, que passaria por território filisteu e possível guerra, Deus conduz o povo pelo caminho do deserto, rumo ao mar Vermelho — sabendo que uma guerra logo no início poderia fazê-los desistir e voltar ao Egito. Moisés, cumprindo um juramento feito séculos antes, leva consigo os ossos de José, que havia pedido para ser sepultado na terra prometida quando Deus finalmente visitasse seu povo (ver Gênesis 50.25).</p>
+          <p>E o Senhor mesmo guia o caminho, visivelmente: "de dia, numa coluna de nuvem... e de noite, numa coluna de fogo" — presença contínua, "não se retirava a coluna de nuvem de dia, nem a coluna de fogo de noite, de diante do povo" (13.21-22). Depois de séculos de silêncio, Deus agora caminha à frente do seu povo de forma visível, dia e noite, sem interrupção.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo, nossa Páscoa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo, nossa Páscoa</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Todo ano, durante séculos, Israel voltou a matar o cordeiro pascal, lembrando essa noite. Quando Jesus é crucificado, é precisamente durante a semana da Páscoa — e o Novo Testamento não deixa passar a conexão.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">1 Coríntios 5.7</span>
+          <p>Limpai-vos, pois, do fermento velho, para que sejais nova massa, assim como sois sem fermento; porque Cristo, nossa páscoa, foi sacrificado por nós.</p>
+          <span class="ref">— Paulo, aos coríntios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Repare no detalhe que a instrução original destaca: um cordeiro morto na casa do vizinho não salvava ninguém — só o sangue aplicado na própria porta. A Páscoa nunca foi um evento genérico do qual bastava estar por perto; exigia uma resposta pessoal, o sangue realmente aplicado. É esse o mesmo padrão que o evangelho propõe: Cristo morto não basta como fato histórico distante — é preciso que o seu sacrifício seja pessoalmente recebido.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do sangue que só marca uma porta</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do sangue que salva quem está sob ele</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Êxodo · a primeira Páscoa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Confiar em estar por perto";
+      text.textContent = "É achar que basta viver perto de quem tem fé, frequentar o mesmo lugar, conhecer a história — sem que o sacrifício em si tenha sido pessoalmente aplicado à própria vida.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Aplicar o sangue à própria porta";
+      text.textContent = "É a fé que age, não apenas acredita: cada família teve que matar o cordeiro e passar o sangue com as próprias mãos — o mesmo tipo de resposta pessoal que o evangelho pede diante do sacrifício de Cristo.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
