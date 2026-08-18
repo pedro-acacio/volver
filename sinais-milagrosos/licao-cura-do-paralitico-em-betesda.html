@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cura do paralítico em Betesda — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-sinais-milagrosos.html">Volver</a>
+    <span class="brand-track">Sinais Milagrosos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 03 · <span class="ref-tag">João 5:1-15</span></div>
+  <h1>Cura do paralítico em Betesda</h1>
+  <p class="sub">Trinta e oito anos esperando por um sistema que nunca funcionava a seu favor — até que uma pergunta direta muda tudo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Trinta e oito anos junto ao tanque</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Junto ao tanque de Betesda, um homem paralítico há trinta e oito anos espera que alguém o ajude a entrar na água quando ela se agita — a única chance de cura que conhece, e que nunca chega a tempo para ele. Jesus se aproxima e faz uma pergunta que parece óbvia demais para precisar ser feita.</p>
+          <p><em>"Perguntou-lhe Jesus: Queres ficar são?"</em> (João 5:6)</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → esperar ou obedecer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Esperar ou obedecer</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A resposta do homem revela o tamanho da sua espera — e o que Jesus oferece rompe com ela por completo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, betesdaData, 0, 'betesdaText')">Esperar por outro meio</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, betesdaData, 1, 'betesdaText')">Obedecer à palavra direta</button>
+          </div>
+          <div class="chip-text" id="betesdaText">Toque para comparar os dois caminhos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → não peques mais</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Não peques mais</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de curado, Jesus encontra o homem no templo e acrescenta algo que não era necessário para a cura em si: <em>"Jesus... disse-lhe: Eis que já estás são; não peques mais, para que te não suceda alguma coisa pior."</em> (João 5:14)</p>
+          <p>O sinal não termina no corpo restaurado. A cura física vem acompanhada de um chamado moral — como se o próprio milagre fosse incompleto sem uma resposta que vá além de andar de novo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 5:8</span>
+          <p>Disse-lhe Jesus: Levanta-te, toma o teu leito, e anda.</p>
+          <span class="ref">— João</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Trinta e oito anos de espera terminam não numa corrida até a água agitada, mas numa palavra simples e direta, sem nenhuma passagem pelo tanque. O sinal mostra que a cura de Jesus não depende do sistema que o homem confiava havia décadas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Esperar por outro meio</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Obedecer à palavra direta</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · sinais milagrosos · reflexão interativa</footer>
+</div>
+
+<script>
+  const betesdaData = [
+    { text: "\"Não tenho homem algum que, quando a água é agitada, me meta no tanque\" (v.7) — trinta e oito anos dependendo de um sistema que nunca funcionava a seu favor." },
+    { text: "\"Levanta-te, toma o teu leito, e anda\" (v.8) — uma cura que não passa pelo tanque de jeito nenhum, e que rompe de vez com a espera antiga." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Preso ao único meio conhecido";
+      text.textContent = "Continua esperando pelo mesmo sistema de sempre, mesmo que ele nunca tenha funcionado a seu favor em trinta e oito anos.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Levanta-te e anda";
+      text.textContent = "Obedece à palavra direta assim que ela chega, sem precisar que ela passe pelo caminho que sempre imaginou.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

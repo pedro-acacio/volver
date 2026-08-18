@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplicação dos pães — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-sinais-milagrosos.html">Volver</a>
+    <span class="brand-track">Sinais Milagrosos</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 04 · <span class="ref-tag">João 6:1-14</span></div>
+  <h1>Multiplicação dos pães</h1>
+  <p class="sub">Cinco mil homens, um menino, cinco pães e dois peixinhos — e uma multidão que entende o sinal errado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Que é isto entre tantos?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma multidão de cinco mil homens, sem contar mulheres e crianças, segue Jesus a um lugar deserto. Não há como alimentar tanta gente ali — só um menino aparece com cinco pães de cevada e dois peixinhos, o tipo de provisão que mal daria para uma família.</p>
+          <p><em>"Mas que é isto entre tantos?"</em> (João 6:9) — pergunta André, olhando para o pouco que havia diante da multidão imensa.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → escassez ou entrega</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Escassez ou entrega</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante da mesma multidão faminta, dois caminhos possíveis se cruzam:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, paesData, 0, 'paesText')">Recurso insuficiente diante da necessidade</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, paesData, 1, 'paesText')">Pouco entregue nas mãos certas</button>
+          </div>
+          <div class="chip-text" id="paesText">Toque para comparar os dois caminhos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o profeta que devia vir</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O profeta que devia vir</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de comerem até se fartar, com doze cestos sobrando, a multidão reconhece algo extraordinário: <em>"este é verdadeiramente o profeta que devia vir ao mundo"</em> (João 6:14).</p>
+          <p>Mas reconhecer o sinal não é o mesmo que entendê-lo. No versículo seguinte, tentam fazer Jesus rei à força — querem um provedor de pão, não o pão que ele realmente veio oferecer. O sinal é visto; o significado, não.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 6:14</span>
+          <p>Vendo, pois, aqueles homens o sinal que Jesus tinha feito, disseram: Este é verdadeiramente o profeta que devia vir ao mundo.</p>
+          <span class="ref">— João</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O menino não tinha muito, mas entregou o que tinha. A multidão viu o sinal, mas o leu como se fosse só sobre pão. O mesmo sinal pode nutrir uma multidão faminta e, ainda assim, ser mal compreendido por quem só quer que o milagre se repita.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Calcular a escassez</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Entregar o pouco que há</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · sinais milagrosos · reflexão interativa</footer>
+</div>
+
+<script>
+  const paesData = [
+    { text: "\"Duzentos dinheiros de pão não lhes bastariam\" (v.7) — a lógica de escassez de Filipe e André, calculando o custo antes de imaginar qualquer outra saída." },
+    { text: "O pouco que havia — cinco pães, dois peixinhos — oferecido e multiplicado, com sobra de doze cestos cheios (v.13)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Que é isto entre tantos?";
+      text.textContent = "Mede a necessidade contra o recurso disponível e conclui, antes de tentar, que não vai dar certo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O pouco nas mãos certas";
+      text.textContent = "Entrega o pouco que tem, sem calcular se é suficiente, e deixa que a multiplicação aconteça fora do seu controle.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
