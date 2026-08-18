@@ -6,7 +6,7 @@
   var STORAGE_FAV = 'volver_favorites';
   var STORAGE_THEME = 'volver_theme';
   var STORAGE_FONTSIZE = 'volver_fontsize';
-  var STORAGE_ONBOARDING = 'volver_onboarding_seen';
+  var STORAGE_SESSION_SHOWN = 'volver_session_shown';
 
   var STAR_ICON = '<svg viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.5 7.5 L18.5 8.3 L14 12.4 L15.2 18.3 L10 15.3 L4.8 18.3 L6 12.4 L1.5 8.3 L7.5 7.5 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>';
   var CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 8.5 L6 12.5 L14 3.5" stroke="#12162A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -596,6 +596,8 @@
   }
 
   function buildIntroSplash(){
+    if(sessionStorage.getItem(STORAGE_SESSION_SHOWN) === '1') return;
+
     var el = document.createElement('div');
     el.className = 'intro-splash';
     el.id = 'volverIntroSplash';
@@ -614,16 +616,11 @@
     function dismiss(){
       if(el.classList.contains('fade-out')) return;
       el.classList.add('fade-out');
-      setTimeout(function(){ el.remove(); maybeShowOnboarding(); }, 650);
+      sessionStorage.setItem(STORAGE_SESSION_SHOWN, '1');
+      setTimeout(function(){ el.remove(); buildOnboardingCarousel(); }, 650);
     }
     el.addEventListener('click', dismiss);
     setTimeout(dismiss, 2200);
-  }
-
-  // ---------------- onboarding carousel ----------------
-  function maybeShowOnboarding(){
-    if(localStorage.getItem(STORAGE_ONBOARDING) === '1') return;
-    buildOnboardingCarousel();
   }
 
   function buildOnboardingCarousel(){
@@ -712,7 +709,6 @@
     });
     nextBtn.addEventListener('click', function(){
       if(i < slides.length - 1){ i++; render(); return; }
-      localStorage.setItem(STORAGE_ONBOARDING, '1');
       backdrop.classList.remove('open');
       setTimeout(function(){ backdrop.remove(); }, 300);
     });
