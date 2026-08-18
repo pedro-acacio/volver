@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perdoa-nos as nossas dívidas — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-pai-nosso.html">Volver</a>
+    <span class="brand-track">Pai Nosso</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 04 · <span class="ref-tag">Mateus 6:12</span></div>
+  <h1>Perdoa-nos as nossas dívidas</h1>
+  <p class="sub">O único pedido da oração que vem com uma condição embutida — perdoados, assim como perdoamos.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um pedido com condição</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"E perdoa-nos as nossas dívidas, assim como nós perdoamos aos nossos devedores."</em> (Mt 6:12)</p>
+          <p>De todos os pedidos do Pai Nosso, este é o único amarrado a uma condição explícita: pede-se perdão na mesma medida em que se concede perdão. Não é um pedido isolado — é um pedido que expõe se quem ora tem, de fato, praticado o que pede para si.</p>
+          <p>Jesus não deixa essa condição solta no ar: logo depois de ensinar a oração, ele a explica sem rodeios, como se quisesse garantir que ninguém a repetisse sem entender o que estava dizendo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → pedir perdão sem estender perdão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Duas formas de lidar com o perdão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Compare duas atitudes possíveis diante do perdão recebido:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, perdaoData, 0, 'perdaoText')">Pedir sem estender</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, perdaoData, 1, 'perdaoText')">Perdão que reflete o perdão recebido</button>
+          </div>
+          <div class="chip-text" id="perdaoText">Toque para comparar as duas atitudes.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a advertência de Jesus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A advertência de Jesus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Porque, se perdoardes aos homens as suas ofensas, também vosso Pai celestial vos perdoará a vós; se, porém, não perdoardes aos homens as suas ofensas, também vosso Pai vos não perdoará as vossas ofensas."</em> (Mateus 6:14-15)</p>
+          <p>Jesus não deixa essa frase da oração como uma figura de linguagem. Logo depois de ensinar o Pai Nosso, ele volta ao assunto e o torna explícito: o perdão que se recebe e o perdão que se concede estão amarrados um ao outro. Não é possível pedir um sem viver o outro.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 6:12</span>
+          <p>E perdoa-nos as nossas dívidas, assim como nós perdoamos aos nossos devedores.</p>
+          <span class="ref">— Mateus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A parábola do credor incompassivo (Mateus 18:23-35) mostra exatamente o que essa frase quer evitar: um servo perdoado de uma dívida enorme que se recusa a perdoar uma dívida pequena. Efésios 4:32 aponta o caminho oposto — "perdoando-vos uns aos outros, como também Deus vos perdoou em Cristo". O pedido do Pai Nosso só faz sentido quando quem ora já está disposto a viver o que pede.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Pedir perdão sem perdoar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Perdão que se estende como foi recebido</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · Pai Nosso · reflexão interativa</footer>
+</div>
+
+<script>
+  const perdaoData = [
+    { text: "Como o servo da parábola (Mateus 18:23-35), perdoado de uma dívida enorme e ainda assim incapaz de perdoar uma dívida pequena de outro — pede-se perdão sem entender o que se recebeu." },
+    { text: "\"Perdoando-vos uns aos outros, como também Deus vos perdoou em Cristo\" (Efésios 4:32) — o perdão recebido se torna o padrão do perdão que se oferece." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O servo incompassivo";
+      text.textContent = "Recebe um perdão enorme e, mesmo assim, cobra até o último centavo de quem lhe deve pouco.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O perdão que se repassa";
+      text.textContent = "O tanto que se recebeu de Deus se torna a medida do que se oferece a quem ofendeu.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

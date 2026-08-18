@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Não nos deixes cair em tentação — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-pai-nosso.html">Volver</a>
+    <span class="brand-track">Pai Nosso</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 05 · <span class="ref-tag">Mateus 6:13a</span></div>
+  <h1>Não nos deixes cair em tentação</h1>
+  <p class="sub">Um pedido de humildade — a força para resistir precisa vir de fora, não só de dentro.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um pedido de humildade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"E não nos induzas à tentação; mas livra-nos do mal."</em> (Mt 6:13a)</p>
+          <p>Este pedido só faz sentido para quem já admitiu algo desconfortável: não é forte o bastante para enfrentar sozinho toda tentação que vier. Não é uma oração de quem já se sente seguro — é a oração de quem sabe que precisa de ajuda antes mesmo de saber de onde virá a próxima prova.</p>
+          <p>Pedir para não ser levado à tentação, e ser livrado do mal, é reconhecer que a resistência não nasce só de dentro. Precisa vir de fora, de Deus.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → confiar na própria força ou pedir socorro antes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Antes ou depois de cair</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Compare duas atitudes diante do risco de cair:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, tentacaoData, 0, 'tentacaoText')">Confiar na própria força</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, tentacaoData, 1, 'tentacaoText')">Pedir socorro com antecedência</button>
+          </div>
+          <div class="chip-text" id="tentacaoText">Toque para comparar as duas atitudes.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → vigiai e orai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Vigiai e orai</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Vigiai e orai, para que não entreis em tentação; na verdade o espírito está pronto, mas a carne é fraca."</em> (Mateus 26:41)</p>
+          <p>Jesus diz isso aos discípulos no Getsêmani, momentos antes de eles fugirem e negarem — exatamente o que ele os havia alertado para evitar. Eles dormiram quando deveriam ter orado, e caíram na tentação que tinham sido avisados a evitar. A oração "não nos deixes cair em tentação" é esse mesmo alerta, dito com antecedência.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 6:13a</span>
+          <p>E não nos induzas à tentação; mas livra-nos do mal.</p>
+          <span class="ref">— Mateus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Aquele que cuida estar em pé, olhe não caia" (1 Coríntios 10:12) — a autoconfiança costuma vir logo antes da queda. Pedir para não ser levado à tentação é o oposto disso: é orar antes de entrar na situação de risco, não só tentar se recompor depois de já ter caído nela.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Confiar na própria força</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Pedir socorro com antecedência</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · Pai Nosso · reflexão interativa</footer>
+</div>
+
+<script>
+  const tentacaoData = [
+    { text: "\"Aquele que cuida estar em pé, olhe não caia\" (1 Coríntios 10:12) — a certeza de já estar seguro é, com frequência, o que vem logo antes da queda." },
+    { text: "Como Jesus pediu no Getsêmani: orar antes de entrar na situação de risco, não só depois de já estar em meio a ela — vigiar e orar, em vez de dormir e cair." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Dormir quando deveria vigiar";
+      text.textContent = "Como os discípulos no Getsêmani, confia que aguentará sozinho — e cai justamente onde foi avisado a orar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Vigiar e orar antes";
+      text.textContent = "Pede ajuda antes de entrar na situação de risco, reconhecendo que a força para resistir vem de fora.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

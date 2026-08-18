@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O pão nosso de cada dia — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-pai-nosso.html">Volver</a>
+    <span class="brand-track">Pai Nosso</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 03 · <span class="ref-tag">Mateus 6:11</span></div>
+  <h1>O pão nosso de cada dia</h1>
+  <p class="sub">O primeiro pedido pessoal da oração é também o mais modesto: apenas o suficiente para hoje.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Apenas o de hoje</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O pão nosso de cada dia nos dá hoje."</em> (Mt 6:11)</p>
+          <p>Depois de tratar do nome, do reino e da vontade de Deus, o primeiro pedido pessoal da oração chega — e é o mais básico possível. Não riqueza, não segurança para os próximos dez anos, não uma reserva contra todo imprevisto futuro. Apenas o pão de hoje.</p>
+          <p>Pedir assim é uma forma de reconhecer que a provisão de Deus não precisa ser armazenada de uma vez — pode ser recebida um dia de cada vez, e isso é suficiente.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → acumular ou confiar dia a dia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O maná guardado e o maná recebido</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O deserto do Êxodo já havia ensinado essa mesma lição, de dois jeitos opostos:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, paoData, 0, 'paoText')">Acumular para muitos dias</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, paoData, 1, 'paoText')">Confiar um dia de cada vez</button>
+          </div>
+          <div class="chip-text" id="paoText">Toque para comparar as duas atitudes diante do maná.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → não vos inquieteis pelo amanhã</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Não vos inquieteis pelo amanhã</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Não vos inquieteis, pois, pelo dia de amanhã, porque o amanhã cuidará de si mesmo. Basta a cada dia o seu mal."</em> (Mateus 6:34)</p>
+          <p>Poucos versículos depois de ensinar a pedir "o pão de cada dia", Jesus retoma exatamente essa mesma lógica no restante do Sermão do Monte. Não é acaso: pedir o pão de hoje e recusar a ansiedade pelo amanhã são o mesmo gesto de confiança, apenas ditos de duas formas diferentes.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 6:11</span>
+          <p>O pão nosso de cada dia nos dá hoje.</p>
+          <span class="ref">— Mateus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Pedir apenas o pão de hoje não é falta de planejamento — é uma recusa deliberada de tentar controlar mais do que um dia de cada vez. O maná no deserto e o Sermão do Monte ensinam a mesma coisa: a provisão de Deus se recebe diariamente, não se acumula de uma vez por todas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Acumular além do necessário</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Confiar um dia de cada vez</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · Pai Nosso · reflexão interativa</footer>
+</div>
+
+<script>
+  const paoData = [
+    { text: "\"Ninguém deixe dele para amanhã... e criou bichos, e fedeu\" (Êxodo 16:19-20) — o maná guardado além do necessário apodrecia, como se recusasse ser acumulado." },
+    { text: "O maná era dado fresco a cada manhã, suficiente para aquele dia — ensinando o povo a depender de Deus de novo a cada amanhecer, sem reserva antecipada." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O maná que apodrece";
+      text.textContent = "Guardado além do necessário, o excesso não traz mais segurança — só apodrece nas mãos de quem o acumulou.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O pão recebido a cada manhã";
+      text.textContent = "Pede-se hoje o que é necessário para hoje, confiando que amanhã haverá provisão de novo.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

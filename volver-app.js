@@ -114,6 +114,7 @@
           '<a class="sidebar-sublink" href="' + root + 'bem-aventurancas/biblioteca-bem-aventurancas.html">Bem-aventuranças</a>' +
           '<a class="sidebar-sublink" href="' + root + 'sinais-milagrosos/biblioteca-sinais-milagrosos.html">7 Sinais Milagrosos</a>' +
           '<a class="sidebar-sublink" href="' + root + 'eu-sou/biblioteca-eu-sou.html">7 Discursos "Eu Sou"</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'pai-nosso/biblioteca-pai-nosso.html">A Oração do Pai Nosso</a>' +
         '</div>' +
         '<a class="sidebar-link" href="' + root + 'favoritos.html">Favoritos</a>' +
         '<a class="sidebar-link" href="' + root + 'continue-a-volver.html">Continue a Volver</a>' +
