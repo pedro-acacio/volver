@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oração em todo tempo — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-armadura-de-deus.html">Volver</a>
+    <span class="brand-track">Armadura de Deus</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 07 · <span class="ref-tag">Efésios 6:18</span></div>
+  <h1>Oração em todo tempo</h1>
+  <p class="sub">Não é uma oitava peça da armadura — é o que sustenta todas as outras em uso.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O que sustenta a armadura em uso</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Orando em todo tempo com toda a oração e súplica no Espírito, e vigiando nisto com toda a perseverança e súplica por todos os santos."</em> (Ef 6:18)</p>
+          <p>Depois de listar seis peças concretas — cinto, couraça, calçado, escudo, capacete, espada — Paulo muda de metáfora. Não descreve uma sétima peça de metal ou couro, descreve uma prática contínua: orar em todo tempo, vigiando com perseverança. Vestir a armadura inteira e nunca orar é como um soldado bem equipado que nunca fica de vigia — a proteção existe, mas ninguém está atento para usá-la no instante em que o ataque começa.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → armadura vestida ou vigiada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Armadura vestida ou vigiada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A mesma armadura pode ser vestida de duas formas bem diferentes:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, oracaoData, 0, 'oracaoText')">Armadura vestida, mas sem vigilância</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, oracaoData, 1, 'oracaoText')">Vigilância sustentada pela oração</button>
+          </div>
+          <div class="chip-text" id="oracaoText">Toque para comparar as duas formas.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → orar sem cessar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Orar sem cessar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Orai sem cessar."</em> (1 Tessalonicenses 5:17)</p>
+          <p>Três palavras, num versículo entre vários outros mandamentos curtos e diretos — mas que reforçam exatamente o que Paulo já tinha dito aos efésios: oração não é um acessório da armadura, é constante como respirar. Não significa estar de joelhos o dia inteiro, significa manter aberta, em todo tempo, a linha de dependência que faz cada peça da armadura continuar funcionando.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Efésios 6:18</span>
+          <p>Orando em todo tempo com toda a oração e súplica no Espírito, e vigiando nisto com toda a perseverança e súplica por todos os santos.</p>
+          <span class="ref">— Efésios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nenhuma peça da armadura funciona sozinha, esquecida numa gaveta entre uma batalha e outra. A oração é o que mantém o soldado vestido e atento ao mesmo tempo — não uma peça a mais, mas o que sustenta todas as outras em uso constante.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Armadura vestida sem vigilância</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Vigilância sustentada pela oração constante</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · armadura de Deus · reflexão interativa</footer>
+</div>
+
+<script>
+  const oracaoData = [
+    { text: "Confiar só no equipamento, sem a atenção constante que a oração exige, é vestir cada peça corretamente e ainda assim ser pego desprevenido — porque \"vigiando... com toda a perseverança\" não é opcional." },
+    { text: "\"Orai sem cessar\" (1 Tessalonicenses 5:17) — não um evento pontual antes da batalha, mas um estado contínuo que mantém o soldado atento peça por peça, ataque por ataque." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Vestido, mas desatento";
+      text.textContent = "Confia só no equipamento, sem a vigilância constante que a oração exige — bem protegido, mas pego de surpresa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Vigiando, sustentado pela oração";
+      text.textContent = "Mantém a linha de oração sempre aberta — vigiando com perseverança, atento e pronto peça por peça, ataque por ataque.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
