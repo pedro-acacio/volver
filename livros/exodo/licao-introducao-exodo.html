@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Êxodo — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-exodo.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">O segundo livro de Moisés · <span class="ref-tag">Êxodo 1—40</span></div>
+  <h1>Introdução a Êxodo</h1>
+  <p class="sub">Uma família de setenta pessoas vira uma nação escrava — e essa nação escrava se torna um povo com quem Deus faz aliança e no meio de quem ele decide habitar. Antes da primeira praga, vale entender o livro como um todo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor e data</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A tradição judaica e cristã atribui Êxodo a Moisés — e o próprio livro registra Moisés escrevendo: "as tábuas do pacto foram entregues por Moisés" e "escreveu Moisés todas as palavras do Senhor" (24.4). Jesus e os apóstolos citam Êxodo repetidamente como palavra de Moisés (por exemplo, Marcos 12.26; João 5.46).</p>
+          <p>Quanto à data, há um debate real entre estudiosos fiéis às Escrituras: uma data antiga, por volta de 1446 a.C., apoiada numa leitura direta de 1 Reis 6.1 ("480 anos antes... do quarto ano do reinado de Salomão"); e uma data mais tardia, no século 13 a.C., apoiada na menção da cidade de "Ramessés" (1.11), construída sob o faraó Ramessés II. Este projeto não tenta resolver esse debate — o que importa é que, em qualquer uma das datas, o livro registra um evento histórico real: a libertação de um povo escravo por meio de sinais que nenhuma nação vizinha jamais reivindicou ter presenciado.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o nome do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M9 3 L15 9 L9 15" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O nome do livro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Êxodo" vem do grego <em>éxodos</em>, "saída" — o nome que a Septuaginta, a tradução grega do Antigo Testamento, deu ao livro. Os judeus, seguindo o costume de nomear cada livro da Torá pela sua primeira palavra em hebraico, o chamam de <em>Shemot</em>, "Nomes" — de "estes são os nomes dos filhos de Israel que entraram no Egito" (1.1), a mesma lista que já fechava o livro de Gênesis.</p>
+          <p>Esse detalhe já entrega a mensagem do livro em miniatura: Êxodo começa com uma lista de nomes de uma família e termina com uma nação organizada em doze tribos, com uma lei, um culto e a própria presença de Deus habitando no meio dela.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → três partes de um só livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Três partes de um só livro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Êxodo se divide em três grandes movimentos, cada um se apoiando no anterior. Toque em cada um para ver o que cobre:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 0, 'partsText')">I. A libertação</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 1, 'partsText')">II. A aliança no Sinai</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 2, 'partsText')">III. O tabernáculo</button>
+          </div>
+          <div class="chip-text" id="partsText">Toque em cada parte para ver o que ela cobre.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → propósito e temas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Propósito: libertação, lei e presença</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O propósito central de Êxodo é confirmar a autoridade divina de Moisés como líder de Israel, e mostrar como Deus trouxe seu povo da escravidão para a adoração. Três verdades fundamentais atravessam o livro inteiro: o Senhor tem autoridade para libertar seu povo por meio de quem ele escolhe; a aliança e a lei dadas a Moisés existem para trazer bênção, não fardo, ao povo de Deus; e as instruções para o tabernáculo foram divinamente ordenadas, para que Deus mesmo pudesse habitar visivelmente no meio de Israel.</p>
+          <p>Repare como isso conecta as três partes: Deus liberta um povo (parte I) para fazer aliança com ele (parte II) e vir habitar no meio dele (parte III). A liberdade nunca foi um fim em si mesma — era o caminho para um relacionamento.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo em Êxodo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo em Êxodo</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Cristãos, ao longo de toda a história da igreja, aprenderam a reconhecer a redenção do Egito como um retrato antecipado da salvação em Cristo, de várias maneiras. Moisés é levantado por Deus como libertador e mediador entre Deus e o povo — o mesmo papel que o Novo Testamento atribui a Cristo, o mediador maior. O cordeiro pascal, morto para que seu sangue poupasse os primogênitos da morte, aponta direto para "Cristo, nossa páscoa, foi sacrificado por nós" (1 Coríntios 5.7). E o tabernáculo — o lugar onde Deus "habitava" visivelmente no meio do seu povo — encontra eco direto no evangelho de João.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 1.14</span>
+          <p>E o Verbo se fez carne, e habitou entre nós, cheio de graça e de verdade; e vimos a sua glória, como a glória do unigênito do Pai.</p>
+          <span class="ref">— o apóstolo João</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O verbo grego que João usa para "habitou" é literalmente "armou tenda" — o mesmo vocabulário do tabernáculo de Êxodo. É possível ler Êxodo apenas como a história antiga de uma libertação nacional; mas o Novo Testamento insiste em lê-lo como o modelo, dado com antecedência, da libertação maior que viria em Cristo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da libertação só histórica</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da libertação que aponta para Cristo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Êxodo</footer>
+</div>
+
+<script>
+  const partsData = [
+    { text: "Êxodo 1—18: Deus liberta seu povo por meio de Moisés — da opressão no Egito, passando pelas dez pragas e a travessia do mar Vermelho, até a chegada ao Sinai." },
+    { text: "Êxodo 19—24: Deus faz uma aliança formal com Israel no monte Sinai — os Dez Mandamentos e o Livro da Aliança, selados com sangue e uma refeição diante de Deus." },
+    { text: "Êxodo 25—40: Deus dá instruções detalhadas para o tabernáculo — incluindo a queda do bezerro de ouro no meio do caminho — até sua construção e a glória do Senhor enchendo a tenda." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma história antiga de libertação nacional";
+      text.textContent = "Lido apenas como história política — um povo escravo que ganha independência —, Êxodo vira um relato interessante, mas distante, sobre uma nação que não é a nossa, num tempo que já passou.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O modelo da redenção que ainda viria";
+      text.textContent = "Lido como o Novo Testamento o lê, Êxodo é o primeiro grande retrato da salvação: um povo escravo, um cordeiro cujo sangue salva, um mediador que intercede, e um Deus que decide, apesar de tudo, armar sua tenda no meio do seu povo.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
