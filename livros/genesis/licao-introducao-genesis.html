@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Gênesis — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-genesis.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">O primeiro livro de Moisés · <span class="ref-tag">Gênesis 1—50</span></div>
+  <h1>Introdução a Gênesis</h1>
+  <p class="sub">Antes de entrar na criação, na queda, no dilúvio e nos patriarcas, vale entender como o próprio livro se organiza — porque Gênesis não é uma coleção solta de histórias antigas, mas um livro com uma estrutura muito deliberada.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor e data</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A tradição judaica e cristã atribui Gênesis a Moisés, escrevendo por volta de 1446-1406 a.C. — o mesmo período do êxodo do Egito. O próprio Novo Testamento confirma essa autoria: Jesus diz que Moisés "escreveu a meu respeito" (João 5.46), e um salmo de Davi já alude ao conteúdo de Gênesis, o que mostra que o livro, em sua forma essencial, é anterior a 1000 a.C.</p>
+          <p>O livro pressupõe leitores que já conhecem os lugares e costumes de Canaã — o público original era os israelitas no Egito ou já no deserto, prestes a enfrentar o desafio de deixar a escravidão para trás e ocupar a terra que Deus havia prometido a seus antepassados. Gênesis existe, em boa parte, para lembrar a esse povo cansado de quem eles são e a quem pertencem.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → um livro de "gerações"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um livro de "gerações"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O nome "Gênesis" vem do grego, e significa "origem". Mas o título hebraico original é outro: as primeiras palavras do livro, <em>Bereshit</em> — "no princípio". É assim que os judeus nomeiam os livros da Torá até hoje: pela sua primeira palavra, não por um título temático.</p>
+          <p>Por trás desse nome simples, porém, existe uma estrutura muito precisa. Depois do prólogo da criação (1.1—2.3), o livro inteiro é organizado por uma fórmula que se repete onze vezes: "estas são as gerações de..." — de Adão, de Noé, de Sem, de Terá, de Ismael, de Isaque, de Esaú, de Jacó. Cada uma dessas costuras marca o início de uma nova seção, amarrando o livro inteiro numa única linha genealógica que vai se estreitando, capítulo a capítulo, até chegar exatamente na família que Deus escolheu.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → os três grandes movimentos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Os três grandes movimentos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Apesar da estrutura genealógica minuciosa, Gênesis se lê, na prática, em três grandes blocos. Toque em cada um para ver o que cobre:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, blocksData, 0, 'blocksText')">I. História primitiva</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, blocksData, 1, 'blocksText')">II. História patriarcal</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, blocksData, 2, 'blocksText')">III. História de José</button>
+          </div>
+          <div class="chip-text" id="blocksText">Toque em cada bloco para ver o que ele cobre.</div>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o enfoque do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O enfoque: as origens de Israel</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O enfoque do livro nas suas origens dá o pano de fundo de todos os seus assuntos históricos: o seu significado e o seu papel para o país — quase todas as origens religiosas importantes do mundo antigo apresentam suas próprias leis. Gênesis, porém, conta essa origem remontando ao início da própria humanidade, e ao surgimento de um conflito espiritual entre a serpente e o reino de Deus — anunciado logo em Gênesis 3.15 e desenrolado por todo o resto do livro.</p>
+          <p>Moisés conta essa história tendo como pano de fundo teológico a aliança de Deus com Abraão e seus descendentes — a mesma aliança que Paulo, ao escrever aos gálatas, diz que os cristãos hoje herdam por meio de Cristo: "se sois de Cristo, então sois descendência de Abraão, e herdeiros segundo a promessa" (Gálatas 3.29). As vidas de Abraão, Isaque, Jacó e José não são biografias soltas: são a demonstração de como a fidelidade de Deus a essa aliança se sustenta, geração após geração, apesar da falha constante dos próprios patriarcas.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo em Gênesis</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo em Gênesis</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O evangelho começa em Gênesis. Logo após a queda, Deus promete que viria o filho da mulher que esmagaria a cabeça da serpente (3.15) — a primeira promessa messiânica da Bíblia. Essa promessa é afunilada capítulo a capítulo: da linhagem de Sem (não de Cam nem de Jafé, 9.26-27), para a família de Abraão (12.1-3), para a tribo de Judá, a quem é prometido que "o cetro não se apartará" (49.10) — e o próprio José, rejeitado pelos irmãos, escravizado injustamente e depois exaltado para salvar a mesma família que o traiu, prefigura o padrão que Cristo cumpriria séculos depois.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Gálatas 3.28-29</span>
+          <p>Nisto não há judeu nem grego; nem escravo nem livre; nem homem nem mulher; porque todos vós sois um em Cristo Jesus. E, se sois de Cristo, então sois descendência de Abraão e herdeiros segundo a promessa.</p>
+          <span class="ref">— Paulo, aos gálatas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É possível ler Gênesis como um livro de origens distantes — genealogias de nomes difíceis, sobre um povo antigo, num deserto que não é o nosso. Mas o próprio Novo Testamento lê Gênesis de outro jeito: como o primeiro capítulo do mesmo evangelho que chega até o leitor de hoje.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão das origens distantes</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do evangelho desde o início</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Gênesis</footer>
+</div>
+
+<script>
+  const blocksData = [
+    { text: "Gênesis 1.1—11.9 — da criação do mundo ao dilúvio e à Torre de Babel: a origem do universo, a queda no pecado, e a escalada dessa corrupção até a dispersão das nações." },
+    { text: "Gênesis 11.10—37.1 — a história de Abraão, Isaque e Jacó: Deus escolhe uma família para dela formar o povo através do qual abençoaria todas as nações da terra." },
+    { text: "Gênesis 37.2—50.26 — a história de José: vendido pelos próprios irmãos, exaltado no Egito, e usado por Deus para preservar viva a família da promessa durante uma grande fome." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um álbum de família antigo";
+      text.textContent = "Lido apenas como registro genealógico, Gênesis vira uma lista de nomes difíceis de pronunciar sobre um povo distante — histórias curiosas, mas sem relação direta com a vida de quem lê hoje.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O primeiro capítulo do evangelho";
+      text.textContent = "Lido como o Novo Testamento o lê, Gênesis é o início da mesma história que termina na cruz e na ressurreição: a promessa da semente da mulher, afunilada de Sem a Abraão, de Judá a José, até desembocar em Cristo — e, por meio dele, em todo aquele que crê.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

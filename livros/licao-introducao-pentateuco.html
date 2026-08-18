@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução ao Pentateuco — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-livros.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Os cinco livros de Moisés · <span class="ref-tag">Gênesis — Deuteronômio</span></div>
+  <h1>Introdução ao Pentateuco</h1>
+  <p class="sub">Antes de abrir Gênesis, vale olhar para o conjunto: cinco livros que os judeus chamam simplesmente de "a Lei", que contam uma única história contínua, do início do mundo até a beira da terra prometida.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 C4 4 9 2 17 4 C25 2 30 4 30 4" stroke-width="1.3" transform="scale(0.55) translate(3,3)"/>
+          <path d="M3 3 H15 V15 H3 Z M9 3 V15" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Cinco livros, um só rolo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Gênesis, Êxodo, Levítico, Números e Deuteronômio costumam ser chamados de "a Lei", ou o Pentateuco — do grego <em>pentateuchos</em>, "livro de cinco volumes". Os judeus chamam essa mesma coleção de Torá, e ela ocupa o lugar de honra na Bíblia hebraica: é a primeira e mais importante seção das Escrituras de Israel, o alicerce sobre o qual os Profetas e os Escritos se apoiam depois. O próprio Novo Testamento reconhece essa divisão tripla — Lei, Profetas e Escritos (Lucas 24.44) — e reserva ao Pentateuco esse lugar de honra.</p>
+          <p>Embora hoje venha encadernado em cinco volumes separados, ele foi concebido como uma narrativa contínua: começa com a criação do mundo em Gênesis 1 e termina com a morte de Moisés, às portas de Canaã, em Deuteronômio 34 — sem nunca cobrir a própria conquista da terra, que fica guardada para o livro seguinte, Josué.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → autor e data</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="3" stroke-width="1.3"/>
+          <path d="M3 16 C3 11 6 9 9 9 C12 9 15 11 15 16" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Autor e data</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A tradição judaica e cristã atribui o Pentateuco a Moisés — não só pelos títulos "Livro de Moisés" (2 Crônicas 25.4) ou "Lei de Moisés" (Neemias 8.1), mas pelas próprias palavras de Jesus: "Moisés... escreveu a meu respeito" (João 5.46). Lucas afirma o mesmo ao registrar que Jesus explicou as Escrituras "começando por Moisés" (Lucas 24.27). O próprio texto descreve Moisés escrevendo o código legal, o Livro da Aliança (Êxodo 24.3-7), e registrando a lei no fim de Deuteronômio.</p>
+          <p>Nos últimos dois séculos, porém, ganhou força a chamada hipótese documentária: a ideia de que o Pentateuco seria uma costura tardia de quatro fontes distintas, reunidas por editores pós-exílio muito depois de Moisés. Na segunda metade do século 20, contudo, essa hipótese passou por revisões profundas — evidências arqueológicas e literárias mostraram que os textos citados são muito mais antigos do que se pensava, e vários estudiosos hoje questionam os próprios métodos usados para identificar essas supostas fontes, reconhecendo a estrutura unificada do Pentateuco. Considerar Moisés o autor não significa negar que ele tenha usado fontes anteriores — algumas claramente citadas no texto (Gênesis 5.1; Números 21.14) — nem que profetas posteriores tenham atualizado pequenos trechos, como o relato da morte do próprio Moisés (Deuteronômio 34.1-12). Significa afirmar que ele foi a fonte e autoridade fundamental por trás dos cinco livros, redigidos em sua maior parte no seu próprio tempo.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a unidade do Pentateuco</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M9 3 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A unidade do Pentateuco</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Pentateuco é uma narrativa contínua, não cinco histórias soltas. Gênesis termina com o caixão de José no Egito, e Êxodo começa relembrando o número de israelitas "que foram para o Egito" (Êxodo 1.1) — a mesma lista de Gênesis 46.26-27, uma costura deliberada entre os dois livros. A partir daí, a história segue sem interrupção: a libertação do Egito, a aliança e a lei dadas no Sinai, a construção do tabernáculo, a longa caminhada pelo deserto e os discursos finais de Moisés, revisando a lei para a nova geração à beira da terra prometida.</p>
+          <p>Cada um dos três últimos livros tem sua própria ênfase dentro dessa unidade: Levítico se concentra no culto e no sacerdócio; Números narra a história de Israel no deserto, do Sinai até Moabe; Deuteronômio resume tudo isso num último discurso de Moisés, repetindo os Dez Mandamentos com pequenas variações (compare Êxodo 20 com Deuteronômio 5). Não é por acaso que o Pentateuco termina exatamente onde termina — nas campinas de Moabe, olhando para a terra que ainda não foi conquistada: essa conquista é, deliberadamente, a história do livro seguinte.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o tema do Pentateuco</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O tema: uma aliança que forma um povo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Genesis lança as bases: a criação, a queda, e depois a aliança de Deus com os patriarcas — a promessa de uma terra, uma descendência e uma bênção que passaria de Abraão a Isaque, de Isaque a Jacó, num relato marcado por selos repetidos ("estas são as gerações de...") que vão amarrando a narrativa até a chegada ao Egito.</p>
+          <p>Êxodo, Levítico, Números e Deuteronômio contam o que acontece com essa promessa uma geração depois: Deus liberta os descendentes de Abraão da escravidão, os transforma numa nação no Sinai através da lei e da aliança, ensina essa nação a se aproximar dele através do culto e dos sacrifícios, e os prepara — por quarenta anos de deserto — para entrar na terra que havia prometido. O tema que atravessa os cinco livros não é apenas legislação: é uma aliança formando um povo, do chamado de Abraão à véspera da posse da terra.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → a promessa que atravessa o Pentateuco</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A promessa que atravessa o Pentateuco</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Já no jardim do Éden, o Pentateuco planta a promessa que vai atravessar toda a Bíblia: o filho da mulher que esmagaria a cabeça da serpente (Gênesis 3.15). Ela reaparece na bênção sobre Judá, de quem "não se apartará o cetro" (Gênesis 49.10), e no próprio Moisés anunciando que Deus levantaria, do meio do povo, "um profeta como eu" (Deuteronômio 18.15) — um versículo que os quatro evangelhos aplicam diretamente a Jesus.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 18.15</span>
+          <p>O Senhor, teu Deus, te levantará um profeta como eu, do meio de ti, de teus irmãos; a ele ouvirás.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É fácil ler o Pentateuco só como um código de regras antigas — genealogias, leis rituais, sacrifícios que já não se praticam. Mas o próprio Pentateuco se lê como uma promessa em movimento: cada aliança, cada lei, cada sacrifício aponta para uma bênção ainda por vir. A pergunta que fica, ao abrir Gênesis, é qual desses dois padrões vai guiar a leitura.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do código antigo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da promessa em movimento</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução ao Pentateuco</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um livro de regras superadas";
+      text.textContent = "Lido apenas como legislação antiga, o Pentateuco vira uma lista de genealogias e rituais que não dizem mais respeito à vida do leitor de hoje — cinco livros para se cumprir a obrigação de ler, não para se deixar formar por eles.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Cinco livros a caminho de uma promessa";
+      text.textContent = "Lido como uma aliança em movimento, o Pentateuco se abre como o primeiro capítulo de uma só história — a mesma que, séculos depois, levaria Moisés e Elias a conversarem com Jesus no monte da Transfiguração sobre a partida que ele estava para cumprir em Jerusalém (Lucas 9.31).";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

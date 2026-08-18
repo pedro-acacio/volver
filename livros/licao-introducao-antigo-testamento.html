@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução ao Antigo Testamento — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-livros.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Antes do Pentateuco · <span class="ref-tag">Romanos 16.25-27</span></div>
+  <h1>Introdução ao Antigo Testamento</h1>
+  <p class="sub">Trinta e nove livros, mil e cem anos, dezenas de autores de profissões diferentes — e uma só história. Antes de abrir o primeiro livro da trilha, vale entender o que é o Antigo Testamento, por que ele se chama assim, e por que Paulo o chama de "Escrituras proféticas".</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Testamento, aliança, um só pacto</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Antigo Testamento" é um nome cristão. Os judeus não o usam — eles não creem no Novo Testamento, então chamam suas próprias Escrituras de Tanak, ou simplesmente "as Escrituras". Não confunda Tanak com Torá: Torá é só os cinco primeiros livros, os de Moisés; Tanak é a coleção inteira, dividida em Lei, Profetas e Escritos — divisão que o próprio Novo Testamento reconhece (Lucas 24.44).</p>
+          <p>A palavra "testamento" vem do latim para "pacto" ou "aliança". Na Bíblia, essa aliança começa no jardim do Éden, quando Deus promete que o filho da mulher esmagaria a cabeça da serpente (Gênesis 3.15) — e se desenrola por toda a história de Israel. Na verdade não são dois pactos, um velho e um novo: é um único pacto da graça, administrado em duas etapas. Antes de Cristo, através de símbolos, sacerdotes, templo e sacrifícios — e esse registro é o Antigo Testamento. Depois que Cristo veio, de forma mais simples e clara, no evangelho — e esse registro é o Novo Testamento.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o panorama da história</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 3 H15 V7 L9 9 L15 11 V15 H3 V11 L9 9 L3 7 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O panorama da história</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Antigo Testamento cobre mais de 1.500 anos de história. Toque em cada etapa, na ordem, para acompanhar o caminho até o fim do período profético:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, panoramaData, 0, 'panoramaText')">História primeva</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, panoramaData, 1, 'panoramaText')">Patriarcas</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, panoramaData, 2, 'panoramaText')">Êxodo e Lei</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, panoramaData, 3, 'panoramaText')">Conquista e Juízes</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, panoramaData, 4, 'panoramaText')">Monarquia</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, panoramaData, 5, 'panoramaText')">Exílio e retorno</button>
+          </div>
+          <div class="chip-text" id="panoramaText">Toque em cada etapa para acompanhar a história de Israel.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → quem escreveu, e quando</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.2" stroke-width="1.4"/>
+          <path d="M9 5.5 V9 L11.5 11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Quem escreveu, e quando</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés começou a escrever por volta de 1500 a.C.; Malaquias, o último livro, foi escrito por volta de 400 a.C. — mais de mil anos de composição, por autores das mais variadas vocações: reis, sacerdotes, juízes, profetas, pastores de ovelhas e de gado, como Amós. Todos judeus, escrevendo majoritariamente em hebraico, com pequenos trechos de Jeremias e Daniel em aramaico.</p>
+          <p>Existe também uma leitura mais liberal, que inverte essa ordem: como não aceita que Deus revele o futuro com antecedência, ela precisa explicar profecias cumpridas — como a metade final de Isaías, que fala do retorno do exílio antes de ele acontecer — como "vaticínio depois do evento", isto é, escritas depois de os fatos ocorrerem. Nessa visão, os profetas viriam antes da lei, e Moisés só teria escrito a Torá por volta de 400-500 a.C. A leitura tradicional, que este projeto segue, é a oposta: confia que Deus de fato anuncia o que vai acontecer antes que aconteça, e por isso recebe a ordem do próprio texto — primeiro a lei de Moisés, moldando o povo; depois os profetas, cobrando esse povo por não guardá-la.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → as fontes e os 39 livros</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">As fontes, e por que 39 livros</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os autores bíblicos usaram mais de um tipo de fonte. Alguns fatos só podiam vir de revelação direta de Deus — como os dias da criação, que ninguém testemunhou. Outros trechos preservam tradição oral, transmitida de geração em geração antes de ser registrada por escrito. E em vários pontos, os próprios livros citam fontes escritas anteriores que hoje se perderam — o "Livro das Guerras do Senhor" (Números 21), o "Livro do Justo" (2 Samuel 1), registros das crônicas dos reis de Israel e de Judá. Nada disso ameaça a inspiração: Deus preservou soberanamente, através de qualquer meio, exatamente aquilo que Ele queria que chegasse até a Escritura — do mesmo jeito que Lucas diz ter pesquisado fontes anteriores para escrever seu evangelho (Lucas 1.1-4).</p>
+          <p>Depois do cativeiro babilônico, muitos outros livros judaicos circularam — em grego, não em hebraico, já que o mundo tinha se tornado helenizado. São os chamados apócrifos e pseudepígrafos: livros históricos como os quatro livros dos Macabeus, ou apocalípticos como o Apocalipse de Abraão. Os próprios judeus nunca os reconheceram como Escritura — porque não eram em hebraico, não vinham de um profeta reconhecido, e às vezes traziam ensino estranho à lei de Moisés, como a oração pelos mortos em 2 Macabeus 12. Só 39 livros passaram por esse crivo e formam o Antigo Testamento: a base, os cinco livros de Moisés; em cima, os escritos que narram como a lei funcionou em Israel; acima, os profetas cobrando o povo por não a seguir; e ao lado, os livros de sabedoria mostrando a lei aplicada à vida prática.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → as Escrituras proféticas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">As Escrituras proféticas</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>É a essa coleção de 39 livros que o apóstolo Paulo se refere, ao fechar a carta aos Romanos, como "Escrituras proféticas" — porque todo o Antigo Testamento, a lei, os salmos, os profetas, apontava para a chegada do Messias anunciado desde Gênesis. Para Paulo, o Antigo Testamento não é um capítulo encerrado: é o fundamento sobre o qual o evangelho é anunciado.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Romanos 16.25-26</span>
+          <p>Ora, àquele que é poderoso para vos confirmar segundo o meu evangelho e a pregação de Jesus Cristo, conforme a revelação do mistério guardado em silêncio nos tempos eternos, mas agora manifesto e dado a conhecer por meio das Escrituras proféticas...</p>
+          <span class="ref">— Paulo, aos romanos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Muita gente acha o Antigo Testamento complicado — cheio de leis e genealogias — e chega a pensar que ele é "lei" enquanto o Novo Testamento é "graça", como se um cristão não precisasse mais dele. A pergunta que fica é como ler essas trinta e nove Escrituras que Jesus e os apóstolos citam o tempo todo como palavra de Deus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da lei ultrapassada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da graça anunciada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução ao Antigo Testamento</footer>
+</div>
+
+<script>
+  const panoramaData = [
+    { text: "Gênesis 1-11: da criação do mundo ao chamado de Abraão — a origem do universo, a queda, o dilúvio e a dispersão das nações em Babel." },
+    { text: "Gênesis 12-50: Abraão, Isaque, Jacó e José — Deus escolhe uma família para dela formar um povo, e a promessa desce de pai para filho." },
+    { text: "Êxodo a Deuteronômio: os descendentes de Abraão são libertados da escravidão no Egito e recebem a lei no monte Sinai — os cinco livros de Moisés." },
+    { text: "Josué a 2 Samuel: a conquista da terra prometida, e depois o período caótico dos juízes, quando 'cada um fazia o que bem lhe parecia'." },
+    { text: "1 Reis a 2 Crônicas: de Saul e Davi ao reino dividido entre Israel, no norte, e Judá, no sul — até a queda de Jerusalém em 586 a.C." },
+    { text: "Esdras, Neemias, Ester e os profetas do exílio, como Ageu, Zacarias e Malaquias: setenta anos de cativeiro na Babilônia, e o retorno à terra prometida." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um livro que passou da validade";
+      text.textContent = "Lido apenas como um manual de regras antigas, o Antigo Testamento soa como um capítulo encerrado — algo que o cristão deixou para trás ao chegar à graça do Novo Testamento, e que hoje só serve como pano de fundo histórico.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "As Escrituras que anunciam Cristo";
+      text.textContent = "Lido como Paulo o lê — Escrituras proféticas —, o Antigo Testamento não é um capítulo encerrado, mas o mesmo evangelho anunciado com antecedência: a mesma graça, a mesma promessa desde Gênesis 3.15, o mesmo Deus preparando, por mil e quinhentos anos, a chegada do seu Filho.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

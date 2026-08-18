@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Criação — Gênesis 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-genesis.html">Volver</a>
+    <span class="brand-track">Gênesis · I. História primitiva</span>
+  </div>
+
+  <div class="eyebrow">Origens · <span class="ref-tag">Gênesis 1</span></div>
+  <h1>A criação</h1>
+  <p class="sub">Antes de qualquer outra coisa na Bíblia, existe um Deus que fala — e o que ele fala acontece. Gênesis 1 não é uma aula de ciências: é a primeira e mais importante declaração de quem é Deus, e de quem somos nós diante dele.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M2 9 H6 M12 9 H16 M4 4 L7 7 M14 14 L11 11 M14 4 L11 7 M4 14 L7 11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um Deus que fala e ordena</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"No princípio, Deus" — a Bíblia não perde tempo provando que Deus existe. Ela simplesmente começa com ele, já presente antes de qualquer outra coisa, formando "os céus e a terra" a partir de uma massa "sem forma e vazia", coberta de trevas (Gênesis 1.1-2). Não há batalha entre deuses, nem matéria eterna competindo com Deus, como em praticamente todo mito de origem do antigo Oriente Próximo — só Deus, e o Espírito de Deus pairando sobre as águas.</p>
+          <p>A partir daí, um padrão se repete dez vezes no capítulo: "e disse Deus". Ele fala, e a realidade obedece. Toque para acompanhar os três primeiros dias, em que Deus separa e organiza os espaços do mundo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, formingData, 0, 'formingText')">Dia 1 — luz e trevas</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, formingData, 1, 'formingText')">Dia 2 — céu e águas</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, formingData, 2, 'formingText')">Dia 3 — terra e mar</button>
+          </div>
+          <div class="chip-text" id="formingText">Toque em cada dia para ver o que Deus separa e organiza.</div>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os dias que enchem o mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.4" stroke-width="1.3"/>
+          <path d="M9 2 V4 M9 14 V16 M2 9 H4 M14 9 H16" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Os dias que enchem o mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os três primeiros dias separam os espaços; os três seguintes os enchem — cada um respondendo exatamente ao espaço criado no dia paralelo. O sol e a lua preenchem a luz do dia 1; as aves e os peixes preenchem o céu e o mar do dia 2; os animais terrestres preenchem a terra do dia 3. Nada é deixado vazio. Toque para acompanhar:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, fillingData, 0, 'fillingText')">Dia 4 — sol, lua, estrelas</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, fillingData, 1, 'fillingText')">Dia 5 — aves e peixes</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, fillingData, 2, 'fillingText')">Dia 6 — animais da terra</button>
+          </div>
+          <div class="chip-text" id="fillingText">Toque em cada dia para ver o que Deus faz para habitar cada espaço.</div>
+          <p style="margin-top:14px;">Repare que Gênesis chama o sol e a lua apenas de "o luminar maior" e "o luminar menor" (1.16) — nunca pelos seus nomes, <em>Shemesh</em> e <em>Yarach</em>, que os povos vizinhos de Israel adoravam como deuses. É uma forma deliberada de rebaixar o sol e a lua a meros objetos criados, não divindades a serem temidas ou cultuadas.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o ápice da criação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="7" r="3" stroke-width="1.3"/>
+          <path d="M3 16 C3 11.5 6 9.5 9 9.5 C12 9.5 15 11.5 15 16" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O ápice: à imagem de Deus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No sexto dia, depois de formar os animais terrestres, algo muda no texto. Deus não diz apenas "haja" — ele delibera: "Façamos o homem à nossa imagem, conforme a nossa semelhança" (1.26). É a única criatura do capítulo criada assim, à imagem do próprio Criador, e é a única a quem Deus dá domínio sobre tudo o mais que fez.</p>
+          <p>"Homem e mulher os criou" (1.27) — os dois, igualmente, à imagem de Deus, os dois igualmente abençoados e comissionados a "frutificar, multiplicar-se, encher a terra e sujeitá-la" (1.28). Antes de qualquer lei, qualquer aliança, qualquer nação, a Bíblia já estabelece a dignidade igual de todo ser humano — homem e mulher — como fundamento de tudo o que vem depois. Nenhuma lei do Antigo Testamento, nenhuma ética do Novo, faz sentido sem essa base lançada no primeiro capítulo da Bíblia.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → como ler este capítulo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Como ler este capítulo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Cristãos fiéis às Escrituras não concordam entre si sobre exatamente como encaixar os "seis dias" de Gênesis 1 com a idade do universo — alguns defendem dias literais de 24 horas havendo poucos milhares de anos, outros veem "dias" como longas eras, outros ainda leem a estrutura de seis dias como uma moldura literária deliberada (os três primeiros dias formando espaços que os três seguintes preenchem, como vimos acima), sem que isso comprometa a inspiração do texto. Esse debate é real, e este projeto não tenta resolvê-lo aqui.</p>
+          <p>O que o próprio capítulo deixa claro, porém, independentemente da posição, é o que ele afirma sobre Deus: que ele é o único Criador, que criou por sua palavra, sem esforço nem conflito, que tudo o que fez ele chamou de "bom" (repetido sete vezes), e que fez o ser humano — não os astros, não os animais — à sua própria imagem. É essa a afirmação teológica central do capítulo, e é nela que a fé se apoia, não numa data exata.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o sétimo dia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O sétimo dia</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Depois de seis dias de trabalho, "no sétimo dia, Deus deu por findas as obras que fizera e, nesse dia, descansou" (2.2). Não porque estivesse cansado, mas para estabelecer um padrão: trabalho e descanso, um ritmo que Deus grava na própria estrutura da semana, e que mais tarde vira mandamento para Israel no Sinai — guardar o sábado porque "em seis dias fez o Senhor os céus e a terra... e ao sétimo dia descansou" (Êxodo 20.11).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Hebreus 4.9-10</span>
+          <p>Portanto, resta ainda um repouso sabático para o povo de Deus. Pois aquele que entra no descanso de Deus, também ele mesmo descansa de suas obras, assim como Deus, das suas.</p>
+          <span class="ref">— o autor aos hebreus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O escritor de Hebreus lê o descanso do sétimo dia como uma sombra de algo maior: o descanso final que Cristo oferece a quem crê. Gênesis 1 pode ser lido apenas como um relato técnico de como o mundo começou — ou pode ser lido, como o resto da Bíblia o lê, como o primeiro capítulo de uma história que aponta para adiante.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do relatório técnico</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do Deus que fala e descansa</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Gênesis · a criação</footer>
+</div>
+
+<script>
+  const formingData = [
+    { text: "Deus separa a luz das trevas, e chama a luz de 'dia' e as trevas de 'noite' — o primeiro dos três espaços que serão preenchidos nos dias seguintes." },
+    { text: "Deus separa as águas de cima das águas de baixo com uma expansão, o 'céu' — o segundo espaço, que será preenchido pelas aves e pelas nuvens." },
+    { text: "Deus separa a terra seca das águas reunidas, o 'mar', e faz a terra produzir vegetação — o terceiro espaço, que será preenchido pelos animais terrestres." }
+  ];
+  const fillingData = [
+    { text: "Deus faz o sol, a lua e as estrelas para governar o dia e a noite — preenchendo exatamente o espaço de luz e trevas separado no dia 1." },
+    { text: "Deus faz as aves para voarem no céu e os grandes animais marinhos para povoarem o mar — preenchendo o céu e as águas separados no dia 2." },
+    { text: "Deus faz os animais terrestres, e por fim o ser humano — preenchendo a terra seca separada no dia 3, e coroando toda a criação." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um relatório sobre como o mundo começou";
+      text.textContent = "Lido apenas como cronologia técnica, Gênesis 1 vira um campo de batalha entre ciência e fé — uma disputa sobre datas e mecanismos que distrai da própria afirmação do texto sobre quem é Deus.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um Deus que fala, ordena e descansa";
+      text.textContent = "Lido como o próprio texto se propõe, Gênesis 1 revela um Deus soberano que cria por sua palavra, sem esforço nem rival, faz do ser humano o ápice da sua obra, e estabelece um ritmo de descanso que aponta, séculos depois, para o repouso que Cristo oferece a quem nele confia.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

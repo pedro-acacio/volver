@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Gênesis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Pentateuco</div>
+    <h1>Gênesis</h1>
+    <p class="lede">O primeiro livro de Moisés, do princípio do mundo ao caixão de José no Egito. Diferente das outras trilhas de "Livros", Gênesis ganha várias reflexões — uma para cada bloco de capítulos, seguindo a própria estrutura de "gerações" do livro.</p>
+    <div class="stats-row">
+      <div class="stat"><b>13</b>disponíveis</div>
+      <div class="stat"><b>em construção</b>trilha completa</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-genesis.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução a Gênesis</div>
+        <div class="p-ref">Autor, estrutura e Cristo em Gênesis</div>
+        <p class="p-teaser">Antes da criação e dos patriarcas: quem escreveu, como o livro se organiza, e por que ele já é evangelho.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. HISTÓRIA PRIMITIVA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. História primitiva</h3>
+      <span class="cat-ref">Gênesis 1—11</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-criacao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A criação</div>
+        <div class="p-ref">Gênesis 1</div>
+        <p class="p-teaser">Seis dias, um sétimo de descanso, e um homem e uma mulher feitos à imagem de Deus.</p>
+      </a>
+      <a class="p-card available" href="licao-a-origem-do-mal.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A origem do mal</div>
+        <div class="p-ref">Gênesis 2—4</div>
+        <p class="p-teaser">O jardim do Éden, a serpente, a primeira queda, e o pecado batendo à porta de Caim.</p>
+      </a>
+      <a class="p-card available" href="licao-o-diluvio.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O dilúvio</div>
+        <div class="p-ref">Gênesis 6—10</div>
+        <p class="p-teaser">Um mundo corrompido, uma arca, e uma aliança de Deus com toda a criação depois das águas.</p>
+      </a>
+      <a class="p-card available" href="licao-a-torre-de-babel.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A Torre de Babel</div>
+        <div class="p-ref">Gênesis 11</div>
+        <p class="p-teaser">Um povo que quer fazer um nome para si mesmo, e a dispersão que prepara o chamado de Abrão.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. HISTÓRIA PATRIARCAL ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. História patriarcal</h3>
+      <span class="cat-ref">Gênesis 12—36</span>
+      <span class="cat-count">8 de 9 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-chamado-de-abrao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O chamado de Abrão</div>
+        <div class="p-ref">Gênesis 12</div>
+        <p class="p-teaser">"Sai da tua terra" — e a promessa de uma descendência, uma terra e uma bênção para todas as nações.</p>
+      </a>
+      <a class="p-card available" href="licao-briga-de-familia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Briga de família</div>
+        <div class="p-ref">Gênesis 13—14</div>
+        <p class="p-teaser">Abrão cede a melhor terra a Ló, e depois vai à guerra para resgatar o sobrinho que escolheu Sodoma.</p>
+      </a>
+      <a class="p-card available" href="licao-salvacao-pela-fe.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Salvação pela fé</div>
+        <div class="p-ref">Gênesis 15—17</div>
+        <p class="p-teaser">A aliança selada em sonho, Agar e Ismael, e o sinal da circuncisão gravado na própria carne.</p>
+      </a>
+      <a class="p-card available" href="licao-sodoma-e-gomorra.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Sodoma e Gomorra</div>
+        <div class="p-ref">Gênesis 18—19</div>
+        <p class="p-teaser">Abraão intercede por uma cidade inteira, e Ló é retirado dela em cima da hora.</p>
+      </a>
+      <a class="p-card available" href="licao-o-sacrificio-de-isaque.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O sacrifício de Isaque</div>
+        <div class="p-ref">Gênesis 20—22</div>
+        <p class="p-teaser">O monte Moriá, o filho amado no altar, e um cordeiro que Deus mesmo proveu.</p>
+      </a>
+      <a class="p-card available" href="licao-como-lidar-com-o-luto.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Como lidar com o luto</div>
+        <div class="p-ref">Gênesis 23—24</div>
+        <p class="p-teaser">A morte de Sara, e a busca cuidadosa de um servo por uma esposa para Isaque.</p>
+      </a>
+      <a class="p-card available" href="licao-jaco-o-enganador.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Jacó, o enganador</div>
+        <div class="p-ref">Gênesis 25—27</div>
+        <p class="p-teaser">Dois irmãos, uma primogenitura vendida por um prato de lentilhas, e uma bênção roubada.</p>
+      </a>
+      <a class="p-card available" href="licao-a-obsessao-de-jaco-por-raquel.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A obsessão de Jacó por Raquel</div>
+        <div class="p-ref">Gênesis 28—29</div>
+        <p class="p-teaser">A escada até o céu em Betel, e vinte anos de trabalho para Labão por causa de um só amor.</p>
+      </a>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">Jacó luta com Deus</div>
+        <div class="p-ref">Gênesis 30—33</div>
+        <p class="p-teaser">A fuga de Labão, uma luta à noite junto ao rio Jaboque, e a reconciliação com Esaú.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== III. HISTÓRIA DE JOSÉ ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. História de José</h3>
+      <span class="cat-ref">Gênesis 37—50</span>
+      <span class="cat-count">em construção</span>
+    </div>
+    <div class="card-grid">
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A desgraça de José</div>
+        <div class="p-ref">Gênesis 37</div>
+        <p class="p-teaser">A túnica de várias cores, o ciúme dos irmãos, e uma cisterna que vira o início de tudo.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">José na casa de Potifar</div>
+        <div class="p-ref">Gênesis 38—39</div>
+        <p class="p-teaser">Judá e Tamar num desvio da linhagem, e José recusando o pecado mesmo escravo e sozinho.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">José, governador do Egito</div>
+        <div class="p-ref">Gênesis 40—41</div>
+        <p class="p-teaser">Sonhos interpretados na prisão, e a queda até a exaltação ao segundo posto mais alto do Egito.</p>
+      </div>
+      <div class="p-card locked"><span class="badge off">Em breve</span>
+        <div class="p-title">A família de José vai para o Egito</div>
+        <div class="p-ref">Gênesis 42—50</div>
+        <p class="p-teaser">Os irmãos que o venderam vêm pedir pão, a reconciliação, e a família inteira se muda para o Egito.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Gênesis · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
