@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mordomia do corpo — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mordomia-crista.html">Volver</a>
+    <span class="brand-track">Mordomia Cristã</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 01 · <span class="ref-tag">1 Coríntios 3:16</span></div>
+  <h1>Mordomia do corpo</h1>
+  <p class="sub">O corpo não é propriedade privada — é templo. A forma como você o trata é, ela mesma, um ato de adoração ou de negligência.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O corpo é templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Não sabeis vós que sois santuário de Deus, e que o Espírito de Deus habita em vós?"</em> (1 Co 3:16). Paulo corrige divisões na igreja lembrando que o corpo é lugar habitado por Deus.</p>
+          <p>Isso muda a pergunta de "o que posso fazer com meu corpo" para "o que devo fazer com o que não é só meu".</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o corpo é para o Senhor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O corpo é para o Senhor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Há duas formas de tratar o mesmo corpo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, corpoData, 0, 'corpoText')">O corpo negligenciado</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, corpoData, 1, 'corpoText')">O corpo oferecido</button>
+          </div>
+          <div class="chip-text" id="corpoText">Toque para comparar as duas formas.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → comprados por preço</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Comprados por preço</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Porque fostes comprados por preço; glorificai, pois, a Deus no vosso corpo e no vosso espírito, os quais pertencem a Deus."</em> (1 Co 6:20)</p>
+          <p>A mordomia do corpo nasce de pertencimento, não de culpa — alguém pagou por ele. Isso inclui sono, alimentação, descanso, sexualidade.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">1 Coríntios 3:16</span>
+          <p>Não sabeis vós que sois santuário de Deus, e que o Espírito de Deus habita em vós?</p>
+          <span class="ref">— Mordomia Cristã</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O corpo não pertence só a você — foi comprado por preço e é habitado por Deus. Cuidar dele não é vaidade nem indiferença, é reconhecer de quem ele é.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de tratar o corpo como propriedade exclusiva</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de tratar o corpo como templo emprestado</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · mordomia cristã · reflexão interativa</footer>
+</div>
+
+<script>
+  const corpoData = [
+    { text: "Tratado como propriedade exclusiva — usado sem limite, sem descanso, sem cuidado, porque 'é meu e faço o que quiser' (contra 1 Co 6:19-20)." },
+    { text: "'Rogo-vos, pois, irmãos, que apresenteis o vosso corpo em sacrifício vivo' (Rm 12:1) — cuidado não por vaidade, mas porque é instrumento de adoração." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Propriedade exclusiva";
+      text.textContent = "Decide sozinho o que fazer com o corpo, sem considerar que ele tem um dono.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Templo emprestado";
+      text.textContent = "Cuida do corpo — sono, comida, descanso, pureza — como quem cuida de um espaço que Deus habita.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

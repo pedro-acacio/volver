@@ -110,6 +110,7 @@
           '<a class="sidebar-sublink" href="' + root + 'fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a>' +
           '<a class="sidebar-sublink" href="' + root + 'disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a>' +
           '<a class="sidebar-sublink" href="' + root + 'trindade/biblioteca-trindade.html">Trindade</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'mordomia-crista/biblioteca-mordomia-crista.html">Mordomia Cristã</a>' +
         '</div>' +
         '<a class="sidebar-link" href="' + root + 'favoritos.html">Favoritos</a>' +
         '<a class="sidebar-link" href="' + root + 'continue-a-volver.html">Continue a Volver</a>' +

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mordomia da família — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mordomia-crista.html">Volver</a>
+    <span class="brand-track">Mordomia Cristã</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 08 · <span class="ref-tag">Josué 24:15</span></div>
+  <h1>Mordomia da família</h1>
+  <p class="sub">Antes de qualquer outra mordomia, existe uma decisão de casa — quem a família vai servir não é assunto individual, é declaração coletiva.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Eu e a minha casa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Porém, se vos parece mal aos vossos olhos servir ao SENHOR, escolhei hoje a quem sirvais... porém, eu e a minha casa serviremos ao SENHOR."</em> (Js 24:15)</p>
+          <p>Josué convoca o povo a escolher, mas declara sua própria casa como território já decidido — a mordomia da família começa com essa clareza de direção.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → ensinar com diligência</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Ensinar com diligência</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Há duas formas de transmitir a fé em casa:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, familiaData, 0, 'familiaText')">Instrução acidental</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, familiaData, 1, 'familiaText')">Instrução diligente</button>
+          </div>
+          <div class="chip-text" id="familiaText">Toque para comparar as duas formas.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → instrui o menino</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Instrui o menino</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Instrui o menino no caminho em que deve andar, e até quando envelhecer não se desviará dele."</em> (Pv 22:6)</p>
+          <p>A promessa não é mágica automática, é padrão sábio — mordomar a família é administrar tempo, palavra e exemplo em nome de outra pessoa que ainda está sendo formada.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Josué 24:15b</span>
+          <p>Eu e a minha casa serviremos ao SENHOR.</p>
+          <span class="ref">— Mordomia Cristã</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A fé de uma casa não se transmite por acaso — nasce de uma decisão declarada e se sustenta pela instrução repetida no dia a dia.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da fé deixada ao acaso</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da fé declarada e ensinada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · mordomia cristã · reflexão interativa</footer>
+</div>
+
+<script>
+  const familiaData = [
+    { text: "A fé é mencionada ocasionalmente, sem repetição nem constância — fica ao acaso do que sobra de tempo e energia." },
+    { text: "'As ensinarás a teus filhos, e delas falarás assentado em tua casa, e andando pelo caminho' (Dt 6:7) — presente no cotidiano, não reservada a ocasiões especiais." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Fé deixada ao acaso";
+      text.textContent = "Espera que a família 'absorva' a fé sem nunca declará-la ou ensiná-la com intenção.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Fé declarada e ensinada";
+      text.textContent = "Toma a decisão por sua casa como Josué tomou, e a repete no dia a dia.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
