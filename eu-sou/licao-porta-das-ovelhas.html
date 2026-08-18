@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eu sou a porta das ovelhas — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-eu-sou.html">Volver</a>
+    <span class="brand-track">Eu Sou</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 03 · <span class="ref-tag">João 10:9</span></div>
+  <h1>Eu sou a porta das ovelhas</h1>
+  <p class="sub">Jesus fala logo depois de os fariseus expulsarem da sinagoga o cego que ele havia curado — homens que se consideravam guardiões da entrada, mas que fecharam a porta na cara de quem enxergava pela primeira vez.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Guardiões que fecharam a porta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo anterior termina com os fariseus expulsando da sinagoga o homem que nasceu cego, só porque ele defendeu quem lhe devolveu a visão (João 9:34). Homens que se diziam responsáveis pelo aprisco acabaram de trancar a porta para quem mais precisava entrar.</p>
+          <p>É diante desses mesmos líderes que Jesus declara: <em>"Eu sou a porta; se alguém entrar por mim, salvar-se-á, e entrará, e sairá, e achará pastagens."</em> (João 10:9) A verdadeira entrada não é controlada por quem se autodeclara guardião — é ele mesmo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → duas formas de entrar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Duas formas de entrar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus descreve dois modos radicalmente diferentes de tentar chegar ao aprisco:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, portaData, 0, 'portaText')">Entrar por outro caminho</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, portaData, 1, 'portaText')">Entrar pela porta certa</button>
+          </div>
+          <div class="chip-text" id="portaText">Toque para comparar os dois caminhos.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que rouba e o que dá vida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que rouba e o que dá vida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"O ladrão não vem senão a roubar, e matar, e destruir; eu vim para que tenham vida, e a tenham com abundância."</em> (João 10:10)</p>
+          <p>Toda entrada que não passa por Jesus promete acesso, mas na verdade tira — rouba a segurança, mata a esperança, destrói o que parecia sólido. A porta verdadeira faz o oposto: dá acesso, dá segurança, dá pastagem, e dá vida em fartura, não em migalhas.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">João 10:9</span>
+          <p>Eu sou a porta; se alguém entrar por mim, salvar-se-á, e entrará, e sairá, e achará pastagens.</p>
+          <span class="ref">— João</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Tentar acesso a Deus por mérito próprio, ritual religioso ou qualquer outra via é subir pelo muro, como o ladrão da parábola. Só há uma porta que garante entrada, saída e pastagem — e ela tem um nome, não um método.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Entrar por outro caminho</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Entrar pela porta certa</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · discursos Eu Sou · reflexão interativa</footer>
+</div>
+
+<script>
+  const portaData = [
+    { text: "\"Aquele que não entra pela porta no aprisco das ovelhas, mas sobe por outra parte, é ladrão e salteador\" (v.1) — tentar acesso a Deus por mérito, ritual ou qualquer via alternativa, escalando o muro em vez de usar a porta." },
+    { text: "Acesso, segurança e sustento — tudo através de Jesus especificamente. \"Entrará, e sairá, e achará pastagens\" (v.9): liberdade de movimento e provisão garantida, não apenas permissão de entrada." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Entrar por outro caminho";
+      text.textContent = "Sobe pelo muro em vez de usar a porta — confia no próprio esforço, mérito ou ritual para chegar a Deus, e encontra apenas o que o ladrão deixa para trás.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Entrar pela porta certa";
+      text.textContent = "Entra por Jesus e encontra o que só a porta verdadeira oferece: salvação, liberdade para ir e vir, e pastagem garantida.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>
