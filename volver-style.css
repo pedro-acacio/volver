@@ -60,7 +60,7 @@ h1{
 .tl-marker .icon path, .tl-marker .icon circle{ stroke: var(--text-dim); transition: stroke .3s ease; }
 .tl-item.active .tl-marker{ background: var(--gold); border-color: var(--gold); }
 .tl-item.active .tl-marker .icon path, .tl-item.active .tl-marker .icon circle{ stroke: var(--bg); }
-.tl-item.done .tl-marker{ background: rgba(217,164,65,0.14); border-color: var(--gold); }
+.tl-item.done .tl-marker{ background: linear-gradient(rgba(217,164,65,0.14), rgba(217,164,65,0.14)), var(--bg); border-color: var(--gold); }
 .tl-item.done .tl-marker .icon path, .tl-item.done .tl-marker .icon circle{ stroke: var(--gold); }
 .tl-item.locked .tl-marker{ cursor:not-allowed; opacity:.5; }
 
