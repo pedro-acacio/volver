@@ -416,6 +416,28 @@
 </style>
 </head>
 <body>
+<script>
+(function(){
+  if(sessionStorage.getItem('volver_session_shown') === '1') return;
+  document.write(
+    '<div class="intro-splash" id="volverIntroSplash">' +
+      '<div class="intro-boat-wrap">' +
+        '<svg class="intro-ripples" viewBox="0 0 140 40" fill="none">' +
+          '<ellipse class="ring r1" cx="70" cy="24" rx="26" ry="6"/>' +
+          '<ellipse class="ring r2" cx="70" cy="24" rx="26" ry="6"/>' +
+          '<ellipse class="ring r3" cx="70" cy="24" rx="26" ry="6"/>' +
+        '</svg>' +
+        '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
+          '<path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>' +
+          '<path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>' +
+        '</svg>' +
+      '</div>' +
+      '<div class="intro-word">Volver</div>' +
+    '</div>'
+  );
+})();
+</script>
 <div class="wrap">
 
   <div class="topbar">

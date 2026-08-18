@@ -596,22 +596,8 @@
   }
 
   function buildIntroSplash(){
-    if(sessionStorage.getItem(STORAGE_SESSION_SHOWN) === '1') return;
-
-    var el = document.createElement('div');
-    el.className = 'intro-splash';
-    el.id = 'volverIntroSplash';
-    el.innerHTML =
-      '<div class="intro-boat-wrap">' +
-        '<svg class="intro-ripples" viewBox="0 0 140 40" fill="none">' +
-          '<ellipse class="ring r1" cx="70" cy="24" rx="26" ry="6"/>' +
-          '<ellipse class="ring r2" cx="70" cy="24" rx="26" ry="6"/>' +
-          '<ellipse class="ring r3" cx="70" cy="24" rx="26" ry="6"/>' +
-        '</svg>' +
-        BOAT_SVG +
-      '</div>' +
-      '<div class="intro-word">Volver</div>';
-    document.body.insertBefore(el, document.body.firstChild);
+    var el = document.getElementById('volverIntroSplash');
+    if(!el) return;
 
     function dismiss(){
       if(el.classList.contains('fade-out')) return;
