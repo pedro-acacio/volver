@@ -64,7 +64,7 @@ h1{
 .tl-item.done .tl-marker .icon path, .tl-item.done .tl-marker .icon circle{ stroke: var(--gold); }
 .tl-item.locked .tl-marker{ cursor:not-allowed; opacity:.5; }
 
-.tl-line{ position:absolute; left:18px; top:38px; bottom:-6px; width:2px; background: var(--panel-line); }
+.tl-line{ position:absolute; left:18px; top:38px; bottom:0; width:2px; background: var(--panel-line); }
 .tl-item.done .tl-line{ background: var(--gold); }
 
 .tl-head{ display:flex; align-items:center; height:38px; cursor:pointer; gap:10px; }
