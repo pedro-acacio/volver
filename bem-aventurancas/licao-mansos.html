@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mansos — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-bem-aventurancas.html">Volver</a>
+    <span class="brand-track">Bem-aventuranças</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 03 · <span class="ref-tag">Mateus 5:5</span></div>
+  <h1>Mansos</h1>
+  <p class="sub">A terceira bem-aventurança promete herança, não perda, a quem entrega o direito de se impor.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Força inteira sob controle</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Bem-aventurados os mansos, porque eles herdarão a terra."</em> (Mt 5:5)</p>
+          <p>Mansidão não é fraqueza nem ausência de força — é força inteira, mantida sob controle. É a diferença entre não poder revidar e escolher não revidar. E a promessa que Jesus liga a essa qualidade é surpreendente: não perda, mas herança.</p>
+          <p>Num mundo que ensina a impor-se para não ser esmagado, essa bem-aventurança inverte a lógica: quem entrega o direito de se impor é quem, no fim, recebe a terra.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → duas formas de usar a força</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Duas formas de usar a força</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante de ser contrariado, há duas respostas possíveis:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, mansoData, 0, 'mansoText')">Força sem freio</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, mansoData, 1, 'mansoText')">Força mansa</button>
+          </div>
+          <div class="chip-text" id="mansoText">Toque para comparar as duas formas.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → herdarão a terra</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Herdarão a terra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Salmo 37 repete quase a mesma frase de Jesus, séculos antes: <em>"os mansos herdarão a terra, e se deleitarão com abundância de paz"</em> (Sl 37:11).</p>
+          <p>O contexto do salmo é revelador: a mansidão ali está ligada a não se irar contra os que fazem o mal, a confiar no SENHOR em vez de tomar a vingança nas próprias mãos (Sl 37:1,7-8). A promessa da terra pertence a quem entrega o acerto de contas a Deus.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 5:5</span>
+          <p>Bem-aventurados os mansos, porque eles herdarão a terra.</p>
+          <span class="ref">— Mateus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Moisés é descrito como "o mais manso de todos os homens que havia sobre a terra" (Nm 12:3) — e ainda assim liderou um povo inteiro. Mansidão não esvazia a força; apenas a coloca nas mãos certas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Força sem freio</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Força mansa e herdada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · bem-aventuranças · reflexão interativa</footer>
+</div>
+
+<script>
+  const mansoData = [
+    { text: "Impõe-se, exige, reage com violência quando contrariado — a força usada para tomar, não para servir." },
+    { text: "Números 12:3 descreve Moisés como \"o mais manso de todos os homens\" — apesar de toda a autoridade que tinha sobre o povo, não a usava para se impor." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Força sem freio";
+      text.textContent = "Usa a força para se impor a cada contrariedade — e no fim não conquista nada além do próprio desgaste.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Força mansa e herdada";
+      text.textContent = "Entrega o acerto de contas a Deus e mantém a força sob controle — e é essa mesma pessoa que recebe a herança prometida.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

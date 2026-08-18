@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limpos de coração — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-bem-aventurancas.html">Volver</a>
+    <span class="brand-track">Bem-aventuranças</span>
+  </div>
+
+  <div class="eyebrow">Reflexão 06 · <span class="ref-tag">Mateus 5:8</span></div>
+  <h1>Limpos de coração</h1>
+  <p class="sub">A sexta bem-aventurança olha para dentro — e promete a maior das visões a quem tem menos a esconder.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 8 M9 12 L9 12.5" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">De dentro para fora</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p><em>"Bem-aventurados os limpos de coração, porque eles verão a Deus."</em> (Mt 5:8)</p>
+          <p>Jesus não fala de comportamento correto na superfície — fala do coração, a raiz de onde nascem as ações. Pureza de fachada é possível até para quem esconde muita coisa por dentro; pureza de coração é outra categoria inteira, porque não tem onde se esconder.</p>
+          <p>E a promessa liga essa pureza a algo íntimo: ver a Deus. Um coração dividido enxerga menos; um coração limpo enxerga o que mais importa.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → fachada ou realidade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 9 L11 12 L16 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Fachada ou realidade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Há dois jeitos de lidar com a pureza:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, coracaoData, 0, 'coracaoText')">Pureza só de fachada</button>
+            <button class="chip-btn chip-calm" onclick="selectChip(this, coracaoData, 1, 'coracaoText')">Coração limpo de verdade</button>
+          </div>
+          <div class="chip-text" id="coracaoText">Toque para comparar as duas posturas.</div>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → quem subirá ao monte do SENHOR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="4.5" r="3" stroke-width="1.2"/>
+          <path d="M4 16 C4 11 6 8 9 8 C12 8 14 11 14 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Quem subirá ao monte do SENHOR?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Salmo 24 faz a pergunta antes de responder: <em>"quem subirá ao monte do SENHOR?... o limpo de mãos e puro de coração"</em> (Sl 24:3-4).</p>
+          <p>Mãos limpas e coração puro andam juntos no salmo — a ação correta nasce da condição interior correta. Não é possível separar as duas por muito tempo: o que está no coração acaba aparecendo nas mãos.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão revelado</div>
+      <div class="tl-body">
+
+        <div class="verse-card">
+          <span class="tag">Mateus 5:8</span>
+          <p>Bem-aventurados os limpos de coração, porque eles verão a Deus.</p>
+          <span class="ref">— Mateus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus chamou os fariseus de "sepulcros caiados", "por fora... formosos, mas interiormente estão cheios de ossos de mortos" (Mt 23:27) — a imagem exata da pureza que é só fachada. Davi, ao contrário, pede o oposto: <em>"cria em mim, ó Deus, um coração puro"</em> (Sl 51:10) — não reforma externa, mas transformação de dentro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Pureza de fachada</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Coração limpo de verdade</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · bem-aventuranças · reflexão interativa</footer>
+</div>
+
+<script>
+  const coracaoData = [
+    { text: "Comportamento correto por fora, coração dividido por dentro — como os fariseus, \"sepulcros caiados... por fora formosos, mas interiormente cheios de ossos de mortos\" (Mt 23:27)." },
+    { text: "\"Cria em mim, ó Deus, um coração puro\" (Sl 51:10) — um pedido interior, dirigido a Deus, não uma tentativa de reforma só externa." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Pureza de fachada";
+      text.textContent = "Cuida da aparência por fora enquanto o coração permanece dividido por dentro — e por isso enxerga cada vez menos.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Coração limpo de verdade";
+      text.textContent = "Pede a Deus um coração novo, não apenas um comportamento ajustado — e é essa pessoa que a promessa alcança: ela verá a Deus.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

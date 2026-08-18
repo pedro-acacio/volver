@@ -111,6 +111,7 @@
           '<a class="sidebar-sublink" href="' + root + 'disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a>' +
           '<a class="sidebar-sublink" href="' + root + 'trindade/biblioteca-trindade.html">Trindade</a>' +
           '<a class="sidebar-sublink" href="' + root + 'mordomia-crista/biblioteca-mordomia-crista.html">Mordomia Cristã</a>' +
+          '<a class="sidebar-sublink" href="' + root + 'bem-aventurancas/biblioteca-bem-aventurancas.html">Bem-aventuranças</a>' +
         '</div>' +
         '<a class="sidebar-link" href="' + root + 'favoritos.html">Favoritos</a>' +
         '<a class="sidebar-link" href="' + root + 'continue-a-volver.html">Continue a Volver</a>' +
