@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As Dez Pragas — Êxodo 7—11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-exodo.html">Volver</a>
+    <span class="brand-track">Êxodo · I. Deus liberta seu povo</span>
+  </div>
+
+  <div class="eyebrow">Libertação · <span class="ref-tag">Êxodo 7—11</span></div>
+  <h1>As dez pragas</h1>
+  <p class="sub">Não é só faraó contra Moisés — é o Senhor contra cada deus que o Egito adorava. Praga por praga, fica cada vez mais claro quem realmente governa a natureza.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M4 5 L14 13 M14 5 L4 13" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Deus contra os deuses do Egito</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés e Arão voltam a faraó, e a vara de Arão vira serpente diante dele. Os magos egípcios conseguem imitar o sinal com suas próprias artes ocultas — mas a serpente de Arão devora as deles (7.10-12), um primeiro sinal, ainda discreto, de quem tem mais poder. Faraó, porém, endurece o coração e recusa.</p>
+          <p>Cada uma das pragas que se seguem não é aleatória: mira diretamente em divindades específicas que o Egito adorava — o Nilo, venerado como deus, vira sangue; a rã, símbolo da deusa Heqet, infesta a terra até virar praga insuportável; o sol, adorado como o deus Rá, é apagado por trevas. Séculos depois, o próprio texto resume o propósito: "e contra todos os deuses do Egito executarei juízos" (12.12). Não é um espetáculo de força bruta — é um julgamento teológico, mostrando que nenhum desses "deuses" tem poder nenhum diante do Senhor.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as primeiras pragas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12 Q9 8 15 12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 15 Q9 11 15 15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As primeiras pragas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada uma das seis primeiras pragas para acompanhar a escalada:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, firstPlaguesData, 0, 'firstPlaguesText')">1. Água em sangue</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, firstPlaguesData, 1, 'firstPlaguesText')">2. Rãs</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, firstPlaguesData, 2, 'firstPlaguesText')">3. Piolhos</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, firstPlaguesData, 3, 'firstPlaguesText')">4. Moscas</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, firstPlaguesData, 4, 'firstPlaguesText')">5. Peste no gado</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, firstPlaguesData, 5, 'firstPlaguesText')">6. Úlceras</button>
+          </div>
+          <div class="chip-text" id="firstPlaguesText">Toque em cada praga para ver o que ela revelou.</div>
+          <p style="margin-top:14px;">A partir da terceira praga, os magos egípcios já não conseguem imitar o sinal, e admitem a faraó: "isto é o dedo de Deus" (8.19). A partir da quarta, o texto começa a marcar uma distinção clara: a terra de Gósen, onde os israelitas viviam, fica livre de cada nova praga (8.22; 9.4,26).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → as pragas finais</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <path d="M9 2.5 V4 M9 14 V15.5 M2.5 9 H4 M14 9 H15.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">As pragas finais</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Toque em cada uma das três pragas seguintes, cada vez mais severas:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, lastPlaguesData, 0, 'lastPlaguesText')">7. Saraiva</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, lastPlaguesData, 1, 'lastPlaguesText')">8. Gafanhotos</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, lastPlaguesData, 2, 'lastPlaguesText')">9. Trevas</button>
+          </div>
+          <div class="chip-text" id="lastPlaguesText">Toque em cada praga para ver como faraó reagiu.</div>
+          <p style="margin-top:14px;">A cada nova praga, faraó tenta negociações parciais — deixar só os homens irem, ou o povo mas não os rebanhos — todas recusadas por Moisés, porque a exigência de Deus era clara e completa: "deixa ir o meu povo" (10.3). Depois da nona praga, faraó expulsa Moisés com uma ameaça: "não continues mais a ver o meu rosto; porque no dia em que vires o meu rosto morrerás" (10.28).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o coração endurecido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C5 3 3 7 3 10 C3 13.5 6 16 9 16 C12 16 15 13.5 15 10 C15 7 13 3 9 3 Z" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O coração endurecido</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao longo dos capítulos, o texto alterna deliberadamente entre duas expressões: às vezes diz que "o Senhor endureceu o coração de faraó", outras vezes que "faraó endureceu o seu próprio coração". As duas coisas são verdadeiras ao mesmo tempo — faraó escolhe, repetidamente, recusar a evidência diante dele; e Deus, soberano até sobre essa recusa, a usa para revelar seu próprio poder com ainda mais clareza a cada praga.</p>
+          <p>Depois da nona praga, Deus anuncia a Moisés a décima e última: à meia-noite, todo primogênito do Egito morreria — a única praga que exigiria uma resposta específica de fé por parte de Israel, não apenas proteção automática por estarem em Gósen.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → um coração que se recusa a ceder</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um coração que se recusa a ceder</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Séculos depois, Paulo usa exatamente o exemplo de faraó para argumentar sobre a soberania de Deus na história — mesmo diante de evidências esmagadoras, repetidas nove vezes, o coração humano pode continuar escolhendo a recusa.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Romanos 9.17-18</span>
+          <p>Pois a Escritura diz a faraó: para isto mesmo te levantei, para mostrar em ti o meu poder... Portanto, tem misericórdia de quem quer, e endurece a quem quer.</p>
+          <span class="ref">— Paulo, aos romanos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nove pragas, nove demonstrações inegáveis de poder divino contra cada deus egípcio — e faraó ainda assim recusa. É um retrato assustador de quanto o coração humano pode resistir, mesmo diante da evidência mais clara possível, quando já escolheu, repetidamente, não ceder.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do coração que se endurece</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do coração que cede diante de Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Êxodo · as dez pragas</footer>
+</div>
+
+<script>
+  const firstPlaguesData = [
+    { text: "O Nilo — venerado no Egito como fonte divina de vida — vira sangue, matando os peixes e tornando a água imprópria para beber (7.14-25)." },
+    { text: "Rãs, associadas à deusa Heqet, invadem casas, camas e fornos em número incontável, até faraó implorar que Moisés interceda para removê-las (8.1-15)." },
+    { text: "O pó da terra vira piolhos por todo o Egito — e é aqui que os magos egípcios, pela primeira vez, falham em replicar o sinal e admitem: 'isto é o dedo de Deus' (8.16-19)." },
+    { text: "Enxames de moscas cobrem o Egito, mas poupam Gósen — a primeira vez que o texto marca explicitamente essa distinção entre os dois povos (8.20-32)." },
+    { text: "Uma peste mortal atinge o gado dos egípcios, mas nenhum animal de Israel morre (9.1-7)." },
+    { text: "Úlceras dolorosas cobrem egípcios e animais — até os próprios magos, que já não conseguem nem ficar de pé diante de Moisés (9.8-12)." }
+  ];
+  const lastPlaguesData = [
+    { text: "Uma chuva de granizo e fogo destrói plantações e animais deixados ao relento; faraó chega a confessar 'pequei esta vez; o Senhor é justo' — mas volta atrás assim que a praga cessa (9.13-35)." },
+    { text: "Gafanhotos cobrem toda a terra, devorando o que a saraiva havia poupado — os próprios conselheiros de faraó já imploram que ele ceda, dizendo 'não sabes ainda que o Egito está destruído?' (10.1-20)." },
+    { text: "Trevas 'que se podem apalpar' cobrem o Egito por três dias inteiros — exceto em Gósen, onde havia luz em todas as moradas dos filhos de Israel (10.21-29)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ceder só na hora da dor, e voltar atrás depois";
+      text.textContent = "É faraó, praga após praga: confessando 'pequei' quando a dor é insuportável, e endurecendo de novo assim que ela passa — arrependimento de circunstância, não de coração.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ceder diante da evidência, antes que seja tarde demais";
+      text.textContent = "É reconhecer, já na primeira ou segunda praga, quem realmente governa — em vez de esperar nove avisos ignorados até que reste só a décima, e mais dura, consequência.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
