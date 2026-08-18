@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Travessia do Mar Vermelho — Êxodo 14—15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-exodo.html">Volver</a>
+    <span class="brand-track">Êxodo · I. Deus liberta seu povo</span>
+  </div>
+
+  <div class="eyebrow">Libertação · <span class="ref-tag">Êxodo 14—15</span></div>
+  <h1>A travessia do mar Vermelho</h1>
+  <p class="sub">Encurralado entre o mar à frente e o exército mais temido do mundo antigo atrás, Israel aprende, numa única noite, o que significa ficar quieto e ver o livramento do Senhor.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 Q9 10 15 14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 3 V11" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma armadilha aparente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus ordena algo estranho: em vez de seguir direto para longe do Egito, Israel deveria voltar e acampar junto ao mar — de propósito, para que faraó pensasse: "andam eles confusos nesta terra; o deserto os encerrou" (14.3). É uma armadilha deliberada, mas ao contrário: Deus quer que faraó os persiga, para revelar sua glória de forma ainda mais completa.</p>
+          <p>O coração de faraó, mais uma vez, se endurece — ele lamenta ter deixado Israel partir, e sai em perseguição com seiscentos dos melhores carros de guerra do Egito, além de toda a cavalaria disponível. Israel, acampado junto ao mar, vê a poeira do exército egípcio se aproximando no horizonte.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o pânico e a resposta de Moisés</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 5 L13 13 M13 5 L5 13" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O pânico e a resposta de Moisés</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O povo entra em pânico: "faltavam sepulcros no Egito, para que nos trouxesses a morrer no deserto? Por que nos fizeste isto, fazendo-nos sair do Egito?" (14.11) — preferem, no desespero do momento, a escravidão conhecida à liberdade incerta diante de um exército armado.</p>
+          <p>A resposta de Moisés se tornaria uma das frases mais citadas de todo o Êxodo: "não temais, estai quietos, e vede o livramento do Senhor, que hoje vos fará; porque aos egípcios, que hoje vistes, nunca mais os vereis. O Senhor pelejará por vós, e vós vos calareis" (14.13-14). Uma fé que, naquele momento, ainda não tinha nenhuma prova visível de que daria certo.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o mar se abre</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 5 Q9 2 15 5" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M3 13 Q9 16 15 13" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O mar se abre</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus responde a Moisés com uma ordem prática: pare de clamar, e aja — estenda a mão sobre o mar. A coluna de nuvem se move para trás do povo, entre Israel e o exército egípcio, escura de um lado e iluminando a noite do outro. Um forte vento oriental sopra a noite inteira, abrindo um caminho em terra seca no meio do mar, com paredes de água dos dois lados.</p>
+          <p>Israel atravessa em segurança; os egípcios, perseguindo, entram atrás deles — mas Deus perturba o exército, travando as rodas de seus carros. Ao amanhecer, Moisés estende a mão novamente, e as águas voltam ao seu lugar, engolindo todo o exército egípcio. "E viu Israel a grande mão que o Senhor exercera contra os egípcios... e creram no Senhor, e em Moisés, seu servo" (14.31).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o cântico de Moisés</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15" stroke-width="1.2"/>
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O cântico de Moisés</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Do outro lado do mar, Moisés e todo o povo cantam: "cantarei ao Senhor, porque gloriosamente triunfou; lançou no mar o cavalo e o seu cavaleiro" (15.1) — o primeiro cântico registrado em toda a Bíblia, celebrando não apenas a vitória, mas o próprio caráter de Deus: sua santidade, sua majestade, sua fidelidade em conduzi-los à sua morada santa.</p>
+          <p>Miriã, irmã de Moisés, lidera as mulheres com pandeiros e danças, respondendo em cântico: "cantai ao Senhor, porque gloriosamente triunfou" (15.21) — um eco cantado do que Moisés já havia proclamado. É difícil exagerar o contraste: o mesmo povo que, um capítulo antes, estava paralisado de pavor, agora canta sem reservas.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → ficar quieto e ver</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Ficar quieto e ver</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Séculos depois, Paulo olha para trás, para essa travessia, e a descreve com uma palavra carregada de significado cristão: batismo — a passagem de Israel pela água e pela nuvem como um retrato antecipado de como os crentes passam, em Cristo, da morte para a vida.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">1 Coríntios 10.1-2</span>
+          <p>Não quero, porém, irmãos, que ignoreis que nossos pais estiveram todos debaixo da nuvem, e todos passaram pelo mar; e todos, na nuvem e no mar, foram batizados em Moisés.</p>
+          <span class="ref">— Paulo, aos coríntios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Na hora do maior pavor de Israel, com o exército mais poderoso do mundo antigo se aproximando, a instrução não era lutar, nem correr — era ficar quieto e ver o que só Deus poderia fazer. Poucos versículos depois, esse mesmo povo estava cantando.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do pânico que só vê o exército</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de ficar quieto e ver o livramento</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Êxodo · a travessia do mar Vermelho</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Preferir a escravidão conhecida";
+      text.textContent = "É a primeira reação de Israel diante do exército: melhor ter ficado escravo do que morrer livre — o pânico que só enxerga o perigo imediato, esquecendo tudo o que Deus já havia feito até ali.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Esperar em silêncio pelo que só Deus pode fazer";
+      text.textContent = "É a instrução de Moisés, dada antes de qualquer sinal de que o mar se abriria: ficar quieto, sem tentar resolver sozinho o que só o próprio Senhor poderia resolver — e depois cantar, quando a vitória finalmente aparece.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
