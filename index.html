@@ -200,8 +200,10 @@
      full width once it drops below the brand row. */
   @media (max-width:600px){
     .wrap{ padding: 0 16px 70px; }
-    .topbar{ gap:14px; flex-direction: column-reverse; align-items: flex-end; }
-    .search-wrap{ max-width:100%; }
+    .topbar{ gap:14px; }
+    .brand-bar{ order:1; }
+    .topbar-logo{ order:2; margin-left:auto; }
+    .search-wrap{ order:3; max-width:100%; }
     .hero-visual{ min-height:190px; }
     .hero-feature{ border-radius:18px; }
     .hero-info{ padding: 22px 18px 28px; }
