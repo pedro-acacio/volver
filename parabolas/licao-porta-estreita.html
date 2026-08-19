@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .path-compare{ display:flex; flex-direction:column; gap:10px; margin: 4px 0 16px; }
+  .path-row{ display:flex; align-items:center; gap:10px; }
+  .path-name{ width:96px; flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); }
+  .path-bar{ flex:1; max-width:220px; height:16px; border-radius:8px; background: var(--bg); border:1px solid var(--panel-line); display:flex; align-items:center; gap:3px; padding:0 5px; overflow:hidden; }
+  .path-bar.narrow{ max-width:46px; }
+  .path-dot{ width:5px; height:5px; border-radius:50%; background: var(--gold); flex-shrink:0; opacity:0; transition: opacity .3s ease; }
+  .path-dot.shown{ opacity:1; }
 </style>
 </head>
 <body>
@@ -62,6 +69,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p><em>"Esforçai-vos por entrar pela porta estreita; porque eu vos digo que muitos procurarão entrar, e não poderão."</em> (v.24, paráfrase) Em vez de um número, Jesus devolve uma ação: esforçar-se agora, em vez de calcular a probabilidade dos outros.</p>
+          <div class="path-compare" id="pathCompare">
+            <div class="path-row"><span class="path-name">Porta estreita</span><div class="path-bar narrow" id="narrowBar"></div></div>
+            <div class="path-row"><span class="path-name">Porta larga</span><div class="path-bar wide" id="wideBar"></div></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPaths()" id="pathBtn">Ver poucos e muitos</button>
           <button class="continue-btn" onclick="openStage(3)">Continuar → a porta que fecha</button>
         </div>
       </div>
@@ -142,6 +154,20 @@
     }, 120);
   }
   openStage(1);
+
+  function buildPathDots(){
+    const narrow = document.getElementById('narrowBar');
+    const wide = document.getElementById('wideBar');
+    for(let i=0;i<2;i++){ const d = document.createElement('div'); d.className = 'path-dot'; narrow.appendChild(d); }
+    for(let i=0;i<16;i++){ const d = document.createElement('div'); d.className = 'path-dot'; wide.appendChild(d); }
+  }
+  buildPathDots();
+
+  function revealPaths(){
+    document.querySelectorAll('#narrowBar .path-dot').forEach((d,i) => setTimeout(() => d.classList.add('shown'), i*80));
+    document.querySelectorAll('#wideBar .path-dot').forEach((d,i) => setTimeout(() => d.classList.add('shown'), i*40));
+    document.getElementById('pathBtn').textContent = "Poucos entram pela estreita — muitos tentam a larga.";
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

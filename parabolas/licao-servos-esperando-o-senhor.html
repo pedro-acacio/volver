@@ -70,6 +70,13 @@
         <div class="tl-card">
           <p>É uma inversão que a plateia original não esperava: o senhor que retorna não manda os servos prontos servirem a ele — ele mesmo se cinge e os serve. E o texto ainda repete a mesma bênção duas vezes, para quem for encontrado pronto na segunda vigília da noite, ou até na terceira (v.38) — não importa se a demora foi curta ou longa, o que conta é ser encontrado esperando.</p>
 
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectVigilia(this, 0)">1ª vigília</button>
+            <button class="chip-btn chip-gold" onclick="selectVigilia(this, 1)">2ª vigília</button>
+            <button class="chip-btn chip-gold" onclick="selectVigilia(this, 2)">3ª vigília</button>
+          </div>
+          <div class="chip-text" id="vigiliaText">Toque em uma vigília da noite para ver o que o senhor encontra ao chegar.</div>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de vigiar por obrigação</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de vigiar por quem se espera</button>
@@ -106,6 +113,17 @@
     }, 120);
   }
   openStage(1);
+
+  const vigiliaData = [
+    { text: "Se ele chegar entre 18h e 21h, na primeira vigília, encontra os servos com a lâmpada acesa — prontos." },
+    { text: "Se demorar até a segunda vigília, entre 21h e meia-noite, encontra os mesmos servos, ainda prontos (v.38)." },
+    { text: "Mesmo que só chegue na terceira vigília, de meia-noite às 3h, a bênção continua a mesma: \"bem-aventurados aqueles servos\" (v.37-38)." }
+  ];
+  function selectVigilia(btn, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('vigiliaText').textContent = vigiliaData[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

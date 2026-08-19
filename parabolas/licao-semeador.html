@@ -9,6 +9,15 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .yield-row{ display:flex; flex-direction:column; gap:8px; margin: 4px 0 16px; }
+  .yield-bar-wrap{ display:flex; align-items:center; gap:10px; }
+  .yield-label{ width:40px; flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); }
+  .yield-track{ flex:1; max-width:220px; }
+  .yield-bar{ height:10px; border-radius:5px; background: var(--calm); max-width:0; transition: max-width 1.1s ease; }
+  .yield-bar.b30{ width:30%; }
+  .yield-bar.b60{ width:60%; }
+  .yield-bar.b100{ width:100%; }
+  .yield-row.grown .yield-bar{ max-width: 220px; }
 </style>
 </head>
 <body>
@@ -98,6 +107,13 @@
         <div class="tl-card">
           <p>A diferença entre os quatro solos não está na semente — é a mesma em todos. E também não está inteiramente sob controle de quem ouve: caminho batido, pedra e espinhos já estavam ali antes da semente cair. Ainda assim, o texto distingue quem "entende" de quem apenas "ouve" — como se prestar atenção de verdade já fosse parte do preparo do terreno.</p>
 
+          <div class="yield-row" id="yieldRow">
+            <div class="yield-bar-wrap"><span class="yield-label">30x</span><div class="yield-track"><div class="yield-bar b30"></div></div></div>
+            <div class="yield-bar-wrap"><span class="yield-label">60x</span><div class="yield-track"><div class="yield-bar b60"></div></div></div>
+            <div class="yield-bar-wrap"><span class="yield-label">100x</span><div class="yield-track"><div class="yield-bar b100"></div></div></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="growYield()" id="yieldBtn">Ver a colheita da boa terra</button>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do espinho</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da boa terra</button>
@@ -147,6 +163,11 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function growYield(){
+    document.getElementById('yieldRow').classList.add('grown');
+    document.getElementById('yieldBtn').textContent = "Uma a cem, outra a sessenta, outra a trinta.";
   }
 
   function showOutcome(type){

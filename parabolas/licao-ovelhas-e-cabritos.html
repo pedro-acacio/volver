@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .acts-row{ display:flex; align-items:center; gap:7px; margin: 2px 0 16px; flex-wrap:wrap; }
+  .acts-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .acts-dot.lit{ background: var(--calm); }
+  .acts-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -94,6 +98,9 @@
         <div class="tl-card">
           <p>Os dois grupos fazem a mesma pergunta: <em>"Quando te vimos com fome... com sede... estrangeiro... nu... doente... preso?"</em> (v.37-39, 44, paráfrase) Nenhum dos dois lados sabia, no momento do gesto, que estava lidando com o próprio Rei. A diferença entre eles não foi ter reconhecido isso — foi ter agido, ou não, mesmo sem saber.</p>
 
+          <div class="acts-row" id="actsRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealActs()" id="actsBtn">Ver os seis atos, um por um</button>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de precisar reconhecer pra agir</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de servir sem saber que era a ele</button>
@@ -142,6 +149,30 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function buildActsDots(){
+    const el = document.getElementById('actsRow');
+    for(let i=0;i<6;i++){
+      const d = document.createElement('div');
+      d.className = 'acts-dot';
+      el.appendChild(d);
+    }
+    const label = document.createElement('span');
+    label.className = 'acts-label';
+    label.id = 'actsLabel';
+    label.textContent = '0 de 6 atos';
+    el.appendChild(label);
+  }
+  buildActsDots();
+
+  function revealActs(){
+    const dots = document.querySelectorAll('#actsRow .acts-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 160));
+    setTimeout(() => {
+      document.getElementById('actsLabel').textContent = '6 de 6 atos';
+      document.getElementById('actsBtn').textContent = "Comida, bebida, acolhida, roupa, visita ao doente, visita ao preso.";
+    }, 6 * 160);
   }
 
   function showOutcome(type){

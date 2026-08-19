@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .net-row{ display:flex; gap:7px; margin: 4px 0 14px; flex-wrap:wrap; }
+  .net-dot{ width:11px; height:11px; border-radius:50%; background: var(--panel-line); transition: background .5s ease, transform .5s ease, opacity .5s ease; }
+  .net-dot.good{ background: var(--calm); transform: translateY(6px); }
+  .net-dot.bad{ background: var(--worry); transform: translateY(-6px); opacity:.45; }
+  .net-note{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); display:block; margin: 2px 0 14px; }
 </style>
 </head>
 <body>
@@ -63,6 +68,9 @@
         <div class="tl-card">
           <p><em>"E, estando cheia, os pescadores a puxam para a praia; e, assentando-se, ajuntam para os cestos o que é bom, e lançam fora o que é ruim."</em> (v.48, paráfrase)</p>
           <p>A separação existe — mas só acontece depois que a rede já está cheia e puxada para a terra, com os pescadores sentados, olhando peixe por peixe, com calma. Nada disso acontece enquanto a rede ainda está no mar, fazendo o trabalho de recolher.</p>
+          <div class="net-row" id="netRow"></div>
+          <span class="net-note" id="netNote">peixes de toda espécie, ainda misturados</span>
+          <button class="continue-btn" style="margin-top:0;" onclick="sortNet()" id="netBtn">Separar na praia</button>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -125,6 +133,24 @@
     }, 120);
   }
   openStage(1);
+
+  function buildNetDots(){
+    const el = document.getElementById('netRow');
+    for(let i=0;i<8;i++){
+      const d = document.createElement('div');
+      d.className = 'net-dot';
+      el.appendChild(d);
+    }
+  }
+  buildNetDots();
+
+  function sortNet(){
+    document.querySelectorAll('#netRow .net-dot').forEach((d, i) => {
+      d.classList.add(i % 2 === 0 ? 'good' : 'bad');
+    });
+    document.getElementById('netNote').textContent = "bons no cesto · ruins lançados fora";
+    document.getElementById('netBtn').textContent = "Separados.";
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

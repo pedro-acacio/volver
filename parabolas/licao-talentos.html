@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .talent-row{ display:flex; gap:14px; align-items:flex-end; height:70px; margin: 6px 0 16px; }
+  .talent-col{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; }
+  .talent-bar{ width:100%; max-width:44px; border-radius:5px 5px 0 0; background: var(--panel-line); transition: height .5s ease, background .3s ease; }
+  .talent-label{ font-size:11px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -114,6 +118,16 @@
         <div class="tl-card">
           <p>O senhor não repreende o terceiro servo por ter ganhado pouco — repreende por não ter feito nada. O medo dele, disfarçado de cautela, foi o único caminho que garantiu, com certeza, que nada cresceria. O talento é tomado dele e dado ao que tinha dez (v.28).</p>
 
+          <div class="talent-row" id="talentBars">
+            <div class="talent-col"><div class="talent-bar" id="tbar5" style="height:25px;"></div><div class="talent-label" id="tlabel5">5</div></div>
+            <div class="talent-col"><div class="talent-bar" id="tbar2" style="height:10px;"></div><div class="talent-label" id="tlabel2">2</div></div>
+            <div class="talent-col"><div class="talent-bar" id="tbar1" style="height:5px;"></div><div class="talent-label" id="tlabel1">1</div></div>
+          </div>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold active" onclick="setTalents('before', this)">Antes de sair</button>
+            <button class="chip-btn chip-gold" onclick="setTalents('after', this)">Quando ele volta</button>
+          </div>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do medo que enterra</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do risco que multiplica</button>
@@ -162,6 +176,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function setTalents(state, btn){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const bar5 = document.getElementById('tbar5');
+    const bar2 = document.getElementById('tbar2');
+    const bar1 = document.getElementById('tbar1');
+    const l5 = document.getElementById('tlabel5');
+    const l2 = document.getElementById('tlabel2');
+    const l1 = document.getElementById('tlabel1');
+    if (state === 'before'){
+      bar5.style.height = '25px'; bar5.style.background = 'var(--panel-line)';
+      bar2.style.height = '10px'; bar2.style.background = 'var(--panel-line)';
+      bar1.style.height = '5px'; bar1.style.background = 'var(--panel-line)';
+      l5.textContent = '5'; l2.textContent = '2'; l1.textContent = '1';
+    } else {
+      bar5.style.height = '50px'; bar5.style.background = 'var(--calm)';
+      bar2.style.height = '20px'; bar2.style.background = 'var(--calm)';
+      bar1.style.height = '5px'; bar1.style.background = 'var(--worry)';
+      l5.textContent = '10'; l2.textContent = '4'; l1.textContent = '1 (enterrado)';
+    }
   }
 
   function showOutcome(type){

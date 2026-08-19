@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .lamp-row{ display:flex; gap:10px; margin: 4px 0 14px; }
+  .lamp-btn{
+    flex:1; padding: 11px 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .lamp-btn.active-worry{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); }
+  .lamp-btn.active-calm{ border-color: var(--calm); color: var(--calm); background: rgba(124,154,120,0.1); }
+  .lamp-glow{
+    width:14px; height:14px; border-radius:50%; margin: 2px auto 12px; background: var(--panel-line);
+    transition: all .3s ease;
+  }
+  .lamp-glow.dim{ background: var(--worry); opacity:.35; box-shadow:none; }
+  .lamp-glow.bright{ background: var(--gold); opacity:1; box-shadow: 0 0 14px 4px rgba(217,164,65,0.45); }
 </style>
 </head>
 <body>
@@ -65,6 +79,11 @@
         <div class="tl-card">
           <p><em>"Ninguém acende uma candeia e a coloca debaixo do alqueire, mas no velador, e alumia a todos que estão na casa."</em> (v.15, paráfrase) A pergunta que a passagem de Marcos faz é ainda mais direta: <em>"Vem porventura a candeia para ser posta debaixo do alqueire, ou debaixo da cama? Não é para ser posta no velador?"</em> (Marcos 4:21, paráfrase)</p>
           <p>O ato de acender já pressupõe o propósito de iluminar — escondê-la depois desfaz o próprio motivo de tê-la acendido.</p>
+          <div class="lamp-glow" id="lampGlow"></div>
+          <div class="lamp-row">
+            <button class="lamp-btn" id="btnLampHidden" onclick="showLamp('hidden')">Debaixo do alqueire</button>
+            <button class="lamp-btn" id="btnLampVisible" onclick="showLamp('visible')">No velador</button>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -147,6 +166,22 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Deixar a luz onde ela já foi posta";
       text.textContent = "A candeia não precisa se esforçar pra brilhar mais — só precisa ficar no velador, em vez de ser escondida. É esse o padrão simples que a parábola propõe: não inventar mais luz, só parar de escondê-la.";
+    }
+  }
+
+  function showLamp(where){
+    const btnHidden = document.getElementById('btnLampHidden');
+    const btnVisible = document.getElementById('btnLampVisible');
+    const glow = document.getElementById('lampGlow');
+    btnHidden.classList.remove('active-worry');
+    btnVisible.classList.remove('active-calm');
+    glow.classList.remove('dim','bright');
+    if (where === 'hidden'){
+      btnHidden.classList.add('active-worry');
+      glow.classList.add('dim');
+    } else {
+      btnVisible.classList.add('active-calm');
+      glow.classList.add('bright');
     }
   }
 </script>

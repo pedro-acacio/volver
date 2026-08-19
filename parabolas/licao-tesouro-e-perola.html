@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .trade-row{ display:flex; align-items:center; gap:8px; margin: 6px 0 16px; flex-wrap:wrap; }
+  .trade-item{ width:11px; height:11px; border-radius:3px; background: var(--text-dim); transition: all .3s ease; }
+  .trade-item.gone{ background: transparent; border:1px dashed var(--panel-line); }
+  .trade-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); }
+  .trade-prize{ width:16px; height:16px; border-radius:50%; background: var(--panel-line); margin-left:6px; transition: all .3s ease; }
+  .trade-prize.won{ background: var(--gold); box-shadow: 0 0 8px rgba(217,164,65,0.5); }
 </style>
 </head>
 <body>
@@ -113,6 +119,13 @@
         <div class="tl-card">
           <p>Um encontra por acaso; o outro, depois de procurar a vida inteira. Um já tinha experiência para reconhecer valor; o outro só teve a sorte de cavar no lugar certo. Mas as duas histórias terminam do mesmo jeito: vender tudo, sem que o texto registre uma única palavra de hesitação. O valor do que foi encontrado é medido pela reação, não pelo esforço que levou até ele.</p>
 
+          <div class="trade-row" id="tradeRow">
+            <div class="trade-item"></div><div class="trade-item"></div><div class="trade-item"></div><div class="trade-item"></div><div class="trade-item"></div>
+            <span class="trade-label">tudo o que tinham</span>
+            <div class="trade-prize" id="tradePrize"></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="tradeAll()" id="tradeBtn">Vender tudo</button>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do apego</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da alegria</button>
@@ -153,6 +166,12 @@
   function revealText(id, btn){
     document.getElementById(id).style.display = 'block';
     btn.classList.add('active');
+  }
+
+  function tradeAll(){
+    document.querySelectorAll('#tradeRow .trade-item').forEach(el => el.classList.add('gone'));
+    document.getElementById('tradePrize').classList.add('won');
+    document.getElementById('tradeBtn').textContent = "Vendido. O campo — e o tesouro nele — agora são dele.";
   }
 
   function showOutcome(type){

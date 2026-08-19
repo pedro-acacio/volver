@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .grow-bar-row{ display:flex; gap:6px; margin: 4px 0 12px; height:14px; }
+  .grow-bar{ flex:1; border-radius:4px; background: var(--panel-line); transition: background .3s ease; }
+  .grow-bar.on{ background: var(--calm); }
 </style>
 </head>
 <body>
@@ -66,6 +69,13 @@
           <p><em>"E dormisse e se levantasse de noite e de dia, e a semente brotasse e crescesse, sem ele saber como."</em> (v.27, paráfrase)</p>
           <p>Repare no ritmo: dormir, acordar, dormir, acordar — a vida normal do agricultor continua, sem que ele monte guarda sobre o canteiro. E o texto é direto sobre o motivo: ele não sabe como a semente cresce. Não é falta de atenção; é que esse processo nunca esteve ao alcance dele para entender ou controlar.</p>
           <p><em>"Porque a terra por si mesma frutifica, primeiro a erva, depois a espiga, depois o grão cheio na espiga."</em> (v.28, paráfrase) O crescimento acontece em etapas, sem pular nenhuma, e sem pedir licença.</p>
+          <div class="grow-bar-row" id="growBars"><div class="grow-bar"></div><div class="grow-bar"></div><div class="grow-bar"></div></div>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="growStage(0, this)">Erva</button>
+            <button class="chip-btn chip-calm" onclick="growStage(1, this)">Espiga</button>
+            <button class="chip-btn chip-calm" onclick="growStage(2, this)">Grão cheio na espiga</button>
+          </div>
+          <div class="chip-text" id="growText">Toque em cada etapa para acompanhar o crescimento — "sem ele saber como" (v.27).</div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -128,6 +138,20 @@
     }, 120);
   }
   openStage(1);
+
+  const growData = [
+    { text: "Primeiro a erva — mal se nota acima da terra, mas o processo já começou (v.28)." },
+    { text: "Depois a espiga — a forma se define, ainda verde, ainda fechada (v.28)." },
+    { text: "Por fim, o grão cheio na espiga — pronto para a foice, sem que o agricultor tenha feito nada nesse meio-tempo (v.28-29)." }
+  ];
+  function growStage(i, btn){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('growText').textContent = growData[i].text;
+    document.querySelectorAll('#growBars .grow-bar').forEach((bar, idx) => {
+      bar.classList.toggle('on', idx <= i);
+    });
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

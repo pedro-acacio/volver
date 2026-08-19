@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .knock-row{ display:flex; align-items:center; gap:12px; margin: 4px 0 14px; flex-wrap:wrap; }
+  .knock-btn{
+    padding:10px 18px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace;
+    font-size:13px; cursor:pointer; transition: all .2s ease;
+  }
+  .knock-btn:hover{ border-color: var(--gold); }
+  .knock-btn.active-calm{ border-color: var(--calm); color: var(--calm); }
+  .knock-count{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .knock-label{ font-size:13.5px; line-height:1.55; color: var(--text-dim); margin: 10px 0 0; }
 </style>
 </head>
 <body>
@@ -84,6 +94,11 @@
         <div class="tl-card">
           <p><em>"Havia numa cidade um juiz que nem temia a Deus, nem respeitava homem algum. Havia também naquela cidade uma viúva que ia ter com ele, dizendo: Faze-me justiça contra o meu adversário."</em> (v.2-3, paráfrase)</p>
           <p>O juiz se recusa, por um bom tempo. Mas depois pensa consigo: <em>"Ainda que não temo a Deus, nem respeito homem, todavia, por esta viúva me molestar, hei de fazer-lhe justiça, para que ela não continue a vir importunar-me."</em> (v.4-5, paráfrase) — ele cede pelo cansaço, não pela consciência.</p>
+          <div class="knock-row">
+            <button class="knock-btn" onclick="knockAgain()" id="knockBtn">Ela volta outra vez</button>
+            <span class="knock-count" id="knockCount">0 vezes</span>
+          </div>
+          <p class="knock-label" id="knockLabel">Toque pra simular a viúva voltando ao juiz, repetidamente, como no versículo 3.</p>
           <button class="continue-btn" onclick="openStage(4)">Ver o que Jesus tira das duas</button>
         </div>
       </div>
@@ -165,6 +180,25 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Continuar batendo, mesmo sem resposta imediata";
       text.textContent = "A viúva não tinha nenhuma garantia de que o juiz cederia — só continuou voltando. Esse é o padrão que Jesus elogia, e ainda o reforça com um argumento maior: se isso funciona até com quem não se importa, funciona muito mais com quem se importa desde o início.";
+    }
+  }
+
+  let knockTally = 0;
+  function knockAgain(){
+    knockTally++;
+    document.getElementById('knockCount').textContent = knockTally + (knockTally === 1 ? ' vez' : ' vezes');
+    const label = document.getElementById('knockLabel');
+    const btn = document.getElementById('knockBtn');
+    if (knockTally === 1){
+      label.textContent = "1ª vez: ela pede justiça diante do juiz. Ele nem responde.";
+    } else if (knockTally < 4){
+      label.textContent = knockTally + "ª vez: ela volta de novo. O juiz continua sem se abalar.";
+    } else if (knockTally < 7){
+      label.textContent = knockTally + "ª vez: o juiz já começa a se incomodar com a insistência dela.";
+    } else {
+      label.textContent = "\"Hei de fazer-lhe justiça, para que ela não continue a vir importunar-me.\" (v.5, paráfrase) — o juiz cede, não pela causa, mas pelo cansaço.";
+      btn.classList.add('active-calm');
+      btn.textContent = "Ela conseguiu.";
     }
   }
 </script>

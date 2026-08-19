@@ -12,6 +12,19 @@
   .scale-row{ display:flex; align-items:center; gap:14px; margin: 14px 0; flex-wrap:wrap; }
   .scale-item{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); }
   .scale-item b{ display:block; color: var(--gold); font-size:15px; font-family:'Fraunces', serif; font-weight:600; }
+  .bar-btn{
+    width:100%; padding:11px 10px; margin: 10px 0 4px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .bar-btn:hover{ border-color: var(--gold); }
+  .bar-wrap{ display:none; margin: 14px 0 4px; }
+  .bar-wrap.show{ display:block; }
+  .bar-item{ margin: 0 0 10px; }
+  .bar-track{ background: var(--bg); border-radius:6px; overflow:hidden; height:16px; }
+  .bar-fill{ height:100%; background: var(--gold); border-radius:6px; width:0; transition: width .6s ease; }
+  .bar-fill.small{ background: var(--worry); }
+  .bar-cap{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-top:4px; }
 </style>
 </head>
 <body>
@@ -72,6 +85,17 @@
             <div class="scale-item"><b>100 denários</b>cerca de 100 dias de trabalho</div>
           </div>
           <p>Como ele não tem como pagar, o rei ordena que ele, a esposa, os filhos e tudo o que possui sejam vendidos (v.25). O servo se prostra: <em>"Senhor, sê generoso para comigo, e tudo te pagarei."</em> (v.26, paráfrase) — uma promessa impossível de cumprir, e ainda assim: <em>"O senhor daquele servo, movido de íntima compaixão, soltou-o e perdoou-lhe a dívida."</em> (v.27, paráfrase)</p>
+          <button class="bar-btn" onclick="showBars()">Ver a diferença em escala</button>
+          <div class="bar-wrap" id="barWrap">
+            <div class="bar-item">
+              <div class="bar-track"><div class="bar-fill" id="barBig"></div></div>
+              <div class="bar-cap">10.000 talentos — o que o servo devia ao rei</div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-track"><div class="bar-fill small" id="barSmall"></div></div>
+              <div class="bar-cap">100 denários — o que o colega devia a ele</div>
+            </div>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Continuar → o segundo devedor</button>
         </div>
       </div>
@@ -176,6 +200,15 @@
       title.textContent = "Perdoar a partir do que já foi perdoado";
       text.textContent = "A parábola não pede pra fingir que a dívida pequena não existe — pede pra lembrar de qual dívida maior já foi cancelada antes dela. É essa lembrança, mais do que boa vontade, que sustenta o padrão que Jesus propõe a Pedro.";
     }
+  }
+
+  function showBars(){
+    const wrap = document.getElementById('barWrap');
+    wrap.classList.add('show');
+    setTimeout(() => {
+      document.getElementById('barBig').style.width = '100%';
+      document.getElementById('barSmall').style.width = '2%';
+    }, 30);
   }
 </script>
 <script defer src="../volver-app.js"></script>

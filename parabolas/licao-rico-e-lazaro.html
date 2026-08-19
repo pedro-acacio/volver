@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .reversal-row{ display:flex; gap:10px; margin: 6px 0 16px; }
+  .reversal-card{ flex:1; border:1px solid var(--panel-line); border-radius:10px; padding:12px 14px; text-align:center; background: var(--bg); }
+  .reversal-name{ display:block; font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:6px; }
+  .reversal-status{ font-family:'Fraunces', serif; font-size:15px; transition: color .3s ease; }
+  .reversal-status.worry{ color: var(--worry); }
+  .reversal-status.calm{ color: var(--calm); }
 </style>
 </head>
 <body>
@@ -64,6 +70,14 @@
         <div class="tl-card">
           <p>Lázaro morre, e é levado pelos anjos para junto de Abraão (v.22a, paráfrase). O rico também morre, e é sepultado — mas, no lugar dos mortos, em tormento, ele ergue os olhos e vê Lázaro, de longe, ao lado de Abraão (v.22b-23, paráfrase).</p>
           <p>A posição dos dois se inverte por completo: quem estava caído no portão agora está confortado; quem tinha tudo agora não tem nada.</p>
+          <div class="reversal-row" id="reversalRow">
+            <div class="reversal-card"><span class="reversal-name">O rico</span><span class="reversal-status" id="ricoStatus">esplendor</span></div>
+            <div class="reversal-card"><span class="reversal-name">Lázaro</span><span class="reversal-status" id="lazaroStatus">chagas</span></div>
+          </div>
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnVida" onclick="showReversal('vida')">Vida terrena</button>
+            <button class="toggle-btn" id="btnMorte" onclick="showReversal('morte')">Após a morte</button>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Continuar → o pedido</button>
         </div>
       </div>
@@ -146,6 +160,27 @@
     }, 120);
   }
   openStage(1);
+
+  function showReversal(type){
+    const btnVida = document.getElementById('btnVida');
+    const btnMorte = document.getElementById('btnMorte');
+    const rico = document.getElementById('ricoStatus');
+    const lazaro = document.getElementById('lazaroStatus');
+    btnVida.classList.remove('active-calm');
+    btnMorte.classList.remove('active-worry');
+    rico.classList.remove('worry','calm');
+    lazaro.classList.remove('worry','calm');
+    if (type === 'vida'){
+      btnVida.classList.add('active-calm');
+      rico.textContent = "esplendor"; rico.classList.add('calm');
+      lazaro.textContent = "chagas"; lazaro.classList.add('worry');
+    } else {
+      btnMorte.classList.add('active-worry');
+      rico.textContent = "tormento"; rico.classList.add('worry');
+      lazaro.textContent = "consolado"; lazaro.classList.add('calm');
+    }
+  }
+  showReversal('vida');
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

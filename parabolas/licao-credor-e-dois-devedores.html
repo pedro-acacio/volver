@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .debt-row{ margin: 4px 0 10px; }
+  .debt-line{ margin: 0 0 10px; }
+  .debt-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; }
+  .debt-dots{ display:flex; flex-wrap:wrap; gap:3px; }
+  .debt-dot{ width:7px; height:7px; border-radius:50%; background: var(--worry); }
+  .debt-dot.small{ background: var(--gold); }
+  .ask-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .ask-btn:hover{ border-color: var(--gold); }
+  .ask-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .ask-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -66,6 +80,18 @@
         <div class="tl-card">
           <p>Jesus, sabendo o que Simão pensava, conta uma história curta: <em>"Um certo credor tinha dois devedores; um lhe devia quinhentos dinheiros, e outro cinquenta. Não tendo eles com que pagar, perdoou a ambos. Qual deles, pois, o amará mais?"</em> (v.41-42, paráfrase)</p>
           <p>Simão responde: <em>"Suponho que aquele a quem mais perdoou."</em> Jesus confirma: <em>"Bem julgaste."</em> (v.43, paráfrase) — Simão acerta a lógica da pergunta sem perceber que ela vai se voltar contra o próprio julgamento que ele tinha feito em silêncio.</p>
+          <div class="debt-row">
+            <div class="debt-line">
+              <div class="debt-label">500 dinheiros</div>
+              <div class="debt-dots" id="debtBig"></div>
+            </div>
+            <div class="debt-line">
+              <div class="debt-label">50 dinheiros</div>
+              <div class="debt-dots" id="debtSmall"></div>
+            </div>
+          </div>
+          <button class="ask-btn" onclick="askWhoLoves()">Quem ama mais?</button>
+          <div class="ask-answer" id="askAnswer">"Suponho que aquele a quem mais perdoou." — "Bem julgaste." (v.43, paráfrase)</div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -148,6 +174,26 @@
       title.textContent = "Amar do tamanho do que foi perdoado";
       text.textContent = "A mulher não conteve o gesto porque sentiu, sem precisar calcular, o quanto lhe tinha sido perdoado. O padrão que a cena propõe não é comparar quem pecou mais — é deixar que o próprio perdão recebido dite o tamanho da resposta.";
     }
+  }
+
+  function buildDebtDots(){
+    const big = document.getElementById('debtBig');
+    const small = document.getElementById('debtSmall');
+    for (let i = 0; i < 50; i++){
+      const d = document.createElement('div');
+      d.className = 'debt-dot';
+      big.appendChild(d);
+    }
+    for (let i = 0; i < 5; i++){
+      const d = document.createElement('div');
+      d.className = 'debt-dot small';
+      small.appendChild(d);
+    }
+  }
+  buildDebtDots();
+
+  function askWhoLoves(){
+    document.getElementById('askAnswer').classList.add('show');
   }
 </script>
 <script defer src="../volver-app.js"></script>

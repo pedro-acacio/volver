@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .debt-rows{ display:flex; flex-direction:column; gap:6px; margin: 10px 0 14px; }
+  .debt-row{ display:flex; justify-content:space-between; padding:8px 12px; border-radius:8px; border:1px solid var(--panel-line); background: var(--panel); }
+  .debt-label{ font-family:'Fraunces', serif; font-size:14px; color: var(--text-dim); }
+  .debt-value{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-faint); transition: color .3s ease; }
+  .debt-value.reduced{ color: var(--calm); }
 </style>
 </head>
 <body>
@@ -65,6 +70,19 @@
         <div class="tl-card">
           <p><em>"Que farei, pois? Cavar, não posso; de mendigar, tenho vergonha."</em> (v.3, paráfrase) Ele então decide: chama os devedores do seu senhor, um a um, e reduz o que cada um devia — cem medidas de azeite viram cinquenta; cem medidas de trigo viram oitenta (v.5-7, paráfrase).</p>
           <p>Não é generosidade com o próprio dinheiro — é generosidade com o dinheiro do patrão, calculada pra garantir que, quando for demitido, essas pessoas o recebam em suas casas (v.4).</p>
+
+          <div class="debt-rows" id="debtRows">
+            <div class="debt-row">
+              <span class="debt-label">Azeite</span>
+              <span class="debt-value" id="debtAzeite">100 medidas</span>
+            </div>
+            <div class="debt-row">
+              <span class="debt-label">Trigo</span>
+              <span class="debt-value" id="debtTrigo">100 medidas</span>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="reduceDebts()" id="debtBtn">Ver a dívida depois do desconto</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → o elogio inesperado</button>
         </div>
       </div>
@@ -167,6 +185,16 @@
       title.textContent = "Usar agora pensando num fim que dura";
       text.textContent = "O mordomo agiu rápido porque sabia que o cargo ia acabar. O padrão que Jesus propõe pega essa mesma urgência e a aplica a algo que não acaba — usar o que está disponível agora, com um alvo que vai além do próprio bolso.";
     }
+  }
+
+  function reduceDebts(){
+    const azeite = document.getElementById('debtAzeite');
+    const trigo = document.getElementById('debtTrigo');
+    azeite.textContent = '50 medidas';
+    azeite.classList.add('reduced');
+    trigo.textContent = '80 medidas';
+    trigo.classList.add('reduced');
+    document.getElementById('debtBtn').textContent = 'Reduzida.';
   }
 </script>
 <script defer src="../volver-app.js"></script>

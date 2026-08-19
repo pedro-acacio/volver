@@ -16,6 +16,21 @@
     font-size:15px; cursor:pointer; transition: all .25s ease;
   }
   .split-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .storm-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 4px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .storm-btn:hover{ border-color: var(--gold); }
+  .storm-both{ display:flex; gap:10px; margin: 14px 0 4px; }
+  .storm-panel{
+    flex:1; border-radius:10px; border:1px solid var(--panel-line); background: var(--bg);
+    padding: 12px 12px; font-size:12.5px; line-height:1.5; color: var(--text-dim); display:none;
+  }
+  .storm-panel.show{ display:block; }
+  .storm-panel b{ display:block; font-family:'Fraunces', serif; font-size:14px; margin-bottom:4px; }
+  .storm-panel.stand b{ color: var(--calm); }
+  .storm-panel.fall b{ color: var(--worry); }
 </style>
 </head>
 <body>
@@ -75,6 +90,11 @@
             <button class="split-btn" id="btnAreia" onclick="showCasa('areia')">Casa sobre a areia</button>
           </div>
           <div class="chip-text" id="casaText">Toque em uma das duas casas para ver o que a tempestade faz com ela.</div>
+          <button class="storm-btn" onclick="stormBoth()">Ver as duas ao mesmo tempo, quando a tempestade chega</button>
+          <div class="storm-both" id="stormBoth">
+            <div class="storm-panel stand" id="stormRocha"><b>Rocha</b>Não caiu.</div>
+            <div class="storm-panel fall" id="stormAreia"><b>Areia</b>Caiu — e foi grande a sua ruína.</div>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -149,6 +169,12 @@
       document.getElementById('btnAreia').classList.add('active');
       text.textContent = "\"E desceu a chuva, e correram rios, e assopraram ventos, e deram com ímpeto contra aquela casa, e caiu, e foi grande a sua ruína.\" (v.27, paráfrase)";
     }
+  }
+
+  function stormBoth(){
+    document.getElementById('stormBoth').classList.add('show');
+    document.getElementById('stormRocha').classList.add('show');
+    document.getElementById('stormAreia').classList.add('show');
   }
 
   function showOutcome(type){

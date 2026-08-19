@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .field-toggle{ display:flex; gap:10px; margin: 4px 0 12px; }
+  .field-btn{
+    flex:1; padding: 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'Fraunces', serif;
+    font-size:14px; cursor:pointer; transition: all .25s ease;
+  }
+  .field-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .field-dots{ display:flex; gap:6px; margin: 10px 0 16px; flex-wrap:wrap; align-items:center; min-height:14px; }
+  .field-dot{ width:10px; height:10px; border-radius:50%; }
+  .field-dot.wheat{ background: var(--calm); }
+  .field-dot.weed{ background: var(--worry); }
+  .field-gap{ width:14px; }
 </style>
 </head>
 <body>
@@ -109,6 +121,12 @@
         <div class="tl-card">
           <p>Mais tarde, em particular, Jesus explica a cena aos discípulos: o campo é o mundo, a boa semente são os que pertencem ao Reino, o joio é obra do inimigo, e a ceifa é o fim dos tempos, quando os anjos farão a separação (v.36-43, paráfrase resumida). A tarefa de distinguir joio de trigo nunca foi dos servos — era do dono do campo, e só chegaria depois.</p>
 
+          <div class="field-toggle">
+            <button class="field-btn" id="btnFieldNow" onclick="buildField('now')">Agora, no campo</button>
+            <button class="field-btn" id="btnFieldHarvest" onclick="buildField('harvest')">Na colheita</button>
+          </div>
+          <div class="field-dots" id="fieldDots"></div>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de arrancar agora</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de esperar a ceifa</button>
@@ -167,6 +185,40 @@
       text.textContent = "Deixar crescer junto não é indiferença — é reconhecer que a separação final exige uma clareza que ainda não existe no meio da lavoura. O dono do campo vê o que os servos, no chão, não conseguem ver.";
     }
   }
+
+  function buildField(mode){
+    const el = document.getElementById('fieldDots');
+    const btnNow = document.getElementById('btnFieldNow');
+    const btnHarvest = document.getElementById('btnFieldHarvest');
+    el.innerHTML = '';
+    btnNow.classList.remove('active');
+    btnHarvest.classList.remove('active');
+    const pattern = ['wheat','weed','wheat','wheat','weed','wheat','weed','wheat','wheat','weed','wheat','wheat'];
+    if (mode === 'now'){
+      btnNow.classList.add('active');
+      pattern.forEach(type => {
+        const d = document.createElement('div');
+        d.className = 'field-dot ' + type;
+        el.appendChild(d);
+      });
+    } else {
+      btnHarvest.classList.add('active');
+      pattern.filter(p => p === 'wheat').forEach(() => {
+        const d = document.createElement('div');
+        d.className = 'field-dot wheat';
+        el.appendChild(d);
+      });
+      const gap = document.createElement('div');
+      gap.className = 'field-gap';
+      el.appendChild(gap);
+      pattern.filter(p => p === 'weed').forEach(() => {
+        const d = document.createElement('div');
+        d.className = 'field-dot weed';
+        el.appendChild(d);
+      });
+    }
+  }
+  buildField('now');
 </script>
 <script defer src="../volver-app.js"></script>
 </body>

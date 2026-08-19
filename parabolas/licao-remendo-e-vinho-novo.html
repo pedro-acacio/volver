@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .mend-visual{ display:flex; justify-content:center; gap:2px; margin: 6px 0 6px; height:40px; align-items:center; }
+  .mend-half{ width:52px; height:28px; background: var(--panel-line); transition: transform .45s ease, background .45s ease; }
+  .mend-half.left{ border-radius:6px 0 0 6px; }
+  .mend-half.right{ border-radius:0 6px 6px 0; }
+  .mend-visual.torn .mend-half.left{ transform: translateX(-10px) rotate(-4deg); background: var(--worry); }
+  .mend-visual.torn .mend-half.right{ transform: translateX(10px) rotate(4deg); background: var(--worry); }
 </style>
 </head>
 <body>
@@ -67,6 +73,14 @@
             <button class="chip-btn chip-worry" onclick="selectChip(this, imgData, 1, 'imgText')">O vinho novo</button>
           </div>
           <div class="chip-text" id="imgText">Toque em cada imagem para ver o que acontece quando o novo é forçado dentro do velho.</div>
+          <div class="mend-visual" id="mendVisual">
+            <div class="mend-half left"></div>
+            <div class="mend-half right"></div>
+          </div>
+          <div class="toggle-row" style="margin-top:6px;">
+            <button class="toggle-btn" id="btnBefore" onclick="showMend('before')">Antes</button>
+            <button class="toggle-btn" id="btnAfter" onclick="showMend('after')">Depois</button>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -140,6 +154,21 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showMend(type){
+    const btnBefore = document.getElementById('btnBefore');
+    const btnAfter = document.getElementById('btnAfter');
+    const visual = document.getElementById('mendVisual');
+    btnBefore.classList.remove('active-calm');
+    btnAfter.classList.remove('active-worry');
+    if (type === 'before'){
+      btnBefore.classList.add('active-calm');
+      visual.classList.remove('torn');
+    } else {
+      btnAfter.classList.add('active-worry');
+      visual.classList.add('torn');
+    }
   }
 
   function showOutcome(type){

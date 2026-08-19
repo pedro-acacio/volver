@@ -64,6 +64,11 @@
         <div class="tl-card">
           <p><em>"Permanecei em mim, e eu permanecerei em vós; como a vara de si mesma não pode dar fruto, se não permanecer na videira, assim também vós, se não permanecerdes em mim."</em> (v.4, paráfrase)</p>
           <p><em>"Eu sou a videira, vós as varas [...] porque sem mim nada podeis fazer."</em> (v.5, paráfrase) — o fruto nunca é descrito como esforço isolado do ramo, é consequência de estar ligado.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-calm" onclick="selectBranch(this, 0)">Ramo que permanece</button>
+            <button class="chip-btn chip-worry" onclick="selectBranch(this, 1)">Ramo que não permanece</button>
+          </div>
+          <div class="chip-text" id="branchText">Toque em um dos dois para ver o que acontece com ele.</div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -126,6 +131,16 @@
     }, 120);
   }
   openStage(1);
+
+  const branchData = [
+    { text: "O ramo que permanece ligado recebe a seiva da videira sem esforço — e dá fruto como consequência natural, não como conquista (v.4-5)." },
+    { text: "O ramo que não permanece seca, é lançado fora, ajuntado e queimado (v.6, paráfrase) — sem a fonte, não sobra nada para sustentar." }
+  ];
+  function selectBranch(btn, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('branchText').textContent = branchData[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

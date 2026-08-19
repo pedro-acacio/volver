@@ -85,6 +85,15 @@
       <div class="tl-body">
         <div class="tl-card">
           <p><em>"Por fim, enviou-lhes seu filho, dizendo: Terão respeito a meu filho."</em> (v.37, paráfrase) Mas os lavradores pensam diferente: <em>"Este é o herdeiro; vinde, matemo-lo, e apoderemo-nos da sua herança."</em> (v.38, paráfrase) Eles o lançam fora da vinha e o matam (v.39).</p>
+
+          <p>Reveja a escalada, um envio de cada vez:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, envioData, 0, 'envioText')">1º grupo de servos</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, envioData, 1, 'envioText')">2º grupo de servos</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, envioData, 2, 'envioText')">O filho</button>
+          </div>
+          <div class="chip-text" id="envioText">Toque em cada envio para ver o que os lavradores fizeram.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
         </div>
       </div>
@@ -130,6 +139,12 @@
 </div>
 
 <script>
+  const envioData = [
+    { text: "Espancado, morto ou apedrejado — o primeiro grupo de servos recebe violência crescente, um destino diferente pra cada um (v.34-35, paráfrase)." },
+    { text: "O dono manda mais servos que da primeira vez, e recebem o mesmo tratamento (v.36, paráfrase). A resposta dos lavradores já tinha um padrão — e ele se repete." },
+    { text: "\"Terão respeito a meu filho\", pensa o dono (v.37, paráfrase). Os lavradores respondem matando-o, para tentar ficar com a herança (v.38-39, paráfrase)." }
+  ];
+
   let currentMax = 1;
   function openStage(n){
     if (n > currentMax + 1) return;
@@ -146,6 +161,12 @@
     }, 120);
   }
   openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

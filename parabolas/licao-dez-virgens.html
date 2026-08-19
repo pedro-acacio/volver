@@ -9,6 +9,17 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .lamp-grid-row{ display:flex; flex-wrap:wrap; gap:6px; margin: 4px 0 14px; }
+  .lamp-dot{ width:11px; height:11px; border-radius:50%; background: var(--gold); box-shadow: 0 0 6px 1px rgba(217,164,65,0.4); transition: all .4s ease; }
+  .lamp-dot.empty{ background: var(--panel-line); box-shadow:none; }
+  .lamp-dot.empty.gone{ background: var(--worry); opacity:.3; box-shadow:none; }
+  .midnight-btn{
+    padding: 10px 16px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; cursor:pointer; transition: all .2s ease;
+  }
+  .midnight-btn:hover{ border-color: var(--gold); }
+  .midnight-label{ font-size:13.5px; line-height:1.55; color: var(--text-dim); margin: 10px 0 0; }
 </style>
 </head>
 <body>
@@ -44,6 +55,9 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Dez moças saem para receber o noivo, cada uma com sua candeia (v.1). Cinco delas são chamadas de sábias, cinco de loucas — e a diferença aparece de imediato: <em>"as loucas, tomando as suas lâmpadas, não levaram azeite consigo; mas as prudentes levaram azeite em suas vasilhas, com as suas lâmpadas."</em> (v.3-4, paráfrase)</p>
+          <div class="lamp-grid-row" id="lampGrid"></div>
+          <button class="midnight-btn" onclick="midnightArrives()" id="midnightBtn">À meia-noite, o esposo chega</button>
+          <p class="midnight-label" id="midnightLabel">Cinco lâmpadas têm azeite reservado; cinco não.</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → a demora</button>
         </div>
       </div>
@@ -183,6 +197,22 @@
       title.textContent = "Preparar o que ninguém pode emprestar";
       text.textContent = "As virgens sábias não sabiam a que horas o noivo chegaria — só sabiam que precisavam estar prontas independente da hora. É esse o padrão que a parábola propõe: preparar antes, sem saber exatamente quando vai precisar.";
     }
+  }
+
+  function buildLampGrid(){
+    const grid = document.getElementById('lampGrid');
+    for (let i = 0; i < 10; i++){
+      const d = document.createElement('div');
+      d.className = 'lamp-dot' + (i >= 5 ? ' empty' : '');
+      grid.appendChild(d);
+    }
+  }
+  buildLampGrid();
+
+  function midnightArrives(){
+    document.querySelectorAll('#lampGrid .lamp-dot.empty').forEach(d => d.classList.add('gone'));
+    document.getElementById('midnightLabel').textContent = "\"Aí vem o esposo, saí-lhe ao encontro.\" (v.6, paráfrase) — as cinco sem azeite não conseguem reacender a tempo.";
+    document.getElementById('midnightBtn').textContent = "A porta já se fechou.";
   }
 </script>
 <script defer src="../volver-app.js"></script>

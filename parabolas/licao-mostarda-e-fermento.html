@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seed-grow-wrap{ display:flex; align-items:center; gap:14px; margin: 6px 0 16px; flex-wrap:wrap; }
+  .seed-dot{ width:8px; height:8px; border-radius:50%; background: var(--gold); transition: all 1.1s cubic-bezier(.34,1.56,.64,1); flex-shrink:0; }
+  .seed-dot.grown{ width:56px; height:56px; }
+  .seed-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); }
 </style>
 </head>
 <body>
@@ -66,6 +70,11 @@
             <button class="chip-btn chip-gold" onclick="revealText('mostardaText', this)">Ver o que esse grão vira</button>
           </div>
           <div class="chip-text" id="mostardaText" style="display:none;">"Mas, crescendo, é a maior das hortaliças, e faz-se árvore, de tal maneira que vêm as aves do céu, e se aninham nos seus ramos" (v.32b, paráfrase). A planta que veio da menor semente cresce o bastante para dar abrigo a outros.</div>
+          <div class="seed-grow-wrap" id="seedGrowWrap">
+            <div class="seed-dot" id="seedDot"></div>
+            <button class="chip-btn chip-gold" onclick="growSeed()" id="growBtn">Ver o tamanho final</button>
+            <span class="seed-label" id="seedLabel">a menor semente</span>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Continuar → o fermento</button>
         </div>
       </div>
@@ -154,6 +163,12 @@
   function revealText(id, btn){
     document.getElementById(id).style.display = 'block';
     btn.classList.add('active');
+  }
+
+  function growSeed(){
+    document.getElementById('seedDot').classList.add('grown');
+    document.getElementById('seedLabel').textContent = "a maior das hortaliças";
+    document.getElementById('growBtn').textContent = "Cresceu.";
   }
 
   function showOutcome(type){

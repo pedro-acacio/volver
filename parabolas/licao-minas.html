@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .mina-bars{ display:flex; flex-direction:column; gap:10px; margin: 10px 0 6px; }
+  .mina-row{ display:flex; align-items:center; gap:10px; }
+  .mina-label{ width:64px; flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-dim); }
+  .mina-track{ flex:1; height:10px; border-radius:5px; background: var(--panel-line); overflow:hidden; }
+  .mina-fill{ height:100%; width: 10%; background: var(--text-faint); border-radius:5px; transition: width 1s ease, background .6s ease; }
+  .mina-value{ width:92px; flex-shrink:0; text-align:right; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); }
 </style>
 </head>
 <body>
@@ -95,6 +101,25 @@
         <div class="tl-card">
           <p>Já rei, ele volta e chama os servos para prestar contas. O que rendeu dez minas recebe dez cidades para governar; o que rendeu cinco, cinco cidades — a recompensa é proporcional ao que cada um multiplicou, não igual entre todos (v.16-19). O terceiro devolve a mina intacta, guardada num pano, e explica: <em>"Tinha medo de ti, porquanto és homem rigoroso."</em> (v.20-21, paráfrase) O rei usa as próprias palavras dele contra ele — se sabia disso, tinha ainda mais motivo para agir, não para travar.</p>
 
+          <div class="mina-bars" id="minaBars">
+            <div class="mina-row">
+              <span class="mina-label">1º servo</span>
+              <div class="mina-track"><div class="mina-fill" id="minaFill1"></div></div>
+              <span class="mina-value" id="minaValue1">1 mina</span>
+            </div>
+            <div class="mina-row">
+              <span class="mina-label">2º servo</span>
+              <div class="mina-track"><div class="mina-fill" id="minaFill2"></div></div>
+              <span class="mina-value" id="minaValue2">1 mina</span>
+            </div>
+            <div class="mina-row">
+              <span class="mina-label">3º servo</span>
+              <div class="mina-track"><div class="mina-fill" id="minaFill3"></div></div>
+              <span class="mina-value" id="minaValue3">1 mina</span>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="growMinas()" id="minaBtn">Ver o que cada mina rendeu</button>
+
           <div class="toggle-row">
             <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão do medo que esconde</button>
             <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do uso que multiplica</button>
@@ -165,6 +190,19 @@
       title.textContent = "Negociar mesmo sem o senhor por perto";
       text.textContent = "Os dois primeiros servos agiram sem saber quando o rei voltaria, e sem ele supervisionando cada decisão. O padrão que a parábola valoriza não é ter mais talento — é usar o que foi confiado enquanto ninguém está checando.";
     }
+  }
+
+  function growMinas(){
+    const f1 = document.getElementById('minaFill1');
+    const f2 = document.getElementById('minaFill2');
+    const f3 = document.getElementById('minaFill3');
+    f1.style.width = '100%'; f1.style.background = 'var(--calm)';
+    f2.style.width = '50%'; f2.style.background = 'var(--calm)';
+    f3.style.width = '10%'; f3.style.background = 'var(--worry)';
+    document.getElementById('minaValue1').textContent = '10 minas';
+    document.getElementById('minaValue2').textContent = '5 minas';
+    document.getElementById('minaValue3').textContent = '1 mina (parada)';
+    document.getElementById('minaBtn').textContent = 'Rendimento final.';
   }
 </script>
 <script defer src="../volver-app.js"></script>

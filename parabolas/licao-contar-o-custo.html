@@ -9,6 +9,19 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .army-btn{
+    width:100%; padding:11px 10px; margin: 4px 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .army-btn:hover{ border-color: var(--gold); }
+  .army-rows{ display:none; margin: 12px 0 4px; }
+  .army-rows.show{ display:block; }
+  .army-line{ margin: 0 0 10px; }
+  .army-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; }
+  .army-dots{ display:flex; flex-wrap:wrap; gap:3px; }
+  .army-dot{ width:7px; height:7px; border-radius:50%; background: var(--worry); }
+  .army-dot.his{ background: var(--gold); }
 </style>
 </head>
 <body>
@@ -68,6 +81,17 @@
             <button class="chip-btn chip-worry" onclick="selectChip(this, imgData, 1, 'imgText')">O rei em guerra</button>
           </div>
           <div class="chip-text" id="imgText">Toque em cada imagem para ver o cálculo que ela pede antes de começar.</div>
+          <button class="army-btn" onclick="showArmies()">Ver os dez mil contra os vinte mil, lado a lado</button>
+          <div class="army-rows" id="armyRows">
+            <div class="army-line">
+              <div class="army-label">10 mil (o rei que pensa em ir à guerra)</div>
+              <div class="army-dots" id="armyMine"></div>
+            </div>
+            <div class="army-line">
+              <div class="army-label">20 mil (quem vem contra ele)</div>
+              <div class="army-dots" id="armyTheirs"></div>
+            </div>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -162,6 +186,24 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Sentar e avaliar antes do primeiro passo";
       text.textContent = "Tanto o construtor quanto o rei fazem a mesma coisa antes de agir: param pra calcular com honestidade. Esse padrão não é hesitação — é o que torna possível um compromisso que realmente se sustenta até o fim.";
+    }
+  }
+
+  function showArmies(){
+    const rows = document.getElementById('armyRows');
+    if (rows.classList.contains('show')) return;
+    rows.classList.add('show');
+    const mine = document.getElementById('armyMine');
+    const theirs = document.getElementById('armyTheirs');
+    for (let i = 0; i < 10; i++){
+      const d = document.createElement('div');
+      d.className = 'army-dot his';
+      mine.appendChild(d);
+    }
+    for (let i = 0; i < 20; i++){
+      const d = document.createElement('div');
+      d.className = 'army-dot';
+      theirs.appendChild(d);
     }
   }
 </script>

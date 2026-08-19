@@ -68,6 +68,17 @@
             <button class="chip-btn chip-worry" onclick="selectChip(this, filhoData, 1, 'filhoText')">O segundo filho</button>
           </div>
           <div class="chip-text" id="filhoText">Toque em cada filho para ver o que ele diz — e o que ele faz depois.</div>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnFilhoWord" onclick="showFilhoLens('word')">Julgando pela palavra</button>
+            <button class="toggle-btn" id="btnFilhoAction" onclick="showFilhoLens('action')">Julgando pela ação</button>
+          </div>
+          <div class="outcome" id="filhoLensCard">
+            <div class="outcome-visual" id="filhoLensVisual"></div>
+            <h3 id="filhoLensTitle"></h3>
+            <p id="filhoLensBody"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(3)">Ver o desfecho</button>
         </div>
       </div>
@@ -162,6 +173,28 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Corrigir o rumo depois do primeiro não";
       text.textContent = "O primeiro filho não fica bem na primeira resposta — mas muda de ideia antes de a história terminar. Esse é o padrão que Jesus elogia: o valor está em onde a pessoa termina, não em como ela começa.";
+    }
+  }
+
+  function showFilhoLens(type){
+    const btnWord = document.getElementById('btnFilhoWord');
+    const btnAction = document.getElementById('btnFilhoAction');
+    btnWord.classList.remove('active-worry');
+    btnAction.classList.remove('active-calm');
+    const visual = document.getElementById('filhoLensVisual');
+    const title = document.getElementById('filhoLensTitle');
+    const text = document.getElementById('filhoLensBody');
+
+    if (type === 'word'){
+      btnWord.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Pela palavra, o segundo venceria";
+      text.textContent = "\"Eu vou, senhor\" soa como a resposta certa — se o critério parasse na palavra, o segundo filho seria o obediente, e o primeiro, o desobediente.";
+    } else {
+      btnAction.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Pela ação, o placar se inverte";
+      text.textContent = "O primeiro disse \"não\" e foi. O segundo disse \"vou\" e não foi. É esse segundo critério — o que realmente aconteceu depois da resposta — que Jesus usa pra responder quem fez a vontade do pai.";
     }
   }
 </script>

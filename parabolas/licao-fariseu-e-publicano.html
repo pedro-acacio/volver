@@ -16,6 +16,11 @@
     font-size:15px; cursor:pointer; transition: all .25s ease;
   }
   .split-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .posture-track{ position:relative; height:8px; border-radius:4px; background: var(--panel-line); margin: 6px 0 8px; }
+  .posture-marker{ position:absolute; top:-4px; width:16px; height:16px; border-radius:50%; background: var(--text-faint); transition: left .35s ease, background .35s ease; left:0; }
+  .posture-marker.at-front{ left:0%; background: var(--worry); }
+  .posture-marker.at-back{ left: calc(100% - 16px); background: var(--calm); }
+  .posture-caption{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin:0 0 16px; }
 </style>
 </head>
 <body>
@@ -76,6 +81,14 @@
             <button class="split-btn" id="btnPublicano" onclick="showPray('publicano')">O publicano</button>
           </div>
           <div class="chip-text" id="prayText">Toque em um dos dois para ouvir o que ele diz a Deus.</div>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" id="chipFariseuPos" onclick="showPosture('fariseu')">Posição do fariseu</button>
+            <button class="chip-btn chip-calm" id="chipPublicanoPos" onclick="showPosture('publicano')">Posição do publicano</button>
+          </div>
+          <div class="posture-track"><div class="posture-marker" id="postureMarker"></div></div>
+          <p class="posture-caption" id="postureCaption">Toque para comparar onde cada um se coloca no templo.</p>
+
           <button class="continue-btn" onclick="openStage(3)">Ver quem volta justificado</button>
         </div>
       </div>
@@ -170,6 +183,24 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Pedir sem currículo";
       text.textContent = "O publicano não tem nada de bom pra listar, e não tenta inventar. A oração dele é curta porque não tem tempo perdido comparando com o fariseu ao lado. Esse é o padrão que a parábola aprova: chegar sem currículo, e pedir mesmo assim.";
+    }
+  }
+
+  function showPosture(who){
+    const chipF = document.getElementById('chipFariseuPos');
+    const chipP = document.getElementById('chipPublicanoPos');
+    chipF.classList.remove('active');
+    chipP.classList.remove('active');
+    const marker = document.getElementById('postureMarker');
+    const caption = document.getElementById('postureCaption');
+    if (who === 'fariseu'){
+      chipF.classList.add('active');
+      marker.className = 'posture-marker at-front';
+      caption.textContent = "De pé, num lugar visível — perto o bastante pra ser notado orando.";
+    } else {
+      chipP.classList.add('active');
+      marker.className = 'posture-marker at-back';
+      caption.textContent = "De longe, sem se aproximar — a distância física combina com a distância que ele sente de Deus.";
     }
   }
 </script>

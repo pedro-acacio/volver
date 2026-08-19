@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .voice-row{ display:flex; gap:10px; margin: 4px 0 14px; }
+  .voice-btn{
+    flex:1; padding: 11px 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .voice-btn.active-calm{ border-color: var(--calm); color: var(--calm); background: rgba(124,154,120,0.1); }
+  .voice-btn.active-worry{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); }
+  .voice-text{
+    font-size:13.5px; line-height:1.55; color: var(--text-dim);
+    padding-top:10px; border-top:1px dashed var(--panel-line); min-height:40px;
+  }
 </style>
 </head>
 <body>
@@ -65,6 +77,11 @@
         <div class="tl-card">
           <p><em>"As ovelhas o seguem, porque conhecem a sua voz. Mas de modo nenhum seguirão o estranho, antes fugirão dele; porque não conhecem a voz dos estranhos."</em> (v.4-5, paráfrase)</p>
           <p>É aqui que Jesus se identifica diretamente: <em>"Eu sou a porta das ovelhas"</em> (v.7, paráfrase), e mais adiante: <em>"Eu sou o bom pastor."</em> (v.11, paráfrase)</p>
+          <div class="voice-row">
+            <button class="voice-btn" id="btnVoiceKnown" onclick="showVoice('known')">A voz conhecida chama</button>
+            <button class="voice-btn" id="btnVoiceStranger" onclick="showVoice('stranger')">A voz do estranho chama</button>
+          </div>
+          <div class="voice-text" id="voiceText">Toque em cada voz pra ver como as ovelhas reagem.</div>
           <button class="continue-btn" onclick="openStage(3)">Continuar → o mercenário</button>
         </div>
       </div>
@@ -183,6 +200,21 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Ficar porque o vínculo é real";
       text.textContent = "O bom pastor não fica porque calculou que valia o risco — fica porque conhece cada ovelha pelo nome. É esse tipo de vínculo, não o cálculo de risco, que sustenta permanência quando o lobo aparece.";
+    }
+  }
+
+  function showVoice(type){
+    const btnKnown = document.getElementById('btnVoiceKnown');
+    const btnStranger = document.getElementById('btnVoiceStranger');
+    btnKnown.classList.remove('active-calm');
+    btnStranger.classList.remove('active-worry');
+    const text = document.getElementById('voiceText');
+    if (type === 'known'){
+      btnKnown.classList.add('active-calm');
+      text.textContent = "\"As ovelhas o seguem, porque conhecem a sua voz.\" (v.4, paráfrase) — elas vão atrás, sem hesitar.";
+    } else {
+      btnStranger.classList.add('active-worry');
+      text.textContent = "\"De modo nenhum seguirão o estranho, antes fugirão dele; porque não conhecem a voz dos estranhos.\" (v.5, paráfrase) — elas se afastam.";
     }
   }
 </script>

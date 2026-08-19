@@ -9,6 +9,19 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .watch-row{ display:flex; gap:10px; margin: 4px 0 12px; }
+  .watch-btn{
+    flex:1; padding: 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'Fraunces', serif;
+    font-size:14px; cursor:pointer; transition: all .25s ease;
+  }
+  .watch-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .watch-visual{ display:flex; justify-content:center; align-items:center; height:40px; margin-bottom:6px; }
+  .watch-eye{ width:34px; height:16px; border-radius:50%; border:2px solid var(--calm); position:relative; transition: all .3s ease; }
+  .watch-eye::after{ content:''; position:absolute; top:50%; left:50%; width:8px; height:8px; margin:-4px 0 0 -4px; border-radius:50%; background: var(--calm); }
+  .watch-eye.closed{ height:2px; border-radius:2px; border-color: var(--worry); }
+  .watch-eye.closed::after{ display:none; }
+  .watch-caption{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin:0 0 16px; text-align:center; }
 </style>
 </head>
 <body>
@@ -44,6 +57,14 @@
         <div class="tl-card">
           <p><em>"Vigiai, pois, porque não sabeis a que hora há de vir o vosso Senhor. Sabei, porém, isto: se o pai de família soubesse a que vigília da noite havia de vir o ladrão, vigiaria, e não deixaria minar a sua casa."</em> (v.42-43, paráfrase)</p>
           <p>Ninguém prepara a casa contra um ladrão só depois de saber exatamente quando ele vem — a preparação só funciona porque a hora é desconhecida.</p>
+
+          <div class="watch-row">
+            <button class="watch-btn active" id="btnWatching" onclick="setWatch('watching')">Vigiando</button>
+            <button class="watch-btn" id="btnSleeping" onclick="setWatch('sleeping')">Dormindo</button>
+          </div>
+          <div class="watch-visual"><div class="watch-eye" id="watchEye"></div></div>
+          <p class="watch-caption" id="watchCaption">Vigiando, a casa está pronta pro ladrão não escavar — não porque a hora é conhecida, mas porque a atenção nunca desliga.</p>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → os dois servos</button>
         </div>
       </div>
@@ -162,6 +183,24 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Fazer o de sempre, prazo ou não";
       text.textContent = "O servo fiel não parece estar vigiando um relógio — está ocupado fazendo o trabalho que já lhe cabia antes de qualquer expectativa sobre a volta do senhor. É esse o padrão que as duas comparações elogiam: continuar, independente do prazo.";
+    }
+  }
+
+  function setWatch(state){
+    const btnW = document.getElementById('btnWatching');
+    const btnS = document.getElementById('btnSleeping');
+    const eye = document.getElementById('watchEye');
+    const caption = document.getElementById('watchCaption');
+    btnW.classList.remove('active');
+    btnS.classList.remove('active');
+    if (state === 'watching'){
+      btnW.classList.add('active');
+      eye.classList.remove('closed');
+      caption.textContent = "Vigiando, a casa está pronta pro ladrão não escavar — não porque a hora é conhecida, mas porque a atenção nunca desliga.";
+    } else {
+      btnS.classList.add('active');
+      eye.classList.add('closed');
+      caption.textContent = "Dormindo, é exatamente quando o ladrão escolhe agir — a vigilância só vale alguma coisa antes de a hora chegar, nunca depois.";
     }
   }
 </script>

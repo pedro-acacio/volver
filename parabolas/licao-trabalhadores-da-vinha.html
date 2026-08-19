@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .wage-row{ display:flex; gap:10px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .wage-col{ flex:1; min-width:52px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; }
+  .wage-hours{ width:70%; border-radius:3px; background: var(--text-faint); margin-bottom:6px; }
+  .wage-pay{ width:70%; height:22px; border-radius:5px; background: var(--gold); }
+  .wage-label{ font-size:10px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -72,6 +77,16 @@
         <div class="tl-card">
           <p>No fim do dia, o dono manda pagar todos, começando pelos últimos contratados (v.8). Quem trabalhou só uma hora recebe um denário inteiro (v.9) — o mesmo valor combinado com o primeiro grupo, que trabalhou o dia inteiro sob o sol.</p>
           <p>Quando chega a vez dos primeiros, eles esperam receber mais — e recebem exatamente o mesmo denário (v.10). <em>"E, ao recebê-lo, murmuravam contra o pai de família."</em> (v.11, paráfrase)</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="revealWages(this)">Comparar horas trabalhadas com o pagamento</button>
+          </div>
+          <div class="wage-row" id="wageRow" style="display:none;">
+            <div class="wage-col"><div class="wage-hours" style="height:40px;"></div><div class="wage-pay"></div><div class="wage-label">~12h · 1 denário</div></div>
+            <div class="wage-col"><div class="wage-hours" style="height:30px;"></div><div class="wage-pay"></div><div class="wage-label">~9h · 1 denário</div></div>
+            <div class="wage-col"><div class="wage-hours" style="height:20px;"></div><div class="wage-pay"></div><div class="wage-label">~6h · 1 denário</div></div>
+            <div class="wage-col"><div class="wage-hours" style="height:10px;"></div><div class="wage-pay"></div><div class="wage-label">~3h · 1 denário</div></div>
+            <div class="wage-col"><div class="wage-hours" style="height:4px;"></div><div class="wage-pay"></div><div class="wage-label">~1h · 1 denário</div></div>
+          </div>
           <button class="continue-btn" onclick="openStage(3)">Ver a resposta do dono</button>
         </div>
       </div>
@@ -146,6 +161,11 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function revealWages(btn){
+    document.getElementById('wageRow').style.display = 'flex';
+    btn.classList.add('active');
   }
 
   function showOutcome(type){

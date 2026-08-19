@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seat-toggle{ display:flex; gap:10px; margin: 4px 0 12px; }
+  .seat-btn{
+    flex:1; padding: 10px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'Fraunces', serif;
+    font-size:14px; cursor:pointer; transition: all .25s ease;
+  }
+  .seat-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .seat-track{ position:relative; height:8px; border-radius:4px; background: var(--panel-line); margin: 10px 0 8px; }
+  .seat-marker{ position:absolute; top:-4px; width:16px; height:16px; border-radius:50%; background: var(--text-faint); transition: left .35s ease, background .35s ease; left: calc(100% - 16px); }
+  .seat-marker.risk{ left: 0%; background: var(--worry); }
+  .seat-marker.honor{ left: calc(100% - 16px); background: var(--calm); }
+  .seat-caption{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin:0 0 16px; }
 </style>
 </head>
 <body>
@@ -83,6 +95,14 @@
         <div class="tl-card">
           <p><em>"Mas, quando fores convidado, vai, e assenta-te no último lugar, para que, quando vier o que te convidou, te diga: Amigo, sobe mais para cima. Então terás honra diante dos que estiverem à mesa contigo."</em> (v.10, paráfrase)</p>
           <p>A diferença não é fingir humildade esperando ser notado — é escolher o último lugar de verdade, deixando a decisão de promover pra quem organiza a festa, não pra si mesmo.</p>
+
+          <div class="seat-toggle">
+            <button class="seat-btn" id="btnSeatHigh" onclick="showSeat('high')">Lugar mais alto</button>
+            <button class="seat-btn" id="btnSeatLow" onclick="showSeat('low')">Lugar mais baixo</button>
+          </div>
+          <div class="seat-track"><div class="seat-marker" id="seatMarker"></div></div>
+          <p class="seat-caption" id="seatCaption">Toque para comparar o risco de cada escolha.</p>
+
           <button class="continue-btn" onclick="openStage(4)">Ver o desfecho</button>
         </div>
       </div>
@@ -165,6 +185,24 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Deixar a promoção vir de quem organiza a festa";
       text.textContent = "Escolher o último lugar não é sobre se rebaixar por rebaixar — é sobre confiar que quem convida sabe reconhecer valor sem precisar que ele seja reivindicado antes.";
+    }
+  }
+
+  function showSeat(pos){
+    const btnHigh = document.getElementById('btnSeatHigh');
+    const btnLow = document.getElementById('btnSeatLow');
+    const marker = document.getElementById('seatMarker');
+    const caption = document.getElementById('seatCaption');
+    btnHigh.classList.remove('active');
+    btnLow.classList.remove('active');
+    if (pos === 'high'){
+      btnHigh.classList.add('active');
+      marker.className = 'seat-marker risk';
+      caption.textContent = "Sentar na frente arrisca ouvir \"dá lugar a este\" e ter de recuar, com vergonha, na frente de todos (v.8-9, paráfrase).";
+    } else {
+      btnLow.classList.add('active');
+      marker.className = 'seat-marker honor';
+      caption.textContent = "Sentar atrás abre espaço pra ouvir \"amigo, sobe mais para cima\" — a honra vem de quem convida, não de quem se serve primeiro (v.10, paráfrase).";
     }
   }
 </script>

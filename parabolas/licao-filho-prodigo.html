@@ -114,6 +114,15 @@
           <p>Ele decide voltar para casa disposto a ser recebido como empregado, não mais como filho (v.18-19). Mas o texto conta algo que ele não esperava:</p>
           <p><em>"E, quando ainda estava longe, seu pai o viu, e se moveu de íntima compaixão, e correndo, lançou-se-lhe ao pescoço, e o beijou."</em> (v.20, paráfrase) — num homem daquela cultura, correr em público era um gesto que custava a própria dignidade.</p>
           <p>O filho começa o discurso ensaiado, mas o pai nem o deixa terminar: manda trazer a melhor roupa, um anel, sandálias, e prepara uma festa com o novilho mais gordo — "porque este meu filho estava morto, e reviveu; se havia perdido, e foi achado" (v.22-24).</p>
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnStatusBefore" onclick="showStatus('before')">Antes do pai correr</button>
+            <button class="toggle-btn" id="btnStatusAfter" onclick="showStatus('after')">Depois do abraço</button>
+          </div>
+          <div class="outcome" id="statusCard">
+            <div class="outcome-visual" id="statusVisual"></div>
+            <h3 id="statusTitle"></h3>
+            <p id="statusText"></p>
+          </div>
           <button class="continue-btn" onclick="openStage(5)">Continuar → o outro filho</button>
         </div>
       </div>
@@ -199,6 +208,27 @@
   function revealSpeech(btn){
     document.getElementById('speechText').style.display = 'block';
     btn.classList.add('active');
+  }
+
+  function showStatus(state){
+    const btnBefore = document.getElementById('btnStatusBefore');
+    const btnAfter = document.getElementById('btnStatusAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('statusVisual');
+    const title = document.getElementById('statusTitle');
+    const text = document.getElementById('statusText');
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "\"Estava morto... estava perdido\"";
+      text.textContent = "É assim que o pai descreve o filho antes de vê-lo voltar (v.24) — não distante, não em erro: morto, perdido.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "\"Reviveu... foi achado\"";
+      text.textContent = "A mesma frase termina em festa: reviveu, foi achado (v.24). Nada no meio do caminho — do morto ao vivo — dependeu do discurso que o filho tinha ensaiado.";
+    }
   }
 
   function showOutcome(type){
