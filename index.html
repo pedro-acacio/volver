@@ -449,7 +449,7 @@
         <circle cx="8" cy="8" r="6" stroke-width="1.5"/>
         <path d="M12.5 12.5 L17 17" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      <input type="text" id="searchInput" class="search-input" placeholder="Buscar reflexão, referência ou tema…" autocomplete="off">
+      <input type="text" id="searchInput" class="search-input" data-i18n-ph="search_placeholder" placeholder="Buscar reflexão, referência ou tema…" autocomplete="off">
     </div>
     <a class="topbar-logo" href="index.html">
       <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
@@ -470,12 +470,12 @@
       </svg>
     </div>
     <div class="hero-info">
-      <div class="hero-eyebrow"><span class="dot"></span>Apresentação da plataforma</div>
-      <h1 class="hero-title">O que significa "Volver"?</h1>
-      <p class="hero-hook">Um verbo raro em português, emprestado do espanhol, com raiz latina — e um propósito por trás da escolha: entender por que essa plataforma existe pra te ajudar a voltar, de novo e de novo, à Palavra.</p>
+      <div class="hero-eyebrow"><span class="dot"></span><span data-i18n="hero_eyebrow">Apresentação da plataforma</span></div>
+      <h1 class="hero-title" data-i18n="hero_title">O que significa "Volver"?</h1>
+      <p class="hero-hook" data-i18n="hero_hook">Um verbo raro em português, emprestado do espanhol, com raiz latina — e um propósito por trás da escolha: entender por que essa plataforma existe pra te ajudar a voltar, de novo e de novo, à Palavra.</p>
       <a class="watch-btn" href="sobre-a-volver.html">
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M8 3L13 8L8 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Descobrir a origem do nome
+        <span data-i18n="hero_cta">Descobrir a origem do nome</span>
       </a>
     </div>
   </section>
@@ -484,7 +484,7 @@
   <section class="row" data-has-content="false">
     <div class="row-head">
       <svg class="row-icon" viewBox="0 0 34 34" fill="none"><path d="M4 4 C4 4 9 2 17 4 C25 2 30 4 30 4 V28 C30 28 25 26 17 28 C9 26 4 28 4 28 Z M17 4 V28" stroke-width="1.5"/></svg>
-      <h2 class="row-title"><a href="livros/biblioteca-livros.html">Livros</a></h2>
+      <h2 class="row-title"><a href="livros/biblioteca-livros.html" data-i18n="cat_livros">Livros</a></h2>
       <span class="row-count">2 de 66 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -549,7 +549,7 @@
   <section class="row" data-has-content="true">
     <div class="row-head">
       <svg class="row-icon" viewBox="0 0 34 34" fill="none"><path d="M3 3 H31 V25 H3 Z M3 3 L17 15 L31 3" stroke-width="1.6"/></svg>
-      <h2 class="row-title"><a href="parabolas/biblioteca-parabolas.html">Parábolas</a></h2>
+      <h2 class="row-title"><a href="parabolas/biblioteca-parabolas.html" data-i18n="cat_parabolas">Parábolas</a></h2>
       <span class="row-count">35 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -1043,7 +1043,7 @@
   <section class="row" data-has-content="true">
     <div class="row-head">
       <svg class="row-icon" viewBox="0 0 34 34" fill="none"><path d="M17 4 C10 10 6 15 6 20 C6 25.5 11 30 17 30 C23 30 28 25.5 28 20 C28 15 24 10 17 4 Z" stroke-width="1.5"/></svg>
-      <h2 class="row-title"><a href="salmos/biblioteca-salmos.html">Salmos</a></h2>
+      <h2 class="row-title"><a href="salmos/biblioteca-salmos.html" data-i18n="cat_salmos">Salmos</a></h2>
       <span class="row-count">24 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -1325,7 +1325,7 @@
   <section class="row" data-has-content="true">
     <div class="row-head">
       <svg class="row-icon" viewBox="0 0 34 34" fill="none"><path d="M17 3 L20.5 13 L31 13 L22.5 19.5 L26 30 L17 23.5 L8 30 L11.5 19.5 L3 13 L13.5 13 Z" stroke-width="1.4"/></svg>
-      <h2 class="row-title"><a href="proverbios/biblioteca-proverbios.html">Provérbios</a></h2>
+      <h2 class="row-title"><a href="proverbios/biblioteca-proverbios.html" data-i18n="cat_proverbios">Provérbios</a></h2>
       <span class="row-count">24 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -1612,7 +1612,7 @@
         <circle cx="25" cy="13" r="3.6" stroke-width="1.2"/>
         <path d="M18.5 29 C18.5 23.5 21.5 20.5 25 20.5 C28.5 20.5 31.5 23.5 31.5 29" stroke-width="1.2"/>
       </svg>
-      <h2 class="row-title"><a href="personagens/biblioteca-personagens.html">Personagens</a></h2>
+      <h2 class="row-title"><a href="personagens/biblioteca-personagens.html" data-i18n="cat_personagens">Personagens</a></h2>
       <span class="row-count">40 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2077,7 +2077,7 @@
         <circle cx="16" cy="27" r="4.3" stroke-width="1.3"/>
         <circle cx="24.5" cy="26.5" r="3.8" stroke-width="1.3"/>
       </svg>
-      <h2 class="row-title"><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a></h2>
+      <h2 class="row-title"><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html" data-i18n="cat_fruto-do-espirito">Fruto do Espírito</a></h2>
       <span class="row-count">13 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2278,7 +2278,7 @@
       <svg class="row-icon" viewBox="0 0 34 34" fill="none">
         <path d="M17 3 C21 9 24 13 24 18 C24 23.5 21 28 17 28 C13 28 10 23.5 10 18 C10 15 11.5 12.5 13 11 C13 14 14.5 15.5 16 15.5 C15 12 15.5 7 17 3 Z" stroke-width="1.3"/>
       </svg>
-      <h2 class="row-title"><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a></h2>
+      <h2 class="row-title"><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html" data-i18n="cat_disciplinas-espirituais">Disciplinas Espirituais</a></h2>
       <span class="row-count">6 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2394,7 +2394,7 @@
         <circle cx="17" cy="22.9" r="5" stroke-width="1.4"/>
         <circle cx="17" cy="13.6" r="3.6" stroke-width="1.3"/>
       </svg>
-      <h2 class="row-title"><a href="trindade/biblioteca-trindade.html">Trindade</a></h2>
+      <h2 class="row-title"><a href="trindade/biblioteca-trindade.html" data-i18n="cat_trindade">Trindade</a></h2>
       <span class="row-count">8 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2532,7 +2532,7 @@
         <circle cx="10" cy="10" r="6" stroke-width="1.4"/>
         <path d="M14 14 L29 29 M22 22 L27 22 M25 25 L30 25" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
-      <h2 class="row-title"><a href="mordomia-crista/biblioteca-mordomia-crista.html">Mordomia Cristã</a></h2>
+      <h2 class="row-title"><a href="mordomia-crista/biblioteca-mordomia-crista.html" data-i18n="cat_mordomia-crista">Mordomia Cristã</a></h2>
       <span class="row-count">8 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2660,7 +2660,7 @@
       <svg class="row-icon" viewBox="0 0 34 34" fill="none">
         <path d="M4 27 L13 12 L18 19 L23 9 L30 27 Z" stroke-width="1.4" stroke-linejoin="round"/>
       </svg>
-      <h2 class="row-title"><a href="bem-aventurancas/biblioteca-bem-aventurancas.html">Bem-aventuranças</a></h2>
+      <h2 class="row-title"><a href="bem-aventurancas/biblioteca-bem-aventurancas.html" data-i18n="cat_bem-aventurancas">Bem-aventuranças</a></h2>
       <span class="row-count">8 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2788,7 +2788,7 @@
         <path d="M4 15 Q9 10 14 15 T24 15 T34 15" stroke-width="1.3"/>
         <path d="M4 21 Q9 16 14 21 T24 21 T34 21" stroke-width="1.3"/>
       </svg>
-      <h2 class="row-title"><a href="sinais-milagrosos/biblioteca-sinais-milagrosos.html">7 Sinais Milagrosos</a></h2>
+      <h2 class="row-title"><a href="sinais-milagrosos/biblioteca-sinais-milagrosos.html" data-i18n="cat_sinais-milagrosos">7 Sinais Milagrosos</a></h2>
       <span class="row-count">7 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -2909,7 +2909,7 @@
       <svg class="row-icon" viewBox="0 0 34 34" fill="none">
         <path d="M17 4 C12 10 9 14.5 9 19 C9 24 12.5 28 17 28 C21.5 28 25 24 25 19 C25 14.5 22 10 17 4 Z" stroke-width="1.4"/>
       </svg>
-      <h2 class="row-title"><a href="eu-sou/biblioteca-eu-sou.html">7 Discursos "Eu Sou"</a></h2>
+      <h2 class="row-title"><a href="eu-sou/biblioteca-eu-sou.html" data-i18n="cat_eu-sou">7 Discursos "Eu Sou"</a></h2>
       <span class="row-count">7 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -3025,7 +3025,7 @@
       <svg class="row-icon" viewBox="0 0 34 34" fill="none">
         <path d="M17 4 V30 M7 13 H27" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
-      <h2 class="row-title"><a href="pai-nosso/biblioteca-pai-nosso.html">A Oração do Pai Nosso</a></h2>
+      <h2 class="row-title"><a href="pai-nosso/biblioteca-pai-nosso.html" data-i18n="cat_pai-nosso">A Oração do Pai Nosso</a></h2>
       <span class="row-count">6 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -3130,7 +3130,7 @@
       <svg class="row-icon" viewBox="0 0 34 34" fill="none">
         <path d="M17 4 L28 8 V17 C28 24 23 28.5 17 31 C11 28.5 6 24 6 17 V8 Z" stroke-width="1.4"/>
       </svg>
-      <h2 class="row-title"><a href="armadura-de-deus/biblioteca-armadura-de-deus.html">A Armadura de Deus</a></h2>
+      <h2 class="row-title"><a href="armadura-de-deus/biblioteca-armadura-de-deus.html" data-i18n="cat_armadura-de-deus">A Armadura de Deus</a></h2>
       <span class="row-count">7 disponíveis</span>
     </div>
     <div class="row-scroll">
@@ -3248,8 +3248,8 @@
   <!-- ===== COMO FUNCIONA ===== -->
   <section class="how">
     <div class="how-head">
-      <div class="how-eyebrow">O formato</div>
-      <h2 class="how-title">Como funciona cada reflexão</h2>
+      <div class="how-eyebrow" data-i18n="how_eyebrow">O formato</div>
+      <h2 class="how-title" data-i18n="how_title">Como funciona cada reflexão</h2>
     </div>
     <div class="how-grid">
       <div class="how-step">
@@ -3257,8 +3257,8 @@
         <svg class="how-icon" viewBox="0 0 34 34" fill="none">
           <path d="M4 4 H14 V14 H4 Z M20 4 H30 V14 H20 Z M4 20 H14 V30 H4 Z M20 20 H30 V30 H20 Z" stroke-width="1.5"/>
         </svg>
-        <h3>Escolha uma classificação</h3>
-        <p>Parábolas, Livros, Salmos, Provérbios, Personagens, Fruto do Espírito, Disciplinas Espirituais, Trindade, Mordomia Cristã, Bem-aventuranças, 7 Sinais Milagrosos, 7 Discursos "Eu Sou", a Oração do Pai Nosso ou a Armadura de Deus — cada uma reúne o mesmo tipo de reflexão curta e interativa.</p>
+        <h3 data-i18n="how_step1_h">Escolha uma classificação</h3>
+        <p data-i18n="how_step1_p">Parábolas, Livros, Salmos, Provérbios, Personagens, Fruto do Espírito, Disciplinas Espirituais, Trindade, Mordomia Cristã, Bem-aventuranças, 7 Sinais Milagrosos, 7 Discursos "Eu Sou", a Oração do Pai Nosso ou a Armadura de Deus — cada uma reúne o mesmo tipo de reflexão curta e interativa.</p>
       </div>
       <div class="how-step">
         <div class="how-num">02</div>
@@ -3268,8 +3268,8 @@
           <circle cx="17" cy="17" r="3.2" stroke-width="1.5"/>
           <circle cx="17" cy="26" r="3.2" stroke-width="1.5"/>
         </svg>
-        <h3>Avance pela linha do tempo</h3>
-        <p>Cada estágio abre na ordem em que a própria história aconteceu — sem pular pra frente, sem revelar antes da hora.</p>
+        <h3 data-i18n="how_step2_h">Avance pela linha do tempo</h3>
+        <p data-i18n="how_step2_p">Cada estágio abre na ordem em que a própria história aconteceu — sem pular pra frente, sem revelar antes da hora.</p>
       </div>
       <div class="how-step">
         <div class="how-num">03</div>
@@ -3284,8 +3284,8 @@
           <line x1="28.5" y1="5.5" x2="25" y2="9" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="9" y1="25" x2="5.5" y2="28.5" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        <h3>Veja o padrão revelado</h3>
-        <p>No final, o padrão mental automático da história é nomeado e comparado ao padrão que a graça interrompe.</p>
+        <h3 data-i18n="how_step3_h">Veja o padrão revelado</h3>
+        <p data-i18n="how_step3_p">No final, o padrão mental automático da história é nomeado e comparado ao padrão que a graça interrompe.</p>
       </div>
     </div>
   </section>
@@ -3301,35 +3301,35 @@
     </svg>
           <span class="brand-word">Volver</span>
         </div>
-        <p class="footer-blurb">Reflexões curtas que usam textos bíblicos — em ordem cronológica — para nomear padrões mentais automáticos antes de nomear a virtude que os interrompe.</p>
+        <p class="footer-blurb" data-i18n="footer_blurb">Reflexões curtas que usam textos bíblicos — em ordem cronológica — para nomear padrões mentais automáticos antes de nomear a virtude que os interrompe.</p>
       </div>
       <div class="footer-col">
-        <h4>Explorar</h4>
+        <h4 data-i18n="footer_explore">Explorar</h4>
         <ul>
-          <li><a href="parabolas/biblioteca-parabolas.html">Parábolas</a></li>
-          <li><a href="livros/biblioteca-livros.html">Livros</a></li>
-          <li><a href="salmos/biblioteca-salmos.html">Salmos</a></li>
+          <li><a href="parabolas/biblioteca-parabolas.html" data-i18n="cat_parabolas">Parábolas</a></li>
+          <li><a href="livros/biblioteca-livros.html" data-i18n="cat_livros">Livros</a></li>
+          <li><a href="salmos/biblioteca-salmos.html" data-i18n="cat_salmos">Salmos</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>&nbsp;</h4>
         <ul>
-          <li><a href="proverbios/biblioteca-proverbios.html">Provérbios</a></li>
-          <li><a href="personagens/biblioteca-personagens.html">Personagens</a></li>
-          <li><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html">Fruto do Espírito</a></li>
-          <li><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html">Disciplinas Espirituais</a></li>
-          <li><a href="trindade/biblioteca-trindade.html">Trindade</a></li>
-          <li><a href="mordomia-crista/biblioteca-mordomia-crista.html">Mordomia Cristã</a></li>
-          <li><a href="bem-aventurancas/biblioteca-bem-aventurancas.html">Bem-aventuranças</a></li>
-          <li><a href="sinais-milagrosos/biblioteca-sinais-milagrosos.html">7 Sinais Milagrosos</a></li>
-          <li><a href="eu-sou/biblioteca-eu-sou.html">7 Discursos "Eu Sou"</a></li>
-          <li><a href="pai-nosso/biblioteca-pai-nosso.html">A Oração do Pai Nosso</a></li>
-          <li><a href="armadura-de-deus/biblioteca-armadura-de-deus.html">A Armadura de Deus</a></li>
+          <li><a href="proverbios/biblioteca-proverbios.html" data-i18n="cat_proverbios">Provérbios</a></li>
+          <li><a href="personagens/biblioteca-personagens.html" data-i18n="cat_personagens">Personagens</a></li>
+          <li><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html" data-i18n="cat_fruto-do-espirito">Fruto do Espírito</a></li>
+          <li><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html" data-i18n="cat_disciplinas-espirituais">Disciplinas Espirituais</a></li>
+          <li><a href="trindade/biblioteca-trindade.html" data-i18n="cat_trindade">Trindade</a></li>
+          <li><a href="mordomia-crista/biblioteca-mordomia-crista.html" data-i18n="cat_mordomia-crista">Mordomia Cristã</a></li>
+          <li><a href="bem-aventurancas/biblioteca-bem-aventurancas.html" data-i18n="cat_bem-aventurancas">Bem-aventuranças</a></li>
+          <li><a href="sinais-milagrosos/biblioteca-sinais-milagrosos.html" data-i18n="cat_sinais-milagrosos">7 Sinais Milagrosos</a></li>
+          <li><a href="eu-sou/biblioteca-eu-sou.html" data-i18n="cat_eu-sou">7 Discursos "Eu Sou"</a></li>
+          <li><a href="pai-nosso/biblioteca-pai-nosso.html" data-i18n="cat_pai-nosso">A Oração do Pai Nosso</a></li>
+          <li><a href="armadura-de-deus/biblioteca-armadura-de-deus.html" data-i18n="cat_armadura-de-deus">A Armadura de Deus</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Volver · a mente, à luz da Palavra</span>
+      <span data-i18n="footer_bottom">Volver · a mente, à luz da Palavra</span>
       <span id="year"></span>
     </div>
   </footer>

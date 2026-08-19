@@ -15,6 +15,8 @@
     background: var(--panel); border:1px solid var(--panel-line); border-radius:14px;
     padding:18px 20px; margin-bottom:14px;
   }
+  .settings-row.stacked{ flex-direction:column; align-items:stretch; }
+  .settings-row-head{ display:flex; align-items:center; justify-content:space-between; gap:16px; width:100%; }
   .settings-info h3{ font-family:'Fraunces', serif; font-weight:500; font-size:15px; margin:0 0 4px; }
   .settings-info p{ font-size:12.5px; color: var(--text-dim); margin:0; max-width:42ch; }
   .settings-btn{
@@ -23,10 +25,53 @@
     font-size:13px; font-weight:600; cursor:pointer; transition: all .2s ease; white-space:nowrap;
   }
   .settings-btn:hover{ border-color: var(--gold); }
+  .settings-btn:disabled{ opacity:.45; cursor:not-allowed; }
   .settings-btn.danger{ color: var(--worry); border-color: rgba(168,92,107,0.4); }
   .settings-btn.danger:hover{ border-color: var(--worry); }
+
+  .settings-select{
+    flex-shrink:0; padding:10px 14px; border-radius:9px; border:1px solid var(--panel-line);
+    background: var(--bg); color: var(--text); font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px; font-weight:600; cursor:pointer;
+  }
+
+  .stepper{ display:flex; align-items:center; gap:10px; flex-shrink:0; }
+  .stepper-btn{
+    width:32px; height:32px; border-radius:8px; border:1px solid var(--panel-line);
+    background: var(--bg); color: var(--text); font-size:16px; font-weight:600; line-height:1;
+    cursor:pointer; transition: all .2s ease; display:flex; align-items:center; justify-content:center;
+  }
+  .stepper-btn:hover:not(:disabled){ border-color: var(--gold); }
+  .stepper-btn:disabled{ opacity:.35; cursor:not-allowed; }
+  .stepper-label{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-dim);
+    min-width:96px; text-align:center;
+  }
+
+  .clear-panel{ margin-top:16px; padding-top:16px; border-top:1px solid var(--panel-line); }
+  .clear-warning{
+    font-size:12.5px; line-height:1.55; color: var(--worry); margin:0 0 14px;
+    background: rgba(168,92,107,0.08); border:1px solid rgba(168,92,107,0.3);
+    border-radius:10px; padding:11px 14px;
+  }
+  .clear-list{ display:flex; flex-direction:column; gap:8px; margin-bottom:14px; max-height:340px; overflow-y:auto; }
+  .clear-item{
+    display:flex; align-items:flex-start; gap:10px; padding:10px 12px;
+    border:1px solid var(--panel-line); border-radius:10px; cursor:pointer; transition: border-color .2s ease;
+  }
+  .clear-item:hover{ border-color: var(--gold); }
+  .clear-item input{ margin-top:3px; flex-shrink:0; }
+  .clear-item-info{ display:flex; flex-direction:column; gap:2px; }
+  .clear-item-info .t{ font-size:13px; color: var(--text); }
+  .clear-item-info .c{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color: var(--text-faint); }
+  .clear-empty{ font-size:12.5px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; margin-bottom:14px; }
+  .clear-actions{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+  .clear-select-all{ display:flex; align-items:center; gap:8px; font-size:12.5px; color: var(--text-dim); cursor:pointer; }
+  .clear-buttons{ display:flex; gap:10px; flex-wrap:wrap; }
+
   @media (max-width:520px){
-    .settings-row{ flex-direction:column; align-items:flex-start; }
+    .settings-row-head{ flex-direction:column; align-items:flex-start; }
+    .clear-actions{ flex-direction:column; align-items:flex-start; }
   }
 </style>
 </head>
@@ -42,57 +87,193 @@
     <a class="brand-word" href="index.html">Volver</a>
   </div>
 
-  <div class="eyebrow">Preferências</div>
-  <h1>Configurações</h1>
-  <p class="sub">Ajustes salvos neste navegador — tema, tamanho do texto e os dados de progresso guardados localmente.</p>
+  <div class="eyebrow" data-i18n="cfg_eyebrow">Preferências</div>
+  <h1 data-i18n="cfg_title">Configurações</h1>
+  <p class="sub" data-i18n="cfg_sub">Ajustes salvos neste navegador — tema, tamanho do texto e os dados de progresso guardados localmente.</p>
 
   <div class="settings-row">
-    <div class="settings-info"><h3>Tema</h3><p>Alterna entre os modos claro e escuro em todo o site.</p></div>
+    <div class="settings-info"><h3 data-i18n="cfg_theme_title">Tema</h3><p data-i18n="cfg_theme_desc">Alterna entre os modos claro e escuro em todo o site.</p></div>
     <button id="cfgTheme" class="settings-btn" type="button">Escuro</button>
   </div>
 
   <div class="settings-row">
-    <div class="settings-info"><h3>Tamanho do texto</h3><p>Aumenta o texto das reflexões e páginas para leitura mais confortável.</p></div>
-    <button id="cfgFontSize" class="settings-btn" type="button">Padrão</button>
+    <div class="settings-info"><h3 data-i18n="cfg_fontsize_title">Tamanho do texto</h3><p data-i18n="cfg_fontsize_desc">Aumenta ou diminui o texto das reflexões e páginas, em 5 níveis, para leitura mais confortável.</p></div>
+    <div class="stepper">
+      <button id="cfgFontDec" class="stepper-btn" type="button">−</button>
+      <span id="cfgFontLabel" class="stepper-label">Padrão</span>
+      <button id="cfgFontInc" class="stepper-btn" type="button">+</button>
+    </div>
   </div>
 
   <div class="settings-row">
-    <div class="settings-info"><h3>Apagar progresso salvo</h3><p>Remove reflexões concluídas, em andamento e favoritas salvas neste navegador. Essa ação não pode ser desfeita.</p></div>
-    <button id="cfgClear" class="settings-btn danger" type="button">Apagar</button>
+    <div class="settings-info"><h3 data-i18n="cfg_lang_title">Idioma</h3><p data-i18n="cfg_lang_desc">Traduz os menus, botões e textos fixos da plataforma. As reflexões continuam em português por enquanto.</p></div>
+    <select id="cfgLang" class="settings-select">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
   </div>
 
-  <footer>Volver · configurações · reflexão interativa</footer>
+  <div class="settings-row stacked">
+    <div class="settings-row-head">
+      <div class="settings-info"><h3 data-i18n="cfg_clear_title">Apagar progresso</h3><p data-i18n="cfg_clear_desc">Escolha quais reflexões concluídas terão o progresso apagado. Elas voltam a aparecer como não iniciadas.</p></div>
+      <button id="cfgClearToggle" class="settings-btn danger" type="button">Gerenciar</button>
+    </div>
+    <div id="cfgClearPanel" class="clear-panel" hidden>
+      <p class="clear-warning" data-i18n="cfg_clear_warning">Atenção: apagar o progresso de uma reflexão significa que você vai precisar refazê-la do início.</p>
+      <div id="cfgClearList" class="clear-list"></div>
+      <div id="cfgClearEmpty" class="clear-empty" data-i18n="cfg_clear_empty" hidden>Nenhuma reflexão concluída ainda.</div>
+      <div id="cfgClearActions" class="clear-actions" hidden>
+        <label class="clear-select-all">
+          <input type="checkbox" id="cfgSelectAll">
+          <span data-i18n="cfg_clear_select_all">Selecionar todas</span>
+        </label>
+        <div class="clear-buttons">
+          <button id="cfgEraseAll" class="settings-btn" type="button" data-i18n="cfg_clear_erase_all">Apagar todos</button>
+          <button id="cfgEraseSelected" class="settings-btn danger" type="button" disabled>Apagar selecionadas</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer data-i18n="footer_cfg">Volver · configurações · reflexão interativa</footer>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function(){
     if(!window.Volver) return;
+    var V = window.Volver;
 
+    // ---- theme ----
     var themeBtn = document.getElementById('cfgTheme');
-    function syncTheme(){ themeBtn.textContent = window.Volver.isLightTheme() ? 'Claro' : 'Escuro'; }
+    function syncTheme(){ themeBtn.textContent = V.isLightTheme() ? V.t('cfg_theme_light') : V.t('cfg_theme_dark'); }
     syncTheme();
-    themeBtn.addEventListener('click', function(){ window.Volver.toggleTheme(); syncTheme(); });
+    themeBtn.addEventListener('click', function(){ V.toggleTheme(); syncTheme(); });
 
-    var fontBtn = document.getElementById('cfgFontSize');
-    function syncFont(){ fontBtn.textContent = window.Volver.isLargeFont() ? 'Grande' : 'Padrão'; }
+    // ---- font size stepper ----
+    var fontLabel = document.getElementById('cfgFontLabel');
+    var fontDec = document.getElementById('cfgFontDec');
+    var fontInc = document.getElementById('cfgFontInc');
+    function syncFont(){
+      var idx = V.getFontSizeIndex();
+      fontLabel.textContent = V.getFontSizeLabel(idx);
+      fontDec.disabled = idx === 0;
+      fontInc.disabled = idx === V.fontSizeLevelCount - 1;
+      fontDec.setAttribute('aria-label', V.t('cfg_fontsize_dec_aria'));
+      fontInc.setAttribute('aria-label', V.t('cfg_fontsize_inc_aria'));
+    }
     syncFont();
-    fontBtn.addEventListener('click', function(){ window.Volver.toggleFontSize(); syncFont(); });
+    fontDec.addEventListener('click', function(){ V.decreaseFontSize(); syncFont(); });
+    fontInc.addEventListener('click', function(){ V.increaseFontSize(); syncFont(); });
 
-    var clearBtn = document.getElementById('cfgClear');
-    var confirming = false;
-    var confirmTimer = null;
-    clearBtn.addEventListener('click', function(){
-      if(!confirming){
-        confirming = true;
-        clearBtn.textContent = 'Confirmar (clique de novo)';
-        confirmTimer = setTimeout(function(){ confirming = false; clearBtn.textContent = 'Apagar'; }, 4000);
+    // ---- language ----
+    var langSelect = document.getElementById('cfgLang');
+    langSelect.value = V.getLang();
+    langSelect.addEventListener('change', function(){ V.setLang(langSelect.value); });
+
+    // ---- selective progress clearing ----
+    var clearToggle = document.getElementById('cfgClearToggle');
+    var clearPanel = document.getElementById('cfgClearPanel');
+    var clearList = document.getElementById('cfgClearList');
+    var clearEmpty = document.getElementById('cfgClearEmpty');
+    var clearActions = document.getElementById('cfgClearActions');
+    var selectAll = document.getElementById('cfgSelectAll');
+    var eraseAllBtn = document.getElementById('cfgEraseAll');
+    var eraseSelectedBtn = document.getElementById('cfgEraseSelected');
+
+    function syncClearToggleLabel(){
+      clearToggle.textContent = clearPanel.hidden ? V.t('cfg_clear_manage') : V.t('cfg_clear_close');
+    }
+    syncClearToggleLabel();
+
+    function updateEraseSelectedLabel(){
+      var n = Array.from(clearList.querySelectorAll('input[type=checkbox]:checked')).length;
+      eraseSelectedBtn.disabled = n === 0;
+      eraseSelectedBtn.textContent = V.t('cfg_clear_erase_selected_n').replace('{n}', n);
+    }
+
+    function renderClearList(){
+      var completed = V.getSummary().completed;
+      clearList.innerHTML = '';
+      if(completed.length === 0){
+        clearEmpty.hidden = false;
+        clearActions.hidden = true;
         return;
       }
-      clearTimeout(confirmTimer);
-      window.Volver.clearProgress();
-      confirming = false;
-      clearBtn.textContent = 'Apagado ✓';
-      setTimeout(function(){ clearBtn.textContent = 'Apagar'; }, 2000);
+      clearEmpty.hidden = true;
+      clearActions.hidden = false;
+      completed.forEach(function(item){
+        var row = document.createElement('label');
+        row.className = 'clear-item';
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.dataset.key = item.key;
+        cb.addEventListener('change', function(){
+          selectAll.checked = Array.from(clearList.querySelectorAll('input[type=checkbox]')).every(function(c){ return c.checked; });
+          updateEraseSelectedLabel();
+        });
+        var info = document.createElement('span');
+        info.className = 'clear-item-info';
+        var t1 = document.createElement('span'); t1.className = 't'; t1.textContent = item.title;
+        var t2 = document.createElement('span'); t2.className = 'c'; t2.textContent = V.categoryLabel(item.category) + (item.ref ? ' · ' + item.ref : '');
+        info.appendChild(t1); info.appendChild(t2);
+        row.appendChild(cb); row.appendChild(info);
+        clearList.appendChild(row);
+      });
+      selectAll.checked = false;
+      updateEraseSelectedLabel();
+    }
+
+    clearToggle.addEventListener('click', function(){
+      clearPanel.hidden = !clearPanel.hidden;
+      syncClearToggleLabel();
+      if(!clearPanel.hidden) renderClearList();
+    });
+
+    selectAll.addEventListener('change', function(){
+      Array.from(clearList.querySelectorAll('input[type=checkbox]')).forEach(function(cb){ cb.checked = selectAll.checked; });
+      updateEraseSelectedLabel();
+    });
+
+    function armConfirm(btn, onConfirm, resyncLabel){
+      if(btn.dataset.confirming === '1'){
+        clearTimeout(btn._volverTimer);
+        delete btn.dataset.confirming;
+        onConfirm();
+        btn.textContent = V.t('cfg_clear_done');
+        setTimeout(resyncLabel, 1600);
+        return;
+      }
+      btn.dataset.confirming = '1';
+      var original = btn.textContent;
+      btn.textContent = V.t('cfg_clear_confirm');
+      btn._volverTimer = setTimeout(function(){
+        delete btn.dataset.confirming;
+        btn.textContent = original;
+      }, 4000);
+    }
+
+    eraseAllBtn.addEventListener('click', function(){
+      armConfirm(eraseAllBtn, function(){
+        var keys = V.getSummary().completed.map(function(it){ return it.key; });
+        V.clearProgressForKeys(keys);
+        renderClearList();
+      }, function(){ eraseAllBtn.textContent = V.t('cfg_clear_erase_all'); });
+    });
+
+    eraseSelectedBtn.addEventListener('click', function(){
+      armConfirm(eraseSelectedBtn, function(){
+        var keys = Array.from(clearList.querySelectorAll('input[type=checkbox]:checked')).map(function(cb){ return cb.dataset.key; });
+        V.clearProgressForKeys(keys);
+        renderClearList();
+      }, updateEraseSelectedLabel);
+    });
+
+    document.addEventListener('volver:lang', function(){
+      syncTheme();
+      syncFont();
+      syncClearToggleLabel();
+      if(!clearPanel.hidden) renderClearList();
     });
   });
 </script>

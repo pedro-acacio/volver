@@ -198,8 +198,10 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   background: radial-gradient(ellipse 120% 80% at 50% -10%, #FFFDF6 0%, var(--bg) 55%) !important;
 }
 
-:root[data-fontsize="large"] .wrap{ zoom: 1.12; }
-:root[data-fontsize="large"] .stage-wrap{ zoom: 1.12; }
+:root[data-fontsize="0"] .wrap, :root[data-fontsize="0"] .stage-wrap{ zoom: 0.9; }
+:root[data-fontsize="1"] .wrap, :root[data-fontsize="1"] .stage-wrap{ zoom: 0.95; }
+:root[data-fontsize="3"] .wrap, :root[data-fontsize="3"] .stage-wrap{ zoom: 1.12; }
+:root[data-fontsize="4"] .wrap, :root[data-fontsize="4"] .stage-wrap{ zoom: 1.25; }
 
 .menu-btn{
   width:30px; height:30px; border-radius:9px; border:1px solid var(--panel-line);

@@ -42,52 +42,54 @@
     <a class="brand-word" href="index.html">Volver</a>
   </div>
 
-  <div class="eyebrow">Sua jornada</div>
-  <h1>Perfil</h1>
-  <p class="sub">Um resumo do que você já concluiu, do que está em andamento e do que favoritou — tudo salvo neste navegador.</p>
+  <div class="eyebrow" data-i18n="profile_eyebrow">Sua jornada</div>
+  <h1 data-i18n="profile_title">Perfil</h1>
+  <p class="sub" data-i18n="profile_sub">Um resumo do que você já concluiu, do que está em andamento e do que favoritou — tudo salvo neste navegador.</p>
 
   <div class="profile-grid" id="profileGrid"></div>
 
   <div class="profile-section">
-    <h2>Concluídas</h2>
+    <h2 data-i18n="stat_completed">Concluídas</h2>
     <div class="profile-list" id="listCompleted"></div>
   </div>
 
   <div class="profile-section">
-    <h2>Em andamento</h2>
+    <h2 data-i18n="stat_progress">Em andamento</h2>
     <div class="profile-list" id="listProgress"></div>
   </div>
 
   <div class="profile-section">
-    <h2>Favoritas</h2>
+    <h2 data-i18n="stat_favorites">Favoritas</h2>
     <div class="profile-list" id="listFavorites"></div>
   </div>
 
-  <footer>Volver · perfil local · reflexão interativa</footer>
+  <footer data-i18n="footer_profile">Volver · perfil local · reflexão interativa</footer>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function(){
     function render(){
       if(!window.Volver) return;
-      var s = window.Volver.getSummary();
+      var V = window.Volver;
+      var s = V.getSummary();
       document.getElementById('profileGrid').innerHTML =
-        '<div class="profile-stat"><b>' + s.completed.length + '</b><span>Concluídas</span></div>' +
-        '<div class="profile-stat"><b>' + s.inProgress.length + '</b><span>Em andamento</span></div>' +
-        '<div class="profile-stat"><b>' + s.favorites.length + '</b><span>Favoritas</span></div>';
+        '<div class="profile-stat"><b>' + s.completed.length + '</b><span>' + V.t('stat_completed') + '</span></div>' +
+        '<div class="profile-stat"><b>' + s.inProgress.length + '</b><span>' + V.t('stat_progress') + '</span></div>' +
+        '<div class="profile-stat"><b>' + s.favorites.length + '</b><span>' + V.t('stat_favorites') + '</span></div>';
 
-      function renderList(elId, items, emptyText){
+      function renderList(elId, items, emptyKey){
         var el = document.getElementById(elId);
-        if(items.length === 0){ el.innerHTML = '<div class="profile-empty">' + emptyText + '</div>'; return; }
+        if(items.length === 0){ el.innerHTML = '<div class="profile-empty">' + V.t(emptyKey) + '</div>'; return; }
         el.innerHTML = items.map(function(it){
           return '<a class="profile-item" href="' + it.href + '"><span class="t">' + it.title + '</span><span class="r">' + (it.ref || '') + '</span></a>';
         }).join('');
       }
-      renderList('listCompleted', s.completed, 'Nenhuma reflexão concluída ainda.');
-      renderList('listProgress', s.inProgress, 'Nenhuma reflexão em andamento.');
-      renderList('listFavorites', s.favorites, 'Nenhuma reflexão favoritada ainda.');
+      renderList('listCompleted', s.completed, 'list_completed_empty');
+      renderList('listProgress', s.inProgress, 'list_progress_empty');
+      renderList('listFavorites', s.favorites, 'list_favorites_empty');
     }
     if(window.Volver){ render(); } else { window.addEventListener('load', render); }
+    document.addEventListener('volver:lang', render);
   });
 </script>
 <script defer src="volver-app.js"></script>

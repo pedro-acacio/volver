@@ -39,38 +39,36 @@
     <a class="brand-word" href="index.html">Volver</a>
   </div>
 
-  <div class="eyebrow">Sua jornada</div>
-  <h1>Continue a Volver</h1>
-  <p class="sub">As reflexões que você começou e ainda não concluiu, para retomar de onde parou.</p>
+  <div class="eyebrow" data-i18n="profile_eyebrow">Sua jornada</div>
+  <h1 data-i18n="continue_title">Continue a Volver</h1>
+  <p class="sub" data-i18n="continue_sub">As reflexões que você começou e ainda não concluiu, para retomar de onde parou.</p>
 
   <div class="fav-grid" id="recentGrid"></div>
-  <div class="fav-empty" id="recentEmpty" style="display:none;">Nenhuma reflexão em andamento no momento.</div>
+  <div class="fav-empty" id="recentEmpty" data-i18n="continue_empty" style="display:none;">Nenhuma reflexão em andamento no momento.</div>
 
-  <footer>Volver · continue a volver · reflexão interativa</footer>
+  <footer data-i18n="footer_continue">Volver · continue a volver · reflexão interativa</footer>
 </div>
 
 <script>
-  var CATEGORY_LABELS = {
-    'parabolas': 'Parábolas', 'livros': 'Livros', 'personagens': 'Personagens',
-    'fruto-do-espirito': 'Fruto do Espírito', 'disciplinas-espirituais': 'Disciplinas Espirituais',
-    'trindade': 'Trindade'
-  };
   document.addEventListener('DOMContentLoaded', function(){
     function render(){
       if(!window.Volver) return;
-      var items = window.Volver.getSummary().inProgress;
+      var V = window.Volver;
+      var items = V.getSummary().inProgress;
       var grid = document.getElementById('recentGrid');
       var empty = document.getElementById('recentEmpty');
-      if(items.length === 0){ empty.style.display = 'block'; return; }
+      if(items.length === 0){ empty.style.display = 'block'; grid.innerHTML = ''; return; }
+      empty.style.display = 'none';
       grid.innerHTML = items.map(function(it){
         return '<a class="fav-card" href="' + it.href + '">' +
-          '<div class="cat">' + (CATEGORY_LABELS[it.category] || it.category) + '</div>' +
+          '<div class="cat">' + V.categoryLabel(it.category) + '</div>' +
           '<div class="t">' + it.title + '</div>' +
           '<div class="r">' + (it.ref || '') + '</div>' +
         '</a>';
       }).join('');
     }
     if(window.Volver){ render(); } else { window.addEventListener('load', render); }
+    document.addEventListener('volver:lang', render);
   });
 </script>
 <script defer src="volver-app.js"></script>
