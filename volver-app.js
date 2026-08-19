@@ -131,6 +131,8 @@
       cfg_clear_manage: 'Gerenciar', cfg_clear_close: 'Fechar',
       cfg_clear_erase_all: 'Apagar todos', cfg_clear_erase_selected_n: 'Apagar selecionadas ({n})',
       cfg_clear_confirm: 'Confirmar (clique de novo)', cfg_clear_done: 'Apagado ✓',
+      card_completed_tag: 'Concluído', card_progress_tag: 'Em andamento',
+      count_completed_label: 'concluídas',
       onb: [
         { eyebrow: '1 de 6 · Sobre a Volver', title: 'O que é a Volver',
           body: '<p>A Volver é uma metodologia para ajudar sua mente a se encontrar com os ensinamentos bíblicos, de um jeito visual e interativo.</p>' +
@@ -180,6 +182,8 @@
       cfg_clear_manage: 'Manage', cfg_clear_close: 'Close',
       cfg_clear_erase_all: 'Erase all', cfg_clear_erase_selected_n: 'Erase selected ({n})',
       cfg_clear_confirm: 'Confirm (click again)', cfg_clear_done: 'Erased ✓',
+      card_completed_tag: 'Completed', card_progress_tag: 'In progress',
+      count_completed_label: 'completed',
       onb: [
         { eyebrow: '1 of 6 · About Volver', title: 'What Volver is',
           body: '<p>Volver is a methodology to help your mind engage with biblical teaching, in a visual and interactive way.</p>' +
@@ -229,6 +233,8 @@
       cfg_clear_manage: 'Gestionar', cfg_clear_close: 'Cerrar',
       cfg_clear_erase_all: 'Borrar todos', cfg_clear_erase_selected_n: 'Borrar seleccionadas ({n})',
       cfg_clear_confirm: 'Confirmar (haz clic de nuevo)', cfg_clear_done: 'Borrado ✓',
+      card_completed_tag: 'Concluido', card_progress_tag: 'En curso',
+      count_completed_label: 'concluidas',
       onb: [
         { eyebrow: '1 de 6 · Sobre Volver', title: 'Qué es Volver',
           body: '<p>Volver es una metodología para ayudar a tu mente a encontrarse con las enseñanzas bíblicas, de una manera visual e interactiva.</p>' +
@@ -371,7 +377,9 @@
     sv_quote: '"Every time you return to the Bible, that is what Volver wants to help you do."',
     sv_cta_primary: 'Enter Volver',
     sv_cta_ghost: 'See how to use the platform',
-    sv_footer: 'Volver · introduction · the meaning of the name'
+    sv_footer: 'Volver · introduction · the meaning of the name',
+    row_count_available: '{n} available',
+    row_count_livros: '{n} of {n2} available'
   });
   Object.assign(I18N_STATIC.es, {
     search_placeholder: 'Buscar reflexión, referencia o tema…',
@@ -482,7 +490,9 @@
     sv_quote: '"Cada vez que vuelves a la Biblia, eso es lo que Volver quiere ayudarte a hacer."',
     sv_cta_primary: 'Entrar a Volver',
     sv_cta_ghost: 'Ver cómo usar la plataforma',
-    sv_footer: 'Volver · presentación · el significado del nombre'
+    sv_footer: 'Volver · presentación · el significado del nombre',
+    row_count_available: '{n} disponibles',
+    row_count_livros: '{n} de {n2} disponibles'
   });
 
   function getLang(){
@@ -515,6 +525,8 @@
       var useHtml = el.hasAttribute('data-i18n-html');
       if(el.dataset.i18nPt === undefined){ el.dataset.i18nPt = useHtml ? el.innerHTML : el.textContent; }
       var val = (lang === 'pt' || dict[key] === undefined) ? el.dataset.i18nPt : dict[key];
+      if(el.hasAttribute('data-i18n-n')){ val = val.split('{n}').join(el.getAttribute('data-i18n-n')); }
+      if(el.hasAttribute('data-i18n-n2')){ val = val.split('{n2}').join(el.getAttribute('data-i18n-n2')); }
       if(useHtml){ el.innerHTML = val; } else { el.textContent = val; }
     });
 
@@ -829,14 +841,14 @@
         if(refElx && !refElx.querySelector('.completed-tag') && !refElx.querySelector('.progress-tag')){
           var tag = document.createElement('span');
           tag.className = 'completed-tag';
-          tag.textContent = 'Concluído';
+          tag.textContent = t('card_completed_tag');
           refElx.appendChild(tag);
         }
       } else if(isVisited(category, slug)){
         if(refElx && !refElx.querySelector('.progress-tag') && !refElx.querySelector('.completed-tag')){
           var ptag = document.createElement('span');
           ptag.className = 'progress-tag';
-          ptag.textContent = 'Em andamento';
+          ptag.textContent = t('card_progress_tag');
           refElx.appendChild(ptag);
         }
       }
@@ -1083,7 +1095,7 @@
     if(statsRow && !statsRow.querySelector('.stat-completed')){
       var stat = document.createElement('div');
       stat.className = 'stat stat-completed';
-      stat.innerHTML = '<b>' + stats.completed + '</b>concluídas';
+      stat.innerHTML = '<b>' + stats.completed + '</b>' + t('count_completed_label');
       statsRow.appendChild(stat);
     }
   }
@@ -1098,7 +1110,7 @@
       var stats = enhanceShowCards(row);
       var countEl = row.querySelector('.row-count');
       if(stats.completed > 0 && countEl && countEl.dataset.volverDone !== '1'){
-        countEl.textContent += ' · ' + stats.completed + ' concluídas';
+        countEl.textContent += ' · ' + stats.completed + ' ' + t('count_completed_label');
         countEl.dataset.volverDone = '1';
       }
     });
