@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Ano do Jubileu — Levítico 25—27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-levitico.html">Volver</a>
+    <span class="brand-track">Levítico · IV. A prática da santidade</span>
+  </div>
+
+  <div class="eyebrow">Santidade · <span class="ref-tag">Levítico 25—27</span></div>
+  <h1>O ano do jubileu</h1>
+  <p class="sub">Levítico termina com sua lei mais radical: a cada cinquenta anos, dívidas perdoadas, terras devolvidas, escravos libertos — uma reforma econômica completa, ordenada por Deus, para impedir que a desigualdade se torne permanente.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 V6 L9 3 L14 6 V14 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M4 14 H14" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O ano sabático da terra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Assim como cada sétimo dia era sábado, cada sétimo ano também deveria ser: um ano inteiro em que a terra "guardará descanso ao SENHOR" (25.2-4) — sem plantar, sem podar, colhendo apenas o que crescesse por conta própria, disponível para todos, inclusive os animais. Era um teste de confiança concreto: a terra também precisava de descanso, e Deus prometia sustentar o povo mesmo sem uma colheita plantada naquele ano (25.20-21).</p>
+          <p>É a mesma lógica do sábado semanal, agora aplicada à própria terra: nem a produtividade humana, nem a exploração contínua do solo, tinham a palavra final. Tudo — pessoas, animais, terra — pertencia, em última instância, a Deus, e precisava do seu próprio ritmo de descanso.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o ano do jubileu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 3 V15 M12 3 V15 M6 9 H12" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O ano do jubileu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de sete ciclos completos de sete anos — quarenta e nove anos — vinha o quinquagésimo: o ano do jubileu, anunciado com toques de trombeta em todo o território (25.8-10). Nesse ano, três coisas radicais aconteciam de uma só vez: terras vendidas por necessidade voltavam à família original, dívidas relacionadas à terra eram encerradas, e israelitas escravizados por dívida recuperavam a liberdade.</p>
+          <p>A lei explica o porquê: "a terra não se venderá para sempre, porque a terra é minha; pois vós estais comigo como estrangeiros e forasteiros" (25.23). Ninguém, em Israel, era realmente dono da terra — eram todos arrendatários de Deus. O jubileu existia justamente para impedir que a pobreza se tornasse hereditária e permanente: "proclamareis liberdade na terra, a todos os seus moradores" (25.10).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → bênçãos e maldições</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6.5" cy="9" r="4" stroke-width="1.3"/>
+          <circle cx="11.5" cy="9" r="4" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Bênçãos e maldições</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 26 muda de registro: se Israel andasse nos estatutos de Deus, chuvas na estação certa, colheitas fartas, paz na terra, e a própria presença de Deus habitando no meio deles (26.3-13). Mas se rejeitassem a aliança, uma escalada severa de disciplinas — terminando, no limite, em exílio da própria terra (26.14-39).</p>
+          <p>O capítulo, no entanto, não termina em julgamento definitivo. Mesmo depois de descrever o exílio mais duro, Deus promete: "eu me lembrarei da minha aliança com Jacó, e também da minha aliança com Isaque, e também da minha aliança com Abraão me lembrarei" (26.42) — a disciplina nunca é a última palavra; a fidelidade de Deus à sua própria aliança é.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → votos feitos a Deus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Votos feitos a Deus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O livro se encerra com o capítulo 27, sobre votos — promessas voluntárias e específicas feitas a Deus, fosse a dedicação de uma pessoa, um animal, uma casa ou um campo, cada uma com seu próprio valor de resgate estabelecido (27.1-25). É um final aparentemente técnico, mas coerente com todo o livro: até a palavra dada livremente a Deus precisava ser levada a sério, cumprida com o mesmo cuidado exigido de qualquer outra oferta.</p>
+          <p>Levítico termina, assim, do mesmo jeito que viveu do início ao fim: insistindo que nada na vida de Israel — terra, tempo, dinheiro, palavra dada — ficava de fora da santidade que Deus pedia do seu povo.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → o jubileu que Jesus proclamou</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O jubileu que Jesus proclamou</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Séculos depois de Levítico, o profeta Isaías anuncia um "ano aceitável do SENHOR" (Isaías 61.2) — linguagem tirada diretamente do jubileu, agora aplicada a uma libertação ainda maior. E é justamente essa passagem que Jesus escolhe ler, em voz alta, na sinagoga de Nazaré, no início do seu ministério.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Lucas 4.18-19,21</span>
+          <p>O Espírito do Senhor está sobre mim... para pregar liberdade aos cativos... para anunciar o ano aceitável do Senhor. [...] Hoje se cumpriu esta escritura em vossos ouvidos.</p>
+          <span class="ref">— Jesus, na sinagoga de Nazaré</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O jubileu de Levítico acontecia uma vez a cada cinquenta anos, e mesmo assim só devolvia terras e libertava escravos dentro de Israel. Jesus proclama um jubileu maior e permanente: liberdade da dívida do pecado, restauração de tudo o que foi perdido, um "ano aceitável" que não precisa esperar mais quarenta e nove anos para chegar — porque, nele, já chegou.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão da dívida que se acumula</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão da liberdade proclamada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Levítico · o ano do jubileu</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma dívida sem data para acabar";
+      text.textContent = "É viver como se o peso de erros passados, ou a distância de Deus, fosse permanente — sem esperar por nenhum ano de libertação, sem acreditar que a situação um dia mudaria.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma liberdade já proclamada";
+      text.textContent = "É viver como quem já ouviu a trombeta do jubileu tocar — porque Cristo já proclamou o ano aceitável do Senhor, e a dívida do pecado, para quem crê nele, já foi encerrada.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
