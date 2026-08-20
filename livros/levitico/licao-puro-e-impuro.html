@@ -11,8 +11,8 @@
   body{ display:flex; justify-content:center; }
   .seq-row{ display:flex; align-items:center; gap:16px; margin: 2px 0 14px; flex-wrap:wrap; }
   .seq-item{ display:inline-flex; align-items:center; gap:6px; }
-  .seq-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; flex-shrink:0; }
-  .seq-dot.lit{ background: var(--calm); }
+  .seq-dot{ width:18px; height:18px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1); flex-shrink:0; }
+  .seq-dot.lit{ background: var(--calm); transform: scale(1.22); box-shadow: 0 0 9px 1px var(--calm); }
   .seq-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); opacity:.35; transition: opacity .35s ease; }
   .seq-label.lit{ opacity:1; color: var(--text-dim); }
 </style>

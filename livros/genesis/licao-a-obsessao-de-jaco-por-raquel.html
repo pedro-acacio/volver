@@ -11,10 +11,11 @@
   body{ display:flex; justify-content:center; }
   .anos-row{ margin: 4px 0 14px; }
   .anos-line{ margin: 0 0 12px; }
-  .anos-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; display:flex; justify-content:space-between; }
-  .anos-bar-track{ width:100%; height:10px; border-radius:6px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
-  .anos-bar-fill{ height:100%; width:100%; border-radius:6px; background: var(--worry); }
-  .anos-bar-fill.certo{ background: var(--calm); }
+  .anos-label{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color: var(--text-faint); margin-bottom:6px; display:flex; justify-content:space-between; }
+  .anos-label span:last-child{ color: var(--text-dim); font-weight:600; }
+  .anos-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .anos-bar-fill{ height:100%; width:100%; border-radius:9px; background: var(--worry); box-shadow: 0 0 10px 1px rgba(168,92,107,0.45); }
+  .anos-bar-fill.certo{ background: var(--calm); box-shadow: 0 0 10px 1px rgba(124,154,120,0.45); }
   .ask-btn{
     width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
     background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;

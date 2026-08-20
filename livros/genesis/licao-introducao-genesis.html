@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
-  .toledot-row{ display:flex; align-items:center; gap:6px; margin: 10px 0 4px; flex-wrap:wrap; }
-  .toledot-dot{ width:9px; height:9px; border-radius:50%; background: var(--panel-line); transition: background .3s ease; }
-  .toledot-dot.lit{ background: var(--gold); }
+  .toledot-row{ display:flex; align-items:center; gap:10px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .toledot-dot{ width:18px; height:18px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1); }
+  .toledot-dot.lit{ background: var(--gold); transform: scale(1.22); box-shadow: 0 0 9px 1px var(--gold); }
   .toledot-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); width:100%; margin: 6px 0 14px; }
 </style>
 </head>
