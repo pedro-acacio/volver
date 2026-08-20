@@ -103,6 +103,14 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>A grande função dos sacerdotes, resumida em 10.10-11, era ensinar Israel "a fazer diferença" — entre o santo e o profano, entre o puro e o impuro, entre o que Deus havia ordenado e o que ele não havia. É exatamente o que Nadabe e Abiú deixaram de fazer: ofereceram algo que "ele nunca lhes ordenara" (10.1), confundindo iniciativa própria com obediência.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discernData, 0, 'discernText')">Santo / Profano</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discernData, 1, 'discernText')">Puro / Impuro</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discernData, 2, 'discernText')">Ordenado / Não ordenado</button>
+          </div>
+          <div class="chip-text" id="discernText">Toque em cada distinção para ver o que ela significava na prática.</div>
+
           <p>O capítulo termina, ainda assim, sem transformar Arão em vilão: quando ele explica a Moisés por que não comeu a oferta pelo pecado naquele dia terrível — "se eu tivesse comido hoje a oferta pelo pecado, seria isso bom aos olhos do SENHOR?" (10.19) — Moisés aceita a explicação (10.20). O capítulo distingue com cuidado entre transgressão presunçosa e um julgamento humano feito de boa-fé em meio ao luto.</p>
           <button class="continue-btn" onclick="openStage(5)">Continuar → a reverência que Cristo restaura</button>
         </div>
@@ -192,6 +200,17 @@
       title.textContent = "Aproximar-se pelo caminho que ele deu";
       text.textContent = "É vir a Deus exatamente pelo caminho que ele mesmo ordenou — Cristo — com a confiança de quem foi convidado, e a reverência de quem sabe o que essa proximidade custou.";
     }
+  }
+
+  const discernData = [
+    { text: "Santo é o que pertence a Deus, separado para ele; profano é o comum, o do uso cotidiano. Confundir os dois — tratar o sagrado como se fosse comum — foi parte do que Nadabe e Abiú fizeram ao improvisar diante do altar." },
+    { text: "Puro é o que pode se aproximar de Deus sem risco; impuro é o que precisa de purificação antes. Grande parte de Levítico existe para ensinar essa distinção — a mesma que os sacerdotes deveriam guardar e ensinar ao povo." },
+    { text: "O mais direto dos três, e o que explica a tragédia: um fogo pode ser sincero e ainda assim não ser ordenado. Nadabe e Abiú não confundiram santo com profano nem puro com impuro — eles ofereceram o que Deus simplesmente não havia mandado (10.1)." }
+  ];
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
   }
 </script>
 <script defer src="../../volver-app.js"></script>

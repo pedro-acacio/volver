@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .jub-seq-row{ display:flex; align-items:center; gap:7px; margin: 2px 0 16px; flex-wrap:wrap; }
+  .jub-seq-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .jub-seq-dot.lit{ background: var(--calm); }
+  .jub-seq-dot.jubileu{ width:16px; height:16px; background: var(--panel-line); }
+  .jub-seq-dot.jubileu.lit{ background: var(--gold); }
+  .jub-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -64,6 +70,10 @@
         <div class="tl-card">
           <p>Depois de sete ciclos completos de sete anos — quarenta e nove anos — vinha o quinquagésimo: o ano do jubileu, anunciado com toques de trombeta em todo o território (25.8-10). Nesse ano, três coisas radicais aconteciam de uma só vez: terras vendidas por necessidade voltavam à família original, dívidas relacionadas à terra eram encerradas, e israelitas escravizados por dívida recuperavam a liberdade.</p>
           <p>A lei explica o porquê: "a terra não se venderá para sempre, porque a terra é minha; pois vós estais comigo como estrangeiros e forasteiros" (25.23). Ninguém, em Israel, era realmente dono da terra — eram todos arrendatários de Deus. O jubileu existia justamente para impedir que a pobreza se tornasse hereditária e permanente: "proclamareis liberdade na terra, a todos os seus moradores" (25.10).</p>
+
+          <div class="jub-seq-row" id="jubSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealJubSeq()" id="jubSeqBtn">Ver os sete ciclos, um por um</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → bênçãos e maldições</button>
         </div>
       </div>
@@ -170,6 +180,40 @@
     }, 120);
   }
   openStage(1);
+
+  function buildJubSeqDots(){
+    const el = document.getElementById('jubSeqRow');
+    for (let i = 0; i < 7; i++){
+      const d = document.createElement('div');
+      d.className = 'jub-seq-dot';
+      d.title = 'Ciclo ' + (i + 1) + ' (7 anos)';
+      el.appendChild(d);
+    }
+    const jub = document.createElement('div');
+    jub.className = 'jub-seq-dot jubileu';
+    jub.id = 'jubDot';
+    jub.title = '50º ano: o jubileu';
+    el.appendChild(jub);
+    const label = document.createElement('span');
+    label.className = 'jub-seq-label';
+    label.id = 'jubSeqLabel';
+    label.textContent = '0 de 7 ciclos (0 de 49 anos)';
+    el.appendChild(label);
+  }
+  buildJubSeqDots();
+
+  function revealJubSeq(){
+    const dots = document.querySelectorAll('#jubSeqRow .jub-seq-dot:not(.jubileu)');
+    const label = document.getElementById('jubSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = (i + 1) + ' de 7 ciclos (' + ((i + 1) * 7) + ' de 49 anos)';
+    }, i * 220));
+    setTimeout(() => {
+      document.getElementById('jubDot').classList.add('lit');
+      label.textContent = '49 anos completos → 50º ano: JUBILEU';
+    }, dots.length * 220 + 300);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

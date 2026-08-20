@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seq-row{ display:flex; align-items:center; gap:16px; margin: 2px 0 14px; flex-wrap:wrap; }
+  .seq-item{ display:inline-flex; align-items:center; gap:6px; }
+  .seq-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; flex-shrink:0; }
+  .seq-dot.lit{ background: var(--calm); }
+  .seq-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); opacity:.35; transition: opacity .35s ease; }
+  .seq-label.lit{ opacity:1; color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -103,6 +109,10 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>É importante entender o que "impuro" não significa em Levítico: não é sinônimo de "pecaminoso". Menstruar, ter um filho ou pegar uma doença de pele não era pecado — era parte normal da vida num corpo humano, num mundo quebrado pela queda. Impuro, aqui, é mais próximo de "incompatível, por enquanto, com a presença especial de Deus no tabernáculo" — um estado temporário, tratável, quase sempre resolvido com tempo e um banho, não com culpa.</p>
+
+          <div class="seq-row" id="chapRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealChapters()" id="chapBtn">Percorrer os capítulos, um a um</button>
+
           <p>Mas o efeito acumulado dessas leis era poderoso: a cada nascimento, a cada doença, a cada fluxo, Israel era lembrado de que vivia num mundo ainda marcado pela morte — e que a presença de um Deus perfeitamente vivo e santo exigia, constantemente, atenção, cuidado e purificação. Era uma pedagogia sensorial da santidade, sentida na pele antes de ser entendida na mente.</p>
           <button class="continue-btn" onclick="openStage(5)">Continuar → quando a pureza passou a contagiar</button>
         </div>
@@ -192,6 +202,39 @@
       title.textContent = "Levar cura a quem está quebrado";
       text.textContent = "É se aproximar de quem está ferido do mesmo jeito que Cristo se aproximou do leproso — confiando que, nele, a pureza é mais forte do que a impureza, e que se aproximar não contamina, cura.";
     }
+  }
+
+  const chapData = [
+    { num: '11', label: 'comida' },
+    { num: '12', label: 'parto' },
+    { num: '13—14', label: 'pele e mofo' },
+    { num: '15', label: 'fluxos' }
+  ];
+  function buildChapDots(){
+    const el = document.getElementById('chapRow');
+    chapData.forEach((c, i) => {
+      const item = document.createElement('span');
+      item.className = 'seq-item';
+      const d = document.createElement('div');
+      d.className = 'seq-dot';
+      d.id = 'chapDot' + i;
+      const label = document.createElement('span');
+      label.className = 'seq-label';
+      label.id = 'chapLabel' + i;
+      label.textContent = c.num + ' · ' + c.label;
+      item.appendChild(d);
+      item.appendChild(label);
+      el.appendChild(item);
+    });
+  }
+  buildChapDots();
+  function revealChapters(){
+    chapData.forEach((c, i) => {
+      setTimeout(() => {
+        document.getElementById('chapDot' + i).classList.add('lit');
+        document.getElementById('chapLabel' + i).classList.add('lit');
+      }, i * 350);
+    });
   }
 </script>
 <script defer src="../../volver-app.js"></script>

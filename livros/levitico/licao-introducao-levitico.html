@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+
+  .lev-bar-outer{ margin-top:18px; }
+  .lev-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .lev-bar{ display:flex; width:100%; height:22px; border-radius:6px; overflow:hidden; border:1px solid var(--panel-line); background:var(--bg); }
+  .lev-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .2s ease, outline .2s ease; }
+  .lev-seg:hover{ opacity:1; }
+  .lev-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; }
+  .lev-seg:nth-child(1){ background:var(--gold); }
+  .lev-seg:nth-child(2){ background:var(--calm); }
+  .lev-seg:nth-child(3){ background:var(--worry); }
+  .lev-seg:nth-child(4){ background:var(--gold); opacity:.45; }
+  .lev-seg:nth-child(4):hover, .lev-seg:nth-child(4).active{ opacity:.75; }
+  .lev-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .lev-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
 </style>
 </head>
 <body>
@@ -90,6 +104,19 @@
             <button class="chip-btn chip-gold" onclick="selectChip(this, blocksData, 3, 'blocksText')">IV. Santidade</button>
           </div>
           <div class="chip-text" id="blocksText">Toque em cada bloco para ver o que ele cobre.</div>
+
+          <div class="lev-bar-outer">
+            <div class="lev-bar-label">Como esses quatro blocos se distribuem nos 27 capítulos do livro:</div>
+            <div class="lev-bar" role="group" aria-label="Distribuição dos capítulos de Levítico entre os quatro blocos">
+              <button type="button" class="lev-seg" style="width:25.93%;" onclick="selectLevBlock(this, 0)" aria-label="Sacrifícios, capítulos 1 a 7"></button>
+              <button type="button" class="lev-seg" style="width:11.11%;" onclick="selectLevBlock(this, 1)" aria-label="Sacerdócio, capítulos 8 a 10"></button>
+              <button type="button" class="lev-seg" style="width:22.22%;" onclick="selectLevBlock(this, 2)" aria-label="Pureza, capítulos 11 a 16"></button>
+              <button type="button" class="lev-seg" style="width:40.74%;" onclick="selectLevBlock(this, 3)" aria-label="Santidade, capítulos 17 a 27"></button>
+            </div>
+            <div class="lev-bar-ends"><span>cap. 1</span><span>cap. 27</span></div>
+            <div class="lev-bar-caption" id="levBarText">Toque em um trecho da barra para ver quantos capítulos ele ocupa.</div>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o tema que amarra tudo</button>
         </div>
       </div>
@@ -188,6 +215,20 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const levBarData = [
+    { label: "I. Sacrifícios", range: "capítulos 1–7", chapters: 7 },
+    { label: "II. Sacerdócio", range: "capítulos 8–10", chapters: 3 },
+    { label: "III. Pureza", range: "capítulos 11–16", chapters: 6 },
+    { label: "IV. Santidade", range: "capítulos 17–27", chapters: 11 }
+  ];
+
+  function selectLevBlock(btn, i){
+    btn.parentElement.querySelectorAll('.lev-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = levBarData[i];
+    document.getElementById('levBarText').textContent = d.label + " ocupa " + d.range + " — " + d.chapters + " dos 27 capítulos do livro (" + Math.round(d.chapters/27*100) + "%).";
   }
 
   function showOutcome(type){

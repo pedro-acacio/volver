@@ -103,6 +103,14 @@
         <div class="tl-card">
           <p>Nenhuma dessas três ofertas era exigida por um pecado específico — eram voluntárias, trazidas por quem já queria se aproximar de Deus, não por quem era forçado a isso. E ainda assim, todas exigiam sangue, exceto a de manjares — mesmo a adoração mais espontânea, no sistema de Levítico, reconhecia que a vida (e, portanto, um custo real) estava envolvida em toda aproximação a um Deus santo.</p>
           <p>As três juntas formam um retrato completo de adoração: entrega total (holocausto), sustento generoso a quem serve (manjares), e comunhão celebrada à mesa (pacífica). Antes mesmo de tratar do pecado que separa, Levítico já revela o que a adoração deveria ser no seu estado mais pleno — não um fardo, mas um "cheiro suave", algo que Deus recebe com prazer.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectOferta(this, ofertasDestino, 0)">Holocausto</button>
+            <button class="chip-btn chip-gold" onclick="selectOferta(this, ofertasDestino, 1)">Manjares</button>
+            <button class="chip-btn chip-gold" onclick="selectOferta(this, ofertasDestino, 2)">Pacífica</button>
+          </div>
+          <div class="chip-text" id="ofertaDestinoText">Toque em cada oferta para ver quem recebia o quê.</div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo, nossa oferta</button>
         </div>
       </div>
@@ -170,6 +178,17 @@
     }, 120);
   }
   openStage(1);
+
+  const ofertasDestino = [
+    { text: "Holocausto: tudo era queimado para Deus. Nada era guardado — nem pelo sacerdote, nem pelo ofertante (1.9)." },
+    { text: "Manjares: uma porção era queimada como memorial; o restante sustentava os sacerdotes, que não tinham herança de terra (2.2-3)." },
+    { text: "Pacífica: dividida em três — a gordura para Deus, uma parte para o sacerdote, e o restante devolvido à família, para comer ali mesmo, diante do SENHOR (7.15-16)." }
+  ];
+  function selectOferta(btn, data, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('ofertaDestinoText').textContent = data[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

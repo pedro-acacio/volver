@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .feast-row{ display:flex; align-items:center; gap:7px; margin: 14px 0 4px; flex-wrap:wrap; }
+  .feast-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .feast-dot.lit{ background: var(--calm); }
+  .feast-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -45,6 +49,10 @@
         <div class="tl-card">
           <p>Antes de qualquer festa anual, o capítulo 23 começa pelo ritmo mais básico de todos: o sábado semanal, "convocação santa" a cada sétimo dia, sem nenhum trabalho (23.3). É o alicerce sobre o qual todo o resto do calendário se constrói — antes de aprender a marcar o ano, Israel já havia aprendido a marcar a semana, parando regularmente para lembrar que o tempo pertence a Deus.</p>
           <p>A partir daí, o capítulo lista sete "convocações santas" ao longo do ano — festas que Deus chama de "as minhas festas fixas" (23.2). Cada uma reencena, ano após ano, um momento da própria história de Israel com Deus.</p>
+
+          <div class="feast-row" id="feastRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealFeasts()" id="feastBtn">Ver as sete festas, uma a uma</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → páscoa, pães ázimos e primícias</button>
         </div>
       </div>
@@ -170,6 +178,23 @@
     }, 120);
   }
   openStage(1);
+
+  function buildFeastDots(){
+    const el = document.getElementById('feastRow');
+    const total = 7;
+    for(let i=0;i<total;i++){ const d = document.createElement('div'); d.className = 'feast-dot'; el.appendChild(d); }
+    const label = document.createElement('span'); label.className = 'feast-label'; label.id = 'feastLabel'; label.textContent = '0 de 7 festas'; el.appendChild(label);
+  }
+  buildFeastDots();
+
+  function revealFeasts(){
+    const dots = document.querySelectorAll('#feastRow .feast-dot');
+    const names = ['Páscoa','Pães Ázimos','Primícias','Semanas (Pentecostes)','Trombetas','Expiação','Tabernáculos'];
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('feastLabel').textContent = (i+1)+' de '+dots.length+' — '+names[i];
+    }, i * 260));
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

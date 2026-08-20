@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .resti-row{ margin: 4px 0 14px; }
+  .resti-line{ margin: 0 0 12px; }
+  .resti-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; display:flex; justify-content:space-between; }
+  .resti-bar-track{ width:100%; height:10px; border-radius:6px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .resti-bar-fill{ height:100%; width:83%; border-radius:6px; background: var(--worry); }
+  .resti-bar-fill.mais{ background: var(--gold); width:100%; }
+  .ask-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .ask-btn:hover{ border-color: var(--gold); }
+  .ask-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .ask-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -65,6 +79,20 @@
         <div class="tl-card">
           <p>A quinta oferta trata de um tipo específico de falha: quando alguém prejudica algo que pertence a Deus (uma "coisa santa", usada indevidamente) ou prejudica o próximo — rouba, engana, extorque, encontra um objeto perdido e mente sobre isso (5.15-16; 6.2-5). Não bastava o sacrifício: quem pecou devia restituir o valor exato do prejuízo, mais vinte por cento (6.5).</p>
           <p>É a única oferta do sistema sacrificial com esse componente de reparação obrigatória. O altar tratava da culpa diante de Deus; a restituição tratava do dano concreto causado a outra pessoa. Levítico não separa essas duas coisas — pecar contra o próximo é, ao mesmo tempo, pecar contra Deus, e as duas dívidas precisam ser pagas.</p>
+
+          <div class="resti-row">
+            <div class="resti-line">
+              <div class="resti-label"><span>Valor do prejuízo causado</span><span>100%</span></div>
+              <div class="resti-bar-track"><div class="resti-bar-fill"></div></div>
+            </div>
+            <div class="resti-line">
+              <div class="resti-label"><span>Valor restituído (prejuízo + 20%)</span><span>120%</span></div>
+              <div class="resti-bar-track"><div class="resti-bar-fill mais"></div></div>
+            </div>
+          </div>
+          <button class="ask-btn" onclick="askResti()">Por que restituir mais do que o prejuízo?</button>
+          <div class="ask-answer" id="restiAnswer">Devolver só o exato valor perdido deixaria a vítima como se nada tivesse acontecido — mas ela também perdeu tempo, uso e confiança enquanto esperava a reparação. Os vinte por cento extras (6.5) reconhecem esse custo a mais, e tornam o arrependimento algo que custa caro, não apenas neutro.</div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → o sustento dos sacerdotes</button>
         </div>
       </div>
@@ -171,6 +199,10 @@
     }, 120);
   }
   openStage(1);
+
+  function askResti(){
+    document.getElementById('restiAnswer').classList.add('show');
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

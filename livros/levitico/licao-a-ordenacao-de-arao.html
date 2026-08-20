@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .vest-row{ display:flex; align-items:center; gap:7px; margin: 14px 0 4px; flex-wrap:wrap; }
+  .vest-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .vest-dot.lit{ background: var(--gold); }
+  .vest-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -64,6 +68,10 @@
         <div class="tl-card">
           <p>Moisés lava Arão e seus filhos com água (8.6) — a primeira coisa que acontece, antes de qualquer veste ser colocada. Depois vem a roupa, peça por peça: túnica, cinto, manto, éfode, peitoral com as pedras das doze tribos, e por fim o turbante, com uma placa de ouro puro gravada "SANTIDADE AO SENHOR" (8.7-9) — a mesma inscrição, literalmente na testa do sumo sacerdote, resumindo tudo o que Levítico pede do seu povo.</p>
           <p>Por fim, o óleo da unção é derramado sobre a cabeça de Arão (8.12) — não esfregado, mas derramado, em abundância, consagrando-o para a função que nenhum outro israelita podia exercer. A ordem importa: primeiro purificação, depois vestidura, depois unção. Ninguém se aproxima de Deus vestido antes de ser lavado.</p>
+
+          <div class="vest-row" id="vestRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealVestments()" id="vestBtn">Ver a vestidura, peça por peça</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → sangue no ouvido, na mão e no pé</button>
         </div>
       </div>
@@ -169,6 +177,23 @@
     }, 120);
   }
   openStage(1);
+
+  function buildVestDots(){
+    const el = document.getElementById('vestRow');
+    const total = 7;
+    for(let i=0;i<total;i++){ const d = document.createElement('div'); d.className = 'vest-dot'; el.appendChild(d); }
+    const label = document.createElement('span'); label.className = 'vest-label'; label.id = 'vestLabel'; label.textContent = '0 de 7 peças'; el.appendChild(label);
+  }
+  buildVestDots();
+
+  function revealVestments(){
+    const dots = document.querySelectorAll('#vestRow .vest-dot');
+    const names = ['Túnica','Cinto','Manto','Éfode','Peitoral','Turbante','Óleo da unção'];
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('vestLabel').textContent = (i+1)+' de '+dots.length+' — '+names[i];
+    }, i * 260));
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

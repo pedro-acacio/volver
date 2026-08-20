@@ -85,6 +85,16 @@
         <div class="tl-card">
           <p>O capítulo 19 é, provavelmente, o mais rico de todo o livro — e o menos parecido com o resto de Levítico. Abre com a mesma frase de sempre, "sereis santos, porque eu, o SENHOR vosso Deus, sou santo" (19.2), mas o que segue não são regras de sacrifício: é justiça social. Deixar as sobras da colheita para o pobre e o estrangeiro (19.9-10). Não roubar, não mentir, não enganar. Pagar o salário do trabalhador no mesmo dia (19.13). Não amaldiçoar o surdo nem pôr tropeço diante do cego (19.14). Julgar com justiça, sem favorecer o rico nem o pobre (19.15).</p>
           <p>E no meio dessa lista, um mandamento que se tornaria um dos mais citados de toda a Bíblia: "não te vingarás, nem guardarás ira contra os filhos do teu povo; mas amarás o teu próximo como a ti mesmo. Eu sou o SENHOR" (19.18). Santidade, nesse capítulo, não é ritual isolado — é como se trata o vizinho, o pobre, o estrangeiro, o trabalhador.</p>
+
+          <div class="chip-row" id="lawChipRow">
+            <button class="chip-btn chip-gold" onclick="selectLawChip(this, 0)">A colheita</button>
+            <button class="chip-btn chip-gold" onclick="selectLawChip(this, 1)">O trabalhador</button>
+            <button class="chip-btn chip-gold" onclick="selectLawChip(this, 2)">O surdo e o cego</button>
+            <button class="chip-btn chip-gold" onclick="selectLawChip(this, 3)">O tribunal</button>
+            <button class="chip-btn chip-gold" onclick="selectLawChip(this, 4)">O próximo</button>
+          </div>
+          <div class="chip-text" id="lawChipText">Toque em cada mandamento para ver como a santidade aparecia no dia a dia.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → fronteiras levadas a sério</button>
         </div>
       </div>
@@ -171,6 +181,19 @@
     }, 120);
   }
   openStage(1);
+
+  const lawChipsData = [
+    { text: "Deixar as bordas do campo e as espigas caídas para o pobre e o estrangeiro colherem (19.9-10) — santidade que vira comida na mesa de quem não tem terra própria." },
+    { text: "Pagar o salário do diarista no mesmo dia, sem deixá-lo pernoitar contigo (19.13) — porque quem vive do salário de hoje não pode esperar até amanhã." },
+    { text: "Não amaldiçoar o surdo, que não pode se defender, nem pôr tropeço diante do cego, que não pode ver o perigo (19.14) — proteger justamente quem está mais exposto." },
+    { text: "Julgar com justiça, sem favorecer o pobre por pena nem o rico por status (19.15) — a mesma vara de medir para todos." },
+    { text: "Não guardar rancor nem se vingar, mas amar o próximo como a si mesmo (19.18) — o resumo de tudo o que vem antes." }
+  ];
+  function selectLawChip(btn, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('lawChipText').textContent = lawChipsData[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

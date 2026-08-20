@@ -83,6 +83,18 @@
         <div class="tl-card">
           <p>O centro do capítulo é um ritual só encontrado aqui: dois bodes idênticos, escolhidos por sorte (16.7-10). Um é sacrificado como oferta pelo pecado — seu sangue é levado para dentro do véu e aspergido sobre o propiciatório, cobrindo simbolicamente a arca e o próprio Lugar Santíssimo, contaminado pela impureza acumulada do povo durante o ano.</p>
           <p>O outro bode é mantido vivo. Arão impõe as duas mãos sobre sua cabeça, confessa "todas as iniquidades dos filhos de Israel, e todas as suas transgressões, e todos os seus pecados" (16.21) — e o animal é levado para fora do arraial, para o deserto, carregando simbolicamente essa culpa para longe, para nunca mais voltar. É o "bode emissário", às vezes chamado de bode expiatório: um animal que não morre no altar, mas leva o pecado para bem longe da presença de Deus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnGoatSac" onclick="showGoat('sac')">O bode sacrificado</button>
+            <button class="toggle-btn" id="btnGoatScape" onclick="showGoat('scape')">O bode emissário</button>
+          </div>
+
+          <div class="outcome" id="goatCard">
+            <div class="outcome-visual" id="goatVisual"></div>
+            <h3 id="goatTitle"></h3>
+            <p id="goatText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → um estatuto perpétuo</button>
         </div>
       </div>
@@ -190,6 +202,28 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Uma culpa carregada para longe";
       text.textContent = "É descansar no fato de que Cristo já entrou, já ofereceu, já carregou a culpa para fora, de uma vez por todas — não é preciso repetir o sacrifício, só receber o que já foi consumado.";
+    }
+  }
+
+  function showGoat(type){
+    const btnSac = document.getElementById('btnGoatSac');
+    const btnScape = document.getElementById('btnGoatScape');
+    btnSac.classList.remove('active-worry');
+    btnScape.classList.remove('active-calm');
+    const visual = document.getElementById('goatVisual');
+    const title = document.getElementById('goatTitle');
+    const text = document.getElementById('goatText');
+
+    if (type === 'sac'){
+      btnSac.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Morre no altar";
+      text.textContent = "Seu sangue é levado para dentro do véu e aspergido sobre o propiciatório, cobrindo o Lugar Santíssimo contaminado pela impureza acumulada do povo (16.15-16). Ele paga o preço do pecado.";
+    } else {
+      btnScape.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Sai vivo, para o deserto";
+      text.textContent = "Recebe, por confissão e imposição de mãos, todas as iniquidades do povo — e é levado para fora do arraial, para nunca mais voltar (16.21-22). Ele carrega o pecado para longe.";
     }
   }
 </script>
