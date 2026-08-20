@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .doxo-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 16px; flex-wrap:wrap; }
+  .doxo-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .doxo-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .doxo-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:2px; }
+  .davi-compare{ margin: 14px 0 16px; }
+  .davi-row{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .davi-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); min-width:220px; }
+  .davi-bar-track{ flex:1; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .davi-bar-fill{ height:100%; border-radius:9px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); width:0%; transition: width .8s cubic-bezier(.34,1.02,.64,1); }
+  .davi-bar-fill.davi-fill-worry{ background: var(--worry); box-shadow: 0 0 10px 1px rgba(168,92,107,0.35); }
 </style>
 </head>
 <body>
@@ -45,6 +55,10 @@
           <p><em>"Porque teu é o reino, e o poder, e a glória, para sempre. Amém."</em> (Mt 6:13b)</p>
           <p>A oração começou santificando o nome de Deus e pedindo que seu reino viesse — e termina exatamente no mesmo lugar. Depois de pedir pão, perdão e livramento, quem ora devolve tudo: o reino, o poder e a glória não são conquistados por quem ora, apenas reconhecidos como já pertencentes a Deus.</p>
           <p>Não é apenas um "fim de pedidos" — é um fechamento de adoração, uma última frase que lembra a quem ora que nada do que foi pedido muda a quem tudo pertence.</p>
+
+          <div class="doxo-row" id="doxoRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDoxo()" id="doxoBtn">Ver os três, um a um</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → terminar pedindo ou terminar devolvendo</button>
         </div>
       </div>
@@ -88,6 +102,19 @@
         <div class="tl-card">
           <p><em>"Tua é, SENHOR, a grandeza, e o poder, e a glória, e a vitória, e a majestade; porque tudo quanto há nos céus e na terra é teu."</em> (1 Crônicas 29:11)</p>
           <p>Davi diz isso ao entregar recursos enormes para a construção do templo — ouro, prata, bronze, tudo o que havia reunido com esforço. Mas antes de se orgulhar da oferta, ele faz questão de lembrar que tudo já pertencia a Deus antes mesmo de ser oferecido. É a mesma estrutura de devolução que fecha o Pai Nosso, séculos antes de Jesus a ensinar.</p>
+
+          <div class="davi-compare">
+            <div class="davi-row">
+              <span class="davi-label">O que Davi contribuiu</span>
+              <div class="davi-bar-track"><div class="davi-bar-fill" id="daviFillDeu"></div></div>
+            </div>
+            <div class="davi-row">
+              <span class="davi-label">O que Davi reivindica como seu</span>
+              <div class="davi-bar-track"><div class="davi-bar-fill davi-fill-worry" id="daviFillReivindica"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDavi()" id="daviBtn">Comparar a oferta com a posse reivindicada</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +188,38 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const doxoSteps = [
+    { label: "O reino" },
+    { label: "O poder" },
+    { label: "A glória" }
+  ];
+
+  function buildDoxoDots(){
+    const el = document.getElementById('doxoRow');
+    doxoSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'doxo-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'doxo-label';
+    label.id = 'doxoLabel';
+    label.textContent = '0 de 3';
+    el.appendChild(label);
+  }
+  buildDoxoDots();
+
+  function revealDoxo(){
+    const dots = document.querySelectorAll('#doxoRow .doxo-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 260));
+    setTimeout(() => { document.getElementById('doxoLabel').textContent = '3 de 3 — ' + doxoSteps.map(s => s.label).join(' · '); }, dots.length * 260);
+  }
+
+  function revealDavi(){
+    document.getElementById('daviFillDeu').style.width = '95%';
+    document.getElementById('daviFillReivindica').style.width = '4%';
   }
 
   function showOutcome(type){

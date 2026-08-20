@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .sal100-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 16px; flex-wrap:wrap; }
+  .sal100-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .sal100-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .sal100-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:2px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,18 @@
         <div class="tl-card">
           <p><em>"Portanto, vós orareis assim: Pai nosso, que estás nos céus, santificado seja o teu nome."</em> (Mt 6:9)</p>
           <p>Jesus não começa o modelo de oração com uma lista de necessidades. Ele começa nomeando duas coisas: quem Deus é — Pai, próximo, de quem se pode aproximar — e onde Deus está — "nos céus", isto é, acima de tudo, transcendente. Antes de pedir qualquer coisa, quem ora reconhece a quem está falando.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAspPai" onclick="showAspecto('pai')">"Pai nosso"</button>
+            <button class="toggle-btn" id="btnAspCeus" onclick="showAspecto('ceus')">"Que estás nos céus"</button>
+          </div>
+
+          <div class="outcome" id="aspCard">
+            <div class="outcome-visual" id="aspVisual"></div>
+            <h3 id="aspTitle"></h3>
+            <p id="aspText"></p>
+          </div>
+
           <p>E o primeiro pedido da oração nem sequer é um pedido para si mesmo: é que o nome de Deus seja tratado como santo. Orar assim já reordena o coração antes que qualquer necessidade seja mencionada.</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → começar pedindo ou começar adorando</button>
         </div>
@@ -88,6 +104,10 @@
         <div class="tl-card">
           <p><em>"Entrai pelas suas portas com ação de graças, e nos seus átrios com louvor; louvai-o, e bendizei o seu nome."</em> (Salmo 100:4)</p>
           <p>Muito antes do Pai Nosso, o salmista já ensinava essa mesma sequência: entra-se na presença de Deus com gratidão e louvor, não com uma lista de pedidos na mão. Santificar o nome de Deus é exatamente isso — deixar que a primeira palavra da oração seja sobre quem Ele é, não sobre o que se precisa dele.</p>
+
+          <div class="sal100-row" id="sal100Row"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealSal100()" id="sal100Btn">Ver os três passos, um a um</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +181,55 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showAspecto(type){
+    const btnPai = document.getElementById('btnAspPai');
+    const btnCeus = document.getElementById('btnAspCeus');
+    btnPai.classList.remove('active-calm');
+    btnCeus.classList.remove('active-worry');
+    const visual = document.getElementById('aspVisual');
+    const title = document.getElementById('aspTitle');
+    const text = document.getElementById('aspText');
+
+    if (type === 'pai'){
+      btnPai.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Próximo — Pai";
+      text.textContent = "Deus se deixa chamar de Pai: alguém a quem se pode chegar perto, confiar e falar sem cerimônia.";
+    } else {
+      btnCeus.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Transcendente — nos céus";
+      text.textContent = "E, no mesmo fôlego, Deus está \"nos céus\": acima de tudo, maior do que qualquer necessidade que se vá pedir a seguir.";
+    }
+  }
+
+  const sal100Steps = [
+    { label: "Ação de graças" },
+    { label: "Louvor" },
+    { label: "Bendizer o nome" }
+  ];
+
+  function buildSal100Dots(){
+    const el = document.getElementById('sal100Row');
+    sal100Steps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'sal100-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'sal100-label';
+    label.id = 'sal100Label';
+    label.textContent = '0 de 3';
+    el.appendChild(label);
+  }
+  buildSal100Dots();
+
+  function revealSal100(){
+    const dots = document.querySelectorAll('#sal100Row .sal100-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 260));
+    setTimeout(() => { document.getElementById('sal100Label').textContent = '3 de 3 — ' + sal100Steps.map(s => s.label).join(' → '); }, dots.length * 260);
   }
 
   function showOutcome(type){

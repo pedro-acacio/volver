@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .sobra-cols{ display:flex; gap:24px; margin: 12px 0 8px; flex-wrap:wrap; }
+  .sobra-col{ flex:1; min-width:140px; }
+  .sobra-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); display:block; margin-bottom:6px; }
+  .sobra-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .sobra-fill{ height:100%; width:0%; border-radius:9px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); transition: width 1s cubic-bezier(.34,1.2,.4,1); }
+  .sobra-fill-viuva{ background: var(--calm); box-shadow: 0 0 10px 1px rgba(124,154,120,0.45); }
+  .sobra-pct{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-dim); display:block; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -87,6 +94,22 @@
         <div class="tl-card">
           <p>Jesus chama os discípulos e vira a régua de julgamento ao contrário: "esta pobre viúva deu mais do que todos os outros que deram para as ofertas. Pois todos deram daquilo que lhes sobrava; mas esta, da sua pobreza, deu tudo o que possuía para o seu sustento" (Marcos 12:43-44).</p>
           <p>Ele não está medindo a moeda — está medindo o que sobrou depois de dar. É a mesma lógica de Mateus 6:3-4: "não saiba a tua mão esquerda o que faz a tua direita; para que a tua esmola seja dada em secreto; e teu Pai, que vê em secreto, te recompensará." O valor de um gesto de misericórdia nunca esteve no tamanho da moeda nem no tamanho da plateia.</p>
+
+          <p style="margin-bottom:6px;">Toque para ver o que sobrou depois de cada oferta:</p>
+          <div class="sobra-cols">
+            <div class="sobra-col">
+              <span class="sobra-label">Os ricos</span>
+              <div class="sobra-track"><div class="sobra-fill" id="sobraRicosFill"></div></div>
+              <span class="sobra-pct" id="sobraRicosPct">sobrou muito</span>
+            </div>
+            <div class="sobra-col">
+              <span class="sobra-label">A viúva</span>
+              <div class="sobra-track"><div class="sobra-fill sobra-fill-viuva" id="sobraViuvaFill"></div></div>
+              <span class="sobra-pct" id="sobraViuvaPct">sobrou nada</span>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarSobra()" id="sobraBtn">Ver o que sobrou</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +178,13 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarSobra(){
+    document.getElementById('sobraRicosFill').style.width = '82%';
+    document.getElementById('sobraViuvaFill').style.width = '0%';
+    document.getElementById('sobraRicosPct').textContent = "deram do que sobrava — a vida continuou igual";
+    document.getElementById('sobraViuvaPct').textContent = "deu tudo — nada ficou para o seu sustento";
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

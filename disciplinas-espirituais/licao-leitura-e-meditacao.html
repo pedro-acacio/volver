@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .dias-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .dias-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .dias-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .dias-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p>Os bereanos "de bom grado receberam a palavra, examinando todos os dias as Escrituras para ver se estas coisas eram assim" — e o resultado foi que "muitos, pois, dentre eles creram" (Atos 17:11-12). Não foi a pregação sozinha; foi a pregação verificada, mastigada, dia após dia.</p>
           <p>O Salmo 1 descreve o mesmo padrão com outra imagem: quem tem "prazer na lei do SENHOR" e "na sua lei medita de dia e de noite... será como a árvore plantada junto a ribeiros de águas, que dá o seu fruto no seu tempo" (Salmo 1:2-3). A meditação constante é a raiz; o fruto não é imediato, mas é certo.</p>
+
+          <p style="margin-bottom:6px;">Uma raiz não se forma num dia. Toque para ver a semana se repetir, dia após dia — do jeito que os bereanos examinavam e a árvore do Salmo 1 crescia:</p>
+          <div class="dias-row" id="diasRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarDias()" id="diasBtn">Ver a semana, dia após dia</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +164,30 @@
     }, 120);
   }
   openStage(1);
+
+  function buildDiasDots(){
+    const el = document.getElementById('diasRow');
+    const dias = ['seg','ter','qua','qui','sex','sáb','dom'];
+    dias.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'dias-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'dias-label';
+    label.id = 'diasLabel';
+    label.textContent = '0 de 7 dias';
+    el.appendChild(label);
+  }
+  buildDiasDots();
+
+  function revelarDias(){
+    const dots = document.querySelectorAll('#diasRow .dias-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 220));
+    setTimeout(() => {
+      document.getElementById('diasLabel').textContent = '7 de 7 dias — fruto no seu tempo';
+    }, dots.length * 220);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

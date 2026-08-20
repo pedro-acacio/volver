@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .getse-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 16px; flex-wrap:wrap; }
+  .getse-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .getse-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .getse-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:2px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,18 @@
         <div class="tl-card">
           <p><em>"Venha o teu reino, seja feita a tua vontade, assim na terra como no céu."</em> (Mt 6:10)</p>
           <p>Ainda não há pedido pessoal nesta oração. Depois de santificar o nome de Deus, o modelo de Jesus pede que o próprio reino de Deus venha, e que a vontade dele seja feita — não a vontade de quem está orando. É um pedido que se coloca abaixo de tudo o que virá depois.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnPedReino" onclick="showPedido('reino')">"Venha o teu reino"</button>
+            <button class="toggle-btn" id="btnPedVontade" onclick="showPedido('vontade')">"Seja feita a tua vontade"</button>
+          </div>
+
+          <div class="outcome" id="pedidoCard">
+            <div class="outcome-visual" id="pedidoVisual"></div>
+            <h3 id="pedidoTitle"></h3>
+            <p id="pedidoText"></p>
+          </div>
+
           <p>Orar "seja feita a tua vontade" é entregar de antemão qualquer plano próprio à vontade de Deus, mesmo antes de saber qual é essa vontade em cada situação.</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → orar pela própria vontade ou pela vontade de Deus</button>
         </div>
@@ -88,6 +104,10 @@
         <div class="tl-card">
           <p><em>"Ó Pai meu, se é possível, passe de mim este cálice; todavia, não seja como eu quero, mas como tu queres."</em> (Mateus 26:39)</p>
           <p>Quem ensinou os discípulos a orar "seja feita a tua vontade" é o mesmo que, diante da cruz, faz exatamente esse pedido na hora mais difícil de sua vida. Jesus não finge não ter vontade própria — ele a nomeia e a entrega. É a mesma frase do Pai Nosso, agora pronunciada sob o peso real de um pedido que dói.</p>
+
+          <div class="getse-row" id="getseRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealGetse()" id="getseBtn">Ver a oração no Getsêmani, passo a passo</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +181,55 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showPedido(type){
+    const btnReino = document.getElementById('btnPedReino');
+    const btnVontade = document.getElementById('btnPedVontade');
+    btnReino.classList.remove('active-calm');
+    btnVontade.classList.remove('active-worry');
+    const visual = document.getElementById('pedidoVisual');
+    const title = document.getElementById('pedidoTitle');
+    const text = document.getElementById('pedidoText');
+
+    if (type === 'reino'){
+      btnReino.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Que Deus reine";
+      text.textContent = "Um pedido sobre o governo de Deus sobre tudo — que o seu reinado se estabeleça, na terra como no céu.";
+    } else {
+      btnVontade.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Que a vontade de Deus prevaleça";
+      text.textContent = "Um pedido sobre o dia a dia de quem ora — que as próprias escolhas se dobrem à vontade de Deus, não o contrário.";
+    }
+  }
+
+  const getseSteps = [
+    { label: "Se é possível, passe de mim este cálice" },
+    { label: "Todavia, não seja como eu quero" },
+    { label: "Mas como tu queres" }
+  ];
+
+  function buildGetseDots(){
+    const el = document.getElementById('getseRow');
+    getseSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'getse-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'getse-label';
+    label.id = 'getseLabel';
+    label.textContent = '0 de 3';
+    el.appendChild(label);
+  }
+  buildGetseDots();
+
+  function revealGetse(){
+    const dots = document.querySelectorAll('#getseRow .getse-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 260));
+    setTimeout(() => { document.getElementById('getseLabel').textContent = '3 de 3 — ' + getseSteps.map(s => s.label).join(' · '); }, dots.length * 260);
   }
 
   function showOutcome(type){

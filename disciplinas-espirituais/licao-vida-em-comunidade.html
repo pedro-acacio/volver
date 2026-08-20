@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .comunidade-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .comunidade-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .comunidade-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .comunidade-list{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); line-height:1.9; margin-bottom:14px; min-height: 20px; }
+  .comunidade-list span{ display:block; opacity:0; transform: translateX(-4px); transition: opacity .35s ease, transform .35s ease; }
+  .comunidade-list span.show{ opacity:1; transform: translateX(0); }
 </style>
 </head>
 <body>
@@ -87,6 +93,12 @@
         <div class="tl-card">
           <p>Lucas termina a descrição com um resultado que ninguém tinha planejado como estratégia: "e o Senhor lhes acrescentava cada dia os que se haviam de salvar" (Atos 2:47). O crescimento não veio de um programa — veio como consequência natural de uma comunidade que vivia unida, com alegria e sem esconder as próprias necessidades umas das outras.</p>
           <p>Nenhuma das disciplinas anteriores desta trilha foi desenhada para ser praticada sem essa comunidade ao redor: a Ceia pressupõe uma mesa comum, a oração ganha outra dimensão quando é feita junto, e até a leitura das Escrituras foi, historicamente, primeiro uma prática pública antes de ser privada.</p>
+
+          <p style="margin-bottom:6px;">Toque para ver, uma de cada vez, como cada disciplina desta trilha precisa da comunidade ao redor:</p>
+          <div class="comunidade-row" id="comunidadeRow"></div>
+          <div class="comunidade-list" id="comunidadeList"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarComunidade()" id="comunidadeBtn">Ver as cinco, uma de cada vez</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +167,39 @@
     }, 120);
   }
   openStage(1);
+
+  const comunidadeItens = [
+    "Leitura — ganha profundidade quando é examinada em comunidade, como os bereanos",
+    "Oração — ganha outra dimensão quando é feita junto, não só a sós",
+    "Jejum — quando vivido ao lado de outros, sustenta quem está mais fraco",
+    "Misericórdia — só existe onde há necessidade visível ao redor",
+    "Ceia — pressupõe, por definição, uma mesa comum, nunca solitária"
+  ];
+
+  function buildComunidadeDots(){
+    const row = document.getElementById('comunidadeRow');
+    comunidadeItens.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'comunidade-dot';
+      row.appendChild(d);
+    });
+    const list = document.getElementById('comunidadeList');
+    comunidadeItens.forEach((txt, i) => {
+      const s = document.createElement('span');
+      s.id = 'comunidadeItem' + i;
+      s.textContent = txt;
+      list.appendChild(s);
+    });
+  }
+  buildComunidadeDots();
+
+  function revelarComunidade(){
+    const dots = document.querySelectorAll('#comunidadeRow .comunidade-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('comunidadeItem' + i).classList.add('show');
+    }, i * 380));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

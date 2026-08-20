@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .getsem-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 16px; flex-wrap:wrap; }
+  .getsem-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .getsem-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .getsem-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:2px; }
 </style>
 </head>
 <body>
@@ -45,6 +49,18 @@
           <p><em>"E não nos induzas à tentação; mas livra-nos do mal."</em> (Mt 6:13a)</p>
           <p>Este pedido só faz sentido para quem já admitiu algo desconfortável: não é forte o bastante para enfrentar sozinho toda tentação que vier. Não é uma oração de quem já se sente seguro — é a oração de quem sabe que precisa de ajuda antes mesmo de saber de onde virá a próxima prova.</p>
           <p>Pedir para não ser levado à tentação, e ser livrado do mal, é reconhecer que a resistência não nasce só de dentro. Precisa vir de fora, de Deus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnPedPrevent" onclick="showPedidoTent('prevent')">"Não nos induzas à tentação"</button>
+            <button class="toggle-btn" id="btnPedResgate" onclick="showPedidoTent('resgate')">"Mas livra-nos do mal"</button>
+          </div>
+
+          <div class="outcome" id="tentPedidoCard">
+            <div class="outcome-visual" id="tentPedidoVisual"></div>
+            <h3 id="tentPedidoTitle"></h3>
+            <p id="tentPedidoText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → confiar na própria força ou pedir socorro antes</button>
         </div>
       </div>
@@ -88,6 +104,10 @@
         <div class="tl-card">
           <p><em>"Vigiai e orai, para que não entreis em tentação; na verdade o espírito está pronto, mas a carne é fraca."</em> (Mateus 26:41)</p>
           <p>Jesus diz isso aos discípulos no Getsêmani, momentos antes de eles fugirem e negarem — exatamente o que ele os havia alertado para evitar. Eles dormiram quando deveriam ter orado, e caíram na tentação que tinham sido avisados a evitar. A oração "não nos deixes cair em tentação" é esse mesmo alerta, dito com antecedência.</p>
+
+          <div class="getsem-row" id="getsemRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealGetsem()" id="getsemBtn">Ver as três vezes em que dormiram</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +181,55 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showPedidoTent(tipo){
+    const btnPrevent = document.getElementById('btnPedPrevent');
+    const btnResgate = document.getElementById('btnPedResgate');
+    btnPrevent.classList.remove('active-calm');
+    btnResgate.classList.remove('active-worry');
+    const visual = document.getElementById('tentPedidoVisual');
+    const title = document.getElementById('tentPedidoTitle');
+    const text = document.getElementById('tentPedidoText');
+
+    if (tipo === 'prevent'){
+      btnPrevent.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um pedido preventivo";
+      text.textContent = "Orado antes de a prova chegar — pede-se para nem sequer ser levado ao lugar onde a queda se torna provável.";
+    } else {
+      btnResgate.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um pedido de resgate";
+      text.textContent = "Cobre o que a prevenção não alcançar — quando o mal já chegou, ainda resta pedir para ser tirado dele.";
+    }
+  }
+
+  const getsemSteps = [
+    { label: "1ª vez: Jesus ora sozinho, eles dormem" },
+    { label: "2ª vez: ele volta, e dormem de novo" },
+    { label: "3ª vez: \"eis que é chegada a hora\"" }
+  ];
+
+  function buildGetsemDots(){
+    const el = document.getElementById('getsemRow');
+    getsemSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'getsem-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'getsem-label';
+    label.id = 'getsemLabel';
+    label.textContent = '0 de 3';
+    el.appendChild(label);
+  }
+  buildGetsemDots();
+
+  function revealGetsem(){
+    const dots = document.querySelectorAll('#getsemRow .getsem-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 260));
+    setTimeout(() => { document.getElementById('getsemLabel').textContent = '3 de 3 — ' + getsemSteps.map(s => s.label).join(' · '); }, dots.length * 260);
   }
 
   function showOutcome(type){

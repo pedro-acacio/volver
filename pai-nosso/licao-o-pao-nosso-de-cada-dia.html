@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .pao1-compare{ margin: 14px 0 16px; }
+  .pao1-row{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .pao1-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); min-width:180px; }
+  .pao1-bar-track{ flex:1; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .pao1-bar-fill{ height:100%; border-radius:9px; background: var(--worry); box-shadow: 0 0 10px 1px rgba(168,92,107,0.35); width:0%; transition: width .8s cubic-bezier(.34,1.02,.64,1); }
+  .pao1-bar-fill.pao1-fill-gold{ background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); }
+  .mt634-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 16px; flex-wrap:wrap; }
+  .mt634-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .mt634-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .mt634-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:2px; }
 </style>
 </head>
 <body>
@@ -45,6 +55,19 @@
           <p><em>"O pão nosso de cada dia nos dá hoje."</em> (Mt 6:11)</p>
           <p>Depois de tratar do nome, do reino e da vontade de Deus, o primeiro pedido pessoal da oração chega — e é o mais básico possível. Não riqueza, não segurança para os próximos dez anos, não uma reserva contra todo imprevisto futuro. Apenas o pão de hoje.</p>
           <p>Pedir assim é uma forma de reconhecer que a provisão de Deus não precisa ser armazenada de uma vez — pode ser recebida um dia de cada vez, e isso é suficiente.</p>
+
+          <div class="pao1-compare">
+            <div class="pao1-row">
+              <span class="pao1-label">O que se poderia pedir</span>
+              <div class="pao1-bar-track"><div class="pao1-bar-fill" id="pao1FillMuito"></div></div>
+            </div>
+            <div class="pao1-row">
+              <span class="pao1-label">O que de fato se pede</span>
+              <div class="pao1-bar-track"><div class="pao1-bar-fill pao1-fill-gold" id="pao1FillHoje"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPaoEscopo()" id="pao1Btn">Comparar o alcance do pedido</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → acumular ou confiar dia a dia</button>
         </div>
       </div>
@@ -88,6 +111,10 @@
         <div class="tl-card">
           <p><em>"Não vos inquieteis, pois, pelo dia de amanhã, porque o amanhã cuidará de si mesmo. Basta a cada dia o seu mal."</em> (Mateus 6:34)</p>
           <p>Poucos versículos depois de ensinar a pedir "o pão de cada dia", Jesus retoma exatamente essa mesma lógica no restante do Sermão do Monte. Não é acaso: pedir o pão de hoje e recusar a ansiedade pelo amanhã são o mesmo gesto de confiança, apenas ditos de duas formas diferentes.</p>
+
+          <div class="mt634-row" id="mt634Row"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealMt634()" id="mt634Btn">Ver o versículo, frase por frase</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +188,38 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function revealPaoEscopo(){
+    document.getElementById('pao1FillMuito').style.width = '94%';
+    document.getElementById('pao1FillHoje').style.width = '9%';
+  }
+
+  const mt634Steps = [
+    { label: "Não vos inquieteis pelo dia de amanhã" },
+    { label: "Porque o amanhã cuidará de si mesmo" },
+    { label: "Basta a cada dia o seu mal" }
+  ];
+
+  function buildMt634Dots(){
+    const el = document.getElementById('mt634Row');
+    mt634Steps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'mt634-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'mt634-label';
+    label.id = 'mt634Label';
+    label.textContent = '0 de 3';
+    el.appendChild(label);
+  }
+  buildMt634Dots();
+
+  function revealMt634(){
+    const dots = document.querySelectorAll('#mt634Row .mt634-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 260));
+    setTimeout(() => { document.getElementById('mt634Label').textContent = '3 de 3 — ' + mt634Steps.map(s => s.label).join(' · '); }, dots.length * 260);
   }
 
   function showOutcome(type){

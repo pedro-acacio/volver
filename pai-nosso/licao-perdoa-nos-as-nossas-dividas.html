@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .divida-compare{ margin: 14px 0 16px; }
+  .divida-row{ display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .divida-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); min-width:210px; }
+  .divida-bar-track{ flex:1; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .divida-bar-fill{ height:100%; border-radius:9px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); width:0%; transition: width .8s cubic-bezier(.34,1.02,.64,1); }
+  .divida-bar-fill.divida-fill-worry{ background: var(--worry); box-shadow: 0 0 10px 1px rgba(168,92,107,0.35); }
 </style>
 </head>
 <body>
@@ -45,6 +51,19 @@
           <p><em>"E perdoa-nos as nossas dívidas, assim como nós perdoamos aos nossos devedores."</em> (Mt 6:12)</p>
           <p>De todos os pedidos do Pai Nosso, este é o único amarrado a uma condição explícita: pede-se perdão na mesma medida em que se concede perdão. Não é um pedido isolado — é um pedido que expõe se quem ora tem, de fato, praticado o que pede para si.</p>
           <p>Jesus não deixa essa condição solta no ar: logo depois de ensinar a oração, ele a explica sem rodeios, como se quisesse garantir que ninguém a repetisse sem entender o que estava dizendo.</p>
+
+          <div class="divida-compare">
+            <div class="divida-row">
+              <span class="divida-label">Dívida perdoada (10.000 talentos)</span>
+              <div class="divida-bar-track"><div class="divida-bar-fill" id="dividaFillGrande"></div></div>
+            </div>
+            <div class="divida-row">
+              <span class="divida-label">Dívida cobrada (100 denários)</span>
+              <div class="divida-bar-track"><div class="divida-bar-fill divida-fill-worry" id="dividaFillPequena"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDividas()" id="dividaBtn">Comparar as duas dívidas da parábola</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → pedir perdão sem estender perdão</button>
         </div>
       </div>
@@ -88,6 +107,18 @@
         <div class="tl-card">
           <p><em>"Porque, se perdoardes aos homens as suas ofensas, também vosso Pai celestial vos perdoará a vós; se, porém, não perdoardes aos homens as suas ofensas, também vosso Pai vos não perdoará as vossas ofensas."</em> (Mateus 6:14-15)</p>
           <p>Jesus não deixa essa frase da oração como uma figura de linguagem. Logo depois de ensinar o Pai Nosso, ele volta ao assunto e o torna explícito: o perdão que se recebe e o perdão que se concede estão amarrados um ao outro. Não é possível pedir um sem viver o outro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAdvSim" onclick="showAdvertencia('sim')">"Se perdoardes..."</button>
+            <button class="toggle-btn" id="btnAdvNao" onclick="showAdvertencia('nao')">"Se não perdoardes..."</button>
+          </div>
+
+          <div class="outcome" id="advCard">
+            <div class="outcome-visual" id="advVisual"></div>
+            <h3 id="advTitle"></h3>
+            <p id="advText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +192,33 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function revealDividas(){
+    document.getElementById('dividaFillGrande').style.width = '96%';
+    document.getElementById('dividaFillPequena').style.width = '5%';
+  }
+
+  function showAdvertencia(tipo){
+    const btnSim = document.getElementById('btnAdvSim');
+    const btnNao = document.getElementById('btnAdvNao');
+    btnSim.classList.remove('active-calm');
+    btnNao.classList.remove('active-worry');
+    const visual = document.getElementById('advVisual');
+    const title = document.getElementById('advTitle');
+    const text = document.getElementById('advText');
+
+    if (tipo === 'sim'){
+      btnSim.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "...também vosso Pai vos perdoará";
+      text.textContent = "Quem perdoa as ofensas recebidas encontra o mesmo perdão vindo do Pai celestial.";
+    } else {
+      btnNao.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "...também vosso Pai vos não perdoará";
+      text.textContent = "Quem se recusa a perdoar fecha, com a mesma mão, a porta do próprio perdão.";
+    }
   }
 
   function showOutcome(type){

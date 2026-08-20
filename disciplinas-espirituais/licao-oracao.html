@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .ordem-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .ordem-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .ordem-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .ordem-list{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); line-height:1.8; margin-bottom:14px; min-height: 20px; }
+  .ordem-list span{ display:block; opacity:0; transform: translateX(-4px); transition: opacity .35s ease, transform .35s ease; }
+  .ordem-list span.show{ opacity:1; transform: translateX(0); }
 </style>
 </head>
 <body>
@@ -87,6 +93,12 @@
         <div class="tl-card">
           <p>Quando ensina o Pai Nosso, Jesus organiza a oração numa ordem específica: primeiro o nome de Deus santificado, o reino de Deus, a vontade de Deus — só depois o pão de cada dia, o perdão, o livramento (Mateus 6:9-13). A necessidade humana não abre a lista; ela vem depois de buscar a Deus mesmo.</p>
           <p>Alguns versículos à frente, ele resume o princípio: "buscai, pois, em primeiro lugar, o seu reino e a sua justiça, e todas estas coisas vos serão acrescentadas" (v.33). Orar bem não é apresentar uma lista de pedidos primeiro — é buscar a Deus primeiro, e deixar as necessidades encontrarem seu lugar depois.</p>
+
+          <p style="margin-bottom:6px;">Toque para ver a ordem do Pai Nosso se revelar, um pedido de cada vez — repare no que vem antes e no que vem depois:</p>
+          <div class="ordem-row" id="ordemRow"></div>
+          <div class="ordem-list" id="ordemList"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarOrdem()" id="ordemBtn">Ver a ordem, um pedido de cada vez</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +167,40 @@
     }, 120);
   }
   openStage(1);
+
+  const ordemPassos = [
+    "1 · Santificado seja o teu nome",
+    "2 · Venha o teu reino",
+    "3 · Seja feita a tua vontade",
+    "4 · O pão nosso de cada dia",
+    "5 · Perdoa as nossas dívidas",
+    "6 · Livra-nos do mal"
+  ];
+
+  function buildOrdemDots(){
+    const row = document.getElementById('ordemRow');
+    ordemPassos.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'ordem-dot';
+      row.appendChild(d);
+    });
+    const list = document.getElementById('ordemList');
+    ordemPassos.forEach((txt, i) => {
+      const s = document.createElement('span');
+      s.id = 'ordemItem' + i;
+      s.textContent = txt;
+      list.appendChild(s);
+    });
+  }
+  buildOrdemDots();
+
+  function revelarOrdem(){
+    const dots = document.querySelectorAll('#ordemRow .ordem-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('ordemItem' + i).classList.add('show');
+    }, i * 380));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

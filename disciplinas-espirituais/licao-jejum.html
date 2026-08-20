@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p>Jesus descreve um tipo de jejum que já nasce com plateia em mente: "quando jejuardes, não vos mostreis contristados como os hipócritas; porque desfiguram os seus rostos, para que aos homens pareça que jejuam" (Mateus 6:16). O sofrimento é encenado, e a encenação já é o objetivo.</p>
           <p>O corretivo é quase cômico de tão prático: "unge a tua cabeça e lava o teu rosto, para não pareceres aos homens que jejuas, mas ao teu Pai que está em secreto" (v.17-18). Ninguém deveria conseguir adivinhar, olhando para você, que hoje é dia de jejum.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnRostoHipocrita" onclick="showRosto('hipocrita')">O rosto do hipócrita</button>
+            <button class="toggle-btn" id="btnRostoSecreto" onclick="showRosto('secreto')">O rosto ungido</button>
+          </div>
+
+          <div class="outcome" id="rostoCard">
+            <div class="outcome-visual" id="rostoVisual"></div>
+            <h3 id="rostoTitle"></h3>
+            <p id="rostoText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → quarenta dias no deserto</button>
         </div>
       </div>
@@ -155,6 +167,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showRosto(state){
+    const btnA = document.getElementById('btnRostoHipocrita');
+    const btnB = document.getElementById('btnRostoSecreto');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const visual = document.getElementById('rostoVisual');
+    const title = document.getElementById('rostoTitle');
+    const text = document.getElementById('rostoText');
+
+    if (state === 'hipocrita'){
+      btnA.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Desfigura o rosto para ser visto";
+      text.textContent = "\"Desfiguram os seus rostos, para que aos homens pareça que jejuam\" (v.16) — o rosto vira anúncio, e a plateia já paga a recompensa inteira.";
+    } else {
+      btnB.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Unge a cabeça, lava o rosto";
+      text.textContent = "\"Unge a tua cabeça e lava o teu rosto... mas ao teu Pai que está em secreto\" (v.17-18) — ninguém deveria adivinhar, olhando para você, que hoje é dia de jejum.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

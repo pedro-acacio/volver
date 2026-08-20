@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .exame-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .exame-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .exame-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .exame-list{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); line-height:1.9; margin-bottom:14px; min-height: 20px; }
+  .exame-list span{ display:block; opacity:0; transform: translateX(-4px); transition: opacity .35s ease, transform .35s ease; }
+  .exame-list span.show{ opacity:1; transform: translateX(0); }
 </style>
 </head>
 <body>
@@ -87,6 +93,12 @@
         <div class="tl-card">
           <p>Paulo não termina no ritual em si — ele acrescenta uma exigência interna: "examine-se, pois, o homem a si mesmo, e, assim, coma deste pão e beba deste copo" (1 Coríntios 11:28). A mesma refeição que devia unir os coríntios exigia, de cada um, o exame da própria atitude antes de participar.</p>
           <p>A Ceia não é um ritual que funciona automaticamente, independente de como se chega até ela — nem uma refeição comum onde cada um cuida apenas de si. É memória e comunhão ao mesmo tempo: lembrar o corpo partido de Cristo, e reconhecer os outros à mesa como parte desse mesmo corpo.</p>
+
+          <p style="margin-bottom:6px;">"Examine-se, pois, o homem a si mesmo" — toque para ver o exame se abrir, uma pergunta de cada vez:</p>
+          <div class="exame-row" id="exameRow"></div>
+          <div class="exame-list" id="exameList"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarExame()" id="exameBtn">Examinar-se, uma pergunta de cada vez</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +167,38 @@
     }, 120);
   }
   openStage(1);
+
+  const examePerguntas = [
+    "Vim lembrar o corpo partido de Cristo — ou só cumprir mais um ritual?",
+    "Enxergo quem está à mesa comigo como parte do mesmo corpo?",
+    "Há alguma divisão, orgulho ou indiferença que eu carrego até aqui?",
+    "Estou pronto para anunciar, com esta mesa, a morte do Senhor — até que ele venha?"
+  ];
+
+  function buildExameDots(){
+    const row = document.getElementById('exameRow');
+    examePerguntas.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'exame-dot';
+      row.appendChild(d);
+    });
+    const list = document.getElementById('exameList');
+    examePerguntas.forEach((txt, i) => {
+      const s = document.createElement('span');
+      s.id = 'exameItem' + i;
+      s.textContent = txt;
+      list.appendChild(s);
+    });
+  }
+  buildExameDots();
+
+  function revelarExame(){
+    const dots = document.querySelectorAll('#exameRow .exame-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('exameItem' + i).classList.add('show');
+    }, i * 420));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
