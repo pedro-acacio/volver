@@ -44,6 +44,14 @@
         <div class="tl-card">
           <p><em>"E calçados os pés com a preparação do evangelho da paz."</em> (Ef 6:15)</p>
           <p>As caligae, sandálias militares romanas com cravos de metal na sola, davam ao soldado firmeza para avançar em terrenos irregulares, lamacentos ou escorregadios, sem perder o equilíbrio no meio do combate. É a única peça da lista que não fala de resistir a um ataque, mas de se preparar para o movimento. Paulo lembra que a armadura de Deus não foi feita apenas para o soldado ficar parado se defendendo — foi feita também, e talvez principalmente, para ele avançar levando uma mensagem.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, terrenoData, 0, 'terrenoText')">Terreno irregular</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, terrenoData, 1, 'terrenoText')">Chão lamacento</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, terrenoData, 2, 'terrenoText')">Piso escorregadio</button>
+          </div>
+          <div class="chip-text" id="terrenoText">Toque em cada terreno para ver como o calçado prepara o passo.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → parado ou pronto para avançar</button>
         </div>
       </div>
@@ -133,6 +141,12 @@
 </div>
 
 <script>
+  const terrenoData = [
+    { text: "No terreno irregular — pedras, buracos, desníveis — a sola cravada da caliga dava apoio onde um pé descalço escorregaria. A fé pronta também segura o passo quando o caminho não é liso." },
+    { text: "No chão lamacento, os cravos furavam a lama e alcançavam o solo firme por baixo. É a mesma preparação que segura quem caminha por circunstâncias que tentam engolir o passo." },
+    { text: "No piso escorregadio, a sola cravada evitava a queda no instante do impacto. O evangelho da paz prepara exatamente para o momento em que tudo pede que se perca o equilíbrio." }
+  ];
+
   const calcadoData = [
     { text: "Ficar só na defensiva, nunca dando o passo de anunciar as boas novas a alguém, é como um soldado descalço: sobrevive parado, mas não consegue avançar quando é preciso." },
     { text: "\"Quão formosos os pés dos que anunciam a paz, dos que anunciam coisas boas!\" (Romanos 10:15) — pés preparados não guardam a mensagem, eles a levam." }

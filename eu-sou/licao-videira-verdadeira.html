@@ -87,6 +87,18 @@
         <div class="tl-card">
           <p><em>"Toda a vara que em mim não dá fruto, ele a corta; e limpa todo aquele que dá fruto, para que dê mais fruto."</em> (João 15:2)</p>
           <p>O lavrador não age só quando o ramo falha — ele poda até o ramo frutífero, para que produza ainda mais. A dor da poda não é punição arbitrária; é o mesmo cuidado atento que sustenta o ramo, agora moldando-o para maior fecundidade. Nada no processo do Pai é desperdiçado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnPodaBefore" onclick="showPoda('before')">Antes da poda</button>
+            <button class="toggle-btn" id="btnPodaAfter" onclick="showPoda('after')">Depois da poda</button>
+          </div>
+
+          <div class="outcome" id="podaCard">
+            <div class="outcome-visual" id="podaVisual"></div>
+            <h3 id="podaTitle"></h3>
+            <p id="podaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +172,27 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showPoda(state){
+    const btnBefore = document.getElementById('btnPodaBefore');
+    const btnAfter = document.getElementById('btnPodaAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('podaVisual');
+    const title = document.getElementById('podaTitle');
+    const text = document.getElementById('podaText');
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um ramo que já dá fruto";
+      text.textContent = "Antes da tesoura, o ramo cresce solto — folhas e brotos por todo lado, energia espalhada em várias direções ao mesmo tempo.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um ramo podado para mais fruto";
+      text.textContent = "Depois da tesoura, o que sobra recebe toda a seiva — menos ramos, mas cada um mais forte, mais concentrado em dar fruto (João 15:2).";
+    }
   }
 
   function showOutcome(type){

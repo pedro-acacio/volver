@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,12 @@
         <div class="tl-card">
           <p><em>"Mas nós, que somos do dia, sejamos sóbrios, vestindo-nos da couraça da fé e do amor, e tendo por capacete a esperança da salvação."</em> (1 Tessalonicenses 5:8)</p>
           <p>Paulo repete a mesma imagem numa carta diferente, mas com um detalhe a mais: liga o capacete não só à salvação já obtida, mas à esperança dela. A proteção da mente não vem apenas de saber o que já aconteceu, mas de confiar no que ainda vai se cumprir. É essa esperança firme, voltada para frente, que impede a dúvida de encontrar espaço para se instalar.</p>
+
+          <p>Nesse versículo, Paulo descreve três peças vestidas juntas — nenhuma delas protege sozinha:</p>
+          <div class="seq-row" id="capaceteSeqRow"></div>
+          <div class="chip-text" id="capaceteSeqText">Toque no botão para revelar as três partes da proteção, uma de cada vez.</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCapaceteSeq()" id="capaceteSeqBtn">Ver a proteção completa, peça por peça</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +165,38 @@
     }, 120);
   }
   openStage(1);
+
+  const capaceteSeqItems = [
+    { label: "Couraça da fé", text: "cobre o peito — a fé firme protege o centro das decisões e dos afetos." },
+    { label: "Couraça do amor", text: "veste a mesma couraça — não há proteção verdadeira sem ele." },
+    { label: "Capacete da esperança", text: "por fim, cobre a mente — o ponto onde tudo pode desmoronar primeiro." }
+  ];
+
+  function buildCapaceteSeqDots(){
+    const el = document.getElementById('capaceteSeqRow');
+    capaceteSeqItems.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'seq-label';
+    label.id = 'capaceteSeqLabel';
+    label.textContent = '0 de ' + capaceteSeqItems.length;
+    el.appendChild(label);
+  }
+  buildCapaceteSeqDots();
+
+  function revealCapaceteSeq(){
+    const dots = document.querySelectorAll('#capaceteSeqRow .seq-dot');
+    const textEl = document.getElementById('capaceteSeqText');
+    textEl.textContent = '';
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent += (i > 0 ? ' ' : '') + capaceteSeqItems[i].label + ': ' + capaceteSeqItems[i].text;
+      document.getElementById('capaceteSeqLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 700));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

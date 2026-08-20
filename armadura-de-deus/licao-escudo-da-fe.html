@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .dart-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 6px; }
+  .dart-pill{ padding:8px 14px; border-radius:20px; background: var(--worry); color:#fff; border:1px solid var(--worry); font-family:'IBM Plex Mono', monospace; font-size:13px; box-shadow: 0 0 8px 1px rgba(224,90,90,0.4); transition: background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease, transform .3s cubic-bezier(.34,1.56,.64,1); }
+  .dart-pill.out{ background: var(--panel); color: var(--text-faint); border-color: var(--panel-line); box-shadow:none; transform: scale(0.94); }
 </style>
 </head>
 <body>
@@ -44,6 +47,10 @@
         <div class="tl-card">
           <p><em>"Sobretudo, porém, tomai o escudo da fé, com o qual podereis apagar todos os dardos inflamados do maligno."</em> (Ef 6:16)</p>
           <p>O scutum romano era um escudo grande, retangular, curvo, capaz de cobrir quase todo o corpo do soldado; em batalhas contra flechas incendiárias, era coberto de couro molhado justamente para apagar o fogo ao ser atingido. Paulo escolhe essa imagem porque a fé não bloqueia só um tipo de ataque — ela é descrita como capaz de apagar "todos" os dardos inflamados, sejam dúvida, acusação ou mentira. É a palavra "sobretudo" que chama atenção: o escudo se ergue acima e à frente das outras peças, cobrindo o que elas sozinhas não alcançariam.</p>
+
+          <div class="dart-row" id="dartRow"></div>
+          <button class="continue-btn" style="margin-top:10px;" onclick="extinguishDarts()" id="dartBtn">Erguer o escudo — apagar os dardos</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → sem escudo ou escudo erguido</button>
         </div>
       </div>
@@ -137,6 +144,24 @@
     { text: "Sem nada para bloquear, cada dúvida, cada acusação, cada mentira do inimigo alcança o alvo direto — e o fogo se espalha porque não há nada para apagá-lo." },
     { text: "A fé como confiança ativa em Deus intercepta a mentira antes que ela queime — não porque nega que o dardo foi lançado, mas porque o apaga antes de causar dano." }
   ];
+
+  const dartData = ["Dúvida","Acusação","Mentira","Medo","Condenação"];
+
+  function buildDartRow(){
+    const el = document.getElementById('dartRow');
+    dartData.forEach(d => {
+      const p = document.createElement('div');
+      p.className = 'dart-pill';
+      p.textContent = d;
+      el.appendChild(p);
+    });
+  }
+  buildDartRow();
+
+  function extinguishDarts(){
+    const pills = document.querySelectorAll('#dartRow .dart-pill');
+    pills.forEach((p, i) => setTimeout(() => p.classList.add('out'), i * 220));
+  }
 
   let currentMax = 1;
 

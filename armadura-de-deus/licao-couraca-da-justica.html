@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .cred-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 6px; }
+  .cred-pill{ padding:8px 14px; border-radius:20px; background: var(--panel); border:1px solid var(--panel-line); font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-faint); opacity:.5; transition: opacity .3s ease, background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease, color .3s ease, border-color .3s ease; }
+  .cred-pill.lit{ opacity:1; background: var(--gold); color:#2C3459; border-color: var(--gold); box-shadow: 0 0 9px 1px rgba(217,164,65,0.45); transform: scale(1.05); }
+  .cred-final{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--worry); margin-top:10px; opacity:0; transition: opacity .4s ease; }
+  .cred-final.show{ opacity:1; }
 </style>
 </head>
 <body>
@@ -87,6 +92,11 @@
         <div class="tl-card">
           <p><em>"E ser achado nele, não tendo a minha própria justiça, que é pela lei, mas a que é pela fé em Cristo, a saber, a justiça que é de Deus pela fé."</em> (Filipenses 3:9)</p>
           <p>Paulo escreve isso depois de listar tudo o que tinha por que se orgulhar — linhagem, zelo, observância da lei — e chama tudo de perda diante do valor de conhecer a Cristo. Se alguém tinha credenciais para forjar a própria couraça, era Paulo; e é exatamente ele quem a abandona. A justiça que protege não é a soma dos méritos acumulados, é a justiça de Cristo recebida pela fé, vestida como couraça pronta.</p>
+
+          <div class="cred-row" id="credRow"></div>
+          <button class="continue-btn" style="margin-top:10px;" onclick="revealCred()" id="credBtn">Ver as credenciais de Paulo, uma por uma</button>
+          <p class="cred-final" id="credFinal">"Já agora considero-as como perda, por amor de Cristo." (Filipenses 3:7)</p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +165,25 @@
     }, 120);
   }
   openStage(1);
+
+  const credData = ["Circuncidado ao 8º dia","Linhagem de Israel","Tribo de Benjamim","Hebreu de hebreus","Fariseu quanto à lei","Zeloso — perseguidor da igreja","Irrepreensível quanto à lei"];
+
+  function buildCredRow(){
+    const el = document.getElementById('credRow');
+    credData.forEach(c => {
+      const p = document.createElement('div');
+      p.className = 'cred-pill';
+      p.textContent = c;
+      el.appendChild(p);
+    });
+  }
+  buildCredRow();
+
+  function revealCred(){
+    const pills = document.querySelectorAll('#credRow .cred-pill');
+    pills.forEach((p, i) => setTimeout(() => p.classList.add('lit'), i * 220));
+    setTimeout(() => { document.getElementById('credFinal').classList.add('show'); }, pills.length * 220 + 200);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

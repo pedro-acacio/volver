@@ -87,6 +87,18 @@
         <div class="tl-card">
           <p><em>"E a luz resplandece nas trevas, e as trevas não a compreenderam."</em> (João 1:5)</p>
           <p>A luz não é neutra nem opcional — ela expõe o que estava escondido e, ao mesmo tempo, mostra o caminho para quem quer enxergar. É por isso que muitos preferem as trevas: não porque falte luz, mas porque a luz revela demais. Seguir a Jesus é aceitar ser visto por essa luz antes de ser guiado por ela.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnDarkHides" onclick="showLightEffect('hides')">O que a treva esconde</button>
+            <button class="toggle-btn" id="btnLightReveals" onclick="showLightEffect('reveals')">O que a luz revela</button>
+          </div>
+
+          <div class="outcome" id="lightEffectCard">
+            <div class="outcome-visual" id="lightEffectVisual"></div>
+            <h3 id="lightEffectTitle"></h3>
+            <p id="lightEffectText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +172,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showLightEffect(type){
+    const btnHides = document.getElementById('btnDarkHides');
+    const btnReveals = document.getElementById('btnLightReveals');
+    btnHides.classList.remove('active-worry');
+    btnReveals.classList.remove('active-calm');
+    const visual = document.getElementById('lightEffectVisual');
+    const title = document.getElementById('lightEffectTitle');
+    const text = document.getElementById('lightEffectText');
+
+    if (type === 'hides'){
+      btnHides.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O que a treva esconde";
+      text.textContent = "Nas trevas, tropeços, intenções e direção ficam encobertos — parece mais confortável, mas ninguém enxerga por onde pisa.";
+    } else {
+      btnReveals.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O que a luz revela";
+      text.textContent = "À luz de Cristo, o que estava oculto aparece — e junto com a exposição vem também o caminho a seguir.";
+    }
   }
 
   function showOutcome(type){

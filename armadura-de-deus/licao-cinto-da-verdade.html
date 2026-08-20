@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 4px; flex-wrap:wrap; }
+  .seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
 </style>
 </head>
 <body>
@@ -44,6 +47,12 @@
         <div class="tl-card">
           <p><em>"Estai, pois, firmes, tendo cingidos os vossos lombos com a verdade."</em> (Ef 6:14a)</p>
           <p>O cinto do soldado romano não era decorativo: prendia a túnica solta contra o corpo e sustentava a bainha da espada na altura certa para ser sacada rapidamente. Sem ele, cada peça seguinte da armadura ficava frouxa, batendo contra o corpo, atrapalhando cada passo. Por isso Paulo começa por aqui — a verdade não é apenas uma virtude entre outras, é o que prende e sustenta tudo o que vem depois. Uma vida sem verdade fixa é uma vida onde nenhuma outra peça da armadura consegue realmente ficar no lugar.</p>
+
+          <p>Depois do cinto, Paulo lista mais cinco peças em Efésios 6:14-17 — e todas elas só ficam firmes porque o cinto foi posto primeiro:</p>
+          <div class="seq-row" id="seqRowCinto"></div>
+          <div class="chip-text" id="cintoSeqText">Toque no botão abaixo para revelar as peças, uma a uma.</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCintoSeq()" id="seqBtnCinto">Ver as 6 peças, uma por uma</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → vida solta ou vida cingida</button>
         </div>
       </div>
@@ -160,6 +169,21 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const cintoPecas = ["Cinto da verdade", "Couraça da justiça", "Calçado do evangelho da paz", "Escudo da fé", "Capacete da salvação", "Espada do Espírito"];
+  function buildCintoSeq(){
+    const el = document.getElementById('seqRowCinto');
+    cintoPecas.forEach(() => { const d = document.createElement('div'); d.className = 'seq-dot'; el.appendChild(d); });
+  }
+  buildCintoSeq();
+  function revealCintoSeq(){
+    const dots = document.querySelectorAll('#seqRowCinto .seq-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 220));
+    setTimeout(() => {
+      document.getElementById('cintoSeqText').textContent = cintoPecas.join(' → ');
+      document.getElementById('seqBtnCinto').textContent = "As 6 peças, na ordem em que Paulo as lista";
+    }, cintoPecas.length * 220);
   }
 
   function showOutcome(type){

@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .pao-escala-row{ display:flex; align-items:center; gap:9px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .pao-escala-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .pao-escala-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .pao-escala-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .pao-escala-list{ display:flex; flex-direction:column; gap:9px; margin: 4px 0 16px; }
+  .pao-escala-item{ opacity:0; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; font-size:14.5px; line-height:1.5; color: var(--text-dim); border-left:2px solid var(--panel-line); padding-left:10px; }
+  .pao-escala-item.shown{ opacity:1; transform:none; border-left-color: var(--gold); }
 </style>
 </head>
 <body>
@@ -87,6 +94,12 @@
         <div class="tl-card">
           <p><em>"Eu sou o pão vivo que desceu do céu; se alguém comer deste pão, viverá para sempre; e o pão que eu darei é a minha carne, a qual eu darei pela vida do mundo."</em> (João 6:51)</p>
           <p>Aqui a imagem se aprofunda: não se trata apenas de Jesus suprindo uma necessidade de fora, como quem distribui alimento. Ele mesmo é o alimento, entregue — sua própria vida dada na cruz é o pão que sustenta para sempre. Comer desse pão é receber, pela fé, o que ele fez por nós.</p>
+
+          <p style="margin-top:14px;"><strong>Acompanhe como a declaração se aprofunda, dentro do mesmo discurso:</strong></p>
+          <div class="pao-escala-row" id="paoEscalaRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPaoEscala()" id="paoEscalaBtn">Ver a declaração se aprofundar</button>
+          <div class="pao-escala-list" id="paoEscalaList"></div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +150,44 @@
     { text: "\"Vosso pai comeu o maná no deserto, e morreu\" (v.49) — mesmo o pão vindo do céu por Moisés só adiava a fome. Buscar satisfação em conquistas, prazeres ou posses tem o mesmo destino: alimenta por um instante e deixa vazio de novo." },
     { text: "\"Este é o pão que desce do céu, para que o que dele comer não morra\" (v.50) — não é um suprimento temporário, mas vida que não se esgota, porque vem da própria pessoa de Jesus." }
   ];
+
+  const paoEscala = [
+    { text: "\"Eu sou o pão da vida\" (v.35) — a primeira declaração de identidade, dita à multidão saciada." },
+    { text: "\"Eu sou o pão que desceu do céu\" (v.41) — os ouvintes murmuram, escandalizados: não é este o filho de José, cujo pai e mãe conhecemos?" },
+    { text: "\"Vosso pai comeu o maná no deserto, e morreu... este é o pão que desce do céu, para que o que dele comer não morra\" (vv.49-50) — o contraste com o pão temporário do passado." },
+    { text: "\"O pão que eu darei é a minha carne, a qual darei pela vida do mundo\" (v.51) — já não é mais um alimento oferecido de fora: é a própria vida entregue." },
+    { text: "\"Quem come a minha carne e bebe o meu sangue tem a vida eterna... permanece em mim, e eu nele\" (vv.54,56) — o ápice que faz muitos discípulos o abandonarem (v.66)." }
+  ];
+
+  function buildPaoEscalaDots(){
+    const row = document.getElementById('paoEscalaRow');
+    const list = document.getElementById('paoEscalaList');
+    paoEscala.forEach((item, i) => {
+      const d = document.createElement('div');
+      d.className = 'pao-escala-dot';
+      row.appendChild(d);
+      const li = document.createElement('div');
+      li.className = 'pao-escala-item';
+      li.id = 'paoEscalaItem' + i;
+      li.textContent = item.text;
+      list.appendChild(li);
+    });
+    const label = document.createElement('span');
+    label.className = 'pao-escala-label';
+    label.id = 'paoEscalaLabel';
+    label.textContent = '0 de ' + paoEscala.length;
+    row.appendChild(label);
+  }
+  buildPaoEscalaDots();
+
+  function revealPaoEscala(){
+    const dots = document.querySelectorAll('#paoEscalaRow .pao-escala-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('paoEscalaLabel').textContent = (i + 1) + ' de ' + dots.length;
+      document.getElementById('paoEscalaItem' + i).classList.add('shown');
+    }, i * 260));
+  }
 
   let currentMax = 1;
 

@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .tomb-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 10px; flex-wrap:wrap; }
+  .tomb-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .tomb-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .tomb-arrow{ color: var(--text-faint); font-family:'IBM Plex Mono', monospace; font-size:14px; }
+  .tomb-step{ font-family:'IBM Plex Sans', sans-serif; font-size:14px; color: var(--text-dim); opacity:0; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; margin:5px 0; }
+  .tomb-step.show{ opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -87,6 +93,11 @@
         <div class="tl-card">
           <p><em>"E, tendo dito isto, clamou com grande voz: Lázaro, sai para fora. E o que estava morto saiu."</em> (João 11:43-44)</p>
           <p>Jesus não deixa a afirmação em palavras. Diante da pedra removida e do cheiro de morte que Marta mesma temia, ele chama Lázaro pelo nome — e o morto anda para fora, ainda enfaixado. A declaração "eu sou a ressurreição" não pede apenas crença abstrata: ela se prova em carne e em tempo real.</p>
+
+          <div class="tomb-seq-row" id="tombSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealTombSteps()" id="tombSeqBtn">Reviver o momento, passo a passo</button>
+          <div id="tombStepsList"></div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +171,47 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const tombSteps = [
+    "A pedra é removida do túmulo",
+    "Jesus ergue os olhos e ora ao Pai",
+    "\"Lázaro, sai para fora!\" — clamado em alta voz",
+    "O que estava morto sai andando, ainda enfaixado"
+  ];
+
+  function buildTombSeq(){
+    const el = document.getElementById('tombSeqRow');
+    tombSteps.forEach((_, i) => {
+      if (i > 0){
+        const arrow = document.createElement('span');
+        arrow.className = 'tomb-arrow';
+        arrow.textContent = '→';
+        el.appendChild(arrow);
+      }
+      const d = document.createElement('div');
+      d.className = 'tomb-dot';
+      d.id = 'tombDot' + i;
+      el.appendChild(d);
+    });
+    const list = document.getElementById('tombStepsList');
+    tombSteps.forEach((t, i) => {
+      const p = document.createElement('p');
+      p.className = 'tomb-step';
+      p.id = 'tombStep' + i;
+      p.textContent = t;
+      list.appendChild(p);
+    });
+  }
+  buildTombSeq();
+
+  function revealTombSteps(){
+    tombSteps.forEach((_, i) => {
+      setTimeout(() => {
+        document.getElementById('tombDot' + i).classList.add('lit');
+        document.getElementById('tombStep' + i).classList.add('show');
+      }, i * 450);
+    });
   }
 
   function showOutcome(type){

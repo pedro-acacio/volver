@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .know-chain{ display:flex; align-items:center; gap:10px; margin:14px 0 10px; flex-wrap:wrap; }
+  .know-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .know-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .know-arrow{ color: var(--text-faint); font-family:'IBM Plex Mono', monospace; font-size:14px; }
+  .chain-item{ font-family:'IBM Plex Sans', sans-serif; font-size:14px; color: var(--text-dim); opacity:0; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; margin:5px 0; }
+  .chain-item.show{ opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -87,6 +93,11 @@
         <div class="tl-card">
           <p><em>"Assim como o Pai me conhece a mim, também eu conheço o Pai; e dou a minha vida pelas ovelhas."</em> (João 10:15)</p>
           <p>O cuidado do bom pastor não nasce de dever profissional, mas de conhecimento íntimo — o mesmo tipo de conhecimento mútuo que existe entre o Pai e o Filho. Ele não cuida das ovelhas como quem cumpre tarefa: ele as conhece pelo nome, e é conhecido por elas. É esse vínculo que sustenta a entrega até a morte.</p>
+
+          <div class="know-chain" id="knowChain"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealChain()" id="chainBtn">Seguir a cadeia de conhecimento</button>
+          <div id="chainList"></div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +171,47 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const chainData = [
+    "O Pai conhece o Filho",
+    "O Filho conhece o Pai",
+    "O pastor conhece cada ovelha pelo nome",
+    "As ovelhas conhecem a voz do pastor"
+  ];
+
+  function buildChain(){
+    const el = document.getElementById('knowChain');
+    chainData.forEach((_, i) => {
+      if (i > 0){
+        const arrow = document.createElement('span');
+        arrow.className = 'know-arrow';
+        arrow.textContent = '→';
+        el.appendChild(arrow);
+      }
+      const d = document.createElement('div');
+      d.className = 'know-dot';
+      d.id = 'knowDot' + i;
+      el.appendChild(d);
+    });
+    const list = document.getElementById('chainList');
+    chainData.forEach((t, i) => {
+      const p = document.createElement('p');
+      p.className = 'chain-item';
+      p.id = 'chainItem' + i;
+      p.textContent = t;
+      list.appendChild(p);
+    });
+  }
+  buildChain();
+
+  function revealChain(){
+    chainData.forEach((_, i) => {
+      setTimeout(() => {
+        document.getElementById('knowDot' + i).classList.add('lit');
+        document.getElementById('chainItem' + i).classList.add('show');
+      }, i * 450);
+    });
   }
 
   function showOutcome(type){

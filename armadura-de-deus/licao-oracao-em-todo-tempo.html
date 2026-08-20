@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,12 @@
         <div class="tl-card">
           <p><em>"Orando em todo tempo com toda a oração e súplica no Espírito, e vigiando nisto com toda a perseverança e súplica por todos os santos."</em> (Ef 6:18)</p>
           <p>Depois de listar seis peças concretas — cinto, couraça, calçado, escudo, capacete, espada — Paulo muda de metáfora. Não descreve uma sétima peça de metal ou couro, descreve uma prática contínua: orar em todo tempo, vigiando com perseverança. Vestir a armadura inteira e nunca orar é como um soldado bem equipado que nunca fica de vigia — a proteção existe, mas ninguém está atento para usá-la no instante em que o ataque começa.</p>
+
+          <p>Nesse único versículo, Paulo empilha cinco elementos, um sobre o outro:</p>
+          <div class="seq-row" id="oracaoSeqRow"></div>
+          <div class="chip-text" id="oracaoSeqText">Toque no botão para revelar cada elemento, um de cada vez.</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealOracaoSeq()" id="oracaoSeqBtn">Ver os cinco elementos do versículo</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → armadura vestida ou vigiada</button>
         </div>
       </div>
@@ -155,6 +165,40 @@
     }, 120);
   }
   openStage(1);
+
+  const oracaoSeqItems = [
+    { label: "Em todo tempo", text: "não é uma oração pontual antes da batalha, é constante como respirar." },
+    { label: "Toda oração e súplica", text: "cabe o louvor, o pedido, o lamento — nenhuma forma de orar fica de fora." },
+    { label: "No Espírito", text: "não é técnica repetida de cor, é conduzida por quem já intercede dentro do próprio crente." },
+    { label: "Vigiando com toda a perseverança", text: "orar sem prestar atenção ao redor não sustenta nada — vigilância e oração andam juntas." },
+    { label: "Súplica por todos os santos", text: "a última camada vira o olhar para fora: ninguém veste essa armadura sozinho." }
+  ];
+
+  function buildOracaoSeqDots(){
+    const el = document.getElementById('oracaoSeqRow');
+    oracaoSeqItems.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'seq-label';
+    label.id = 'oracaoSeqLabel';
+    label.textContent = '0 de ' + oracaoSeqItems.length;
+    el.appendChild(label);
+  }
+  buildOracaoSeqDots();
+
+  function revealOracaoSeq(){
+    const dots = document.querySelectorAll('#oracaoSeqRow .seq-dot');
+    const textEl = document.getElementById('oracaoSeqText');
+    textEl.textContent = '';
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent += (i > 0 ? ' ' : '') + oracaoSeqItems[i].label + ': ' + oracaoSeqItems[i].text;
+      document.getElementById('oracaoSeqLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 700));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

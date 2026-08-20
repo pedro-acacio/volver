@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .cvv-seq{ display:flex; flex-direction:column; gap:10px; margin:14px 0 16px; }
+  .cvv-item{ display:flex; align-items:flex-start; gap:10px; opacity:0; transform: translateX(-8px); transition: opacity .4s ease, transform .4s cubic-bezier(.34,1.56,.64,1); }
+  .cvv-item.lit{ opacity:1; transform: translateX(0); }
+  .cvv-dot{ width:20px; height:20px; min-width:20px; border-radius:50%; background: var(--panel-line); margin-top:2px; transition: background .3s ease, box-shadow .3s ease; }
+  .cvv-item.lit .cvv-dot{ background: var(--gold); box-shadow: 0 0 9px 1px var(--gold); }
+  .cvv-text{ font-size:14.5px; color: var(--text-dim); line-height:1.55; }
 </style>
 </head>
 <body>
@@ -44,6 +50,23 @@
         <div class="tl-card">
           <p>Jesus acaba de anunciar que vai partir e preparar lugar (João 14:2-3), e Tomé faz a pergunta que qualquer um dos discípulos poderia fazer: "Senhor, nós não sabemos para onde vais; e como podemos saber o caminho?" (v.5) Não é ceticismo — é confusão honesta diante de uma despedida que ninguém queria.</p>
           <p>A resposta de Jesus não dá um mapa. Dá uma pessoa: <em>"Disse-lhe Jesus: Eu sou o caminho, e a verdade e a vida; ninguém vem ao Pai, senão por mim."</em> (João 14:6) Tomé queria direções; Jesus se oferece como o próprio destino e o próprio trajeto.</p>
+
+          <div class="cvv-seq" id="cvvSeq">
+            <div class="cvv-item">
+              <div class="cvv-dot"></div>
+              <div class="cvv-text"><strong>Caminho</strong> — o acesso: a rota até o Pai, não uma entre várias.</div>
+            </div>
+            <div class="cvv-item">
+              <div class="cvv-dot"></div>
+              <div class="cvv-text"><strong>Verdade</strong> — a realidade: não uma opinião entre outras, mas o que de fato é.</div>
+            </div>
+            <div class="cvv-item">
+              <div class="cvv-dot"></div>
+              <div class="cvv-text"><strong>Vida</strong> — o destino: não apenas informação sobre Deus, mas a própria vida com ele.</div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCvv()" id="cvvBtn">Revelar as três palavras, uma a uma</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → muitos caminhos ou um só</button>
         </div>
       </div>
@@ -155,6 +178,14 @@
     }, 120);
   }
   openStage(1);
+
+  function revealCvv(){
+    const items = document.querySelectorAll('#cvvSeq .cvv-item');
+    items.forEach((it, i) => setTimeout(() => it.classList.add('lit'), i * 380));
+    const btn = document.getElementById('cvvBtn');
+    btn.disabled = true;
+    btn.textContent = "As três palavras, reveladas";
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
