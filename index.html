@@ -109,14 +109,36 @@
   }
   .row-scroll::-webkit-scrollbar{ display:none; }
 
+  .row-scrollbar-wrap{
+    display:flex; align-items:center; gap:8px; margin:0 2px 12px;
+  }
+  .row-scrollbar-arrow{
+    flex:0 0 auto; width:20px; height:20px; border-radius:50%; padding:0;
+    display:flex; align-items:center; justify-content:center;
+    background:transparent; border:1px solid var(--panel-line); opacity:.65;
+    cursor:pointer; transition: border-color .2s ease, opacity .2s ease;
+  }
+  .row-scrollbar-arrow svg{ width:9px; height:9px; }
+  .row-scrollbar-arrow.prev svg{ transform: scaleX(-1); }
+  .row-scrollbar-arrow path{ stroke: var(--text-dim); transition: stroke .2s ease; }
+  .row-scrollbar-arrow:hover{ border-color: var(--gold); opacity:1; }
+  .row-scrollbar-arrow:hover path{ stroke: var(--gold); }
+  .row-scrollbar-arrow:disabled{ opacity:.25; cursor:default; pointer-events:none; }
+
   .row-scrollbar{
-    position:relative; height:4px; margin:0 2px 12px; border-radius:4px;
-    background: transparent;
+    position:relative; flex:1 1 auto; height:16px; cursor:pointer;
+  }
+  .row-scrollbar::before{
+    content:''; position:absolute; left:0; right:0; top:50%; height:4px;
+    transform:translateY(-50%); border-radius:4px; background: var(--panel-line); opacity:.3;
   }
   .row-scrollbar-thumb{
-    position:absolute; top:0; left:0; height:100%; min-width:24px;
-    border-radius:4px; background: var(--panel-line);
+    position:absolute; top:50%; height:4px; transform:translateY(-50%);
+    border-radius:4px; background: var(--panel-line); cursor:grab; touch-action:none;
+    transition: background .2s ease;
   }
+  .row-scrollbar-thumb:hover{ background: var(--gold); }
+  .row-scrollbar.dragging .row-scrollbar-thumb{ background: var(--gold); cursor:grabbing; }
 
   .show-card{
     flex: 0 0 200px; background: var(--panel); border:1px solid var(--panel-line);
@@ -174,7 +196,7 @@
   footer.site-footer{
     margin-top: 76px; padding-top: 40px; border-top:1px solid var(--panel-line);
   }
-  .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:32px; margin-bottom:36px; }
+  .footer-grid{ display:grid; grid-template-columns: 1.4fr 2fr; gap:32px; margin-bottom:36px; }
   @media (max-width:640px){ .footer-grid{ grid-template-columns:1fr; gap:26px; } }
 
   .footer-brand .brand-bar{ margin-bottom:12px; }
@@ -185,6 +207,9 @@
     color: var(--text-faint); margin:0 0 14px; font-weight:500;
   }
   .footer-col ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .footer-explore ul{ display:block; columns:2; column-gap:32px; }
+  .footer-explore li{ margin-bottom:10px; break-inside:avoid; }
+  @media (max-width:640px){ .footer-explore ul{ columns:1; } }
   .footer-col a{ font-size:13.5px; color: var(--text-dim); transition: color .2s ease; }
   .footer-col a:hover{ color: var(--gold); }
   .footer-col .soon{ font-size:13.5px; color: var(--text-faint); }
@@ -3313,7 +3338,7 @@
         </div>
         <p class="footer-blurb" data-i18n="footer_blurb">Reflexões curtas que usam textos bíblicos — em ordem cronológica — para nomear padrões mentais automáticos antes de nomear a virtude que os interrompe.</p>
       </div>
-      <div class="footer-col">
+      <div class="footer-col footer-explore">
         <h4 data-i18n="footer_explore">Explorar</h4>
         <ul>
           <li><a href="parabolas/biblioteca-parabolas.html" data-i18n="cat_parabolas">Parábolas</a></li>
@@ -3323,11 +3348,6 @@
           <li><a href="personagens/biblioteca-personagens.html" data-i18n="cat_personagens">Personagens</a></li>
           <li><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html" data-i18n="cat_fruto-do-espirito">Fruto do Espírito</a></li>
           <li><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html" data-i18n="cat_disciplinas-espirituais">Disciplinas Espirituais</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>&nbsp;</h4>
-        <ul>
           <li><a href="trindade/biblioteca-trindade.html" data-i18n="cat_trindade">Trindade</a></li>
           <li><a href="mordomia-crista/biblioteca-mordomia-crista.html" data-i18n="cat_mordomia-crista">Mordomia Cristã</a></li>
           <li><a href="bem-aventurancas/biblioteca-bem-aventurancas.html" data-i18n="cat_bem-aventurancas">Bem-aventuranças</a></li>
@@ -3391,26 +3411,95 @@
     noResults.style.display = (q && !anyVisible) ? 'block' : 'none';
   });
 
+  const ARROW_SVG = '<svg viewBox="0 0 10 10" fill="none"><path d="M3 1 L7 5 L3 9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
   document.querySelectorAll('.row-scroll').forEach(function(scroller){
-    const bar = document.createElement('div');
-    bar.className = 'row-scrollbar';
+    const wrap = document.createElement('div');
+    wrap.className = 'row-scrollbar-wrap';
+
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'row-scrollbar-arrow prev';
+    prevBtn.setAttribute('aria-label', 'Rolar para o início');
+    prevBtn.innerHTML = ARROW_SVG;
+
+    const track = document.createElement('div');
+    track.className = 'row-scrollbar';
     const thumb = document.createElement('div');
     thumb.className = 'row-scrollbar-thumb';
-    bar.appendChild(thumb);
-    scroller.insertAdjacentElement('afterend', bar);
+    track.appendChild(thumb);
+
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'row-scrollbar-arrow next';
+    nextBtn.setAttribute('aria-label', 'Rolar para o fim');
+    nextBtn.innerHTML = ARROW_SVG;
+
+    wrap.appendChild(prevBtn);
+    wrap.appendChild(track);
+    wrap.appendChild(nextBtn);
+    scroller.insertAdjacentElement('afterend', wrap);
+
+    function step(){
+      const card = scroller.querySelector('.show-card');
+      return card ? card.getBoundingClientRect().width + 14 : 214;
+    }
 
     function update(){
       const scrollable = scroller.scrollWidth > scroller.clientWidth + 1;
-      bar.style.display = scrollable ? '' : 'none';
+      wrap.style.display = scrollable ? '' : 'none';
       if(!scrollable) return;
       const thumbPct = Math.max((scroller.clientWidth / scroller.scrollWidth) * 100, 8);
       const maxScroll = scroller.scrollWidth - scroller.clientWidth;
       const posPct = maxScroll > 0 ? (scroller.scrollLeft / maxScroll) * (100 - thumbPct) : 0;
       thumb.style.width = thumbPct + '%';
       thumb.style.left = posPct + '%';
+      prevBtn.disabled = scroller.scrollLeft <= 1;
+      nextBtn.disabled = scroller.scrollLeft >= maxScroll - 1;
     }
+
     scroller.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+
+    prevBtn.addEventListener('click', function(){
+      scroller.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', function(){
+      scroller.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('click', function(e){
+      if(e.target === thumb) return;
+      const rect = track.getBoundingClientRect();
+      const frac = (e.clientX - rect.left) / rect.width;
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      scroller.scrollTo({ left: frac * maxScroll, behavior: 'smooth' });
+    });
+
+    let dragging = false, dragStartX = 0, dragStartScroll = 0;
+    thumb.addEventListener('pointerdown', function(e){
+      dragging = true;
+      dragStartX = e.clientX;
+      dragStartScroll = scroller.scrollLeft;
+      track.classList.add('dragging');
+      thumb.setPointerCapture(e.pointerId);
+      e.stopPropagation();
+    });
+    thumb.addEventListener('pointermove', function(e){
+      if(!dragging) return;
+      const trackWidth = track.getBoundingClientRect().width;
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const deltaX = e.clientX - dragStartX;
+      const deltaScroll = (deltaX / trackWidth) * maxScroll;
+      scroller.scrollLeft = Math.max(0, Math.min(maxScroll, dragStartScroll + deltaScroll));
+    });
+    function endDrag(){
+      dragging = false;
+      track.classList.remove('dragging');
+    }
+    thumb.addEventListener('pointerup', endDrag);
+    thumb.addEventListener('pointercancel', endDrag);
+
     update();
   });
 </script>
