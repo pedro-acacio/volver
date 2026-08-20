@@ -88,6 +88,18 @@
         <div class="tl-card">
           <p>Paulo distingue dois tipos de tristeza: <em>"a tristeza segundo Deus opera arrependimento para a salvação... mas a tristeza do mundo produz a morte"</em> (2 Co 7:10).</p>
           <p>Nem toda dor leva ao mesmo lugar. Uma tristeza reconhece a falta diante de Deus e se volta para ele em busca de vida; a outra se fecha em si mesma e não leva a lugar nenhum. O choro que Jesus abençoa é o primeiro tipo — aquele que se deixa consolar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnGriefWorldly" onclick="showGrief('worldly')">Tristeza do mundo</button>
+            <button class="toggle-btn" id="btnGriefGodly" onclick="showGrief('godly')">Tristeza segundo Deus</button>
+          </div>
+
+          <div class="outcome" id="griefCard">
+            <div class="outcome-visual" id="griefVisual"></div>
+            <h3 id="griefTitle"></h3>
+            <p id="griefText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +168,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showGrief(type){
+    const btnWorldly = document.getElementById('btnGriefWorldly');
+    const btnGodly = document.getElementById('btnGriefGodly');
+    btnWorldly.classList.remove('active-worry');
+    btnGodly.classList.remove('active-calm');
+    const visual = document.getElementById('griefVisual');
+    const title = document.getElementById('griefTitle');
+    const text = document.getElementById('griefText');
+
+    if (type === 'worldly'){
+      btnWorldly.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Tristeza do mundo";
+      text.textContent = "Fecha-se em si mesma, sem saída — e, segundo Paulo, \"produz a morte\" (2 Co 7:10).";
+    } else {
+      btnGodly.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Tristeza segundo Deus";
+      text.textContent = "Reconhece a falta diante de Deus e se volta para ele — e \"opera arrependimento para a salvação\" (2 Co 7:10).";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

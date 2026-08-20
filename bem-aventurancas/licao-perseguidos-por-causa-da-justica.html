@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .profeta-seq-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 4px; flex-wrap:wrap; }
+  .profeta-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .profeta-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .profeta-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .profeta-seq-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -88,6 +93,12 @@
         <div class="tl-card">
           <p>Paulo confirma a Timóteo: <em>"todos os que piamente querem viver em Cristo Jesus padecerão perseguições"</em> (2 Tm 3:12).</p>
           <p>Não é uma exceção reservada para casos extremos, é o padrão esperado para quem vive de forma piedosa. A pergunta não é se a perseguição vai vir, mas como recebê-la quando vier — como derrota, ou como confirmação de que se está no caminho certo.</p>
+
+          <p>"Assim perseguiram os profetas que antes de vós foram" (Mt 5:12) — o padrão se repete ao longo de toda a Escritura:</p>
+          <div class="profeta-seq-row" id="profetaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarProfetas()" id="profetaSeqBtn">Ver, um por um</button>
+          <p class="profeta-seq-note" id="profetaSeqNote">Toque para percorrer a mesma fileira de antes de você.</p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -138,6 +149,41 @@
     { text: "Interpreta a oposição como prova de que algo deu errado com a fé, e recua diante dela — tratando o sofrimento como sinal de fracasso." },
     { text: "\"Alegrai-vos e exultai, porque é grande o vosso galardão nos céus\" (Mt 5:12) — a mesma perseguição que os profetas sofreram antes, recebida como sinal de pertencer a Deus." }
   ];
+
+  const profetaItens = [
+    "Elias, ameaçado de morte por Jezabel (1Rs 19:2)",
+    "Jeremias, lançado numa cisterna (Jr 38:6)",
+    "João Batista, decapitado (Mt 14:10)",
+    "Estêvão, apedrejado (At 7:59-60)",
+    "Paulo, açoitado e preso (2 Co 11:23-25)",
+    "O próprio Jesus, odiado sem motivo (Jo 15:18-20)"
+  ];
+
+  function buildProfetaDots(){
+    const el = document.getElementById('profetaSeqRow');
+    profetaItens.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'profeta-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'profeta-seq-label';
+    label.id = 'profetaSeqLabel';
+    label.textContent = '0 de ' + profetaItens.length;
+    el.appendChild(label);
+  }
+  buildProfetaDots();
+
+  function revelarProfetas(){
+    const dots = document.querySelectorAll('#profetaSeqRow .profeta-seq-dot');
+    const label = document.getElementById('profetaSeqLabel');
+    const nota = document.getElementById('profetaSeqNote');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = (i + 1) + ' de ' + profetaItens.length;
+      nota.textContent = profetaItens[i] + ".";
+    }, i * 320));
+  }
 
   let currentMax = 1;
 

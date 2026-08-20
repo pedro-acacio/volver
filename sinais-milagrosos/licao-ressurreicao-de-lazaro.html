@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .lazDays-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .lazDays-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .lazDays-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .lazDays-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .lazDays-note{ font-size:14px; color: var(--text-dim); margin-top:4px; }
 </style>
 </head>
 <body>
@@ -43,6 +48,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Lázaro, amigo de Jesus, morre. Jesus, propositalmente, chega quatro dias depois — quando o corpo já estava no túmulo havia tempo suficiente para que Marta dissesse, sem rodeios, que "já cheira mal" (v.39). Diante do túmulo fechado, Jesus faz a Marta uma pergunta que exige mais que consolo.</p>
+
+          <div class="lazDays-row" id="lazDaysRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealLazDays()" id="lazDaysBtn">Contar os quatro dias no túmulo</button>
+          <p class="lazDays-note" id="lazDaysNote" style="display:none;">Jesus ficou onde estava mais dois dias depois de saber da doença (v.6) — o atraso foi deliberado, não um acidente de viagem.</p>
+
           <p><em>"Disse-lhe Jesus: Eu sou a ressurreição e a vida... crês tu isto?"</em> (João 11:25, 26b)</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → atraso ou propósito</button>
         </div>
@@ -155,6 +165,30 @@
     }, 120);
   }
   openStage(1);
+
+  function buildLazDays(){
+    const el = document.getElementById('lazDaysRow');
+    for (let i = 0; i < 4; i++){
+      const d = document.createElement('div');
+      d.className = 'lazDays-dot';
+      el.appendChild(d);
+    }
+    const label = document.createElement('span');
+    label.className = 'lazDays-label';
+    label.id = 'lazDaysLabel';
+    label.textContent = '0 de 4 dias';
+    el.appendChild(label);
+  }
+  buildLazDays();
+
+  function revealLazDays(){
+    const dots = document.querySelectorAll('#lazDaysRow .lazDays-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 280));
+    setTimeout(() => {
+      document.getElementById('lazDaysLabel').textContent = '4 de 4 dias';
+      document.getElementById('lazDaysNote').style.display = 'block';
+    }, dots.length * 280);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

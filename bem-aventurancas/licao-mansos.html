@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .manso-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .manso-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .manso-seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .manso-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .manso-seq-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; }
 </style>
 </head>
 <body>
@@ -88,6 +93,12 @@
         <div class="tl-card">
           <p>O Salmo 37 repete quase a mesma frase de Jesus, séculos antes: <em>"os mansos herdarão a terra, e se deleitarão com abundância de paz"</em> (Sl 37:11).</p>
           <p>O contexto do salmo é revelador: a mansidão ali está ligada a não se irar contra os que fazem o mal, a confiar no SENHOR em vez de tomar a vingança nas próprias mãos (Sl 37:1,7-8). A promessa da terra pertence a quem entrega o acerto de contas a Deus.</p>
+
+          <p style="margin-top:14px;"><strong>O que o Salmo 37 pede de quem espera herdar a terra:</strong></p>
+          <div class="manso-seq-row" id="mansoSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealMansoSeq()" id="mansoSeqBtn">Ver, um por um</button>
+          <p class="manso-seq-note" id="mansoSeqNote"></p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +167,38 @@
     }, 120);
   }
   openStage(1);
+
+  const mansoSalmoPassos = [
+    "Não te irrites por causa dos que praticam o mal (Sl 37:1)",
+    "Descansa no SENHOR, e espera nele (Sl 37:7)",
+    "Deixa a ira, abandona o furor (Sl 37:8)"
+  ];
+
+  function buildMansoSeqDots(){
+    const el = document.getElementById('mansoSeqRow');
+    mansoSalmoPassos.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'manso-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'manso-seq-label';
+    label.id = 'mansoSeqLabel';
+    label.textContent = '0 de ' + mansoSalmoPassos.length;
+    el.appendChild(label);
+  }
+  buildMansoSeqDots();
+
+  function revealMansoSeq(){
+    const dots = document.querySelectorAll('#mansoSeqRow .manso-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('mansoSeqLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 400));
+    setTimeout(() => {
+      document.getElementById('mansoSeqNote').textContent = "Três vezes o salmo repete a mesma ordem, de formas diferentes: entregue a ira a Deus. É esse desarmamento, não a fraqueza, que herda a terra.";
+    }, dots.length * 400 + 200);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

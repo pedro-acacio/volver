@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .crossing-track{ width:100%; height:20px; border-radius:10px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin: 14px 0 6px; }
+  .crossing-fill{ height:100%; border-radius:10px; width:35%; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); transition: width 1s cubic-bezier(.4,0,.2,1); }
+  .crossing-fill.arrived{ width:100%; }
+  .crossing-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
 </style>
 </head>
 <body>
@@ -87,6 +91,13 @@
         <div class="tl-card">
           <p>Assim que os discípulos recebem Jesus no barco, algo mais acontece, quase de passagem: <em>"logo o barco chegou à terra para onde iam"</em> (João 6:21).</p>
           <p>João não faz alarde disso, mas a chegada instantânea sugere que o sinal não termina na caminhada sobre a água — continua na travessia inteira, resolvida num instante assim que Jesus entra no barco.</p>
+
+          <div class="crossing-track" id="crossingTrack">
+            <div class="crossing-fill" id="crossingFill"></div>
+          </div>
+          <div class="crossing-label" id="crossingLabel">Remando sozinhos contra o vento, a uns 25-30 estádios da margem (v.19) — ainda longe.</div>
+          <button class="continue-btn" style="margin-top:10px;" onclick="jumpToShore()" id="crossingBtn">Jesus entra no barco →</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +166,16 @@
     }, 120);
   }
   openStage(1);
+
+  function jumpToShore(){
+    const fill = document.getElementById('crossingFill');
+    const label = document.getElementById('crossingLabel');
+    const btn = document.getElementById('crossingBtn');
+    fill.classList.add('arrived');
+    label.textContent = '"Logo o barco chegou à terra para onde iam" (v.21) — a travessia inteira, resolvida num instante.';
+    btn.disabled = true;
+    btn.textContent = 'Chegaram à terra';
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

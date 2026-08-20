@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .interrog-steps{ display:flex; flex-direction:column; gap:10px; margin: 14px 0 16px; }
+  .interrog-step{ display:flex; align-items:center; gap:10px; opacity:.35; transition: opacity .35s ease; }
+  .interrog-step.lit{ opacity:1; }
+  .interrog-dot{ width:20px; height:20px; border-radius:50%; flex:0 0 20px; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .interrog-step.lit .interrog-dot{ background: var(--calm); transform: scale(1.15); box-shadow: 0 0 9px 1px var(--calm); }
+  .interrog-label{ font-family:'IBM Plex Sans', sans-serif; font-size:14px; color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -43,6 +49,15 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Jesus cura um homem cego desde o nascimento com barro feito de saliva e terra, mandando-o lavar no tanque de Siloé. O milagre é simples e completo — mas o que vem depois é uma sequência exaustiva de interrogatórios, dos vizinhos, dos fariseus, dos próprios pais do homem.</p>
+
+          <div class="interrog-steps" id="interrogSteps">
+            <div class="interrog-step" data-i="0"><div class="interrog-dot"></div><span class="interrog-label">Os vizinhos duvidam que seja o mesmo mendigo (v.8-9)</span></div>
+            <div class="interrog-step" data-i="1"><div class="interrog-dot"></div><span class="interrog-label">Os fariseus se dividem: "não é de Deus" contra "como pode um pecador fazer tais sinais?" (v.16)</span></div>
+            <div class="interrog-step" data-i="2"><div class="interrog-dot"></div><span class="interrog-label">Os pais, com medo, se esquivam: "tem idade, perguntai a ele mesmo" (v.21-23)</span></div>
+            <div class="interrog-step" data-i="3"><div class="interrog-dot"></div><span class="interrog-label">Os fariseus voltam a pressioná-lo — e terminam expulsando-o da sinagoga (v.34)</span></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealInterrog()" id="interrogBtn">Ver os quatro interrogatórios, um por um</button>
+
           <p>Pressionado a explicar teologicamente o que aconteceu, o homem responde com uma simplicidade que ninguém consegue rebater: <em>"Respondeu-lhes ele: Se é pecador, não sei; uma coisa sei: eu era cego, e agora vejo."</em> (João 9:25)</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → recusar ou testemunhar</button>
         </div>
@@ -155,6 +170,11 @@
     }, 120);
   }
   openStage(1);
+
+  function revealInterrog(){
+    const steps = document.querySelectorAll('#interrogSteps .interrog-step');
+    steps.forEach((s, i) => setTimeout(() => s.classList.add('lit'), i * 350));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

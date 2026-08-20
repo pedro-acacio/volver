@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .betesda-bar-label{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); display:flex; justify-content:space-between; margin-top:14px; }
+  .betesda-bar-num{ color: var(--gold); font-weight:600; }
+  .betesda-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin: 6px 0 12px; }
+  .betesda-bar-fill{ height:100%; width:0%; border-radius:9px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); transition: width 1.8s cubic-bezier(.22,.9,.3,1); }
 </style>
 </head>
 <body>
@@ -44,6 +48,11 @@
         <div class="tl-card">
           <p>Junto ao tanque de Betesda, um homem paralítico há trinta e oito anos espera que alguém o ajude a entrar na água quando ela se agita — a única chance de cura que conhece, e que nunca chega a tempo para ele. Jesus se aproxima e faz uma pergunta que parece óbvia demais para precisar ser feita.</p>
           <p><em>"Perguntou-lhe Jesus: Queres ficar são?"</em> (João 5:6)</p>
+
+          <div class="betesda-bar-label"><span>Tempo de espera junto ao tanque</span><span><span class="betesda-bar-num" id="betesdaBarNum">0</span> anos</span></div>
+          <div class="betesda-bar-track"><div class="betesda-bar-fill" id="betesdaBarFill"></div></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="fillBetesdaBar()" id="betesdaBarBtn">Ver o peso da espera</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → esperar ou obedecer</button>
         </div>
       </div>
@@ -155,6 +164,20 @@
     }, 120);
   }
   openStage(1);
+
+  function fillBetesdaBar(){
+    document.getElementById('betesdaBarFill').style.width = '100%';
+    const numEl = document.getElementById('betesdaBarNum');
+    const total = 38;
+    const duration = 1800;
+    const start = performance.now();
+    function step(now){
+      const progress = Math.min((now - start) / duration, 1);
+      numEl.textContent = Math.round(progress * total);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

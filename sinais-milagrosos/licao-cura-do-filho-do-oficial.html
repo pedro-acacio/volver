@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .oficial-match-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 12px; }
+  .oficial-match-point{ display:flex; flex-direction:column; align-items:center; gap:7px; flex-shrink:0; }
+  .oficial-match-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .35s ease, transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .35s ease; }
+  .oficial-match-dot.lit{ background: var(--gold); transform: scale(1.25); box-shadow: 0 0 10px 2px var(--gold); }
+  .oficial-match-label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); text-align:center; max-width:110px; line-height:1.3; }
+  .oficial-match-line{ flex:1; height:2px; background: var(--panel-line); position:relative; top:-14px; }
+  .oficial-match-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; margin-top:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +94,22 @@
         <div class="tl-card">
           <p>O oficial parte para casa sem ter visto nada acontecer — só carrega uma palavra. No caminho, seus servos o alcançam com a notícia: o menino vivia, exatamente na hora em que Jesus falara. <em>"Creu ele, e toda a sua casa."</em> (João 4:53)</p>
           <p>A fé nasce antes da confirmação e só depois se comprova. E não fica limitada a um homem — atravessa a distância, o tempo de viagem, e se espalha por toda a família que dependia dele.</p>
+
+          <p style="margin-top:14px;"><strong>Duas horas separadas pela distância — mas não pelo tempo:</strong></p>
+          <div class="oficial-match-row" id="oficialMatchRow">
+            <div class="oficial-match-point">
+              <div class="oficial-match-dot" id="oficialDotFala"></div>
+              <span class="oficial-match-label">Jesus fala, em Caná</span>
+            </div>
+            <div class="oficial-match-line"></div>
+            <div class="oficial-match-point">
+              <div class="oficial-match-dot" id="oficialDotCura"></div>
+              <span class="oficial-match-label">A febre passa, em Cafarnaum</span>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealOficialMatch()" id="oficialMatchBtn">Ver a hora exata</button>
+          <p class="oficial-match-note" id="oficialMatchNote"></p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +178,16 @@
     }, 120);
   }
   openStage(1);
+
+  function revealOficialMatch(){
+    document.getElementById('oficialDotFala').classList.add('lit');
+    setTimeout(() => {
+      document.getElementById('oficialDotCura').classList.add('lit');
+    }, 450);
+    setTimeout(() => {
+      document.getElementById('oficialMatchNote').textContent = "\"Ontem, à hora sétima, a febre o deixou.\" Reconheceu o pai que era a mesma hora em que Jesus lhe dissera: \"o teu filho vive\" (João 4:52-53). A palavra chegou antes que os próprios pés do pai.";
+    }, 900);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

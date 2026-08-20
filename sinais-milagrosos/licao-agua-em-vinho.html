@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .agua-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .agua-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .agua-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .agua-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .agua-seq-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; }
 </style>
 </head>
 <body>
@@ -87,6 +92,12 @@
         <div class="tl-card">
           <p><em>"Assim deu Jesus em Caná da Galileia princípio aos sinais, e manifestou a sua glória; e os seus discípulos creram nele."</em> (João 2:11)</p>
           <p>João não termina a história dizendo que a festa foi salva — ele termina dizendo o que ela revelou. O primeiro sinal não resolve apenas um problema social; ele expõe, pela primeira vez, quem Jesus é. E a resposta certa diante disso não é alívio, é fé.</p>
+
+          <p style="margin-top:14px;"><strong>Seis talhas de pedra, muito além do necessário:</strong></p>
+          <div class="agua-seq-row" id="aguaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealAguaSeq()" id="aguaSeqBtn">Ver as talhas se enchendo</button>
+          <p class="agua-seq-note" id="aguaSeqNote"></p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +166,34 @@
     }, 120);
   }
   openStage(1);
+
+  const aguaTalhas = [1,2,3,4,5,6];
+
+  function buildAguaSeqDots(){
+    const el = document.getElementById('aguaSeqRow');
+    aguaTalhas.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'agua-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'agua-seq-label';
+    label.id = 'aguaSeqLabel';
+    label.textContent = '0 de ' + aguaTalhas.length;
+    el.appendChild(label);
+  }
+  buildAguaSeqDots();
+
+  function revealAguaSeq(){
+    const dots = document.querySelectorAll('#aguaSeqRow .agua-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('aguaSeqLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 350));
+    setTimeout(() => {
+      document.getElementById('aguaSeqNote').textContent = "Cada talha comportava entre 80 e 120 litros — juntas, de 400 a 600 litros do melhor vinho da festa, para uma necessidade que pedia bem menos.";
+    }, dots.length * 350 + 200);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

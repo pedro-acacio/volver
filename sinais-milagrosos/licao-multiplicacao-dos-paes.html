@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .paes-seq-row{ display:flex; align-items:center; gap:9px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .paes-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .paes-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .paes-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .paes-seq-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; }
 </style>
 </head>
 <body>
@@ -86,6 +91,12 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Depois de comerem até se fartar, com doze cestos sobrando, a multidão reconhece algo extraordinário: <em>"este é verdadeiramente o profeta que devia vir ao mundo"</em> (João 6:14).</p>
+
+          <p style="margin-top:14px;"><strong>Cinco pães, dois peixes, cinco mil homens — e ainda sobraram:</strong></p>
+          <div class="paes-seq-row" id="paesSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPaesSeq()" id="paesSeqBtn">Ver os cestos, um por um</button>
+          <p class="paes-seq-note" id="paesSeqNote"></p>
+
           <p>Mas reconhecer o sinal não é o mesmo que entendê-lo. No versículo seguinte, tentam fazer Jesus rei à força — querem um provedor de pão, não o pão que ele realmente veio oferecer. O sinal é visto; o significado, não.</p>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
@@ -155,6 +166,34 @@
     }, 120);
   }
   openStage(1);
+
+  const paesCestos = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+  function buildPaesSeqDots(){
+    const el = document.getElementById('paesSeqRow');
+    paesCestos.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'paes-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'paes-seq-label';
+    label.id = 'paesSeqLabel';
+    label.textContent = '0 de ' + paesCestos.length + ' cestos';
+    el.appendChild(label);
+  }
+  buildPaesSeqDots();
+
+  function revealPaesSeq(){
+    const dots = document.querySelectorAll('#paesSeqRow .paes-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('paesSeqLabel').textContent = (i + 1) + ' de ' + dots.length + ' cestos';
+    }, i * 160));
+    setTimeout(() => {
+      document.getElementById('paesSeqNote').textContent = "Doze cestos cheios sobrando (João 6:13) — mais do que os cinco pães e dois peixinhos que existiam antes de tudo começar.";
+    }, dots.length * 160 + 200);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

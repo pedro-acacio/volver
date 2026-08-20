@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .raiz-seq-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 4px; flex-wrap:wrap; }
+  .raiz-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .raiz-seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .raiz-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .raiz-seq-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; margin-top:6px; }
 </style>
 </head>
 <body>
@@ -45,6 +50,12 @@
           <p><em>"Bem-aventurados os limpos de coração, porque eles verão a Deus."</em> (Mt 5:8)</p>
           <p>Jesus não fala de comportamento correto na superfície — fala do coração, a raiz de onde nascem as ações. Pureza de fachada é possível até para quem esconde muita coisa por dentro; pureza de coração é outra categoria inteira, porque não tem onde se esconder.</p>
           <p>E a promessa liga essa pureza a algo íntimo: ver a Deus. Um coração dividido enxerga menos; um coração limpo enxerga o que mais importa.</p>
+
+          <p>Jesus foi específico sobre o que realmente nasce de um coração não guardado: <em>"do coração procedem os maus pensamentos, mortes, adultérios, fornicações, furtos, falsos testemunhos e blasfêmias"</em> (Mt 15:19).</p>
+          <div class="raiz-seq-row" id="raizSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarRaiz()" id="raizSeqBtn">Ver, uma por uma</button>
+          <p class="raiz-seq-note" id="raizSeqNote">Sete coisas que a fachada não segura — porque todas nascem antes de aparecer.</p>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → fachada ou realidade</button>
         </div>
       </div>
@@ -138,6 +149,34 @@
     { text: "Comportamento correto por fora, coração dividido por dentro — como os fariseus, \"sepulcros caiados... por fora formosos, mas interiormente cheios de ossos de mortos\" (Mt 23:27)." },
     { text: "\"Cria em mim, ó Deus, um coração puro\" (Sl 51:10) — um pedido interior, dirigido a Deus, não uma tentativa de reforma só externa." }
   ];
+
+  const raizItens = ["maus pensamentos", "mortes", "adultérios", "fornicações", "furtos", "falsos testemunhos", "blasfêmias"];
+
+  function buildRaizDots(){
+    const el = document.getElementById('raizSeqRow');
+    raizItens.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'raiz-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'raiz-seq-label';
+    label.id = 'raizSeqLabel';
+    label.textContent = '0 de ' + raizItens.length;
+    el.appendChild(label);
+  }
+  buildRaizDots();
+
+  function revelarRaiz(){
+    const dots = document.querySelectorAll('#raizSeqRow .raiz-seq-dot');
+    const label = document.getElementById('raizSeqLabel');
+    const nota = document.getElementById('raizSeqNote');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = (i + 1) + ' de ' + raizItens.length;
+      nota.textContent = "Do coração: " + raizItens.slice(0, i + 1).join(", ") + ".";
+    }, i * 260));
+  }
 
   let currentMax = 1;
 

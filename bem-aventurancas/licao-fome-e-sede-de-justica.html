@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .amos-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin: 10px 0 4px; }
+  .amos-bar-fill{ height:100%; border-radius:9px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); width:0%; transition: width .6s ease; }
+  .amos-bar-fill.flowing{ background: linear-gradient(90deg, var(--gold), var(--calm), var(--gold)); background-size: 200% 100%; animation: amosFlow 1.4s linear infinite; }
+  @keyframes amosFlow{ 0%{ background-position: 0% 0; } 100%{ background-position: 200% 0; } }
+  .amos-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; margin-top:8px; }
 </style>
 </head>
 <body>
@@ -88,6 +93,14 @@
         <div class="tl-card">
           <p>O profeta Amós recusa uma religiosidade de aparência: <em>"corra o juízo como as águas, e a justiça como ribeiro perene"</em> (Am 5:24).</p>
           <p>A imagem é de movimento contínuo, não de um ideal parado numa prateleira. Justiça, para Amós como para Jesus, não é uma ideia abstrata a ser admirada — é algo a ser praticado, desejado e buscado concretamente, correndo como água que não para.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAmosStopped" onclick="showAmosFlow('stopped')">Represada</button>
+            <button class="toggle-btn" id="btnAmosFlowing" onclick="showAmosFlow('flowing')">Corre como as águas</button>
+          </div>
+          <div class="amos-bar-track"><div class="amos-bar-fill" id="amosBarFill"></div></div>
+          <p class="amos-note" id="amosNote"></p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +169,27 @@
     }, 120);
   }
   openStage(1);
+
+  function showAmosFlow(type){
+    const btnStopped = document.getElementById('btnAmosStopped');
+    const btnFlowing = document.getElementById('btnAmosFlowing');
+    btnStopped.classList.remove('active-worry');
+    btnFlowing.classList.remove('active-calm');
+    const fill = document.getElementById('amosBarFill');
+    const note = document.getElementById('amosNote');
+    fill.classList.remove('flowing');
+
+    if (type === 'stopped'){
+      btnStopped.classList.add('active-worry');
+      fill.style.width = '22%';
+      note.textContent = "Represada: para na aparência de religião, sem seguir adiante.";
+    } else {
+      btnFlowing.classList.add('active-calm');
+      fill.style.width = '100%';
+      fill.classList.add('flowing');
+      note.textContent = "Corre sem parar, \"como ribeiro perene\" (Am 5:24) — a justiça buscada com fome de verdade.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

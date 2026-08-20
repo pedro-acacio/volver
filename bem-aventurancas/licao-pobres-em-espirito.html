@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .fariseu-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .fariseu-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .fariseu-seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .fariseu-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .fariseu-seq-note{ font-size:14.5px; color: var(--text-dim); min-height: 1.4em; }
 </style>
 </head>
 <body>
@@ -88,6 +93,12 @@
         <div class="tl-card">
           <p>Jesus conta a história de dois homens que sobem ao templo para orar. O fariseu enumera suas próprias virtudes diante de Deus; o publicano nem ousa levantar os olhos ao céu, batendo no peito: <em>"Deus, sê propício a mim, pecador"</em> (Lc 18:13).</p>
           <p>O veredito é claro: <em>"digo-vos que este desceu justificado para sua casa, e não aquele"</em> (Lc 18:14). Não é o currículo espiritual que justifica — é a pobreza reconhecida diante de Deus.</p>
+
+          <p style="margin-top:14px;"><strong>O que o fariseu declara diante de Deus, em oração (Lc 18:11-12):</strong></p>
+          <div class="fariseu-seq-row" id="fariseuSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealFariseuSeq()" id="fariseuSeqBtn">Ver, um por um</button>
+          <p class="fariseu-seq-note" id="fariseuNote"></p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +167,38 @@
     }, 120);
   }
   openStage(1);
+
+  const fariseuClaims = [
+    "Não sou como os outros homens: ladrões, injustos, adúlteros",
+    "Jejuo duas vezes por semana",
+    "Dou dízimos de tudo quanto possuo"
+  ];
+
+  function buildFariseuSeqDots(){
+    const el = document.getElementById('fariseuSeqRow');
+    fariseuClaims.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'fariseu-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'fariseu-seq-label';
+    label.id = 'fariseuSeqLabel';
+    label.textContent = '0 de ' + fariseuClaims.length;
+    el.appendChild(label);
+  }
+  buildFariseuSeqDots();
+
+  function revealFariseuSeq(){
+    const dots = document.querySelectorAll('#fariseuSeqRow .fariseu-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('fariseuSeqLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 400));
+    setTimeout(() => {
+      document.getElementById('fariseuNote').textContent = "Três méritos declarados diante de Deus — e nenhum deles justificou. Foi o publicano, sem currículo nenhum, quem desceu justificado (Lc 18:14).";
+    }, dots.length * 400 + 200);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
