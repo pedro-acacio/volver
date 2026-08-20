@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .corpo-seq-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 16px; }
+  .corpo-seq-pill{ font-family:'IBM Plex Mono', monospace; font-size:13px; padding:7px 14px; border-radius:999px; background: var(--panel); border:1.5px solid var(--panel-line); color: var(--text-faint); opacity:0; transform: scale(.75); transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1), background .3s ease, border-color .3s ease, color .3s ease; }
+  .corpo-seq-pill.lit{ opacity:1; transform: scale(1); background: rgba(217,164,65,0.14); border-color: var(--gold); color: var(--gold); box-shadow: 0 0 9px 1px rgba(217,164,65,0.3); }
 </style>
 </head>
 <body>
@@ -87,6 +90,10 @@
         <div class="tl-card">
           <p><em>"Porque fostes comprados por preço; glorificai, pois, a Deus no vosso corpo e no vosso espírito, os quais pertencem a Deus."</em> (1 Co 6:20)</p>
           <p>A mordomia do corpo nasce de pertencimento, não de culpa — alguém pagou por ele. Isso inclui sono, alimentação, descanso, sexualidade.</p>
+
+          <div class="corpo-seq-row" id="corpoSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCorpoSeq()" id="corpoSeqBtn">Ver as áreas, uma a uma</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +144,24 @@
     { text: "Tratado como propriedade exclusiva — usado sem limite, sem descanso, sem cuidado, porque 'é meu e faço o que quiser' (contra 1 Co 6:19-20)." },
     { text: "'Rogo-vos, pois, irmãos, que apresenteis o vosso corpo em sacrifício vivo' (Rm 12:1) — cuidado não por vaidade, mas porque é instrumento de adoração." }
   ];
+
+  const corpoAreas = ['Sono', 'Alimentação', 'Descanso', 'Sexualidade'];
+
+  function buildCorpoSeq(){
+    const el = document.getElementById('corpoSeqRow');
+    corpoAreas.forEach(area => {
+      const p = document.createElement('div');
+      p.className = 'corpo-seq-pill';
+      p.textContent = area;
+      el.appendChild(p);
+    });
+  }
+  buildCorpoSeq();
+
+  function revealCorpoSeq(){
+    const pills = document.querySelectorAll('#corpoSeqRow .corpo-seq-pill');
+    pills.forEach((p, i) => setTimeout(() => p.classList.add('lit'), i * 260));
+  }
 
   let currentMax = 1;
 

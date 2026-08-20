@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .pilares-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .pilares-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .pilares-seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .pilares-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,10 @@
         <div class="tl-card">
           <p><em>"Instrui o menino no caminho em que deve andar, e até quando envelhecer não se desviará dele."</em> (Pv 22:6)</p>
           <p>A promessa não é mágica automática, é padrão sábio — mordomar a família é administrar tempo, palavra e exemplo em nome de outra pessoa que ainda está sendo formada.</p>
+
+          <div class="pilares-seq-row" id="pilaresSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPilaresSeq()" id="pilaresSeqBtn">Revelar as três frentes</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +145,40 @@
     { text: "A fé é mencionada ocasionalmente, sem repetição nem constância — fica ao acaso do que sobra de tempo e energia." },
     { text: "'As ensinarás a teus filhos, e delas falarás assentado em tua casa, e andando pelo caminho' (Dt 6:7) — presente no cotidiano, não reservada a ocasiões especiais." }
   ];
+
+  const pilaresData = [
+    { name: "Tempo", desc: "presença que não pode ser delegada a mais ninguém." },
+    { name: "Palavra", desc: "instrução dita, repetida e nomeada — não deixada implícita." },
+    { name: "Exemplo", desc: "o caminho que os olhos da criança realmente seguem." }
+  ];
+
+  function buildPilaresSeqDots(){
+    const el = document.getElementById('pilaresSeqRow');
+    pilaresData.forEach(p => {
+      const d = document.createElement('div');
+      d.className = 'pilares-seq-dot';
+      d.title = p.name;
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'pilares-seq-label';
+    label.id = 'pilaresSeqLabel';
+    label.textContent = '0 de 3 frentes da mordomia da família';
+    el.appendChild(label);
+  }
+  buildPilaresSeqDots();
+
+  function revealPilaresSeq(){
+    const dots = document.querySelectorAll('#pilaresSeqRow .pilares-seq-dot');
+    const label = document.getElementById('pilaresSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = (i + 1) + ' de 3: ' + pilaresData[i].name + ' — ' + pilaresData[i].desc;
+    }, i * 260));
+    setTimeout(() => {
+      label.textContent = 'Tempo, palavra e exemplo — administrados juntos (Pv 22:6)';
+    }, dots.length * 260 + 300);
+  }
 
   let currentMax = 1;
 

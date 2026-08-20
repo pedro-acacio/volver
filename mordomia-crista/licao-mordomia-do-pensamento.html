@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .filtro-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .filtro-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .filtro-seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .filtro-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,10 @@
         <div class="tl-card">
           <p><em>"Finalmente, irmãos, tudo o que é verdadeiro, tudo o que é honesto, tudo o que é justo, tudo o que é puro, tudo o que é amável... nisso pensai."</em> (Fp 4:8)</p>
           <p>A mordomia do pensamento não é apenas evitar o mal — é ocupar deliberadamente a mente com o que é bom. Um espaço vazio de bons pensamentos não fica vazio por muito tempo.</p>
+
+          <div class="filtro-seq-row" id="filtroSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealFiltroSeq()" id="filtroSeqBtn">Revelar os oito filtros</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +145,38 @@
     { text: "Deixado sem vigilância, segue qualquer estímulo — ansiedade, comparação, ressentimento — sem escolha consciente." },
     { text: "'Levando cativo todo pensamento à obediência de Cristo' (2 Co 10:5) — não suprimir o pensamento, mas submetê-lo a um filtro." }
   ];
+
+  const filtroData = [
+    "verdadeiro", "honesto", "justo", "puro", "amável", "de boa fama", "virtude", "louvor"
+  ];
+
+  function buildFiltroSeqDots(){
+    const el = document.getElementById('filtroSeqRow');
+    filtroData.forEach(f => {
+      const d = document.createElement('div');
+      d.className = 'filtro-seq-dot';
+      d.title = f;
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'filtro-seq-label';
+    label.id = 'filtroSeqLabel';
+    label.textContent = '0 de 8 filtros (Fp 4:8)';
+    el.appendChild(label);
+  }
+  buildFiltroSeqDots();
+
+  function revealFiltroSeq(){
+    const dots = document.querySelectorAll('#filtroSeqRow .filtro-seq-dot');
+    const label = document.getElementById('filtroSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = (i + 1) + ' de 8: tudo o que é ' + filtroData[i];
+    }, i * 220));
+    setTimeout(() => {
+      label.textContent = 'Verdadeiro, honesto, justo, puro, amável, de boa fama, virtude, louvor — nisso pensai (Fp 4:8)';
+    }, dots.length * 220 + 300);
+  }
 
   let currentMax = 1;
 

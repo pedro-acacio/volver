@@ -85,6 +85,14 @@
         <div class="tl-card">
           <p>Sobre o Filho: "Eu e o Pai somos um" (João 10:30); "quem me vê a mim vê o Pai" (João 14:9); e Paulo escreve que Cristo, "sendo em forma de Deus, não teve por usurpação ser igual a Deus" (Filipenses 2:6) — ele já era plenamente igual ao Pai antes de se esvaziar por missão, não se tornou igual depois.</p>
           <p>Sobre o Espírito: Paulo o compara diretamente ao próprio pensamento de Deus — "quem, dentre os homens, sabe as coisas do homem, senão o espírito do homem, que nele está? Assim também ninguém sabe as coisas de Deus, senão o Espírito de Deus" (1 Coríntios 2:11). E em Atos 5:3-4, mentir ao Espírito Santo é chamado, na mesma frase, de mentir a Deus — sem distinção de grau.</p>
+
+          <p>Mais dois testemunhos, um para cada pessoa. Toque para ler:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, subDivindadeData, 0, 'subDivindadeText')">Divindade do Filho</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, subDivindadeData, 1, 'subDivindadeText')">Divindade do Espírito</button>
+          </div>
+          <div class="chip-text" id="subDivindadeText">Toque em cada pessoa para ver mais um testemunho da sua plena divindade.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -131,6 +139,17 @@
 </div>
 
 <script>
+  const subDivindadeData = [
+    { text: "Colossenses 2:9 — \"Porque nele [Cristo] habita corporalmente toda a plenitude da divindade\" — não uma fração ou um reflexo da divindade, mas a totalidade dela, habitando um corpo humano." },
+    { text: "2 Coríntios 3:17-18 — \"Ora, o Senhor é o Espírito... somos transformados de glória em glória, como pelo Espírito do Senhor\" — o mesmo título e a mesma obra de transformar vidas, atribuídos a Deus, são atribuídos ao Espírito." }
+  ];
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
   let currentMax = 1;
 
   function openStage(n){

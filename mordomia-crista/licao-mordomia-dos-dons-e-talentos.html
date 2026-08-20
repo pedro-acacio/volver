@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .dons-bars{ margin: 14px 0 6px; display:flex; flex-direction:column; gap:12px; }
+  .dons-bar-row{ display:flex; align-items:center; gap:10px; }
+  .dons-bar-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); width:82px; flex-shrink:0; }
+  .dons-bar-track{ flex:1; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .dons-bar-fill{ height:100%; border-radius:9px; width:0%; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); transition: width 1s ease; }
 </style>
 </head>
 <body>
@@ -87,6 +92,23 @@
         <div class="tl-card">
           <p><em>"Cada um administre aos outros o dom como o recebeu, como bons despenseiros da multiforme graça de Deus."</em> (1 Pe 4:10)</p>
           <p>A palavra "despenseiros" (mordomos) é a ideia central desta categoria inteira: o dom não é posse, é responsabilidade emprestada.</p>
+
+          <div class="dons-bars" id="donsBars">
+            <div class="dons-bar-row">
+              <span class="dons-bar-label">5 talentos</span>
+              <div class="dons-bar-track"><div class="dons-bar-fill" id="donsBar5"></div></div>
+            </div>
+            <div class="dons-bar-row">
+              <span class="dons-bar-label">2 talentos</span>
+              <div class="dons-bar-track"><div class="dons-bar-fill" id="donsBar2"></div></div>
+            </div>
+            <div class="dons-bar-row">
+              <span class="dons-bar-label">1 talento</span>
+              <div class="dons-bar-track"><div class="dons-bar-fill" id="donsBar1"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDonsBars()" id="donsBarsBtn">Ver "cada um segundo sua capacidade" (Mt 25:15)</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +159,12 @@
     { text: "Como na parábola dos talentos (Mt 25:14-30), o servo que recebeu um talento o escondeu por medo, e no fim não tinha nada a mostrar." },
     { text: "Os servos que negociaram seus talentos os multiplicaram — o dom usado cresce; o dom escondido não rende nada." }
   ];
+
+  function revealDonsBars(){
+    document.getElementById('donsBar5').style.width = '100%';
+    document.getElementById('donsBar2').style.width = '40%';
+    document.getElementById('donsBar1').style.width = '20%';
+  }
 
   let currentMax = 1;
 

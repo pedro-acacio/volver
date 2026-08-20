@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p><em>"Raça de víboras, como podeis vós falar coisas boas, sendo maus? Porque do que há em abundância no coração, disso fala a boca."</em> (Mt 12:34)</p>
           <p>A acusação de Jesus aos fariseus é sobre o padrão — a boca revela o que o coração acumulou. Não há como falar bem constantemente de um coração mau.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAbundBad" onclick="showAbund('bad')">Coração cheio de mágoa e orgulho</button>
+            <button class="toggle-btn" id="btnAbundGood" onclick="showAbund('good')">Coração cheio de gratidão e amor</button>
+          </div>
+
+          <div class="outcome" id="abundCard">
+            <div class="outcome-visual" id="abundVisual"></div>
+            <h3 id="abundTitle"></h3>
+            <p id="abundText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → toda palavra ociosa</button>
         </div>
       </div>
@@ -137,6 +149,27 @@
     { text: "'Digo-vos que de toda palavra ociosa que os homens disserem hão de dar conta no dia do juízo' (Mt 12:36) — nada do que se fala é neutro ou sem peso." },
     { text: "'Nenhuma palavra torpe saia da vossa boca, mas só a que for boa para edificação' (Ef 4:29) — a fala como ferramenta deliberada de construção." }
   ];
+
+  function showAbund(state){
+    const btnBad = document.getElementById('btnAbundBad');
+    const btnGood = document.getElementById('btnAbundGood');
+    btnBad.classList.remove('active-worry');
+    btnGood.classList.remove('active-calm');
+    const visual = document.getElementById('abundVisual');
+    const title = document.getElementById('abundTitle');
+    const text = document.getElementById('abundText');
+    if (state === 'bad'){
+      btnBad.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Transborda queixa e crítica";
+      text.textContent = "Um coração cheio de mágoa, inveja ou orgulho não consegue produzir, por muito tempo, uma boca gentil — a abundância vaza, mais cedo ou mais tarde.";
+    } else {
+      btnGood.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Transborda bênção e verdade";
+      text.textContent = "Um coração abastecido pela Palavra, pela gratidão e pelo amor transborda naturalmente em fala que edifica.";
+    }
+  }
 
   let currentMax = 1;
 

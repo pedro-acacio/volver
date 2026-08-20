@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .essence-dots{ display:flex; gap:10px; margin:16px 0 8px; flex-wrap:wrap; align-items:center; min-height:20px; }
+  .essence-dot{ width:20px; height:20px; border-radius:50%; box-sizing:border-box; transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .essence-dot.essence-worry{ background: var(--worry); box-shadow: 0 0 9px 1px rgba(168,92,107,0.45); }
+  .essence-dot.essence-calm{ background: var(--calm); box-shadow: 0 0 9px 1px rgba(124,154,120,0.45); }
+  .essence-dot.essence-person{ background: var(--bg); border: 2px solid var(--calm); }
+  .essence-caption{ font-size:13px; line-height:1.55; color: var(--text-dim); margin: 4px 0 0; }
 </style>
 </head>
 <body>
@@ -66,6 +72,14 @@
         <div class="tl-card">
           <p>Três pessoas humanas — como Pedro, Tiago e João — são três instâncias separadas da mesma natureza humana: cada um tem sua própria porção individual de "humanidade", por isso são três seres, não um só. Se Pai, Filho e Espírito fossem "três instâncias" da natureza divina do mesmo jeito, o resultado inevitável seriam três deuses — exatamente o erro do triteísmo.</p>
           <p>A doutrina ortodoxa da Trindade evita essa armadilha ao afirmar algo mais estreito e mais estranho à lógica humana comum: não são três porções de divindade, é uma só essência divina, numericamente única, subsistindo simultaneamente em três pessoas. Não é uma analogia perfeita de nada que existe no mundo criado — é por isso que é chamado de mistério, não de charada a ser resolvida com comparações humanas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnEssenceHuman" onclick="showEssence('human')">Contar como a analogia humana</button>
+            <button class="toggle-btn" id="btnEssenceTrinity" onclick="showEssence('trinity')">Contar como a Trindade</button>
+          </div>
+          <div class="essence-dots" id="essenceDots"></div>
+          <p class="essence-caption" id="essenceCaption">Toque em cada opção para ver quantas essências cada lógica produz.</p>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → o que Israel repetia todo dia</button>
         </div>
       </div>
@@ -132,6 +146,37 @@
 </div>
 
 <script>
+  function showEssence(type){
+    const btnHuman = document.getElementById('btnEssenceHuman');
+    const btnTrinity = document.getElementById('btnEssenceTrinity');
+    btnHuman.classList.remove('active-worry');
+    btnTrinity.classList.remove('active-calm');
+    const dotsEl = document.getElementById('essenceDots');
+    const caption = document.getElementById('essenceCaption');
+    dotsEl.innerHTML = '';
+
+    if (type === 'human'){
+      btnHuman.classList.add('active-worry');
+      for (let i = 0; i < 3; i++){
+        const d = document.createElement('div');
+        d.className = 'essence-dot essence-worry';
+        dotsEl.appendChild(d);
+      }
+      caption.textContent = "Pedro, Tiago e João: 3 pessoas, cada uma com sua própria porção da natureza humana — ou seja, 3 essências. Aplicada sem ajuste ao Pai, ao Filho e ao Espírito, essa mesma lógica produz três deuses.";
+    } else {
+      btnTrinity.classList.add('active-calm');
+      const big = document.createElement('div');
+      big.className = 'essence-dot essence-calm';
+      dotsEl.appendChild(big);
+      for (let i = 0; i < 3; i++){
+        const d = document.createElement('div');
+        d.className = 'essence-dot essence-person';
+        dotsEl.appendChild(d);
+      }
+      caption.textContent = "Pai, Filho e Espírito: 1 essência divina, numericamente única (o ponto cheio), subsistindo simultaneamente em 3 pessoas reais e distintas (os círculos vazados). Não é a mesma matemática da analogia humana.";
+    }
+  }
+
   let currentMax = 1;
 
   function openStage(n){

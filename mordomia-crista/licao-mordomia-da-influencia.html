@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .raios-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .raios-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .raios-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .raios-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,10 @@
         <div class="tl-card">
           <p><em>"Vós sois a luz do mundo; não se pode esconder uma cidade edificada sobre um monte."</em> (Mt 5:14)</p>
           <p>A influência não é opcional para quem segue a Cristo — é descrita como fato, não meta a alcançar. A pergunta não é se você influencia, é para onde essa influência aponta.</p>
+
+          <div class="raios-seq-row" id="raiosSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealRaiosSeq()" id="raiosSeqBtn">Revelar quem está observando</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +145,41 @@
     { text: "Boas ações feitas para serem vistas e admiradas — a glória para quem alcança, não para quem capacitou." },
     { text: "As mesmas boas obras, mas com direção certa — o observador termina glorificando a Deus, não elogiando a pessoa." }
   ];
+
+  const raiosData = [
+    { name: "Quem mora com você", desc: "vê a versão sem filtro, todos os dias." },
+    { name: "Quem convive no trabalho ou nos estudos", desc: "repara como você reage sob pressão." },
+    { name: "Quem te conhece de longe", desc: "forma opinião por gestos pequenos e raros." },
+    { name: "Quem nunca vai dizer que reparou", desc: "mas guardou o que viu." }
+  ];
+
+  function buildRaiosSeqDots(){
+    const el = document.getElementById('raiosSeqRow');
+    raiosData.forEach(r => {
+      const d = document.createElement('div');
+      d.className = 'raios-seq-dot';
+      d.title = r.name;
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'raios-seq-label';
+    label.id = 'raiosSeqLabel';
+    label.textContent = '0 de 4 círculos de influência';
+    el.appendChild(label);
+  }
+  buildRaiosSeqDots();
+
+  function revealRaiosSeq(){
+    const dots = document.querySelectorAll('#raiosSeqRow .raios-seq-dot');
+    const label = document.getElementById('raiosSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = raiosData[i].name + ' — ' + raiosData[i].desc;
+    }, i * 260));
+    setTimeout(() => {
+      label.textContent = 'Ninguém escolhe se influencia — só para onde essa luz aponta (Mt 5:14)';
+    }, dots.length * 260 + 300);
+  }
 
   let currentMax = 1;
 

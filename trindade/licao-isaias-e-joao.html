@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .isa-seq-row{ display:flex; align-items:center; gap:10px; margin: 4px 0 12px; flex-wrap:wrap; }
+  .isa-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .isa-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .isa-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Em Isaías 6, quem está no trono é chamado de "o Senhor dos Exércitos" — YHWH Tsevaot, o próprio nome do Deus de Israel. João, sob inspiração, afirma que a glória que Isaías viu ali era a glória de Jesus. Isso só faz sentido se Jesus já existia, já era plenamente Deus, séculos antes de nascer em Belém.</p>
+
+          <div class="isa-seq-row" id="isaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealIsaSeq()" id="isaSeqBtn">Ver a cadeia do argumento, passo a passo</button>
+          <div class="chip-text" id="isaSeqText">Toque no botão para seguir, um elo de cada vez, a cadeia que liga o trono de Isaías 6 a Jesus.</div>
+
           <p>É um dos testemunhos mais diretos do Novo Testamento contra qualquer ideia de que o Filho tenha começado a existir num certo ponto — a mesma questão que, três séculos depois, o Concílio de Niceia teria que enfrentar de frente diante da heresia de Ário.</p>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
@@ -138,6 +147,39 @@
     { text: "Isaías 6:1-5 — \"Eu vi o Senhor assentado sobre um trono alto e sublime... o Senhor dos Exércitos\" — o próprio Deus de Israel, num templo cheio da sua glória." },
     { text: "João 12:41 — \"Isaías disse isso quando viu a glória dele [de Jesus], e falou a respeito dele\" — identificando explicitamente o Senhor do trono com Jesus Cristo." }
   ];
+
+  const isaSeqClauses = [
+    { label: "Isaías 6:3,5", text: "\"O Senhor dos Exércitos\" — o próprio nome do Deus de Israel — é quem Isaías vê sentado no trono altíssimo, não um anjo ou uma visão simbólica qualquer." },
+    { label: "João 12:38-40", text: "João cita duas vezes esse mesmo capítulo de Isaías para explicar por que o povo, mesmo vendo os sinais de Jesus, não cria nele." },
+    { label: "João 12:41", text: "\"Isaías disse isso quando viu a glória dele, e falou a respeito dele\" — João identifica, sem rodeios, o Senhor do trono com Jesus." },
+    { label: "Conclusão", text: "Se Jesus já tinha essa glória setecentos anos antes de Belém, ele não passou a ser Deus em certo momento — ele sempre foi." }
+  ];
+
+  function buildIsaSeqDots(){
+    const el = document.getElementById('isaSeqRow');
+    isaSeqClauses.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'isa-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'isa-seq-label';
+    label.id = 'isaSeqLabel';
+    label.textContent = '0 de ' + isaSeqClauses.length;
+    el.appendChild(label);
+  }
+  buildIsaSeqDots();
+
+  function revealIsaSeq(){
+    const dots = document.querySelectorAll('#isaSeqRow .isa-seq-dot');
+    const textEl = document.getElementById('isaSeqText');
+    const labelEl = document.getElementById('isaSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = (i + 1) + ' de ' + isaSeqClauses.length;
+      textEl.textContent = isaSeqClauses[i].label + ' — ' + isaSeqClauses[i].text;
+    }, i * 650));
+  }
 
   let currentMax = 1;
 

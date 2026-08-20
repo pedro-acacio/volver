@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .dias-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .dias-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .dias-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .dias-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,10 @@
         <div class="tl-card">
           <p><em>"Ensina-nos a contar os nossos dias de tal maneira que alcancemos corações sábios."</em> (Sl 90:12)</p>
           <p>A oração de Moisés não pede mais tempo — pede sabedoria para contar bem o tempo que já existe. A mordomia do tempo começa reconhecendo sua finitude como um presente que ensina prioridade.</p>
+
+          <div class="dias-seq-row" id="diasSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDiasSeq()" id="diasSeqBtn">Contar as décadas de uma vida</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +145,34 @@
     { text: "Consumido sem direção — entretenimento sem limite, procrastinação, distração — sem que ninguém tenha decidido isso conscientemente." },
     { text: "Comprado de volta com intenção — cada dia tratado como algo que não vai se repetir, dedicado ao que realmente importa." }
   ];
+
+  function buildDiasSeqDots(){
+    const el = document.getElementById('diasSeqRow');
+    for (let i = 0; i < 8; i++){
+      const d = document.createElement('div');
+      d.className = 'dias-seq-dot';
+      d.title = 'Década ' + (i + 1);
+      el.appendChild(d);
+    }
+    const label = document.createElement('span');
+    label.className = 'dias-seq-label';
+    label.id = 'diasSeqLabel';
+    label.textContent = '0 de 8 décadas (Sl 90:10)';
+    el.appendChild(label);
+  }
+  buildDiasSeqDots();
+
+  function revealDiasSeq(){
+    const dots = document.querySelectorAll('#diasSeqRow .dias-seq-dot');
+    const label = document.getElementById('diasSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      label.textContent = (i + 1) + ' de 8 décadas contadas';
+    }, i * 260));
+    setTimeout(() => {
+      label.textContent = '"Setenta anos, e os que são fortes, oitenta" — e voam-se (Sl 90:10)';
+    }, dots.length * 260 + 300);
+  }
 
   let currentMax = 1;
 

@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .formula-dots{ display:flex; gap:12px; margin:16px 0 8px; flex-wrap:wrap; align-items:center; min-height:20px; }
+  .formula-dot{ width:20px; height:20px; border-radius:50%; box-sizing:border-box; transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .formula-dot.formula-worry{ background: var(--worry); box-shadow: 0 0 9px 1px rgba(168,92,107,0.45); }
+  .formula-dot.formula-calm{ background: var(--calm); box-shadow: 0 0 9px 1px rgba(124,154,120,0.45); }
+  .formula-dot.formula-outline{ background: var(--bg); border: 2px solid var(--calm); }
+  .formula-caption{ font-size:13px; line-height:1.55; color: var(--text-dim); margin: 4px 0 0; }
 </style>
 </head>
 <body>
@@ -89,6 +95,15 @@
         <div class="tl-card">
           <p>Uma fórmula batismal "em nomes dos deuses" — no plural — soaria natural em qualquer religião politeísta do primeiro século, listando divindades distintas e independentes. Não é isso que Jesus ordena. O singular "nome" recusa o triteísmo: não são três deuses.</p>
           <p>Mas a fórmula também recusa o extremo oposto: se Pai, Filho e Espírito fossem apenas três nomes para a mesma pessoa, bastaria dizer "em nome de Deus". Em vez disso, os três são nomeados individualmente, com peso igual — recusando também o modalismo, que trataria Filho e Espírito como fases menores de um Pai único.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnFormulaPlural" onclick="showFormula('plural')">"Nomes" (triteísmo)</button>
+            <button class="toggle-btn" id="btnFormulaMono" onclick="showFormula('mono')">1 nome, 1 pessoa (modalismo)</button>
+            <button class="toggle-btn" id="btnFormulaTri" onclick="showFormula('tri')">1 nome, 3 pessoas (Mateus 28:19)</button>
+          </div>
+          <div class="formula-dots" id="formulaDots"></div>
+          <p class="formula-caption" id="formulaCaption">Toque em cada opção para ver o que a gramática do texto afirma ou recusa.</p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -140,6 +155,44 @@
     { text: "A conjunção \"e\" se repete entre os três: \"do Pai, e do Filho, e do Espírito Santo\" — a mesma estrutura gramatical para os três, sem hierarquia de linguagem entre eles." },
     { text: "A fórmula batismal trinitária aparece já na Didaquê, um manual cristão do fim do século I — evidência de que a igreja mais antiga batizava exatamente assim, seguindo a ordem de Jesus." }
   ];
+
+  function showFormula(type){
+    const btnPlural = document.getElementById('btnFormulaPlural');
+    const btnMono = document.getElementById('btnFormulaMono');
+    const btnTri = document.getElementById('btnFormulaTri');
+    [btnPlural, btnMono].forEach(b => b.classList.remove('active-worry'));
+    btnTri.classList.remove('active-calm');
+    const dotsEl = document.getElementById('formulaDots');
+    const caption = document.getElementById('formulaCaption');
+    dotsEl.innerHTML = '';
+
+    if (type === 'plural'){
+      btnPlural.classList.add('active-worry');
+      for (let i = 0; i < 3; i++){
+        const d = document.createElement('div');
+        d.className = 'formula-dot formula-worry';
+        dotsEl.appendChild(d);
+      }
+      caption.textContent = "\"Em nomes do Pai, e do Filho, e do Espírito Santo\" (plural) soaria como um panteão — três autoridades religiosas distintas, cada uma exigindo lealdade à parte. Não é isso que Jesus ordena.";
+    } else if (type === 'mono'){
+      btnMono.classList.add('active-worry');
+      const d = document.createElement('div');
+      d.className = 'formula-dot formula-worry';
+      dotsEl.appendChild(d);
+      caption.textContent = "Se Pai, Filho e Espírito fossem só três jeitos de chamar a mesma pessoa, bastaria dizer \"em nome de Deus\", sem nomear os três individualmente. O texto nomeia os três — também não é isso que Jesus ordena.";
+    } else {
+      btnTri.classList.add('active-calm');
+      const big = document.createElement('div');
+      big.className = 'formula-dot formula-calm';
+      dotsEl.appendChild(big);
+      for (let i = 0; i < 3; i++){
+        const d = document.createElement('div');
+        d.className = 'formula-dot formula-outline';
+        dotsEl.appendChild(d);
+      }
+      caption.textContent = "\"Em nome\" (singular, o ponto cheio) do Pai, e do Filho, e do Espírito Santo (os três círculos vazados, nomeados lado a lado) — nem panteão, nem um Deus com dois apelidos. Exatamente o que o texto diz.";
+    }
+  }
 
   let currentMax = 1;
 

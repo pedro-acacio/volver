@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .modo-seq-row{ display:flex; align-items:center; gap:10px; margin: 4px 0 12px; flex-wrap:wrap; }
+  .modo-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .modo-seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .modo-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -45,6 +49,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>No início do século III, um teólogo chamado Sabélio populariza uma ideia que já rondava a igreja havia décadas: Pai, Filho e Espírito Santo não são três pessoas distintas — são três "modos" ou "papéis" (por isso o nome modalismo) que o único Deus assume em momentos diferentes da história. Deus seria Pai na criação e no Antigo Testamento, Filho durante a encarnação de Jesus, e Espírito depois de Pentecostes — nunca as três ao mesmo tempo, como um ator trocando de máscara entre cenas.</p>
+
+          <div class="modo-seq-row" id="modoSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealModoSeq()" id="modoSeqBtn">Ver as "três máscaras", uma de cada vez</button>
+          <div class="chip-text" id="modoSeqText">Toque no botão para seguir a sequência que o modalismo propõe — nunca duas ao mesmo tempo.</div>
+
           <p>A forma mais extrema dessa ideia é chamada de patripassianismo — a crença de que, se o Pai e o Filho são a mesma pessoa, então foi o próprio Pai quem sofreu e morreu na cruz.</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → onde o texto quebra a teoria</button>
         </div>
@@ -142,6 +151,38 @@
     { text: "No Getsêmani, Jesus ora: \"Pai meu, se é possível, passe de mim este cálice; todavia, não seja como eu quero, mas como tu queres\" (Mateus 26:39) — uma vontade que se submete a outra vontade distinta, não um monólogo interno." },
     { text: "Na cruz, Jesus não diz \"eu entrego meu espírito a mim mesmo\" — ele clama \"Pai, nas tuas mãos entrego o meu espírito\" (Lucas 23:46), dirigindo-se a alguém real, fora dele." }
   ];
+
+  const modoSeqClauses = [
+    { label: "Criação e Antigo Testamento", text: "Nessa fase, segundo Sabélio, Deus atuaria só como Pai — Filho e Espírito ainda não estariam \"em cena\"." },
+    { label: "A encarnação de Jesus", text: "O mesmo Deus trocaria de máscara e passaria a atuar apenas como Filho — o papel de Pai teria, nesse esquema, saído de cena." },
+    { label: "Depois de Pentecostes", text: "Uma terceira troca: o mesmo Deus assumiria agora só o papel de Espírito Santo, atuando na igreja." }
+  ];
+
+  function buildModoSeqDots(){
+    const el = document.getElementById('modoSeqRow');
+    modoSeqClauses.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'modo-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'modo-seq-label';
+    label.id = 'modoSeqLabel';
+    label.textContent = '0 de ' + modoSeqClauses.length;
+    el.appendChild(label);
+  }
+  buildModoSeqDots();
+
+  function revealModoSeq(){
+    const dots = document.querySelectorAll('#modoSeqRow .modo-seq-dot');
+    const textEl = document.getElementById('modoSeqText');
+    const labelEl = document.getElementById('modoSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = (i + 1) + ' de ' + modoSeqClauses.length;
+      textEl.textContent = modoSeqClauses[i].label + ' — ' + modoSeqClauses[i].text;
+    }, i * 650));
+  }
 
   let currentMax = 1;
 

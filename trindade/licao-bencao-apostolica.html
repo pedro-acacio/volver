@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .benc-seq-row{ display:flex; align-items:center; gap:10px; margin: 4px 0 12px; flex-wrap:wrap; }
+  .benc-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .benc-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .benc-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -86,6 +90,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Nenhum concílio ainda tinha formalizado a palavra "Trindade" quando Paulo escreveu essa frase, em meados do primeiro século. Ele não está expondo uma tese nova nem se defendendo de uma acusação de heresia — está apenas se despedindo, do jeito mais natural, com uma bênção trinitária que qualquer coríntio da igreja reconheceria sem estranhar.</p>
+
+          <div class="benc-seq-row" id="bencSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealBencSeq()" id="bencSeqBtn">Ver a linha do tempo, um marco de cada vez</button>
+          <div class="chip-text" id="bencSeqText">Toque no botão para medir a distância entre essa carta e a formalização da doutrina.</div>
+
           <p>É esse tipo de evidência que mais convence os protestantes de que a Trindade não foi inventada por teólogos depois: ela já estava presente, pressuposta e vivida, na linguagem devocional mais comum da igreja apostólica — décadas antes de qualquer disputa formal sobre o assunto.</p>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
@@ -138,6 +147,39 @@
     { text: "\"O amor de Deus\" — o Pai, cuja iniciativa de amor está por trás de toda a obra de salvação (comparar João 3:16)." },
     { text: "\"A comunhão do Espírito Santo\" — o Espírito, que une os crentes uns aos outros e a Deus (comparar Filipenses 2:1)." }
   ];
+
+  const bencSeqClauses = [
+    { label: "c. 55-57 d.C.", text: "Paulo escreve a bênção trinitária em 2 Coríntios — na carta mais pessoal e menos \"doutrinária\" que ele deixou, sem nenhum tom de argumento." },
+    { label: "Séc. II d.C.", text: "Padres apostólicos como Inácio de Antioquia e Policarpo já citam Pai, Filho e Espírito juntos com a mesma naturalidade devocional." },
+    { label: "318-325 d.C.", text: "A controvérsia ariana obriga a igreja, pela primeira vez, a defender por escrito uma fé que já vivia e cantava havia gerações." },
+    { label: "325 d.C.", text: "O Concílio de Niceia formaliza em credo o que a bênção de Paulo já pressupunha quase três séculos antes." }
+  ];
+
+  function buildBencSeqDots(){
+    const el = document.getElementById('bencSeqRow');
+    bencSeqClauses.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'benc-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'benc-seq-label';
+    label.id = 'bencSeqLabel';
+    label.textContent = '0 de ' + bencSeqClauses.length;
+    el.appendChild(label);
+  }
+  buildBencSeqDots();
+
+  function revealBencSeq(){
+    const dots = document.querySelectorAll('#bencSeqRow .benc-seq-dot');
+    const textEl = document.getElementById('bencSeqText');
+    const labelEl = document.getElementById('bencSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = (i + 1) + ' de ' + bencSeqClauses.length;
+      textEl.textContent = bencSeqClauses[i].label + ' — ' + bencSeqClauses[i].text;
+    }, i * 650));
+  }
 
   let currentMax = 1;
 

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .triade-seq-row{ display:flex; align-items:center; gap:10px; margin: 4px 0 12px; flex-wrap:wrap; }
+  .triade-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .triade-seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .triade-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -91,6 +95,11 @@
         <div class="tl-card">
           <p>Esse texto sozinho já derruba a ideia de que Pai, Filho e Espírito são a mesma pessoa aparecendo em momentos diferentes, como se Deus trocasse de máscara: aqui as três aparecem juntas, no mesmo evento, cada uma fazendo algo diferente — um é batizado, outro desce, outro fala. Não são três atuações sucessivas do mesmo ator; são três pessoas presentes ao mesmo tempo.</p>
           <p>Ao mesmo tempo, o texto não descreve três deuses agindo cada um por conta própria: o Pai declara sua aprovação sobre o Filho, e o Espírito o unge para a missão que começa ali (comparar Lucas 4:18, "o Espírito do Senhor está sobre mim, porque me ungiu"). Distinção de pessoa, unidade de propósito e de essência — o mesmo Deus, revelado em três.</p>
+
+          <div class="triade-seq-row" id="triadeSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealTriadeSeq()" id="triadeSeqBtn">Ver os três elementos, um a um</button>
+          <div class="chip-text" id="triadeSeqText">Toque no botão para ver os três traços da Trindade presentes nesta única cena.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -142,6 +151,38 @@
     { text: "\"Viu o Espírito de Deus descendo como pomba e vindo sobre ele\" — o Espírito Santo desce visivelmente sobre o Filho (v.16b)." },
     { text: "\"Eis uma voz dos céus, que dizia: Este é o meu Filho amado, em quem me comprazo\" — o Pai fala do céu sobre o Filho (v.17)." }
   ];
+
+  const triadeSeqTraits = [
+    { label: "Distinção de pessoa", text: "Três sujeitos gramaticais diferentes, agindo ao mesmo tempo: um é batizado, outro desce como pomba, outro fala do céu — não é o mesmo ator trocando de papel." },
+    { label: "Unidade de propósito", text: "O Pai aprova o Filho, o Espírito o unge para a missão que começa ali — as três pessoas se movem na mesma direção, não em agendas separadas." },
+    { label: "Unidade de essência", text: "As três ações não revelam três divindades concorrentes, mas um só Deus — o mesmo texto que distingue as pessoas nunca as separa em deuses diferentes." }
+  ];
+
+  function buildTriadeSeqDots(){
+    const el = document.getElementById('triadeSeqRow');
+    triadeSeqTraits.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'triade-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'triade-seq-label';
+    label.id = 'triadeSeqLabel';
+    label.textContent = '0 de ' + triadeSeqTraits.length;
+    el.appendChild(label);
+  }
+  buildTriadeSeqDots();
+
+  function revealTriadeSeq(){
+    const dots = document.querySelectorAll('#triadeSeqRow .triade-seq-dot');
+    const textEl = document.getElementById('triadeSeqText');
+    const labelEl = document.getElementById('triadeSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = (i + 1) + ' de ' + triadeSeqTraits.length;
+      textEl.textContent = triadeSeqTraits[i].label + ': ' + triadeSeqTraits[i].text;
+    }, i * 650));
+  }
 
   let currentMax = 1;
 
