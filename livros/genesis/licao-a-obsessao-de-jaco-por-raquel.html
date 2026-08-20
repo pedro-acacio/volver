@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .anos-row{ margin: 4px 0 14px; }
+  .anos-line{ margin: 0 0 12px; }
+  .anos-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; display:flex; justify-content:space-between; }
+  .anos-bar-track{ width:100%; height:10px; border-radius:6px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .anos-bar-fill{ height:100%; width:100%; border-radius:6px; background: var(--worry); }
+  .anos-bar-fill.certo{ background: var(--calm); }
+  .ask-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .ask-btn:hover{ border-color: var(--gold); }
+  .ask-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .ask-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -84,6 +98,20 @@
         <div class="tl-card">
           <p>Jacó se compromete a trabalhar sete anos por Raquel, "a mais moça, formosa de porte e formosa à vista" — e o texto descreve a intensidade desse amor com uma das frases mais bonitas de Gênesis: os sete anos "pareciam-lhe como poucos dias, pelo amor que a tinha" (29.20). Mas na noite do casamento, Labão engana o próprio genro: sob o véu e a escuridão, entrega Lia, a filha mais velha, no lugar de Raquel.</p>
           <p>Pela manhã, Jacó descobre o engano e confronta Labão furioso — que se justifica com um costume local: "não se faz assim em nosso lugar, dar a mais moça antes da mais velha" (29.26). É difícil não notar a ironia: o homem que enganou o próprio pai fingindo ser o irmão mais velho agora é enganado por alguém que usa exatamente a lógica da ordem de nascimento contra ele. Jacó aceita trabalhar mais sete anos, e recebe Raquel também, uma semana depois.</p>
+
+          <div class="anos-row">
+            <div class="anos-line">
+              <div class="anos-label"><span>Primeiros 7 anos → recebeu Lia</span><span>7 anos</span></div>
+              <div class="anos-bar-track"><div class="anos-bar-fill"></div></div>
+            </div>
+            <div class="anos-line">
+              <div class="anos-label"><span>Mais 7 anos → recebeu Raquel</span><span>7 anos</span></div>
+              <div class="anos-bar-track"><div class="anos-bar-fill certo"></div></div>
+            </div>
+          </div>
+          <button class="ask-btn" onclick="askAnos()">Quantos anos ao todo por Raquel?</button>
+          <div class="ask-answer" id="anosAnswer">Catorze anos de trabalho — o mesmo tempo que "pareciam poucos dias" quando Jacó ainda esperava a esposa certa na primeira vez (29.20). O amor não diminuiu; só teve que esperar mais do que ele havia planejado.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → duas esposas, um amor dividido</button>
         </div>
       </div>
@@ -191,6 +219,10 @@
       title.textContent = "Ser visto por quem realmente importa";
       text.textContent = "É a história de Lia: rejeitada pelo marido, mas vista por Deus — e usada, apesar disso, para gerar a linhagem que levaria a Cristo. A opinião de quem despreza nunca é a última palavra sobre o valor de alguém.";
     }
+  }
+
+  function askAnos(){
+    document.getElementById('anosAnswer').classList.add('show');
   }
 </script>
 <script defer src="../../volver-app.js"></script>

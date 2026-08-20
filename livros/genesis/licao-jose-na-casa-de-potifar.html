@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .josepath-row{ display:flex; align-items:center; gap:7px; margin: 2px 0 16px; flex-wrap:wrap; }
+  .josepath-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .josepath-dot.lit{ background: var(--calm); }
+  .josepath-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -102,6 +106,10 @@
         <div class="tl-card">
           <p>Mesmo na cadeia, o mesmo padrão se repete: "o Senhor, porém, era com José, estendeu sobre ele a sua benignidade, e deu-lhe graça aos olhos do carcereiro" (39.21). José acaba encarregado de administrar os outros presos, "porquanto o Senhor era com ele; e tudo quanto fazia, o Senhor prosperava" (39.23).</p>
           <p>De escravo a administrador da casa de Potifar; de acusado injustamente a administrador da prisão — José não está tendo uma sequência de sorte. Cada vez que a circunstância parece piorar, o narrador insiste no mesmo refrão: Deus estava com ele. Não porque as coisas davam certo — as coisas davam certo porque Deus estava com ele.</p>
+
+          <div class="josepath-row" id="josePathRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealJosePath()" id="josePathBtn">Ver os quatro passos, um por um</button>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → dois irmãos, dois caminhos</button>
         </div>
       </div>
@@ -190,6 +198,21 @@
       title.textContent = "Sair correndo, mesmo sem explicação pronta";
       text.textContent = "É José largando a própria roupa nas mãos da tentação e saindo correndo — sem parar para negociar consigo mesmo, mesmo sabendo que a fuga custaria caro naquele momento, porque pecar contra Deus importava mais do que qualquer consequência imediata.";
     }
+  }
+
+  function buildJosePathDots(){
+    const el = document.getElementById('josePathRow');
+    for (let i = 0; i < 4; i++){ const d = document.createElement('div'); d.className = 'josepath-dot'; el.appendChild(d); }
+    const label = document.createElement('span'); label.className = 'josepath-label'; label.id = 'josePathLabel'; label.textContent = '0 de 4 etapas'; el.appendChild(label);
+  }
+  buildJosePathDots();
+  function revealJosePath(){
+    const dots = document.querySelectorAll('#josePathRow .josepath-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 160));
+    setTimeout(() => {
+      document.getElementById('josePathLabel').textContent = '4 de 4 — escravo, administrador, preso, administrador de novo';
+      document.getElementById('josePathBtn').textContent = "E em todas, o Senhor estava com ele";
+    }, 4 * 160);
   }
 </script>
 <script defer src="../../volver-app.js"></script>

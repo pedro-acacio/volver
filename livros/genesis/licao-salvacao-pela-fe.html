@@ -104,6 +104,14 @@
         <div class="tl-card">
           <p>Gênesis não condena Agar nem Ismael — os dois são tratados com cuidado e compaixão pelo próprio Deus. Mas o contraste entre os dois filhos de Abraão marca uma diferença teológica que Paulo vai explorar séculos depois: Ismael nasceu "segundo a carne", do esforço humano para cumprir a promessa por conta própria; Isaque nasceria "por meio da promessa" (Gálatas 4.23), puramente pela ação de Deus, num casal velho demais para ter filhos por conta própria.</p>
           <p>É essa diferença — entre tentar produzir a bênção de Deus com as próprias mãos, e esperar que Deus a cumpra do jeito e no tempo dele — que atravessa não só esses três capítulos, mas toda a teologia bíblica da graça.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, idadeData, 0, 'idadeText')">86 anos</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, idadeData, 1, 'idadeText')">99 anos</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, idadeData, 2, 'idadeText')">100 anos</button>
+          </div>
+          <div class="chip-text" id="idadeText">Toque em cada idade para ver o que acontece na vida de Abraão.</div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → imputado por justiça</button>
         </div>
       </div>
@@ -192,6 +200,17 @@
       title.textContent = "Esperar a promessa que só Deus cumpre";
       text.textContent = "É a fé que Paulo elogia em Abraão: confiar numa promessa impossível aos olhos humanos, sem tentar apressá-la ou fabricá-la — a mesma fé que, mil e quinhentos anos depois, seria contada como justiça a todo aquele que crê em Cristo.";
     }
+  }
+
+  const idadeData = [
+    { text: "Abrão tem 86 anos quando Ismael nasce — fruto do plano de Sarai para apressar a promessa com Agar, não da promessa em si (16.16)." },
+    { text: "Abrão tem 99 anos quando Deus renova a aliança, muda seu nome para Abraão e institui a circuncisão como sinal permanente (17.1,24)." },
+    { text: "Isaque nasceria dentro de um ano, quando Abraão teria cerca de 100 anos (17.21) — o filho da promessa, não do esforço humano." }
+  ];
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
   }
 </script>
 <script defer src="../../volver-app.js"></script>

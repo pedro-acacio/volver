@@ -85,6 +85,18 @@
         <div class="tl-card">
           <p>Depois de tudo isso, vem o pedido mais duro de toda a Bíblia: "toma agora teu filho, teu único filho, Isaque, a quem amas... e oferece-o ali em holocausto" (22.2). Sem argumentar, sem negociar como fez por Sodoma, Abraão se levanta de madrugada e parte com Isaque numa jornada de três dias. Diz aos servos, na base do monte: "eu e o moço iremos até ali, e adoraremos, e voltaremos a vós" (22.5) — Hebreus 11.19 explica esse detalhe: Abraão confiava que, se necessário, Deus ressuscitaria Isaque dentre os mortos para cumprir sua promessa.</p>
           <p>No caminho, Isaque pergunta o que falta para o sacrifício: "eis o fogo e a lenha, mas onde está o cordeiro?" Abraão responde: "Deus proverá para si o cordeiro" (22.7-8). No topo do monte, ele constrói o altar, amarra Isaque sobre a lenha, e ergue a faca — quando o anjo do Senhor o detém: "não estendas a tua mão sobre o moço... porquanto agora sei que temes a Deus" (22.12). Um carneiro, preso pelos chifres num arbusto, é oferecido em lugar de Isaque, e Abraão chama aquele lugar de "Jeová-Jiré" — "o Senhor proverá" (22.14).</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnMoriahUp" onclick="showMoriah('up')">Subindo o monte</button>
+            <button class="toggle-btn" id="btnMoriahDown" onclick="showMoriah('down')">Descendo o monte</button>
+          </div>
+
+          <div class="outcome" id="moriahCard">
+            <div class="outcome-visual" id="moriahVisual"></div>
+            <h3 id="moriahTitle"></h3>
+            <p id="moriahText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o juramento confirmado</button>
         </div>
       </div>
@@ -171,6 +183,27 @@
     }, 120);
   }
   openStage(1);
+
+  function showMoriah(state){
+    const btnUp = document.getElementById('btnMoriahUp');
+    const btnDown = document.getElementById('btnMoriahDown');
+    btnUp.classList.remove('active-worry');
+    btnDown.classList.remove('active-calm');
+    const visual = document.getElementById('moriahVisual');
+    const title = document.getElementById('moriahTitle');
+    const text = document.getElementById('moriahText');
+    if (state === 'up'){
+      btnUp.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Lenha, fogo e faca — mas onde está o cordeiro?";
+      text.textContent = "Abraão sobe com tudo o que o sacrifício parece exigir, exceto a única coisa que falta: o próprio cordeiro. Sua resposta ao filho é só fé, ainda sem ver como seria cumprida: \"Deus proverá\" (22.8).";
+    } else {
+      btnDown.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um carneiro no lugar de Isaque";
+      text.textContent = "No instante em que a faca se ergue, o anjo detém Abraão, e um carneiro preso pelo chifre no arbusto toma o lugar de Isaque no altar — \"Jeová-Jiré\", o Senhor proverá (22.14).";
+    }
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

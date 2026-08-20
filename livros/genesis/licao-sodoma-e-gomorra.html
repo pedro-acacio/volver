@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .neg-row{ display:flex; align-items:center; gap:7px; margin: 2px 0 16px; flex-wrap:wrap; }
+  .neg-dot{ min-width:34px; height:28px; padding:0 6px; border-radius:8px; background: var(--panel); border:1px solid var(--panel-line); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); transition: all .35s ease; }
+  .neg-dot.lit{ background: rgba(217,164,65,0.1); border-color: var(--gold); color: var(--gold); }
+  .neg-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -47,6 +51,10 @@
         <div class="tl-card">
           <p>Três homens aparecem à tenda de Abraão em Manre — o próprio Senhor, acompanhado de dois anjos — e Abraão os recebe com a hospitalidade típica do antigo Oriente: água para os pés, um novilho preparado, pão fresco. É nessa visita que vem a confirmação final: dentro de um ano, Sara teria um filho. Sara, escutando de dentro da tenda, ri incrédula — ela já estava velha demais para isso.</p>
           <p>Antes de seguir para Sodoma, Deus revela seu plano a Abraão: "o clamor de Sodoma e Gomorra se tem multiplicado, e o seu pecado se tem agravado muito" (18.20). Abraão então faz algo notável — negocia diretamente com Deus pela cidade: "destruirás também o justo com o ímpio?" (18.23). Pergunta se Deus pouparia a cidade por cinquenta justos, depois quarenta e cinco, quarenta, trinta, vinte, até chegar a dez — e Deus concorda a cada pedido, sem irritação, até o número mínimo de dez justos.</p>
+
+          <div class="neg-row" id="negRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealNegotiation()" id="negBtn">Ver a negociação, pedido por pedido</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a perversidade de Sodoma</button>
         </div>
       </div>
@@ -172,6 +180,31 @@
     }, 120);
   }
   openStage(1);
+
+  function buildNegotiationRow(){
+    const el = document.getElementById('negRow');
+    const numbers = [50,45,40,30,20,10];
+    numbers.forEach(n => {
+      const d = document.createElement('div');
+      d.className = 'neg-dot';
+      d.textContent = n;
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'neg-label';
+    label.id = 'negLabel';
+    label.textContent = 'justos pedidos por Abraão';
+    el.appendChild(label);
+  }
+  buildNegotiationRow();
+  function revealNegotiation(){
+    const dots = document.querySelectorAll('#negRow .neg-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 260));
+    setTimeout(() => {
+      document.getElementById('negLabel').textContent = 'e nem 10 justos foram encontrados';
+      document.getElementById('negBtn').textContent = "Deus concordou a cada pedido — até o mínimo";
+    }, 6 * 260);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

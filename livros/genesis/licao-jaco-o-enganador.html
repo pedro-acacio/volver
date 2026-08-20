@@ -102,6 +102,17 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>É aqui que a história fica desconfortável de propósito: Deus já havia dito, antes mesmo de os gêmeos nascerem, que "o mais velho serviria ao mais moço" (25.23). A bênção que Jacó rouba já era dele por promessa — ele não precisava mentir para consegui-la, só esperar o tempo de Deus cumpri-la. Gênesis não celebra o engano de Jacó; registra suas consequências dolorosas durante décadas — o mesmo Jacó que engana o pai será enganado pelo sogro Labão anos depois, recebendo a esposa errada na noite de núpcias (29.25), quase como um espelho do que ele mesmo fez.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnMirrorEngana" onclick="showMirror('engana')">Jacó engana Isaque</button>
+            <button class="toggle-btn" id="btnMirrorEnganado" onclick="showMirror('enganado')">Jacó é enganado por Labão</button>
+          </div>
+          <div class="outcome" id="mirrorCard">
+            <div class="outcome-visual" id="mirrorVisual"></div>
+            <h3 id="mirrorTitle"></h3>
+            <p id="mirrorText"></p>
+          </div>
+
           <p>A eleição de Jacó não é aprovação da sua manha — é a demonstração de que a promessa de Deus não depende da esperteza humana para se cumprir.</p>
           <button class="continue-btn" onclick="openStage(5)">Continuar → eleição, não esperteza</button>
         </div>
@@ -190,6 +201,28 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Receber o que já era dado por graça";
       text.textContent = "É reconhecer, como Paulo faz em Romanos, que a bênção de Jacó nunca dependeu da esperteza dele — era eleição de Deus desde antes do nascimento, a mesma graça que escolhe e sustenta, independentemente do que a pessoa escolhida faça para tentar merecer.";
+    }
+  }
+
+  function showMirror(state){
+    const btnEngana = document.getElementById('btnMirrorEngana');
+    const btnEnganado = document.getElementById('btnMirrorEnganado');
+    btnEngana.classList.remove('active-worry');
+    btnEnganado.classList.remove('active-calm');
+    const visual = document.getElementById('mirrorVisual');
+    const title = document.getElementById('mirrorTitle');
+    const text = document.getElementById('mirrorText');
+
+    if (state === 'engana'){
+      btnEngana.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "No quarto escuro de Isaque";
+      text.textContent = "Jacó veste as roupas de Esaú, cobre os braços com pele de cabrito, e mente na cara do pai cego: 'eu sou Esaú, teu primogênito' (27.19). O engano funciona — mas planta uma desconfiança que Jacó vai colher anos depois.";
+    } else {
+      btnEnganado.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Na tenda escura de Labão";
+      text.textContent = "Anos depois, é a vez de Jacó ser enganado sob o véu e a escuridão da noite de núpcias, recebendo Lia no lugar de Raquel (29.25) — quase um espelho exato do que ele mesmo havia feito ao pai. A trapaça que ele semeou volta a ele, quase palavra por palavra.";
     }
   }
 </script>

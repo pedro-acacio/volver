@@ -65,6 +65,18 @@
         <div class="tl-card">
           <p>A fome obriga uma segunda viagem, e desta vez Judá se responsabiliza pessoalmente pela segurança de Benjamim diante do pai (43.9) — o mesmo Judá que, décadas antes, havia proposto vender José. José testa os irmãos uma última vez: manda esconder sua taça de prata no saco de Benjamim, depois os intercepta e ameaça escravizar só o irmão mais novo, deixando os outros livres para voltar a Canaã.</p>
           <p>É o momento decisivo. Em vez de abandonar Benjamim para salvar a própria pele, como talvez tivesse feito com José, Judá se adianta com um apelo desesperado, pedindo para ficar escravo no lugar do irmão, "para que eu não veja o mal que sobrevirá a meu pai" (44.34). É a prova que José esperava: os irmãos que o venderam haviam realmente mudado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnJudahBefore" onclick="showJudah('before')">O Judá de vinte anos antes</button>
+            <button class="toggle-btn" id="btnJudahAfter" onclick="showJudah('after')">O Judá diante de Benjamim</button>
+          </div>
+
+          <div class="outcome" id="judahCard">
+            <div class="outcome-visual" id="judahVisual"></div>
+            <h3 id="judahTitle"></h3>
+            <p id="judahText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → José se revela</button>
         </div>
       </div>
@@ -171,6 +183,27 @@
     }, 120);
   }
   openStage(1);
+
+  function showJudah(state){
+    const btnBefore = document.getElementById('btnJudahBefore');
+    const btnAfter = document.getElementById('btnJudahAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('judahVisual');
+    const title = document.getElementById('judahTitle');
+    const text = document.getElementById('judahText');
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O Judá que vendeu o irmão";
+      text.textContent = "Anos antes, foi Judá quem propôs vender José aos ismaelitas em vez de matá-lo (37.26-27) — uma saída que ainda dava lucro, sem sujar as próprias mãos de sangue.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O Judá que se ofereceu no lugar do irmão";
+      text.textContent = "Agora, diante de uma escolha parecida, Judá se adianta e pede para ficar escravo no lugar de Benjamim — o mesmo homem que vendeu um irmão, disposto a se sacrificar por outro.";
+    }
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

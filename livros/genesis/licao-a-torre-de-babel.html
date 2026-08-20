@@ -63,6 +63,18 @@
         <div class="tl-card">
           <p>O texto tem um toque de ironia deliberada: "então desceu o Senhor para ver a cidade e a torre que os filhos dos homens edificavam" (11.5) — o projeto que parecia tão grandioso a quem o construía precisa que Deus "desça" só para conseguir enxergá-lo, do alto dos céus. Não é uma torre que ameaça o trono de Deus; é uma expressão de orgulho humano, pequena demais para ser vista de longe.</p>
           <p>Deus então age: "confundamos ali a sua língua, para que um não entenda a língua do outro" (11.7) — e o próprio nome do lugar, Babel, vira um trocadilho hebraico com a palavra "confundir" (<em>balal</em>). Sem conseguirem mais se comunicar, o povo abandona a construção e é espalhado "sobre a face de toda a terra" (11.9) — exatamente o destino que tentavam evitar, agora imposto por Deus mesmo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnBabelBefore" onclick="showBabelState('before')">Antes: uma só língua</button>
+            <button class="toggle-btn" id="btnBabelAfter" onclick="showBabelState('after')">Depois: línguas confundidas</button>
+          </div>
+
+          <div class="outcome" id="babelCard">
+            <div class="outcome-visual" id="babelVisual"></div>
+            <h3 id="babelTitle"></h3>
+            <p id="babelText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → de Sem a Terá</button>
         </div>
       </div>
@@ -172,6 +184,27 @@
     }, 120);
   }
   openStage(1);
+
+  function showBabelState(state){
+    const btnBefore = document.getElementById('btnBabelBefore');
+    const btnAfter = document.getElementById('btnBabelAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('babelVisual');
+    const title = document.getElementById('babelTitle');
+    const text = document.getElementById('babelText');
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um povo, uma voz, um projeto";
+      text.textContent = "\"Tinha então toda a terra uma só língua\" (11.1) — unidade suficiente para reunir esforços e erguer, juntos, uma torre até o céu em nome da própria fama.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um povo espalhado, sem se entender";
+      text.textContent = "\"Confundamos ali a sua língua\" (11.7) — a obra é abandonada a meio, e o povo se dispersa por toda a terra, exatamente o destino que tentava evitar.";
+    }
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

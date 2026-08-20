@@ -9,6 +9,21 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .flood-row{ margin: 4px 0 10px; }
+  .flood-line{ margin: 0 0 10px; }
+  .flood-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; }
+  .flood-dots{ display:flex; flex-wrap:wrap; gap:3px; }
+  .flood-dot{ width:7px; height:7px; border-radius:50%; background: var(--worry); }
+  .flood-dot.long{ background: var(--gold); }
+  .flood-note{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin:-4px 0 12px; }
+  .flood-btn{
+    width:100%; padding:11px 10px; margin: 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .flood-btn:hover{ border-color: var(--gold); }
+  .flood-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .flood-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -65,6 +80,21 @@
         <div class="tl-card">
           <p>Deus dá a Noé instruções exatas — dimensões, materiais, andares, uma só porta e uma só janela — e a ordem de reunir um casal de cada animal (sete pares dos animais puros, usados depois no sacrifício) e entrar na arca com sua família: oito pessoas ao todo. Noé obedece em tudo "assim como Deus lhe ordenara" (6.22; 7.5), repetido como um refrão que marca sua fidelidade em meio a um mundo que não acreditava no aviso.</p>
           <p>Depois de sete dias de espera dentro da arca já fechada, "no dia seiscentos" da vida de Noé, "romperam-se todas as fontes do grande abismo, e as janelas dos céus se abriram" (7.11) — quarenta dias e quarenta noites de chuva, e as águas prevalecem sobre a terra por cento e cinquenta dias, cobrindo até os montes mais altos. "Todo ser vivente que havia sobre a face da terra foi extinto... e ficou só Noé, e os que com ele estavam na arca" (7.23). A arca não é só um barco de sobrevivência — é o único lugar de segurança num mundo inteiro debaixo de juízo.</p>
+
+          <div class="flood-row">
+            <div class="flood-line">
+              <div class="flood-label">40 dias e 40 noites de chuva</div>
+              <div class="flood-dots" id="floodRainDots"></div>
+            </div>
+            <div class="flood-line">
+              <div class="flood-label">150 dias até as águas prevalecerem</div>
+              <div class="flood-dots" id="floodWaterDots"></div>
+            </div>
+          </div>
+          <div class="flood-note">cada ponto representa 5 dias</div>
+          <button class="flood-btn" onclick="askFloodScale()">Por que tanto tempo depois da chuva parar?</button>
+          <div class="flood-answer" id="floodAnswer">A chuva parou aos 40 dias, mas as águas continuaram subindo e cobrindo a terra até completarem 150 dias ao todo — quase quatro vezes mais tempo. Não foi só um temporal passageiro: foi a terra inteira submersa por tempo suficiente para que nada restasse, antes de "Deus se lembrar de Noé" (8.1) e as águas começarem, enfim, a baixar.</div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → a nova aliança</button>
         </div>
       </div>
@@ -172,6 +202,15 @@
     }, 120);
   }
   openStage(1);
+
+  function buildFloodDots(){
+    const rain = document.getElementById('floodRainDots');
+    const water = document.getElementById('floodWaterDots');
+    for (let i = 0; i < 8; i++){ const d = document.createElement('div'); d.className = 'flood-dot'; rain.appendChild(d); }
+    for (let i = 0; i < 30; i++){ const d = document.createElement('div'); d.className = 'flood-dot long'; water.appendChild(d); }
+  }
+  buildFloodDots();
+  function askFloodScale(){ document.getElementById('floodAnswer').classList.add('show'); }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .tithe-row{ margin: 4px 0 10px; }
+  .tithe-line{ margin: 0 0 10px; }
+  .tithe-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; }
+  .tithe-dots{ display:flex; flex-wrap:wrap; gap:3px; }
+  .tithe-dot{ width:12px; height:12px; border-radius:50%; background: transparent; border:1.5px solid var(--panel-line); }
+  .tithe-dot.filled{ background: var(--gold); border-color: var(--gold); }
+  .ask-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .ask-btn:hover{ border-color: var(--gold); }
+  .ask-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .ask-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -103,6 +117,20 @@
         <div class="tl-card">
           <p>No caminho de volta, dois reis saem ao encontro de Abrão. O rei de Sodoma oferece: fique com todos os bens, só devolva as pessoas. Mas antes dele aparece uma figura sem explicação nenhuma no texto: "Melquisedeque, rei de Salém... e era sacerdote do Deus Altíssimo", que traz pão e vinho e abençoa Abrão em nome do "Deus Altíssimo, o Possuidor dos céus e da terra" (14.18-19). Abrão lhe dá o dízimo de tudo o que havia recuperado — sem que o texto explique quem é esse homem, de onde veio, ou o que aconteceu com ele depois.</p>
           <p>Ao rei de Sodoma, porém, Abrão recusa qualquer coisa: "nem um fio, nem uma correia de sapato... para que não digas: eu enriqueci a Abrão" (14.22-23). Ele já havia recebido a promessa de bênção diretamente de Deus — não precisava, nem queria, dever sua riqueza a um rei de Sodoma.</p>
+
+          <div class="tithe-row">
+            <div class="tithe-line">
+              <div class="tithe-label">Dado a Melquisedeque (o dízimo)</div>
+              <div class="tithe-dots" id="titheGiven"></div>
+            </div>
+            <div class="tithe-line">
+              <div class="tithe-label">Aceito do rei de Sodoma</div>
+              <div class="tithe-dots" id="titheSodom"></div>
+            </div>
+          </div>
+          <button class="ask-btn" onclick="askTithe()">Por que essa diferença?</button>
+          <div class="ask-answer" id="titheAnswer">Abrão dava por gratidão a quem já o havia abençoado em nome do Deus Altíssimo — e recusava por não querer dever sua riqueza a um rei que nada tinha a ver com essa promessa. "Para que não digas: eu enriqueci a Abrão" (14.23).</div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → um sacerdote para sempre</button>
         </div>
       </div>
@@ -192,6 +220,23 @@
       text.textContent = "É a lógica de Abrão: dar a Ló a primeira escolha porque sua herança já está garantida por Deus, e recusar a riqueza do rei de Sodoma pelo mesmo motivo — quem já tem uma promessa segura não precisa disputar nem se vender por menos.";
     }
   }
+
+  function buildTitheDots(){
+    const given = document.getElementById('titheGiven');
+    const sodom = document.getElementById('titheSodom');
+    for (let i = 0; i < 10; i++){
+      const d = document.createElement('div');
+      d.className = 'tithe-dot' + (i === 0 ? ' filled' : '');
+      given.appendChild(d);
+    }
+    for (let i = 0; i < 10; i++){
+      const d = document.createElement('div');
+      d.className = 'tithe-dot';
+      sodom.appendChild(d);
+    }
+  }
+  buildTitheDots();
+  function askTithe(){ document.getElementById('titheAnswer').classList.add('show'); }
 </script>
 <script defer src="../../volver-app.js"></script>
 </body>

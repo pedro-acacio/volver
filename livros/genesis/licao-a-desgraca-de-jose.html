@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .coin-row{ margin: 4px 0 10px; }
+  .coin-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:6px; }
+  .coin-dots{ display:flex; flex-wrap:wrap; gap:4px; }
+  .coin-dot{ width:11px; height:11px; border-radius:50%; background: var(--gold); }
+  .ask-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .ask-btn:hover{ border-color: var(--gold); }
+  .ask-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .ask-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -85,6 +97,14 @@
         <div class="tl-card">
           <p>Jacó manda José até Dotã, onde os irmãos pastoreiam o rebanho, para saber como estão. Vendo-o chegar de longe, ainda vestindo a túnica que tanto odiavam, os irmãos planejam matá-lo: "eis que lá vem o sonhador. Vinde, pois, agora, e matemo-lo... e veremos que será dos seus sonhos" (37.19-20). Rúben, o mais velho, intervém para impedir o assassinato, sugerindo que o lancem numa cisterna seca — planejando, em segredo, resgatá-lo depois.</p>
           <p>Mas enquanto Rúben está ausente, Judá propõe outra saída: em vez de matar o irmão, vendê-lo a uma caravana de mercadores que passava a caminho do Egito, por vinte moedas de prata (37.26-28). José é tirado da cisterna e vendido — o mesmo irmão cujos sonhos previam sua exaltação agora é reduzido a mercadoria, levado escravo para uma terra estrangeira.</p>
+
+          <div class="coin-row">
+            <div class="coin-label">Vendido pelos próprios irmãos por 20 moedas de prata</div>
+            <div class="coin-dots" id="coinDots"></div>
+          </div>
+          <button class="ask-btn" onclick="askCoinValue()">Esse era o preço de um escravo?</button>
+          <div class="ask-answer" id="coinAnswer">Sim — vinte siclos de prata era, na época, um preço comum pago por um jovem escravo. O irmão favorito, dono de sonhos de exaltação, foi negociado pelo valor de mercadoria comum.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o engano do pai</button>
         </div>
       </div>
@@ -194,6 +214,13 @@
       text.textContent = "É saber, como José só entenderia décadas depois, que o pior capítulo de uma história pode já estar sendo usado por Deus para algo que ainda não se pode ver — um padrão que se repete, séculos depois, no maior mal que a história já viu virar o maior bem: a cruz.";
     }
   }
+
+  function buildCoinDots(){
+    const el = document.getElementById('coinDots');
+    for (let i = 0; i < 20; i++){ const d = document.createElement('div'); d.className = 'coin-dot'; el.appendChild(d); }
+  }
+  buildCoinDots();
+  function askCoinValue(){ document.getElementById('coinAnswer').classList.add('show'); }
 </script>
 <script defer src="../../volver-app.js"></script>
 </body>

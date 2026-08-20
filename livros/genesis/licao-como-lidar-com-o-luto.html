@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .camel-row{ display:flex; align-items:center; gap:7px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .camel-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .camel-dot.lit{ background: var(--calm); }
+  .camel-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); width:100%; margin: 6px 0 14px; }
 </style>
 </head>
 <body>
@@ -65,6 +69,11 @@
         <div class="tl-card">
           <p>Já idoso, Abraão manda seu servo mais confiável fazer um juramento solene: não buscar esposa para Isaque entre as mulheres cananeias, mas voltar à terra natal de Abraão, na Mesopotâmia, para encontrar alguém do próprio clã — e, sob nenhuma circunstância, levar Isaque de volta para lá, mesmo que a mulher se recuse a vir (24.5-8).</p>
           <p>O servo viaja e para junto a um poço, pedindo a Deus um sinal bem específico: a moça que, além de dar água a ele, também se oferecer para dar água aos dez camelos — um teste que mede não aparência, mas caráter generoso e disposto a servir. Antes mesmo de terminar de orar, Rebeca aparece e cumpre exatamente esse sinal, sem saber que estava sendo observada (24.15-20).</p>
+
+          <div class="camel-row" id="camelRow"></div>
+          <div class="camel-label" id="camelLabel">0 de 10 camelos</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCamels()" id="camelBtn">Ver Rebeca tirando água, camelo por camelo</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → a resposta de Rebeca</button>
         </div>
       </div>
@@ -170,6 +179,23 @@
     }, 120);
   }
   openStage(1);
+
+  function buildCamelDots(){
+    const el = document.getElementById('camelRow');
+    for (let i = 0; i < 10; i++){ const d = document.createElement('div'); d.className = 'camel-dot'; el.appendChild(d); }
+  }
+  buildCamelDots();
+  function revealCamels(){
+    const dots = document.querySelectorAll('#camelRow .camel-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('camelLabel').textContent = (i + 1) + ' de 10 camelos';
+    }, i * 220));
+    setTimeout(() => {
+      document.getElementById('camelLabel').textContent = "Um camelo sedento pode beber dezenas de litros de uma vez — Rebeca se ofereceu para tirar água à mão, sem que ninguém pedisse, para dez.";
+      document.getElementById('camelBtn').textContent = "O sinal que Deus confirmou antes mesmo da oração terminar";
+    }, 10 * 220);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

@@ -45,6 +45,16 @@
         <div class="tl-card">
           <p>Sem aviso prévio no texto, sem uma teofania dramática descrita ainda, Deus fala a Abrão, aos setenta e cinco anos, em Harã: "sai-te da tua terra, e da tua parentela, e da casa de teu pai, para a terra que eu te mostrarei" (12.1). É uma ordem que custa tudo o que dá segurança a uma pessoa no mundo antigo — território, clã, família — em troca de um destino que nem sequer é revelado ainda.</p>
           <p>Em compensação, Deus faz uma promessa em cinco partes: fará dele uma grande nação, o abençoará, engrandecerá seu nome, ele será uma bênção, e — o clímax — "em ti serão benditas todas as famílias da terra" (12.2-3). É a resposta direta a Babel: onde os homens tentaram fazer um nome para si mesmos e foram espalhados em confusão, Deus agora promete engrandecer o nome de um homem só, para abençoar todas as nações através dele.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, promessaAbraao, 0, 'promessaTexto')">1. Nação</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, promessaAbraao, 1, 'promessaTexto')">2. Bênção</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, promessaAbraao, 2, 'promessaTexto')">3. Nome</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, promessaAbraao, 3, 'promessaTexto')">4. Ser bênção</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, promessaAbraao, 4, 'promessaTexto')">5. Todas as famílias</button>
+          </div>
+          <div class="chip-text" id="promessaTexto">Toque em cada parte da promessa para ver o texto de Gênesis 12.2-3.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a partida e a obediência</button>
         </div>
       </div>
@@ -170,6 +180,19 @@
     }, 120);
   }
   openStage(1);
+
+  const promessaAbraao = [
+    {text: "\"Far-te-ei uma grande nação\" (12.2) — de um casal sem filhos, uma nação inteira."},
+    {text: "\"Abençoar-te-ei\" (12.2) — a vida de Abrão, daqui em diante, marcada pelo favor de Deus."},
+    {text: "\"Engrandecerei o teu nome\" (12.2) — a resposta direta a Babel, onde os homens tentaram fazer um nome para si mesmos e fracassaram."},
+    {text: "\"Tu serás uma bênção\" (12.2) — Abrão não só recebe; ele se torna canal de bênção para outros."},
+    {text: "\"Em ti serão benditas todas as famílias da terra\" (12.3) — o clímax: a promessa que alcança toda a humanidade."}
+  ];
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

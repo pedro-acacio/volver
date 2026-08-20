@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .years-row{ display:flex; align-items:center; gap:6px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .year-dot{ width:11px; height:11px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .year-dot.plenty{ background: var(--gold); }
+  .year-dot.famine{ background: var(--worry); }
+  .years-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); width:100%; margin: 6px 0 14px; }
 </style>
 </head>
 <body>
@@ -104,6 +109,11 @@
         <div class="tl-card">
           <p>Durante os sete anos de abundância, José percorre o Egito organizando o armazenamento de grãos em quantidade tão grande que "deixou-se de contar, porque não se podia contá-lo" (41.49). Nesse período, tem dois filhos com Asenate: Manassés, "porque Deus me fez esquecer todo o meu trabalho, e toda a casa de meu pai" — e Efraim, "porque Deus me fez crescer na terra da minha aflição" (41.51-52). Os próprios nomes revelam um homem processando, em retrospecto, tudo o que sofreu.</p>
           <p>Então a fome chega, exatamente como José previu — severa, e não só no Egito, mas em toda a região. "Toda a terra vinha ao Egito, para comprar, José, porque a fome prevaleceu em toda a terra" (41.57). É essa fome que, no capítulo seguinte, traria os próprios irmãos de José, sem que soubessem, até a porta do homem que haviam vendido como escravo.</p>
+
+          <div class="years-row" id="josephYearsRow"></div>
+          <div class="years-label" id="josephYearsLabel">Catorze anos, previstos com anos de antecedência</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealJosephYears()" id="josephYearsBtn">Ver os 14 anos, um a um</button>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → até que sua palavra se cumpriu</button>
         </div>
       </div>
@@ -171,6 +181,20 @@
     }, 120);
   }
   openStage(1);
+
+  function buildJosephYearsDots(){
+    const el = document.getElementById('josephYearsRow');
+    for (let i = 0; i < 14; i++){ const d = document.createElement('div'); d.className = 'year-dot'; el.appendChild(d); }
+  }
+  buildJosephYearsDots();
+  function revealJosephYears(){
+    const dots = document.querySelectorAll('#josephYearsRow .year-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add(i < 7 ? 'plenty' : 'famine'), i * 130));
+    setTimeout(() => {
+      document.getElementById('josephYearsLabel').textContent = "7 anos de fartura (dourado), depois 7 anos de fome (vermelho) — José previu os catorze antes que o primeiro começasse";
+      document.getElementById('josephYearsBtn').textContent = "Os 14 anos, exatamente como José previu";
+    }, 14 * 130);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

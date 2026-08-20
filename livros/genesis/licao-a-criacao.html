@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .good-row{ display:flex; align-items:center; gap:7px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .good-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .good-dot.lit{ background: var(--gold); }
+  .good-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); width:100%; margin: 6px 0 14px; }
 </style>
 </head>
 <body>
@@ -116,6 +120,11 @@
         <div class="tl-card">
           <p>Cristãos fiéis às Escrituras não concordam entre si sobre exatamente como encaixar os "seis dias" de Gênesis 1 com a idade do universo — alguns defendem dias literais de 24 horas havendo poucos milhares de anos, outros veem "dias" como longas eras, outros ainda leem a estrutura de seis dias como uma moldura literária deliberada (os três primeiros dias formando espaços que os três seguintes preenchem, como vimos acima), sem que isso comprometa a inspiração do texto. Esse debate é real, e este projeto não tenta resolvê-lo aqui.</p>
           <p>O que o próprio capítulo deixa claro, porém, independentemente da posição, é o que ele afirma sobre Deus: que ele é o único Criador, que criou por sua palavra, sem esforço nem conflito, que tudo o que fez ele chamou de "bom" (repetido sete vezes), e que fez o ser humano — não os astros, não os animais — à sua própria imagem. É essa a afirmação teológica central do capítulo, e é nela que a fé se apoia, não numa data exata.</p>
+
+          <div class="good-row" id="goodRow"></div>
+          <div class="good-label" id="goodLabel">0 de 7 vezes</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealGood()" id="goodBtn">Ver as sete vezes "e viu Deus que era bom"</button>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o sétimo dia</button>
         </div>
       </div>
@@ -199,6 +208,31 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const goodDays = [
+    'Dia 1 — a luz (1.4)',
+    'Dia 3 — a terra seca separada do mar (1.10)',
+    'Dia 3 — a vegetação (1.12)',
+    'Dia 4 — o sol, a lua e as estrelas (1.18)',
+    'Dia 5 — os seres vivos das águas e do céu (1.21)',
+    'Dia 6 — os animais terrestres (1.25)',
+    'Dia 6 — tudo o que havia feito: "muito bom" (1.31)'
+  ];
+  function buildGoodDots(){
+    const el = document.getElementById('goodRow');
+    for (let i = 0; i < 7; i++){ const d = document.createElement('div'); d.className = 'good-dot'; el.appendChild(d); }
+  }
+  buildGoodDots();
+  function revealGood(){
+    const dots = document.querySelectorAll('#goodRow .good-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('goodLabel').textContent = (i + 1) + ' de 7 — ' + goodDays[i];
+    }, i * 260));
+    setTimeout(() => {
+      document.getElementById('goodBtn').textContent = 'As sete vezes, do dia 1 ao "muito bom" final';
+    }, 7 * 260);
   }
 
   function showOutcome(type){

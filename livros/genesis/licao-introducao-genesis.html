@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .toledot-row{ display:flex; align-items:center; gap:6px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .toledot-dot{ width:9px; height:9px; border-radius:50%; background: var(--panel-line); transition: background .3s ease; }
+  .toledot-dot.lit{ background: var(--gold); }
+  .toledot-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); width:100%; margin: 6px 0 14px; }
 </style>
 </head>
 <body>
@@ -64,6 +68,11 @@
         <div class="tl-card">
           <p>O nome "Gênesis" vem do grego, e significa "origem". Mas o título hebraico original é outro: as primeiras palavras do livro, <em>Bereshit</em> — "no princípio". É assim que os judeus nomeiam os livros da Torá até hoje: pela sua primeira palavra, não por um título temático.</p>
           <p>Por trás desse nome simples, porém, existe uma estrutura muito precisa. Depois do prólogo da criação (1.1—2.3), o livro inteiro é organizado por uma fórmula que se repete onze vezes: "estas são as gerações de..." — de Adão, de Noé, de Sem, de Terá, de Ismael, de Isaque, de Esaú, de Jacó. Cada uma dessas costuras marca o início de uma nova seção, amarrando o livro inteiro numa única linha genealógica que vai se estreitando, capítulo a capítulo, até chegar exatamente na família que Deus escolheu.</p>
+
+          <div class="toledot-row" id="toledotRow"></div>
+          <div class="toledot-label" id="toledotLabel">0 de 11 costuras</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealToledot()" id="toledotBtn">Ver as onze costuras, uma a uma</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → os três grandes movimentos</button>
         </div>
       </div>
@@ -186,6 +195,27 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const toledotNames = [
+    'Céus e terra (2.4)', 'Adão (5.1)', 'Noé (6.9)', 'Filhos de Noé (10.1)',
+    'Sem (11.10)', 'Terá (11.27)', 'Ismael (25.12)', 'Isaque (25.19)',
+    'Esaú (36.1)', 'Esaú, segunda vez (36.9)', 'Jacó (37.2)'
+  ];
+  function buildToledotDots(){
+    const el = document.getElementById('toledotRow');
+    for (let i = 0; i < 11; i++){ const d = document.createElement('div'); d.className = 'toledot-dot'; el.appendChild(d); }
+  }
+  buildToledotDots();
+  function revealToledot(){
+    const dots = document.querySelectorAll('#toledotRow .toledot-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('toledotLabel').textContent = (i + 1) + ' de 11 — ' + toledotNames[i];
+    }, i * 170));
+    setTimeout(() => {
+      document.getElementById('toledotBtn').textContent = 'As onze costuras que amarram o livro inteiro';
+    }, 11 * 170);
   }
 
   function showOutcome(type){

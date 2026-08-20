@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .venge-row{ margin: 4px 0 14px; }
+  .venge-line{ margin: 0 0 12px; }
+  .venge-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:4px; display:flex; justify-content:space-between; }
+  .venge-bar-track{ width:100%; height:10px; border-radius:6px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .venge-bar-fill{ height:100%; border-radius:6px; background: var(--gold); }
+  .venge-bar-fill.worse{ background: var(--worry); }
+  .ask-btn{
+    width:100%; padding:11px 10px; margin: 4px 0 0; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--gold); font-family:'IBM Plex Mono', monospace; font-size:12.5px; cursor:pointer;
+    transition: all .2s ease;
+  }
+  .ask-btn:hover{ border-color: var(--gold); }
+  .ask-answer{ display:none; font-size:13.5px; line-height:1.55; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+  .ask-answer.show{ display:block; }
 </style>
 </head>
 <body>
@@ -85,6 +99,20 @@
         <div class="tl-card">
           <p>Uma geração depois de comer o fruto proibido, o pecado já bate à porta de novo — desta vez como assassinato. Caim e Abel trazem ofertas ao Senhor; Deus atenta para a de Abel, mas não para a de Caim, e o texto não explica exatamente por quê (Hebreus 11.4 sugere que foi uma questão de fé, não apenas do tipo de oferta). O que importa para Gênesis é a reação de Caim: ele se irrita, e Deus mesmo o alerta, quase como um pai — "se procederes bem, não é certo que serás aceito? Se, porém, não procederes bem, o pecado jaz à porta. Ele te deseja, mas cabe a ti dominá-lo" (4.6-7).</p>
           <p>Caim não domina. Leva o irmão ao campo e o mata — o primeiro homicídio da história, entre os dois primeiros filhos nascidos de mulher. Quando Deus pergunta "onde está Abel, teu irmão?", Caim responde com a primeira mentira desafiadora da Bíblia: "não sei; sou eu o guarda do meu irmão?" (4.9). O sangue de Abel, diz Deus, "clama da terra" — e a violência, uma vez solta no mundo, não para: poucas gerações depois, o próprio descendente de Caim, Lameque, se vangloria de matar um jovem só por feri-lo, e jura vingança setenta e sete vezes maior que a de Caim (4.23-24).</p>
+
+          <div class="venge-row">
+            <div class="venge-line">
+              <div class="venge-label"><span>Proteção prometida a Caim</span><span>7×</span></div>
+              <div class="venge-bar-track"><div class="venge-bar-fill" style="width:9%"></div></div>
+            </div>
+            <div class="venge-line">
+              <div class="venge-label"><span>Vingança jurada por Lameque</span><span>77×</span></div>
+              <div class="venge-bar-track"><div class="venge-bar-fill worse" style="width:100%"></div></div>
+            </div>
+          </div>
+          <button class="ask-btn" onclick="askVengeance()">Por que a violência cresce assim?</button>
+          <div class="ask-answer" id="vengeAnswer">Deus havia prometido proteger Caim, o primeiro assassino, de uma vingança desproporcional (7×). Gerações depois, Lameque transforma essa mesma proteção em jactância pessoal, jurando 77×: o pecado não apenas persiste de geração em geração — ele se multiplica a cada uma que o deixa sem freio.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → a graça que persiste</button>
         </div>
       </div>
@@ -192,6 +220,10 @@
       title.textContent = "Um Deus que vai atrás";
       text.textContent = "Mesmo depois da queda, é Deus quem pergunta 'onde estás', é Deus quem veste o casal envergonhado, é Deus quem já promete um libertador em meio ao próprio julgamento — o mesmo padrão que, séculos depois, levaria Cristo a 'buscar e salvar o que se havia perdido' (Lucas 19.10).";
     }
+  }
+
+  function askVengeance(){
+    document.getElementById('vengeAnswer').classList.add('show');
   }
 </script>
 <script defer src="../../volver-app.js"></script>

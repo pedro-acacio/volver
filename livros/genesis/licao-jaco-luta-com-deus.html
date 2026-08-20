@@ -85,6 +85,17 @@
         <div class="tl-card">
           <p>Perto de casa, Jacó recebe uma notícia aterrorizante: Esaú vem ao seu encontro com quatrocentos homens. Ele divide sua gente em dois grupos, para que ao menos um sobreviva a um possível ataque, envia presentes generosos à frente, e ora como nunca havia orado antes, lembrando Deus da própria promessa: "livra-me, peço-te, da mão de meu irmão" (32.11).</p>
           <p>Naquela noite, sozinho junto ao ribeiro de Jaboque, um homem luta com Jacó até o amanhecer. Vendo que não conseguia vencê-lo, o homem toca a articulação da coxa de Jacó, deslocando-a — mas Jacó, mesmo mancando de dor, se recusa a soltá-lo: "não te deixarei ir, se me não abençoares" (32.26). O homem pergunta seu nome, e ao ouvir "Jacó" (o agarrador, o enganador), muda-o: "não te chamarás mais Jacó, mas Israel, porque como príncipe lutaste com Deus e com os homens, e prevaleceste" (32.28). Jacó chama o lugar de Peniel — "porque vi a Deus face a face, e a minha alma foi preservada" (32.30) — e sai mancando ao nascer do sol.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnNameBefore" onclick="showJacobName('before')">Antes: "Jacó"</button>
+            <button class="toggle-btn" id="btnNameAfter" onclick="showJacobName('after')">Depois: "Israel"</button>
+          </div>
+          <div class="outcome" id="nameCard">
+            <div class="outcome-visual" id="nameVisual"></div>
+            <h3 id="nameTitle"></h3>
+            <p id="nameText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → a reconciliação com Esaú</button>
         </div>
       </div>
@@ -193,6 +204,27 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Recusar-se a soltar";
       text.textContent = "É Jacó mancando, ferido, sem mais nenhuma manha à disposição — e ainda assim se agarrando a Deus até receber a bênção. É a força que vem não de vencer Deus, mas de nunca desistir dele.";
+    }
+  }
+
+  function showJacobName(state){
+    const btnBefore = document.getElementById('btnNameBefore');
+    const btnAfter = document.getElementById('btnNameAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('nameVisual');
+    const title = document.getElementById('nameTitle');
+    const text = document.getElementById('nameText');
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Jacó — \"o que agarra pelo calcanhar\"";
+      text.textContent = "O nome que recebeu ao nascer, agarrando o calcanhar de Esaú (25.26) — e que descreveu bem uma vida inteira de manipular circunstâncias e pessoas para conseguir o que queria.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Israel — \"o que lutou com Deus\"";
+      text.textContent = "O nome novo, dado depois de uma noite inteira sem soltar Deus, mesmo ferido. Marca a virada: de um homem que vencia pela esperteza para um homem que prevalece pela súplica.";
     }
   }
 </script>
