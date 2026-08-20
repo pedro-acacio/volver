@@ -45,6 +45,17 @@
         <div class="tl-card">
           <p>Deus dá instruções detalhadas: cada família deveria separar um cordeiro sem defeito no décimo dia do mês, guardá-lo até o décimo quarto, matá-lo ao entardecer, e passar o sangue nas duas ombreiras e na verga da porta de casa. A carne seria assada e comida com pão sem fermento e ervas amargas, e o povo deveria comê-la já pronto para partir — "os rins cingidos, os sapatos nos pés, e o cajado na mão... apressadamente" (12.11).</p>
           <p>A instrução central é essa: "o sangue vos será por sinal nas casas em que estiverdes; vendo eu o sangue, passarei por cima de vós, e não haverá entre vós praga de mortandade, quando eu ferir a terra do Egito" (12.13). Não bastava estar em Gósen, como nas pragas anteriores — cada casa precisava do sangue visível na própria porta.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnDoorBefore" onclick="showDoor('before')">Porta sem o sinal do sangue</button>
+            <button class="toggle-btn" id="btnDoorAfter" onclick="showDoor('after')">Porta marcada com o sangue</button>
+          </div>
+          <div class="outcome" id="doorCard">
+            <div class="outcome-visual" id="doorVisual"></div>
+            <h3 id="doorTitle"></h3>
+            <p id="doorText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a décima praga e a saída</button>
         </div>
       </div>
@@ -191,6 +202,28 @@
       visual.innerHTML = '<div class="anchor-line"></div>';
       title.textContent = "Aplicar o sangue à própria porta";
       text.textContent = "É a fé que age, não apenas acredita: cada família teve que matar o cordeiro e passar o sangue com as próprias mãos — o mesmo tipo de resposta pessoal que o evangelho pede diante do sacrifício de Cristo.";
+    }
+  }
+
+  function showDoor(state){
+    const btnBefore = document.getElementById('btnDoorBefore');
+    const btnAfter = document.getElementById('btnDoorAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('doorVisual');
+    const title = document.getElementById('doorTitle');
+    const text = document.getElementById('doorText');
+
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A praga passa por dentro";
+      text.textContent = "Sem o sangue nas ombreiras e na verga, a casa não tinha nenhum sinal visível — e o anjo destruidor feria o primogênito ali dentro, mesmo sendo uma casa israelita.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A morte passa por cima";
+      text.textContent = "Vendo o sangue na porta, o Senhor passava por cima daquela casa — não porque a família dentro fosse melhor que as outras, mas porque o sinal exigido já estava ali, aplicado.";
     }
   }
 </script>

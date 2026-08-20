@@ -65,6 +65,18 @@
         <div class="tl-card">
           <p>No monte, Deus avisa Moisés: "desce, porque o teu povo... já se corrompeu" (32.7) — e chega a propor destruí-los e fazer de Moisés mesmo uma grande nação. Em vez de aceitar, Moisés intercede com urgência: lembra a Deus da sua própria reputação diante dos egípcios, e da aliança jurada a Abraão, Isaque e Jacó.</p>
           <p>"E o Senhor se arrependeu do mal que dissera que havia de fazer ao seu povo" (32.14) — um dos exemplos mais dramáticos de intercessão em toda a Bíblia, revelando que Deus genuinamente convida seu povo a interceder, e responde a esse clamor.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnMercyBefore" onclick="showMercy('before')">Antes da intercessão</button>
+            <button class="toggle-btn" id="btnMercyAfter" onclick="showMercy('after')">Depois da intercessão</button>
+          </div>
+
+          <div class="outcome" id="mercyCard">
+            <div class="outcome-visual" id="mercyVisual"></div>
+            <h3 id="mercyTitle"></h3>
+            <p id="mercyText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → a quebra das tábuas</button>
         </div>
       </div>
@@ -154,6 +166,27 @@
 </div>
 
 <script>
+  function showMercy(state){
+    const btnBefore = document.getElementById('btnMercyBefore');
+    const btnAfter = document.getElementById('btnMercyAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('mercyVisual');
+    const title = document.getElementById('mercyTitle');
+    const text = document.getElementById('mercyText');
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "\"De ti farei uma grande nação\"";
+      text.textContent = "Deus anuncia a Moisés que sua ira vai consumir o povo, e propõe recomeçar a partir do próprio Moisés (32.10) — a justiça exigida por um povo que trocou a glória de Deus por um bezerro, quarenta dias depois de jurar obediência.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "\"O Senhor se arrependeu do mal\"";
+      text.textContent = "Depois que Moisés lembra a Deus da própria reputação diante dos egípcios e da aliança jurada a Abraão, Isaque e Jacó, o curso anunciado muda (32.14) — a intercessão move genuinamente o coração de Deus.";
+    }
+  }
+
   let currentMax = 1;
 
   function openStage(n){

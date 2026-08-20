@@ -65,6 +65,14 @@
         <div class="tl-card">
           <p>A tradição reformada, seguindo pistas do próprio Novo Testamento, costuma distinguir três tipos de lei dentro do Antigo Testamento. A lei moral — resumida nos Dez Mandamentos — reflete o caráter eterno e imutável de Deus, e continua obrigando todo ser humano, sempre. A lei civil regulava a vida nacional específica de Israel como teocracia, e deixou de se aplicar do mesmo jeito quando essa nação-estado deixou de existir — mas continua revelando os princípios de justiça de Deus. E a lei cerimonial — sacrifícios, sacerdócio, regras de pureza ritual — apontava para Cristo, e encontrou nele seu cumprimento definitivo (Hebreus 10.1).</p>
           <p>Não é uma divisão arbitrária: é a mesma lógica que explica por que cristãos continuam levando a sério "não matarás", mas não sacrificam cordeiros nem seguem as leis dietéticas de Levítico — não porque essas leis fossem falsas, mas porque cumpriram seu propósito na história da redenção.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, categoriasLei, 0, 'categoriaTexto')">Lei moral</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, categoriasLei, 1, 'categoriaTexto')">Lei civil</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, categoriasLei, 2, 'categoriaTexto')">Lei cerimonial</button>
+          </div>
+          <div class="chip-text" id="categoriaTexto">Toque em cada categoria para ver o que ainda vale hoje, e por quê.</div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → a ratificação da aliança</button>
         </div>
       </div>
@@ -156,6 +164,12 @@
 </div>
 
 <script>
+  const categoriasLei = [
+    {text:"Resumida nos Dez Mandamentos, reflete o caráter eterno e imutável de Deus. Continua obrigando todo ser humano, sempre — é por isso que \"não matarás\" nunca deixou de valer."},
+    {text:"Regulava a vida nacional de Israel como teocracia, e deixou de se aplicar do mesmo jeito quando essa nação-estado deixou de existir — mas continua revelando os princípios de justiça de Deus."},
+    {text:"Sacrifícios, sacerdócio, regras de pureza ritual: apontava para Cristo, e encontrou nele seu cumprimento definitivo (Hebreus 10.1)."}
+  ];
+
   let currentMax = 1;
 
   function openStage(n){
@@ -194,6 +208,12 @@
       title.textContent = "Perguntar o que cada lei revela sobre Deus";
       text.textContent = "É ler cada mandamento perguntando o que ele mostra sobre o caráter de Deus, e onde ele encontra cumprimento em Cristo — nem descartando tudo como irrelevante, nem tentando reviver práticas que a própria Escritura já declara cumpridas.";
     }
+  }
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
   }
 </script>
 <script defer src="../../volver-app.js"></script>

@@ -44,6 +44,12 @@
         <div class="tl-card">
           <p>Moisés e Arão voltam a faraó, e a vara de Arão vira serpente diante dele. Os magos egípcios conseguem imitar o sinal com suas próprias artes ocultas — mas a serpente de Arão devora as deles (7.10-12), um primeiro sinal, ainda discreto, de quem tem mais poder. Faraó, porém, endurece o coração e recusa.</p>
           <p>Cada uma das pragas que se seguem não é aleatória: mira diretamente em divindades específicas que o Egito adorava — o Nilo, venerado como deus, vira sangue; a rã, símbolo da deusa Heqet, infesta a terra até virar praga insuportável; o sol, adorado como o deus Rá, é apagado por trevas. Séculos depois, o próprio texto resume o propósito: "e contra todos os deuses do Egito executarei juízos" (12.12). Não é um espetáculo de força bruta — é um julgamento teológico, mostrando que nenhum desses "deuses" tem poder nenhum diante do Senhor.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, godsData, 0, 'godsText')">O Nilo</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, godsData, 1, 'godsText')">A rã de Heqet</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, godsData, 2, 'godsText')">O sol de Rá</button>
+          </div>
+          <div class="chip-text" id="godsText">Toque em cada símbolo para ver qual "deus" ele confrontava.</div>
           <button class="continue-btn" onclick="openStage(2)">Continuar → as primeiras pragas</button>
         </div>
       </div>
@@ -168,6 +174,11 @@
 </div>
 
 <script>
+  const godsData = [
+    { text: "O Nilo era venerado como fonte divina de vida, quase um deus em si — ele é o primeiro a ser ferido, virando sangue diante de todo o Egito (7.14-25)." },
+    { text: "A rã era símbolo de vida e fertilidade, ligado à deusa Heqet — mas em vez de abençoar, ela invade casas, camas e fornos, até virar motivo de repulsa (8.1-15)." },
+    { text: "O sol era adorado como o deus Rá, o mais importante do panteão egípcio — e é apagado por três dias inteiros de trevas 'que se podem apalpar' (10.21-29)." }
+  ];
   const firstPlaguesData = [
     { text: "O Nilo — venerado no Egito como fonte divina de vida — vira sangue, matando os peixes e tornando a água imprópria para beber (7.14-25)." },
     { text: "Rãs, associadas à deusa Heqet, invadem casas, camas e fornos em número incontável, até faraó implorar que Moisés interceda para removê-las (8.1-15)." },

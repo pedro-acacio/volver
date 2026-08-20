@@ -84,6 +84,14 @@
         <div class="tl-card">
           <p>No Lugar Santo, logo antes do véu que separava o Santíssimo, ficavam a mesa dos pães da proposição — doze pães, um para cada tribo, sempre diante de Deus — e o candelabro de ouro puro, batido de uma só peça, com sete lâmpadas em formato de flores de amendoeira. No pátio externo ficava o altar de bronze, onde os sacrifícios de holocausto eram oferecidos.</p>
           <p>Repare na estrutura: cada camada — pátio, Lugar Santo, Lugar Santíssimo — restringia cada vez mais quem podia entrar, até chegar ao ponto mais interno, onde só o sumo sacerdote podia entrar, e apenas uma vez por ano. Não era um projeto arquitetônico aleatório; era um mapa físico de como a santidade de Deus exigia aproximação cuidadosa, em etapas.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, tabernacleZones, 0, 'zoneText')">Pátio</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, tabernacleZones, 1, 'zoneText')">Lugar Santo</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, tabernacleZones, 2, 'zoneText')">Lugar Santíssimo</button>
+          </div>
+          <div class="chip-text" id="zoneText">Toque em cada zona para ver quem podia entrar, e com que frequência.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → um retorno ao Éden</button>
         </div>
       </div>
@@ -170,6 +178,17 @@
     }, 120);
   }
   openStage(1);
+
+  const tabernacleZones = [
+    { text: "Pátio externo: aberto a todo israelita que trouxesse uma oferta. Ali ficava o altar de bronze, onde os sacrifícios eram apresentados — o ponto de entrada mais amplo de todo o tabernáculo." },
+    { text: "Lugar Santo: restrito aos sacerdotes, que entravam diariamente para cuidar do candelabro, da mesa dos pães da proposição e do altar do incenso." },
+    { text: "Lugar Santíssimo: restrito a um único homem, o sumo sacerdote, e apenas uma vez por ano, no Dia da Expiação — e mesmo ele não podia entrar sem sangue de sacrifício." }
+  ];
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

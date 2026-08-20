@@ -44,6 +44,15 @@
         <div class="tl-card">
           <p>Arão e seus filhos são separados como sacerdotes, e recebem vestes feitas "para glória e ornamento" (28.2): um éfode bordado de ouro e fios coloridos, e um peitoral com doze pedras preciosas, uma para cada tribo de Israel — "e Arão levará os nomes dos filhos de Israel no peitoral do juízo sobre o seu coração... para memória diante do Senhor continuamente" (28.29). O sacerdote literalmente carregava o povo inteiro sobre o próprio coração ao entrar na presença de Deus.</p>
           <p>O manto tinha sinos e romãs alternados na barra, "para que se ouça o seu sonido, quando entrar no santuário perante o Senhor, e quando sair, para que não morra" (28.35) — e uma placa de ouro na testa, gravada "SANTIDADE AO SENHOR", para que Arão "leve a iniquidade das coisas santas... para que sejam aceitas diante do Senhor" (28.38). Até a adoração mais sincera de Israel precisava de um mediador para ser aceita.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectVestChip(this, 0)">Éfode</button>
+            <button class="chip-btn chip-gold" onclick="selectVestChip(this, 1)">Peitoral</button>
+            <button class="chip-btn chip-gold" onclick="selectVestChip(this, 2)">Sinos e romãs</button>
+            <button class="chip-btn chip-gold" onclick="selectVestChip(this, 3)">Placa de ouro</button>
+          </div>
+          <div class="chip-text" id="vestText">Toque em cada peça da veste para ver o que ela representava.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a consagração dos sacerdotes</button>
         </div>
       </div>
@@ -191,6 +200,18 @@
       title.textContent = "Ter um mediador que já é santo";
       text.textContent = "É o que Hebreus descreve em Cristo: um sumo sacerdote que nunca precisou de purificação própria antes de purificar outros — o cumprimento de tudo o que o sacerdócio de Arão só conseguia apontar de longe.";
     }
+  }
+
+  const vestData = [
+    { text: "Vestido bordado de ouro e fios azuis, púrpura e carmesim, preso nos ombros por duas pedras de ônix gravadas com os nomes das doze tribos — seis em cada pedra — para que Arão as levasse sobre os ombros como memorial diante do Senhor." },
+    { text: "Doze pedras preciosas, uma para cada tribo, presas sobre o coração de Arão — o povo inteiro literalmente carregado junto ao coração do sacerdote toda vez que ele entrava na presença de Deus." },
+    { text: "Alternados na barra do manto, para que o som fosse ouvido quando Arão entrasse e saísse do santuário — um alerta sonoro de que ali dentro, aproximar-se de Deus não era algo trivial, sob pena de morte." },
+    { text: "Gravada 'SANTIDADE AO SENHOR' e presa à testa de Arão, para que ele levasse a iniquidade das próprias ofertas santas do povo, tornando-as aceitáveis diante de Deus." }
+  ];
+  function selectVestChip(btn, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('vestText').textContent = vestData[i].text;
   }
 </script>
 <script defer src="../../volver-app.js"></script>

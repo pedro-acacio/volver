@@ -9,6 +9,17 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .mana-row{ display:flex; align-items:center; gap:6px; margin: 10px 0 14px; flex-wrap:wrap; }
+  .mana-dot{
+    width:36px; height:36px; border-radius:8px; border:1px solid var(--panel-line);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:10px; color: var(--text-faint);
+    background: var(--panel); transition: all .35s ease;
+  }
+  .mana-dot.lit{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.08); }
+  .mana-dot.lit.double{ border-color: var(--calm); color: var(--calm); background: rgba(124,154,120,0.08); }
+  .mana-dot.lit.empty{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.08); }
+  .mana-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -68,6 +79,10 @@
         <div class="tl-card">
           <p>No deserto de Sim, o povo murmura de novo — desta vez lamentando não ter morrido no Egito "junto às panelas de carne" (16.3). Deus responde com providência diária: à tarde, um bando de codornizes cobre o acampamento; pela manhã, uma substância fina e branca cobre o chão, e o povo pergunta uns aos outros "que é isto?" ("<em>man hu</em>", em hebraico) — dando origem ao nome "maná".</p>
           <p>A instrução vinha com um teste embutido: colher apenas o suficiente para o dia, sem guardar para amanhã (o excesso apodrecia e criava vermes), exceto na véspera do sábado, quando podiam colher o dobro, já que no sábado nada cairia. Alguns saem no sábado procurando de qualquer jeito, e não encontram nada — "até quando recusareis guardar os meus mandamentos?" (16.28). O maná sustentaria Israel todos os dias, por quarenta anos inteiros, até comerem do produto de Canaã.</p>
+
+          <div class="mana-row" id="manaRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealMana()" id="manaBtn">Ver a semana de coleta, dia a dia</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → água da rocha</button>
         </div>
       </div>
@@ -174,6 +189,32 @@
     }, 120);
   }
   openStage(1);
+
+  function buildManaDots(){
+    const el = document.getElementById('manaRow');
+    const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+    days.forEach((d, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'mana-dot' + (i === 5 ? ' double' : i === 6 ? ' empty' : '');
+      dot.textContent = d;
+      el.appendChild(dot);
+    });
+    const label = document.createElement('span');
+    label.className = 'mana-label';
+    label.id = 'manaLabel';
+    label.textContent = 'toque para revelar';
+    el.appendChild(label);
+  }
+  buildManaDots();
+
+  function revealMana(){
+    const dots = document.querySelectorAll('#manaRow .mana-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 160));
+    setTimeout(() => {
+      document.getElementById('manaLabel').textContent = 'sexta: porção dobrada · sábado: nada cai';
+      document.getElementById('manaBtn').textContent = 'Seis dias de porção simples, um de porção dobrada, um de descanso';
+    }, dots.length * 160);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

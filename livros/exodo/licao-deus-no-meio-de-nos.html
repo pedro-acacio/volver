@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .pieces-row{ display:flex; align-items:center; gap:7px; margin: 2px 0 16px; flex-wrap:wrap; }
+  .pieces-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .pieces-dot.lit{ background: var(--calm); }
+  .pieces-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -65,6 +69,10 @@
         <div class="tl-card">
           <p>Capítulo após capítulo, cada peça é construída — cortinas, tábuas, véu, arca, mesa, candelabro, altar, vestes sacerdotais — repetindo quase palavra por palavra as instruções dadas lá em Êxodo 25 a 30. Uma frase se repete quase como um refrão ao longo do relato: "conforme tudo o que o Senhor ordenara a Moisés". Não há improvisação nem atalhos — cada detalhe segue exatamente o modelo mostrado no monte.</p>
           <p>Quando tudo está pronto, Moisés inspeciona a obra inteira: "e eis que a tinham feito; como o Senhor ordenara, assim mesmo a fizeram. Então Moisés os abençoou" (39.43). A obediência exata, aqui, é motivo de bênção, não de fardo.</p>
+
+          <div class="pieces-row" id="piecesRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPieces()" id="piecesBtn">Ver as oito peças, uma por uma</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → a ereção do tabernáculo</button>
         </div>
       </div>
@@ -153,6 +161,24 @@
 </div>
 
 <script>
+  const piecesNames = ["cortinas","tábuas","véu","arca","mesa","candelabro","altar","vestes sacerdotais"];
+
+  function buildPiecesDots(){
+    const el = document.getElementById('piecesRow');
+    piecesNames.forEach(() => { const d = document.createElement('div'); d.className = 'pieces-dot'; el.appendChild(d); });
+    const label = document.createElement('span'); label.className = 'pieces-label'; label.id = 'piecesLabel'; label.textContent = '0 de 8 peças'; el.appendChild(label);
+  }
+  buildPiecesDots();
+
+  function revealPieces(){
+    const dots = document.querySelectorAll('#piecesRow .pieces-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 160));
+    setTimeout(() => {
+      document.getElementById('piecesLabel').textContent = '8 de 8 peças: ' + piecesNames.join(', ');
+      document.getElementById('piecesBtn').textContent = "Cada peça, exatamente como o Senhor ordenara";
+    }, piecesNames.length * 160);
+  }
+
   let currentMax = 1;
 
   function openStage(n){

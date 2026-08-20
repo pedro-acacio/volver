@@ -66,6 +66,15 @@
         <div class="tl-card">
           <p>No dia seguinte, Jetro observa Moisés sentado do amanhecer ao anoitecer, julgando sozinho todas as disputas do povo, com filas imensas esperando. "Não é bom o que fazes... certamente desfalecerás, tu, e também este povo que está contigo; porque este negócio é mais pesado do que possas fazê-lo tu só" (18.17-18).</p>
           <p>O conselho é prático e sábio: ensinar ao povo os estatutos e as leis, depois escolher homens capazes, tementes a Deus, dignos de confiança e avessos à ganância, para servirem como juízes sobre grupos de mil, cem, cinquenta e dez — resolvendo os casos simples eles mesmos, e trazendo a Moisés apenas as questões mais difíceis. "E te será mais fácil, e eles levarão a carga contigo" (18.22).</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, jetroData, 0, 'jetroText')">Mil</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, jetroData, 1, 'jetroText')">Cem</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, jetroData, 2, 'jetroText')">Cinquenta</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, jetroData, 3, 'jetroText')">Dez</button>
+          </div>
+          <div class="chip-text" id="jetroText">Toque em cada grupo para ver o papel dele na estrutura de Jetro.</div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → Moisés implementa a estrutura</button>
         </div>
       </div>
@@ -192,6 +201,18 @@
       title.textContent = "Uma vida organizada que aponta para Deus";
       text.textContent = "É o que aconteceu com Jetro: ver de perto como Deus tratava seu povo — com justiça, ordem, cuidado — foi suficiente para que um sacerdote pagão reconhecesse que esse Deus era maior que todos os outros.";
     }
+  }
+
+  const jetroData = [
+    {text:"Mil — o nível mais alto da estrutura, tratando dos casos mais amplos entre os líderes escolhidos."},
+    {text:"Cem — uma camada intermediária, mais próxima do cotidiano do povo do que o líder de milhares."},
+    {text:"Cinquenta — líderes ainda mais próximos, resolvendo disputas menores com agilidade."},
+    {text:"Dez — o nível mais local de todos, o primeiro a ouvir qualquer disputa simples entre o povo."}
+  ];
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
   }
 </script>
 <script defer src="../../volver-app.js"></script>

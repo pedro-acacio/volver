@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .sea-row{ display:flex; align-items:center; gap:7px; margin: 14px 0 8px; flex-wrap:wrap; }
+  .sea-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .sea-dot.lit{ background: var(--calm); }
+  .sea-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:4px; }
+  .sea-caption{ font-size:13px; line-height:1.5; color: var(--text-dim); min-height:38px; margin:0 0 12px; }
 </style>
 </head>
 <body>
@@ -85,6 +90,11 @@
         <div class="tl-card">
           <p>Deus responde a Moisés com uma ordem prática: pare de clamar, e aja — estenda a mão sobre o mar. A coluna de nuvem se move para trás do povo, entre Israel e o exército egípcio, escura de um lado e iluminando a noite do outro. Um forte vento oriental sopra a noite inteira, abrindo um caminho em terra seca no meio do mar, com paredes de água dos dois lados.</p>
           <p>Israel atravessa em segurança; os egípcios, perseguindo, entram atrás deles — mas Deus perturba o exército, travando as rodas de seus carros. Ao amanhecer, Moisés estende a mão novamente, e as águas voltam ao seu lugar, engolindo todo o exército egípcio. "E viu Israel a grande mão que o Senhor exercera contra os egípcios... e creram no Senhor, e em Moisés, seu servo" (14.31).</p>
+
+          <div class="sea-row" id="seaRow"></div>
+          <p class="sea-caption" id="seaCaption">Toque no botão para ver a noite se desdobrar, um instante por vez.</p>
+          <button class="continue-btn" style="margin-top:0; margin-bottom:14px;" onclick="revealSea()" id="seaBtn">Ver a noite se desdobrar, passo a passo</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o cântico de Moisés</button>
         </div>
       </div>
@@ -193,6 +203,32 @@
       title.textContent = "Esperar em silêncio pelo que só Deus pode fazer";
       text.textContent = "É a instrução de Moisés, dada antes de qualquer sinal de que o mar se abriria: ficar quieto, sem tentar resolver sozinho o que só o próprio Senhor poderia resolver — e depois cantar, quando a vitória finalmente aparece.";
     }
+  }
+
+  const seaSteps = [
+    "A coluna de nuvem se move para trás do povo, escondendo Israel do exército egípcio na escuridão.",
+    "Um vento oriental forte sopra a noite inteira, começando a abrir caminho no meio do mar.",
+    "As águas se dividem por completo: paredes de água dos dois lados, terra seca no meio.",
+    "Israel atravessa em segurança; os egípcios entram atrás — mas Deus trava as rodas de seus carros.",
+    "Ao amanhecer, Moisés estende a mão outra vez, e o mar volta ao seu lugar sobre o exército egípcio."
+  ];
+  function buildSeaDots(){
+    const el = document.getElementById('seaRow');
+    for (let i = 0; i < seaSteps.length; i++){ const d = document.createElement('div'); d.className = 'sea-dot'; el.appendChild(d); }
+    const label = document.createElement('span'); label.className = 'sea-label'; label.id = 'seaLabel'; label.textContent = '0 de ' + seaSteps.length; el.appendChild(label);
+  }
+  buildSeaDots();
+  function revealSea(){
+    const dots = document.querySelectorAll('#seaRow .sea-dot');
+    const caption = document.getElementById('seaCaption');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      caption.textContent = seaSteps[i];
+      document.getElementById('seaLabel').textContent = (i + 1) + ' de ' + seaSteps.length;
+    }, i * 900));
+    setTimeout(() => {
+      document.getElementById('seaBtn').textContent = "A travessia completa, um instante por vez";
+    }, seaSteps.length * 900);
   }
 </script>
 <script defer src="../../volver-app.js"></script>

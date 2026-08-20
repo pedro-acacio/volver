@@ -84,6 +84,14 @@
         <div class="tl-card">
           <p>Moisés continua resistindo: "não crerão em mim, nem ouvirão a minha voz". Deus dá três sinais visíveis — a vara que vira serpente, a mão que fica leprosa e depois é curada, a água do Nilo que se torna sangue — para que o povo credite sua mensagem. Ainda assim, Moisés insiste: "não sou homem eloquente... pesado de boca e pesado de língua sou" (4.10).</p>
           <p>A resposta de Deus é direta, quase impaciente: "quem fez a boca do homem?... vai, pois, agora, e eu serei com a tua boca" (4.11-12). Mesmo assim, Moisés pede que Deus mande outra pessoa. A ira de Deus se acende — mas, em vez de desistir dele, Deus nomeia Arão, irmão de Moisés, como seu porta-voz: "ele te será por boca, e tu lhe serás por Deus" (4.16). A fraqueza de Moisés não cancela o chamado — só molda a forma como ele seria cumprido.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectSignChip(this, 0)">A vara vira serpente</button>
+            <button class="chip-btn chip-gold" onclick="selectSignChip(this, 1)">A mão leprosa</button>
+            <button class="chip-btn chip-gold" onclick="selectSignChip(this, 2)">A água vira sangue</button>
+          </div>
+          <div class="chip-text" id="signText">Toque em cada sinal para ver o que ele demonstrava a Moisés.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o retorno ao Egito</button>
         </div>
       </div>
@@ -191,6 +199,17 @@
       title.textContent = "Aquele que é, e que se importa";
       text.textContent = "É o Deus que se revela pelo próprio nome — existência absoluta, autossuficiente — e ainda assim desce para ver a aflição de um povo escravo, o mesmo Deus que Jesus reivindica ser ao dizer 'eu sou'.";
     }
+  }
+
+  const signData = [
+    "Moisés lança a vara ao chão e ela se torna serpente; ele foge dela. Deus manda pegá-la pela cauda, e ela volta a ser vara em sua mão — o próprio bastão pastoral de Moisés se tornando instrumento na mão de Deus.",
+    "Moisés põe a mão no peito e a retira coberta de lepra, branca como a neve; repete o gesto, e a mão volta ao normal — sinal de que o mesmo Deus que fere também restaura.",
+    "Água tirada do Nilo, derramada em terra seca, se transforma em sangue diante dos olhos do povo — um prenúncio direto da primeira das pragas que ainda cairiam sobre o Egito."
+  ];
+  function selectSignChip(btn, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('signText').textContent = signData[i];
   }
 </script>
 <script defer src="../../volver-app.js"></script>

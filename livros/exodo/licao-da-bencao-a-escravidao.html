@@ -69,6 +69,14 @@
         <div class="tl-card">
           <p>"Levantou-se um novo rei sobre o Egito, que não conhecia a José" (1.8) — e esse rei vê nos israelitas não um povo abençoado, mas uma ameaça: "eis que o povo dos filhos de Israel é mais numeroso... vamos usar de astúcia para com ele" (1.9-10). Impõe trabalhos forçados, construindo as cidades de Pitom e Ramessés — mas "quanto mais o afligiam, tanto mais se multiplicava" (1.12).</p>
           <p>Faraó então escala a perseguição: ordena às parteiras hebreias, Sifrá e Puá, que matem todo menino ao nascer. Elas, porém, "temeram a Deus, e não fizeram como o rei do Egito lhes ordenara" (1.17), enganando o próprio faraó para salvar as crianças — e Deus as recompensa com suas próprias famílias. Faraó, frustrado, dá a ordem mais brutal ainda: todo menino hebreu deveria ser lançado no rio Nilo.</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, escaladaFarao, 0, 'escaladaTexto')">1. Trabalhos forçados</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, escaladaFarao, 1, 'escaladaTexto')">2. Ordem secreta às parteiras</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, escaladaFarao, 2, 'escaladaTexto')">3. Lançar os meninos no Nilo</button>
+          </div>
+          <div class="chip-text" id="escaladaTexto">Toque em cada etapa para ver como a perseguição de faraó foi escalando.</div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → um bebê salvo das águas</button>
         </div>
       </div>
@@ -158,6 +166,12 @@
 </div>
 
 <script>
+  const escaladaFarao = [
+    {text:"Impõe trabalhos forçados sobre o povo, construindo as cidades de Pitom e Ramessés — mas \"quanto mais o afligiam, tanto mais se multiplicava\" (1.12). A opressão pública não funciona."},
+    {text:"Ordena em segredo às parteiras Sifrá e Puá que matem todo menino hebreu ao nascer. Elas \"temeram a Deus\" e desobedecem, enganando o próprio faraó para salvar as crianças (1.17)."},
+    {text:"Frustrado, faraó abandona o segredo e dá a ordem mais brutal: todo menino hebreu deveria ser lançado no rio Nilo — a perseguição se torna decreto público e total."}
+  ];
+
   let currentMax = 1;
 
   function openStage(n){
@@ -196,6 +210,12 @@
       title.textContent = "Um silêncio que já estava sendo respondido";
       text.textContent = "É o que o texto revela por trás do silêncio: um bebê preservado nas próprias águas da morte, um libertador sendo formado em segredo dentro do palácio inimigo — Deus já agindo, muito antes de qualquer sinal visível disso.";
     }
+  }
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
   }
 </script>
 <script defer src="../../volver-app.js"></script>

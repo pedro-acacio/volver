@@ -45,6 +45,11 @@
         <div class="tl-card">
           <p>A tradição judaica e cristã atribui Êxodo a Moisés — e o próprio livro registra Moisés escrevendo: "as tábuas do pacto foram entregues por Moisés" e "escreveu Moisés todas as palavras do Senhor" (24.4). Jesus e os apóstolos citam Êxodo repetidamente como palavra de Moisés (por exemplo, Marcos 12.26; João 5.46).</p>
           <p>Quanto à data, há um debate real entre estudiosos fiéis às Escrituras: uma data antiga, por volta de 1446 a.C., apoiada numa leitura direta de 1 Reis 6.1 ("480 anos antes... do quarto ano do reinado de Salomão"); e uma data mais tardia, no século 13 a.C., apoiada na menção da cidade de "Ramessés" (1.11), construída sob o faraó Ramessés II. Este projeto não tenta resolver esse debate — o que importa é que, em qualquer uma das datas, o livro registra um evento histórico real: a libertação de um povo escravo por meio de sinais que nenhuma nação vizinha jamais reivindicou ter presenciado.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, datingData, 0, 'datingText')">Data antiga · 1446 a.C.</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, datingData, 1, 'datingText')">Data tardia · século 13 a.C.</button>
+          </div>
+          <div class="chip-text" id="datingText">Toque em cada visão para ver em que evidência ela se apoia.</div>
           <button class="continue-btn" onclick="openStage(2)">Continuar → o nome do livro</button>
         </div>
       </div>
@@ -158,6 +163,10 @@
 </div>
 
 <script>
+  const datingData = [
+    { text: "Lê 1 Reis 6.1 de forma direta: o templo de Salomão começou a ser erguido '480 anos' depois do êxodo, o que aponta para o reinado de Amenhotep II como o faraó da libertação." },
+    { text: "Parte da menção da cidade de 'Ramessés' (1.11), construída sob o faraó Ramessés II (por volta de 1279-1213 a.C.), sugerindo um êxodo no reinado de seu sucessor, Merneptah." }
+  ];
   const partsData = [
     { text: "Êxodo 1—18: Deus liberta seu povo por meio de Moisés — da opressão no Egito, passando pelas dez pragas e a travessia do mar Vermelho, até a chegada ao Sinai." },
     { text: "Êxodo 19—24: Deus faz uma aliança formal com Israel no monte Sinai — os Dez Mandamentos e o Livro da Aliança, selados com sangue e uma refeição diante de Deus." },

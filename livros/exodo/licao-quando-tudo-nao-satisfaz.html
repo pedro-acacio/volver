@@ -103,6 +103,18 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Deus manda Moisés cortar duas novas tábuas de pedra, e desce numa nuvem para proclamar, em voz alta, o próprio caráter: "o Senhor, o Senhor Deus, misericordioso e piedoso, tardio em irar-se, e grande em beneficência e verdade... que perdoa a iniquidade, a transgressão e o pecado, mas que ao culpado não tem por inocente" (34.6-7) — a descrição mais citada de Deus em todo o Antigo Testamento. Moisés se inclina imediatamente e adora.</p>
+
+          <p>Toque em cada parte do nome que Deus proclama sobre si mesmo:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, characterData, 0, 'characterText')">Misericordioso</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, characterData, 1, 'characterText')">Piedoso</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, characterData, 2, 'characterText')">Tardio em irar-se</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, characterData, 3, 'characterText')">Grande em beneficência e verdade</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, characterData, 4, 'characterText')">Perdoa a iniquidade</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, characterData, 5, 'characterText')">Não tem o culpado por inocente</button>
+          </div>
+          <div class="chip-text" id="characterText" style="margin-bottom:14px;">Toque em cada palavra para ver o que ela revela sobre Deus.</div>
+
           <p>A aliança é renovada. Moisés passa mais quarenta dias no monte sem comer nem beber, escrevendo de novo as palavras da aliança. Quando desce, seu rosto brilha de tal forma, por ter falado com Deus, que ele precisa cobri-lo com um véu ao falar com o povo — descobrindo-o apenas quando voltava a entrar na presença do Senhor.</p>
           <button class="continue-btn" onclick="openStage(5)">Continuar → de glória em glória</button>
         </div>
@@ -154,6 +166,20 @@
 </div>
 
 <script>
+  const characterData = [
+    { text: "\"Rahum\" — a compaixão de quem se inclina sobre o sofrimento alheio como um pai sobre um filho, mesmo quando esse sofrimento nasceu da própria rebeldia do povo, como no bezerro de ouro." },
+    { text: "\"Hanun\" — um favor que ninguém merece nem pode comprar, que se derrama sobre o mais fraco só porque quer, não porque é devido." },
+    { text: "Deus não reage por impulso. Foi essa paciência que abriu espaço para que Moisés intercedesse e o povo, mesmo depois do bezerro de ouro, tivesse uma nova chance." },
+    { text: "\"Hesed\" e \"emet\" juntos — uma lealdade de aliança que permanece firme mesmo quando a outra parte falha, e uma verdade que nunca muda de acordo com as circunstâncias." },
+    { text: "Três palavras hebraicas diferentes cobrem todo o espectro do mal humano — do erro sem querer à rebelião deliberada — e todas cabem dentro do perdão que Deus oferece." },
+    { text: "A mesma boca que acaba de proclamar perdão também recusa fingir que o mal não aconteceu. A graça de Deus é real, mas nunca finge que a justiça é dispensável." }
+  ];
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
   let currentMax = 1;
 
   function openStage(n){

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .sinai-row{ display:flex; align-items:center; gap:7px; margin: 10px 0 4px; flex-wrap:wrap; }
+  .sinai-dot{ width:10px; height:10px; border-radius:50%; background: var(--panel-line); transition: background .35s ease; }
+  .sinai-dot.lit{ background: var(--worry); }
+  .sinai-label{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); width:100%; margin: 6px 0 14px; }
 </style>
 </head>
 <body>
@@ -63,6 +67,11 @@
         <div class="tl-card">
           <p>Na manhã do terceiro dia: trovões, relâmpagos, uma nuvem espessa sobre o monte, e o som de uma trombeta tão forte que todo o acampamento treme. "E o monte Sinai todo fumegava, porque o Senhor descera sobre ele em fogo; e a sua fumaça subia como a fumaça de uma fornalha, e todo o monte tremia grandemente" (19.18). O som da trombeta ia crescendo cada vez mais.</p>
           <p>Deus chama Moisés ao topo do monte, mas avisa de novo sobre o limite — o povo não deveria forçar passagem para olhar, sob pena de morte. Essa não é uma cena de calor acolhedor: é a manifestação visível de uma santidade que exige distância e reverência absolutas.</p>
+
+          <div class="sinai-row" id="sinaiRow"></div>
+          <div class="sinai-label" id="sinaiLabel">0 de 6 sinais</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealSinai()" id="sinaiBtn">Ver os sinais aparecerem, um a um</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → os Dez Mandamentos</button>
         </div>
       </div>
@@ -152,6 +161,30 @@
 </div>
 
 <script>
+  const sinaiSigns = [
+    'Trovões ecoam sobre o monte (19.16)',
+    'Relâmpagos cortam o céu (19.16)',
+    'Uma nuvem espessa cobre o Sinai (19.16)',
+    'O som de trombeta, cada vez mais forte (19.16,19)',
+    'O monte inteiro em fumaça, como fumaça de fornalha (19.18)',
+    'O monte treme grandemente (19.18)'
+  ];
+  function buildSinaiDots(){
+    const el = document.getElementById('sinaiRow');
+    for (let i = 0; i < 6; i++){ const d = document.createElement('div'); d.className = 'sinai-dot'; el.appendChild(d); }
+  }
+  buildSinaiDots();
+  function revealSinai(){
+    const dots = document.querySelectorAll('#sinaiRow .sinai-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('sinaiLabel').textContent = (i + 1) + ' de 6 — ' + sinaiSigns[i];
+    }, i * 260));
+    setTimeout(() => {
+      document.getElementById('sinaiBtn').textContent = 'Os seis sinais, um só monte em chamas';
+    }, 6 * 260);
+  }
+
   let currentMax = 1;
 
   function openStage(n){
