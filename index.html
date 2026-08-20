@@ -104,12 +104,19 @@
   .row-count{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-left:auto; }
 
   .row-scroll{
-    display:flex; gap:14px; overflow-x:auto; padding: 2px 2px 12px;
-    scrollbar-width: thin; scrollbar-color: var(--panel-line) transparent;
+    display:flex; gap:14px; overflow-x:auto; padding: 2px 2px 4px;
+    scrollbar-width: none;
   }
-  .row-scroll::-webkit-scrollbar{ height:6px; }
-  .row-scroll::-webkit-scrollbar-thumb{ background: var(--panel-line); border-radius:6px; }
-  .row-scroll::-webkit-scrollbar-track{ background: transparent; }
+  .row-scroll::-webkit-scrollbar{ display:none; }
+
+  .row-scrollbar{
+    position:relative; height:4px; margin:0 2px 12px; border-radius:4px;
+    background: transparent;
+  }
+  .row-scrollbar-thumb{
+    position:absolute; top:0; left:0; height:100%; min-width:24px;
+    border-radius:4px; background: var(--panel-line);
+  }
 
   .show-card{
     flex: 0 0 200px; background: var(--panel); border:1px solid var(--panel-line);
@@ -3312,15 +3319,15 @@
           <li><a href="parabolas/biblioteca-parabolas.html" data-i18n="cat_parabolas">Parábolas</a></li>
           <li><a href="livros/biblioteca-livros.html" data-i18n="cat_livros">Livros</a></li>
           <li><a href="salmos/biblioteca-salmos.html" data-i18n="cat_salmos">Salmos</a></li>
+          <li><a href="proverbios/biblioteca-proverbios.html" data-i18n="cat_proverbios">Provérbios</a></li>
+          <li><a href="personagens/biblioteca-personagens.html" data-i18n="cat_personagens">Personagens</a></li>
+          <li><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html" data-i18n="cat_fruto-do-espirito">Fruto do Espírito</a></li>
+          <li><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html" data-i18n="cat_disciplinas-espirituais">Disciplinas Espirituais</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>&nbsp;</h4>
         <ul>
-          <li><a href="proverbios/biblioteca-proverbios.html" data-i18n="cat_proverbios">Provérbios</a></li>
-          <li><a href="personagens/biblioteca-personagens.html" data-i18n="cat_personagens">Personagens</a></li>
-          <li><a href="fruto-do-espirito/biblioteca-fruto-do-espirito.html" data-i18n="cat_fruto-do-espirito">Fruto do Espírito</a></li>
-          <li><a href="disciplinas-espirituais/biblioteca-disciplinas-espirituais.html" data-i18n="cat_disciplinas-espirituais">Disciplinas Espirituais</a></li>
           <li><a href="trindade/biblioteca-trindade.html" data-i18n="cat_trindade">Trindade</a></li>
           <li><a href="mordomia-crista/biblioteca-mordomia-crista.html" data-i18n="cat_mordomia-crista">Mordomia Cristã</a></li>
           <li><a href="bem-aventurancas/biblioteca-bem-aventurancas.html" data-i18n="cat_bem-aventurancas">Bem-aventuranças</a></li>
@@ -3382,6 +3389,29 @@
     });
 
     noResults.style.display = (q && !anyVisible) ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.row-scroll').forEach(function(scroller){
+    const bar = document.createElement('div');
+    bar.className = 'row-scrollbar';
+    const thumb = document.createElement('div');
+    thumb.className = 'row-scrollbar-thumb';
+    bar.appendChild(thumb);
+    scroller.insertAdjacentElement('afterend', bar);
+
+    function update(){
+      const scrollable = scroller.scrollWidth > scroller.clientWidth + 1;
+      bar.style.display = scrollable ? '' : 'none';
+      if(!scrollable) return;
+      const thumbPct = Math.max((scroller.clientWidth / scroller.scrollWidth) * 100, 8);
+      const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+      const posPct = maxScroll > 0 ? (scroller.scrollLeft / maxScroll) * (100 - thumbPct) : 0;
+      thumb.style.width = thumbPct + '%';
+      thumb.style.left = posPct + '%';
+    }
+    scroller.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   });
 </script>
 <script defer src="volver-app.js"></script>

@@ -106,7 +106,7 @@
   // Needs pt/en/es explicitly — there is no static DOM to fall back to for these.
   var I18N_JS = {
     pt: {
-      menu_btn_aria: 'Abrir menu', sidebar_close_aria: 'Fechar menu', sidebar_home: 'Início',
+      menu_btn_aria: 'Abrir menu', sidebar_close_aria: 'Fechar menu', sidebar_home: 'Reflexões',
       sidebar_favoritos: 'Favoritos', sidebar_continue: 'Continue a Volver', sidebar_perfil: 'Perfil',
       sidebar_config: 'Configurações', sidebar_theme_label: 'Tema', theme_toggle_aria: 'Alternar tema claro/escuro',
       back_btn: 'Voltar', back_btn_aria: 'Voltar',
@@ -157,7 +157,7 @@
       ]
     },
     en: {
-      menu_btn_aria: 'Open menu', sidebar_close_aria: 'Close menu', sidebar_home: 'Home',
+      menu_btn_aria: 'Open menu', sidebar_close_aria: 'Close menu', sidebar_home: 'Reflections',
       sidebar_favoritos: 'Favorites', sidebar_continue: 'Continue in Volver', sidebar_perfil: 'Profile',
       sidebar_config: 'Settings', sidebar_theme_label: 'Theme', theme_toggle_aria: 'Toggle light/dark theme',
       back_btn: 'Back', back_btn_aria: 'Back',
@@ -208,7 +208,7 @@
       ]
     },
     es: {
-      menu_btn_aria: 'Abrir menú', sidebar_close_aria: 'Cerrar menú', sidebar_home: 'Inicio',
+      menu_btn_aria: 'Abrir menú', sidebar_close_aria: 'Cerrar menú', sidebar_home: 'Reflexiones',
       sidebar_favoritos: 'Favoritos', sidebar_continue: 'Continuar en Volver', sidebar_perfil: 'Perfil',
       sidebar_config: 'Configuración', sidebar_theme_label: 'Tema', theme_toggle_aria: 'Alternar tema claro/oscuro',
       back_btn: 'Volver', back_btn_aria: 'Volver',
