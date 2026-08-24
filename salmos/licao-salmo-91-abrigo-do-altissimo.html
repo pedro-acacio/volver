@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .voz-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .voz-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .voz-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .voz-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .voz-list{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); margin: 4px 0 16px; min-height: 18px; }
 </style>
 </head>
 <body>
@@ -87,6 +92,10 @@
         <div class="tl-card">
           <p><em>"Porquanto tanto me amou, também eu o livrarei... Invocar-me-á, e eu lhe responderei; estarei com ele na angústia, livrá-lo-ei, e o glorificarei."</em> (v.14-15)</p>
           <p>No final, o salmo muda de voz — de quem descreve o abrigo (v.1-13) para o próprio Deus falando na primeira pessoa. A promessa não é ausência de angústia ("estarei com ele na angústia"), mas presença dentro dela.</p>
+          <p>Conte quantas vezes esse "eu" aparece nesses três versículos — cada verbo é uma promessa que só Deus pode fazer:</p>
+          <div class="voz-row" id="vozRow"></div>
+          <div class="voz-list" id="vozList"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarVoz()" id="vozBtn">Revelar, uma promessa por vez</button>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +146,41 @@
     { text: "\"Do laço do passarinheiro\" e \"da mortandade que se alastra às escuras\" (v.3, 6) — os perigos que nem se percebe vindo, e que ainda assim o salmo inclui na mesma promessa." },
     { text: "Flecha, peste ao meio-dia, guerra (v.5-6) — os perigos visíveis, os que dão para nomear e temer." }
   ];
+
+  const vozPromessas = [
+    "eu o livrarei",
+    "pô-lo-ei em retiro alto",
+    "eu lhe responderei",
+    "estarei com ele na angústia",
+    "livrá-lo-ei",
+    "o glorificarei",
+    "fartá-lo-ei de dias",
+    "mostrarei a minha salvação"
+  ];
+
+  function buildVozDots(){
+    const el = document.getElementById('vozRow');
+    vozPromessas.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'voz-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'voz-label';
+    label.id = 'vozLabel';
+    label.textContent = '0 de ' + vozPromessas.length;
+    el.appendChild(label);
+  }
+  buildVozDots();
+
+  function revelarVoz(){
+    const dots = document.querySelectorAll('#vozRow .voz-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 220));
+    setTimeout(() => {
+      document.getElementById('vozLabel').textContent = vozPromessas.length + ' de ' + vozPromessas.length;
+      document.getElementById('vozList').textContent = vozPromessas.join(' · ');
+    }, dots.length * 220);
+  }
 
   let currentMax = 1;
 

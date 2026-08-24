@@ -44,6 +44,17 @@
         <div class="tl-card">
           <p><em>"Como a corça brama pelas correntes das águas, assim suspira a minha alma por ti, ó Deus. A minha alma tem sede de Deus, do Deus vivo."</em> (v.1-2)</p>
           <p>A imagem é de urgência física — sede, não preferência. O salmista não está apenas triste; está desesperado por uma proximidade com Deus que, no momento, não consegue sentir.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnCorca" onclick="showSede('corca')">A corça e as águas</button>
+            <button class="toggle-btn" id="btnAlma" onclick="showSede('alma')">A alma e Deus</button>
+          </div>
+          <div class="outcome" id="sedeCard">
+            <div class="outcome-visual" id="sedeVisual"></div>
+            <h3 id="sedeTitle"></h3>
+            <p id="sedeText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → memória e presente</button>
         </div>
       </div>
@@ -137,6 +148,28 @@
     { text: "\"As minhas lágrimas têm sido o meu alimento de dia e de noite, enquanto me dizem: Onde está o teu Deus?\" (v.3) — a distância entre a memória boa e a experiência presente é o próprio motivo do lamento." },
     { text: "\"Lembro-me destas coisas... como eu ia com a multidão, e com ela entrava na casa de Deus, com voz de alegria\" (v.4) — a memória de adoração vivida, cheia de som e comunidade." }
   ];
+
+  function showSede(tipo){
+    const btnCorca = document.getElementById('btnCorca');
+    const btnAlma = document.getElementById('btnAlma');
+    btnCorca.classList.remove('active-worry');
+    btnAlma.classList.remove('active-calm');
+    const visual = document.getElementById('sedeVisual');
+    const title = document.getElementById('sedeTitle');
+    const text = document.getElementById('sedeText');
+
+    if (tipo === 'corca'){
+      btnCorca.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A sede física";
+      text.textContent = "Uma corça sem água não hesita nem argumenta — ela precisa, e busca, porque a vida dela depende disso. É uma urgência do corpo, imediata e sem disfarce.";
+    } else {
+      btnAlma.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A sede da alma";
+      text.textContent = "O salmista usa a mesma urgência para descrever a falta de Deus — não como preferência religiosa, mas como uma necessidade tão real quanto a sede do corpo.";
+    }
+  }
 
   let currentMax = 1;
 

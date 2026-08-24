@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .coalizao-row{ display:flex; align-items:center; gap:16px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .coalizao-step{ display:flex; flex-direction:column; align-items:center; gap:6px; opacity:.35; transition: opacity .3s ease; }
+  .coalizao-step.lit{ opacity:1; }
+  .coalizao-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .coalizao-step.lit .coalizao-dot{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .coalizao-word{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .coalizao-step.lit .coalizao-word{ color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -44,6 +51,16 @@
         <div class="tl-card">
           <p><em>"Por que se amotinam as nações, e os povos imaginam coisas vãs? Os reis da terra se levantam, e os príncipes juntamente se aconselham, contra o SENHOR e contra o seu ungido."</em> (v.1-2)</p>
           <p>O salmo abre com uma cena de rebelião coordenada — nações e reis conspirando contra Deus e "o seu ungido" (em hebraico, mashiach — Messias). É contra essa aliança de resistência que o restante do salmo responde.</p>
+
+          <div class="coalizao-row" id="coalizaoRow">
+            <div class="coalizao-step" data-step="0"><div class="coalizao-dot"></div><span class="coalizao-word">nações</span></div>
+            <div class="coalizao-step" data-step="1"><div class="coalizao-dot"></div><span class="coalizao-word">povos</span></div>
+            <div class="coalizao-step" data-step="2"><div class="coalizao-dot"></div><span class="coalizao-word">reis</span></div>
+            <div class="coalizao-step" data-step="3"><div class="coalizao-dot"></div><span class="coalizao-word">príncipes</span></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarCoalizao()" id="coalizaoBtn">Ver a aliança se formar, um grupo por vez</button>
+          <div class="chip-text" id="coalizaoText">Toque no botão para ver como a resistência se organiza, camada por camada.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a reação do céu e o decreto do rei</button>
         </div>
       </div>
@@ -155,6 +172,21 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarCoalizao(){
+    const steps = document.querySelectorAll('#coalizaoRow .coalizao-step');
+    const textos = [
+      "As nações se amotinam (v.1) — o primeiro círculo da revolta, movido por instinto coletivo.",
+      "Os povos imaginam coisas vãs (v.1) — a revolta ganha um projeto, ainda que vazio de fundamento.",
+      "Os reis da terra se levantam (v.2) — o poder político formaliza a resistência.",
+      "Os príncipes juntamente se aconselham (v.2) — a aliança se fecha, coordenada, contra o SENHOR e o seu ungido."
+    ];
+    const out = document.getElementById('coalizaoText');
+    steps.forEach((s, i) => setTimeout(() => {
+      s.classList.add('lit');
+      out.textContent = textos[i];
+    }, i * 700));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

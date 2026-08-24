@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .passos-row{ display:flex; align-items:center; gap:18px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .passo-step{ display:flex; flex-direction:column; align-items:center; gap:6px; opacity:.35; transition: opacity .3s ease; }
+  .passo-step.lit{ opacity:1; }
+  .passo-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .passo-step.lit .passo-dot{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .passo-word{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .passo-step.lit .passo-word{ color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -44,6 +51,15 @@
         <div class="tl-card">
           <p><em>"Bem-aventurado o homem que não anda no conselho dos ímpios, nem se detém no caminho dos pecadores, nem se assenta na roda dos escarnecedores."</em> (v.1)</p>
           <p>Os três verbos — andar, deter-se, assentar — descrevem um processo, não um evento único. O salmo descreve como uma influência ruim normalmente se instala: primeiro um passeio ocasional, depois uma parada mais longa, por fim um lugar fixo.</p>
+
+          <div class="passos-row" id="passosRow">
+            <div class="passo-step" data-step="0"><div class="passo-dot"></div><span class="passo-word">anda</span></div>
+            <div class="passo-step" data-step="1"><div class="passo-dot"></div><span class="passo-word">detém-se</span></div>
+            <div class="passo-step" data-step="2"><div class="passo-dot"></div><span class="passo-word">assenta-se</span></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarPassos()" id="passosBtn">Ver o processo, um passo por vez</button>
+          <div class="chip-text" id="passosText">Toque no botão para ver como o processo avança, passo a passo.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → as duas imagens do salmo</button>
         </div>
       </div>
@@ -155,6 +171,20 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarPassos(){
+    const steps = document.querySelectorAll('#passosRow .passo-step');
+    const textos = [
+      "Passo 1 — anda: um contato ocasional, um passeio no território de quem despreza a fé.",
+      "Passo 2 — detém-se: o passeio vira parada; já não é só passagem, é permanência.",
+      "Passo 3 — assenta-se: a parada vira lugar fixo — agora é ali que a pessoa mora."
+    ];
+    const out = document.getElementById('passosText');
+    steps.forEach((s, i) => setTimeout(() => {
+      s.classList.add('lit');
+      out.textContent = textos[i];
+    }, i * 700));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

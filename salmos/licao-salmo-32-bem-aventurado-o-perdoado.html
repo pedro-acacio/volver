@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .peso-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .peso-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .peso-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .peso-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .peso-list{ list-style:none; margin: 8px 0 0; padding:0; display:flex; flex-direction:column; gap:7px; }
+  .peso-list li{ font-size:14px; line-height:1.5; opacity:0; transform: translateY(4px); transition: opacity .35s ease, transform .35s ease, color .35s ease; color: var(--text-faint); }
+  .peso-list li.shown{ opacity:1; transform: translateY(0); color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -44,6 +51,12 @@
         <div class="tl-card">
           <p><em>"Enquanto guardei silêncio, envelheceram os meus ossos pelo meu bramido durante todo o dia. Porque de dia e de noite a tua mão pesava sobre mim."</em> (v.3-4)</p>
           <p>Antes de descrever o perdão, o salmo descreve com precisão física o custo de escondê-lo — ossos envelhecidos, força seca "como no ardor do estio" (v.4). O silêncio não trouxe paz nenhuma; trouxe desgaste.</p>
+
+          <p style="margin-bottom:0;">Toque para revelar, um a um, os sinais que o corpo carregava enquanto a boca ficava calada:</p>
+          <div class="peso-row" id="pesoRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPeso()" id="pesoBtn">Ver os sinais, um a um</button>
+          <ul class="peso-list" id="pesoList"></ul>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → esconder e confessar</button>
         </div>
       </div>
@@ -137,6 +150,32 @@
     { text: "Silêncio guardado por vergonha ou orgulho — e o peso que cresce exatamente por não ser dito." },
     { text: "\"Confessei-te o meu pecado, e a minha maldade não encobri... e tu perdoaste a maldade do meu pecado\" (v.5) — o alívio chega no mesmo verso em que a confissão é feita, sem demora." }
   ];
+
+  const pesoSintomas = [
+    "\"Envelheceram os meus ossos\" (v.3) — o corpo sente o peso que a boca não diz.",
+    "\"Pelo meu bramido durante todo o dia\" (v.3) — o silêncio guardado por dentro vira gemido constante.",
+    "\"De dia e de noite a tua mão pesava sobre mim\" (v.4) — não havia hora de descanso do peso.",
+    "\"O meu humor se tornou em sequidão de estio\" (v.4) — a força seca aos poucos, como na estação mais árida."
+  ];
+
+  function buildPesoDots(){
+    const el = document.getElementById('pesoRow');
+    pesoSintomas.forEach(() => { const d = document.createElement('div'); d.className = 'peso-dot'; el.appendChild(d); });
+    const label = document.createElement('span'); label.className = 'peso-label'; label.id = 'pesoLabel'; label.textContent = '0 de ' + pesoSintomas.length; el.appendChild(label);
+    const list = document.getElementById('pesoList');
+    pesoSintomas.forEach(txt => { const li = document.createElement('li'); li.textContent = txt; list.appendChild(li); });
+  }
+  buildPesoDots();
+
+  function revealPeso(){
+    const dots = document.querySelectorAll('#pesoRow .peso-dot');
+    const items = document.querySelectorAll('#pesoList li');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      items[i].classList.add('shown');
+      document.getElementById('pesoLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 260));
+  }
 
   let currentMax = 1;
 

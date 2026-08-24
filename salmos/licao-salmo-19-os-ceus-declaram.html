@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .sixfold-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .sixfold-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .sixfold-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .sixfold-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p><em>"Mais desejáveis são do que o ouro, sim, do que muito ouro fino; e mais doces do que o mel e o licor de favos."</em> (v.10)</p>
           <p>Depois de descrever a lei como perfeita, certa e pura (v.7-9), o salmo muda de tom descritivo para afetivo — não apenas verdadeira, mas desejável, doce. A resposta correta à revelação de Deus não é só reconhecimento intelectual, é apetite.</p>
+
+          <div class="sixfold-seq-row" id="sixfoldSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealSixfold()" id="sixfoldSeqBtn">Ver as seis descrições da lei, uma por uma</button>
+          <div class="chip-text" id="sixfoldText">Toque no botão acima para revelar como o salmo descreve a lei, de seis maneiras diferentes (v.7-9).</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +164,40 @@
     }, 120);
   }
   openStage(1);
+
+  const sixfoldData = [
+    { name: "A lei do SENHOR é perfeita", effect: "refrigera a alma" },
+    { name: "O testemunho do SENHOR é fiel", effect: "dá sabedoria aos símplices" },
+    { name: "Os preceitos do SENHOR são retos", effect: "alegram o coração" },
+    { name: "O mandamento do SENHOR é puro", effect: "alumia os olhos" },
+    { name: "O temor do SENHOR é limpo", effect: "permanece para sempre" },
+    { name: "Os juízos do SENHOR são verdadeiros", effect: "e justos juntamente" }
+  ];
+
+  function buildSixfoldDots(){
+    const el = document.getElementById('sixfoldSeqRow');
+    sixfoldData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'sixfold-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'sixfold-label';
+    label.id = 'sixfoldLabel';
+    label.textContent = '0 de 6';
+    el.appendChild(label);
+  }
+  buildSixfoldDots();
+
+  function revealSixfold(){
+    const dots = document.querySelectorAll('#sixfoldSeqRow .sixfold-dot');
+    const textEl = document.getElementById('sixfoldText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = sixfoldData[i].name + " — " + sixfoldData[i].effect + ".";
+      document.getElementById('sixfoldLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

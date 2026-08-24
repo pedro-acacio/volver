@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .lamento-row{ display:flex; align-items:center; gap:16px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .lamento-step{ display:flex; flex-direction:column; align-items:center; gap:6px; opacity:.35; transition: opacity .3s ease; }
+  .lamento-step.lit{ opacity:1; }
+  .lamento-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .lamento-step.lit .lamento-dot{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .lamento-word{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .lamento-step.lit .lamento-word{ color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -44,6 +51,16 @@
         <div class="tl-card">
           <p><em>"Até quando, SENHOR? Esquecer-te-ás de mim para sempre? Até quando esconderás de mim o teu rosto?"</em> (v.1)</p>
           <p>A mesma pergunta se repete quatro vezes seguidas nos dois primeiros versos, com pequenas variações — até quando serei esquecido, até quando meu rosto será escondido, até quando o inimigo vencerá. É lamento sem rodeios, dirigido direto a Deus, não escondido dele.</p>
+
+          <div class="lamento-row" id="lamentoRow">
+            <div class="lamento-step" data-step="0"><div class="lamento-dot"></div><span class="lamento-word">1ª vez</span></div>
+            <div class="lamento-step" data-step="1"><div class="lamento-dot"></div><span class="lamento-word">2ª vez</span></div>
+            <div class="lamento-step" data-step="2"><div class="lamento-dot"></div><span class="lamento-word">3ª vez</span></div>
+            <div class="lamento-step" data-step="3"><div class="lamento-dot"></div><span class="lamento-word">4ª vez</span></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarLamento()" id="lamentoBtn">Ver os quatro "até quando", um a um</button>
+          <div class="chip-text" id="lamentoText">Toque no botão para ver as quatro perguntas que abrem o salmo (v.1-2).</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → o pedido e o medo por trás dele</button>
         </div>
       </div>
@@ -155,6 +172,21 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarLamento(){
+    const steps = document.querySelectorAll('#lamentoRow .lamento-step');
+    const textos = [
+      "Até quando, SENHOR? Esquecer-te-ás de mim para sempre? (v.1) — o medo de ser esquecido de vez.",
+      "Até quando esconderás de mim o teu rosto? (v.1) — o medo de que Deus tenha se afastado.",
+      "Até quando terei conselhos na minha alma, tendo tristeza no meu coração cada dia? (v.2) — o cansaço de sofrer sem alívio, dia após dia.",
+      "Até quando se exaltará o meu inimigo sobre mim? (v.2) — o medo de que o sofrimento pareça vitória do inimigo."
+    ];
+    const out = document.getElementById('lamentoText');
+    steps.forEach((s, i) => setTimeout(() => {
+      s.classList.add('lit');
+      out.textContent = textos[i];
+    }, i * 700));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

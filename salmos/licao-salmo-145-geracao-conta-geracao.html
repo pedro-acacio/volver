@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .attr-row{ display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 16px; }
+  .attr-pill{ padding:6px 12px; border-radius:14px; background: var(--panel); border:1px solid var(--panel-line); font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-faint); opacity:.4; transform: scale(.9); transition: opacity .35s ease, transform .3s cubic-bezier(.34,1.56,.64,1), background .3s ease, color .3s ease, box-shadow .3s ease; }
+  .attr-pill.lit{ opacity:1; transform: scale(1); background: var(--calm); color: var(--bg); box-shadow: 0 0 9px 1px var(--calm); }
 </style>
 </head>
 <body>
@@ -87,6 +90,11 @@
         <div class="tl-card">
           <p><em>"Piedoso e misericordioso é o SENHOR; longânimo e grande em benignidade."</em> (v.8)</p>
           <p>O salmo não separa a grandeza de Deus do seu caráter — o mesmo Deus "insondável" é descrito, verso a verso, com atributos concretos: paciente, bom, fiel às suas promessas (v.13). Louvor bíblico nunca é admiração vaga; é resposta a um caráter específico.</p>
+
+          <p>O caráter de Deus descrito verso a verso. Veja os atributos surgindo, um a um.</p>
+          <div class="attr-row" id="attrRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealAttrs()" id="attrBtn">Ver os atributos, um a um</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +145,24 @@
     { text: "\"Uma geração louvará as tuas obras à outra\" (v.4) — o louvor não é privado; ele é ensinado, contado, passado adiante." },
     { text: "\"Perto está o SENHOR de todos os que o invocam\" (v.18) — o mesmo Deus insondável é descrito, poucos versos depois, como próximo de quem o busca de verdade." }
   ];
+
+  const attrWords = ['Piedoso','Misericordioso','Longânimo','Bondoso','Bom para todos','Fiel em suas palavras','Justo em seus caminhos'];
+
+  function buildAttrRow(){
+    const el = document.getElementById('attrRow');
+    attrWords.forEach(w => {
+      const p = document.createElement('span');
+      p.className = 'attr-pill';
+      p.textContent = w;
+      el.appendChild(p);
+    });
+  }
+  buildAttrRow();
+
+  function revealAttrs(){
+    const pills = document.querySelectorAll('#attrRow .attr-pill');
+    pills.forEach((p, i) => setTimeout(() => p.classList.add('lit'), i * 220));
+  }
 
   let currentMax = 1;
 

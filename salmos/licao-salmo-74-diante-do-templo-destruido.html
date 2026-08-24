@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .s74pet-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .s74pet-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .s74pet-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .s74pet-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p><em>"Levanta-te, ó Deus, pleiteia a tua própria causa; lembra-te da afronta que o louco te faz cada dia."</em> (v.22)</p>
           <p>O pedido final reformula todo o lamento como algo que diz respeito ao próprio nome de Deus, não só ao sofrimento do povo — a causa que precisa ser defendida é chamada de "a tua própria causa".</p>
+
+          <div class="s74pet-seq-row" id="s74PetSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealS74Peticoes()" id="s74PetBtn">Ver os pedidos finais, um por um</button>
+          <div class="chip-text" id="s74PetText">Toque no botão acima para ver, em sequência, os pedidos com que o salmo se encerra (v.18-23).</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +164,39 @@
     }, 120);
   }
   openStage(1);
+
+  const s74PeticoesData = [
+    { text: "\"Lembra-te disto: que o inimigo afrontou ao SENHOR, e que um povo louco blasfemou o teu nome\" (v.18) — pede que Deus se lembre da ofensa feita contra o próprio nome dele." },
+    { text: "\"Não entregues às feras a alma da tua rola; não te esqueças para sempre da vida dos teus aflitos\" (v.19) — pede proteção para um povo indefeso, comparado a uma pomba." },
+    { text: "\"Atenta para o teu concerto, pois os lugares tenebrosos da terra estão cheios de moradas de crueldade\" (v.20) — invoca a aliança feita no passado como base do pedido presente." },
+    { text: "\"Não volte envergonhado o oprimido; louvem o teu nome o aflito e o necessitado\" (v.21) — pede que o desfecho seja louvor, não vergonha." },
+    { text: "\"Levanta-te, ó Deus, pleiteia a tua própria causa... não te esqueças dos gritos dos teus adversários\" (v.22-23) — o clímax: que o próprio Deus se levante para agir." }
+  ];
+
+  function buildS74PetDots(){
+    const el = document.getElementById('s74PetSeqRow');
+    s74PeticoesData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 's74pet-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 's74pet-label';
+    label.id = 's74PetLabel';
+    label.textContent = '0 de ' + s74PeticoesData.length;
+    el.appendChild(label);
+  }
+  buildS74PetDots();
+
+  function revealS74Peticoes(){
+    const dots = document.querySelectorAll('#s74PetSeqRow .s74pet-dot');
+    const textEl = document.getElementById('s74PetText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = s74PeticoesData[i].text;
+      document.getElementById('s74PetLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

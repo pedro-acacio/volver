@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .profecias-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .profecias-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .profecias-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .profecias-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,11 @@
         <div class="tl-card">
           <p><em>"Deus meu, Deus meu, por que me desamparaste? Por que te alongas do meu auxílio, e das palavras do meu bramido?"</em> (v.1)</p>
           <p>Essas são as mesmas palavras que Jesus grita na cruz (Mateus 27:46, Marcos 15:34) — um lamento que começa em abandono aparente, sem suavizar a dor antes de nomeá-la.</p>
+
+          <div class="profecias-seq-row" id="profeciasSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealProfecias()" id="profeciasSeqBtn">Ver as profecias, uma por uma</button>
+          <div class="chip-text" id="profeciasText">Toque no botão acima para revelar, verso a verso, detalhes deste salmo que descrevem a crucificação — escritos cerca de mil anos antes de existir esse método de execução.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → o lamento e a profecia física</button>
         </div>
       </div>
@@ -155,6 +164,40 @@
     }, 120);
   }
   openStage(1);
+
+  const profeciasData = [
+    { text: "\"Todos os que veem zombam de mim... movendo a cabeça, dizendo: Confiou no SENHOR, livre-o ele\" (v.7-8) — os líderes zombam de Jesus na cruz quase palavra por palavra (Mateus 27:39-43)." },
+    { text: "\"Como água me derramei, e todos os meus ossos se desconjuntaram\" (v.14) — o efeito físico do peso do corpo pendurado, descrito séculos antes de a crucificação existir." },
+    { text: "\"O meu coração é como cera, derreteu-se no meio das minhas entranhas\" (v.14) — angústia física extrema, no mesmo verso." },
+    { text: "\"A minha força se secou como um caco, e a língua se me pega ao paladar\" (v.15) — a sede, mencionada também em João 19:28." },
+    { text: "\"Traspassaram-me as mãos e os pés\" (v.16) — pregos atravessando mãos e pés, um método de execução que Israel nem usava na época de Davi." },
+    { text: "\"Repartem entre si as minhas vestes, e sobre a minha túnica lançam sortes\" (v.18) — cumprido literalmente pelos soldados romanos (João 19:23-24)." }
+  ];
+
+  function buildProfeciasDots(){
+    const el = document.getElementById('profeciasSeqRow');
+    profeciasData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'profecias-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'profecias-label';
+    label.id = 'profeciasLabel';
+    label.textContent = '0 de 6';
+    el.appendChild(label);
+  }
+  buildProfeciasDots();
+
+  function revealProfecias(){
+    const dots = document.querySelectorAll('#profeciasSeqRow .profecias-dot');
+    const textEl = document.getElementById('profeciasText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = profeciasData[i].text;
+      document.getElementById('profeciasLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

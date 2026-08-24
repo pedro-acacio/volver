@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p><em>"O SENHOR é a minha luz e a minha salvação; a quem temerei? O SENHOR é a força da minha vida; de quem me atemorizarei?"</em> (v.1)</p>
           <p>A confiança aqui não nega o perigo — o próprio salmo descreve "malfeitores" e um "exército" que podem se levantar (v.2-3). A pergunta retórica ("a quem temerei?") não é ingenuidade; é uma decisão tomada antes da crise chegar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAmeaca" onclick="showAmeaca('ameaca')">Se um exército se acampar contra mim...</button>
+            <button class="toggle-btn" id="btnConfianca" onclick="showAmeaca('confianca')">...ainda assim, estarei confiante</button>
+          </div>
+
+          <div class="outcome" id="ameacaCard">
+            <div class="outcome-visual" id="ameacaVisual"></div>
+            <h3 id="ameacaTitle"></h3>
+            <p id="ameacaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → o que ele mais deseja, o que ele mais teme</button>
         </div>
       </div>
@@ -155,6 +167,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showAmeaca(state){
+    const btnAmeaca = document.getElementById('btnAmeaca');
+    const btnConfianca = document.getElementById('btnConfianca');
+    btnAmeaca.classList.remove('active-worry');
+    btnConfianca.classList.remove('active-calm');
+    const visual = document.getElementById('ameacaVisual');
+    const title = document.getElementById('ameacaTitle');
+    const text = document.getElementById('ameacaText');
+
+    if (state === 'ameaca'){
+      btnAmeaca.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O maior cenário possível";
+      text.textContent = "\"Ainda que um exército se acampe contra mim... ainda que a guerra se levante contra mim\" (v.3) — o salmo nomeia a ameaça mais extrema que consegue imaginar, sem diminuí-la.";
+    } else {
+      btnConfianca.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O meu coração não temerá";
+      text.textContent = "A confiança não depende do perigo ser pequeno — ela é declarada mesmo diante do pior cenário possível, porque está ancorada em quem é o SENHOR, não no tamanho da ameaça (v.3).";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

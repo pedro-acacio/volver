@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .lament-scale{ display:flex; flex-direction:column; gap:10px; margin:14px 0 16px; }
+  .lament-item{ display:flex; align-items:center; gap:10px; cursor:pointer; }
+  .lament-tag{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); width:60px; flex-shrink:0; }
+  .lament-track{ flex:1; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .lament-fill{ height:100%; border-radius:9px; background: var(--panel-line); width:0%; transition: width .5s cubic-bezier(.34,1.2,.64,1), background .3s ease, box-shadow .3s ease; }
+  .lament-fill.active{ background: var(--worry); box-shadow: 0 0 10px 1px rgba(217,90,90,.4); }
 </style>
 </head>
 <body>
@@ -86,6 +92,24 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Este salmo não ensina a desejar violência contra ninguém — ensina algo diferente: que a Bíblia tem espaço para a raiva bruta de quem perdeu tudo, sem exigir que ela seja primeiro filtrada ou suavizada antes de ser dita a Deus. O lamento honesto, aqui, é levado até o fim, mesmo na parte que incomoda.</p>
+
+          <p>Repare como a intensidade emocional sobe ao longo do salmo. Toque em cada trecho.</p>
+          <div class="lament-scale" id="lamentScale">
+            <div class="lament-item" onclick="showLament(1, this)">
+              <span class="lament-tag">v.1-3</span>
+              <div class="lament-track"><div class="lament-fill" data-width="30"></div></div>
+            </div>
+            <div class="lament-item" onclick="showLament(2, this)">
+              <span class="lament-tag">v.4-6</span>
+              <div class="lament-track"><div class="lament-fill" data-width="60"></div></div>
+            </div>
+            <div class="lament-item" onclick="showLament(3, this)">
+              <span class="lament-tag">v.7-9</span>
+              <div class="lament-track"><div class="lament-fill" data-width="100"></div></div>
+            </div>
+          </div>
+          <div class="chip-text" id="lamentText">Toque em cada trecho para ver a escalada.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -136,6 +160,22 @@
     { text: "Versos duros contra os que destruíram a cidade (v.8-9) — palavras que a maioria das leituras públicas pula, mas que o texto mantém, sem editar." },
     { text: "\"Se eu me esquecer de ti, Jerusalém, esqueça-se a minha destra... prefira eu Jerusalém à minha maior alegria\" (v.5-6) — a lealdade ao lugar perdido é descrita como algo que vale mais que a própria capacidade de tocar música." }
   ];
+
+  function showLament(n, el){
+    document.querySelectorAll('#lamentScale .lament-fill').forEach(f => {
+      f.style.width = '0%';
+      f.classList.remove('active');
+    });
+    const fill = el.querySelector('.lament-fill');
+    fill.style.width = fill.dataset.width + '%';
+    fill.classList.add('active');
+    const texts = {
+      1: "O choro contido — a lembrança de Sião ainda dói, mas a voz ainda está baixa, quase sussurrada.",
+      2: "O juramento de lealdade — a dor vira compromisso: preferir Jerusalém à própria alegria.",
+      3: "A raiva sem filtro — a dor que não coube em lamento vira palavras duras, ditas sem disfarce a Deus."
+    };
+    document.getElementById('lamentText').textContent = texts[n];
+  }
 
   let currentMax = 1;
 

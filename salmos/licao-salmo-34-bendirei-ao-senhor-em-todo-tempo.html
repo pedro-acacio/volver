@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .fuga-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .fuga-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .fuga-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .fuga-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .fuga-list{ list-style:none; margin: 8px 0 0; padding:0; display:flex; flex-direction:column; gap:7px; }
+  .fuga-list li{ font-size:14px; line-height:1.5; opacity:0; transform: translateY(4px); transition: opacity .35s ease, transform .35s ease, color .35s ease; color: var(--text-faint); }
+  .fuga-list li.shown{ opacity:1; transform: translateY(0); color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -44,6 +51,12 @@
         <div class="tl-card">
           <p>O título do salmo, no hebraico, aponta para o episódio em que Davi fugiu de Saul fingindo-se de louco diante de Aquis — um momento de medo e humilhação, não de vitória. "Em todo tempo" inclui, deliberadamente, os tempos que não renderiam boa história.</p>
           <p><em>"Bendirei ao SENHOR em todo o tempo; o seu louvor estará continuamente na minha boca."</em> (v.1)</p>
+
+          <p style="margin-bottom:0;">Toque para reconstruir, passo a passo, o episódio vergonhoso escondido atrás do título (1 Samuel 21:10-15):</p>
+          <div class="fuga-row" id="fugaRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealFuga()" id="fugaBtn">Reconstruir o episódio</button>
+          <ul class="fuga-list" id="fugaList"></ul>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → convite e testemunho</button>
         </div>
       </div>
@@ -137,6 +150,33 @@
     { text: "\"Provai, e vede que o SENHOR é bom\" (v.8) — não pede fé cega; convida à própria experiência de quem lê." },
     { text: "\"Busquei ao SENHOR, e ele me respondeu, e me livrou de todos os meus temores\" (v.4) — o convite vem apoiado numa história pessoal específica, não numa afirmação abstrata." }
   ];
+
+  const fugaEpisodio = [
+    "Davi foge de Saul e chega a Gate, cidade governada por Aquis, um rei filisteu (1 Sm 21:10).",
+    "Os servos de Aquis o reconhecem: \"Não é este Davi, o rei da terra?\" (v.11) — o fugitivo é identificado no pior lugar possível.",
+    "Davi teme muito por causa disso (v.12) — o medo, não a coragem, é o que move a cena.",
+    "Finge-se de louco diante deles: arranha as portas, deixa a saliva escorrer pela barba (v.13).",
+    "Aquis o despede como inofensivo: \"Não vedes que é louco? Para que mo trouxestes?\" (v.14-15) — Davi escapa fingindo ser quem não era."
+  ];
+
+  function buildFugaDots(){
+    const el = document.getElementById('fugaRow');
+    fugaEpisodio.forEach(() => { const d = document.createElement('div'); d.className = 'fuga-dot'; el.appendChild(d); });
+    const label = document.createElement('span'); label.className = 'fuga-label'; label.id = 'fugaLabel'; label.textContent = '0 de ' + fugaEpisodio.length; el.appendChild(label);
+    const list = document.getElementById('fugaList');
+    fugaEpisodio.forEach(txt => { const li = document.createElement('li'); li.textContent = txt; list.appendChild(li); });
+  }
+  buildFugaDots();
+
+  function revealFuga(){
+    const dots = document.querySelectorAll('#fugaRow .fuga-dot');
+    const items = document.querySelectorAll('#fugaList li');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      items[i].classList.add('shown');
+      document.getElementById('fugaLabel').textContent = (i + 1) + ' de ' + dots.length;
+    }, i * 260));
+  }
 
   let currentMax = 1;
 

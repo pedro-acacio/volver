@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .acro-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .acro-letter{ width:34px; height:34px; border-radius:8px; background: var(--panel); border:1px solid var(--panel-line); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono', monospace; font-size:18px; color: var(--text-faint); transition: background .3s ease, color .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .acro-letter.lit{ background: var(--gold); color: var(--bg); transform: scale(1.15); box-shadow: 0 0 9px 1px var(--gold); }
+  .acro-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,9 @@
         <div class="tl-card">
           <p><em>"Com que purificará o jovem o seu caminho? Observando-o de acordo com a tua palavra... Escondi a tua palavra no meu coração, para não pecar contra ti."</em> (v.9, 11)</p>
           <p>A pergunta do v.9 é prática, não teórica — "como" fazer, não "se" deve fazer. E a resposta do próprio salmista, dois versos depois, é física antes de ser abstrata: "escondi" a palavra, como quem guarda algo valioso em lugar seguro.</p>
+          <p>Esse cuidado aparece até na forma do salmo: 22 letras do alfabeto hebraico, cada uma abrindo oito versos seguidos — 176 no total. Veja as primeiras letras acendendo, uma a uma.</p>
+          <div class="acro-row" id="acroRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealAcro()" id="acroBtn">Ver as letras, uma por uma</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → guardar por fora ou por dentro</button>
         </div>
       </div>
@@ -137,6 +144,32 @@
     { text: "\"Com os meus lábios contei todos os juízos da tua boca\" (v.13) — falar sobre a palavra, repeti-la, sem que necessariamente ela molde a decisão do dia a dia." },
     { text: "\"Escondi a tua palavra no meu coração\" (v.11) — internalizada a ponto de funcionar como memória automática no momento da tentação, não como consulta de última hora." }
   ];
+
+  const acroLetters = ['א','ב','ג','ד','ה','ו','ז','ח'];
+
+  function buildAcroRow(){
+    const el = document.getElementById('acroRow');
+    acroLetters.forEach(l => {
+      const d = document.createElement('div');
+      d.className = 'acro-letter';
+      d.textContent = l;
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'acro-label';
+    label.id = 'acroLabel';
+    label.textContent = '0 de 22 letras';
+    el.appendChild(label);
+  }
+  buildAcroRow();
+
+  function revealAcro(){
+    const letters = document.querySelectorAll('#acroRow .acro-letter');
+    letters.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 220));
+    setTimeout(() => {
+      document.getElementById('acroLabel').textContent = '8 de 22 letras — e assim por mais 14, até fechar 176 versos.';
+    }, letters.length * 220);
+  }
 
   let currentMax = 1;
 

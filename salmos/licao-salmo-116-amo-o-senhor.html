@@ -44,6 +44,16 @@
         <div class="tl-card">
           <p>O salmo não suaviza a situação anterior — "laços de morte", "angústias do inferno" (v.3). A gratidão que vem depois só tem peso porque o antes foi descrito com a mesma honestidade.</p>
           <p><em>"Laços de morte me cercaram... Então invoquei o nome do SENHOR, dizendo: Ó SENHOR, livra a minha alma."</em> (v.3-4)</p>
+          <p>O salmo lista as mesmas três aflições duas vezes — primeiro como ameaça, depois como algo já resolvido:</p>
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnApertoAntes" onclick="mostrarLivramento('antes')">Antes (v.3)</button>
+            <button class="toggle-btn" id="btnApertoDepois" onclick="mostrarLivramento('depois')">Depois (v.8)</button>
+          </div>
+          <div class="outcome" id="livramentoCard">
+            <div class="outcome-visual" id="livramentoVisual"></div>
+            <h3 id="livramentoTitle"></h3>
+            <p id="livramentoText"></p>
+          </div>
           <button class="continue-btn" onclick="openStage(2)">Continuar → a dívida de gratidão</button>
         </div>
       </div>
@@ -137,6 +147,28 @@
     { text: "\"Que darei eu ao SENHOR por todos os benefícios que me tem feito?\" (v.12) — o salmo admite que não há troca proporcional possível." },
     { text: "\"Tomarei o cálice da salvação, e invocarei o nome do SENHOR... oferecer-te-ei sacrifício de louvor\" (v.13, 17) — não paga a dívida, só responde a ela com mais louvor e mais confiança." }
   ];
+
+  function mostrarLivramento(estado){
+    const btnAntes = document.getElementById('btnApertoAntes');
+    const btnDepois = document.getElementById('btnApertoDepois');
+    btnAntes.classList.remove('active-worry');
+    btnDepois.classList.remove('active-calm');
+    const visual = document.getElementById('livramentoVisual');
+    const title = document.getElementById('livramentoTitle');
+    const text = document.getElementById('livramentoText');
+
+    if (estado === 'antes'){
+      btnAntes.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Três aflições ao mesmo tempo";
+      text.textContent = "\"Laços de morte me cercaram, e angústias do inferno se apoderaram de mim; aperto e tristeza eu achei\" (v.3) — morte, medo e angústia, tudo junto.";
+    } else {
+      btnDepois.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "As mesmas três, já resolvidas";
+      text.textContent = "\"Porque tu, Senhor, livraste a minha alma da morte, os meus olhos das lágrimas, e os meus pés da queda\" (v.8) — a mesma lista, agora nomeada uma a uma como coisa passada.";
+    }
+  }
 
   let currentMax = 1;
 

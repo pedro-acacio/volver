@@ -87,6 +87,18 @@
         <div class="tl-card">
           <p><em>"A minha alma espera no SENHOR, mais do que os guardas esperam a manhã, mais do que os guardas esperam a manhã."</em> (v.6)</p>
           <p>A repetição da mesma frase duas vezes seguidas imita a própria espera — como se o versículo se recusasse a apressar o fim da noite. É a imagem de um guarda noturno, que sabe que a manhã vem, mas ainda não chegou.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnNight" onclick="showWatch('night')">Ainda de noite</button>
+            <button class="toggle-btn" id="btnDawn" onclick="showWatch('dawn')">A manhã chega</button>
+          </div>
+
+          <div class="outcome" id="watchCard">
+            <div class="outcome-visual" id="watchVisual"></div>
+            <h3 id="watchTitle"></h3>
+            <p id="watchText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +149,28 @@
     { text: "\"Se tu, SENHOR, observares os pecados, quem subsistirá?\" (v.3) — pergunta retórica: ninguém passaria no teste, se fosse essa a régua." },
     { text: "\"Mas contigo está o perdão, para que sejas temido\" (v.4) — o perdão não é apresentado como fraqueza de Deus, mas como o próprio motivo pelo qual ele merece reverência." }
   ];
+
+  function showWatch(state){
+    const btnNight = document.getElementById('btnNight');
+    const btnDawn = document.getElementById('btnDawn');
+    btnNight.classList.remove('active-worry');
+    btnDawn.classList.remove('active-calm');
+    const visual = document.getElementById('watchVisual');
+    const title = document.getElementById('watchTitle');
+    const text = document.getElementById('watchText');
+
+    if (state === 'night'){
+      btnNight.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ainda de noite";
+      text.textContent = "O guarda continua na torre, os olhos abertos, sem sinal algum de luz — mas já sabe, por experiência, que a manhã vem.";
+    } else {
+      btnDawn.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A manhã chega";
+      text.textContent = "A mesma certeza que sustentou a espera na escuridão agora se confirma na luz — a alma que esperou no SENHOR encontra o que esperava.";
+    }
+  }
 
   let currentMax = 1;
 

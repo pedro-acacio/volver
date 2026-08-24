@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .acao-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .acao-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .acao-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .acao-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .acao-list{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); margin: 4px 0 16px; min-height: 18px; }
 </style>
 </head>
 <body>
@@ -44,6 +49,10 @@
         <div class="tl-card">
           <p>O salmo começa com um convite coletivo — "toda a terra" (v.1) — e o verbo escolhido é "servir com alegria", não como obrigação cumprida a contragosto. A alegria aqui não é um acréscimo opcional ao louvor: é a forma que o louvor verdadeiro toma.</p>
           <p><em>"Servi ao SENHOR com alegria; vinde perante a sua presença com canto."</em> (v.2)</p>
+          <p>O salmo inteiro é uma sequência de ordens — sete verbos no imperativo, um atrás do outro, antes de qualquer explicação:</p>
+          <div class="acao-row" id="acaoRow"></div>
+          <div class="acao-list" id="acaoList"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarAcao()" id="acaoBtn">Revelar, um verbo por vez</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → por que e como louvar</button>
         </div>
       </div>
@@ -137,6 +146,32 @@
     { text: "\"Sabei que o SENHOR é Deus; foi ele que nos fez, e não nós a nós mesmos\" (v.3) — o motivo vem antes do sentimento: louvor começa em reconhecer quem fez quem." },
     { text: "\"Entrai pelas suas portas com ação de graças, e nos seus átrios com louvor\" (v.4) — gratidão não fica guardada; ela tem um destino, uma direção." }
   ];
+
+  const acaoVerbos = ["celebrai", "servi", "vinde", "sabei", "entrai", "louvai", "bendizei"];
+
+  function buildAcaoDots(){
+    const el = document.getElementById('acaoRow');
+    acaoVerbos.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'acao-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'acao-label';
+    label.id = 'acaoLabel';
+    label.textContent = '0 de ' + acaoVerbos.length;
+    el.appendChild(label);
+  }
+  buildAcaoDots();
+
+  function revelarAcao(){
+    const dots = document.querySelectorAll('#acaoRow .acao-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 220));
+    setTimeout(() => {
+      document.getElementById('acaoLabel').textContent = acaoVerbos.length + ' de ' + acaoVerbos.length;
+      document.getElementById('acaoList').textContent = acaoVerbos.join(' · ');
+    }, dots.length * 220);
+  }
 
   let currentMax = 1;
 

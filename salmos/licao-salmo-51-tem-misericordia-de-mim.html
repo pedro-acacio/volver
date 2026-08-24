@@ -87,6 +87,18 @@
         <div class="tl-card">
           <p><em>"Restitui-me a alegria da tua salvação, e sustém-me com um espírito voluntário."</em> (v.12)</p>
           <p>O pedido não é apenas por perdão, mas pela alegria perdida junto com ele — sinal de que o pecado não roubou só a posição diante de Deus, roubou também a experiência de alegria genuína que Davi já conhecia antes.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnJoyBefore" onclick="showJoy('before')">Antes do pedido — ossos quebrantados</button>
+            <button class="toggle-btn" id="btnJoyAfter" onclick="showJoy('after')">Depois do pedido — alegria restaurada</button>
+          </div>
+
+          <div class="outcome" id="joyCard">
+            <div class="outcome-visual" id="joyVisual"></div>
+            <h3 id="joyTitle"></h3>
+            <p id="joyText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +167,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showJoy(state){
+    const btnBefore = document.getElementById('btnJoyBefore');
+    const btnAfter = document.getElementById('btnJoyAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const visual = document.getElementById('joyVisual');
+    const title = document.getElementById('joyTitle');
+    const text = document.getElementById('joyText');
+
+    if (state === 'before'){
+      btnBefore.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ossos quebrantados";
+      text.textContent = "\"Fazei-me ouvir júbilo e alegria, para que gozem os ossos que tu quebraste\" (v.8) — o peso do pecado não confessado é descrito como algo físico, esmagador, sentido no corpo.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Alegria restaurada";
+      text.textContent = "\"Então ensinarei aos transgressores os teus caminhos, e pecadores se converterão a ti\" (v.13) — a alegria devolvida não fica só com Davi: ela se torna capaz de alcançar outros pecadores.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

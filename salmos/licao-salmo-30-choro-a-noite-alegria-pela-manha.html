@@ -87,6 +87,17 @@
         <div class="tl-card">
           <p><em>"Tornaste o meu pranto em folguedo; tiraste o meu cilício e me cingiste de alegria."</em> (v.11)</p>
           <p>A imagem é de troca de roupa — cilício (pano de luto) por alegria. O verso não apaga o choro do começo do salmo (v.5, "o choro pode durar uma noite"); ele o transforma em outra coisa, sem fingir que não aconteceu.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnCilicio" onclick="showTroca('cilicio')">Antes: vestido de cilício</button>
+            <button class="toggle-btn" id="btnAlegria" onclick="showTroca('alegria')">Depois: cingido de alegria</button>
+          </div>
+          <div class="outcome" id="trocaCard">
+            <div class="outcome-visual" id="trocaVisual"></div>
+            <h3 id="trocaTitle"></h3>
+            <p id="trocaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +171,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showTroca(tipo){
+    const btnCilicio = document.getElementById('btnCilicio');
+    const btnAlegria = document.getElementById('btnAlegria');
+    btnCilicio.classList.remove('active-worry');
+    btnAlegria.classList.remove('active-calm');
+    const visual = document.getElementById('trocaVisual');
+    const title = document.getElementById('trocaTitle');
+    const text = document.getElementById('trocaText');
+
+    if (tipo === 'cilicio'){
+      btnCilicio.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O cilício";
+      text.textContent = "Pano áspero de luto, usado rente à pele — sinal do corpo em sofrimento, do pranto que ainda não tinha fim marcado.";
+    } else {
+      btnAlegria.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A alegria";
+      text.textContent = "Deus não apenas consola: ele troca a veste. O luto é despido e substituído — não escondido, mas retirado de fato.";
+    }
   }
 
   function showOutcome(type){

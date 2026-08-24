@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .dominio-row{ display:flex; align-items:center; gap:16px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .dominio-step{ display:flex; flex-direction:column; align-items:center; gap:6px; opacity:.35; transition: opacity .3s ease; }
+  .dominio-step.lit{ opacity:1; }
+  .dominio-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .dominio-step.lit .dominio-dot{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .dominio-word{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); text-align:center; }
+  .dominio-step.lit .dominio-word{ color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -87,6 +94,16 @@
         <div class="tl-card">
           <p><em>"Contudo, pouco menor o fizeste do que os anjos, e de glória e de honra o coroaste. Fazes com que ele tenha domínio sobre as obras das tuas mãos; tudo puseste debaixo de seus pés."</em> (v.5-6)</p>
           <p>A resposta do salmo não é que o homem seja grande por si mesmo, mas que foi coroado — recebeu autoridade emprestada, não conquistada. Louvor, aqui, começa por reconhecer os dois fatos ao mesmo tempo: a distância entre Deus e o homem, e o cuidado que atravessa essa distância.</p>
+
+          <div class="dominio-row" id="dominioRow">
+            <div class="dominio-step" data-step="0"><div class="dominio-dot"></div><span class="dominio-word">ovelhas<br>e bois</span></div>
+            <div class="dominio-step" data-step="1"><div class="dominio-dot"></div><span class="dominio-word">animais<br>do campo</span></div>
+            <div class="dominio-step" data-step="2"><div class="dominio-dot"></div><span class="dominio-word">aves<br>do céu</span></div>
+            <div class="dominio-step" data-step="3"><div class="dominio-dot"></div><span class="dominio-word">peixes<br>do mar</span></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarDominio()" id="dominioBtn">Ver o alcance de "tudo", um domínio por vez</button>
+          <div class="chip-text" id="dominioText">Toque no botão para ver o que o salmo inclui em "tudo puseste debaixo de seus pés" (v.7-8).</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +172,21 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarDominio(){
+    const steps = document.querySelectorAll('#dominioRow .dominio-step');
+    const textos = [
+      "Todas as ovelhas e bois (v.7) — os animais mais próximos do homem, os do curral e do pasto cotidiano.",
+      "E ainda os animais do campo (v.7) — os que vivem soltos, fora do alcance direto do cuidado humano.",
+      "As aves do céu (v.8) — o domínio se estende para cima, sobre o que voa.",
+      "E os peixes do mar, e tudo quanto passa pelas veredas dos mares (v.8) — até as profundezas mais distantes estão incluídas em \"tudo\"."
+    ];
+    const out = document.getElementById('dominioText');
+    steps.forEach((s, i) => setTimeout(() => {
+      s.classList.add('lit');
+      out.textContent = textos[i];
+    }, i * 700));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

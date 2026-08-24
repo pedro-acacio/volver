@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .provisao-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .provisao-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .provisao-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .provisao-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,11 @@
         <div class="tl-card">
           <p><em>"O SENHOR é o meu pastor; nada me faltará. Deitar-me faz em verdes pastos, guia-me mansamente a águas tranquilas."</em> (v.1-2)</p>
           <p>A confiança do salmo começa numa imagem doméstica — um pastor que conhece cada necessidade da ovelha antes que ela precise pedir. "Nada me faltará" não é uma promessa de fartura, mas de suficiência: o que for necessário, será dado.</p>
+
+          <div class="provisao-seq-row" id="provisaoSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealProvisoes()" id="provisaoSeqBtn">Ver as provisões do pastor, uma por uma</button>
+          <div class="chip-text" id="provisaoSeqText">Toque no botão acima para percorrer, do início ao fim do salmo, tudo o que o pastor promete prover.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → os dois cenários do salmo</button>
         </div>
       </div>
@@ -155,6 +164,40 @@
     }, 120);
   }
   openStage(1);
+
+  const provisoesData = [
+    { text: "\"Deitar-me faz em verdes pastos\" (v.2) — descanso e nutrição, providenciados antes que sejam pedidos." },
+    { text: "\"Guia-me mansamente a águas tranquilas\" (v.2) — paz, não agitação." },
+    { text: "\"Refrigera a minha alma\" (v.3) — renovação por dentro, não só circunstâncias por fora." },
+    { text: "\"Guia-me pelas veredas da justiça, por amor do seu nome\" (v.3) — direção certa, pelo caráter do próprio pastor." },
+    { text: "\"Preparas uma mesa perante mim... unges a minha cabeça com óleo\" (v.5) — provisão até na presença dos inimigos." },
+    { text: "\"Bondade e misericórdia me seguirão todos os dias da minha vida\" (v.6) — uma promessa que não termina quando o salmo termina." }
+  ];
+
+  function buildProvisaoDots(){
+    const el = document.getElementById('provisaoSeqRow');
+    provisoesData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'provisao-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'provisao-label';
+    label.id = 'provisaoLabel';
+    label.textContent = '0 de 6';
+    el.appendChild(label);
+  }
+  buildProvisaoDots();
+
+  function revealProvisoes(){
+    const dots = document.querySelectorAll('#provisaoSeqRow .provisao-dot');
+    const textEl = document.getElementById('provisaoSeqText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = provisoesData[i].text;
+      document.getElementById('provisaoLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

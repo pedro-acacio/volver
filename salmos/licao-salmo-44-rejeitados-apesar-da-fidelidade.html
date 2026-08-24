@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .s44fid-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .s44fid-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .s44fid-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .s44fid-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p><em>"Tudo isto nos sobreveio; todavia não nos esquecemos de ti, nem nos houvemos falsamente no teu concerto."</em> (v.17)</p>
           <p>Esse é o ponto que torna o Salmo 44 diferente da maioria dos lamentos bíblicos — o povo não confessa pecado nem pede perdão. Ele afirma, com convicção, que continuou fiel — e não entende, por isso, por que o sofrimento veio mesmo assim.</p>
+
+          <div class="s44fid-seq-row" id="s44FidSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealS44Fidelidade()" id="s44FidBtn">Ver as afirmações, uma por uma</button>
+          <div class="chip-text" id="s44FidText">Toque no botão acima para ver, verso a verso, como o povo sustenta a própria fidelidade diante de Deus (v.18-22).</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +164,38 @@
     }, 120);
   }
   openStage(1);
+
+  const s44FidelidadeData = [
+    { text: "\"Não voltou atrás o nosso coração, nem os nossos passos se desviaram das tuas veredas\" (v.18) — a lealdade não vacilou nem debaixo do golpe." },
+    { text: "\"Ainda que nos quebrantaste em lugar de dragões, e nos cobriste com a sombra da morte\" (v.19) — o sofrimento veio de qualquer forma, mesmo com a fidelidade mantida." },
+    { text: "\"Se nos tivéssemos esquecido do nome do nosso Deus... porventura não esquadrinharia Deus isso? pois ele conhece os segredos do coração\" (v.20-21) — o próprio Deus é convocado como testemunha da sinceridade do povo." },
+    { text: "\"Por amor de ti somos entregues à morte todo o dia; somos considerados como ovelhas para o matadouro\" (v.22) — o sofrimento continua, e mesmo assim é lido como parte de pertencer a Deus, não como abandono do pacto. Paulo cita este verso em Romanos 8:36." }
+  ];
+
+  function buildS44FidDots(){
+    const el = document.getElementById('s44FidSeqRow');
+    s44FidelidadeData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 's44fid-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 's44fid-label';
+    label.id = 's44FidLabel';
+    label.textContent = '0 de ' + s44FidelidadeData.length;
+    el.appendChild(label);
+  }
+  buildS44FidDots();
+
+  function revealS44Fidelidade(){
+    const dots = document.querySelectorAll('#s44FidSeqRow .s44fid-dot');
+    const textEl = document.getElementById('s44FidText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = s44FidelidadeData[i].text;
+      document.getElementById('s44FidLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

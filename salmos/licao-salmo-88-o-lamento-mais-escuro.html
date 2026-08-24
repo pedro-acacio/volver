@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .s88q-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .s88q-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .s88q-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .s88q-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p><em>"Afastaste de mim amigos e companheiros, e os meus conhecidos se foram; a escuridão é a minha companheira."</em> (v.18, última linha do salmo)</p>
           <p>Diferente de quase todos os outros lamentos do saltério, este não termina em confiança recuperada nem em louvor renovado. A última palavra é "escuridão". E o próprio fato de esse salmo existir na Bíblia, sem correção editorial no fim, ensina algo: nem toda oração honesta precisa terminar resolvida.</p>
+
+          <div class="s88q-seq-row" id="s88QSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealS88Perguntas()" id="s88QBtn">Ver as perguntas, uma por uma</button>
+          <div class="chip-text" id="s88QText">Toque no botão acima para ver, em sequência, as perguntas que o salmo faz a Deus sobre a morte (v.10-12) — nenhuma delas é respondida no texto.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +164,40 @@
     }, 120);
   }
   openStage(1);
+
+  const s88PerguntasData = [
+    { text: "\"Mostrarás tu maravilhas aos mortos?\" (v.10a) — a primeira das perguntas sem resposta que fecham o salmo." },
+    { text: "\"Ou levantar-se-ão os mortos para te louvarem?\" (v.10b)" },
+    { text: "\"Será a tua benignidade contada na sepultura?\" (v.11a)" },
+    { text: "\"Ou a tua fidelidade na perdição?\" (v.11b)" },
+    { text: "\"Serão conhecidas nas trevas as tuas maravilhas?\" (v.12a)" },
+    { text: "\"E a tua justiça na terra do esquecimento?\" (v.12b) — a última pergunta do salmo. Nenhuma das seis recebe resposta dentro do próprio texto." }
+  ];
+
+  function buildS88QDots(){
+    const el = document.getElementById('s88QSeqRow');
+    s88PerguntasData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 's88q-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 's88q-label';
+    label.id = 's88QLabel';
+    label.textContent = '0 de ' + s88PerguntasData.length;
+    el.appendChild(label);
+  }
+  buildS88QDots();
+
+  function revealS88Perguntas(){
+    const dots = document.querySelectorAll('#s88QSeqRow .s88q-dot');
+    const textEl = document.getElementById('s88QText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = s88PerguntasData[i].text;
+      document.getElementById('s88QLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 480));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
