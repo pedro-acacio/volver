@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .min-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin-top:6px; }
+  .min-bar-fill{ height:100%; border-radius:9px; background: var(--worry); box-shadow: 0 0 10px 1px var(--worry); width:0%; transition: width .6s cubic-bezier(.34,1.56,.64,1); }
+  .min-bar-fill.boaz{ background: var(--gold); box-shadow: 0 0 10px 1px var(--gold); }
 </style>
 </head>
 <body>
@@ -88,6 +91,18 @@
         <div class="tl-card">
           <p>Rute pergunta exatamente isso — por que ele, um homem de posses, está sendo tão bom com ela, uma estrangeira (2:10). A resposta de Boaz é reveladora: ele já tinha ouvido tudo o que ela fez por Noemi, deixando "pai e mãe e a terra do teu nascimento" para seguir uma sogra viúva (v.11).</p>
           <p>A bondade dele responde a uma bondade que ele testemunhou — mas ele a estende sem que ela peça nada além do direito legal mínimo. É a diferença entre fazer o mínimo exigido e ir além dele por vontade própria.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnMinLaw" onclick="showMin('law')">O mínimo exigido pela lei</button>
+            <button class="toggle-btn" id="btnMinBoaz" onclick="showMin('boaz')">O que Boaz de fato oferece</button>
+          </div>
+
+          <div class="outcome" id="minCard">
+            <div class="outcome-visual" id="minVisual"></div>
+            <h3 id="minTitle"></h3>
+            <p id="minText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -139,6 +154,28 @@
     { text: "Instrui os moços a deixar cair punhados de propósito, para que ela colha mais sem perceber que está sendo ajudada (v.15-16)." },
     { text: "Convida-a a comer pão molhado em vinagre junto com os ceifeiros, e ainda lhe estende grão tostado (v.14)." }
   ];
+
+  function showMin(type){
+    const btnLaw = document.getElementById('btnMinLaw');
+    const btnBoaz = document.getElementById('btnMinBoaz');
+    btnLaw.classList.remove('active-worry');
+    btnBoaz.classList.remove('active-calm');
+    const visual = document.getElementById('minVisual');
+    const title = document.getElementById('minTitle');
+    const text = document.getElementById('minText');
+
+    if (type === 'law'){
+      btnLaw.classList.add('active-worry');
+      visual.innerHTML = '<div class="min-bar-track"><div class="min-bar-fill" style="width:30%"></div></div>';
+      title.textContent = "Catar as espigas que sobram";
+      text.textContent = "A lei de Israel já garantia isso aos pobres e estrangeiros (Levítico 19:9-10) — Boaz não seria culpado de nada se apenas permitisse, sem impedir, o que já era direito de Rute.";
+    } else {
+      btnBoaz.classList.add('active-calm');
+      visual.innerHTML = '<div class="min-bar-track"><div class="min-bar-fill boaz" style="width:100%"></div></div>';
+      title.textContent = "Convite, proteção e fartura de propósito";
+      text.textContent = "Água à vontade, lugar entre os ceifeiros, punhados deixados cair por instrução direta, mesa dividida — cada gesto ultrapassa de longe o que a lei jamais exigiria dele.";
+    }
+  }
 
   let currentMax = 1;
 

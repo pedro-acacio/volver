@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .oracao-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .oracao-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .oracao-seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .oracao-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,8 @@
         <div class="tl-card">
           <p>Décadas se passam. Daniel é agora ancião, presidente sobre os outros príncipes do reino — e tão íntegro que seus rivais "não podiam achar ocasião alguma, nem culpa nenhuma" contra ele, a não ser na sua lei religiosa (Daniel 6:4-5). Eles armam um decreto: por trinta dias, orar a qualquer um além do rei é crime punido com a cova dos leões.</p>
           <p>"Sabendo, pois, Daniel que o edito estava assinado, entrou em sua casa... e, três vezes no dia, se punha de joelhos, e orava... como dantes o costumava fazer" (6:10). A frase-chave é "como dantes o costumava fazer" — o mesmo hábito de sempre, sem ajustar nada por causa da ameaça nova.</p>
+          <div class="oracao-seq-row" id="oracaoSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealOracaoSeq()" id="oracaoSeqBtn">Ver os três horários, um a um</button>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +143,31 @@
     { text: "Pede ao chefe dos eunucos legumes e água por dez dias, em vez da porção do rei, como teste (v.11-13)." },
     { text: "Ao final dos dez dias, ele e os amigos pareciam \"de mais formoso parecer, e mais gordos de carne\" que os outros jovens (v.15) — a fidelidade no invisível teve fruto visível." }
   ];
+
+  const horariosOracao = ['manhã','meio-dia','tarde'];
+
+  function buildOracaoSeqDots(){
+    const el = document.getElementById('oracaoSeqRow');
+    horariosOracao.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'oracao-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'oracao-seq-label';
+    label.id = 'oracaoSeqLabel';
+    label.textContent = '0 de 3 orações';
+    el.appendChild(label);
+  }
+  buildOracaoSeqDots();
+
+  function revealOracaoSeq(){
+    const dots = document.querySelectorAll('#oracaoSeqRow .oracao-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 220));
+    setTimeout(() => {
+      document.getElementById('oracaoSeqLabel').textContent = 'manhã, meio-dia e tarde — como dantes o costumava fazer';
+    }, dots.length * 220);
+  }
 
   let currentMax = 1;
 

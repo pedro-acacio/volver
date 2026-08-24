@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .poder-bars{ display:flex; flex-direction:column; gap:12px; margin: 14px 0 16px; }
+  .poder-bar-item{ display:flex; flex-direction:column; gap:6px; }
+  .poder-bar-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .poder-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .poder-bar-fill{ height:100%; width:0%; border-radius:9px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); transition: width 1s cubic-bezier(.34,1.1,.4,1); }
+  .poder-bar-fill-worry{ background: var(--worry); box-shadow: 0 0 10px 1px var(--worry); }
 </style>
 </head>
 <body>
@@ -87,6 +93,17 @@
         <div class="tl-card">
           <p>É Deus quem intervém, não Moisés — chama os três à porta da tenda, defende Moisés diretamente e pune Miriã com lepra temporária (12:4-10). Aqui está o giro: Moisés, que nada fez para se defender, agora tem todo o direito de deixar a irmã sofrer a consequência do próprio ataque.</p>
           <p>Em vez disso, ele clama: "Ó Deus, rogo-te que a cures" (v.13). O homem atacado se torna o intercessor de quem o atacou — usando exatamente o poder que se recusou a usar para revidar, agora para socorrer.</p>
+          <div class="poder-bars" id="poderBars">
+            <div class="poder-bar-item">
+              <span class="poder-bar-label">Poder disponível para revidar</span>
+              <div class="poder-bar-track"><div class="poder-bar-fill" id="poderDisponivelFill"></div></div>
+            </div>
+            <div class="poder-bar-item">
+              <span class="poder-bar-label">Poder de fato usado contra Miriã</span>
+              <div class="poder-bar-track"><div class="poder-bar-fill poder-bar-fill-worry" id="poderUsadoFill"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarPoder()" id="poderBtn">Comparar o poder disponível com o poder usado</button>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +154,11 @@
     { text: "Miriã e Arão usam a esposa de Moisés como pretexto para reivindicar autoridade igual à dele (v.1-2)." },
     { text: "O texto não registra nenhuma réplica de Moisés — só o fato de que \"o varão Moisés era mui manso, mais do que todos os homens\" (v.3)." }
   ];
+
+  function revelarPoder(){
+    document.getElementById('poderDisponivelFill').style.width = '100%';
+    document.getElementById('poderUsadoFill').style.width = '4%';
+  }
 
   let currentMax = 1;
 

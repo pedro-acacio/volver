@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .esc-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .esc-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .esc-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .esc-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .esc-step{ font-size:14px; line-height:1.5; color: var(--text-dim); min-height: 42px; margin: 0 0 6px; }
 </style>
 </head>
 <body>
@@ -87,6 +92,11 @@
         <div class="tl-card">
           <p>Urias é convocado, embebedado, e por fim mandado à frente de batalha para morrer — tudo para que o prazer de uma noite não apareça (11:6-17). Davi acha que encobriu tudo, até que o profeta Natã chega com uma parábola sobre um homem rico que toma a única ovelha de um pobre.</p>
           <p>Quando Davi se indigna com a história, Natã responde: "Tu és este homem... por que desprezaste a palavra do SENHOR, fazendo o que era mau aos seus olhos?" (2 Samuel 12:7,9). O prazer que parecia privado tinha, o tempo todo, uma testemunha — e um preço.</p>
+
+          <div class="esc-row" id="escRow"></div>
+          <div class="esc-step" id="escStep">Toque para ver, um por um, os passos que levaram do encobrimento até a morte de Urias.</div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealEscalada()" id="escBtn">Ver a escalada, passo a passo</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -138,6 +148,45 @@
     { text: "Um olhar vira desejo, o desejo vira ordem: \"mandou Davi mensageiros que a buscassem\" (v.4)." },
     { text: "O encobrimento de um pecado exige outro maior — Urias é morto para que o adultério não apareça (v.14-17)." }
   ];
+
+  const escaladaData = [
+    "Urias é chamado de volta da guerra, na esperança de que vá para casa e o filho pareça dele (11:6-8).",
+    "Davi manda uma iguaria atrás dele — mas Urias dorme à porta do palácio, fiel aos companheiros que seguem em campo (11:9-10).",
+    "Davi o embebeda, tentando de novo que ele desça para casa — nem embriagado Urias cede (11:12-13).",
+    "Davi manda, por carta, que Joabe o ponha na frente da batalha mais dura e depois se retire dele (11:14-15).",
+    "Urias morre em combate — o encobrimento de um prazer de uma noite custa a vida de um homem íntegro (11:16-17)."
+  ];
+
+  function buildEscDots(){
+    const row = document.getElementById('escRow');
+    escaladaData.forEach(() => {
+      const dot = document.createElement('div');
+      dot.className = 'esc-dot';
+      row.appendChild(dot);
+    });
+    const label = document.createElement('span');
+    label.className = 'esc-label';
+    label.id = 'escLabel';
+    label.textContent = '0 de ' + escaladaData.length;
+    row.appendChild(label);
+  }
+  buildEscDots();
+
+  function revealEscalada(){
+    const btn = document.getElementById('escBtn');
+    const dots = document.querySelectorAll('#escRow .esc-dot');
+    const stepEl = document.getElementById('escStep');
+    const labelEl = document.getElementById('escLabel');
+    btn.disabled = true;
+    dots.forEach((dot, i) => {
+      setTimeout(() => {
+        dot.classList.add('lit');
+        stepEl.textContent = escaladaData[i];
+        labelEl.textContent = (i + 1) + ' de ' + dots.length;
+      }, i * 550);
+    });
+    setTimeout(() => { btn.disabled = false; }, dots.length * 550);
+  }
 
   let currentMax = 1;
 

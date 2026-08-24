@@ -94,6 +94,18 @@
         <div class="tl-card">
           <p>Depois de lavar os pés de todos — inclusive do que já tinha combinado o preço da traição — Jesus se assenta e explica o gesto: "Deu-vos o exemplo, para que, como eu vos fiz, façais vós também" (João 13:15).</p>
           <p>Momentos depois, com Judas já a caminho de entregá-lo, ele dá o que chama de mandamento novo: "que vos ameis uns aos outros; assim como eu vos amei a vós, que também vós uns aos outros vos ameis" (v.34). A régua não é "ame quem te ama" — é "ame como eu amei", e ele acabou de amar quem o traía.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnReguaTroca" onclick="showRegua('troca')">A régua antiga</button>
+            <button class="toggle-btn" id="btnReguaNova" onclick="showRegua('nova')">A régua nova</button>
+          </div>
+
+          <div class="outcome" id="reguaCard">
+            <div class="outcome-visual" id="reguaVisual"></div>
+            <h3 id="reguaTitle"></h3>
+            <p id="reguaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -172,6 +184,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showRegua(type){
+    const btnTroca = document.getElementById('btnReguaTroca');
+    const btnNova = document.getElementById('btnReguaNova');
+    btnTroca.classList.remove('active-worry');
+    btnNova.classList.remove('active-calm');
+    const visual = document.getElementById('reguaVisual');
+    const title = document.getElementById('reguaTitle');
+    const text = document.getElementById('reguaText');
+
+    if (type === 'troca'){
+      btnTroca.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Amar quem te ama primeiro";
+      text.textContent = "\"Se amardes os que vos amam, que prêmio tereis? Não fazem os publicanos também o mesmo?\" (Mateus 5:46). Reciprocidade calculada não é o padrão do Reino — é só o padrão natural, o mesmo de quem não conhece o Espírito.";
+    } else {
+      btnNova.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Amar como Jesus amou primeiro";
+      text.textContent = "\"Assim como eu vos amei... também vós uns aos outros vos ameis\" (João 13:34). A régua deixa de ser o mérito do outro e passa a ser a iniciativa de Jesus — que lavou pés antes de qualquer resposta.";
+    }
   }
 
   function showOutcome(type){

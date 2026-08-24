@@ -86,6 +86,18 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Cam, filho de Noé, vê a nudez do pai e, em vez de cobri-la, sai contar aos irmãos (v.22). Sem e Jafé fazem o oposto — entram de costas e cobrem o pai sem olhar (v.23). Quando Noé desperta e sabe o que aconteceu, pronuncia uma maldição sobre a descendência de Cam que marca gerações (v.24-25).</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnCamResp" onclick="showFamResponse('cam')">A resposta de Cam</button>
+            <button class="toggle-btn" id="btnIrmaosResp" onclick="showFamResponse('irmaos')">A resposta de Sem e Jafé</button>
+          </div>
+
+          <div class="outcome" id="famCard">
+            <div class="outcome-visual" id="famVisual"></div>
+            <h3 id="famTitle"></h3>
+            <p id="famText"></p>
+          </div>
+
           <p>Um único excesso, tomado depois de uma vida inteira de retidão, abre espaço para vergonha e fratura que nenhuma arca conseguiu impedir. Provérbios resume o padrão sem rodeios: "o vinho é escarnecedor, a bebida forte alvoraçadora; e todo aquele que neste erro se envolve nunca será sábio" (Provérbios 20:1).</p>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
@@ -156,6 +168,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showFamResponse(who){
+    const btnCam = document.getElementById('btnCamResp');
+    const btnIrmaos = document.getElementById('btnIrmaosResp');
+    btnCam.classList.remove('active-worry');
+    btnIrmaos.classList.remove('active-calm');
+    const visual = document.getElementById('famVisual');
+    const title = document.getElementById('famTitle');
+    const text = document.getElementById('famText');
+
+    if (who === 'cam'){
+      btnCam.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ver a vergonha do pai e espalhá-la";
+      text.textContent = "Cam encontra o pai exposto e sai contar aos irmãos, em vez de cobrir — a vulnerabilidade de alguém vira exposição pública.";
+    } else {
+      btnIrmaos.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Cobrir sem olhar";
+      text.textContent = "Sem e Jafé entram de costas, com a capa sobre os ombros, e cobrem a nudez do pai sem sequer ver — a mesma vulnerabilidade, tratada com honra.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -86,6 +90,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Arão funde as joias do povo e molda um bezerro de ouro. E então vem a linha que expõe o coração do pecado: "estes são os teus deuses, ó Israel, que te tiraram da terra do Egito" (Êxodo 32:4). Uma imagem feita à mão, naquele mesmo instante, recebe o crédito pelo mar aberto, pelas pragas, pela libertação inteira.</p>
+
+          <div class="seq-row" id="idolSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealIdolSeq()" id="idolSeqBtn">Ver o que estava sendo atribuído ao bezerro</button>
+          <p class="chip-text" id="idolSeqText">Toque no botão para ver, um a um, tudo que só o Deus vivo tinha feito.</p>
+
           <p>Não é apenas trocar de religião — é atribuir a uma coisa fabricada o que só o Deus vivo tinha feito. Quando Moisés desce e vê a festa em torno do ídolo, quebra as tábuas da lei ali mesmo (v.19): a aliança já estava rompida antes de qualquer palavra ser dita.</p>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
@@ -156,6 +165,34 @@
     }, 120);
   }
   openStage(1);
+
+  const idolWorks = ["as dez pragas sobre o Egito", "o mar Vermelho aberto a pé seco", "a coluna de fogo e de nuvem no deserto", "o maná que caía toda manhã"];
+
+  function buildIdolSeqDots(){
+    const el = document.getElementById('idolSeqRow');
+    idolWorks.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'seq-label';
+    label.id = 'idolSeqLabel';
+    label.textContent = '0 de ' + idolWorks.length;
+    el.appendChild(label);
+  }
+  buildIdolSeqDots();
+
+  function revealIdolSeq(){
+    const dots = document.querySelectorAll('#idolSeqRow .seq-dot');
+    const textEl = document.getElementById('idolSeqText');
+    textEl.textContent = '';
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent += (i > 0 ? ' · ' : '') + idolWorks[i];
+      document.getElementById('idolSeqLabel').textContent = (i + 1) + ' de ' + idolWorks.length;
+    }, i * 220));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

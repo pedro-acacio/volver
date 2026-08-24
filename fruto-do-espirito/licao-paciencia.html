@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .carne-row{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin: 14px 0 16px; }
+  .carne-pill{ padding:6px 12px; border-radius:14px; background: var(--panel); border:1px solid var(--panel-line); font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); opacity:0; transform: translateY(6px) scale(.9); transition: opacity .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1), border-color .3s ease, box-shadow .3s ease; }
+  .carne-pill.lit{ opacity:1; transform: translateY(0) scale(1); border-color: var(--worry); box-shadow: 0 0 8px 1px var(--worry); }
+  .carne-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,9 @@
         <div class="tl-card">
           <p>Entre as obras da carne, Paulo lista "iras, pelejas" (Gálatas 5:20) — o padrão de resolver a ofensa no calor do momento, assim que o poder para fazê-lo aparece. Longanimidade é literalmente "ira longa": o oposto de explodir na primeira oportunidade.</p>
           <p>Davi já foi ungido rei por Samuel (1 Samuel 16), mas Saul — o rei atual — passa anos caçando-o pelo deserto por ciúme e medo. A promessa de Deus já é certa. A pergunta é o que Davi faz com o tempo entre a promessa e o cumprimento.</p>
+          <p>Entre as obras da carne de Gálatas 5:19-21, estas nascem direto da impaciência de resolver agora o que só o tempo resolveria:</p>
+          <div class="carne-row" id="carneRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCarne()" id="carneBtn">Ver a lista, uma por uma</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → a caverna de En-Gedi</button>
         </div>
       </div>
@@ -137,6 +144,32 @@
     { text: "\"Eis aqui o dia... faze-lhe como parecer bem aos teus olhos\" — o texto até soa como se Deus estivesse oferecendo a chance (v.4)." },
     { text: "Corta apenas a orla do manto de Saul escondido, e mesmo assim seu coração o reprende por isso (v.4-5)." }
   ];
+
+  const carneItems = ["inimizades","contendas","ciúmes","iras","facções","dissensões","invejas"];
+
+  function buildCarneRow(){
+    const el = document.getElementById('carneRow');
+    carneItems.forEach(w => {
+      const p = document.createElement('span');
+      p.className = 'carne-pill';
+      p.textContent = w;
+      el.appendChild(p);
+    });
+    const label = document.createElement('span');
+    label.className = 'carne-label';
+    label.id = 'carneLabel';
+    label.textContent = '0 de ' + carneItems.length;
+    el.appendChild(label);
+  }
+  buildCarneRow();
+
+  function revealCarne(){
+    const pills = document.querySelectorAll('#carneRow .carne-pill');
+    pills.forEach((p, i) => setTimeout(() => p.classList.add('lit'), i * 180));
+    setTimeout(() => {
+      document.getElementById('carneLabel').textContent = carneItems.length + ' de ' + carneItems.length;
+    }, pills.length * 180);
+  }
 
   let currentMax = 1;
 

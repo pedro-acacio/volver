@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .prop-bars{ display:flex; flex-direction:column; gap:12px; margin: 14px 0 16px; }
+  .prop-row{ display:flex; flex-direction:column; gap:6px; }
+  .prop-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .prop-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .prop-fill{ height:100%; border-radius:9px; width:0%; background: var(--calm); box-shadow: 0 0 10px 1px var(--calm); transition: width .7s cubic-bezier(.34,1.56,.64,1); }
+  .prop-fill.prop-fill-gold{ background: var(--gold); box-shadow: 0 0 10px 1px var(--gold); }
 </style>
 </head>
 <body>
@@ -86,6 +92,19 @@
         <div class="tl-card">
           <p>Pedro põe todos para fora, ajoelha-se, ora, e diz: "Tabita, levanta-te." Ela abre os olhos e se senta (v.40). É um dos poucos milagres de ressurreição do Novo Testamento fora dos evangelhos — mas o texto passou o dobro do espaço descrevendo as túnicas que ela costurou do que descrevendo o próprio milagre.</p>
           <p>A ordem importa: primeiro Lucas registra a vida de bondade constante, depois o milagre. A ressurreição não cria o valor da vida dela — confirma o que já estava ali antes de qualquer plateia.</p>
+
+          <div class="prop-bars" id="propBars">
+            <div class="prop-row">
+              <span class="prop-label">Espaço do texto descrevendo as túnicas</span>
+              <div class="prop-track"><div class="prop-fill" id="propFillTunicas"></div></div>
+            </div>
+            <div class="prop-row">
+              <span class="prop-label">Espaço do texto descrevendo o milagre</span>
+              <div class="prop-track"><div class="prop-fill prop-fill-gold" id="propFillMilagre"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealProp()" id="propBtn">Comparar o espaço do texto</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -135,6 +154,11 @@
   const dorData = [
     { text: "\"Todas as viúvas... mostravam, chorando, as túnicas e mais vestidos que Dorcas fizera quando estava com elas\" (v.39) — prova viva de uma vida gasta em fazer o bem, sem que ninguém tivesse pedido registro disso." }
   ];
+
+  function revealProp(){
+    document.getElementById('propFillTunicas').style.width = '100%';
+    document.getElementById('propFillMilagre').style.width = '50%';
+  }
 
   let currentMax = 1;
 

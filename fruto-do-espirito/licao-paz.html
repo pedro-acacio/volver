@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .carne-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 4px; flex-wrap:wrap; }
+  .carne-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .carne-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .carne-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .carne-words{ display:flex; flex-wrap:wrap; gap:8px 10px; margin: 4px 0 16px; min-height:24px; }
+  .carne-word{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color: var(--text-dim); opacity:0; transform: translateY(-4px); transition: opacity .3s ease, transform .3s ease; }
+  .carne-word.lit{ opacity:1; transform: translateY(0); }
+  .carne-word:not(:last-child)::after{ content:"·"; margin-left:10px; color: var(--panel-line); }
 </style>
 </head>
 <body>
@@ -44,6 +52,10 @@
         <div class="tl-card">
           <p>Entre as obras da carne, Paulo lista "inimizades, contendas... iras, pelejas, dissensões" (Gálatas 5:20) — o padrão de uma paz que só existe enquanto nada ameaça, e desmorona no primeiro sinal de perigo real.</p>
           <p>A paz que Jesus promete é diferente por definição: "Deixo-vos a paz, a minha paz vos dou; não vo-la dou como o mundo a dá" (João 14:27). O mundo dá paz condicionada à ausência de tempestade. Ele oferece outra coisa.</p>
+          <p>Repare que Gálatas 5:19 chama isso de "obras" da carne — no plural. A lista completa é longa; ela nunca para de se multiplicar. O fruto do Espírito, alguns versículos depois, vem no singular.</p>
+          <div class="carne-row" id="carneRow"></div>
+          <div class="carne-words" id="carneWords"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealCarne()" id="carneBtn">Ver a lista completa, uma por uma</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → a tempestade no lago</button>
         </div>
       </div>
@@ -137,6 +149,34 @@
     { text: "Em pânico, certos de que vão morrer, acordam Jesus com uma acusação disfarçada de pergunta: \"não se te dá que pereçamos?\" (v.38)." },
     { text: "Dormindo na popa, sobre um travesseiro, no meio da mesma tempestade — sua paz não dependia do mar estar calmo (v.38)." }
   ];
+
+  const carneWords = ["Adultério","Impureza","Idolatria","Feitiçaria","Inimizades","Contendas","Ciúmes","Iras","Facções","Invejas","Bebedices","Glutonarias"];
+  function buildCarneDots(){
+    const row = document.getElementById('carneRow');
+    const words = document.getElementById('carneWords');
+    carneWords.forEach(w => {
+      const d = document.createElement('div');
+      d.className = 'carne-dot';
+      row.appendChild(d);
+      const span = document.createElement('span');
+      span.className = 'carne-word';
+      span.textContent = w;
+      words.appendChild(span);
+    });
+    const label = document.createElement('span');
+    label.className = 'carne-label';
+    label.id = 'carneLabel';
+    label.textContent = '0 de ' + carneWords.length;
+    row.appendChild(label);
+  }
+  buildCarneDots();
+  function revealCarne(){
+    const dots = document.querySelectorAll('#carneRow .carne-dot');
+    const words = document.querySelectorAll('#carneWords .carne-word');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 180));
+    words.forEach((w, i) => setTimeout(() => w.classList.add('lit'), i * 180));
+    setTimeout(() => { document.getElementById('carneLabel').textContent = carneWords.length + ' de ' + carneWords.length; }, dots.length * 180);
+  }
 
   let currentMax = 1;
 

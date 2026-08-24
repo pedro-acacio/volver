@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 10px; flex-wrap:wrap; }
+  .seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -43,6 +47,11 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>Nenhum outro grupo na lista de Paulo tem tantas palavras: "inimizades, porfias, emulações, iras, pelejas, dissensões, heresias, invejas" (Gálatas 5:20b-21a). Oito palavras para a mesma raiz — a comparação que vira ressentimento, e o ressentimento que rompe comunidade.</p>
+
+          <div class="seq-row" id="discordiaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDiscordiaSeq()" id="discordiaSeqBtn">Ver as oito palavras, uma por uma</button>
+          <p class="chip-text" id="discordiaWordList">Toque no botão para ver a mesma raiz se desdobrar em oito palavras.</p>
+
           <p>A primeira família da Bíblia já mostra essa raiz em ação. Caim, o primogênito, é agricultor; Abel, o caçula, é pastor. Ambos trazem oferta ao SENHOR — e só uma delas é aceita.</p>
           <button class="continue-btn" onclick="openStage(2)">Continuar → o aviso antes do ato</button>
         </div>
@@ -156,6 +165,34 @@
     }, 120);
   }
   openStage(1);
+
+  const discordiaWords = ["inimizades","porfias","emulações","iras","pelejas","dissensões","heresias","invejas"];
+
+  function buildDiscordiaSeqDots(){
+    const el = document.getElementById('discordiaSeqRow');
+    discordiaWords.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'seq-label';
+    label.id = 'discordiaSeqLabel';
+    label.textContent = '0 de 8';
+    el.appendChild(label);
+  }
+  buildDiscordiaSeqDots();
+
+  function revealDiscordiaSeq(){
+    const dots = document.querySelectorAll('#discordiaSeqRow .seq-dot');
+    const listEl = document.getElementById('discordiaWordList');
+    listEl.textContent = '';
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      listEl.textContent += (i > 0 ? ' · ' : '') + discordiaWords[i];
+      document.getElementById('discordiaSeqLabel').textContent = (i + 1) + ' de 8';
+    }, i * 220));
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
