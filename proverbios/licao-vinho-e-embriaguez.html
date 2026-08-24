@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .ciclo-seq{ display:flex; flex-direction:column; gap:10px; margin:16px 0 8px; }
+  .ciclo-step{ display:flex; align-items:center; gap:12px; opacity:.35; transition: opacity .3s ease; }
+  .ciclo-step.lit{ opacity:1; }
+  .ciclo-dot{ width:20px; height:20px; min-width:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .ciclo-step.lit .ciclo-dot{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .ciclo-text{ font-family:'IBM Plex Mono', monospace; font-size:13px; color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -88,6 +94,15 @@
         <div class="tl-card">
           <p><em>"...os teus olhos verão coisas estranhas... e dirás: fui espancado, e não o senti; quando despertarei? ainda tornarei a buscá-lo outra vez"</em> (23:33-35). Poucas passagens de Provérbios entram assim na primeira pessoa.</p>
           <p>O livro não descreve esse ciclo de fora, como quem observa e reprova. Ele deixa a própria pessoa falar — sentindo o golpe sem sentir, prometendo nunca mais e já planejando voltar. É a descrição mais viva que Provérbios faz de qualquer vício, de dentro da experiência.</p>
+
+          <div class="ciclo-seq" id="cicloSeq">
+            <div class="ciclo-step"><div class="ciclo-dot"></div><span class="ciclo-text">"Os teus olhos verão coisas estranhas" (23:33a)</span></div>
+            <div class="ciclo-step"><div class="ciclo-dot"></div><span class="ciclo-text">"Fui espancado, e não o senti" (23:35a)</span></div>
+            <div class="ciclo-step"><div class="ciclo-dot"></div><span class="ciclo-text">"Quando despertarei?" (23:35b)</span></div>
+            <div class="ciclo-step"><div class="ciclo-dot"></div><span class="ciclo-text">"Ainda tornarei a buscá-lo outra vez" (23:35c)</span></div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarCiclo()" id="cicloBtn">Ver o ciclo, uma fala de cada vez</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +171,14 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarCiclo(){
+    const steps = document.querySelectorAll('#cicloSeq .ciclo-step');
+    const btn = document.getElementById('cicloBtn');
+    steps.forEach((s, i) => setTimeout(() => s.classList.add('lit'), i * 550));
+    btn.disabled = true;
+    btn.style.opacity = '0.55';
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

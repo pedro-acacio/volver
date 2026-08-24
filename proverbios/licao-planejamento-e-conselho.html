@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .ritmo-compare{ display:flex; flex-direction:column; gap:14px; margin-top:16px; }
+  .ritmo-item{ display:flex; flex-direction:column; gap:6px; }
+  .ritmo-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .ritmo-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .ritmo-fill{ height:100%; width:0%; border-radius:9px; background: var(--text-faint); transition: width 1s cubic-bezier(.34,1.2,.64,1), background .3s ease, box-shadow .3s ease; }
 </style>
 </head>
 <body>
@@ -88,6 +93,20 @@
         <div class="tl-card">
           <p><em>"Entrega ao SENHOR as tuas obras, e teus pensamentos serão estabelecidos"</em> (16:3). Antes de executar, o plano passa por uma entrega — e é essa entrega, não o controle total, que estabelece os pensamentos.</p>
           <p><em>"Os pensamentos do diligente tendem só à abundância, mas os de todo apressado tendem à pobreza"</em> (21:5). Um bom plano pede as duas coisas ao mesmo tempo: a paciência de quem trabalha com constância e a disposição de entregar o resultado, em vez da pressa de quem decide sozinho e às pressas.</p>
+
+          <div class="ritmo-compare">
+            <div class="ritmo-item">
+              <span class="ritmo-label">Diligente e entregue → abundância</span>
+              <div class="ritmo-track"><div class="ritmo-fill" id="ritmoDiligenteFill"></div></div>
+            </div>
+            <div class="ritmo-item">
+              <span class="ritmo-label">Apressado e sozinho → pobreza</span>
+              <div class="ritmo-track"><div class="ritmo-fill" id="ritmoApressadoFill"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:10px;" onclick="compararRitmo()" id="ritmoBtn">Comparar os dois ritmos</button>
+          <div class="chip-text" id="ritmoText">Toque para ver aonde cada ritmo tende, segundo 21:5.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +175,25 @@
     }, 120);
   }
   openStage(1);
+
+  function compararRitmo(){
+    const dilig = document.getElementById('ritmoDiligenteFill');
+    const apress = document.getElementById('ritmoApressadoFill');
+    const text = document.getElementById('ritmoText');
+    const btn = document.getElementById('ritmoBtn');
+    dilig.style.width = '92%';
+    dilig.style.background = 'var(--gold)';
+    dilig.style.boxShadow = '0 0 10px 1px var(--gold)';
+    setTimeout(() => {
+      apress.style.width = '25%';
+      apress.style.background = 'var(--worry)';
+    }, 350);
+    setTimeout(() => {
+      text.textContent = "\"Os pensamentos do diligente tendem só à abundância, mas os de todo apressado tendem à pobreza\" (21:5) — o mesmo plano, dois ritmos, dois destinos diferentes.";
+    }, 900);
+    btn.disabled = true;
+    btn.style.opacity = '0.55';
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .ling-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .ling-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .ling-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .ling-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,12 @@
         <div class="tl-card">
           <p>Provérbios não trata a fala como algo neutro. <em>"A morte e a vida estão no poder da língua; e aquele que a ama comerá do seu fruto"</em> (18:21) — a mesma boca pode construir ou destruir, e o livro insiste que você colhe o que planta com ela.</p>
           <p><em>"Há palrador cujas palavras ferem como espada, mas a língua dos sábios é saúde"</em> (12:18). Duas línguas, dois efeitos completamente opostos em quem escuta.</p>
+
+          <p>E o livro não para nesses dois versos — o tema volta capítulo após capítulo, sob ângulos diferentes:</p>
+          <div class="ling-seq-row" id="linguaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealLingua()" id="linguaSeqBtn">Ver mais provérbios sobre a língua</button>
+          <div class="chip-text" id="linguaSeqText">Toque no botão para percorrer outros ditados de Provérbios sobre o mesmo tema.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → resposta branda ou palavra dura</button>
         </div>
       </div>
@@ -133,6 +143,38 @@
 </div>
 
 <script>
+  const linguaData = [
+    { text: "\"A língua branda é árvore de vida, mas a perversidade nela quebranta o espírito\" (15:4) — a mesma imagem de 18:21, num outro verso." },
+    { text: "\"Palavras suaves são favo de mel, doces para a alma e saúde para os ossos\" (16:24) — o efeito da boa palavra não fica só na mente, chega ao corpo." },
+    { text: "\"Aquele que retém as suas palavras tem conhecimento\" (17:27) — às vezes a sabedoria da língua está no que ela decide não dizer." },
+    { text: "\"Sem lenha, o fogo se apaga; e, não havendo murmurador, cessa a contenda\" (26:20) — boa parte dos conflitos que persistem só continua porque alguém segue alimentando." }
+  ];
+
+  function buildLinguaDots(){
+    const el = document.getElementById('linguaSeqRow');
+    linguaData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'ling-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'ling-seq-label';
+    label.id = 'linguaSeqLabel';
+    label.textContent = '0 de ' + linguaData.length;
+    el.appendChild(label);
+  }
+  buildLinguaDots();
+
+  function revealLingua(){
+    const dots = document.querySelectorAll('#linguaSeqRow .ling-dot');
+    const textEl = document.getElementById('linguaSeqText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = linguaData[i].text;
+      document.getElementById('linguaSeqLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
+
   const respostaData = [
     { text: "\"A palavra dura suscita a ira\" (15:1b) — responde no mesmo tom da provocação, e o conflito só cresce." },
     { text: "\"A resposta branda desvia o furor\" (15:1a) — não porque evita o assunto, mas porque não alimenta o fogo com mais fogo." }

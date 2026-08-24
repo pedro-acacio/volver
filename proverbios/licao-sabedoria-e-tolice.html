@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .op-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .op-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .op-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .op-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p><em>"Toda mulher sábia edifica a sua casa; a insensata a derruba com as suas mãos"</em> (14:1) — a mesma matéria-prima, dois resultados opostos, dependendo de quem constrói.</p>
           <p>E o livro dá um teste para saber de que lado alguém está: <em>"Vistes um homem sábio a seus próprios olhos? Maior esperança há do insensato do que dele"</em> (26:12). Sabedoria bíblica não é status intelectual — é a humildade de saber que você ainda não sabe tudo.</p>
+
+          <div class="op-seq-row" id="opSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealOlhosProprios()" id="opSeqBtn">Ver o diagnóstico, passo a passo</button>
+          <div class="chip-text" id="opSeqText">Toque no botão para percorrer o raciocínio completo de Provérbios sobre quem se acha sábio demais.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +146,38 @@
     { text: "\"Assenta-se à porta de sua casa\" gritando aos que passam: \"as águas roubadas são doces\" (9:13-17) — mas quem entra \"não sabe que ali estão os mortos\" (v.18)." },
     { text: "Construiu casa, preparou mesa, e convida os simples a \"deixar a insensatez\" e viver — \"andar pelo caminho do entendimento\" (9:1-6)." }
   ];
+
+  const olhosPropriosData = [
+    { text: "\"O caminho do insensato é reto aos seus olhos, mas o que ouve o conselho é sábio\" (12:15) — o insensato não sabe que está errado." },
+    { text: "\"Aquele que confia no seu próprio coração é insensato\" (28:26) — a raiz do problema não é falta de informação, é autoconfiança." },
+    { text: "\"Não sejas sábio a teus próprios olhos; teme ao SENHOR, e aparta-te do mal\" (3:7) — o antídoto não é mais conhecimento, é humildade." },
+    { text: "\"Vistes um homem sábio a seus próprios olhos? Maior esperança há do insensato do que dele\" (26:12) — o diagnóstico final: pior do que ser insensato é achar que não é." }
+  ];
+
+  function buildOpDots(){
+    const el = document.getElementById('opSeqRow');
+    olhosPropriosData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'op-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'op-seq-label';
+    label.id = 'opSeqLabel';
+    label.textContent = '0 de ' + olhosPropriosData.length;
+    el.appendChild(label);
+  }
+  buildOpDots();
+
+  function revealOlhosProprios(){
+    const dots = document.querySelectorAll('#opSeqRow .op-dot');
+    const textEl = document.getElementById('opSeqText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = olhosPropriosData[i].text;
+      document.getElementById('opSeqLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
 
   let currentMax = 1;
 

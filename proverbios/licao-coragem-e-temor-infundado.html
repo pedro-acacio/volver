@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p><em>"Fogem os ímpios, sem que ninguém os persiga"</em> (28:1a). A imagem é quase absurda à primeira vista — gente correndo de um perigo que não existe, olhando para trás sem que haja ninguém lá.</p>
           <p>Mas o medo não precisa de uma ameaça real para ser sentido como real. Uma consciência culpada projeta perigo em toda esquina, transforma passos comuns em passos de perseguição, e faz de quem não fez nada de errado a única testemunha da própria fuga.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnThreatReal" onclick="showThreat('real')">Perigo real</button>
+            <button class="toggle-btn" id="btnThreatImagined" onclick="showThreat('imagined')">Perigo imaginado</button>
+          </div>
+
+          <div class="outcome" id="threatCard">
+            <div class="outcome-visual" id="threatVisual"></div>
+            <h3 id="threatTitle"></h3>
+            <p id="threatText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → dois retratos, um versículo</button>
         </div>
       </div>
@@ -155,6 +167,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showThreat(type){
+    const btnReal = document.getElementById('btnThreatReal');
+    const btnImagined = document.getElementById('btnThreatImagined');
+    btnReal.classList.remove('active-calm');
+    btnImagined.classList.remove('active-worry');
+    const visual = document.getElementById('threatVisual');
+    const title = document.getElementById('threatTitle');
+    const text = document.getElementById('threatText');
+
+    if (type === 'real'){
+      btnReal.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Quando há de fato quem persiga";
+      text.textContent = "Fugir de um perigo real é apenas prudência — o problema nunca foi correr, foi correr do que não existe.";
+    } else {
+      btnImagined.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Perseguido pela própria consciência";
+      text.textContent = "Sem nenhum perseguidor real, cada sombra vira ameaça e cada ruído vira passos às costas — o medo mora dentro, não fora.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .sow-widget{ display:flex; gap:28px; flex-wrap:wrap; margin: 14px 0 6px; }
+  .sow-col{ display:flex; flex-direction:column; gap:8px; }
+  .sow-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .sow-dots{ display:flex; flex-wrap:wrap; gap:7px; max-width:190px; }
+  .sow-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .35s ease, transform .3s cubic-bezier(.34,1.56,.64,1), opacity .35s ease, box-shadow .35s ease; }
+  .sow-dot.sow-lit{ background: var(--calm); transform: scale(1.15); box-shadow: 0 0 9px 1px rgba(124,154,120,0.5); }
+  .sow-dot.sow-faded{ background: var(--worry); opacity: .3; transform: scale(.7); }
 </style>
 </head>
 <body>
@@ -44,6 +51,19 @@
         <div class="tl-card">
           <p><em>"Há uns que espalham, e ainda se lhes acrescenta; e outros que retêm mais do que é justo, mas resulta em pobreza"</em> (11:24). Ao contrário do que parece lógico, reter demais empobrece, e distribuir generosamente multiplica.</p>
           <p><em>"A alma abençoadora engordará, e o que regar também será regado"</em> (11:25). A imagem é agrícola: quem rega o campo de outro não perde água — colhe também.</p>
+
+          <div class="sow-widget">
+            <div class="sow-col">
+              <span class="sow-label" id="sowRetemLabel">Quem retém · 6</span>
+              <div class="sow-dots" id="sowRetemDots"></div>
+            </div>
+            <div class="sow-col">
+              <span class="sow-label" id="sowEspalhaLabel">Quem espalha · 6</span>
+              <div class="sow-dots" id="sowEspalhaDots"></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealMatematica()" id="sowBtn">Ver o que sobra em cada mão</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → dar com boa vista</button>
         </div>
       </div>
@@ -137,6 +157,37 @@
     { text: "\"O que esconde os seus olhos terá muitas maldições\" (28:27b) — evita ver a necessidade para não precisar responder a ela." },
     { text: "\"O que é de boa vista será abençoado, porque dá do seu pão ao pobre\" (22:9) — enxerga a necessidade e responde a ela sem calcular o retorno." }
   ];
+
+  function buildSowDots(){
+    ['sowRetemDots','sowEspalhaDots'].forEach(id => {
+      const el = document.getElementById(id);
+      for (let i = 0; i < 6; i++){
+        const d = document.createElement('div');
+        d.className = 'sow-dot';
+        el.appendChild(d);
+      }
+    });
+  }
+  buildSowDots();
+
+  function revealMatematica(){
+    const retemDots = document.querySelectorAll('#sowRetemDots .sow-dot');
+    retemDots.forEach((d, i) => setTimeout(() => d.classList.add('sow-faded'), i * 150));
+    setTimeout(() => { document.getElementById('sowRetemLabel').textContent = 'Quem retém · resulta em pobreza'; }, retemDots.length * 150);
+
+    const espalhaDots = document.querySelectorAll('#sowEspalhaDots .sow-dot');
+    espalhaDots.forEach((d, i) => setTimeout(() => d.classList.add('sow-lit'), i * 150));
+    const espalhaEl = document.getElementById('sowEspalhaDots');
+    for (let i = 0; i < 3; i++){
+      const d = document.createElement('div');
+      d.className = 'sow-dot';
+      espalhaEl.appendChild(d);
+      setTimeout(() => d.classList.add('sow-lit'), (espalhaDots.length + i) * 150);
+    }
+    setTimeout(() => { document.getElementById('sowEspalhaLabel').textContent = 'Quem espalha · ainda se lhe acrescenta'; }, (espalhaDots.length + 3) * 150);
+
+    document.getElementById('sowBtn').onclick = null;
+  }
 
   let currentMax = 1;
 

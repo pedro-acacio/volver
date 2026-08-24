@@ -88,6 +88,18 @@
         <div class="tl-card">
           <p><em>"Corrige a teu filho, e te fará descansar; e dará delícias à tua alma"</em> (29:17). A recompensa que o verso descreve não é só o filho se comportando bem — é o próprio pai ou mãe encontrando descanso e alegria.</p>
           <p>É um jeito diferente de olhar para o esforço de corrigir: não como um dever que só beneficia a criança, mas como algo que devolve paz e prazer para quem cria, porque a relação em si melhora.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnCorrigeAdiada" onclick="showCorrecao('adiada')">Correção adiada</button>
+            <button class="toggle-btn" id="btnCorrigeAplicada" onclick="showCorrecao('aplicada')">Correção aplicada</button>
+          </div>
+
+          <div class="outcome" id="correcaoCard">
+            <div class="outcome-visual" id="correcaoVisual"></div>
+            <h3 id="correcaoTitle"></h3>
+            <p id="correcaoText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +168,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showCorrecao(state){
+    const btnAdiada = document.getElementById('btnCorrigeAdiada');
+    const btnAplicada = document.getElementById('btnCorrigeAplicada');
+    btnAdiada.classList.remove('active-worry');
+    btnAplicada.classList.remove('active-calm');
+    const visual = document.getElementById('correcaoVisual');
+    const title = document.getElementById('correcaoTitle');
+    const text = document.getElementById('correcaoText');
+
+    if (state === 'adiada'){
+      btnAdiada.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Atrito que se repete";
+      text.textContent = "Sem a correção necessária, o mesmo conflito volta sempre — e o cansaço de quem cria cresce junto com ele, sem nunca virar descanso.";
+    } else {
+      btnAplicada.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Descanso que se conquista";
+      text.textContent = "Corrigir a tempo custa esforço no momento, mas devolve, com o tempo, o descanso e as delícias que 29:17 promete para quem cria.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

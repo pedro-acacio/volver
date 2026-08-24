@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .peso-compare{ display:flex; flex-direction:column; gap:14px; margin-top:16px; }
+  .peso-item{ display:flex; flex-direction:column; gap:6px; }
+  .peso-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .peso-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .peso-fill{ height:100%; width:0%; border-radius:9px; background: var(--text-faint); transition: width 1s cubic-bezier(.34,1.2,.64,1), background .3s ease, box-shadow .3s ease; }
 </style>
 </head>
 <body>
@@ -88,6 +93,20 @@
         <div class="tl-card">
           <p><em>"Se disseres: eis que não sabíamos isso — porventura aquele que pesa os corações não o percebe?"</em> (24:12).</p>
           <p>A ignorância alegada não é defesa quando quem pesa já viu a intenção real por baixo da desculpa. Não dá pra escapar da balança dizendo que não sabia — porque o peso não depende do que se sabia, depende do que estava lá dentro.</p>
+
+          <div class="peso-compare">
+            <div class="peso-item">
+              <span class="peso-label">"Eis que não sabíamos isso"</span>
+              <div class="peso-track"><div class="peso-fill" id="pesoDesculpaFill"></div></div>
+            </div>
+            <div class="peso-item">
+              <span class="peso-label">O que a balança realmente mede</span>
+              <div class="peso-track"><div class="peso-fill" id="pesoRealFill"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:10px;" onclick="pesarCoracao()" id="pesoBtn">Colocar na balança</button>
+          <div class="chip-text" id="pesoText">Toque para ver o que pesa mais: a desculpa ou a intenção.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +175,24 @@
     }, 120);
   }
   openStage(1);
+
+  function pesarCoracao(){
+    const desculpa = document.getElementById('pesoDesculpaFill');
+    const real = document.getElementById('pesoRealFill');
+    const text = document.getElementById('pesoText');
+    const btn = document.getElementById('pesoBtn');
+    desculpa.style.width = '20%';
+    setTimeout(() => {
+      real.style.width = '95%';
+      real.style.background = 'var(--worry)';
+      real.style.boxShadow = '0 0 10px 1px var(--worry)';
+    }, 350);
+    setTimeout(() => {
+      text.textContent = "\"Porventura aquele que pesa os corações não o percebe?\" (24:12) — a desculpa é leve, mas quem pesa não avalia o que foi dito, avalia o que estava lá dentro.";
+    }, 900);
+    btn.disabled = true;
+    btn.style.opacity = '0.55';
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

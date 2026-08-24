@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .refino-row{ display:flex; align-items:center; gap:10px; margin: 14px 0 10px; flex-wrap:wrap; }
+  .refino-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .refino-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .refino-steps{ display:flex; flex-direction:column; gap:8px; margin: 6px 0 4px; }
+  .refino-step-text{ font-size:13.5px; color:var(--text-dim); line-height:1.6; margin:0; animation: refinoFadeIn .4s ease both; }
+  @keyframes refinoFadeIn{ from{ opacity:0; transform:translateY(4px); } to{ opacity:1; transform:translateY(0); } }
 </style>
 </head>
 <body>
@@ -88,6 +94,11 @@
         <div class="tl-card">
           <p><em>"Benignidade e verdade guardam o rei, e com benignidade sustém ele o seu trono"</em> (20:28). O que protege quem lidera não é a vigilância contra ameaças externas — é o caráter que sustenta por dentro.</p>
           <p><em>"Tira da prata as escórias... tira o ímpio da presença do rei, e o seu trono se firmará em justiça"</em> (25:4-5). A imagem é ativa: liderar bem exige remover o que corrompe, não apenas manter as próprias mãos limpas. Um trono não se firma só porque quem o ocupa é íntegro — se firma quando essa integridade também expulsa o que corrompe ao redor.</p>
+
+          <div class="refino-row" id="refinoRow"></div>
+          <div class="refino-steps" id="refinoSteps"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealRefino()" id="refinoBtn">Ver o processo de refino, passo a passo</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -138,6 +149,35 @@
     { text: "\"...mas quando o ímpio domina, o povo suspira\" (29:2b) — a impiedade no comando não fica escondida; ela se sente no ânimo de quem está sob ela." },
     { text: "\"Quando os justos dominam, o povo se alegra\" (29:2a) — a justiça no comando também não fica escondida; ela aparece no alívio e na alegria de quem é governado." }
   ];
+
+  const refinoData = [
+    "\"Tira da prata as escórias, e sairá vaso para o fundidor\" (25:4) — o processo começa removendo o que é impuro, não elogiando o que já era bom.",
+    "\"...tira o ímpio da presença do rei\" (25:5a) — a mesma lógica vale para a corte: primeiro remove, depois firma.",
+    "\"...e o seu trono se firmará em justiça\" (25:5b) — o resultado nunca vem antes do processo. Nem no metal, nem na companhia."
+  ];
+
+  function buildRefinoDots(){
+    const el = document.getElementById('refinoRow');
+    refinoData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'refino-dot';
+      el.appendChild(d);
+    });
+  }
+  buildRefinoDots();
+
+  function revealRefino(){
+    const dots = document.querySelectorAll('#refinoRow .refino-dot');
+    const stepsEl = document.getElementById('refinoSteps');
+    stepsEl.innerHTML = '';
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      const p = document.createElement('p');
+      p.className = 'refino-step-text';
+      p.textContent = refinoData[i];
+      stepsEl.appendChild(p);
+    }, i * 450));
+  }
 
   let currentMax = 1;
 

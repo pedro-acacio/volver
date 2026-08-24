@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p><em>"Melhor é o longânimo do que o valente, e o que domina o seu espírito do que o que toma uma cidade"</em> (16:32). Conquistar território exige exército, estratégia, força bruta. Dominar o próprio espírito, diz o texto, exige mais.</p>
           <p><em>"Quem tarda em irar-se é grande em entendimento, mas o que é de espírito impaciente assinala a sua loucura"</em> (14:29). A rapidez para se irritar não é sinal de força — é sinal de que algo ainda não amadureceu.</p>
+
+          <p>Duas formas de vitória, lado a lado — qual delas o texto chama de maior?</p>
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnConquista" onclick="showForca('conquista')">Tomar uma cidade</button>
+            <button class="toggle-btn" id="btnDominio" onclick="showForca('dominio')">Dominar o espírito</button>
+          </div>
+          <div class="outcome" id="forcaCard">
+            <div class="outcome-visual" id="forcaVisual"></div>
+            <h3 id="forcaTitle"></h3>
+            <p id="forcaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → duas respostas à provocação</button>
         </div>
       </div>
@@ -133,6 +145,28 @@
 </div>
 
 <script>
+  function showForca(type){
+    const btnConquista = document.getElementById('btnConquista');
+    const btnDominio = document.getElementById('btnDominio');
+    btnConquista.classList.remove('active-worry');
+    btnDominio.classList.remove('active-calm');
+    const visual = document.getElementById('forcaVisual');
+    const title = document.getElementById('forcaTitle');
+    const text = document.getElementById('forcaText');
+
+    if (type === 'conquista'){
+      btnConquista.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Força voltada para fora";
+      text.textContent = "Tomar uma cidade exige exército, cerco, estratégia — uma vitória visível, aplaudida, mas alcançada vencendo outra pessoa.";
+    } else {
+      btnDominio.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Força voltada para dentro";
+      text.textContent = "Dominar o próprio espírito não tem plateia nem general — Provérbios chama isso de maior justamente porque o adversário, ali, é você mesmo.";
+    }
+  }
+
   const iraData = [
     { text: "\"O homem iracundo suscita contendas\" (15:18a) — cada resposta no calor do momento alimenta a próxima rodada do conflito." },
     { text: "\"O longânimo apaziguará a luta\" (15:18b) — a mesma provocação, mas sem alguém do outro lado disposto a alimentá-la." }

@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .testemunha-seq-row{ display:flex; align-items:flex-end; gap:22px; margin: 14px 0 16px; flex-wrap:wrap; }
+  .testemunha-step{ display:flex; flex-direction:column; align-items:center; gap:8px; width:104px; }
+  .testemunha-dot{ border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .testemunha-dot.lit{ background: var(--worry); box-shadow: 0 0 10px 1px var(--worry); }
+  .testemunha-step-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); opacity:0; transition: opacity .3s ease; text-align:center; }
+  .testemunha-step-label.shown{ opacity:1; color: var(--text-dim); }
 </style>
 </head>
 <body>
@@ -87,6 +93,10 @@
         <div class="tl-card">
           <p><em>"A falsa testemunha não ficará impune, e o que profere mentiras não escapará"</em> (19:5). Mentir sob juramento carrega um peso ainda maior do que mentir em conversa: não corrompe apenas uma relação, corrompe a confiança de que todo o sistema de justiça depende para funcionar.</p>
           <p>Quando a palavra de alguém deixa de ser confiável diante de um tribunal, a comunidade inteira perde o chão sobre o qual julga o certo e o errado. Por isso o livro promete que essa mentira específica não passa impune.</p>
+
+          <div class="testemunha-seq-row" id="testemunhaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealTestemunhaAlcance()" id="testemunhaSeqBtn">Ver até onde a mentira alcança</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -137,6 +147,42 @@
     { text: "\"Os lábios mentirosos são abominação ao SENHOR\" (12:22a) — mesmo a mentira mais pequena não passa despercebida diante dele." },
     { text: "\"Os que obram fielmente lhe são agradáveis\" (12:22b) — a fidelidade nas coisas simples é o que lhe traz prazer." }
   ];
+
+  const testemunhaAlcance = [
+    { label: "Uma conversa", size: 16 },
+    { label: "Um tribunal", size: 20 },
+    { label: "Uma comunidade", size: 24 }
+  ];
+
+  function buildTestemunhaAlcance(){
+    const row = document.getElementById('testemunhaSeqRow');
+    testemunhaAlcance.forEach((step, i) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'testemunha-step';
+      const dot = document.createElement('div');
+      dot.className = 'testemunha-dot';
+      dot.id = 'testemunhaDot' + i;
+      dot.style.width = step.size + 'px';
+      dot.style.height = step.size + 'px';
+      const lbl = document.createElement('span');
+      lbl.className = 'testemunha-step-label';
+      lbl.id = 'testemunhaLabel' + i;
+      lbl.textContent = step.label;
+      wrap.appendChild(dot);
+      wrap.appendChild(lbl);
+      row.appendChild(wrap);
+    });
+  }
+  buildTestemunhaAlcance();
+
+  function revealTestemunhaAlcance(){
+    testemunhaAlcance.forEach((step, i) => {
+      setTimeout(() => {
+        document.getElementById('testemunhaDot' + i).classList.add('lit');
+        document.getElementById('testemunhaLabel' + i).classList.add('shown');
+      }, i * 280);
+    });
+  }
 
   let currentMax = 1;
 

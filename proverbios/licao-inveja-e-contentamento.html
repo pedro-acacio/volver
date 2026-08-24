@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  /* invisível: pulso baixo, quase indetectável — a inveja "por fora tudo parece calmo" */
+  .hidden-pulse{ width:48px; height:48px; border-radius:50%; margin:0 auto; position:relative;
+    background: radial-gradient(circle, var(--worry) 0%, transparent 72%);
+    opacity:.32; animation: hiddenPulse 2.1s ease-in-out infinite; }
+  .hidden-pulse::after{ content:""; position:absolute; inset:0; border-radius:50%; border:1.5px solid rgba(168,92,107,0.35); }
+  @keyframes hiddenPulse{ 0%,100%{ opacity:.18; transform:scale(0.88); } 50%{ opacity:.5; transform:scale(1.06); } }
 </style>
 </head>
 <body>
@@ -87,6 +93,17 @@
         <div class="tl-card">
           <p><em>"Cruel é o furor e a ira impetuosa, mas quem poderá resistir à inveja?"</em> (27:4). A pergunta é retórica, e a resposta implícita é desconfortável: a ira, por mais violenta que pareça, é visível — alguém pode se defender dela, confrontá-la, esperar que passe.</p>
           <p>A inveja não. Ela não anuncia sua chegada, não se declara, não dá o rosto de um adversário. Corrói por dentro enquanto por fora tudo parece calmo — e é exatamente por isso que o livro a trata como mais perigosa que a fúria mais impetuosa.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAmeacaIra" onclick="showAmeaca('ira')">A ira</button>
+            <button class="toggle-btn" id="btnAmeacaInveja" onclick="showAmeaca('inveja')">A inveja</button>
+          </div>
+          <div class="outcome" id="ameacaCard">
+            <div class="outcome-visual" id="ameacaVisual"></div>
+            <h3 id="ameacaTitle"></h3>
+            <p id="ameacaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +177,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showAmeaca(type){
+    const btnIra = document.getElementById('btnAmeacaIra');
+    const btnInveja = document.getElementById('btnAmeacaInveja');
+    btnIra.classList.remove('active-worry');
+    btnInveja.classList.remove('active-worry');
+    const visual = document.getElementById('ameacaVisual');
+    const title = document.getElementById('ameacaTitle');
+    const text = document.getElementById('ameacaText');
+
+    if (type === 'ira'){
+      btnIra.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Visível — pode ser enfrentada";
+      text.textContent = "\"Cruel é o furor e a ira impetuosa\" (27:4a). Ela explode, se declara, dá o rosto de um adversário — alguém pode se defender dela, confrontá-la, esperar que passe.";
+    } else {
+      btnInveja.classList.add('active-worry');
+      visual.innerHTML = '<div class="hidden-pulse"></div>';
+      title.textContent = "Invisível — quem poderá resistir?";
+      text.textContent = "\"...mas quem poderá resistir à inveja?\" (27:4b). Não anuncia sua chegada. Corrói por dentro enquanto por fora tudo parece calmo — por isso é a mais perigosa das duas.";
+    }
   }
 
   function showOutcome(type){

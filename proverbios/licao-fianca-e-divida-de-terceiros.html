@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .fianca-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .fianca-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .fianca-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .fianca-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
+  .fianca-seq-text{ font-size:14px; color: var(--text-dim); min-height: 20px; margin-top:2px; }
 </style>
 </head>
 <body>
@@ -87,6 +92,12 @@
         <div class="tl-card">
           <p><em>"Faze isto agora, filho meu, e livra-te, pois já caíste nas mãos do teu próximo... como a gazela se livra da mão do caçador"</em> (6:3-5). O tom é de urgência, não de culpa — o conselho é agir depressa para sair do laço, não se martirizar por ter entrado nele.</p>
           <p>Vale notar o que o alerta não é: não é um chamado contra a generosidade, nem contra ajudar quem precisa. É um alerta específico contra assumir responsabilidade legal pela dívida de outra pessoa — algo bem diferente de dar, emprestar ou socorrer.</p>
+
+          <p>Repare como o texto empilha verbos de urgência, um atrás do outro, sem pausa entre eles:</p>
+          <div class="fianca-seq-row" id="fiancaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealFiancaSeq()" id="fiancaSeqBtn">Ver os passos, um a um</button>
+          <div class="fianca-seq-text" id="fiancaSeqText"></div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -155,6 +166,40 @@
     }, 120);
   }
   openStage(1);
+
+  const fiancaSeqSteps = [
+    "Vai, humilha-te",
+    "Importuna o teu próximo",
+    "Não dês sono aos teus olhos",
+    "Livra-te, como a gazela foge do caçador"
+  ];
+
+  function buildFiancaSeqDots(){
+    const el = document.getElementById('fiancaSeqRow');
+    fiancaSeqSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'fianca-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'fianca-seq-label';
+    label.id = 'fiancaSeqLabel';
+    label.textContent = '0 de ' + fiancaSeqSteps.length;
+    el.appendChild(label);
+  }
+  buildFiancaSeqDots();
+
+  function revealFiancaSeq(){
+    const dots = document.querySelectorAll('#fiancaSeqRow .fianca-seq-dot');
+    const textEl = document.getElementById('fiancaSeqText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = (i + 1) + ". " + fiancaSeqSteps[i];
+    }, i * 420));
+    setTimeout(() => {
+      document.getElementById('fiancaSeqLabel').textContent = fiancaSeqSteps.length + ' de ' + fiancaSeqSteps.length;
+    }, dots.length * 420);
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

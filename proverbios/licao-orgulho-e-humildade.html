@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .reg-seq-row{ display:flex; align-items:center; gap:10px; margin: 12px 0 16px; flex-wrap:wrap; }
+  .reg-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .reg-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .reg-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -87,6 +91,11 @@
         <div class="tl-card">
           <p><em>"A soberba do homem o abaterá, mas o humilde de espírito ficará com a honra"</em> (29:23). O verbo muda de versículo para versículo, mas o padrão é sempre o mesmo — em quase toda passagem sobre o tema, o final da frase inverte o começo.</p>
           <p>Provérbios não trata isso como uma regra moral opcional. Trata como algo estrutural: é assim que o orgulho e a humildade funcionam, sempre.</p>
+
+          <div class="reg-seq-row" id="regSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealRegularidade()" id="regSeqBtn">Ver a lei se repetir pelo livro</button>
+          <div class="chip-text" id="regSeqText">Toque no botão para ver o mesmo padrão reaparecer, verso após verso.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -133,6 +142,38 @@
 </div>
 
 <script>
+  const regularidadeData = [
+    { text: "\"Diante da honra vai a humildade\" (15:33b) — o mesmo padrão de 18:12, repetido em outro capítulo do livro." },
+    { text: "\"Pela humildade e pelo temor do SENHOR vêm riquezas, honra e vida\" (22:4) — a humildade não é só ausência de queda, é caminho ativo para o bem." },
+    { text: "\"Da soberba só provém a contenda\" (13:10) — mesmo antes de uma queda pessoal, o orgulho já produz briga ao redor." },
+    { text: "\"Ele escarnece dos escarnecedores, mas dá graça aos humildes\" (3:34) — a lei não é só causa e efeito impessoal; é sobre como o próprio Deus se posiciona." }
+  ];
+
+  function buildRegDots(){
+    const el = document.getElementById('regSeqRow');
+    regularidadeData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'reg-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'reg-seq-label';
+    label.id = 'regSeqLabel';
+    label.textContent = '0 de ' + regularidadeData.length;
+    el.appendChild(label);
+  }
+  buildRegDots();
+
+  function revealRegularidade(){
+    const dots = document.querySelectorAll('#regSeqRow .reg-dot');
+    const textEl = document.getElementById('regSeqText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = regularidadeData[i].text;
+      document.getElementById('regSeqLabel').textContent = (i+1) + ' de ' + dots.length;
+    }, i * 550));
+  }
+
   const antesData = [
     { text: "\"Antes da quebra eleva-se o coração do homem\" (18:12a) — a confiança excessiva costuma ser o último passo antes de cair." },
     { text: "\"Diante da honra vai a humildade\" (18:12b) — o reconhecimento chega depois de quem já se colocou no lugar certo antes." }

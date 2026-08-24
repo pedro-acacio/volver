@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p><em>"Em todo o tempo ama o amigo; e para a angústia nasceu o irmão"</em> (17:17). A prova de uma amizade real não é a companhia nos dias fáceis, mas a presença que continua quando as coisas ficam difíceis.</p>
           <p>Muita gente tem companhia enquanto tudo vai bem. Provérbios distingue isso de amizade de verdade pelo que resta quando as coisas param de ir bem.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnTempoBom" onclick="showTempo('bom')">Só nos tempos bons</button>
+            <button class="toggle-btn" id="btnTempoAngustia" onclick="showTempo('angustia')">Também na angústia</button>
+          </div>
+
+          <div class="outcome" id="tempoCard">
+            <div class="outcome-visual" id="tempoVisual"></div>
+            <h3 id="tempoTitle"></h3>
+            <p id="tempoText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → mais chegado que um irmão</button>
         </div>
       </div>
@@ -160,6 +172,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showTempo(state){
+    const btnBom = document.getElementById('btnTempoBom');
+    const btnAngustia = document.getElementById('btnTempoAngustia');
+    btnBom.classList.remove('active-worry');
+    btnAngustia.classList.remove('active-calm');
+    const visual = document.getElementById('tempoVisual');
+    const title = document.getElementById('tempoTitle');
+    const text = document.getElementById('tempoText');
+
+    if (state === 'bom'){
+      btnBom.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Companhia enquanto tudo vai bem";
+      text.textContent = "Fácil de encontrar e fácil de perder — essa companhia costuma sumir exatamente no momento em que mais se precisaria dela.";
+    } else {
+      btnAngustia.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "\"Para a angústia nasceu o irmão\" (17:17)";
+      text.textContent = "Continua presente quando as coisas ficam difíceis — é justamente esse permanecer que separa amizade de simples companhia.";
+    }
   }
 
   function showOutcome(type){

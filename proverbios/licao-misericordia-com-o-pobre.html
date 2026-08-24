@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .emprestimo-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin:14px 0 8px; }
+  .emprestimo-bar-fill{ height:100%; border-radius:9px; width:0%; background: var(--calm); box-shadow: 0 0 10px 1px rgba(124,154,120,0.4); transition: width .6s cubic-bezier(.34,1.56,.64,1), background .3s ease, box-shadow .3s ease; }
+  .emprestimo-caption{ font-size:13.5px; color:var(--text-dim); line-height:1.6; margin:0; }
 </style>
 </head>
 <body>
@@ -87,6 +90,14 @@
         <div class="tl-card">
           <p><em>"Ao SENHOR empresta o que se compadece do pobre, e ele lhe pagará o seu benefício"</em> (19:17). Generosidade com quem precisa não é descrita como perda — é descrita como um empréstimo que o próprio Deus se compromete a saldar.</p>
           <p>Do outro lado, <em>"o que tapa o seu ouvido ao clamor do pobre também clamará, e não será ouvido"</em> (21:13). Fechar o ouvido à necessidade alheia tem um custo próprio: a mesma surdez volta, mais tarde, para quem a praticou.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnEmprestimoSim" onclick="showEmprestimo('sim')">Se compadece do pobre</button>
+            <button class="toggle-btn" id="btnEmprestimoNao" onclick="showEmprestimo('nao')">Tapa o ouvido ao clamor</button>
+          </div>
+          <div class="emprestimo-bar-track"><div class="emprestimo-bar-fill" id="emprestimoBarFill"></div></div>
+          <p class="emprestimo-caption" id="emprestimoCaption">Toque para ver o que cada atitude garante de volta.</p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +171,29 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showEmprestimo(type){
+    const btnSim = document.getElementById('btnEmprestimoSim');
+    const btnNao = document.getElementById('btnEmprestimoNao');
+    btnSim.classList.remove('active-calm');
+    btnNao.classList.remove('active-worry');
+    const fill = document.getElementById('emprestimoBarFill');
+    const caption = document.getElementById('emprestimoCaption');
+
+    if (type === 'sim'){
+      btnSim.classList.add('active-calm');
+      fill.style.width = '100%';
+      fill.style.background = 'var(--calm)';
+      fill.style.boxShadow = '0 0 10px 1px rgba(124,154,120,0.4)';
+      caption.textContent = "\"Ao SENHOR empresta o que se compadece do pobre, e ele lhe pagará o seu benefício\" (19:17). O que sai não se perde — volta com a garantia do próprio Deus.";
+    } else {
+      btnNao.classList.add('active-worry');
+      fill.style.width = '6%';
+      fill.style.background = 'var(--worry)';
+      fill.style.boxShadow = '0 0 10px 1px rgba(168,92,107,0.35)';
+      caption.textContent = "\"O que tapa o seu ouvido ao clamor do pobre também clamará, e não será ouvido\" (21:13). O que se recusa a dar também não recebe de volta.";
+    }
   }
 
   function showOutcome(type){

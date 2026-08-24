@@ -87,6 +87,18 @@
         <div class="tl-card">
           <p><em>"O que retém a vara aborrece a seu filho, mas quem o ama, cedo o corrige"</em> (13:24). O verbo é forte de propósito — evitar a correção, no vocabulário do livro, é chamado de aversão, não de gentileza.</p>
           <p><em>"A vara e a repreensão dão sabedoria, mas o rapaz entregue a si mesmo envergonha a sua mãe"</em> (29:15). Deixar alguém sem limite nenhum não é liberdade — é abandono disfarçado de permissividade.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnFilhoEntregue" onclick="showFilho('entregue')">Filho entregue a si mesmo</button>
+            <button class="toggle-btn" id="btnFilhoCorrigido" onclick="showFilho('corrigido')">Filho corrigido cedo</button>
+          </div>
+
+          <div class="outcome" id="filhoCard">
+            <div class="outcome-visual" id="filhoVisual"></div>
+            <h3 id="filhoTitle"></h3>
+            <p id="filhoText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -160,6 +172,28 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showFilho(state){
+    const btnEntregue = document.getElementById('btnFilhoEntregue');
+    const btnCorrigido = document.getElementById('btnFilhoCorrigido');
+    btnEntregue.classList.remove('active-worry');
+    btnCorrigido.classList.remove('active-calm');
+    const visual = document.getElementById('filhoVisual');
+    const title = document.getElementById('filhoTitle');
+    const text = document.getElementById('filhoText');
+
+    if (state === 'entregue'){
+      btnEntregue.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Sem vara nem repreensão";
+      text.textContent = "\"O rapaz entregue a si mesmo envergonha a sua mãe\" (29:15) — sem limite algum, cresce sem referência do que é certo, e a consequência aparece mais tarde, maior.";
+    } else {
+      btnCorrigido.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Corrigido enquanto ainda há tempo";
+      text.textContent = "\"Quem o ama, cedo o corrige\" (13:24) — a correção aplicada a tempo custa pouco hoje e evita uma dívida bem maior amanhã.";
+    }
   }
 
   function showOutcome(type){

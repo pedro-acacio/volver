@@ -88,6 +88,18 @@
         <div class="tl-card">
           <p><em>"Trata a tua causa com o teu próximo, e não descubras o segredo de outrem, para que não te desonre aquele que o ouvir"</em> (25:9-10). Nem uma disputa justa dá licença para expor o segredo de terceiros.</p>
           <p>O detalhe está no final do verso: quem expõe é quem sai desonrado. Mesmo com razão na causa, revelar o segredo de outra pessoa tem um custo — e ele volta para quem falou, não para quem foi exposto.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnCausaDireta" onclick="showCausa('direta')">Trata a causa com o próximo</button>
+            <button class="toggle-btn" id="btnCausaSegredo" onclick="showCausa('segredo')">Descobre o segredo de outrem</button>
+          </div>
+
+          <div class="outcome" id="causaCard">
+            <div class="outcome-visual" id="causaVisual"></div>
+            <h3 id="causaTitle"></h3>
+            <p id="causaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -156,6 +168,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showCausa(type){
+    const btnDireta = document.getElementById('btnCausaDireta');
+    const btnSegredo = document.getElementById('btnCausaSegredo');
+    btnDireta.classList.remove('active-calm');
+    btnSegredo.classList.remove('active-worry');
+    const visual = document.getElementById('causaVisual');
+    const title = document.getElementById('causaTitle');
+    const text = document.getElementById('causaText');
+
+    if (type === 'direta'){
+      btnDireta.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Quem trata a causa direto";
+      text.textContent = "Fala com quem precisa ouvir, resolve o que é seu de resolver — e sai da conversa com a confiança do próximo intacta.";
+    } else {
+      btnSegredo.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Quem expõe o segredo alheio";
+      text.textContent = "Ganha uma causa e perde a própria reputação — \"para que não te desonre aquele que o ouvir\" (25:10). O prejuízo é de quem fala, não de quem foi exposto.";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

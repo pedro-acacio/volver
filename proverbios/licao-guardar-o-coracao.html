@@ -44,6 +44,18 @@
         <div class="tl-card">
           <p><em>"Filho meu, atenta para as minhas palavras; inclina o teu ouvido às minhas razões. Não as deixes apartar-se dos teus olhos: guarda-as no meio do teu coração. Porque são vida para os que as acham, e saúde para todo o seu corpo"</em> (4:20-22).</p>
           <p>Repare no alcance da promessa: não é só paz interior, é saúde para todo o corpo. Atenção às palavras certas não fica presa à mente — ela se espalha, feito circulação, até aos lugares que a gente nem associaria com o que se ouve e se guarda.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAlcanceMente" onclick="showAlcance('mente')">O que se esperaria</button>
+            <button class="toggle-btn" id="btnAlcanceCorpo" onclick="showAlcance('corpo')">O que a promessa alcança</button>
+          </div>
+
+          <div class="outcome" id="alcanceCard">
+            <div class="outcome-visual" id="alcanceVisual"></div>
+            <h3 id="alcanceTitle"></h3>
+            <p id="alcanceText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a fonte da vida</button>
         </div>
       </div>
@@ -137,6 +149,28 @@
     { text: "Sem guarda, tudo o que nasce lá dentro sai sem filtro — cada impulso vira palavra, cada mágoa vira ação, porque nada foi vigiado na origem." },
     { text: "Guardar não é reprimir; é vigiar a nascente. \"Dele procedem as saídas da vida\" (4:23) — o que sai depende inteiramente do que se deixou entrar e permanecer." }
   ];
+
+  function showAlcance(type){
+    const btnMente = document.getElementById('btnAlcanceMente');
+    const btnCorpo = document.getElementById('btnAlcanceCorpo');
+    btnMente.classList.remove('active-worry');
+    btnCorpo.classList.remove('active-calm');
+    const visual = document.getElementById('alcanceVisual');
+    const title = document.getElementById('alcanceTitle');
+    const text = document.getElementById('alcanceText');
+
+    if (type === 'mente'){
+      btnMente.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O que se esperaria";
+      text.textContent = "Que atentar às palavras certas trouxesse, no máximo, um pouco mais de clareza ou paz de mente — um efeito contido, interno, previsível.";
+    } else {
+      btnCorpo.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O que a promessa alcança";
+      text.textContent = "\"São vida para os que as acham, e saúde para todo o seu corpo\" (4:22) — o alcance vai além da mente, feito circulação, até onde a gente nem esperava.";
+    }
+  }
 
   let currentMax = 1;
 

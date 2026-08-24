@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .valor-bar-track{ width:100%; height:18px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin:14px 0 8px; }
+  .valor-bar-fill{ height:100%; border-radius:9px; width:0%; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,0.45); transition: width .5s cubic-bezier(.34,1.56,.64,1); }
+  .valor-caption{ font-size:13.5px; color:var(--text-dim); line-height:1.6; margin:0; }
 </style>
 </head>
 <body>
@@ -88,6 +91,14 @@
         <div class="tl-card">
           <p><em>"Melhor é o pobre que anda na sua sinceridade do que o perverso de lábios e insensato, ainda que rico"</em> (28:6). O livro não finge que a pobreza seja boa em si — mas insiste em comparar o que realmente importa: o caráter de quem caminha, não o saldo da conta.</p>
           <p>Repetidas vezes, Provérbios prefere a integridade sem posses à riqueza construída sobre um caminho torto. É um julgamento de valor que a cultura ao redor raramente compartilha, mas que o livro sustenta com insistência.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnValorRico" onclick="showValor('rico')">Rico, mas perverso</button>
+            <button class="toggle-btn" id="btnValorPobre" onclick="showValor('pobre')">Pobre, mas íntegro</button>
+          </div>
+          <div class="valor-bar-track"><div class="valor-bar-fill" id="valorBarFill"></div></div>
+          <p class="valor-caption" id="valorCaption">Toque para comparar o que Provérbios pesa como "melhor".</p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -161,6 +172,25 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showValor(type){
+    const btnRico = document.getElementById('btnValorRico');
+    const btnPobre = document.getElementById('btnValorPobre');
+    btnRico.classList.remove('active-worry');
+    btnPobre.classList.remove('active-calm');
+    const fill = document.getElementById('valorBarFill');
+    const caption = document.getElementById('valorCaption');
+
+    if (type === 'rico'){
+      btnRico.classList.add('active-worry');
+      fill.style.width = '22%';
+      caption.textContent = "\"...o perverso de lábios e insensato, ainda que rico\" (28:6b). Por fora, o saldo impressiona — mas o texto mede outra coisa, e nessa medida ele fica pequeno.";
+    } else {
+      btnPobre.classList.add('active-calm');
+      fill.style.width = '96%';
+      caption.textContent = "\"Melhor é o pobre que anda na sua sinceridade...\" (28:6a). Sem posses, mas com o caminho reto — e é isso, não a conta bancária, que Provérbios chama de \"melhor\".";
+    }
   }
 
   function showOutcome(type){
