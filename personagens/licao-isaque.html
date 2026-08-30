@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .isaque-colheita-row{ display:flex; align-items:center; gap:12px; margin:10px 0; flex-wrap:wrap; }
+  .isaque-colheita-label{ flex:0 0 220px; font-size:.85rem; color:var(--text-dim); }
+  .isaque-bar-track{ flex:1 1 160px; min-width:120px; height:18px; border-radius:9px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .isaque-bar-fill{ display:block; height:100%; border-radius:9px; background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); width:0%; transition: width 1.1s cubic-bezier(.34,1.02,.64,1); }
 </style>
 </head>
 <body>
@@ -109,6 +113,18 @@
         <div class="tl-card">
           <p>Depois do episódio com Abimeleque, Isaque planta lavouras e recebe cem vezes mais do que semeou — prosperidade tão grande que os filisteus, com inveja, entopem de terra todos os poços que o pai de Isaque tinha cavado antes (26:12-15).</p>
           <p>Em vez de brigar por território novo, Isaque simplesmente reabre, um por um, os poços do pai — e mantém até os mesmos nomes que Abraão tinha dado a eles (26:18). É um retrato pequeno, mas revelador: parte da vocação de Isaque não é abrir caminho novo, é preservar fielmente o que já tinha sido cavado antes dele.</p>
+
+          <p>Toque para comparar, em barras, o que foi plantado com o que Isaque colheu:</p>
+          <div class="isaque-colheita-row">
+            <div class="isaque-colheita-label">O que foi semeado</div>
+            <div class="isaque-bar-track"><div class="isaque-bar-fill" id="isaqueBarSemente" style="width:1%"></div></div>
+          </div>
+          <div class="isaque-colheita-row">
+            <div class="isaque-colheita-label">O que Isaque colheu — cem vezes mais</div>
+            <div class="isaque-bar-track"><div class="isaque-bar-fill" id="isaqueBarColheita" style="width:0%"></div></div>
+          </div>
+          <button class="continue-btn" onclick="revelarColheita()">Ver a colheita de cem vezes mais</button>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -177,6 +193,10 @@
     }, 120);
   }
   openStage(1);
+
+  function revelarColheita(){
+    document.getElementById('isaqueBarColheita').style.width = '100%';
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

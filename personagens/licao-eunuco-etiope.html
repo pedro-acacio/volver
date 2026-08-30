@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .bn-seq-row{ display:flex; align-items:center; gap:10px; margin: 4px 0 12px; flex-wrap:wrap; }
+  .bn-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .bn-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .bn-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -90,6 +94,11 @@
         <div class="tl-card">
           <p>O eunuco convida Filipe a subir e sentar-se com ele. Pergunta a quem o profeta se referia — a si mesmo, ou a outra pessoa. É a pergunta certa, feita à pessoa certa, no momento certo.</p>
           <p>"Então Filipe, abrindo a boca, e começando desde esta escritura, lhe anunciou a Jesus" (8:35). Um único versículo de Isaías 53 se torna o ponto de partida para toda a mensagem do evangelho — o Servo sofredor, calado diante do castigo, era o retrato do próprio Cristo que morreria séculos depois.</p>
+
+          <div class="bn-seq-row" id="bnSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealBnSeq()" id="bnSeqBtn">Ver o caminho de um versículo até o evangelho</button>
+          <div class="chip-text" id="bnSeqText">Toque no botão para seguir, passo a passo, de onde Filipe partiu até onde chegou.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → água na estrada deserta</button>
         </div>
       </div>
@@ -163,6 +172,39 @@
     { text: "\"Entendes tu o que lês?\" (v.30) — Filipe não interrompe corrigindo, começa perguntando, deixando espaço para o próprio eunuco reconhecer a lacuna." },
     { text: "\"E como poderei, se alguém não me ensinar?\" (v.31) — uma resposta sem orgulho, de quem já sabia reconhecer os próprios limites mesmo ocupando um cargo de grande autoridade." }
   ];
+
+  const bnSeqSteps = [
+    { label: "O Servo calado", text: "Isaías 53:7 — \"como cordeiro foi levado ao matadouro... não abriu a sua boca\" — a passagem que o eunuco lia sem saber a quem ela apontava." },
+    { label: "Ferido por nós", text: "Isaías 53:5 — \"ferido pelas nossas transgressões, e moído pelas nossas iniquidades\" — o motivo do sofrimento do Servo, ainda sem nome." },
+    { label: "Jesus, o cumprimento", text: "Filipe identifica quem é esse Servo: o próprio Cristo, morto e ressuscitado, séculos depois de Isaías escrever." },
+    { label: "O evangelho anunciado", text: "De um único versículo lido numa carruagem, Filipe chega à mensagem inteira da salvação — e um estrangeiro, numa estrada deserta, a recebe." }
+  ];
+
+  function buildBnSeqDots(){
+    const el = document.getElementById('bnSeqRow');
+    bnSeqSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'bn-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'bn-seq-label';
+    label.id = 'bnSeqLabel';
+    label.textContent = '0 de ' + bnSeqSteps.length;
+    el.appendChild(label);
+  }
+  buildBnSeqDots();
+
+  function revealBnSeq(){
+    const dots = document.querySelectorAll('#bnSeqRow .bn-seq-dot');
+    const textEl = document.getElementById('bnSeqText');
+    const labelEl = document.getElementById('bnSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = (i + 1) + ' de ' + bnSeqSteps.length;
+      textEl.textContent = bnSeqSteps[i].label + ': ' + bnSeqSteps[i].text;
+    }, i * 650));
+  }
 
   let currentMax = 1;
 

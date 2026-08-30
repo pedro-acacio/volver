@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .fe-toggle-row{ display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 10px; }
+  .fe-bar-track{ height:18px; border-radius:9px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin-bottom:10px; }
+  .fe-bar-fill{ height:100%; border-radius:9px; background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); width:0%; transition: width .5s ease, background .3s ease, box-shadow .3s ease; }
 </style>
 </head>
 <body>
@@ -45,6 +48,13 @@
         <div class="tl-card">
           <p>De madrugada, os discípulos veem Jesus andando sobre o mar da Galileia em meio a uma tempestade e gritam de pavor, achando que é um fantasma. Jesus os acalma: "Tende bom ânimo, sou eu; não temais" (Mateus 14:27).</p>
           <p>Pedro responde com um pedido só dele: "Senhor, se és tu, manda-me ir ter contigo sobre as águas" (v.28). Jesus diz "vem", e Pedro realmente anda sobre o mar — até reparar no vento forte, ficar com medo e começar a afundar. Grita "Senhor, salva-me!", e Jesus o segura na hora, perguntando: "Homem de pequena fé, por que duvidaste?" (v.29-31).</p>
+          <p>O mesmo mar, os mesmos pés — o que muda é para onde Pedro olha. Toque para comparar:</p>
+          <div class="fe-toggle-row">
+            <button class="chip-btn chip-gold" id="btnFeJesus" onclick="showFe('jesus')">Olhando para Jesus</button>
+            <button class="chip-btn chip-worry" id="btnFeVento" onclick="showFe('vento')">Olhando para o vento</button>
+          </div>
+          <div class="fe-bar-track"><div class="fe-bar-fill" id="feBarFill"></div></div>
+          <div class="chip-text" id="feText">Toque para comparar os dois momentos de Pedro sobre a água.</div>
           <button class="continue-btn" onclick="openStage(2)">Continuar → a confissão e a repreensão</button>
         </div>
       </div>
@@ -171,6 +181,28 @@
     { text: "Outra criada insiste com os que estavam ali perto. Pedro nega de novo, agora com juramento: \"não conheço tal homem\" (v.71-72)." },
     { text: "Os que estavam por perto notam seu sotaque galileu e o acusam com mais força. Pedro nega pela terceira vez começando a amaldiçoar e a jurar: \"não conheço esse homem\" — e o galo canta (v.73-74)." }
   ];
+
+  function showFe(state){
+    const btnJesus = document.getElementById('btnFeJesus');
+    const btnVento = document.getElementById('btnFeVento');
+    btnJesus.classList.remove('active');
+    btnVento.classList.remove('active');
+    const fill = document.getElementById('feBarFill');
+    const text = document.getElementById('feText');
+    if (state === 'jesus'){
+      btnJesus.classList.add('active');
+      fill.style.width = '92%';
+      fill.style.background = 'var(--gold)';
+      fill.style.boxShadow = '0 0 10px 1px rgba(217,164,65,.45)';
+      text.textContent = "\"Manda-me ir ter contigo sobre as águas\" — enquanto o olhar de Pedro está em Jesus, ele realmente anda sobre o mar (v.28-29).";
+    } else {
+      btnVento.classList.add('active');
+      fill.style.width = '22%';
+      fill.style.background = 'var(--worry)';
+      fill.style.boxShadow = '0 0 10px 1px var(--worry)';
+      text.textContent = "\"Vendo o vento forte, teve medo; e, começando a afundar...\" — o mesmo Pedro, o mesmo mar, só que agora olhando para a tempestade em vez de para Jesus (v.30).";
+    }
+  }
 
   let currentMax = 1;
 

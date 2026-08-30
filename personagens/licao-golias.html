@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .desafio-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 6px; flex-wrap:wrap; }
+  .desafio-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .desafio-seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .desafio-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -45,6 +49,11 @@
         <div class="tl-card">
           <p>Os exércitos de Israel e dos filisteus se posicionam em montes opostos, separados por um vale. Todos os dias, pela manhã e à tarde, um campeão filisteu de altura descomunal — "seis côvados e um palmo", cerca de 2,90 metros — se apresenta no meio do vale gritando um desafio: um duelo individual decidiria a guerra inteira (17:4-10).</p>
           <p>"Ouvindo Saul e todo o Israel estas palavras do filisteu, espantaram-se e temeram em grande maneira" (17:11). O desafio se repete por quarenta dias seguidos, e ninguém no exército inteiro se apresenta (17:16).</p>
+
+          <div class="desafio-seq-row" id="desafioSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDesafioSeq()" id="desafioSeqBtn">Contar os quarenta dias de silêncio</button>
+          <div class="chip-text" id="desafioSeqText">Toque no botão para acompanhar, dia após dia, o tamanho desse silêncio.</div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → um pastor no meio do exército</button>
         </div>
       </div>
@@ -160,6 +169,43 @@
     { text: "Saul objeta: \"Não poderás ir a este filisteu, para pelejar contra ele, porque tu ainda és moço, e ele homem de guerra desde a sua mocidade\" (17:33)." },
     { text: "Davi responde contando como já matou um leão e um urso defendendo o próprio rebanho: \"o Senhor, que me livrou das garras do leão e das garras do urso, esse me livrará da mão deste filisteu\" (17:34-37)." }
   ];
+
+  const desafioDiasSteps = [
+    { day: 5, text: "5 de 40 dias — Golias já desceu ao vale dez vezes, manhã e tarde, e o acampamento de Israel continua calado." },
+    { day: 10, text: "10 de 40 dias — o mesmo grito, a mesma altura, o mesmo silêncio do outro lado do vale." },
+    { day: 15, text: "15 de 40 dias — o medo já teve tempo de virar rotina: ninguém mais espera que alguém se apresente." },
+    { day: 20, text: "20 de 40 dias — metade do desafio já passou, e o campeão filisteu segue sem resposta." },
+    { day: 25, text: "25 de 40 dias — o desafio se repete tantas vezes que quase deixa de soar como uma pergunta." },
+    { day: 30, text: "30 de 40 dias — só faltam dez repetições para o fim do prazo, e nenhum guerreiro de Israel se moveu." },
+    { day: 35, text: "35 de 40 dias — Golias continua descendo ao vale, e o vale continua vazio de resposta." },
+    { day: 40, text: "40 de 40 dias completos — nenhum guerreiro do exército de Israel aceitou o duelo (17:16)." }
+  ];
+
+  function buildDesafioSeqDots(){
+    const el = document.getElementById('desafioSeqRow');
+    desafioDiasSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'desafio-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'desafio-seq-label';
+    label.id = 'desafioSeqLabel';
+    label.textContent = '0 de 40 dias';
+    el.appendChild(label);
+  }
+  buildDesafioSeqDots();
+
+  function revealDesafioSeq(){
+    const dots = document.querySelectorAll('#desafioSeqRow .desafio-seq-dot');
+    const textEl = document.getElementById('desafioSeqText');
+    const labelEl = document.getElementById('desafioSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = desafioDiasSteps[i].day + ' de 40 dias';
+      textEl.textContent = desafioDiasSteps[i].text;
+    }, i * 350));
+  }
 
   let currentMax = 1;
 

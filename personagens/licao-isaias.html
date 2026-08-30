@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .asa-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 10px; flex-wrap:wrap; }
+  .asa-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex:0 0 auto; }
+  .asa-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .asa-seq-caption{ font-size:.92rem; color:var(--text-dim); min-height:2.6em; margin-bottom:10px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,12 @@
       <div class="tl-body">
         <div class="tl-card">
           <p>"No ano em que morreu o rei Uzias" — um marco de luto nacional, o fim de um reinado longo e próspero — Isaías tem uma visão: "vi ao Senhor assentado sobre um trono alto e sublime; e as abas do seu manto enchiam o templo" (Isaías 6:1). Serafins voam ao redor, cobrindo o rosto e os pés com as próprias asas, clamando uns aos outros: "Santo, santo, santo é o Senhor dos Exércitos; toda a terra está cheia da sua glória" (v.3). As portas do templo tremem, e a casa se enche de fumaça.</p>
+
+          <p>Cada serafim tinha seis asas, usadas em três pares distintos (v.2). Toque para revelar, par a par, para que servia cada um:</p>
+          <div class="asa-seq-row" id="asaSeqRow"></div>
+          <div class="asa-seq-caption" id="asaSeqCaption">Toque no botão para revelar cada par de asas.</div>
+          <button class="continue-btn" onclick="revealAsaSeq()">Revelar as três asas, par a par</button>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → "Ai de mim!"</button>
         </div>
       </div>
@@ -174,6 +184,33 @@
     }, 120);
   }
   openStage(1);
+
+  const asaSeqItems = [
+    "Duas asas cobriam o rosto — nem o serafim ousa fitar diretamente a glória de Deus.",
+    "Duas asas cobriam os pés — um gesto de humildade e reverência diante do Santo.",
+    "Duas asas usava para voar — sempre em movimento, prontos a serviço do Senhor."
+  ];
+
+  function buildAsaSeq(){
+    const row = document.getElementById('asaSeqRow');
+    asaSeqItems.forEach(() => {
+      const dot = document.createElement('div');
+      dot.className = 'asa-seq-dot';
+      row.appendChild(dot);
+    });
+  }
+  buildAsaSeq();
+
+  function revealAsaSeq(){
+    const dots = document.querySelectorAll('#asaSeqRow .asa-seq-dot');
+    const caption = document.getElementById('asaSeqCaption');
+    dots.forEach((dot, i) => {
+      setTimeout(() => {
+        dot.classList.add('lit');
+        caption.textContent = asaSeqItems[i];
+      }, i * 650);
+    });
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

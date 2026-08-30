@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .jovem-passo-row{ display:flex; align-items:center; gap:20px; margin:16px 0 10px; flex-wrap:wrap; }
+  .jovem-passo-pt{ display:flex; flex-direction:column; align-items:center; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--text-faint); text-align:center; }
+  .jovem-passo-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .jovem-passo-pt.lit .jovem-passo-dot{ background:var(--gold); transform:scale(1.15); box-shadow:0 0 8px 1px var(--gold); }
+  .jovem-passo-pt.final .jovem-passo-dot{ background:var(--calm); transform:scale(1.35); box-shadow:0 0 12px 2px var(--calm); }
+  .jovem-passo-pt.lit{ color:var(--text-dim); }
+  .jovem-passo-caption{ font-size:.85rem; color:var(--text-dim); min-height:1.4em; margin-top:8px; }
 </style>
 </head>
 <body>
@@ -89,6 +96,16 @@
         <div class="tl-card">
           <p>Jesus não questiona se ele realmente guardou os mandamentos. Vai direto ao que ele não perguntou: "Se queres ser perfeito, vai, vende tudo o que tens, e dá-o aos pobres, e terás um tesouro no céu; e vem, segue-me" (v.21). Marcos acrescenta que Jesus, olhando para ele, o amou antes de dizer isso (Marcos 10:21) — não é um teste hostil, é um convite que aponta com precisão para o único lugar onde ele ainda não tinha obedecido.</p>
           <p>É a mesma estrutura de outros chamados nos evangelhos — "vem, segue-me" — só que dessa vez o preço de entrada é nomeado antes, não descoberto depois.</p>
+
+          <div class="jovem-passo-row" id="jovemPassoRow">
+            <div class="jovem-passo-pt"><div class="jovem-passo-dot"></div><span>Vai</span></div>
+            <div class="jovem-passo-pt"><div class="jovem-passo-dot"></div><span>Vende tudo</span></div>
+            <div class="jovem-passo-pt"><div class="jovem-passo-dot"></div><span>Dá aos pobres</span></div>
+            <div class="jovem-passo-pt"><div class="jovem-passo-dot"></div><span>Segue-me</span></div>
+          </div>
+          <button class="chip-btn chip-gold" id="jovemPassoBtn" onclick="revealJovemPassos()">Seguir o pedido de Jesus, passo a passo</button>
+          <p class="jovem-passo-caption" id="jovemPassoCaption"></p>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → foi-se triste</button>
         </div>
       </div>
@@ -182,6 +199,27 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function revealJovemPassos(){
+    const btn = document.getElementById('jovemPassoBtn');
+    const pts = document.querySelectorAll('#jovemPassoRow .jovem-passo-pt');
+    const caption = document.getElementById('jovemPassoCaption');
+    const captions = [
+      "\"Vai\" — o primeiro passo é sair de onde está, do lugar de segurança.",
+      "\"Vende tudo o que tens\" — não uma parte, tudo; a lista externa de mandamentos nunca tinha alcançado este ponto.",
+      "\"Dá aos pobres, e terás um tesouro no céu\" — o que se solta aqui não desaparece, é trocado.",
+      "\"E vem, segue-me\" — o destino final nunca foi ficar sem nada; foi seguir a Jesus."
+    ];
+    btn.disabled = true;
+    pts.forEach((pt, i) => {
+      setTimeout(() => {
+        pt.classList.add('lit');
+        if (i === pts.length - 1) pt.classList.add('final');
+        caption.textContent = captions[i];
+        if (i === pts.length - 1) btn.disabled = false;
+      }, i * 500);
+    });
   }
 
   function showOutcome(type){

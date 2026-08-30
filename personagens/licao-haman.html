@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .honra-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 10px; flex-wrap:wrap; }
+  .honra-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex:0 0 auto; }
+  .honra-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .honra-seq-caption{ font-size:.92rem; color:var(--text-dim); min-height:2.6em; margin-bottom:10px; }
 </style>
 </head>
 <body>
@@ -111,6 +115,12 @@
         <div class="tl-card">
           <p>Na manhã seguinte, o rei pergunta a Hamã — que já vinha pedir a forca para Mordecai, mas ainda não teve chance — "que se fará ao homem a cuja honra o rei se agrada?" Hamã, certo de que é sobre si mesmo que o rei fala, sugere as honras mais extravagantes possíveis: vestes reais, o próprio cavalo do rei, e alguém nobre conduzindo-o pelas ruas anunciando sua honra (6:6-9). O rei responde: "faze assim a Mordecai, o judeu" (6:10) — e é o próprio Hamã quem tem de conduzir Mordecai pelas ruas anunciando a honra dele.</p>
           <p>No segundo banquete de Ester, ela finalmente revela ao rei o plano de extermínio e aponta Hamã como o autor (7:3-6). O rei, furioso, sai ao jardim para pensar; ao voltar, encontra Hamã caído sobre o divã de Ester implorando por sua vida, e interpreta o gesto como um ataque à rainha. Um dos oficiais lembra da forca que Hamã tinha preparado para Mordecai — e o rei ordena que Hamã seja enforcado nela mesma (7:7-10).</p>
+
+          <p>Toque para reviver, em ordem, as três honras que Hamã imaginou para si mesmo ao responder ao rei — sem saber para quem elas seriam realmente entregues:</p>
+          <div class="honra-seq-row" id="honraSeqRow"></div>
+          <div class="honra-seq-caption" id="honraSeqCaption">Toque no botão para revelar, uma a uma.</div>
+          <button class="continue-btn" onclick="revealHonraSeq()">Revelar as honras, uma a uma</button>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -179,6 +189,33 @@
     }, 120);
   }
   openStage(1);
+
+  const honraSeqItems = [
+    "Vestir as vestes reais que o próprio rei usa.",
+    "Montar o cavalo pessoal do rei, com a insígnia real na cabeça.",
+    "Ser conduzido pelas ruas por um nobre do rei, que anuncia a honra diante de todos."
+  ];
+
+  function buildHonraSeq(){
+    const row = document.getElementById('honraSeqRow');
+    honraSeqItems.forEach(() => {
+      const dot = document.createElement('div');
+      dot.className = 'honra-seq-dot';
+      row.appendChild(dot);
+    });
+  }
+  buildHonraSeq();
+
+  function revealHonraSeq(){
+    const dots = document.querySelectorAll('#honraSeqRow .honra-seq-dot');
+    const caption = document.getElementById('honraSeqCaption');
+    dots.forEach((dot, i) => {
+      setTimeout(() => {
+        dot.classList.add('lit');
+        caption.textContent = honraSeqItems[i] + (i === honraSeqItems.length - 1 ? " — e foi o próprio Hamã quem teve de fazer tudo isso, conduzindo Mordecai pelas ruas de Susã." : "");
+      }, i * 650);
+    });
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

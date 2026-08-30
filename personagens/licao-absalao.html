@@ -9,6 +9,15 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .magoa-timer{ margin:18px 0 4px; }
+  .magoa-track{ display:flex; gap:2px; height:22px; border-radius:11px; overflow:hidden; background:var(--panel); border:1px solid var(--panel-line); }
+  .magoa-seg{ height:100%; background:var(--panel-line); opacity:.32; transition:opacity .4s ease, background .4s ease, box-shadow .4s ease; }
+  .magoa-seg.lit{ opacity:1; background:var(--gold); box-shadow:0 0 9px 1px rgba(217,164,65,.4); }
+  .magoa-labels{ display:flex; gap:2px; margin-top:9px; }
+  .magoa-labels span{ font-family:'IBM Plex Mono', monospace; font-size:.74rem; color:var(--text-faint); text-align:center; line-height:1.3; }
+  .magoa-labels small{ display:block; margin-top:2px; font-size:.68rem; color:var(--text-faint); }
+  .magoa-total{ margin-top:12px; font-family:'IBM Plex Mono', monospace; font-size:.86rem; color:var(--text-dim); opacity:0; transition:opacity .6s ease; }
+  .magoa-total.show{ opacity:1; }
 </style>
 </head>
 <body>
@@ -84,6 +93,24 @@
         <div class="tl-card">
           <p>Absalão passa a se levantar cedo e se posicionar junto ao portão da cidade, onde o povo ia buscar justiça do rei. A cada pessoa com uma causa, ele diz que a causa é boa, mas que "não há ninguém da parte do rei que te ouça" — e promete: "quem me dera que me pusessem por juiz na terra! Então viria a mim todo aquele que tivesse pleito ou causa, e eu lhe faria justiça" (15:2-4).</p>
           <p>Ele beija a mão de quem se aproximava para se prostrar diante dele, tratando o povo como igual, não como súdito. O texto resume com precisão o que estava acontecendo: "assim furtava Absalão o coração dos homens de Israel" (15:6) — quatro anos desse trabalho silencioso, e ele está pronto para o próximo passo.</p>
+
+          <div class="magoa-timer">
+            <button class="continue-btn" style="margin-bottom:14px;" onclick="revealMagoaAnos()">Somar os anos até a revolta</button>
+            <div class="magoa-track" id="magoaRow">
+              <div class="magoa-seg" style="flex-grow:2;"></div>
+              <div class="magoa-seg" style="flex-grow:3;"></div>
+              <div class="magoa-seg" style="flex-grow:2;"></div>
+              <div class="magoa-seg" style="flex-grow:4;"></div>
+            </div>
+            <div class="magoa-labels">
+              <span style="flex-grow:2;">2 anos<small>até vingar Tamar</small></span>
+              <span style="flex-grow:3;">3 anos<small>de exílio em Gesur</small></span>
+              <span style="flex-grow:2;">2 anos<small>sem ver o rosto do pai</small></span>
+              <span style="flex-grow:4;">4 anos<small>furtando o coração do povo</small></span>
+            </div>
+            <p class="magoa-total" id="magoaTotal"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → a revolta e a queda</button>
         </div>
       </div>
@@ -167,6 +194,16 @@
     }, 120);
   }
   openStage(1);
+
+  function revealMagoaAnos(){
+    const segs = document.querySelectorAll('#magoaRow .magoa-seg');
+    segs.forEach((s,i) => setTimeout(() => s.classList.add('lit'), i*450));
+    const total = document.getElementById('magoaTotal');
+    setTimeout(() => {
+      total.textContent = "Onze anos inteiros — do estupro de Tamar até o corpo de Absalão pendurado no carvalho de Efraim — e em nenhum deles a ferida foi nomeada e tratada de verdade.";
+      total.classList.add('show');
+    }, segs.length*450 + 300);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

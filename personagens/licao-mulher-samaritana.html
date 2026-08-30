@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .reconhecimento-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 6px; flex-wrap:wrap; }
+  .reconhecimento-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .reconhecimento-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .reconhecimento-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -88,6 +92,9 @@
         <div class="tl-card">
           <p>Jesus fala de uma "água viva" que sacia para sempre (v.10-14). Quando ela pede essa água, Jesus muda de assunto de um jeito preciso: "Vai, chama a teu marido, e vem cá" (v.16) — e quando ela responde que não tem marido, ele confirma que sabe exatamente sua história, sem pronunciar uma só palavra de condenação (v.17-18).</p>
           <p>Ela reconhece ali um profeta (v.19), tenta desviar para um debate religioso sobre onde adorar (v.20), e Jesus a leva além disso: revela-se como o Messias que ela mesma esperava — "Eu o sou, eu, que falo contigo" (v.26), uma das declarações mais diretas de identidade messiânica de todo o evangelho de João.</p>
+          <div class="reconhecimento-seq-row" id="reconhecimentoSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revelarReconhecimentoSeq()" id="reconhecimentoSeqBtn">Acompanhar como ela passa a enxergá-lo</button>
+          <div class="chip-text" id="reconhecimentoSeqText">Toque no botão para ver os três passos, na ordem em que o texto os revela.</div>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o cântaro deixado para trás</button>
         </div>
       </div>
@@ -157,6 +164,38 @@
     { text: "Judeus e samaritanos tinham séculos de hostilidade religiosa e étnica — samaritanos eram vistos como um povo de sangue e culto misturados, indignos de contato direto (v.9)." },
     { text: "Um homem, sozinho, não se dirigia a uma mulher desconhecida em público naquela cultura — os próprios discípulos, ao voltar, ficam admirados de encontrá-lo conversando com ela (v.27)." }
   ];
+
+  const reconhecimentoSteps = [
+    { label: "Um judeu cansado", text: "No início, ele é só \"um judeu\" pedindo água — a única coisa que ela consegue ver é a barreira que os separa (v.9)." },
+    { label: "Um profeta", text: "Depois que ele revela sua vida sem condená-la, ela conclui: \"Vejo que és profeta\" (v.19) — alguém que sabe o que só Deus poderia saber." },
+    { label: "O Messias", text: "Por fim, ele mesmo declara: \"Eu o sou, eu, que falo contigo\" (v.26) — a resposta direta à esperança que ela tinha acabado de citar (v.25)." }
+  ];
+
+  function buildReconhecimentoSeqDots(){
+    const el = document.getElementById('reconhecimentoSeqRow');
+    reconhecimentoSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'reconhecimento-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'reconhecimento-seq-label';
+    label.id = 'reconhecimentoSeqLabel';
+    label.textContent = 'ainda não revelado';
+    el.appendChild(label);
+  }
+  buildReconhecimentoSeqDots();
+
+  function revelarReconhecimentoSeq(){
+    const dots = document.querySelectorAll('#reconhecimentoSeqRow .reconhecimento-seq-dot');
+    const textEl = document.getElementById('reconhecimentoSeqText');
+    const labelEl = document.getElementById('reconhecimentoSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = reconhecimentoSteps[i].label;
+      textEl.textContent = reconhecimentoSteps[i].text;
+    }, i * 450));
+  }
 
   let currentMax = 1;
 

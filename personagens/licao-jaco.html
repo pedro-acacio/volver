@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .peniel-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 10px; flex-wrap:wrap; }
+  .peniel-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex:0 0 auto; }
+  .peniel-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .peniel-seq-caption{ font-size:.92rem; color:var(--text-dim); min-height:2.6em; margin-bottom:10px; }
 </style>
 </head>
 <body>
@@ -89,6 +93,12 @@
         <div class="tl-card">
           <p>Vinte anos depois, Jacó decide voltar para casa — e Esaú vem ao seu encontro com quatrocentos homens (32:6). Na noite antes do reencontro, sozinho, "lutou com ele um homem até que a alva subia" (32:24). Jacó, o homem que sempre venceu pela esperteza, não consegue vencer essa luta pela força.</p>
           <p>O homem toca a articulação da coxa de Jacó, deslocando-a, e ainda assim Jacó se agarra: "Não te deixarei ir, se me não abençoares" (32:26). O homem pergunta seu nome — a mesma pergunta que, décadas antes, Isaque cego fizera a um Jacó disfarçado — e desta vez ele responde a verdade, sem disfarce: "Jacó" (32:27).</p>
+
+          <p>Toque para revelar, período a período, os vinte anos que levaram até essa noite:</p>
+          <div class="peniel-seq-row" id="penielSeqRow"></div>
+          <div class="peniel-seq-caption" id="penielSeqCaption">Toque no botão para revelar cada período.</div>
+          <button class="continue-btn" onclick="revealPenielSeq()">Revelar os vinte anos, período a período</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → o nome novo</button>
         </div>
       </div>
@@ -176,6 +186,34 @@
     }, 120);
   }
   openStage(1);
+
+  const penielSeqItems = [
+    "Sete anos de trabalho por Raquel — e na noite do casamento ele acorda casado com Lia (29:20-25).",
+    "Mais sete anos de trabalho, agora sim conquistando Raquel também (29:27-28).",
+    "Mais seis anos trabalhando pelos próprios rebanhos, enganado várias vezes nos salários por Labão (31:38-41).",
+    "Vinte anos ao todo — e é só depois de tudo isso que Jacó finalmente decide voltar para casa, para encontrar o irmão que jurara matá-lo."
+  ];
+
+  function buildPenielSeq(){
+    const row = document.getElementById('penielSeqRow');
+    penielSeqItems.forEach(() => {
+      const dot = document.createElement('div');
+      dot.className = 'peniel-seq-dot';
+      row.appendChild(dot);
+    });
+  }
+  buildPenielSeq();
+
+  function revealPenielSeq(){
+    const dots = document.querySelectorAll('#penielSeqRow .peniel-seq-dot');
+    const caption = document.getElementById('penielSeqCaption');
+    dots.forEach((dot, i) => {
+      setTimeout(() => {
+        dot.classList.add('lit');
+        caption.textContent = penielSeqItems[i];
+      }, i * 650);
+    });
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

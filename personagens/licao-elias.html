@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .elias-fenom-row{ display:flex; align-items:center; gap:10px; margin:12px 0 10px; flex-wrap:wrap; }
+  .elias-fenom-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .elias-fenom-dot.ausente{ background:var(--text-faint); }
+  .elias-fenom-dot.presente{ background:var(--gold); transform:scale(1.3); box-shadow:0 0 10px 2px var(--gold); }
+  .elias-fenom-label{ color:var(--text-dim); font-size:.95rem; min-height:1.4em; margin:0 0 14px; }
 </style>
 </head>
 <body>
@@ -108,6 +113,10 @@
         <div class="tl-card">
           <p>Numa caverna do Horebe, Deus pergunta a Elias o que ele faz ali. A resposta é a queixa de um homem exausto: "Fui muito zeloso... e restei eu só, e procuram tirar-me a vida" (v.10). Deus manda que ele saia e se ponha diante dele.</p>
           <p>Vem um vento fortíssimo que despedaça montes — "mas o Senhor não estava no vento". Depois um terremoto — "mas o Senhor não estava no terremoto". Depois um fogo — "mas o Senhor não estava no fogo". E depois disso, "um cicio suave e delicado" (v.11-12). É nesse silêncio quase inaudível, não no espetáculo, que Elias cobre o rosto e ouve a voz de Deus outra vez.</p>
+          <p>Toque para passar pelos quatro fenômenos, um a um, na ordem em que Elias os viveu:</p>
+          <div class="elias-fenom-row" id="eliasFenomRow"></div>
+          <p class="elias-fenom-label" id="eliasFenomLabel">Toque no botão para começar.</p>
+          <button class="continue-btn" onclick="revelarFenomenos()">Passar pelo vento, terremoto e fogo</button>
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -176,6 +185,35 @@
     }, 120);
   }
   openStage(1);
+
+  const eliasFenomenos = [
+    { nome: "O vento fortíssimo", texto: "Um vento fortíssimo despedaça montes e rochas diante do Senhor — \"mas o Senhor não estava no vento\" (v.11)." },
+    { nome: "O terremoto", texto: "Depois do vento, um terremoto sacode o Horebe — \"mas o Senhor não estava no terremoto\" (v.11)." },
+    { nome: "O fogo", texto: "Depois do terremoto, um fogo — \"mas o Senhor não estava no fogo\" (v.12)." },
+    { nome: "O cicio suave e delicado", texto: "E, depois do fogo, \"um cicio suave e delicado\" (v.12). É aqui, no quase silêncio, que Elias cobre o rosto: é aqui que o Senhor está." }
+  ];
+
+  function buildEliasFenom(){
+    const el = document.getElementById('eliasFenomRow');
+    eliasFenomenos.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'elias-fenom-dot';
+      el.appendChild(d);
+    });
+  }
+  buildEliasFenom();
+
+  function revelarFenomenos(){
+    const dots = document.querySelectorAll('#eliasFenomRow .elias-fenom-dot');
+    const label = document.getElementById('eliasFenomLabel');
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        const ultimo = i === dots.length - 1;
+        d.classList.add(ultimo ? 'presente' : 'ausente');
+        label.textContent = eliasFenomenos[i].texto;
+      }, i * 420);
+    });
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

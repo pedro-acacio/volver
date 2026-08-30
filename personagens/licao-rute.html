@@ -107,6 +107,16 @@
         <div class="tl-card">
           <p>Noemi orienta Rute a ir de noite ao terreiro onde Boaz debulhava a cevada, deitar-se a seus pés e pedir que ele exercesse o papel de resgatador (goel) — o parente próximo com direito e dever de redimir a terra e a linhagem da família (3:1-9). É um pedido ousado, mas dentro da lei, não fora dela: Rute está pedindo justiça, não favor.</p>
           <p>Boaz responde com honra, reconhece que há um parente ainda mais próximo com direito de preferência, resolve o assunto publicamente com esse parente às portas da cidade, e o outro recusa o resgate. Boaz assume o papel, casa-se com Rute, e o filho deles se chama Obede — avô de Jessé, pai de Davi (4:13-17).</p>
+          <p>Dois homens tinham o direito de resgatar Rute e a terra da família — só um aceitou. Toque para comparar as duas respostas:</p>
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnGoelPerto" onclick="showGoel('perto')">O parente mais próximo</button>
+            <button class="toggle-btn" id="btnGoelBoaz" onclick="showGoel('boaz')">Boaz, o resgatador</button>
+          </div>
+          <div class="outcome" id="goelCard">
+            <div class="outcome-visual" id="goelVisual"></div>
+            <h3 id="goelTitle"></h3>
+            <p id="goelText"></p>
+          </div>
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -158,6 +168,28 @@
     { text: "\"O teu povo é o meu povo\" — ela troca sua própria identidade nacional pela de uma sogra estrangeira e empobrecida (v.16b)." },
     { text: "\"O teu Deus é o meu Deus\" — o voto mais alto de todos: ela abandona os deuses de Moabe pelo Deus de Israel, sem garantia nenhuma de retorno (v.16c)." }
   ];
+
+  function showGoel(type){
+    const btnPerto = document.getElementById('btnGoelPerto');
+    const btnBoaz = document.getElementById('btnGoelBoaz');
+    btnPerto.classList.remove('active-worry');
+    btnBoaz.classList.remove('active-calm');
+    const visual = document.getElementById('goelVisual');
+    const title = document.getElementById('goelTitle');
+    const text = document.getElementById('goelText');
+
+    if (type === 'perto'){
+      btnPerto.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Guardar a própria herança";
+      text.textContent = "\"Não posso redimi-lo para mim, para que não prejudique a minha herança; redime tu por mim, porque eu não posso redimir\" (4:6) — ele tinha o direito, mas recusa assim que percebe o custo para si mesmo, e tira a sandália diante das testemunhas como sinal público de renúncia (4:7-8).";
+    } else {
+      btnBoaz.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Assumir o risco pelo bem de outra pessoa";
+      text.textContent = "Diante dos anciãos e de todo o povo, Boaz declara publicamente que compra a terra e toma Rute por mulher, \"para suscitar o nome do falecido sobre a sua herança\" (4:9-10) — o mesmo direito que o outro recusou, Boaz assume de bom grado, mesmo custando dele.";
+    }
+  }
 
   let currentMax = 1;
 

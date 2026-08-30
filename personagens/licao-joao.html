@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .joao-prox-row{ display:flex; align-items:center; gap:24px; margin:16px 0 10px; flex-wrap:wrap; }
+  .joao-prox-pt{ display:flex; flex-direction:column; align-items:center; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--text-faint); letter-spacing:.02em; }
+  .joao-prox-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .joao-prox-pt.lit .joao-prox-dot{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .joao-prox-pt.lit{ color:var(--text-dim); }
+  .joao-prox-caption{ font-size:.85rem; color:var(--text-dim); min-height:1.4em; margin-top:8px; }
 </style>
 </head>
 <body>
@@ -110,6 +116,16 @@
         <div class="tl-card">
           <p>Algum tempo depois, sete discípulos voltam a pescar no mar da Galileia e passam a noite sem pegar nada. De madrugada, um homem na praia manda lançar a rede do outro lado do barco — e a rede enche a ponto de não conseguirem recolhê-la (João 21:1-6).</p>
           <p>É João, de novo, quem reconhece primeiro: "Então aquele discípulo, a quem Jesus amava, disse a Pedro: É o Senhor" (v.7). A mesma proximidade que o fez reclinar-se ao peito de Jesus na última ceia é o que faz seus olhos reconhecerem Jesus antes de qualquer outro, à distância, na luz fraca do amanhecer.</p>
+
+          <div class="joao-prox-row" id="joaoProxRow">
+            <div class="joao-prox-pt"><div class="joao-prox-dot"></div><span>Mesa</span></div>
+            <div class="joao-prox-pt"><div class="joao-prox-dot"></div><span>Cruz</span></div>
+            <div class="joao-prox-pt"><div class="joao-prox-dot"></div><span>Túmulo</span></div>
+            <div class="joao-prox-pt"><div class="joao-prox-dot"></div><span>Praia</span></div>
+          </div>
+          <button class="chip-btn chip-gold" id="joaoProxBtn" onclick="revealJoaoProximidade()">Revelar o padrão, cena por cena</button>
+          <p class="joao-prox-caption" id="joaoProxCaption"></p>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -177,6 +193,26 @@
   function revealSpeech(btn){
     document.getElementById('speechText').style.display = 'block';
     btn.classList.add('active');
+  }
+
+  function revealJoaoProximidade(){
+    const btn = document.getElementById('joaoProxBtn');
+    const pts = document.querySelectorAll('#joaoProxRow .joao-prox-pt');
+    const caption = document.getElementById('joaoProxCaption');
+    const captions = [
+      "Mesa (13:23) — reclinado ao peito de Jesus, perto o bastante para sussurrar uma pergunta.",
+      "Cruz (19:26) — o único discípulo nomeado ali, perto o bastante para receber Maria aos cuidados.",
+      "Túmulo (20:2) — o primeiro a chegar correndo, perto o bastante para ver e crer.",
+      "Praia (21:7) — o primeiro a reconhecer, perto o bastante para dizer: é o Senhor."
+    ];
+    btn.disabled = true;
+    pts.forEach((pt, i) => {
+      setTimeout(() => {
+        pt.classList.add('lit');
+        caption.textContent = captions[i];
+        if (i === pts.length - 1) btn.disabled = false;
+      }, i * 550);
+    });
   }
 
   function showOutcome(type){

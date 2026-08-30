@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .tome-sala-btn{
+    padding:11px 18px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    font-family:'IBM Plex Sans', sans-serif; transition: transform .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .tome-sala-btn:hover{ transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
+  .tome-sala-row{ display:flex; align-items:center; gap:9px; margin:16px 0 8px; flex-wrap:wrap; }
+  .tome-sala-dot{
+    width:20px; height:20px; border-radius:50%; background: var(--panel-line);
+    transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
+  }
+  .tome-sala-dot.presente{ background: var(--calm); box-shadow: 0 0 9px 1px var(--calm); transform: scale(1.1); }
+  .tome-sala-dot.ausente{ background: transparent; border:2px dashed var(--worry); box-sizing:border-box; }
+  .tome-sala-caption{ color: var(--text-dim); font-size:13px; line-height:1.5; margin-top:2px; }
 </style>
 </head>
 <body>
@@ -65,6 +79,11 @@
         <div class="tl-card">
           <p>No domingo da ressurreição, Jesus aparece aos discípulos reunidos numa sala trancada por medo dos judeus, mostra as mãos e o lado, e eles se alegram ao ver o Senhor (João 20:19-20). Só que Tomé, "chamado Dídimo, não estava com eles quando Jesus ali chegou" (v.24) — nenhum motivo é dado, o texto só registra o fato: ele simplesmente não estava lá naquele momento decisivo.</p>
           <p>Os outros dez lhe contam, animados: "Vimos o Senhor". A resposta de Tomé é a mais famosa da sua vida: "Se eu não vir o sinal dos cravos em suas mãos, e não puser o meu dedo no lugar dos cravos, e não puser a minha mão no seu lado, de maneira nenhuma o crerei" (v.25).</p>
+
+          <button class="tome-sala-btn" onclick="revelarSala()">Ver quem estava na sala</button>
+          <div class="tome-sala-row" id="salaRow"></div>
+          <div class="tome-sala-caption" id="salaCaption">Onze apóstolos restantes, uma porta trancada por medo — toque para ver quem faltava.</div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → oito dias de silêncio</button>
         </div>
       </div>
@@ -155,6 +174,29 @@
 </div>
 
 <script>
+  function buildSala(){
+    const row = document.getElementById('salaRow');
+    for (let i = 0; i < 11; i++){
+      const d = document.createElement('div');
+      d.className = 'tome-sala-dot';
+      row.appendChild(d);
+    }
+  }
+  buildSala();
+
+  function revelarSala(){
+    const dots = document.querySelectorAll('#salaRow .tome-sala-dot');
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        if (i === 10) d.classList.add('ausente');
+        else d.classList.add('presente');
+      }, i * 150);
+    });
+    setTimeout(() => {
+      document.getElementById('salaCaption').textContent = "Dez discípulos viram o Senhor naquela noite. Um lugar ficou vazio — o de Tomé, chamado Dídimo, que \"não estava com eles quando Jesus ali chegou\" (v.24).";
+    }, 11 * 150 + 250);
+  }
+
   let currentMax = 1;
 
   function openStage(n){

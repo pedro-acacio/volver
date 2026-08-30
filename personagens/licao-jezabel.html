@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .jez-bars{ margin:14px 0 4px; }
+  .jez-bar-item{ margin-bottom:14px; }
+  .jez-bar-label{ font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; color:var(--text-dim); margin-bottom:6px; }
+  .jez-bar-track{ height:20px; border-radius:10px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .jez-bar-fill{ height:100%; width:0%; border-radius:10px; background:var(--worry); box-shadow:0 0 10px 1px rgba(168,92,107,.45); transition:width 1.1s cubic-bezier(.22,.9,.32,1); }
+  .jez-bar-fill.jez-fill-calm{ background:var(--calm); box-shadow:0 0 10px 1px rgba(124,154,120,.45); }
+  .jez-bar-value{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--text-faint); margin-top:5px; }
 </style>
 </head>
 <body>
@@ -44,6 +51,19 @@
         <div class="tl-card">
           <p>Jezabel é princesa da Fenícia, casada com Acabe, rei de Israel, numa aliança política (1 Reis 16:31). Ela traz consigo o culto a Baal e Aserá, e o texto observa que Acabe "fez ainda mais para irar ao Senhor Deus de Israel do que todos os reis de Israel que houve antes dele" (16:33) — em boa parte por sua influência.</p>
           <p>Ela não se contenta em introduzir um culto paralelo: manda matar sistematicamente os profetas do Senhor (18:4), a ponto de o servo Obadias precisar escondê-los em cavernas para salvá-los. Ela mesma sustenta 450 profetas de Baal e 400 de Aserá à sua própria mesa (18:19).</p>
+          <button class="chip-btn chip-gold" onclick="revealJezBars()">Comparar os dois lados da mesa</button>
+          <div class="jez-bars" id="jezBars">
+            <div class="jez-bar-item">
+              <div class="jez-bar-label">Profetas de Baal e Aserá sustentados por Jezabel</div>
+              <div class="jez-bar-track"><div class="jez-bar-fill" id="jezBarBaal"></div></div>
+              <div class="jez-bar-value" id="jezBarBaalValue">&nbsp;</div>
+            </div>
+            <div class="jez-bar-item">
+              <div class="jez-bar-label">Profetas do Senhor escondidos por Obadias</div>
+              <div class="jez-bar-track"><div class="jez-bar-fill jez-fill-calm" id="jezBarObadias"></div></div>
+              <div class="jez-bar-value" id="jezBarObadiasValue">&nbsp;</div>
+            </div>
+          </div>
           <button class="continue-btn" onclick="openStage(2)">Continuar → depois do Carmelo</button>
         </div>
       </div>
@@ -148,6 +168,13 @@
 </div>
 
 <script>
+  function revealJezBars(){
+    document.getElementById('jezBarBaal').style.width = '100%';
+    document.getElementById('jezBarObadias').style.width = (100 * 100 / 850) + '%';
+    document.getElementById('jezBarBaalValue').textContent = '850 profetas, à mesa da rainha';
+    document.getElementById('jezBarObadiasValue').textContent = '100 profetas, escondidos em duas cavernas';
+  }
+
   let currentMax = 1;
 
   function openStage(n){

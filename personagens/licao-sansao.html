@@ -9,6 +9,20 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .tranca-btn{
+    padding:11px 18px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    font-family:'IBM Plex Sans', sans-serif; transition: transform .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .tranca-btn:hover{ transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
+  .tranca-row{ display:flex; align-items:flex-end; gap:9px; margin:16px 0 8px; flex-wrap:wrap; }
+  .tranca{
+    width:20px; height:22px; border-radius:6px; background: var(--gold);
+    box-shadow: 0 0 9px 1px rgba(217,164,65,.4);
+    transition: background .35s ease, transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .35s ease;
+  }
+  .tranca.cortada{ background: var(--panel-line); transform: scaleY(.35); box-shadow:none; }
+  .tranca-caption{ color: var(--text-dim); font-size:13px; line-height:1.5; margin-top:2px; }
 </style>
 </head>
 <body>
@@ -89,6 +103,11 @@
         <div class="tl-card">
           <p>Sansão se apaixona por Dalila, subornada pelos chefes filisteus para descobrir o segredo de sua força. Três vezes ele mente sobre a fonte dela, e três vezes ela o testa — até que, "endoidecida" a sua alma "até a morte" pela insistência dela, ele conta a verdade: nunca teve seu cabelo cortado, pelo voto de nazireu (16:15-17).</p>
           <p>Dalila o faz dormir em seu colo e manda cortar suas sete tranças. "E ele não sabia que o Senhor já se tinha retirado dele" (16:20) — a força não estava no cabelo em si, mas na aliança que o cabelo simbolizava, e que ele já vinha rompendo aos poucos havia anos.</p>
+
+          <button class="tranca-btn" onclick="cortarTrancas()">Cortar as sete tranças</button>
+          <div class="tranca-row" id="trancaRow"></div>
+          <div class="tranca-caption" id="trancaCaption">Sete tranças trançadas desde o nascimento — toque para ver o que acontece quando caem.</div>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → cego, preso, escarnecido</button>
         </div>
       </div>
@@ -160,6 +179,25 @@
     { text: "Cercado por mil homens em Leí, Sansão pega a queixada fresca de um jumento e mata mil filisteus com ela — puro poder físico usado em autodefesa pessoal, não em campanha de libertação (15:14-17)." },
     { text: "Em Gaza, cercado durante a noite numa cidade inimiga por causa de uma prostituta, ele arranca as portas da cidade à meia-noite e as carrega para longe, como demonstração de força — sem que isso avance a causa de Israel em nada (16:1-3)." }
   ];
+
+  function buildTrancas(){
+    const row = document.getElementById('trancaRow');
+    for (let i = 0; i < 7; i++){
+      const d = document.createElement('div');
+      d.className = 'tranca';
+      row.appendChild(d);
+    }
+  }
+  buildTrancas();
+
+  function cortarTrancas(){
+    const fios = document.querySelectorAll('#trancaRow .tranca');
+    fios.forEach((d, i) => setTimeout(() => d.classList.add('cortada'), i * 220));
+    const cap = document.getElementById('trancaCaption');
+    setTimeout(() => {
+      cap.textContent = "As sete tranças caem uma a uma — mas o texto já avisou: \"ele não sabia que o Senhor já se tinha retirado dele\" (16:20). A força tinha ido embora antes da tesoura.";
+    }, 7 * 220 + 250);
+  }
 
   let currentMax = 1;
 

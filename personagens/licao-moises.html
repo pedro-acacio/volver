@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .pragas-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 6px; flex-wrap:wrap; }
+  .pragas-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .pragas-seq-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .pragas-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); margin-left:4px; }
 </style>
 </head>
 <body>
@@ -90,6 +94,9 @@
         <div class="tl-card">
           <p>Moisés volta ao Egito com Arão, seu irmão, falando por ele. Diante de Faraó, a mensagem é direta: "Deixa ir o meu povo" (5:1). Faraó recusa, e aumenta a carga de trabalho sobre os hebreus escravizados como retaliação (5:2-9) — a primeira resposta ao pedido de libertação é mais sofrimento, não menos.</p>
           <p>Segue-se uma série de dez pragas — sangue, rãs, piolhos, moscas, peste no gado, úlceras, saraiva, gafanhotos, trevas e, por fim, a morte dos primogênitos — cada uma atingindo diretamente algo que o Egito adorava como divindade (7:14-12:30). A cada praga, Faraó cede um pouco e depois "endurece o coração" de novo, até a décima praga finalmente quebrar sua resistência.</p>
+          <div class="pragas-seq-row" id="pragasSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPragasSeq()" id="pragasSeqBtn">Ver as dez pragas, uma a uma</button>
+          <div class="chip-text" id="pragasSeqText">Toque no botão para acompanhar a sequência completa, praga por praga.</div>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o mar se abre</button>
         </div>
       </div>
@@ -161,6 +168,45 @@
     { text: "\"Eis que quando eu for aos filhos de Israel... e me perguntarem: Qual é o seu nome? que lhes direi?\" (3:13) — Deus revela seu nome: \"Eu Sou o que Sou\" (3:14), a base de toda a autoridade da missão." },
     { text: "\"Ó Senhor, eu não sou homem eloquente... sou pesado de boca e pesado de língua\" (4:10) — Deus oferece Arão como porta-voz (4:14-16), mas a irritação divina no texto sugere que a objeção já tinha ido longe demais." }
   ];
+
+  const pragasSteps = [
+    { name: "Sangue", text: "1ª praga — as águas do Nilo viram sangue (7:14-25), atingindo Hapi, o deus egípcio associado ao rio." },
+    { name: "Rãs", text: "2ª praga — rãs cobrem o Egito inteiro (8:1-15), confrontando Heqet, deusa com cabeça de rã ligada à fertilidade." },
+    { name: "Piolhos", text: "3ª praga — o pó da terra vira piolhos (8:16-19); pela primeira vez, os magos egípcios admitem: \"Isto é o dedo de Deus\"." },
+    { name: "Moscas", text: "4ª praga — enxames de moscas invadem o Egito, mas poupam a terra de Gósen, onde vivia Israel (8:20-32)." },
+    { name: "Peste no gado", text: "5ª praga — o gado egípcio morre (9:1-7), atingindo Hathor e Ápis, divindades representadas por vacas e touros." },
+    { name: "Úlceras", text: "6ª praga — úlceras cobrem egípcios e magos (9:8-12); nem os sacerdotes conseguem mais ficar diante de Moisés." },
+    { name: "Saraiva", text: "7ª praga — uma saraiva devastadora destrói plantações e rebanhos deixados ao relento (9:13-35)." },
+    { name: "Gafanhotos", text: "8ª praga — gafanhotos devoram o que a saraiva poupou, cobrindo a face de toda a terra (10:1-20)." },
+    { name: "Trevas", text: "9ª praga — trevas densas cobrem o Egito por três dias, confrontando Rá, o deus-sol (10:21-29)." },
+    { name: "Morte dos primogênitos", text: "10ª praga — a morte de todo primogênito egípcio, incluindo o do próprio Faraó, finalmente quebra sua resistência (11:1-12:30)." }
+  ];
+
+  function buildPragasSeqDots(){
+    const el = document.getElementById('pragasSeqRow');
+    pragasSteps.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'pragas-seq-dot';
+      el.appendChild(d);
+    });
+    const label = document.createElement('span');
+    label.className = 'pragas-seq-label';
+    label.id = 'pragasSeqLabel';
+    label.textContent = '0 de 10 pragas';
+    el.appendChild(label);
+  }
+  buildPragasSeqDots();
+
+  function revealPragasSeq(){
+    const dots = document.querySelectorAll('#pragasSeqRow .pragas-seq-dot');
+    const textEl = document.getElementById('pragasSeqText');
+    const labelEl = document.getElementById('pragasSeqLabel');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      labelEl.textContent = (i + 1) + ' de 10 pragas — ' + pragasSteps[i].name;
+      textEl.textContent = pragasSteps[i].text;
+    }, i * 320));
+  }
 
   let currentMax = 1;
 

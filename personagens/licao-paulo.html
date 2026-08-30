@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .zelo-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 16px; flex-wrap:wrap; }
+  .zelo-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .zelo-seq-dot.lit{ background:var(--worry); transform:scale(1.2); box-shadow:0 0 9px 1px var(--worry); }
 </style>
 </head>
 <body>
@@ -45,6 +48,10 @@
         <div class="tl-card">
           <p>Antes de ser Paulo, ele é Saulo de Tarso, fariseu treinado aos pés do respeitado mestre Gamaliel (Atos 22:3), convicto de que perseguir os seguidores de Jesus era um ato de fidelidade a Deus. Ele está presente e consente na morte de Estêvão, o primeiro mártir cristão, guardando as capas de quem o apedrejava (Atos 7:58-8:1).</p>
           <p>Dali em diante, ele devasta a igreja em Jerusalém, "entrando pelas casas, e, arrastando homens e mulheres, os entregava à prisão" (8:3). Não satisfeito, pede ao sumo sacerdote cartas de autorização para ir a Damasco e trazer presos, algemados, quaisquer discípulos de "o Caminho" que encontrasse ali (9:1-2).</p>
+          <p>Três marcos mostram como esse zelo cresce a cada passo — toque para reconstituir a escalada:</p>
+          <div class="zelo-seq-row" id="zeloSeqRow"></div>
+          <div class="chip-text" id="zeloSeqText">Toque no botão abaixo para acompanhar, marco a marco, como a perseguição cresce.</div>
+          <button class="chip-btn chip-gold" onclick="revealZeloSeq()">Reconstituir a escalada do zelo</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → a luz no caminho</button>
         </div>
       </div>
@@ -159,6 +166,31 @@
     { text: "\"Senhor, a muitos ouvi acerca deste homem, quantos males tem feito aos teus santos em Jerusalém; e aqui tem poder, da parte dos principais dos sacerdotes, para prender todos os que invocam o teu nome\" (9:13-14) — Ananias conhece a reputação de Saulo e teme obedecer." },
     { text: "Deus responde apenas que Saulo é \"vaso escolhido\" para levar seu nome perante gentios, reis e o próprio povo de Israel (v.15-16). Ananias vai mesmo assim, sem mais garantias além dessa palavra, e chama Saulo de \"irmão\" (v.17)." }
   ];
+
+  const zeloSeqData = [
+    "Consente na morte de Estêvão, o primeiro mártir, guardando as capas de quem o apedrejava (8:1).",
+    "Devasta a igreja em Jerusalém, arrastando homens e mulheres para a prisão (8:3).",
+    "Pede cartas ao sumo sacerdote para prender também os discípulos de Damasco (9:1-2)."
+  ];
+
+  function buildZeloSeq(){
+    const el = document.getElementById('zeloSeqRow');
+    for (let i = 0; i < zeloSeqData.length; i++){
+      const d = document.createElement('div');
+      d.className = 'zelo-seq-dot';
+      el.appendChild(d);
+    }
+  }
+  buildZeloSeq();
+
+  function revealZeloSeq(){
+    const dots = document.querySelectorAll('#zeloSeqRow .zelo-seq-dot');
+    const textEl = document.getElementById('zeloSeqText');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      textEl.textContent = zeloSeqData[i];
+    }, i * 650));
+  }
 
   let currentMax = 1;
 

@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .fluxo-compare{ margin:14px 0 6px; display:flex; flex-direction:column; gap:10px; }
+  .fluxo-row{ display:flex; align-items:center; gap:10px; }
+  .fluxo-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-dim); min-width:160px; }
+  .fluxo-bar-track{ flex:1; height:20px; border-radius:10px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .fluxo-bar-fill{ height:100%; border-radius:10px; width:0%; transition:width 1.4s cubic-bezier(.22,.9,.3,1); }
+  .fluxo-bar-fill.fluxo-grow-longa{ width:97%; background: var(--worry); }
+  .fluxo-bar-fill.fluxo-grow-curta{ width:3%; background: var(--calm); box-shadow: 0 0 10px 1px rgba(124,154,120,.5); }
 </style>
 </head>
 <body>
@@ -45,6 +52,17 @@
         <div class="tl-card">
           <p>Marcos descreve sua condição em detalhe cru: "estava com um fluxo de sangue havia doze anos; e que padecera muito com muitos médicos, e despendera tudo quanto tinha, e nada lhe aproveitara, antes ia passando de mal a pior" (Marcos 5:25-26). Doze anos de tratamentos que só pioravam as coisas e esgotavam o que ela tinha.</p>
           <p>Pela lei judaica (Levítico 15:25-27), esse tipo de fluxo a tornava ritualmente impura de forma contínua — qualquer pessoa ou objeto que ela tocasse também ficaria impuro. Doze anos não eram só de doença física; eram doze anos de isolamento social e religioso, sem poder participar normalmente da vida da comunidade.</p>
+          <div class="fluxo-compare">
+            <div class="fluxo-row">
+              <span class="fluxo-label">12 anos de doença</span>
+              <div class="fluxo-bar-track"><div class="fluxo-bar-fill" id="fluxoBarLonga"></div></div>
+            </div>
+            <div class="fluxo-row">
+              <span class="fluxo-label">1 toque, cura imediata</span>
+              <div class="fluxo-bar-track"><div class="fluxo-bar-fill" id="fluxoBarCurta"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="animarFluxoCompare()">Comparar os doze anos com o instante da cura</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → um toque em meio à multidão</button>
         </div>
       </div>
@@ -160,6 +178,11 @@
     { text: "Ela pensa: \"Se tão-somente tocar os seus vestidos, ficarei sã\" (v.28) — um plano feito para não chamar atenção nenhuma, só um toque rápido e discreto." },
     { text: "Jesus sente \"que de si mesmo tinha saído poder\" e para tudo para perguntar quem o tocou, mesmo com a multidão inteira o apertando de todo lado (v.30-31)." }
   ];
+
+  function animarFluxoCompare(){
+    document.getElementById('fluxoBarLonga').classList.add('fluxo-grow-longa');
+    document.getElementById('fluxoBarCurta').classList.add('fluxo-grow-curta');
+  }
 
   let currentMax = 1;
 

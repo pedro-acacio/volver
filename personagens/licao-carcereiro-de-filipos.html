@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .filipos-terremoto{ margin:18px 0 4px; }
+  .filipos-chain-row{ display:flex; flex-wrap:wrap; gap:10px; margin:4px 0 10px; }
+  .filipos-chain-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .filipos-chain-dot.solta{ background:var(--calm); transform:scale(1.2); box-shadow:0 0 9px 1px var(--calm); }
+  .filipos-chain-caption{ margin-top:10px; font-family:'IBM Plex Mono', monospace; font-size:.86rem; color:var(--text-dim); opacity:0; transition:opacity .6s ease; }
+  .filipos-chain-caption.show{ opacity:1; }
 </style>
 </head>
 <body>
@@ -67,6 +73,13 @@
         <div class="tl-card">
           <p>Feridos pelos açoites, presos no lugar mais escuro da prisão, Paulo e Silas fazem algo que nenhum dos outros presos esperaria: "orando, cantavam hinos a Deus; e os outros presos os escutavam" (16:25). Não há registro de reclamação, só louvor no meio da injustiça.</p>
           <p>De repente, um terremoto forte sacode os alicerces da prisão. Todas as portas se abrem de uma vez, e as correntes de todos os presos — não só as de Paulo e Silas — se soltam sozinhas.</p>
+
+          <div class="filipos-terremoto">
+            <button class="continue-btn" style="margin-bottom:14px;" onclick="revealFiliposCorrentes()">Sentir o terremoto — soltar as correntes</button>
+            <div class="filipos-chain-row" id="filiposChainRow"></div>
+            <p class="filipos-chain-caption" id="filiposChainCaption"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → uma espada quase erguida</button>
         </div>
       </div>
@@ -171,6 +184,26 @@
     }, 120);
   }
   openStage(1);
+
+  function buildFiliposCorrentes(){
+    const row = document.getElementById('filiposChainRow');
+    for (let i=0; i<8; i++){
+      const d = document.createElement('div');
+      d.className = 'filipos-chain-dot';
+      row.appendChild(d);
+    }
+  }
+  buildFiliposCorrentes();
+
+  function revealFiliposCorrentes(){
+    const dots = document.querySelectorAll('#filiposChainRow .filipos-chain-dot');
+    dots.forEach((d,i) => setTimeout(() => d.classList.add('solta'), i*160));
+    const caption = document.getElementById('filiposChainCaption');
+    setTimeout(() => {
+      caption.textContent = "Cada preso da prisão de Filipos com as correntes soltas — e nenhum deles atravessa a porta aberta.";
+      caption.classList.add('show');
+    }, dots.length*160 + 300);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

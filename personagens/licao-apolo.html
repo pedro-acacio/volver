@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .apolo-bar-track{ height:20px; border-radius:10px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin:14px 0 8px; }
+  .apolo-bar-fill{ height:100%; width:50%; border-radius:10px; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,.45); transition: width 1s cubic-bezier(.4,0,.2,1); }
+  .apolo-bar-label{ font-size:14px; color: var(--text-dim); margin-bottom:14px; }
 </style>
 </head>
 <body>
@@ -65,6 +68,12 @@
         <div class="tl-card">
           <p>Apesar de todo o talento e conhecimento, há uma lacuna importante: Apolo "conhecia somente o batismo de João" (18:25). Ele sabia sobre o arrependimento pregado por João Batista, sobre a preparação do caminho — mas parece não ter conhecimento completo sobre a morte, ressurreição e o Espírito Santo derramado depois de Pentecostes.</p>
           <p>É uma posição estranha: já é respeitado, já ensina publicamente, e ainda assim está — sem saber — falando com metade da história.</p>
+
+          <p>Toque para visualizar exatamente quanto do evangelho Apolo já carregava — e quanto ainda faltava:</p>
+          <div class="apolo-bar-track" id="apoloBarTrack"><div class="apolo-bar-fill" id="apoloBarFill"></div></div>
+          <div class="apolo-bar-label" id="apoloBarLabel">O batismo de João — metade da história (v.25)</div>
+          <button class="chip-btn chip-gold" onclick="completeApoloBar()">Ver o resto da história</button>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → tomado à parte</button>
         </div>
       </div>
@@ -183,6 +192,13 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function completeApoloBar(){
+    const fill = document.getElementById('apoloBarFill');
+    const label = document.getElementById('apoloBarLabel');
+    fill.style.width = '100%';
+    label.textContent = "A morte, a ressurreição e o Espírito Santo derramado — o resto da história que Priscila e Áquila lhe declararam \"mais precisamente\" (v.26).";
   }
 
   function showOutcome(type){

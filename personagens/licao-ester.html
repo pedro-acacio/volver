@@ -109,6 +109,18 @@
         <div class="tl-card">
           <p>Ester convida o rei e Hamã para dois banquetes seguidos, sem revelar de imediato seu pedido. Na mesma noite, o rei — insone — manda ler os anais do reino e descobre que nunca recompensou Mordecai por denunciar a conspiração contra sua vida (6:1-3). Por ironia, é o próprio Hamã, chamado ao palácio para sugerir uma honra, quem acaba tendo que desfilar Mordecai pela cidade com as honras que planejava para si mesmo (6:4-11).</p>
           <p>No segundo banquete, Ester finalmente revela o plano de Hamã contra seu povo — e contra ela mesma. O rei, furioso, manda enforcar Hamã na forca de 25 metros que ele próprio tinha preparado para Mordecai (7:1-10). O decreto contra os judeus é revertido por um novo decreto real (8:1-17).</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnHamaPlano" onclick="showReviravolta('plano')">O que Hamã planejou</button>
+            <button class="toggle-btn" id="btnHamaReal" onclick="showReviravolta('real')">O que realmente aconteceu</button>
+          </div>
+
+          <div class="outcome" id="hamaCard">
+            <div class="outcome-visual" id="hamaVisual"></div>
+            <h3 id="hamaTitle"></h3>
+            <p id="hamaText"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -177,6 +189,28 @@
     }, 120);
   }
   openStage(1);
+
+  function showReviravolta(estado){
+    const btnPlano = document.getElementById('btnHamaPlano');
+    const btnReal = document.getElementById('btnHamaReal');
+    btnPlano.classList.remove('active-worry');
+    btnReal.classList.remove('active-calm');
+    const visual = document.getElementById('hamaVisual');
+    const title = document.getElementById('hamaTitle');
+    const text = document.getElementById('hamaText');
+
+    if (estado === 'plano'){
+      btnPlano.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma forca de 25 metros para Mordecai";
+      text.textContent = "Hamã manda construir uma forca altíssima para enforcar Mordecai, e planeja pedir ao rei uma honra pública só para si mesmo (5:14; 6:6-9).";
+    } else {
+      btnReal.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A própria armadilha, virada contra ele";
+      text.textContent = "É Mordecai quem desfila pela cidade com as honras que Hamã queria para si — e é o próprio Hamã quem termina enforcado na forca que preparou (6:10-11; 7:9-10).";
+    }
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .cornelio-moments-row{ display:flex; align-items:center; gap:12px; margin:14px 0 12px; flex-wrap:wrap; }
+  .cornelio-moment-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .cornelio-moment-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .cornelio-moments-text p{ opacity:0; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; margin:8px 0; color: var(--text-dim); }
+  .cornelio-moments-text p.show{ opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -111,6 +116,12 @@
         <div class="tl-card">
           <p>Pedro prega o essencial do evangelho: Jesus, ungido pelo Espírito, andou fazendo o bem, foi morto e ressuscitou ao terceiro dia, e "todos os profetas dão testemunho de que, por meio do seu nome, todo aquele que nele crê receberá remissão dos pecados" (10:43).</p>
           <p>Antes mesmo de Pedro terminar de falar, o Espírito Santo cai sobre todos os que ouviam a palavra. Os crentes judeus que acompanhavam Pedro ficam atônitos, "porquanto o dom do Espírito Santo se derramava também sobre os gentios" (10:45) — a mesma evidência visível do Pentecostes, agora sobre quem nunca tinha sido circuncidado.</p>
+
+          <p>Foi rápido demais para qualquer ritual humano acompanhar. Toque para ver a ordem exata dos acontecimentos:</p>
+          <div class="cornelio-moments-row" id="cornelioMomentsRow"></div>
+          <button class="chip-btn chip-gold" onclick="revealCornelioMoments()">Ver os momentos, em ordem</button>
+          <div class="cornelio-moments-text" id="cornelioMomentsText"></div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → a barreira derrubada</button>
         </div>
       </div>
@@ -189,6 +200,39 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const cornelioMomentsData = [
+    "Pedro ainda fala sobre a remissão dos pecados pelo nome de Jesus (10:43).",
+    "Sem ele terminar a frase, o Espírito Santo cai sobre todos os que ouviam (10:44).",
+    "Os crentes judeus que vieram com Pedro ficam atônitos — o dom se derrama também sobre os gentios (10:45).",
+    "Eles os ouvem falar em línguas e engrandecer a Deus, a mesma evidência visível do Pentecostes (10:46) — antes de qualquer batismo, antes de qualquer imposição de mãos."
+  ];
+
+  function buildCornelioMoments(){
+    const row = document.getElementById('cornelioMomentsRow');
+    cornelioMomentsData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'cornelio-moment-dot';
+      row.appendChild(d);
+    });
+  }
+  buildCornelioMoments();
+
+  function revealCornelioMoments(){
+    const dots = document.querySelectorAll('#cornelioMomentsRow .cornelio-moment-dot');
+    const textEl = document.getElementById('cornelioMomentsText');
+    textEl.innerHTML = '';
+    dots.forEach(d => d.classList.remove('lit'));
+    cornelioMomentsData.forEach((txt, i) => {
+      setTimeout(() => {
+        dots[i].classList.add('lit');
+        const p = document.createElement('p');
+        p.textContent = txt;
+        textEl.appendChild(p);
+        requestAnimationFrame(() => p.classList.add('show'));
+      }, i * 550);
+    });
   }
 
   function showOutcome(type){

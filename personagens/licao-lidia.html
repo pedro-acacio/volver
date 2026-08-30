@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .lid-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 8px; flex-wrap:wrap; }
+  .lid-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .lid-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .lid-seq-caption{ font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-faint); min-height:18px; margin-bottom:8px; }
 </style>
 </head>
 <body>
@@ -103,6 +107,9 @@
         <div class="tl-card">
           <p>Logo depois de ser batizada, Lídia insiste, quase sem aceitar recusa: "se haveis julgado que eu seja fiel ao Senhor, entrai em minha casa, e ficai nela. E nos constrangeu a isso" (16:15). O verbo é forte — ela pressiona até eles aceitarem.</p>
           <p>A casa de Lídia se torna, na prática, a base da missão em Filipos: é para lá que Paulo e Silas retornam depois de serem soltos da prisão, mais adiante no mesmo capítulo (16:40) — e provavelmente o ponto de partida da igreja que Paulo tanto amaria, anos depois, ao escrever a carta aos Filipenses.</p>
+          <button class="chip-btn chip-gold" onclick="revealLidSeq()">Ver o alcance de uma casa aberta</button>
+          <div class="lid-seq-row" id="lidSeqRow"></div>
+          <div class="lid-seq-caption" id="lidSeqCaption">&nbsp;</div>
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -149,6 +156,29 @@
 </div>
 
 <script>
+  const lidSeqLabels = ["Lídia é batizada", "Toda a sua casa é batizada com ela", "Ela constrange Paulo e Silas a ficarem", "É lá que eles voltam depois da prisão", "Provavelmente ali nasce a igreja de Filipos"];
+
+  function buildLidSeq(){
+    const row = document.getElementById('lidSeqRow');
+    lidSeqLabels.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'lid-seq-dot';
+      row.appendChild(d);
+    });
+  }
+  buildLidSeq();
+
+  function revealLidSeq(){
+    const dots = document.querySelectorAll('#lidSeqRow .lid-seq-dot');
+    const caption = document.getElementById('lidSeqCaption');
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        d.classList.add('lit');
+        caption.textContent = lidSeqLabels[i];
+      }, i * 380);
+    });
+  }
+
   let currentMax = 1;
 
   function openStage(n){

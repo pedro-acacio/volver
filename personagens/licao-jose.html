@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .jose-anos-row{ display:flex; gap:8px; margin:16px 0 10px; flex-wrap:wrap; }
+  .jose-anos-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .jose-anos-dot.fartura{ background:var(--gold); transform:scale(1.15); box-shadow:0 0 8px 1px var(--gold); }
+  .jose-anos-dot.fome{ background:var(--worry); transform:scale(1.15); box-shadow:0 0 8px 1px var(--worry); }
+  .jose-anos-caption{ font-size:.85rem; color:var(--text-dim); min-height:1.4em; margin-top:8px; }
 </style>
 </head>
 <body>
@@ -115,6 +120,11 @@
           <p>Dois anos depois, Faraó tem sonhos que nenhum sábio do Egito consegue interpretar. Só então o copeiro se lembra de José (41:1-13).</p>
           <p>Tirado da prisão às pressas, José interpreta: sete vacas gordas e sete magras, sete espigas cheias e sete mirradas — sete anos de fartura seguidos de sete anos de fome. Ele ainda propõe um plano para atravessar a crise (41:14-36).</p>
           <p>Faraó o põe sobre todo o Egito: "Só no trono serei eu maior do que tu" (41:37-44). José tinha trinta anos — treze depois de ser vendido pelos próprios irmãos (41:46).</p>
+
+          <div class="jose-anos-row" id="joseAnosRow"></div>
+          <button class="chip-btn chip-gold" id="joseAnosBtn" onclick="revealJoseAnos()">Ver os catorze anos, um a um</button>
+          <p class="jose-anos-caption" id="joseAnosCaption"></p>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o reencontro</button>
         </div>
       </div>
@@ -200,6 +210,35 @@
   function revealSpeech(btn){
     document.getElementById('speechText').style.display = 'block';
     btn.classList.add('active');
+  }
+
+  function buildJoseAnos(){
+    const row = document.getElementById('joseAnosRow');
+    for (let i = 0; i < 14; i++){
+      const d = document.createElement('div');
+      d.className = 'jose-anos-dot';
+      row.appendChild(d);
+    }
+  }
+  buildJoseAnos();
+
+  function revealJoseAnos(){
+    const btn = document.getElementById('joseAnosBtn');
+    const dots = document.querySelectorAll('#joseAnosRow .jose-anos-dot');
+    const caption = document.getElementById('joseAnosCaption');
+    btn.disabled = true;
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        if (i < 7){
+          d.classList.add('fartura');
+          caption.textContent = "Ano " + (i + 1) + " de fartura — a colheita generosa que José manda armazenar.";
+        } else {
+          d.classList.add('fome');
+          caption.textContent = "Ano " + (i - 6) + " de fome — o Egito sobrevive com o que foi guardado nos anos de fartura.";
+        }
+        if (i === dots.length - 1) btn.disabled = false;
+      }, i * 180);
+    });
   }
 
   function showOutcome(type){

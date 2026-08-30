@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .maria-simeao-row{ display:flex; align-items:center; gap:20px; margin:16px 0 10px; flex-wrap:wrap; }
+  .maria-simeao-pt{ display:flex; flex-direction:column; align-items:center; gap:8px; font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--text-faint); text-align:center; max-width:110px; }
+  .maria-simeao-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .maria-simeao-pt.lit .maria-simeao-dot{ background:var(--gold); transform:scale(1.15); box-shadow:0 0 8px 1px var(--gold); }
+  .maria-simeao-pt.final .maria-simeao-dot{ background:var(--worry); transform:scale(1.35); box-shadow:0 0 12px 2px var(--worry); }
+  .maria-simeao-pt.lit{ color:var(--text-dim); }
+  .maria-simeao-caption{ font-size:.85rem; color:var(--text-dim); min-height:1.4em; margin-top:8px; }
 </style>
 </head>
 <body>
@@ -107,6 +114,16 @@
         <div class="tl-card">
           <p>No ritual de apresentação do menino no templo — quarenta dias depois, conforme a lei (Levítico 12) — um homem idoso chamado Simeão, "justo e temente a Deus", a quem tinha sido revelado que não morreria sem ver o Cristo, toma o menino nos braços e louva a Deus (Lucas 2:25-32).</p>
           <p>Mas então ele se volta para Maria com uma palavra que mistura alegria e advertência: "eis que este é posto para queda e elevação de muitos em Israel, e para sinal que será contradito... e uma espada traspassará também a tua própria alma" (2:34-35). No mesmo templo onde ela oferece o sacrifício de purificação de uma família pobre (2:24, comparar Levítico 12:8), Maria já ouve o primeiro anúncio explícito do sofrimento que a espera.</p>
+
+          <div class="maria-simeao-row" id="mariaSimeaoRow">
+            <div class="maria-simeao-pt"><div class="maria-simeao-dot"></div><span>Queda e elevação</span></div>
+            <div class="maria-simeao-pt"><div class="maria-simeao-dot"></div><span>Sinal contradito</span></div>
+            <div class="maria-simeao-pt"><div class="maria-simeao-dot"></div><span>Corações revelados</span></div>
+            <div class="maria-simeao-pt"><div class="maria-simeao-dot"></div><span>A espada</span></div>
+          </div>
+          <button class="chip-btn chip-gold" id="mariaSimeaoBtn" onclick="revealMariaSimeao()">Ouvir a profecia de Simeão, camada por camada</button>
+          <p class="maria-simeao-caption" id="mariaSimeaoCaption"></p>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -180,6 +197,27 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function revealMariaSimeao(){
+    const btn = document.getElementById('mariaSimeaoBtn');
+    const pts = document.querySelectorAll('#mariaSimeaoRow .maria-simeao-pt');
+    const caption = document.getElementById('mariaSimeaoCaption');
+    const captions = [
+      "\"Posto para queda e elevação de muitos em Israel\" — o mesmo menino dividirá quem o recebe e quem o rejeita.",
+      "\"Para sinal que será contradito\" — sua própria vida se tornará motivo de oposição.",
+      "\"Para que sejam revelados os pensamentos de muitos corações\" — o que as pessoas fizerem com ele mostrará quem elas realmente são.",
+      "\"E uma espada traspassará também a tua própria alma\" — a advertência dirigida só a ela, a mãe, quarenta dias depois do nascimento."
+    ];
+    btn.disabled = true;
+    pts.forEach((pt, i) => {
+      setTimeout(() => {
+        pt.classList.add('lit');
+        if (i === pts.length - 1) pt.classList.add('final');
+        caption.textContent = captions[i];
+        if (i === pts.length - 1) btn.disabled = false;
+      }, i * 550);
+    });
   }
 
   function showOutcome(type){

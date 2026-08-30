@@ -86,6 +86,11 @@
         <div class="tl-card">
           <p>No jardim do Getsêmani, Judas chega guiando uma multidão armada com espadas e varapaus, enviada pelos principais sacerdotes. Ele já tinha combinado um sinal: "Aquele que eu beijar, esse é; prendei-o" (Mateus 26:48) — usa exatamente o gesto de saudação e afeto entre discípulo e mestre para identificar Jesus aos que vão prendê-lo.</p>
           <p>Ele se aproxima e diz "Eu te saúdo, Rabi" e o beija (v.49). Jesus responde sem resistência e sem surpresa: "Amigo, a que vieste?" (v.50) — uma palavra de estranha ternura para o momento exato da traição.</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-worry" onclick="selectChip(this, judasData, 0, 'judasText')">O sinal combinado</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, judasData, 1, 'judasText')">A resposta de Jesus</button>
+          </div>
+          <div class="chip-text" id="judasText">Toque para ver o sinal combinado no jardim e a resposta de Jesus ao beijo.</div>
           <button class="continue-btn" onclick="openStage(4)">Continuar → o remorso sem retorno</button>
         </div>
       </div>
@@ -151,6 +156,17 @@
 </div>
 
 <script>
+  const judasData = [
+    { text: "\"Aquele que eu beijar, esse é; prendei-o\" (Mateus 26:48) — Judas transforma o gesto de saudação e afeto entre discípulo e mestre num código de prisão para a multidão armada." },
+    { text: "\"Amigo, a que vieste?\" (v.50) — Jesus recebe o beijo da traição sem resistência e sem surpresa, chamando Judas de amigo no exato instante em que é entregue." }
+  ];
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
   let currentMax = 1;
 
   function openStage(n){

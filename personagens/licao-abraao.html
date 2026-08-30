@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .moriah-days-row{ display:flex; align-items:center; gap:12px; margin:14px 0 12px; flex-wrap:wrap; }
+  .moriah-day-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .moriah-day-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .moriah-days-text p{ opacity:0; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; margin:8px 0; color: var(--text-dim); }
+  .moriah-days-text p.show{ opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -110,6 +115,12 @@
         <div class="tl-card">
           <p>Anos depois, vem o teste mais duro: "Toma agora o teu filho, o teu único filho, Isaque, a quem amas... e oferece-o ali em holocausto" (22:2). É o próprio filho da promessa que Deus pede de volta.</p>
           <p>Abraão obedece sem discutir. No caminho, quando Isaque pergunta onde está o cordeiro para o sacrifício, Abraão responde: "Deus proverá para si o cordeiro para o holocausto" (22:8) — uma fé que segue sem saber como a história termina. No último instante, um anjo detém sua mão, e um carneiro preso pelos chifres num arbusto toma o lugar de Isaque (22:10-13).</p>
+
+          <p>Entre a ordem e o monte, o texto conta três dias inteiros de caminhada — tempo suficiente para qualquer pai recuar. Toque para acompanhar esses três dias:</p>
+          <div class="moriah-days-row" id="moriahDaysRow"></div>
+          <button class="chip-btn chip-gold" onclick="revealMoriahDays()">Ver os três dias de caminhada</button>
+          <div class="moriah-days-text" id="moriahDaysText"></div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -183,6 +194,38 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const moriahDaysData = [
+    "Dia 1 — Abraão se levanta de madrugada, sela o jumento, corta a lenha para o holocausto e parte com Isaque, sem contar a ninguém o que Deus pediu (22:3).",
+    "Dia 2 — A caminhada segue em silêncio; a narrativa não registra uma única palavra de Abraão sobre o que o espera no fim do caminho.",
+    "Dia 3 — \"Ao terceiro dia, levantou Abraão os seus olhos, e viu o lugar de longe\" (22:4) — três dias inteiros para recuar, e nenhum sinal de que ele tenha cogitado isso."
+  ];
+
+  function buildMoriahDays(){
+    const row = document.getElementById('moriahDaysRow');
+    moriahDaysData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'moriah-day-dot';
+      row.appendChild(d);
+    });
+  }
+  buildMoriahDays();
+
+  function revealMoriahDays(){
+    const dots = document.querySelectorAll('#moriahDaysRow .moriah-day-dot');
+    const textEl = document.getElementById('moriahDaysText');
+    textEl.innerHTML = '';
+    dots.forEach(d => d.classList.remove('lit'));
+    moriahDaysData.forEach((txt, i) => {
+      setTimeout(() => {
+        dots[i].classList.add('lit');
+        const p = document.createElement('p');
+        p.textContent = txt;
+        textEl.appendChild(p);
+        requestAnimationFrame(() => p.classList.add('show'));
+      }, i * 550);
+    });
   }
 
   function showOutcome(type){

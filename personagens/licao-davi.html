@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .davi-linhagem-row{ display:flex; align-items:center; gap:10px; margin:12px 0 10px; flex-wrap:wrap; }
+  .davi-linhagem-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .davi-linhagem-dot.rejeitado{ background:var(--text-faint); }
+  .davi-linhagem-dot.escolhido{ background:var(--gold); transform:scale(1.3); box-shadow:0 0 10px 2px var(--gold); }
+  .davi-linhagem-label{ color:var(--text-dim); font-size:.95rem; min-height:1.4em; margin:0 0 14px; }
 </style>
 </head>
 <body>
@@ -44,6 +49,10 @@
         <div class="tl-card">
           <p>Samuel vai à casa de Jessé, em Belém, para ungir um novo rei em lugar de Saul. Um a um, os filhos mais velhos e mais fortes desfilam diante dele — e Deus rejeita todos: "Não olhes para a sua aparência... porque o Senhor não vê como vê o homem; o homem vê o que está diante dos olhos, porém o Senhor olha para o coração" (1 Samuel 16:7).</p>
           <p>Só sobra o mais novo, esquecido no campo cuidando das ovelhas. Chamam Davi, e "o Senhor disse: Levanta-te, e unge-o, porque este é" (v.12). Ele é ungido rei ali mesmo, em segredo, anos antes de ocupar o trono de fato.</p>
+          <p>Toque para ver o desfile diante de Samuel, filho por filho, até o momento em que Deus finalmente diz "este é":</p>
+          <div class="davi-linhagem-row" id="daviLinhagemRow"></div>
+          <p class="davi-linhagem-label" id="daviLinhagemLabel">Toque no botão para começar o desfile.</p>
+          <button class="continue-btn" onclick="revelarLinhagem()">Ver o desfile dos filhos de Jessé</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → um rei estabelecido</button>
         </div>
       </div>
@@ -179,6 +188,40 @@
     }, 120);
   }
   openStage(1);
+
+  const daviLinhagemFilhos = [
+    "O primeiro filho desfila diante de Samuel — alto, forte, com aparência de rei. \"Não olhes para a sua aparência\" (v.7).",
+    "O segundo filho passa diante dele. Deus rejeita também este.",
+    "O terceiro filho é apresentado. Mais um \"não é este\".",
+    "Sete filhos ao todo desfilam diante de Samuel — Jessé nem cogitou chamar o mais novo.",
+    "Só sobra o mais novo, esquecido cuidando das ovelhas no campo."
+  ];
+
+  function buildDaviLinhagem(){
+    const el = document.getElementById('daviLinhagemRow');
+    for (let i = 0; i < 6; i++){
+      const d = document.createElement('div');
+      d.className = 'davi-linhagem-dot';
+      el.appendChild(d);
+    }
+  }
+  buildDaviLinhagem();
+
+  function revelarLinhagem(){
+    const dots = document.querySelectorAll('#daviLinhagemRow .davi-linhagem-dot');
+    const label = document.getElementById('daviLinhagemLabel');
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        if (i < dots.length - 1){
+          d.classList.add('rejeitado');
+          label.textContent = daviLinhagemFilhos[i] || "Mais um filho passa diante de Samuel — e Deus rejeita.";
+        } else {
+          d.classList.add('escolhido');
+          label.textContent = "Chamam Davi do campo. \"O Senhor disse: Levanta-te, e unge-o, porque este é\" (v.12).";
+        }
+      }, i * 380);
+    });
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

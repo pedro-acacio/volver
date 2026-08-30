@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .mirra-compare{ margin:14px 0 6px; display:flex; flex-direction:column; gap:10px; }
+  .mirra-row{ display:flex; align-items:center; gap:10px; }
+  .mirra-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-dim); min-width:210px; }
+  .mirra-bar-track{ flex:1; height:20px; border-radius:10px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .mirra-bar-fill{ height:100%; border-radius:10px; width:0%; transition:width 1.4s cubic-bezier(.22,.9,.3,1); }
+  .mirra-bar-fill.mirra-grow-comum{ width:12%; background: var(--text-faint); }
+  .mirra-bar-fill.mirra-grow-nicodemos{ width:96%; background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,.45); }
 </style>
 </head>
 <body>
@@ -109,6 +116,17 @@
         <div class="tl-card">
           <p>Depois da crucificação, quando o corpo de Jesus precisa ser preparado às pressas antes do sábado, Nicodemos aparece pela primeira vez sem esconderijo algum. Ele traz "cerca de cem arráteis" de mirra e aloés (19:39) — uma quantidade extravagante, digna de um sepultamento real, um gasto público e caro, que qualquer um no Sinédrio podia ver e questionar.</p>
           <p>Ele ajuda José de Arimateia a envolver o corpo e sepultá-lo (v.39-42) — o mesmo homem que uma vez foi conversar escondido de noite agora presta a última homenagem visível a um Jesus já morto, quando não havia mais nada a ganhar politicamente com isso.</p>
+          <div class="mirra-compare">
+            <div class="mirra-row">
+              <span class="mirra-label">Sepultamento comum</span>
+              <div class="mirra-bar-track"><div class="mirra-bar-fill" id="mirraBarComum"></div></div>
+            </div>
+            <div class="mirra-row">
+              <span class="mirra-label">Cerca de 100 arráteis (~33 kg)</span>
+              <div class="mirra-bar-track"><div class="mirra-bar-fill" id="mirraBarNicodemos"></div></div>
+            </div>
+          </div>
+          <button class="continue-btn" style="margin-top:0;" onclick="animarMirraCompare()">Comparar com um sepultamento comum</button>
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -159,6 +177,11 @@
     { text: "Jesus explica: \"quem não nascer da água e do Espírito não pode entrar no reino de Deus\" (3:5) — um nascimento espiritual, não físico, operado pelo Espírito." },
     { text: "Jesus compara sua própria morte futura à serpente de bronze que Moisés levantou no deserto (Números 21) — \"assim importa que o Filho do homem seja levantado, para que todo aquele que nele crê não pereça\" (3:14-15)." }
   ];
+
+  function animarMirraCompare(){
+    document.getElementById('mirraBarComum').classList.add('mirra-grow-comum');
+    document.getElementById('mirraBarNicodemos').classList.add('mirra-grow-nicodemos');
+  }
 
   let currentMax = 1;
 

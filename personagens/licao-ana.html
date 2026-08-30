@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .ana-cycle-row{ display:flex; align-items:center; gap:12px; margin:14px 0 12px; flex-wrap:wrap; }
+  .ana-cycle-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .ana-cycle-dot.lit{ background: var(--worry); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--worry); }
+  .ana-cycle-text p{ opacity:0; transform: translateY(4px); transition: opacity .4s ease, transform .4s ease; margin:8px 0; color: var(--text-dim); }
+  .ana-cycle-text p.show{ opacity:1; transform: translateY(0); }
 </style>
 </head>
 <body>
@@ -45,6 +50,12 @@
         <div class="tl-card">
           <p>Ana é uma das duas esposas de Elcana. A outra, Penina, tem filhos; Ana não tem nenhum — "o Senhor lhe cerrara a madre" (1 Samuel 1:5-6). Elcana a ama e lhe dá porção dobrada nos sacrifícios anuais em Siló, mas isso não apaga a dor: Penina a provoca repetidamente, "para a irritar, porquanto o Senhor cerrara a sua madre" (v.6).</p>
           <p>Ano após ano, na peregrinação da família ao templo, a provocação se repete, e Ana chora e não come (v.7). Elcana tenta consolá-la com uma pergunta bem-intencionada, mas que não resolve nada: "não te sou eu melhor do que dez filhos?" (v.8).</p>
+
+          <p>Não foi uma vez só — foi um ciclo que se repetiu peregrinação após peregrinação. Toque para sentir o peso da repetição:</p>
+          <div class="ana-cycle-row" id="anaCycleRow"></div>
+          <button class="chip-btn chip-worry" onclick="revealAnaCycle()">Ver o ciclo se repetir</button>
+          <div class="ana-cycle-text" id="anaCycleText"></div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → a oração confundida com bebedeira</button>
         </div>
       </div>
@@ -181,6 +192,39 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const anaCycleData = [
+    "Ano 1 — a provocação de Penina, as lágrimas de Ana, o jejum.",
+    "Ano 2 — de novo a provocação, de novo as lágrimas, de novo o prato intocado.",
+    "Ano 3 — o mesmo ciclo, na mesma peregrinação, sem sinal de que vá mudar.",
+    "\"Assim se fazia de ano em ano... pelo que Ana chorava, e não comia\" (v.7) — o texto nem se dá ao trabalho de contar quantas vezes."
+  ];
+
+  function buildAnaCycle(){
+    const row = document.getElementById('anaCycleRow');
+    anaCycleData.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'ana-cycle-dot';
+      row.appendChild(d);
+    });
+  }
+  buildAnaCycle();
+
+  function revealAnaCycle(){
+    const dots = document.querySelectorAll('#anaCycleRow .ana-cycle-dot');
+    const textEl = document.getElementById('anaCycleText');
+    textEl.innerHTML = '';
+    dots.forEach(d => d.classList.remove('lit'));
+    anaCycleData.forEach((txt, i) => {
+      setTimeout(() => {
+        dots[i].classList.add('lit');
+        const p = document.createElement('p');
+        p.textContent = txt;
+        textEl.appendChild(p);
+        requestAnimationFrame(() => p.classList.add('show'));
+      }, i * 550);
+    });
   }
 
   function showOutcome(type){

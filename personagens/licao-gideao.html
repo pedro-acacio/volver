@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .exercito-bar-track{ height:20px; border-radius:10px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin:12px 0 6px; }
+  .exercito-bar-fill{ height:100%; border-radius:10px; width:100%; background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); transition:width 1s cubic-bezier(.34,1.56,.64,1), background .3s ease; }
+  .exercito-bar-fill.reduced{ background:var(--calm); box-shadow:0 0 10px 1px var(--calm); }
+  .exercito-count{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--text-faint); margin:0 0 12px; }
 </style>
 </head>
 <body>
@@ -90,6 +94,11 @@
         <div class="tl-card">
           <p>Gideão reúne 32 mil homens para enfrentar o acampamento midianita. Deus diz que é gente demais: "para que Israel não se glorie contra mim, dizendo: A minha mão me livrou" (7:2). Manda dispensar todo aquele com medo — 22 mil vão embora, restam 10 mil.</p>
           <p>Ainda é gente demais. Num segundo teste, à beira das águas, Deus separa os que bebem lambendo com a mão, atentos ao redor, dos que se ajoelham para beber direto do rio — e fica um exército de apenas trezentos homens (7:4-8), reduzido justamente para que a vitória não pudesse ser atribuída ao tamanho da força humana.</p>
+
+          <div class="exercito-bar-track"><div class="exercito-bar-fill" id="exercitoBarFill"></div></div>
+          <p class="exercito-count" id="exercitoCount">Toque para ver o exército de Gideão encolher, etapa por etapa.</p>
+          <button class="continue-btn" style="margin-top:0;" id="exercitoBtn" onclick="reduzirExercito()">Ver a redução, passo a passo</button>
+
           <button class="continue-btn" onclick="openStage(4)">Continuar → trombetas, cântaros e tochas</button>
         </div>
       </div>
@@ -160,6 +169,29 @@
     { text: "Já convocando o povo para a guerra, ele pede que o orvalho molhe só o velocino de lã, deixando o chão ao redor seco — e assim acontece, ao espremer o velocino ele tira uma bacia cheia de água (6:36-38)." },
     { text: "Temendo que o primeiro sinal fosse coincidência, pede o oposto: chão molhado de orvalho, velocino seco. Deus concede também esse, sem repreendê-lo pela insistência (6:39-40)." }
   ];
+
+  const exercitoStages = [
+    { pct: 100, cls: '', label: "32.000 homens reunidos — gente demais, diz o Senhor a Gideão (7:2)." },
+    { pct: 31, cls: '', label: "10.000 restantes, depois que todo homem com medo foi dispensado (7:3)." },
+    { pct: 1, cls: 'reduced', label: "Só 300 restantes, separados pelo modo de beber água — pequeno demais para que Israel reivindicasse o crédito da vitória (7:6-7)." }
+  ];
+  let exercitoStep = -1;
+
+  function reduzirExercito(){
+    exercitoStep = Math.min(exercitoStep + 1, exercitoStages.length - 1);
+    const s = exercitoStages[exercitoStep];
+    const fill = document.getElementById('exercitoBarFill');
+    fill.style.width = s.pct + '%';
+    fill.classList.toggle('reduced', s.cls === 'reduced');
+    document.getElementById('exercitoCount').textContent = s.label;
+    const btn = document.getElementById('exercitoBtn');
+    if (exercitoStep === exercitoStages.length - 1){
+      btn.textContent = "Redução completa";
+      btn.disabled = true;
+    } else {
+      btn.textContent = "Continuar reduzindo o exército";
+    }
+  }
 
   let currentMax = 1;
 

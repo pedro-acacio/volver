@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .jon-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 8px; flex-wrap:wrap; }
+  .jon-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .jon-seq-dot.lit{ background:var(--calm); transform:scale(1.2); box-shadow:0 0 9px 1px var(--calm); }
+  .jon-seq-caption{ font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-faint); min-height:18px; margin-bottom:8px; }
 </style>
 </head>
 <body>
@@ -86,6 +90,9 @@
         <div class="tl-card">
           <p>Chamado uma segunda vez, agora Jonas vai — atravessa a "grande cidade de três dias de caminho" pregando uma única frase: "Ainda quarenta dias, e Nínive será subvertida" (3:4). O resultado surpreende até ele: os ninivitas creem em Deus, proclamam jejum, "desde o maior deles até o menor" (v.5), e o próprio rei desce do trono, veste saco e se assenta sobre cinza, ordenando que todos se voltem de seus maus caminhos.</p>
           <p>"E viu Deus as obras deles, que se converteram do seu mau caminho; e Deus se arrependeu do mal que tinha dito lhes faria, e não o fez" (v.10) — o maior avivamento registrado no Antigo Testamento acontece na capital do maior inimigo de Israel.</p>
+          <button class="chip-btn chip-gold" onclick="revealJonSeq()">Ver o arrependimento se espalhar pela cidade</button>
+          <div class="jon-seq-row" id="jonSeqRow"></div>
+          <div class="jon-seq-caption" id="jonSeqCaption">&nbsp;</div>
           <button class="continue-btn" onclick="openStage(4)">Continuar → a raiva de Jonas</button>
         </div>
       </div>
@@ -152,6 +159,29 @@
 </div>
 
 <script>
+  const jonSeqLabels = ["A pregação chega aos ouvidos do rei", "Ele desce do trono", "Veste-se de saco", "Assenta-se sobre cinza", "Do maior ao menor, a cidade inteira jejua"];
+
+  function buildJonSeq(){
+    const row = document.getElementById('jonSeqRow');
+    jonSeqLabels.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'jon-seq-dot';
+      row.appendChild(d);
+    });
+  }
+  buildJonSeq();
+
+  function revealJonSeq(){
+    const dots = document.querySelectorAll('#jonSeqRow .jon-seq-dot');
+    const caption = document.getElementById('jonSeqCaption');
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        d.classList.add('lit');
+        caption.textContent = jonSeqLabels[i];
+      }, i * 380);
+    });
+  }
+
   let currentMax = 1;
 
   function openStage(n){

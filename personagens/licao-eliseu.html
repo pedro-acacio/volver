@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .eliseu-jornada-row{ display:flex; align-items:center; gap:10px; margin:12px 0 10px; flex-wrap:wrap; }
+  .eliseu-jornada-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .eliseu-jornada-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .eliseu-jornada-label{ color:var(--text-dim); font-size:.95rem; min-height:1.4em; margin:0 0 14px; }
 </style>
 </head>
 <body>
@@ -44,6 +48,10 @@
         <div class="tl-card">
           <p>Sabendo que o Senhor está prestes a levar Elias ao céu, Eliseu se recusa a deixá-lo, seguindo-o de Gilgal a Betel, de Betel a Jericó, de Jericó ao Jordão, mesmo quando o próprio Elias tenta dispensá-lo em cada etapa (2 Reis 2:1-6). Cinquenta discípulos dos profetas observam de longe, sabendo o que está para acontecer.</p>
           <p>No Jordão, Elias divide as águas com o manto, e pergunta a Eliseu o que ele deseja antes de partir. A resposta não é riqueza nem segurança: "Peço-te que duas porções do teu espírito estejam sobre mim" (v.9) — um pedido de herdeiro, o que a lei dava ao filho primogênito, não um pedido de poder para si mesmo.</p>
+          <p>Toque para acompanhar as quatro paradas da jornada, em cada uma das quais Elias tenta dispensá-lo:</p>
+          <div class="eliseu-jornada-row" id="eliseuJornadaRow"></div>
+          <p class="eliseu-jornada-label" id="eliseuJornadaLabel">Toque no botão para começar a jornada.</p>
+          <button class="continue-btn" onclick="revelarJornada()">Ver as quatro paradas da jornada</button>
           <button class="continue-btn" onclick="openStage(2)">Continuar → o manto que cai</button>
         </div>
       </div>
@@ -178,6 +186,34 @@
     }, 120);
   }
   openStage(1);
+
+  const eliseuJornadaParadas = [
+    { nome: "Gilgal", texto: "Elias diz: \"Fica-te aqui, porque o Senhor me enviou a Betel.\" Eliseu responde: \"Vive o Senhor, e vive a tua alma, que não te deixarei\" (v.2)." },
+    { nome: "Betel", texto: "Elias tenta de novo: \"Fica-te aqui, porque o Senhor me enviou a Jericó.\" Eliseu repete: não te deixarei (v.4)." },
+    { nome: "Jericó", texto: "Uma terceira vez Elias pede que fique, agora rumo ao Jordão. Eliseu segue mesmo assim (v.6)." },
+    { nome: "Jordão", texto: "Cinquenta discípulos observam de longe enquanto Elias divide as águas com o manto — e pergunta a Eliseu o que ele deseja antes de partir (v.7-9)." }
+  ];
+
+  function buildEliseuJornada(){
+    const el = document.getElementById('eliseuJornadaRow');
+    eliseuJornadaParadas.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'eliseu-jornada-dot';
+      el.appendChild(d);
+    });
+  }
+  buildEliseuJornada();
+
+  function revelarJornada(){
+    const dots = document.querySelectorAll('#eliseuJornadaRow .eliseu-jornada-dot');
+    const label = document.getElementById('eliseuJornadaLabel');
+    dots.forEach((d, i) => {
+      setTimeout(() => {
+        d.classList.add('lit');
+        label.textContent = eliseuJornadaParadas[i].nome + " — " + eliseuJornadaParadas[i].texto;
+      }, i * 400);
+    });
+  }
 
   function selectChip(btn, data, i, targetId){
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));

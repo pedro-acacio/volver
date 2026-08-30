@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .daniel-teste{ margin:18px 0 4px; }
+  .daniel-teste-row{ display:flex; flex-wrap:wrap; gap:9px; margin:4px 0 10px; }
+  .daniel-teste-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .daniel-teste-dot.passou{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .daniel-teste-caption{ margin-top:10px; font-family:'IBM Plex Mono', monospace; font-size:.86rem; color:var(--text-dim); opacity:0; transition:opacity .6s ease; }
+  .daniel-teste-caption.show{ opacity:1; }
 </style>
 </head>
 <body>
@@ -45,6 +51,13 @@
         <div class="tl-card">
           <p>Ainda jovem, Daniel é levado cativo de Jerusalém para a Babilônia, junto com outros jovens nobres selecionados para servir na corte de Nabucodonosor — treinados por três anos, alimentados com a comida e o vinho do próprio rei (Daniel 1:1-5).</p>
           <p>Daniel "propôs no seu coração não se contaminar" com essa comida (v.8) — provavelmente por causa das leis alimentares judaicas ou por ser oferecida a ídolos. Em vez de recusa dramática, ele propõe um teste discreto e verificável: dez dias comendo só legumes e água, comparando o resultado com os outros jovens. Ao fim do teste, ele e seus três amigos aparecem "de melhor parecer, e mais gordos de carne" que todos (v.15).</p>
+
+          <div class="daniel-teste">
+            <button class="continue-btn" style="margin-bottom:14px;" onclick="revealDanielTeste()">Passar os dez dias do teste</button>
+            <div class="daniel-teste-row" id="danielTesteRow"></div>
+            <p class="daniel-teste-caption" id="danielTesteCaption"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → o sonho esquecido</button>
         </div>
       </div>
@@ -168,6 +181,26 @@
     }, 120);
   }
   openStage(1);
+
+  function buildDanielTesteDias(){
+    const row = document.getElementById('danielTesteRow');
+    for (let i=0; i<10; i++){
+      const d = document.createElement('div');
+      d.className = 'daniel-teste-dot';
+      row.appendChild(d);
+    }
+  }
+  buildDanielTesteDias();
+
+  function revealDanielTeste(){
+    const dots = document.querySelectorAll('#danielTesteRow .daniel-teste-dot');
+    dots.forEach((d,i) => setTimeout(() => d.classList.add('passou'), i*180));
+    const caption = document.getElementById('danielTesteCaption');
+    setTimeout(() => {
+      caption.textContent = "Dez dias só com legumes e água — e Daniel e seus três amigos aparecem com melhor parecer que todos os que comeram da mesa do rei.";
+      caption.classList.add('show');
+    }, dots.length*180 + 300);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .debora-descanso{ margin:18px 0 4px; }
+  .debora-anos-row{ display:flex; flex-direction:column; gap:14px; margin:12px 0; }
+  .debora-anos-label{ font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--text-dim); }
+  .debora-bar-track{ height:20px; border-radius:10px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; margin-top:6px; }
+  .debora-bar-fill{ height:100%; width:0%; border-radius:10px; background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); transition:width 1.1s cubic-bezier(.22,.9,.32,1); }
+  .debora-anos-caption{ margin-top:12px; font-family:'IBM Plex Mono', monospace; font-size:.86rem; color:var(--text-dim); opacity:0; transition:opacity .6s ease; }
+  .debora-anos-caption.show{ opacity:1; }
 </style>
 </head>
 <body>
@@ -103,6 +110,22 @@
         <div class="tl-card">
           <p>O capítulo 5 é o Cântico de Débora, um dos poemas mais antigos da Bíblia — cantado por ela e Baraque juntos, celebrando o Senhor que age quando o povo se dispõe voluntariamente à batalha ("quando os chefes se puseram à frente em Israel, quando o povo se ofereceu voluntariamente, louvai ao Senhor", 5:2). O cântico nomeia tanto a coragem de quem lutou quanto a covardia de quem ficou de fora (5:15-17,23).</p>
           <p>Depois dessa vitória, "a terra ficou sossegada quarenta anos" (5:31) — o descanso mais longo já registrado no livro dos Juízes até ali.</p>
+
+          <div class="debora-descanso">
+            <button class="continue-btn" style="margin-bottom:14px;" onclick="revealDeboraAnos()">Comparar os anos de opressão e de paz</button>
+            <div class="debora-anos-row">
+              <div class="debora-anos-item">
+                <span class="debora-anos-label">20 anos sob domínio cruel de Jabim</span>
+                <div class="debora-bar-track"><div class="debora-bar-fill" id="deboraBarOpressao"></div></div>
+              </div>
+              <div class="debora-anos-item">
+                <span class="debora-anos-label">40 anos de terra sossegada</span>
+                <div class="debora-bar-track"><div class="debora-bar-fill" id="deboraBarPaz"></div></div>
+              </div>
+            </div>
+            <p class="debora-anos-caption" id="deboraAnosCaption"></p>
+          </div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -166,6 +189,18 @@
     }, 120);
   }
   openStage(1);
+
+  function revealDeboraAnos(){
+    document.getElementById('deboraBarOpressao').style.width = '50%';
+    setTimeout(() => {
+      document.getElementById('deboraBarPaz').style.width = '100%';
+    }, 300);
+    const caption = document.getElementById('deboraAnosCaption');
+    setTimeout(() => {
+      caption.textContent = "O descanso que veio depois da vitória durou o dobro do tempo da opressão que o antecedeu.";
+      caption.classList.add('show');
+    }, 1600);
+  }
 
   function showOutcome(type){
     const btnWorry = document.getElementById('btnWorry');

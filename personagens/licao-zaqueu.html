@@ -9,6 +9,21 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .zaq-rest-btn{
+    padding:11px 18px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    font-family:'IBM Plex Sans', sans-serif; transition: transform .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .zaq-rest-btn:hover{ transform: translateY(-2px); border-color: var(--gold); color: var(--gold); }
+  .zaq-rest-bars{ margin:16px 0 6px; display:flex; flex-direction:column; gap:12px; }
+  .zaq-rest-row{ display:grid; grid-template-columns:150px 1fr 46px; align-items:center; gap:10px; }
+  .zaq-rest-label{ font-size:12.5px; color:var(--text-dim); }
+  .zaq-bar-track{ height:20px; border-radius:10px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .zaq-bar-fill{ height:100%; width:0%; border-radius:10px; background:var(--text-faint); transition: width .7s cubic-bezier(.34,1.2,.4,1); }
+  .zaq-bar-fill.zaq-bar-gold{ background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); }
+  .zaq-rest-value{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--text-dim); text-align:right; }
+  .zaq-rest-caption{ color: var(--text-dim); font-size:13px; line-height:1.5; margin-top:2px; }
+  @media (max-width:480px){ .zaq-rest-row{ grid-template-columns:100px 1fr 40px; } }
 </style>
 </head>
 <body>
@@ -108,6 +123,22 @@
         <div class="tl-card">
           <p>Dentro de casa, sem que ninguém peça, Zaqueu se levanta e declara: "Eis aqui, Senhor, dou aos pobres metade dos meus bens; e, se em alguma coisa tenho defraudado alguém, o restituo quadruplicado" (v.8) — muito além do que a lei judaica exigia para restituição de roubo (Êxodo 22:1 pedia o dobro, no máximo).</p>
           <p>Jesus responde declarando algo público e definitivo: "hoje veio a salvação a esta casa... Porque o Filho do homem veio buscar e salvar o que se havia perdido" (v.9-10). O encontro que começou com curiosidade escondida numa árvore termina em transformação declarada diante de toda a cidade.</p>
+
+          <button class="zaq-rest-btn" onclick="revelarRestituicao()">Comparar o que a lei pedia com o que Zaqueu ofereceu</button>
+          <div class="zaq-rest-bars">
+            <div class="zaq-rest-row">
+              <span class="zaq-rest-label">Lei exigia (Êxodo 22:1)</span>
+              <div class="zaq-bar-track"><div class="zaq-bar-fill" id="barLei"></div></div>
+              <span class="zaq-rest-value" id="valLei">—</span>
+            </div>
+            <div class="zaq-rest-row">
+              <span class="zaq-rest-label">Zaqueu ofereceu</span>
+              <div class="zaq-bar-track"><div class="zaq-bar-fill zaq-bar-gold" id="barZaqueu"></div></div>
+              <span class="zaq-rest-value" id="valZaqueu">—</span>
+            </div>
+          </div>
+          <div class="zaq-rest-caption" id="restCaption">Toque para ver a distância entre a exigência da lei e a resposta de Zaqueu.</div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → o padrão revelado</button>
         </div>
       </div>
@@ -158,6 +189,14 @@
     { text: "Zaqueu só esperava um vislumbre rápido de Jesus passando na rua — nada mais que isso, escondido atrás dos galhos, sem chamar atenção (v.3-4)." },
     { text: "Jesus para embaixo da árvore, olha para cima e o chama pelo nome, convidando-se para a casa dele publicamente, na frente de toda a multidão (v.5)." }
   ];
+
+  function revelarRestituicao(){
+    document.getElementById('barLei').style.width = '50%';
+    document.getElementById('barZaqueu').style.width = '100%';
+    document.getElementById('valLei').textContent = 'até 2x';
+    document.getElementById('valZaqueu').textContent = '4x';
+    document.getElementById('restCaption').textContent = "A lei de Moisés previa, no máximo, o dobro do que foi roubado (Êxodo 22:1). Zaqueu se oferece a devolver o quádruplo — o dobro do teto legal — além de dar metade de tudo o que possui aos pobres.";
+  }
 
   let currentMax = 1;
 
