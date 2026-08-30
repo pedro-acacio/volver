@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+  .penta-seq-row{ display:flex; align-items:center; gap:10px; margin:16px 0 4px; flex-wrap:wrap; }
+  .penta-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .penta-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .penta-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-faint); margin-left:4px; }
+  .penta-seq-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
 </style>
 </head>
 <body>
@@ -45,6 +50,11 @@
         <div class="tl-card">
           <p>Gênesis, Êxodo, Levítico, Números e Deuteronômio costumam ser chamados de "a Lei", ou o Pentateuco — do grego <em>pentateuchos</em>, "livro de cinco volumes". Os judeus chamam essa mesma coleção de Torá, e ela ocupa o lugar de honra na Bíblia hebraica: é a primeira e mais importante seção das Escrituras de Israel, o alicerce sobre o qual os Profetas e os Escritos se apoiam depois. O próprio Novo Testamento reconhece essa divisão tripla — Lei, Profetas e Escritos (Lucas 24.44) — e reserva ao Pentateuco esse lugar de honra.</p>
           <p>Embora hoje venha encadernado em cinco volumes separados, ele foi concebido como uma narrativa contínua: começa com a criação do mundo em Gênesis 1 e termina com a morte de Moisés, às portas de Canaã, em Deuteronômio 34 — sem nunca cobrir a própria conquista da terra, que fica guardada para o livro seguinte, Josué.</p>
+
+          <div class="penta-seq-row" id="pentaSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealPentaSeq()" id="pentaSeqBtn">Ver os cinco livros, um a um</button>
+          <p class="penta-seq-caption" id="pentaSeqCaption"></p>
+
           <button class="continue-btn" onclick="openStage(2)">Continuar → autor e data</button>
         </div>
       </div>
@@ -154,6 +164,36 @@
 </div>
 
 <script>
+  const pentaBooks = [
+    { name: "Gênesis", text: "Gênesis — origens: a criação, a queda, e a promessa feita aos patriarcas." },
+    { name: "Êxodo", text: "Êxodo — libertação: a saída do Egito e a aliança firmada no Sinai." },
+    { name: "Levítico", text: "Levítico — culto: como o povo recém-formado se aproxima de Deus." },
+    { name: "Números", text: "Números — deserto: a longa caminhada de Israel do Sinai a Moabe." },
+    { name: "Deuteronômio", text: "Deuteronômio — discurso final: Moisés revisa a lei à beira da terra prometida." }
+  ];
+  function buildPentaSeq(){
+    const el = document.getElementById('pentaSeqRow');
+    pentaBooks.forEach(() => { const d = document.createElement('div'); d.className = 'penta-seq-dot'; el.appendChild(d); });
+    const label = document.createElement('span');
+    label.className = 'penta-seq-label';
+    label.id = 'pentaSeqLabel';
+    label.textContent = '0 de 5 livros';
+    el.appendChild(label);
+  }
+  buildPentaSeq();
+  function revealPentaSeq(){
+    const dots = document.querySelectorAll('#pentaSeqRow .penta-seq-dot');
+    const caption = document.getElementById('pentaSeqCaption');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      caption.textContent = pentaBooks[i].text;
+      document.getElementById('pentaSeqLabel').textContent = (i + 1) + ' de 5 livros';
+    }, i * 260));
+    setTimeout(() => {
+      document.getElementById('pentaSeqBtn').textContent = "Cinco livros, uma só história — de Gênesis a Deuteronômio";
+    }, dots.length * 260);
+  }
+
   let currentMax = 1;
 
   function openStage(n){
