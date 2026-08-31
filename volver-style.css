@@ -63,6 +63,7 @@ h1{
 .tl-item.done .tl-marker{ background: linear-gradient(rgba(217,164,65,0.14), rgba(217,164,65,0.14)), var(--bg); border-color: var(--gold); }
 .tl-item.done .tl-marker .icon path, .tl-item.done .tl-marker .icon circle{ stroke: var(--gold); }
 .tl-item.locked .tl-marker{ cursor:not-allowed; opacity:.5; }
+.tl-marker:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
 
 .tl-line{ position:absolute; left:18px; top:38px; bottom:0; width:2px; background: var(--panel-line); }
 .tl-item.done .tl-line{ background: var(--gold); }

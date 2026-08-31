@@ -935,6 +935,50 @@
     speakNext(onDone);
   }
 
+  // ---------------- timeline keyboard / screen-reader accessibility ----------------
+  function syncTimelineAriaState(){
+    document.querySelectorAll('.tl-item').forEach(function(item){
+      var marker = item.querySelector('.tl-marker');
+      if(!marker) return;
+      marker.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+      if(item.classList.contains('locked')){
+        marker.setAttribute('aria-disabled', 'true');
+        marker.setAttribute('tabindex', '-1');
+      } else {
+        marker.removeAttribute('aria-disabled');
+        marker.setAttribute('tabindex', '0');
+      }
+    });
+  }
+  function enhanceTimelineAccessibility(){
+    var items = document.querySelectorAll('.tl-item');
+    if(items.length === 0) return;
+    items.forEach(function(item){
+      var marker = item.querySelector('.tl-marker');
+      if(!marker || marker.hasAttribute('role')) return;
+      marker.setAttribute('role', 'button');
+      var eyebrow = item.querySelector('.tl-eyebrow');
+      var titleShort = item.querySelector('.tl-title-short');
+      var label = [eyebrow ? eyebrow.textContent.trim() : '', titleShort ? titleShort.textContent.trim() : '']
+        .filter(Boolean).join(': ');
+      if(label) marker.setAttribute('aria-label', label);
+      marker.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){
+          e.preventDefault();
+          marker.click();
+        }
+      });
+    });
+    syncTimelineAriaState();
+    if(typeof window.openStage === 'function'){
+      var orig = window.openStage;
+      window.openStage = function(n){
+        orig(n);
+        syncTimelineAriaState();
+      };
+    }
+  }
+
   // ---------------- lesson page ----------------
   function enhanceLessonPage(){
     var p = pathParts();
@@ -988,6 +1032,7 @@
       if(track2){ bar.insertBefore(listenBtn, track2); } else { bar.appendChild(listenBtn); }
     }
 
+    enhanceTimelineAccessibility();
     injectFinishButton(entry);
     resumeAndTrackStage(entry);
   }
