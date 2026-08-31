@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bênçãos e maldições: Ebal e Gerizim — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .ebg-mount-row{ display:flex; gap:18px; margin:14px 0 4px; flex-wrap:wrap; }
+  .ebg-mount-card{ flex:1; min-width:180px; background:var(--bg); border:1px solid var(--panel-line); border-radius:12px; padding:14px 16px; cursor:pointer; transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
+  .ebg-mount-card:hover{ transform: translateY(-2px); }
+  .ebg-mount-card .ebg-mount-label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-bottom:6px; }
+  .ebg-mount-card .ebg-mount-name{ font-family:'Fraunces', serif; font-size:16px; color:var(--text); margin-bottom:4px; }
+  .ebg-mount-card.active{ box-shadow: 0 0 0 2px var(--gold); }
+  .ebg-mount-card.gerizim.active{ border-color: var(--calm); box-shadow: 0 0 0 2px var(--calm); }
+  .ebg-mount-card.ebal.active{ border-color: var(--worry); box-shadow: 0 0 0 2px var(--worry); }
+  .ebg-mount-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+
+  .ebg-bar-outer{ margin:16px 0 4px; }
+  .ebg-bar-hint{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .ebg-bar-item{ margin-bottom:14px; }
+  .ebg-bar-item:last-child{ margin-bottom:0; }
+  .ebg-bar-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-faint); margin-bottom:6px; display:flex; justify-content:space-between; }
+  .ebg-bar-track{ height:20px; border-radius:10px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; cursor:pointer; }
+  .ebg-bar-fill{ height:100%; border-radius:10px; width:0%; transition: width .7s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .ebg-bar-fill.ebg-fill-calm{ background:var(--calm); }
+  .ebg-bar-fill.ebg-fill-worry{ background:var(--worry); }
+  .ebg-bar-track.active .ebg-fill-calm{ box-shadow:0 0 10px 1px var(--calm); }
+  .ebg-bar-track.active .ebg-fill-worry{ box-shadow:0 0 10px 1px var(--worry); }
+  .ebg-bar-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:14px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">Reflexão de lição</span>
+  </div>
+
+  <div class="eyebrow">A cerimônia da aliança · <span class="ref-tag">Deuteronômio 27—28</span></div>
+  <h1>Bênçãos e maldições: Ebal e Gerizim</h1>
+  <p class="sub">Antes de atravessar o Jordão, Israel precisava ouvir, em voz alta e em corpo inteiro, as duas direções possíveis do caminho que estava prestes a escolher. Moisés não deixa essa escolha abstrata: ele a transforma numa cerimônia, dividida entre dois montes, para que ninguém pudesse dizer depois que não sabia.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L6.5 6.5 L9.5 11 L12 6 L16 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A cerimônia nos dois montes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Assim que o povo entrasse na terra, Moisés ordena algo incomum: seis tribos deveriam subir ao monte Gerizim para pronunciar as bênçãos sobre o povo, e as outras seis subiriam ao monte Ebal para pronunciar as maldições (27.11-13). Não é uma leitura feita por um só homem diante de uma plateia passiva — é a nação inteira, fisicamente dividida ao meio, cada metade erguida sobre um monte diferente, ouvindo e respondendo às duas possibilidades do pacto.</p>
+          <p>A geografia ajudava a pregação: os dois montes ficam frente a frente, com um vale estreito entre eles, perto de Siquém — o mesmo lugar onde Deus havia prometido a terra a Abraão pela primeira vez (Gênesis 12.6-7). Toque em cada monte para ver quem estava ali e o que pronunciava.</p>
+
+          <div class="ebg-mount-row">
+            <div class="ebg-mount-card gerizim" id="ebgGerizimCard" onclick="selectEbgMount('gerizim')">
+              <div class="ebg-mount-label">Monte Gerizim</div>
+              <div class="ebg-mount-name">As bênçãos</div>
+            </div>
+            <div class="ebg-mount-card ebal" id="ebgEbalCard" onclick="selectEbgMount('ebal')">
+              <div class="ebg-mount-label">Monte Ebal</div>
+              <div class="ebg-mount-name">As maldições</div>
+            </div>
+          </div>
+          <p class="ebg-mount-caption" id="ebgMountCaption">Toque em um dos montes para ver quais tribos estavam ali.</p>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as bênçãos da fidelidade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.2" stroke-width="1.3"/>
+          <path d="M6 9.2 L8.1 11.3 L12.2 6.6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As bênçãos da fidelidade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 28 abre com uma promessa abrangente: se o povo obedecesse com atenção à voz do Senhor, todas essas bênçãos viriam sobre ele e o alcançariam (28.1-2). A lista que segue cobre praticamente toda a vida — bendito na cidade e bendito no campo; bendito o fruto do ventre, o fruto da terra e o fruto dos animais; bendito o cesto e a amassadeira; bendito ao entrar e bendito ao sair (28.3-6).</p>
+          <p>É uma bênção que toca o cotidiano inteiro, não apenas os grandes marcos da vida — o trabalho, a família, a comida, as viagens. E o ponto alto da lista é uma promessa de posição entre as nações: o Senhor faria de Israel "a cabeça, e não a cauda", sempre em cima e nunca embaixo, desde que guardasse os mandamentos (28.13).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → as maldições da infidelidade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2.5 L16 15.5 H2 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 7.3 V11" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 13 V13.3" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">As maldições da infidelidade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois vem a outra metade — e ela é desproporcionalmente maior. As maldições da infidelidade (28.15-68) invertem palavra por palavra as bênçãos que acabaram de ser ditas: maldito na cidade e no campo, maldito o cesto e a amassadeira, maldito ao entrar e ao sair (28.16-19). Mas a lista não para onde a das bênçãos parou — ela continua, descrevendo praga, seca, derrota diante dos inimigos, doença, loucura, opressão e, por fim, exílio da terra (28.20-57).</p>
+          <p>O contraste no tamanho das duas listas não é acidental. Toque nas barras abaixo para comparar quantos versículos Moisés dedica a cada metade da cerimônia.</p>
+
+          <div class="ebg-bar-outer">
+            <div class="ebg-bar-hint">Deuteronômio 28 tem 68 versículos ao todo:</div>
+            <div class="ebg-bar-item">
+              <div class="ebg-bar-label"><span>Bênçãos (28.1-14)</span><span id="ebgBlessCount">14 versículos</span></div>
+              <div class="ebg-bar-track" id="ebgBlessTrack" onclick="revealEbgBar('bless')">
+                <div class="ebg-bar-fill ebg-fill-calm" id="ebgBlessFill"></div>
+              </div>
+            </div>
+            <div class="ebg-bar-item">
+              <div class="ebg-bar-label"><span>Maldições (28.15-68)</span><span id="ebgCurseCount">54 versículos</span></div>
+              <div class="ebg-bar-track" id="ebgCurseTrack" onclick="revealEbgBar('curse')">
+                <div class="ebg-bar-fill ebg-fill-worry" id="ebgCurseFill"></div>
+              </div>
+            </div>
+            <p class="ebg-bar-caption" id="ebgBarCaption">Toque em uma das barras para comparar o espaço dedicado a cada uma.</p>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a gravidade do aviso</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 11 H15 L13 15 H5 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 11 V5 H8 V11" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M3 11 Q9 8 15 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A gravidade do aviso</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nos versículos finais do capítulo, Moisés não recua diante dos detalhes mais duros. Ele descreve cerco, fome extrema e a dispersão do povo entre as nações, "de uma extremidade da terra até a outra" (28.64), onde serviriam a deuses de madeira e pedra que nem eles nem seus pais conheceram.</p>
+          <p>A imagem final é a mais pungente de todas: o Senhor faria o povo voltar ao Egito em navios, "pelo caminho de que te disse: Nunca mais o tornarás a ver" (28.68) — uma reversão completa do êxodo, o povo devolvido, como escravo à venda, ao lugar de onde Deus os havia tirado com mão forte. Moisés não suaviza a consequência; ele a descreve com a mesma precisão com que descreveu a bênção.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → um Deus que avisa antes de julgar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um Deus que avisa antes de julgar</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>É fácil ler os capítulos 27—28 como um catálogo de ameaças e parar por aí. Mas o próprio formato da cerimônia diz outra coisa: Deus não escondeu de Israel o que estava em jogo. Antes de qualquer bênção ser recebida ou qualquer maldição ser sofrida, o povo inteiro ouviu, em voz alta, nos dois montes, exatamente o que cada caminho significava. Não haveria surpresa depois — só a memória de um aviso claro, dado com antecedência.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 30.19</span>
+          <p>Os céus e a terra tomo hoje por testemunhas contra ti, que te propus a vida e a morte, a bênção e a maldição; escolhe, pois, a vida, para que vivas, tu e a tua semente.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Esse é o coração do que Ebal e Gerizim ensinam sobre o caráter de Deus: ele não julga no escuro. A extensão da lista de maldições em Deuteronômio 28 não é crueldade — é detalhe pastoral, o cuidado de deixar claro, ponto por ponto, o que a infidelidade custaria, exatamente para que a escolha pudesse ser feita de olhos abertos.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="ebgBtnWorry" onclick="showEbgOutcome('worry')">Um Deus que pune sem aviso</button>
+            <button class="toggle-btn" id="ebgBtnCalm" onclick="showEbgOutcome('calm')">Um Deus que avisa antes de julgar</button>
+          </div>
+
+          <div class="outcome" id="ebgOutcomeCard">
+            <div class="outcome-visual" id="ebgOutcomeVisual"></div>
+            <h3 id="ebgOutcomeTitle"></h3>
+            <p id="ebgOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · bênçãos e maldições: Ebal e Gerizim</footer>
+</div>
+
+<script>
+  const ebgMountData = {
+    gerizim: "Sobre o Gerizim ficaram Simeão, Levi, Judá, Issacar, José e Benjamim (27.12), pronunciando as bênçãos — o monte mais fértil e verde dos dois, voltado para o sul.",
+    ebal: "Sobre o Ebal ficaram Rúben, Gade, Aser, Zebulom, Dã e Naftali (27.13), pronunciando as maldições — o monte mais árido dos dois, onde também foi erguido um altar de pedras (27.4-6)."
+  };
+
+  function selectEbgMount(which){
+    document.getElementById('ebgGerizimCard').classList.toggle('active', which === 'gerizim');
+    document.getElementById('ebgEbalCard').classList.toggle('active', which === 'ebal');
+    document.getElementById('ebgMountCaption').textContent = ebgMountData[which];
+  }
+
+  const ebgBarData = {
+    bless: { pct: 20.6, caption: "As bênçãos ocupam 14 dos 68 versículos do capítulo (28.1-14) — cerca de 21% do texto." },
+    curse: { pct: 79.4, caption: "As maldições ocupam 54 dos 68 versículos do capítulo (28.15-68) — quase 79% do texto, quatro vezes mais espaço que as bênçãos." }
+  };
+
+  function revealEbgBar(which){
+    document.querySelectorAll('.ebg-bar-track').forEach(t => t.classList.remove('active'));
+    document.getElementById('ebg' + (which === 'bless' ? 'Bless' : 'Curse') + 'Track').classList.add('active');
+    document.getElementById('ebgBlessFill').style.width = (which === 'bless' || which === 'curse') ? '20.6%' : '0%';
+    document.getElementById('ebgCurseFill').style.width = (which === 'bless' || which === 'curse') ? '79.4%' : '0%';
+    document.getElementById('ebgBarCaption').textContent = ebgBarData[which].caption;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showEbgOutcome(type){
+    const btnWorry = document.getElementById('ebgBtnWorry');
+    const btnCalm = document.getElementById('ebgBtnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('ebgOutcomeVisual');
+    const title = document.getElementById('ebgOutcomeTitle');
+    const text = document.getElementById('ebgOutcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um julgamento sem explicação";
+      text.textContent = "Se Deuteronômio 28 fosse apenas uma sentença arbitrária, o exílio pareceria capricho — um castigo desproporcional, imposto sem que o povo soubesse o que estava em risco.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um convite detalhado antes da consequência";
+      text.textContent = "Mas o texto mostra o oposto: Deus descreve a bênção e a maldição com o mesmo cuidado, nos mesmos dois montes, para o mesmo povo — e ainda assim termina apontando para a vida (30.19). O julgamento, quando vier, não pegará ninguém de surpresa.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Shemá: ouve, Israel — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .shm-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 4px; flex-wrap:wrap; }
+  .shm-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .shm-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .shm-seq-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:40px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">Lição 3 · As leis da aliança</span>
+  </div>
+
+  <div class="eyebrow">O grande mandamento · <span class="ref-tag">Deuteronômio 6</span></div>
+  <h1>O Shemá: ouve, Israel</h1>
+  <p class="sub">Logo depois de repetir os Dez Mandamentos, Moisés os resume numa única frase — a mais repetida da fé judaica até hoje. Deuteronômio 6 não acrescenta uma lei nova; mostra o coração de todas as outras, e ensina como fazer com que essa fé não fique só na cabeça, mas ocupe cada parte comum de um dia comum.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C4 11 3 7.5 5.5 5.5 C7 4.3 9 5 9 7 C9 5 11 4.3 12.5 5.5 C15 7.5 14 11 9 15 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">"Ouve, Israel"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de repetir os Dez Mandamentos e antes de entrar em qualquer detalhe da lei, Moisés pronuncia a frase que se tornaria o texto mais recitado da fé judaica, dito até hoje todas as manhãs e todas as noites por quem segue essa tradição:</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 6.4-5</span>
+          <p>Ouve, Israel, o Senhor nosso Deus é o único Senhor. Amarás, pois, o Senhor teu Deus de todo o teu coração, e de toda a tua alma, e de todo o teu poder.</p>
+          <span class="ref">— o Shemá, Deuteronômio 6.4-5</span>
+        </div>
+
+        <div class="tl-card" style="margin-top:16px;">
+          <p>Em hebraico, esse texto é chamado de <em>Shemá</em>, simplesmente "ouve" — a primeira palavra da frase. Não é um mandamento entre tantos outros; é o resumo de todos eles. Antes de amar a Deus com ações específicas, é preciso primeiro ouvir quem ele é: o único Senhor, sem rival, sem divisão. E desse ouvir nasce um amor que não se limita a sentimento — um amor que reivindica o coração, a alma e o poder inteiros de quem o dá.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → ensinar diligentemente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Ensinar diligentemente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois do Shemá, Moisés explica como essas palavras deveriam ocupar a vida do povo: "estas palavras, que hoje te ordeno, estarão no teu coração; e as ensinarás a teus filhos, e delas falarás assentado em tua casa, e andando pelo caminho, e deitando-te, e levantando-te" (6.6-7). Não bastava conhecer a lei — era preciso repeti-la com tanta constância que ela se tornasse parte do ritmo natural do dia.</p>
+          <p>Toque no botão para ver, um a um, os quatro momentos concretos do dia que Moisés escolhe como exemplo:</p>
+
+          <div class="shm-seq-row" id="shmSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealShmSeq()" id="shmSeqBtn">Ver os quatro momentos</button>
+          <p class="shm-seq-caption" id="shmSeqCaption">Nenhum momento revelado ainda.</p>
+
+          <p>Moisés vai além da fala: manda atar essas palavras "por sinal na tua mão", trazê-las "por frontal entre os teus olhos", e escrevê-las "nos umbrais de tua casa, e nas tuas portas" (6.8-9) — instrução que a tradição judaica levaria ao pé da letra, criando os filactérios (tefilin) e a mezuzá na porta. O alvo não era decoração religiosa, mas tornar impossível esquecer.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o perigo do esquecimento na fartura</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="5" r="1.6" stroke-width="1.1"/>
+          <circle cx="6.5" cy="8" r="1.6" stroke-width="1.1"/>
+          <circle cx="11.5" cy="8" r="1.6" stroke-width="1.1"/>
+          <circle cx="9" cy="11" r="1.6" stroke-width="1.1"/>
+          <path d="M9 3.4 V2" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O perigo do esquecimento na fartura</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés então faz um aviso que soa quase paradoxal: o maior risco espiritual de Israel não seria a fome do deserto, mas a fartura de Canaã. Ele descreve o que os espera — "cidades grandes e boas, que não edificaste, e casas cheias de toda sorte de bens, que não encheste, e cisternas cavadas, que não cavaste, vinhas e olivais, que não plantaste" (6.10-11) — e avisa: "quando, pois, comeres e te fartares, guarda-te, que não te esqueças do Senhor, que te tirou da terra do Egito, da casa da servidão" (6.12).</p>
+          <p>É uma observação perturbadoramente precisa sobre a natureza humana: a escassez tende a nos manter dependentes e alertas, orando por cada necessidade; é a fartura, paradoxalmente, que nos deixa satisfeitos demais para lembrar de quem proveu tudo. Um povo cercado de bens que não construiu corre o risco de agir como se sempre os tivesse tido — esquecendo que cada casa, cada poço, cada vinha era, na verdade, dádiva.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → responder aos filhos no futuro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 4 H15 V12 H8 L5 15 V12 H3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M7.3 7 C7.3 5.8 8.1 5.3 9 5.5 C9.9 5.7 10.4 6.7 9.7 7.5 C9.2 8 9 8.2 9 8.8" stroke-width="1" stroke-linecap="round"/>
+          <path d="M9 10.6 V10.8" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Responder aos filhos no futuro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés antecipa uma cena que ainda vai acontecer, gerações à frente: um filho, olhando para os costumes da própria família, perguntará "que significam os testemunhos, e os estatutos, e os juízos que o Senhor, nosso Deus, vos ordenou?" (6.20). A resposta que Moisés prescreve não é uma lista de regras nem uma explicação abstrata de moralidade — é uma história: "Éramos servos de Faraó no Egito, e o Senhor nos tirou do Egito com mão poderosa... para nos fazer entrar e nos dar a terra que jurara a nossos pais" (6.21-23).</p>
+          <p>Em outras palavras: cada geração deveria ensinar a lei sempre presa à sua origem — não como um código isolado a ser obedecido por obrigação, mas como resposta de gratidão a um resgate concreto e já vivido. A obediência, conclui Moisés, "será a nossa justiça, quando tivermos cuidado de fazer todos estes mandamentos perante o Senhor" (6.25): não uma forma de merecer o resgate, mas o modo natural de viver dentro dele.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → amar com a vida inteira</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 V8 L9 3 L15 8 V15 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 12.5 C7.3 11 6.7 9.7 7.7 8.9 C8.3 8.4 9 8.7 9 9.5 C9 8.7 9.7 8.4 10.3 8.9 C11.3 9.7 10.7 11 9 12.5 Z" stroke-width="0.9" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Amar com a vida inteira</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Séculos depois, um mestre da lei perguntou a Jesus qual era o maior mandamento de todos. Jesus respondeu citando exatamente este texto: "O primeiro de todos os mandamentos é: Ouve, Israel, o Senhor nosso Deus é o único Senhor. Amarás, pois, o Senhor teu Deus de todo o teu coração, e de toda a tua alma, e de todo o teu entendimento, e de todas as tuas forças" (Marcos 12.29-30, citando o Shemá). Jesus não substitui o mandamento de Deuteronômio 6 — ele confirma que continua sendo, também para seus discípulos, o centro de tudo.</p>
+          <p>E é justamente por isso que Deuteronômio 6 não se contenta em pedir um sentimento. Um coração que ama de verdade organiza a vida inteira em torno desse amor: fala dele em casa e na estrada, ensina-o aos filhos, resiste ao esquecimento que vem com a fartura, e responde às perguntas do futuro contando, sempre de novo, a história do resgate.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnShmWorry" onclick="showShmOutcome('worry')">Guardar a lei só na cabeça</button>
+            <button class="toggle-btn" id="btnShmCalm" onclick="showShmOutcome('calm')">Guardar a lei em cada parte do dia</button>
+          </div>
+
+          <div class="outcome" id="shmOutcomeCard">
+            <div class="outcome-visual" id="shmOutcomeVisual"></div>
+            <h3 id="shmOutcomeTitle"></h3>
+            <p id="shmOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · O Shemá: ouve, Israel</footer>
+</div>
+
+<script>
+  const shmMomentos = [
+    { texto: "\"...delas falarás assentado em tua casa...\" — no lugar mais comum e mais íntimo do dia, dentro de casa (6.7)." },
+    { texto: "\"...e andando pelo caminho...\" — também fora de casa, a caminho do trabalho ou de qualquer tarefa (6.7)." },
+    { texto: "\"...e deitando-te...\" — a última coisa antes do sono, encerrando o dia com essas palavras (6.7)." },
+    { texto: "\"...e levantando-te.\" — a primeira coisa ao acordar, abrindo o dia com elas de novo (6.7)." }
+  ];
+
+  function buildShmSeq(){
+    const el = document.getElementById('shmSeqRow');
+    shmMomentos.forEach(() => { const d = document.createElement('div'); d.className = 'shm-seq-dot'; el.appendChild(d); });
+  }
+  buildShmSeq();
+
+  function revealShmSeq(){
+    const dots = document.querySelectorAll('#shmSeqRow .shm-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('shmSeqCaption').textContent = shmMomentos[i].texto;
+    }, i * 260));
+    setTimeout(() => {
+      document.getElementById('shmSeqBtn').textContent = "Os quatro momentos de todo dia comum";
+    }, shmMomentos.length * 260);
+  }
+
+  function showShmOutcome(type){
+    const btnWorry = document.getElementById('btnShmWorry');
+    const btnCalm = document.getElementById('btnShmCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('shmOutcomeVisual');
+    const title = document.getElementById('shmOutcomeTitle');
+    const text = document.getElementById('shmOutcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma fé só de pensamento";
+      text.textContent = "Conhecer o Shemá de cor sem deixar que ele toque a casa, o caminho, o deitar e o levantar é o mesmo risco que Moisés descreve na fartura de Canaã: saber a palavra e, ainda assim, esquecê-la na prática.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma fé que ocupa o dia inteiro";
+      text.textContent = "Amar a Deus de todo o coração, alma e força, como Jesus confirma em Marcos 12.29-30, não fica só na cabeça — molda a casa, a estrada, o sono e o despertar, e sabe responder à pergunta dos filhos com a história inteira do resgate.";
+    }
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

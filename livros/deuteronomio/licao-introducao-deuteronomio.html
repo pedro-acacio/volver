@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Deuteronômio — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .deu-bar-outer{ margin-top:18px; }
+  .deu-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .deu-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .deu-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .deu-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .deu-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .deu-seg:nth-child(1){ background:var(--gold); }
+  .deu-seg:nth-child(2){ background:var(--calm); }
+  .deu-seg:nth-child(3){ background:var(--worry); }
+  .deu-seg:nth-child(4){ background:var(--gold); opacity:.45; }
+  .deu-seg:nth-child(4):hover, .deu-seg:nth-child(4).active{ opacity:.75; }
+  .deu-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .deu-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
+
+  .deu-treaty-row{ display:flex; align-items:center; gap:10px; margin:14px 0 4px; flex-wrap:wrap; }
+  .deu-treaty-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .deu-treaty-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .deu-treaty-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-faint); margin-left:4px; }
+  .deu-treaty-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">O quinto livro de Moisés · <span class="ref-tag">Deuteronômio 1—34</span></div>
+  <h1>Introdução a Deuteronômio</h1>
+  <p class="sub">Nas campinas de Moabe, à beira do rio Jordão, uma segunda geração se prepara para entrar na terra que a primeira perdeu por incredulidade. Antes de morrer, Moisés reúne esse povo pela última vez — não para dar leis novas, mas para relembrar, renovar e confiar a uma nova geração a mesma aliança recebida no Sinai.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor e data</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Como o restante do Pentateuco, a maior parte de Deuteronômio é atribuída a Moisés, escrita por volta de 1406 a.C. — as próprias palavras finais de sua vida, dirigidas nas campinas de Moabe. É evidente que alguns trechos foram editados mais tarde, no tempo de Josué, sobretudo o relato da morte do próprio Moisés no capítulo 34; mas é bem possível que o próprio Moisés tenha acrescentado elementos ao texto que só se completariam depois, como já acontece noutros pontos do Pentateuco.</p>
+          <p>O público original não era mais a geração que saiu do Egito — essa já havia morrido no deserto, por incredulidade (Números 32.10-13). Moisés fala agora à segunda geração, nascida na própria peregrinação, que Deus poupara do castigo dos pais. Sem permissão de entrar com eles na Terra Prometida, Moisés usa seus últimos dias para reafirmar a lei e renovar a aliança sob a liderança que passaria, em seguida, a Josué.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o nome do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um livro de "palavras", não de "segunda lei"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em hebraico, o livro se chama <em>Devarim</em> — "palavras" — tirado da própria primeira frase do texto: "Estas são as palavras que Moisés falou a todo o Israel" (1.1), o mesmo padrão de nomear livros pela abertura que já vimos em Gênesis, Levítico e Números. É um título mais fiel ao conteúdo: Deuteronômio é, em sua maior parte, um registro de discursos — as últimas palavras de um líder ao povo que ele guiou por quarenta anos.</p>
+          <p>O nome "Deuteronômio" vem do grego <em>deuteronomion</em>, "segunda lei" — uma tradução um pouco imprecisa de uma frase hebraica em 17.18, que na verdade significa apenas "cópia desta lei". O nome grego sugere, erroneamente, que o livro contém uma lei diferente da do Sinai; na realidade, Deuteronômio não substitui a lei dada em Êxodo e Levítico — ele a relembra, a explica e a renova para uma geração que não estava presente quando ela foi dada pela primeira vez.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → os quatro discursos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Os quatro discursos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deuteronômio se organiza em torno de quatro discursos e um encerramento, todos concentrados numa única ocasião — os últimos dias de Moisés em Moabe. Toque em cada parte para ver o que ela cobre:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discursosData, 0, 'discursosText')">I. Prólogo histórico</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discursosData, 1, 'discursosText')">II. As leis da aliança</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discursosData, 2, 'discursosText')">III. Bênçãos e maldições</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, discursosData, 3, 'discursosText')">IV. A sucessão de Josué</button>
+          </div>
+          <div class="chip-text" id="discursosText">Toque em cada parte para ver o que ela cobre.</div>
+
+          <div class="deu-bar-outer">
+            <div class="deu-bar-label">Como esses quatro discursos se distribuem nos 34 capítulos do livro:</div>
+            <div class="deu-bar" role="group" aria-label="Distribuição dos capítulos de Deuteronômio entre os quatro discursos">
+              <button type="button" class="deu-seg" style="width:11.76%;" onclick="selectDeuBlock(this, 0)" aria-label="Prólogo histórico, capítulos 1 a 4"></button>
+              <button type="button" class="deu-seg" style="width:64.71%;" onclick="selectDeuBlock(this, 1)" aria-label="As leis da aliança, capítulos 5 a 26"></button>
+              <button type="button" class="deu-seg" style="width:11.76%;" onclick="selectDeuBlock(this, 2)" aria-label="Bênçãos e maldições, capítulos 27 a 30"></button>
+              <button type="button" class="deu-seg" style="width:11.76%;" onclick="selectDeuBlock(this, 3)" aria-label="A sucessão de Josué, capítulos 31 a 34"></button>
+            </div>
+            <div class="deu-bar-ends"><span>cap. 1</span><span>cap. 34</span></div>
+            <div class="deu-bar-caption" id="deuBarText">Toque em um trecho da barra para ver quantos capítulos ele ocupa.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a forma de um tratado antigo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A forma de um tratado antigo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Estudiosos notam que a estrutura de Deuteronômio se parece muito com a forma de um tratado de suserania do antigo Oriente Próximo — o documento que um grande rei ("suserano") fazia com um povo vassalo, sob sua proteção. Um tratado desse tipo normalmente tinha as mesmas partes que encontramos aqui: um prólogo histórico lembrando o que o rei já havia feito por seu vassalo, uma lista de leis e obrigações, uma cerimônia pública de ratificação com bênçãos para a fidelidade e maldições para a quebra do pacto, e a nomeação de testemunhas e de um sucessor.</p>
+          <p>Toque no botão abaixo para ver como cada parte do tratado corresponde a uma parte de Deuteronômio:</p>
+
+          <div class="deu-treaty-row" id="deuTreatyRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealDeuTreaty()" id="deuTreatyBtn">Ver as quatro partes do tratado</button>
+          <p class="deu-treaty-caption" id="deuTreatyCaption"></p>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo em Deuteronômio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo em Deuteronômio</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Bem no meio do segundo discurso, entre tantas leis, Moisés faz uma promessa que soa quase fora de lugar — e que os primeiros cristãos entenderiam como uma das profecias mais diretas do Antigo Testamento sobre Jesus. Depois de lembrar como o povo tremeu diante da voz de Deus no Sinai e implorou para não ouvi-la de novo diretamente (5.23-27; 18.16), Moisés promete que Deus não deixaria essa necessidade sem resposta.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 18.15</span>
+          <p>O Senhor, teu Deus, te levantará um profeta como eu, do meio de ti, de teus irmãos; a esse ouvirás.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Séculos depois, no primeiro sermão registrado da igreja depois de Pentecostes, é justamente esse versículo que Pedro cita para explicar quem é Jesus: "Porque Moisés disse... o Senhor, vosso Deus, vos levantará dentre vossos irmãos um profeta como eu" (Atos 3.22-23). O livro termina, de fato, admitindo que ninguém como Moisés havia se levantado ainda em Israel (34.10) — deixando a promessa deliberadamente em aberto, esperando por Alguém maior que o próprio Moisés.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de um profeta entre outros</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão do profeta prometido</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Deuteronômio</footer>
+</div>
+
+<script>
+  const discursosData = [
+    { text: "Deuteronômio 1—4 — o prólogo histórico: Moisés relembra a jornada desde o Sinai, o fracasso em Cades-Barneia, as vitórias recentes sobre Seom e Ogue, e convoca o povo à fidelidade com base no que já viveram." },
+    { text: "Deuteronômio 5—26 — as leis da aliança: os Dez Mandamentos repetidos, o Shemá e o grande mandamento de amar a Deus, e um extenso conjunto de leis sobre adoração, justiça, realeza, guerra e vida cotidiana." },
+    { text: "Deuteronômio 27—30 — bênçãos e maldições: a cerimônia de ratificação nos montes Ebal e Gerizim, uma lista extensa de consequências para a fidelidade e para a quebra do pacto, e o apelo final: 'escolhe, pois, a vida'." },
+    { text: "Deuteronômio 31—34 — a sucessão de Josué: a transferência pública da liderança, o cântico profético de Moisés, sua última bênção sobre as tribos, e o relato da sua morte no monte Nebo." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const deuBarData = [
+    { label: "I. Prólogo histórico", range: "capítulos 1–4", chapters: 4 },
+    { label: "II. As leis da aliança", range: "capítulos 5–26", chapters: 22 },
+    { label: "III. Bênçãos e maldições", range: "capítulos 27–30", chapters: 4 },
+    { label: "IV. A sucessão de Josué", range: "capítulos 31–34", chapters: 4 }
+  ];
+
+  function selectDeuBlock(btn, i){
+    btn.parentElement.querySelectorAll('.deu-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = deuBarData[i];
+    document.getElementById('deuBarText').textContent = d.label + " ocupa " + d.range + " — " + d.chapters + " dos 34 capítulos do livro (" + Math.round(d.chapters/34*100) + "%).";
+  }
+
+  const treatyParts = [
+    { name: "Prólogo histórico", detail: "O que o Rei já fez por seu povo → Deuteronômio 1—4, relembrando a libertação do Egito e o cuidado no deserto." },
+    { name: "As leis e obrigações", detail: "O que o povo vassalo deve fazer em resposta → Deuteronômio 5—26, os mandamentos e estatutos da aliança." },
+    { name: "Bênçãos e maldições", detail: "As consequências da fidelidade ou da quebra do pacto → Deuteronômio 27—30, a cerimônia de Ebal e Gerizim." },
+    { name: "Testemunhas e sucessão", detail: "Quem garante o cumprimento do tratado no futuro → Deuteronômio 31—34, o céu e a terra como testemunhas, e Josué como sucessor." }
+  ];
+  function buildDeuTreaty(){
+    const el = document.getElementById('deuTreatyRow');
+    treatyParts.forEach(() => { const d = document.createElement('div'); d.className = 'deu-treaty-dot'; el.appendChild(d); });
+  }
+  buildDeuTreaty();
+  function revealDeuTreaty(){
+    const dots = document.querySelectorAll('#deuTreatyRow .deu-treaty-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('deuTreatyCaption').textContent = treatyParts[i].name + " — " + treatyParts[i].detail;
+    }, i * 260));
+    setTimeout(() => {
+      document.getElementById('deuTreatyBtn').textContent = "Um tratado antigo, com um Rei que cumpre a sua parte";
+    }, treatyParts.length * 260);
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma linha entre muitos profetas";
+      text.textContent = "Lida apenas como um elogio a Josué ou a algum profeta posterior de Israel, a promessa de 18.15 fica presa ao passado — mais um nome numa longa lista, sem nunca ser plenamente cumprida.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma promessa deixada deliberadamente aberta";
+      text.textContent = "Lida como o próprio livro a deixa — 'nunca mais se levantou em Israel profeta como Moisés' (34.10) — a promessa aponta para adiante, até Pedro apontar diretamente para Jesus como o profeta finalmente levantado (Atos 3.22-23).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

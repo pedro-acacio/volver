@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os Dez Mandamentos, outra vez — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .sab-verse-pair{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:10px 0 4px; }
+  @media (max-width:560px){ .sab-verse-pair{ grid-template-columns:1fr; } }
+  .sab-verse-mini{ background:var(--bg); border:1px solid var(--panel-line); border-radius:10px; padding:12px 14px; font-size:12.5px; line-height:1.55; color:var(--text-faint); }
+  .sab-verse-mini strong{ display:block; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-dim); margin-bottom:6px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">Lição 2 · As leis da aliança</span>
+  </div>
+
+  <div class="eyebrow">O segundo discurso de Moisés começa · <span class="ref-tag">Deuteronômio 5</span></div>
+  <h1>Os Dez Mandamentos, outra vez</h1>
+  <p class="sub">Quarenta anos depois do Sinai, Moisés repete os Dez Mandamentos a um povo que, em sua maioria, nunca esteve lá. Não é uma segunda lei — é a mesma lei, entregue de novo a uma geração que precisa recebê-la como sua, e não apenas como herança dos pais.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.3"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma aliança feita "conosco"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés convoca todo Israel e faz uma afirmação que soa quase estranha: "O Senhor, nosso Deus, fez conosco aliança em Horebe. Não fez o Senhor esta aliança com nossos pais, mas conosco, os que aqui estamos hoje, todos nós vivos" (5.2-3). É uma afirmação surpreendente, porque a maior parte das pessoas ali diante dele fisicamente não esteve no Sinai — eram crianças, ou ainda nem tinham nascido, quando aquela cena aconteceu.</p>
+          <p>Mas Moisés insiste: a aliança não é uma herança de segunda mão, algo que pertenceu aos pais e agora só é repassado aos filhos como lembrança. Ela pertence, de fato, a essa nova geração — tão diretamente quanto pertenceu à primeira. É esse mesmo princípio que sustenta o porquê de todo o livro de Deuteronômio existir: uma aliança só permanece viva quando cada geração a recebe como própria, não apenas como relato do passado.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os Dez Mandamentos repetidos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H8 V15 H4 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M10 3 H14 V15 H10 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M5.2 6 H6.8 M5.2 8.5 H6.8 M5.2 11 H6.8 M11.2 6 H12.8 M11.2 8.5 H12.8 M11.2 11 H12.8" stroke-width="0.9" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Os Dez Mandamentos repetidos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes de citar um único mandamento, Moisés repete a frase que abre toda a lei em Êxodo 20.2: "Eu sou o Senhor, teu Deus, que te tirei da terra do Egito, da casa da servidão" (5.6). A ordem importa — a graça do resgate vem antes de qualquer exigência. Só depois disso vêm os dez mandamentos: não ter outros deuses, não fazer imagem de escultura, não tomar o nome do Senhor em vão, guardar o sábado, honrar pai e mãe, não matar, não adulterar, não furtar, não dar falso testemunho, e não cobiçar o que é do próximo (5.7-21).</p>
+          <p>O conteúdo é essencialmente o mesmo de Êxodo 20 — a mesma lei dada quarenta anos antes no Sinai, palavra por palavra em quase tudo. Há pequenas variações de forma entre um relato e o outro, algo natural quando Moisés reconta de memória um evento que ele próprio viveu; mas nenhuma delas muda o conteúdo da lei. Uma dessas pequenas variações, porém, não é apenas estilística — e vale a pena examiná-la com atenção.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um detalhe que muda de lugar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3" stroke-width="1.3"/>
+          <path d="M9 2 V4 M9 14 V16 M2 9 H4 M14 9 H16 M4.2 4.2 L5.6 5.6 M12.4 12.4 L13.8 13.8 M4.2 13.8 L5.6 12.4 M12.4 5.6 L13.8 4.2" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um detalhe que muda de lugar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Entre os dez mandamentos, o do sábado (5.12-15) traz uma diferença que não é apenas de estilo. Em Êxodo 20.11, o motivo dado para descansar no sétimo dia é a própria criação: "porque em seis dias fez o Senhor os céus e a terra... e ao sétimo dia descansou". Aqui, em Deuteronômio 5.15, Moisés dá um motivo diferente: "lembra-te de que foste servo na terra do Egito, e que o Senhor, teu Deus, te tirou dali com mão forte e braço estendido; pelo que o Senhor, teu Deus, te ordenou que guardasses o dia de sábado".</p>
+          <p>Toque em cada motivo para ver o texto e o que ele destaca:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnSabCriacao" onclick="showSabMotive('criacao')">Êxodo 20.11 — descanso da criação</button>
+            <button class="toggle-btn" id="btnSabLiberdade" onclick="showSabMotive('liberdade')">Deuteronômio 5.15 — descanso da libertação</button>
+          </div>
+
+          <div class="outcome" id="sabMotiveCard">
+            <div class="outcome-visual" id="sabMotiveVisual"></div>
+            <h3 id="sabMotiveTitle"></h3>
+            <p id="sabMotiveText"></p>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o medo do povo e o mediador</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L14 15 H4 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 6.5 C7.6 8.4 7.6 9.8 9 11.2 C10.4 9.8 10.4 8.4 9 6.5 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O medo do povo e o papel do mediador</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de ouvir a voz de Deus vindo do meio do fogo, do meio da montanha, o povo ficou apavorado. Os líderes das tribos foram até Moisés e disseram: "eis que o Senhor, nosso Deus, nos mostrou a sua glória... e ouvimos a sua voz do meio do fogo... e agora, por que morreríamos?... Chega-te tu, e ouve tudo o que disser o Senhor, nosso Deus; e tu nos dirás tudo o que te disser o Senhor" (5.24-27).</p>
+          <p>O pedido não era desobediência — era um reconhecimento honesto de que ouvir Deus diretamente era mais do que conseguiam suportar. E, notavelmente, Deus aprova o pedido: "bem disseram tudo quanto disseram" (5.28), lamentando apenas que o coração do povo não permanecesse sempre assim, disposto a temê-lo e a guardar seus mandamentos "para que se lhes vá bem a eles e a seus filhos, para sempre" (5.29). Esse episódio, guardado na memória de Israel, se torna a base da promessa de um profeta mediador como Moisés (18.15) — a mesma promessa que a introdução deste livro liga diretamente a Jesus.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → a mesma lei, duas razões</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="7" cy="9" r="4.2" stroke-width="1.3"/>
+          <circle cx="11" cy="9" r="4.2" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A mesma lei, duas razões, um só Deus</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>É tentador tratar a diferença entre Êxodo 20.11 e Deuteronômio 5.15 como uma contradição a resolver — como se só um dos dois motivos pudesse ser o "verdadeiro". Mas o texto não pede essa escolha. As duas razões são apresentadas, nos dois livros, como igualmente válidas: descansar porque Deus é o Criador que descansou, e descansar porque Deus é o Redentor que libertou.</p>
+        </div>
+
+        <div class="sab-verse-pair">
+          <div class="sab-verse-mini"><strong>ÊXODO 20.11</strong>"Porque em seis dias fez o Senhor os céus e a terra... e ao sétimo dia descansou; por isso o Senhor abençoou o dia de sábado, e o santificou."</div>
+          <div class="sab-verse-mini"><strong>DEUTERONÔMIO 5.15</strong>"Lembra-te de que foste servo na terra do Egito... pelo que o Senhor, teu Deus, te ordenou que guardasses o dia de sábado."</div>
+        </div>
+
+        <div class="tl-card" style="margin-top:16px;">
+          <p>Guardar o sábado lembrando só a criação corre o risco de virar um princípio abstrato, distante da própria história do povo; guardá-lo lembrando só a libertação corre o risco de esquecer que o descanso pertence à própria ordem do mundo, criada por Deus desde o início. Juntas, as duas razões dizem algo maior: o Deus que fez o mundo é o mesmo que resgata quem está escravizado — e descansar, para o povo de Deus, é participar das duas verdades ao mesmo tempo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnSabUma" onclick="showSabDesfecho('uma')">Escolher apenas uma razão</button>
+            <button class="toggle-btn" id="btnSabDuas" onclick="showSabDesfecho('duas')">Guardar as duas razões juntas</button>
+          </div>
+
+          <div class="outcome" id="sabDesfechoCard">
+            <div class="outcome-visual" id="sabDesfechoVisual"></div>
+            <h3 id="sabDesfechoTitle"></h3>
+            <p id="sabDesfechoText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · Os Dez Mandamentos, outra vez</footer>
+</div>
+
+<script>
+  function showSabMotive(type){
+    const btnCriacao = document.getElementById('btnSabCriacao');
+    const btnLiberdade = document.getElementById('btnSabLiberdade');
+    btnCriacao.classList.remove('active-calm');
+    btnLiberdade.classList.remove('active-worry');
+    const visual = document.getElementById('sabMotiveVisual');
+    const title = document.getElementById('sabMotiveTitle');
+    const text = document.getElementById('sabMotiveText');
+
+    if (type === 'criacao'){
+      btnCriacao.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Descanso como lembrança da criação";
+      text.textContent = "Em Êxodo 20.11, o sábado aponta para trás, até a própria ordem do mundo: Deus descansou depois de criar, e o ritmo de trabalho e descanso está gravado na estrutura da realidade desde o início.";
+    } else {
+      btnLiberdade.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Descanso como lembrança da libertação";
+      text.textContent = "Em Deuteronômio 5.15, o sábado aponta para uma história concreta: quem foi escravo no Egito, sem direito a descanso algum, agora recebe um dia inteiro de descanso como parte da própria identidade de povo liberto.";
+    }
+  }
+
+  function showSabDesfecho(type){
+    const btnUma = document.getElementById('btnSabUma');
+    const btnDuas = document.getElementById('btnSabDuas');
+    btnUma.classList.remove('active-worry');
+    btnDuas.classList.remove('active-calm');
+    const visual = document.getElementById('sabDesfechoVisual');
+    const title = document.getElementById('sabDesfechoTitle');
+    const text = document.getElementById('sabDesfechoText');
+
+    if (type === 'uma'){
+      btnUma.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma lei reduzida pela metade";
+      text.textContent = "Guardar o sábado só como princípio de criação, ou só como memória de libertação, empobrece o mandamento — cada leitura sozinha perde metade do que Deus quis ensinar sobre si mesmo com esse único dia.";
+    } else {
+      btnDuas.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma lei, dois testemunhos, um só Deus";
+      text.textContent = "Êxodo e Deuteronômio não competem — se completam. O mesmo sábado testemunha, ao mesmo tempo, que Deus é o Criador que ordenou o mundo e o Redentor que liberta os escravizados.";
+    }
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

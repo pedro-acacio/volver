@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nem só de pão — Deuteronômio 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão C — os quarenta anos que ensinaram, em etapas */
+  .nsp-anos-row{ display:flex; align-items:center; gap:10px; margin:12px 0 8px; flex-wrap:wrap; }
+  .nsp-anos-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .nsp-anos-dot.lit{ background:var(--calm); transform:scale(1.2); box-shadow:0 0 9px 1px var(--calm); }
+  .nsp-anos-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:10px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+
+  /* Padrão A — toggle extra: o coração no deserto x o coração na fartura */
+  .nsp-coracao-outer{ margin-top:16px; }
+  .nsp-coracao-result{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .nsp-coracao-result h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .nsp-coracao-result p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">O que o deserto ensinou</span>
+  </div>
+
+  <div class="eyebrow">Quarenta anos de lição · <span class="ref-tag">Deuteronômio 8</span></div>
+  <h1>Nem só de pão</h1>
+  <p class="sub">Antes de entrar numa terra que mana leite e mel, o povo precisa entender por que passou quarenta anos comendo um pão que não conhecia. O deserto não foi só castigo nem só provação — foi também uma sala de aula, ensinando que a vida humana nunca se resume ao que enche o estômago.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M3 9 H15" stroke-width="1.1" stroke-dasharray="1.6 2" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Lembra-te de todo o caminho</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 8 se abre com um mandamento simples de enunciar e difícil de cumprir: "lembra-te de todo o caminho pelo qual o Senhor, teu Deus, te guiou no deserto estes quarenta anos" (8.2). Não é uma lembrança nostálgica — é uma lembrança com propósito declarado. Moisés explica que aqueles quarenta anos foram desenhados, do início ao fim, com uma intenção pedagógica: "para te humilhar, para te provar, para saber o que estava no teu coração, se guardarias os seus mandamentos, ou não" (8.2).</p>
+          <p>É uma afirmação que muda o sentido de toda a peregrinação. O deserto não foi apenas o caminho entre o Egito e Canaã, um obstáculo geográfico a atravessar o mais rápido possível — foi o próprio lugar onde o caráter do povo seria revelado, testado e formado, antes de receber a responsabilidade de uma terra própria.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o maná como lição</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="7" r="1.4" stroke-width="1.1"/>
+          <circle cx="10.5" cy="5.5" r="1.4" stroke-width="1.1"/>
+          <circle cx="13" cy="9" r="1.4" stroke-width="1.1"/>
+          <circle cx="8" cy="11.5" r="1.4" stroke-width="1.1"/>
+          <circle cx="4.5" cy="12" r="1.4" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O maná como lição, não só como comida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés detalha o método por trás da lição: Deus deixou o povo sentir fome de verdade, e só depois o alimentou "com o maná, que não conhecias, nem teus pais o conheceram" (8.3). A sequência importa — a fome vem antes do alimento, não por crueldade, mas para que a dependência ficasse clara antes de qualquer solução aparecer.</p>
+          <p>E então vem a frase que resume o propósito de toda a experiência: Deus fez isso "para te fazer saber que o homem não vive só de pão, mas de tudo o que sai da boca do Senhor" (8.3). O maná em si já era estranho e inesperado — um pão que ninguém escolheu, cultivou ou entendia por completo. Precisamente por isso, ele servia como lembrete diário de que o sustento de Israel nunca esteve, de fato, nas próprias mãos do povo.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um cuidado que não desgastou</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 3 L5 15 H13 L12 3" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 3 H12" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um cuidado que não desgastou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No meio de uma explicação tão grande sobre humildade e provação, Moisés inclui um detalhe pequeno, quase doméstico: "tuas vestes não se envelheceram sobre ti, nem se inchou o teu pé, nestes quarenta anos" (8.4). Não é um milagre espetacular como o mar Vermelho ou o próprio maná — é algo discreto, do tipo que só se percebe quando alguém para para reparar.</p>
+          <p>E é exatamente esse detalhe discreto que o torna tão eloquente. O cuidado de Deus por Israel não foi feito só de intervenções grandiosas e ocasionais; foi também constante, presente em coisas tão comuns quanto uma roupa que não rasga ou um pé que não incha de tanto caminhar. A provação do deserto aconteceu dentro de um cuidado que nunca faltou, nem nos detalhes mais pequenos.</p>
+
+          <div class="nsp-anos-row" id="nspAnosRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealNspAnos()" id="nspAnosBtn">Ver os quarenta anos que ensinaram</button>
+          <p class="nsp-anos-caption" id="nspAnosCaption"></p>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o aviso da fartura</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 15 V8 H12 V15" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 8 L9 3 L12 8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O aviso da fartura</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés vira o olhar do deserto para o futuro imediato: uma terra boa, "terra de ribeiros de águas, de fontes e de profundezas, que nascem nos vales e nos montes" (8.7), onde faltará pão a ninguém (8.9). E é justamente nesse ponto que ele introduz o maior perigo de todos — não a fome, mas a fartura. Quando vierem as casas boas, o gado, a prata e o ouro em abundância (8.12-13), "eleve-se o teu coração, e te esqueças do Senhor, teu Deus" (8.14).</p>
+          <p>O risco específico que Moisés nomeia é o de atribuir a si mesmo o que só Deus deu: "não digas no teu coração: A minha força e a fortaleza da minha mão me adquiriram este poder" (8.17). A resposta certa, ele insiste, é lembrar "que o Senhor, teu Deus, é o que te dá força para adquirires riquezas" (8.18) — a mesma dependência aprendida no deserto, agora exigida em meio à abundância.</p>
+
+          <div class="nsp-coracao-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnNspDeserto" onclick="showNspCoracao('deserto')">O coração no deserto</button>
+              <button class="toggle-btn" id="btnNspFartura" onclick="showNspCoracao('fartura')">O coração na fartura</button>
+            </div>
+            <div class="nsp-coracao-result" id="nspCoracaoResult">
+              <h4 id="nspCoracaoTitle"></h4>
+              <p id="nspCoracaoText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A vida não se resume ao que enche o estômago</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Fome, maná, vestes que não gastaram, o convite a lembrar e o alerta contra o esquecimento — tudo em Deuteronômio 8 conduz à mesma verdade central, repetida quase no meio do capítulo: o ser humano não vive só de pão. O corpo precisa de alimento, mas a alma foi feita para depender de algo maior do que qualquer provisão material pode oferecer.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 8.3</span>
+          <p>E te humilhou, e te deixou ter fome, e te sustentou com o maná... para te fazer saber que o homem não vive só de pão, mas de tudo o que sai da boca do Senhor vive o homem.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Mais de mil anos depois, no deserto da tentação, é exatamente esse versículo que Jesus cita para vencer o convite do diabo a transformar pedras em pão: "escrito está: nem só de pão viverá o homem, mas de toda palavra que sai da boca de Deus" (Mateus 4.4). Onde a primeira geração de Israel murmurou por comida e falhou o teste, Jesus enfrenta a mesma fome no mesmo tipo de lugar — e responde exatamente como Deuteronômio 8 já havia ensinado.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnNspVer" onclick="showNspOutcome('ver')">Viver só do que se vê e se come</button>
+            <button class="toggle-btn" id="btnNspPalavra" onclick="showNspOutcome('palavra')">Viver de cada palavra de Deus</button>
+          </div>
+
+          <div class="outcome" id="nspOutcomeCard">
+            <div class="outcome-visual" id="nspOutcomeVisual"></div>
+            <h3 id="nspOutcomeTitle"></h3>
+            <p id="nspOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · nem só de pão</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const nspAnosEtapas = [
+    { label: "A fome", detail: "Deus deixou o povo sentir fome de verdade, antes de qualquer solução aparecer (8.2-3)." },
+    { label: "O maná", detail: "um pão desconhecido, dado dia após dia, para ensinar que o sustento vinha de fora do próprio esforço (8.3,16)." },
+    { label: "As vestes que não gastaram", detail: "um cuidado constante, presente até nos detalhes mais comuns do dia a dia (8.4)." },
+    { label: "O coração testado", detail: "quarenta anos desenhados \"para saber o que estava no teu coração\" (8.2)." }
+  ];
+
+  function buildNspAnos(){
+    const row = document.getElementById('nspAnosRow');
+    nspAnosEtapas.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'nsp-anos-dot';
+      row.appendChild(d);
+    });
+  }
+  buildNspAnos();
+
+  function revealNspAnos(){
+    const dots = document.querySelectorAll('#nspAnosRow .nsp-anos-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('nspAnosCaption').textContent = nspAnosEtapas[i].label + " — " + nspAnosEtapas[i].detail;
+    }, i * 280));
+    setTimeout(() => {
+      document.getElementById('nspAnosBtn').textContent = "Quatro etapas, uma só lição: a dependência de Deus";
+    }, nspAnosEtapas.length * 280);
+  }
+
+  function showNspCoracao(type){
+    const btnDeserto = document.getElementById('btnNspDeserto');
+    const btnFartura = document.getElementById('btnNspFartura');
+    btnDeserto.classList.remove('active-calm');
+    btnFartura.classList.remove('active-worry');
+    const title = document.getElementById('nspCoracaoTitle');
+    const text = document.getElementById('nspCoracaoText');
+
+    if (type === 'deserto'){
+      btnDeserto.classList.add('active-calm');
+      title.textContent = "Dependente, porque não havia outra saída";
+      text.textContent = "Sem plantação, sem colheita, sem despensa — só o maná de cada manhã. No deserto, depender de Deus não exigia esforço de memória: era a única realidade visível (8.2-3,16).";
+    } else {
+      btnFartura.classList.add('active-worry');
+      title.textContent = "Esquecido, porque a provisão parecia própria";
+      text.textContent = "Casas prontas, gado multiplicado, prata e ouro em abundância (8.12-13) — e o risco de concluir, como Moisés adverte, que foi \"a minha força\" que produziu tudo isso (8.17), esquecendo quem deu, desde o início, a força para produzir.";
+    }
+  }
+
+  function showNspOutcome(type){
+    const btnVer = document.getElementById('btnNspVer');
+    const btnPalavra = document.getElementById('btnNspPalavra');
+    btnVer.classList.remove('active-worry');
+    btnPalavra.classList.remove('active-calm');
+    const visual = document.getElementById('nspOutcomeVisual');
+    const title = document.getElementById('nspOutcomeTitle');
+    const text = document.getElementById('nspOutcomeText');
+
+    if (type === 'ver'){
+      btnVer.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma vida do tamanho do prato";
+      text.textContent = "É medir a própria vida só pelo que se pode ver, comer ou acumular — o mesmo erro que o aviso da fartura descreve (8.12-14,17), e que reduz um ser humano feito à imagem de Deus a pouco mais do que seu próprio estômago.";
+    } else {
+      btnPalavra.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma vida sustentada por cada palavra";
+      text.textContent = "É repetir, com Jesus no deserto, que \"nem só de pão viverá o homem, mas de toda palavra que sai da boca de Deus\" (Mateus 4.4; Deuteronômio 8.3) — reconhecendo que toda provisão, visível ou não, começa e termina na fidelidade de Deus.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

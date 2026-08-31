@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escolhido, não por mérito — Deuteronômio 7; 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão C — as sete nações maiores x Israel, "o menor de todos os povos" */
+  .esm-nation-outer{ margin-top:16px; }
+  .esm-nation-label{ font-size:12.5px; line-height:1.55; color:var(--text-faint); margin-bottom:10px; }
+  .esm-nation-row{ display:flex; align-items:flex-end; gap:10px; margin:6px 0 14px; flex-wrap:wrap; }
+  .esm-nation-dot{ width:22px; height:22px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .esm-nation-dot.lit{ background:var(--worry); transform:scale(1.15); box-shadow:0 0 8px 1px rgba(168,92,107,.4); }
+  .esm-nation-dot.esm-israel{ width:11px; height:11px; }
+  .esm-nation-dot.esm-israel.lit{ background:var(--gold); transform:scale(1.3); box-shadow:0 0 9px 1px var(--gold); }
+  .esm-nation-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">Eleição pela graça</span>
+  </div>
+
+  <div class="eyebrow">Não pelo teu mérito, mas pelo seu amor · <span class="ref-tag">Deuteronômio 7; 9</span></div>
+  <h1>Escolhido, não por mérito</h1>
+  <p class="sub">Antes que o povo cruze o Jordão, Moisés faz questão de fechar qualquer porta para o orgulho. Israel não foi escolhido por ser grande, forte ou justo — e Moisés reabre, com detalhes dolorosos, a memória do bezerro de ouro para provar exatamente isso. A eleição de Israel nasce inteira do amor e da fidelidade de Deus, nunca do mérito de quem foi escolhido.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C4 11 3 7 6 5 C7.5 4 9 5 9 6.5 C9 5 10.5 4 12 5 C15 7 14 11 9 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O menor de todos os povos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés antecipa a pergunta que qualquer israelita poderia fazer diante da própria eleição: por que nós? A resposta chega sem rodeios — e sem lisonja. "O Senhor, teu Deus, te escolheu para lhe seres o seu próprio povo, dentre todos os povos que há sobre a face da terra" (7.6), mas não porque Israel fosse maior ou mais numeroso do que os outros. Ao contrário: "porque vós éreis o menor de todos os povos" (7.7).</p>
+          <p>A explicação que Moisés dá para essa escolha é dupla, e nenhuma das duas partes depende de Israel: o Senhor os amou, e o Senhor guardou o juramento feito aos patriarcas (7.8). Não há terceiro motivo — nenhuma qualidade, força ou virtude de Israel entra na equação. A eleição nasce inteiramente de fora do povo escolhido.</p>
+
+          <div class="esm-nation-outer">
+            <div class="esm-nation-label">As nações já estabelecidas na terra prometida eram, em número e força, maiores do que Israel (7.1) — toque para ver, uma a uma, essa desproporção:</div>
+            <div class="esm-nation-row" id="esmNationRow"></div>
+            <button class="continue-btn" style="margin-top:0;" onclick="revealEsmNations()" id="esmNationBtn">Comparar Israel às nações da terra</button>
+            <p class="esm-nation-caption" id="esmNationCaption"></p>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → não pela tua justiça</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 6 L1.5 10 Q3 11.5 4.5 10 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M15 6 L13.5 10 Q15 11.5 16.5 10 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Não pela tua justiça</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 9 retoma o mesmo assunto de um ângulo ainda mais direto, agora olhando para a conquista que está prestes a acontecer. Quando o Senhor expulsar diante de Israel nações maiores e mais fortes, Moisés adverte contra uma conclusão natural, quase automática: "Não digas no teu coração... por causa da minha justiça o Senhor me trouxe a esta terra" (9.4).</p>
+          <p>A explicação real é dupla, e de novo nenhuma parte é elogio a Israel: é "pela impiedade destas nações" que o Senhor as expulsa (9.4-5), e é para cumprir o juramento feito a Abraão, Isaque e Jacó (9.5). E, para que não sobre nenhum espaço para orgulho, Moisés arremata com uma frase que corta fundo: "sabe, pois, que não é por causa da tua justiça que o Senhor, teu Deus, te dá esta boa terra em possessão; porque és povo de dura cerviz" (9.6). "Dura cerviz" é a imagem de um boi que resiste ao jugo, teimoso, difícil de conduzir — o oposto exato de mérito.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o bezerro de ouro relembrado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 2 H13 V16 H5 Z" stroke-width="1.3"/>
+          <path d="M9 2 L7 7 L10 9 L8 16" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O bezerro de ouro relembrado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Como prova viva de que Israel não tem mérito próprio algum, Moisés reabre uma ferida que o povo talvez preferisse esquecer: o episódio do bezerro de ouro no Sinai. Enquanto Moisés estava no monte recebendo as tábuas escritas pelo próprio dedo de Deus, o povo já se corrompia lá embaixo, fundindo um bezerro e curvando-se diante dele (9.12,16) — quase no mesmo instante em que a aliança estava sendo selada.</p>
+          <p>A ira do Senhor diante disso foi tão grave que ele chegou a propor destruir todo o povo e recomeçar apenas a partir de Moisés (9.14). E o próprio Moisés, ao descer o monte e ver a apostasia com os próprios olhos, quebrou as tábuas da aliança (9.17) — um gesto que dramatiza, de forma quase física, o quanto a fidelidade do povo era frágil bem no momento em que a aliança nascia. Moisés não conta esse episódio para humilhar o povo por humilhar; conta para que ninguém confunda eleição com merecimento.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a intercessão de Moisés</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 3 H13 L9 9 L13 15 H5 L9 9 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A intercessão de Moisés</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante da ameaça de destruição, Moisés não recorre a nenhum argumento sobre o valor do povo — porque não há nenhum a oferecer. Ele conta como se prostrou diante do Senhor quarenta dias e quarenta noites, sem comer pão nem beber água, por causa do pecado que o povo cometera (9.18,25). É uma intercessão longa, física, custosa — e apoiada inteiramente em outro fundamento.</p>
+          <p>O apelo de Moisés é ao próprio nome e à reputação de Deus entre as nações: se Israel for destruído, o Egito e as outras nações dirão que o Senhor não foi capaz de cumprir o que prometeu, "porquanto o Senhor não os podia levar à terra que lhes prometera" (9.28). Moisés ainda lembra o Senhor da sua própria aliança com Abraão, Isaque e Jacó, pedindo que não olhe "para a dureza deste povo, nem para a sua impiedade, nem para o seu pecado" (9.27). A salvação do povo depende, do início ao fim, do caráter de Deus — nunca da conduta de Israel.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Eleição pela graça, não pelo mérito</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Colocados lado a lado, os capítulos 7 e 9 fecham qualquer saída para o orgulho de Israel. Não foram escolhidos por serem numerosos (7.7), nem por serem justos (9.4-6); e a própria história deles, começando pelo bezerro de ouro, é a evidência mais forte de que não havia mérito a reivindicar. O que resta, no fim, não é o currículo do povo, mas o caráter do Deus que os escolheu — seu amor, seu juramento e sua reputação entre as nações.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 9.5</span>
+          <p>Não é por causa da tua justiça, nem por causa da retidão do teu coração, que entras a possuir a sua terra... mas pela impiedade destas nações o Senhor, teu Deus, as lança fora de diante de ti; e para confirmar a palavra que jurou a teus pais.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Séculos depois, é essa mesma lógica que Paulo formaliza como o coração do evangelho: a salvação "não vem de vós, é dom de Deus. Não vem das obras, para que ninguém se glorie" (Efésios 2.8-9). O padrão já estava ali, gravado na própria história de Israel — um povo pequeno, teimoso e sem mérito, amado e escolhido de qualquer forma. A pergunta que Deuteronômio 7 e 9 fazem ao antigo Israel é a mesma que continua aberta a cada leitor: de onde vem a certeza de pertencer a Deus?</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnEsmMerito" onclick="showEsmOutcome('merito')">Escolhido por merecer</button>
+            <button class="toggle-btn" id="btnEsmGraca" onclick="showEsmOutcome('graca')">Escolhido apesar de não merecer</button>
+          </div>
+
+          <div class="outcome" id="esmOutcomeCard">
+            <div class="outcome-visual" id="esmOutcomeVisual"></div>
+            <h3 id="esmOutcomeTitle"></h3>
+            <p id="esmOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · escolhido, não por mérito</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const esmNations = [
+    { name: "Hititas", detail: "uma das grandes potências do antigo Oriente Próximo." },
+    { name: "Girgaseus", detail: "um dos povos antigos de Canaã, pouco documentado fora da Bíblia." },
+    { name: "Amorreus", detail: "conhecidos por reinos fortificados, já derrotados por Israel a leste do Jordão (2.24-37; 3.1-11)." },
+    { name: "Cananeus", detail: "davam nome à própria terra, estabelecidos havia gerações em cidades muradas." },
+    { name: "Ferezeus", detail: "povoavam sobretudo as regiões montanhosas do interior." },
+    { name: "Heveus", detail: "presentes em cidades como Gibeão (Josué 9.7)." },
+    { name: "Jebuseus", detail: "ocupavam Jerusalém, que só seria tomada séculos depois, por Davi." },
+    { name: "Israel", detail: "\"o menor de todos os povos\" (7.7) — e ainda assim o escolhido, não por força ou número, mas por amor e por juramento (7.7-8).", israel: true }
+  ];
+
+  function buildEsmNations(){
+    const row = document.getElementById('esmNationRow');
+    esmNations.forEach(n => {
+      const d = document.createElement('div');
+      d.className = 'esm-nation-dot' + (n.israel ? ' esm-israel' : '');
+      row.appendChild(d);
+    });
+  }
+  buildEsmNations();
+
+  function revealEsmNations(){
+    const dots = document.querySelectorAll('#esmNationRow .esm-nation-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('esmNationCaption').textContent = esmNations[i].name + " — " + esmNations[i].detail;
+    }, i * 260));
+    setTimeout(() => {
+      document.getElementById('esmNationBtn').textContent = "Sete nações maiores, um povo menor — e ainda assim, o escolhido";
+    }, esmNations.length * 260);
+  }
+
+  function showEsmOutcome(type){
+    const btnMerito = document.getElementById('btnEsmMerito');
+    const btnGraca = document.getElementById('btnEsmGraca');
+    btnMerito.classList.remove('active-worry');
+    btnGraca.classList.remove('active-calm');
+    const visual = document.getElementById('esmOutcomeVisual');
+    const title = document.getElementById('esmOutcomeTitle');
+    const text = document.getElementById('esmOutcomeText');
+
+    if (type === 'merito'){
+      btnMerito.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um pertencimento que nunca descansa";
+      text.textContent = "Se a eleição dependesse do mérito de Israel, ela teria acabado antes de começar — no próprio Sinai, diante do bezerro de ouro (9.7-21). Buscar segurança no próprio desempenho é entrar num ciclo que nunca se fecha, porque nenhum mérito humano é, de fato, suficiente.";
+    } else {
+      btnGraca.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um pertencimento ancorado em Deus";
+      text.textContent = "É reconhecer, com Moisés, que a base nunca foi \"a tua justiça\" (9.4-6), mas o amor e o juramento de Deus (7.7-8) — a mesma graça que Paulo depois descreve como dom, \"não das obras, para que ninguém se glorie\" (Efésios 2.8-9).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

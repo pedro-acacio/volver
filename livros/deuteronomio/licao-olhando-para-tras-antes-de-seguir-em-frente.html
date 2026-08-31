@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olhando para trás antes de seguir em frente — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .esp-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 4px; flex-wrap:wrap; }
+  .esp-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .esp-seq-dot.lit-worry{ background:var(--worry); transform:scale(1.2); box-shadow:0 0 9px 1px var(--worry); }
+  .esp-seq-dot.lit-calm{ background:var(--calm); transform:scale(1.2); box-shadow:0 0 9px 1px var(--calm); }
+  .esp-seq-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:40px; }
+  .esp-seq-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">Lição 1 · Prólogo histórico</span>
+  </div>
+
+  <div class="eyebrow">O primeiro discurso de Moisés · <span class="ref-tag">Deuteronômio 1—4</span></div>
+  <h1>Olhando para trás antes de seguir em frente</h1>
+  <p class="sub">Antes de dar uma única lei nova, Moisés abre o seu último discurso contando uma história — a própria história do povo que está diante dele. Não é nostalgia. É o fundamento sobre o qual tudo o mais no livro será construído: uma geração que nunca viu o Egito, o Sinai ou Cades-Barneia precisa primeiro herdar a memória antes de herdar a terra.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L2 11 H6 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M14 6 L12 11 H16 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A instituição de juízes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés começa relembrando algo que, à primeira vista, parece um detalhe administrativo: em Horebe, incapaz de carregar sozinho o peso de julgar todas as causas de um povo tão numeroso, ele disse a Israel: "Não posso eu só levar-vos" (1.9). A resposta não foi centralizar mais poder, mas distribuí-lo — Moisés pediu que cada tribo escolhesse "homens sábios, e entendidos, e experimentados" (1.13), que ele então constituiu chefes sobre mil, sobre cem, sobre cinquenta e sobre dez.</p>
+          <p>As causas mais simples ficavam com esses juízes; só "a causa que vos for difícil, a trareis a mim, e eu a ouvirei" (1.17). É um pequeno detalhe para começar um discurso de despedida, mas revela algo importante sobre a liderança que Moisés está prestes a entregar: não é uma liderança que centraliza tudo em si, mas uma que confia responsabilidade a homens experientes — a mesma estrutura que sustentaria Israel depois que ele já não estivesse mais ali.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Cades-Barneia relembrado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 9 C5 4 13 4 16 9 C13 14 5 14 2 9 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="9" cy="9" r="2.2" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Cades-Barneia relembrado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chegando a Cades-Barneia, à porta da terra prometida, Moisés enviou doze homens para espiar a terra (1.22-24). Eles voltaram com fruto do vale de Escol — e com um relatório que aterrorizou o povo: "o povo é maior e mais alto do que nós; as cidades são grandes e muradas até ao céu; e também vimos ali filhos dos anaquins" (1.28). Diante disso, o povo se recusou a subir, murmurando que o Senhor os odiava e os havia tirado do Egito só para morrerem ali (1.27).</p>
+          <p>Toque no botão para ver, um a um, como os doze responderam diante da mesma terra e das mesmas notícias.</p>
+
+          <div class="esp-seq-row" id="espSeqRow"></div>
+          <button class="continue-btn" style="margin-top:0;" onclick="revealEspSeq()" id="espSeqBtn">Ver os doze relatórios</button>
+          <p class="esp-seq-caption" id="espSeqCaption">Nenhum relatório revelado ainda.</p>
+
+          <p>Apenas dois — Calebe e Josué — creram que Deus cumpriria o que havia prometido. Os outros dez arrastaram o povo ao medo, e o Senhor jurou que, "salvo Calebe" e Josué, nenhum homem daquela geração veria a boa terra (1.35-36, 38). O castigo foi quarenta anos de deserto — tempo suficiente para que "toda aquela geração de homens de guerra... se consumisse do meio do arraial" (2.14-15).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → as vitórias recentes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 L14 14 M14 4 L4 14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 4 L2.5 2.5 M14 14 L15.5 15.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">As vitórias recentes sobre Seom e Ogue</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quarenta anos depois, o povo enfrenta um teste muito parecido — e responde de um jeito completamente diferente. Seom, rei amorreu de Hesbom, recusa-se a deixar Israel passar por sua terra e sai para atacá-los; Israel o derrota e toma todas as suas cidades (2.24-36). Em seguida, Ogue, rei de Basã, sai para a guerra em Edrei com seu povo — e é derrotado da mesma forma, junto com sessenta cidades fortificadas (3.1-7). Moisés ainda lembra, quase como uma curiosidade, o tamanho da cama de ferro de Ogue, guardada em Rabá (3.11) — um lembrete físico de que gigante nenhum é grande demais para o Senhor.</p>
+          <p>Repare no contraste: são as mesmas condições que paralisaram a geração anterior em Cades-Barneia — reis fortes, cidades muradas, povos temidos. Mas agora, obedecendo em vez de duvidar, o povo vê essas mesmas ameaças caírem diante deles. Seom e Ogue não são apenas vitórias militares; são prova viva, ainda fresca na memória de quem ouve Moisés, de que Deus continua fiel ao que prometeu — mesmo depois de uma geração inteira ter falhado em confiar nisso.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o chamado à fidelidade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 4 L3 6 V15 L9 13 L15 15 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 4 V13" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O chamado à fidelidade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de contar essa história dupla — fracasso e vitória — Moisés faz o pedido central de todo o discurso: "não acrescentareis à palavra que vos mando, nem diminuireis dela" (4.2). Não é um convite a inventar novas obrigações nem a relaxar as que já existem, mas a guardar com cuidado exatamente o que foi entregue.</p>
+          <p>O argumento de Moisés não é abstrato — é experimental: "os vossos olhos viram o que o Senhor fez" (4.3), lembrando o episódio recente de Baal-Peor, quando a idolatria trouxe juízo sobre o povo (Números 25). E ele acrescenta uma promessa notável: guardar esses estatutos e estes juízos "é a vossa sabedoria e o vosso entendimento perante os olhos dos povos" (4.6) — a fidelidade de Israel seria, ela mesma, um testemunho visível às nações ao redor. Por isso o apelo final deste trecho é tão insistente: "guarda-te a ti mesmo... para que não te esqueças" (4.9), e ensina isso aos teus filhos e aos filhos de teus filhos.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → memória como base de fidelidade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 A6 6 0 1 1 3.5 7" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3.5 7 L2 4.5 M3.5 7 L6 6" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Memória como base de fidelidade</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Os quatro primeiros capítulos de Deuteronômio não são um resumo neutro de eventos passados — são um argumento. Moisés não está apenas informando a segunda geração sobre o que aconteceu com seus pais; está formando nela a memória de que precisará para obedecer no futuro. Um povo que esquece Cades-Barneia corre o risco de repetir o medo diante do gigante seguinte; um povo que esquece Seom e Ogue corre o risco de duvidar de novo daquilo que Deus já provou ser capaz de fazer.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 4.9</span>
+          <p>Somente te guarda a ti mesmo, e guarda a tua alma com diligência, para que não te esqueças das coisas que os teus olhos têm visto, e para que não se apartem do teu coração todos os dias da tua vida; mas as notificarás a teus filhos, e aos filhos de teus filhos.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É por isso que Moisés começa aqui, e não direto com as leis. Toda a segunda metade do livro — os mandamentos de Deuteronômio 5—26, as bênçãos e maldições de 27—30 — depende dessa memória bem guardada. Uma lei sem memória vira apenas regra externa; uma lei lembrada dentro da própria história de resgate e fidelidade de Deus se torna algo que o coração quer guardar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnEspWorry" onclick="showEspOutcome('worry')">Esquecer o que Deus já fez</button>
+            <button class="toggle-btn" id="btnEspCalm" onclick="showEspOutcome('calm')">Lembrar para confiar de novo</button>
+          </div>
+
+          <div class="outcome" id="espOutcomeCard">
+            <div class="outcome-visual" id="espOutcomeVisual"></div>
+            <h3 id="espOutcomeTitle"></h3>
+            <p id="espOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · Olhando para trás antes de seguir em frente</footer>
+</div>
+
+<script>
+  const espiasData = [
+    { tipo:'worry' }, { tipo:'worry' }, { tipo:'worry' }, { tipo:'worry' }, { tipo:'worry' },
+    { tipo:'worry' }, { tipo:'worry' }, { tipo:'worry' }, { tipo:'worry' }, { tipo:'worry' },
+    { tipo:'calm', nome:'Calebe', texto:'"Salvo Calebe, filho de Jefoné: este a verá, e a ele darei a terra que pisou, e a seus filhos; porquanto perseverou em seguir ao Senhor" (Deuteronômio 1.36).' },
+    { tipo:'calm', nome:'Josué', texto:'"Josué, filho de Num, que te assiste, esse ali entrará; anima-o, porque ele fará que Israel a herde" (Deuteronômio 1.38).' }
+  ];
+
+  function buildEspSeq(){
+    const el = document.getElementById('espSeqRow');
+    espiasData.forEach(() => { const d = document.createElement('div'); d.className = 'esp-seq-dot'; el.appendChild(d); });
+  }
+  buildEspSeq();
+
+  function revealEspSeq(){
+    const dots = document.querySelectorAll('#espSeqRow .esp-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      const item = espiasData[i];
+      d.classList.add(item.tipo === 'calm' ? 'lit-calm' : 'lit-worry');
+      if (item.tipo === 'calm'){
+        document.getElementById('espSeqCaption').textContent = item.texto;
+      } else {
+        document.getElementById('espSeqCaption').textContent = "Espia " + (i+1) + " de 12: relatório de temor diante das cidades muradas e dos filhos de Anaque (1.28).";
+      }
+    }, i * 240));
+    setTimeout(() => {
+      document.getElementById('espSeqBtn').textContent = "Dez temeram, dois creram";
+      document.getElementById('espSeqCaption').textContent = "Dez espias trouxeram um relatório de medo; apenas Calebe e Josué creram na promessa de Deus — mas foi a maioria que decidiu, naquele dia, o destino de toda uma geração.";
+    }, espiasData.length * 240);
+  }
+
+  function showEspOutcome(type){
+    const btnWorry = document.getElementById('btnEspWorry');
+    const btnCalm = document.getElementById('btnEspCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('espOutcomeVisual');
+    const title = document.getElementById('espOutcomeTitle');
+    const text = document.getElementById('espOutcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma memória que se apaga";
+      text.textContent = "Sem a lembrança de Cades-Barneia, cada novo gigante volta a parecer definitivo, e o medo tem espaço para crescer de novo — como se Deus nunca tivesse cumprido nada antes.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma memória que sustenta obediência";
+      text.textContent = "Lembrar Seom e Ogue — vitórias recentes, ainda frescas — dá à segunda geração uma razão concreta para confiar antes mesmo de atravessar o Jordão: o Deus que já cumpriu, cumprirá de novo.";
+    }
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

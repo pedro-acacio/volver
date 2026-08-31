@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As leis do dia a dia — Deuteronômio 12—26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão C — chip-row temático: três categorias de leis, reveladas uma a uma */
+  .ldd-cat-outer{ margin-top:16px; }
+  .ldd-cat-text{
+    font-size:13.5px; line-height:1.6; color: var(--text-dim);
+    padding-top:12px; margin-top:2px; border-top:1px dashed var(--panel-line); min-height:44px;
+  }
+
+  /* Padrão B — barra: quanto da lei protege o culto x quanto protege o vulnerável */
+  .ldd-bar-outer{ margin-top:16px; }
+  .ldd-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .ldd-bar-track{ height:18px; border-radius:9px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; display:flex; }
+  .ldd-bar-fill{ height:100%; width:0%; border-radius:9px 0 0 9px; background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); transition: width .7s cubic-bezier(.4,0,.2,1); }
+  .ldd-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-deuteronomio.html">Volver</a>
+    <span class="brand-track">O código da vida comum</span>
+  </div>
+
+  <div class="eyebrow">Leis para adorar, liderar e cuidar · <span class="ref-tag">Deuteronômio 12—26</span></div>
+  <h1>As leis do dia a dia</h1>
+  <p class="sub">No meio do segundo discurso de Moisés está o maior bloco de leis de todo o livro — regras sobre onde adorar, quem pode liderar, como tratar o estrangeiro e o pobre, e até que palavras dizer ao entregar a colheita. Não é uma lista fria: é o desenho de uma sociedade inteira, moldada pela memória de ter sido, um dia, escrava no Egito.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 6 V12 M6 9 H12" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um único lugar de adoração</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A primeira lei do bloco muda algo fundamental na prática religiosa de Israel. Antes, era comum sacrificar em vários lugares, conforme a ocasião pedisse; agora, a instrução é buscar exclusivamente "o lugar que o Senhor, vosso Deus, escolher, dentre todas as vossas tribos, para ali pôr o seu nome" (12.5,11), e destruir por completo os altares e símbolos religiosos que restassem das nações cananeias (12.2-3).</p>
+          <p>A razão dessa centralização fica clara pelo contraste: em Canaã, "cada um faz tudo o que bem lhe parece" em matéria de culto, misturando ritos e divindades locais (12.8); Israel deveria adorar de outro jeito, unido a um único lugar escolhido por Deus, não pela conveniência ou preferência de cada família. A unidade do culto protegia a própria identidade do povo, evitando que a adoração ao Senhor se dissolvesse aos poucos nas práticas dos povos ao redor.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → leis sobre reis e profetas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 H16 L12 10 L13.5 15 L9 12 L4.5 15 L6 10 L2 7 H7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Leis sobre reis e profetas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés antecipa um pedido que só se cumpriria séculos depois: "quando entrares na terra... e disseres: Porei rei sobre mim" (17.14). A lei não proíbe essa possibilidade, mas a cerca de limites incomuns para um monarca antigo — o rei não deveria multiplicar cavalos, nem mulheres, nem prata e ouro em excesso (17.16-17), e precisava copiar a lei inteira com as próprias mãos, para lê-la todos os dias da sua vida e "não se exalte o seu coração sobre os seus irmãos" (17.18-20). Um rei em Israel deveria ser, antes de tudo, um leitor obediente da lei — não um acumulador de poder.</p>
+          <p>Quanto aos profetas, a mesma seção promete que Deus levantaria "um profeta como eu, do meio de ti" (18.15), mas também estabelece um teste prático contra falsas vozes: se o profeta falar em nome do Senhor "e tal palavra se não cumprir, nem se realizar, é palavra que o Senhor não falou" (18.22). Nem todo discurso religioso merecia confiança automática — o povo tinha responsabilidade de discernir.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → justiça e cuidado com o vulnerável</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 6 L1.5 10 Q3 11.5 4.5 10 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M15 6 L13.5 10 Q15 11.5 16.5 10 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Justiça e cuidado com o vulnerável</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma boa parte das leis deste bloco protege exatamente quem tem menos poder para se defender sozinho. Há a proibição explícita de perverter "o direito do estrangeiro e do órfão", e a instrução de não tomar a roupa da viúva em penhor (24.17). Há também a lei por trás da história de Rute: ao colher a plantação, o dono do campo não deveria voltar para pegar um feixe esquecido, nem colher os cantos por completo — o que sobrasse era, por lei, para "o estrangeiro, o órfão e a viúva" (24.19-21).</p>
+          <p>A cada três anos, ainda, um dízimo especial deveria ser separado e deixado dentro das próprias cidades, "para que o levita... e o estrangeiro, e o órfão, e a viúva... comam e se fartem" (26.12-13). Toque em cada categoria para ver como essas leis se distribuem entre adoração, liderança e justiça social:</p>
+
+          <div class="ldd-cat-outer">
+            <div class="chip-row">
+              <button class="chip-btn chip-gold" onclick="selectLddCat(this, 0)">Adoração</button>
+              <button class="chip-btn chip-gold" onclick="selectLddCat(this, 1)">Liderança</button>
+              <button class="chip-btn chip-gold" onclick="selectLddCat(this, 2)">Justiça social</button>
+            </div>
+            <div class="ldd-cat-text" id="lddCatText">Toque em uma categoria para ver as leis que ela reúne.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a confissão dos primeiros frutos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C6 12 4 9.5 4 7 C4 4.5 6 3 9 5 C12 3 14 4.5 14 7 C14 9.5 12 12 9 15 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A confissão ao trazer os primeiros frutos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Entre tantas leis práticas, o capítulo 26 guarda uma pequena liturgia surpreendente. Ao trazer os primeiros frutos da colheita ao lugar escolhido por Deus, cada israelita deveria recitar em voz alta uma confissão que recontava a própria história da família: "um arameu prestes a perecer foi meu pai" (26.5) — referência a Jacó — que desceu ao Egito, ali se tornou uma grande nação, foi escravizado e clamou ao Senhor, que o tirou "com mão forte, e com braço estendido" (26.5-8).</p>
+          <p>Só depois de recontar essa história inteira, o adorador finalmente dizia: "eis que agora trouxe as primícias do fruto da terra que me deste, ó Senhor" (26.10). Um ato tão comum quanto entregar parte da colheita se transformava, por essa liturgia, num ato deliberado de memória e gratidão — lembrando que a própria terra, e o pão que ela produzia, eram dádiva, não conquista.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Leis que protegem a adoração e o mais vulnerável</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Lidas em conjunto, as leis de Deuteronômio 12—26 recusam uma separação que muitas vezes impomos hoje entre religião e justiça social. O mesmo código que regula onde e como adorar também regula como tratar o estrangeiro que colhe nos cantos do campo, a viúva que recebe o dízimo triênio, e o órfão que come do que sobrou. Adorar bem e cuidar do vulnerável nunca foram, em Israel, assuntos separados.</p>
+        </div>
+
+        <div class="ldd-bar-outer">
+          <div class="ldd-bar-label">Quanto dessa lei, lida como um todo, aparece dedicada a proteger o mais vulnerável — o estrangeiro, o órfão, a viúva e o levita sem herança:</div>
+          <div class="ldd-bar-track"><div class="ldd-bar-fill" id="lddBarFill"></div></div>
+          <div class="ldd-bar-caption" id="lddBarCaption">Toque no botão para revelar a proporção.</div>
+          <button class="continue-btn" style="margin-top:12px;" onclick="revealLddBar()" id="lddBarBtn">Revelar</button>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Deuteronômio 24.19</span>
+          <p>Quando, no teu campo, segares a tua sega, e esqueceres uma gavela, não voltarás a tomá-la; para o estrangeiro, para o órfão e para a viúva será, para que o Senhor, teu Deus, te abençoe em toda a obra das tuas mãos.</p>
+          <span class="ref">— Moisés, ao povo de Israel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Essa é a mesma lei que, gerações depois, permite que Rute, uma estrangeira moabita e viúva, colha nos campos de Boaz e sobreviva (Rute 2.2-3) — um lembrete de que uma lei escrita em Moabe continuava, séculos depois, protegendo quem mais precisava dela.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnLddRitual" onclick="showLddOutcome('ritual')">Uma lei só sobre ritual</button>
+            <button class="toggle-btn" id="btnLddCuidado" onclick="showLddOutcome('cuidado')">Uma lei que também cuida de quem tem menos</button>
+          </div>
+
+          <div class="outcome" id="lddOutcomeCard">
+            <div class="outcome-visual" id="lddOutcomeVisual"></div>
+            <h3 id="lddOutcomeTitle"></h3>
+            <p id="lddOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Deuteronômio · as leis do dia a dia</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const lddCatData = [
+    { text: "Adoração — um único lugar escolhido por Deus para o culto central (12.1-14), evitando que a religião de Israel se misturasse com os ritos das nações ao redor." },
+    { text: "Liderança — limites ao poder de um futuro rei, que não deveria multiplicar cavalos, mulheres ou riquezas e devia copiar a lei com as próprias mãos (17.14-20), e um teste prático para discernir profetas verdadeiros de falsos (18.15-22)." },
+    { text: "Justiça social — proteção ao estrangeiro, ao órfão e à viúva: colheita deixada nos cantos do campo (24.19-21), penhor não tomado da viúva (24.17), e um dízimo triênio dedicado a quem não tinha herança própria na terra (26.12-13)." }
+  ];
+
+  function selectLddCat(btn, i){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('lddCatText').textContent = lddCatData[i].text;
+  }
+
+  function revealLddBar(){
+    document.getElementById('lddBarFill').style.width = '38%';
+    document.getElementById('lddBarCaption').textContent = "Um bloco expressivo de mandamentos — sobre colheita, dízimo, penhor, salário e julgamento — é dedicado especificamente ao estrangeiro, ao órfão, à viúva e ao pobre (24.10-22; 26.12-13), lado a lado com as leis de adoração e liderança.";
+    document.getElementById('lddBarBtn').textContent = "Proporção revelada";
+  }
+
+  function showLddOutcome(type){
+    const btnRitual = document.getElementById('btnLddRitual');
+    const btnCuidado = document.getElementById('btnLddCuidado');
+    btnRitual.classList.remove('active-worry');
+    btnCuidado.classList.remove('active-calm');
+    const visual = document.getElementById('lddOutcomeVisual');
+    const title = document.getElementById('lddOutcomeTitle');
+    const text = document.getElementById('lddOutcomeText');
+
+    if (type === 'ritual'){
+      btnRitual.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um culto fechado sobre si mesmo";
+      text.textContent = "Reduzir Deuteronômio 12—26 a regras de altar e sacrifício deixa de fora justamente as leis que Moisés colocou lado a lado com elas — como se fosse possível adorar bem enquanto se ignora o estrangeiro que colhe nos cantos do campo (24.19-21).";
+    } else {
+      btnCuidado.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um culto que se estende à rua";
+      text.textContent = "É reconhecer que a mesma lei que escolhe um único lugar de adoração (12.5) também deixa colheita para a viúva e o órfão (24.19-21) e separa dízimo para quem não tem herança (26.12-13) — porque, em Israel, adorar bem e cuidar do vulnerável nunca foram coisas separadas.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
