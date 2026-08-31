@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A nova geração e a herança prometida — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .her-bars-wrap{ margin:16px 0 4px; }
+  .her-bar-row{ margin-bottom:14px; }
+  .her-bar-label{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-bottom:6px; }
+  .her-bar-label b{ color:var(--text-dim); font-weight:500; }
+  .her-bar-track{ height:18px; border-radius:9px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .her-bar-fill{ height:100%; width:0%; border-radius:9px; background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); transition: width 1s cubic-bezier(.22,.9,.3,1); }
+  .her-bar-fill.her-fill-2{ background:var(--calm); box-shadow:0 0 10px 1px rgba(124,154,120,.4); }
+  .her-bars-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:14px 0 0; padding-top:12px; border-top:1px dashed var(--panel-line); min-height:20px; }
+  .her-bars-caption b{ color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">A nova geração herda</span>
+  </div>
+
+  <div class="eyebrow">A nova geração herda · <span class="ref-tag">Números 26—36</span></div>
+  <h1>A nova geração e a herança prometida</h1>
+  <p class="sub">Quase quarenta anos depois do primeiro censo junto ao Sinai, um segundo censo é feito nas campinas de Moabe. Os números são quase idênticos — mas os homens contados são outros: uma geração inteira morreu no caminho, e uma nova se prepara, com leis, um novo líder e últimos arranjos, para entrar na terra que a primeira geração perdeu.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 M4 9 H14 M4 14 H10" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O segundo censo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois da praga que se segue ao episódio de Baal-Peor (Números 25), o Senhor manda Moisés e Eleazar fazerem um novo censo, "desde a idade de vinte anos e para cima", das tribos de Israel, agora acampadas nas campinas de Moabe, à beira do Jordão, na fronteira mesma da terra prometida (Números 26.1-4). O total chega a 601.730 homens (Números 26.51) — um número surpreendentemente próximo dos 603.550 contados quase quatro décadas antes, junto ao Sinai (Números 1.46).</p>
+          <p>Mas o texto faz questão de que ninguém confunda essa semelhança numérica com continuidade: "e, entre estes, nenhum houve dos que foram contados por Moisés e Arão, o sacerdote, quando contaram os filhos de Israel no deserto de Sinai. Porquanto o Senhor tinha dito deles: certamente morrerão no deserto. E nenhum deles ficou, senão Calebe, filho de Jefoné, e Josué, filho de Num" (Números 26.64-65). Toque no botão abaixo para comparar os dois censos:</p>
+
+          <div class="her-bars-wrap">
+            <div class="her-bar-row">
+              <div class="her-bar-label"><b>Primeiro censo — Números 1 (junto ao Sinai)</b><span id="herBar1Num">603.550</span></div>
+              <div class="her-bar-track"><div class="her-bar-fill" id="herBar1Fill"></div></div>
+            </div>
+            <div class="her-bar-row">
+              <div class="her-bar-label"><b>Segundo censo — Números 26 (em Moabe)</b><span id="herBar2Num">601.730</span></div>
+              <div class="her-bar-track"><div class="her-bar-fill her-fill-2" id="herBar2Fill"></div></div>
+            </div>
+            <button class="continue-btn" type="button" onclick="revelarHerBarras()" style="margin:0;">Comparar os dois censos</button>
+            <div class="her-bars-caption" id="herBarsCaption">Toque no botão para ver o quanto os dois totais se aproximam.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as filhas de Zelofeade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6.5" cy="9" r="3" stroke-width="1.3"/>
+          <path d="M9.3 9 H15 M12.3 9 V12 M15 9 V11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As filhas de Zelofeade</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No meio dessa nova geração, cinco irmãs — Malca, Noa, Hogla, Milca e Tirza, filhas de Zelofeade, da tribo de Manassés — se apresentam diante de Moisés, Eleazar, os príncipes e toda a congregação, na entrada da tenda da congregação (Números 27.1-2). O pai delas tinha morrido no deserto sem deixar filhos homens, e a lei de herança da terra, tal como existia, não previa nenhum caminho para que a família dele recebesse uma porção em Canaã.</p>
+          <p>As irmãs não pedem uma exceção por favor pessoal; apelam à justiça: "por que se tiraria o nome de nosso pai do meio da sua família, porquanto não teve filho? dá-nos possessão entre os irmãos de nosso pai" (Números 27.4). Moisés, diante de um caso sem precedente na lei já dada, leva a questão diretamente ao Senhor — e Deus não apenas confirma o pedido das irmãs, dizendo "com razão falam as filhas de Zelofeade", como estabelece, a partir desse caso, uma nova lei permanente de herança para situações semelhantes em todo o Israel (Números 27.5-11). Um pedido de justiça de cinco mulheres sem herança se torna lei para toda uma nação.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Josué, o novo líder</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 L7 7 L10 11 L12 8 L15 14 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Josué escolhido como sucessor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois, o Senhor manda Moisés subir ao monte Abarim para contemplar, de longe, a terra que ele mesmo não vai pisar — lembrando-lhe outra vez o motivo: a rebeldia diante da rocha em Meribá, "porquanto rebeldes fostes ao meu mandado no deserto de Zim, na contenda da congregação, para me santificardes nas águas perante os seus olhos" (Números 27.12-14). É a mesma consequência anunciada em Números 20, agora prestes a se cumprir.</p>
+          <p>A resposta de Moisés a esse anúncio, porém, não é ressentimento — é intercessão pelo povo que ele está prestes a deixar: "provenha o Senhor, Deus dos espíritos de toda a carne, um homem sobre a congregação [...] para que a congregação do Senhor não seja como ovelhas que não têm pastor" (Números 27.15-17). Deus responde designando Josué, "homem em quem há o Espírito", para ser publicamente comissionado diante de Eleazar e de toda a congregação, com Moisés impondo as mãos sobre ele e transferindo-lhe parte da própria autoridade (Números 27.18-23). O líder que não vai entrar providencia, ele mesmo, quem vai liderar a entrada.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → últimos preparativos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L15 5.5 V9 C15 12.5 12.5 15 9 16 C5.5 15 3 12.5 3 9 V5.5 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Últimos preparativos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os capítulos finais de Números reúnem uma série de arranjos práticos antes da travessia do Jordão. Israel trava guerra contra Midiã, em julgamento pela sedução de Baal-Peor (Números 31). As tribos de Rúben e Gade, e depois metade da tribo de Manassés, pedem para se estabelecer a leste do Jordão, em terras já conquistadas, comprometendo-se a atravessar armadas junto com as demais tribos até que a conquista de Canaã estivesse completa (Números 32). E cidades de refúgio são designadas por toda a terra, lugares seguros para quem matasse alguém sem intenção pudesse fugir da vingança de sangue até ser julgado com justiça (Números 35.9-15).</p>
+          <p>Nenhum desses episódios tem o drama das rebeliões anteriores — mas juntos mostram uma geração que já não está apenas sobrevivendo ao deserto: está organizando, com atenção a detalhes de justiça e de guerra, a vida que vai viver do outro lado do rio.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → uma promessa que atravessa gerações</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma promessa que atravessa gerações</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Da metade do livro de Números em diante, quase tudo o que acontece é preparação para uma entrada que a geração que a está preparando não vai viver: Moisés escolhe e comissiona Josué sabendo que ele mesmo ficará de fora; homens contam a nova geração sabendo que quase nenhum deles verá o fim da conquista; leis de herança são fixadas para uma terra que ainda não foi tomada. A promessa continua de pé — mas passa, deliberadamente, por mãos diferentes das que a receberam primeiro.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Números 14.31</span>
+          <p>Mas aos vossos filhinhos, dos quais dissestes que seriam por presa, a estes farei entrar, e eles conhecerão a terra que vós rejeitastes.</p>
+          <span class="ref">— o Senhor, ainda no primeiro ano da rebeldia</span>
+        </div>
+
+        <div class="tl-card" style="margin-top:16px;">
+          <p>Essa palavra é dita ainda no começo do livro (Números 14), décadas antes de Josué ser comissionado — o que mostra que a passagem da promessa para a segunda geração nunca foi um plano de reserva, mas parte do próprio plano de Deus desde o início. A fé que falta numa geração não cancela a fidelidade de Deus; apenas determina quem vai testemunhar, com os próprios olhos, o seu cumprimento.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="herBtnWorry" onclick="showHerOutcome('worry')">Uma promessa que morre com quem falhou</button>
+            <button class="toggle-btn" id="herBtnCalm" onclick="showHerOutcome('calm')">Uma promessa que passa adiante</button>
+          </div>
+
+          <div class="outcome" id="herOutcomeCard">
+            <div class="outcome-visual" id="herOutcomeVisual"></div>
+            <h3 id="herOutcomeTitle"></h3>
+            <p id="herOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · A nova geração e a herança prometida</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revelarHerBarras(){
+    document.getElementById('herBar1Fill').style.width = '100%';
+    document.getElementById('herBar2Fill').style.width = '99.7%';
+    document.getElementById('herBarsCaption').innerHTML = 'Os totais quase se igualam — <b>603.550</b> contra <b>601.730</b>, uma diferença de menos de meio por cento. Mas, segundo Números 26.64-65, nenhum homem do primeiro censo restava vivo para o segundo, "senão Calebe [...] e Josué" — dois nomes em mais de seiscentos mil.';
+  }
+
+  function showHerOutcome(type){
+    const btnWorry = document.getElementById('herBtnWorry');
+    const btnCalm = document.getElementById('herBtnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('herOutcomeVisual');
+    const title = document.getElementById('herOutcomeTitle');
+    const text = document.getElementById('herOutcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Seiscentos mil corpos no deserto";
+      text.textContent = "É a geração que recusou entrar em Canaã depois do relatório dos espias, condenada a cair, homem por homem, ao longo de quase quarenta anos, sem ver com os próprios olhos a terra que Deus tinha prometido.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Filhos que herdam o que os pais perderam";
+      text.textContent = "É a segunda geração, contada num segundo censo, recebendo leis de herança, um novo líder e a própria terra prometida — não por mérito próprio, mas porque a fidelidade de Deus não dependia de a primeira geração ter confiado nele.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

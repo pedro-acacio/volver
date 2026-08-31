@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os Levitas e a Santidade do Arraial — Números 3—9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .arraial-seq-wrap{ margin-top:14px; }
+  .arraial-seq-row{ display:flex; align-items:center; gap:10px; margin:12px 0 4px; flex-wrap:wrap; }
+  .arraial-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .arraial-seq-dot.lit{ background: var(--calm); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--calm); }
+  .arraial-seq-lines{ margin-top:14px; display:flex; flex-direction:column; gap:10px; }
+  .arraial-seq-line{ font-family:'Fraunces', serif; font-style:italic; font-size:15.5px; line-height:1.5; color: var(--text-dim); opacity:0; transform:translateY(6px); transition: opacity .5s ease, transform .5s ease; margin:0; }
+  .arraial-seq-line.lit{ opacity:1; transform:translateY(0); color: var(--text); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">Números · I. A primeira geração se prepara</span>
+  </div>
+
+  <div class="eyebrow">Consagração e pureza · <span class="ref-tag">Números 3—9</span></div>
+  <h1>Os levitas e a santidade do arraial</h1>
+  <p class="sub">Entre o censo do capítulo 1 e a partida do capítulo 10, Números faz uma longa pausa para tratar de pureza, votos e consagração. São capítulos fáceis de pular — mas é exatamente aqui que o livro explica, em detalhe, o que custa ter um Deus santo morando no meio de um acampamento comum.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 6 V13 M13 6 V13" stroke-width="1.2"/>
+          <path d="M4 13 H7 M11 13 H14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">As três famílias de Levi</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os capítulos 3 e 4 organizam a tribo de Levi em três famílias, descendentes dos três filhos de Levi, cada uma com uma parte específica do tabernáculo sob sua responsabilidade quando o povo se mudava de lugar. Os gersonitas carregavam as cortinas, as coberturas e os panos do tabernáculo e do átrio (4.24-26); os meraritas carregavam a estrutura pesada — as tábuas, as barras, as colunas e as bases (4.31-32); e os coatitas carregavam os próprios objetos sagrados — a arca, a mesa, o candelabro, os altares —, mas somente depois que Arão e seus filhos os cobriam, porque "não tocarão as coisas santificadas, para que não morram" (4.15).</p>
+          <p>Cada família tinha um líder designado por nome (3.24, 3.30, 3.35) e um número próprio de homens entre trinta e cinquenta anos, a idade da força para o serviço pesado de carregar (4.3, 4.23, 4.30). Nada nessa organização é genérico: até o transporte de uma tenda tinha divisão de trabalho, hierarquia e cuidado.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → pureza e justiça no arraial</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 5 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 5 L1.5 9 H4.5 Z" stroke-width="1" stroke-linejoin="round"/>
+          <path d="M15 5 L13.5 9 H16.5 Z" stroke-width="1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Pureza e justiça no arraial</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 5 abre com uma ordem direta: quem tivesse lepra, um fluxo do corpo ou tivesse tocado num cadáver deveria sair do meio do arraial, "para que não contaminem o seu arraial, no meio do qual eu habito" (5.3). A razão não é higiene abstrata — é a proximidade literal de Deus. Logo depois vem a lei da restituição (5.5-10): quem prejudicasse o próximo devia confessar a culpa e restituir o dano, acrescentando ainda um quinto a mais; se a vítima já não tinha parente vivo para receber, a restituição ia para o sacerdote. Pureza cerimonial e justiça entre vizinhos, aqui, caminham lado a lado.</p>
+          <p>O restante do capítulo descreve o rito da mulher suspeita de adultério, o chamado teste de ciúme (5.11-31): diante da acusação de um marido sem prova nem testemunha, o próprio Deus, por meio de um rito com água, pó do chão do tabernáculo e um juramento, se tornava o juiz da questão — poupando a mulher inocente de viver sob suspeita permanente, e deixando o julgamento nas mãos de Deus, não da fúria humana.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o nazireu e a bênção</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3" stroke-width="1.3"/>
+          <path d="M9 2 V4 M9 14 V16 M2 9 H4 M14 9 H16 M4.2 4.2 L5.6 5.6 M12.4 12.4 L13.8 13.8 M4.2 13.8 L5.6 12.4 M12.4 5.6 L13.8 4.2" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O nazireu e a bênção</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 6 descreve o voto do nazireu — não um chamado especial, mas um voto voluntário, aberto a qualquer homem ou mulher que quisesse se separar para o SENHOR por um período determinado (6.1-2). Três restrições marcavam esse tempo: nada de vinho, vinagre, uva ou qualquer produto da videira (6.3-4); a navalha não podia passar pela cabeça (6.5); e o nazireu não podia se aproximar de um cadáver, nem do próprio pai ou mãe (6.6-7). Era uma santidade visível, carregada no corpo, por escolha própria.</p>
+          <p>Logo em seguida vem um dos textos mais repetidos do Antigo Testamento: a bênção que Arão e seus filhos deveriam pronunciar sobre o povo (6.22-27), três linhas curtas que resumem, em ordem crescente de intimidade, o que significa ser abençoado por Deus. Revele as três linhas, uma a uma:</p>
+
+          <div class="arraial-seq-wrap">
+            <div class="arraial-seq-row" id="arraialSeqRow">
+              <div class="arraial-seq-dot"></div>
+              <div class="arraial-seq-dot"></div>
+              <div class="arraial-seq-dot"></div>
+            </div>
+            <button class="continue-btn" style="margin-top:0;" onclick="revealArraialBencao()">Revelar a bênção, linha por linha</button>
+            <div class="arraial-seq-lines" id="arraialSeqLines">
+              <p class="arraial-seq-line">"O SENHOR te abençoe, e te guarde;"</p>
+              <p class="arraial-seq-line">"o SENHOR faça resplandecer o seu rosto sobre ti, e tenha misericórdia de ti;"</p>
+              <p class="arraial-seq-line">"o SENHOR sobre ti levante o seu rosto, e te dê a paz." (Números 6.24-26)</p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → consagração e a segunda Páscoa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 V15 H14 V3" stroke-width="1.3"/>
+          <path d="M9 3 V15" stroke-width="1.1"/>
+          <circle cx="7.3" cy="9" r="0.8" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Consagração e a segunda Páscoa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 8 descreve a consagração dos levitas com um vocabulário emprestado dos sacrifícios: eles são aspergidos, raspam todo o corpo, lavam as vestes, e o povo impõe as mãos sobre eles (8.5-10) antes de Arão os "mover como oferta movida... de parte dos filhos de Israel" (8.11). Eles são, literalmente, apresentados a Deus como uma oferta viva, tomados no lugar de todo primogênito de Israel (8.16-18) — um povo inteiro representado, e consagrado, por meio de uma só tribo.</p>
+          <p>Logo depois, um caso concreto testa a lei: alguns homens estavam impuros por causa de um cadáver justamente no dia da Páscoa, e perguntam a Moisés se por isso ficariam de fora (9.6-7). Moisés consulta o SENHOR, e a resposta é uma exceção deliberada: quem estivesse impuro ou em viagem poderia celebrar a Páscoa um mês depois, no décimo quarto dia do segundo mês (9.9-13). A lei, aqui, não existe para excluir quem quer se aproximar de Deus — existe para abrir um caminho possível, mesmo quando as circunstâncias atrapalham.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → um Deus santo, um povo santo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um Deus santo, um povo santo</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Do censo dos levitas às leis de pureza, do voto do nazireu à segunda Páscoa, esses sete capítulos giram todos em torno da mesma questão: como um povo comum, com corpos que adoecem, brigam entre si e cometem erros, pode viver colado a um Deus perfeitamente santo sem ser consumido por essa proximidade? A resposta de Números não é distância — é estrutura. Leis, ofertas, votos e exceções cuidadosamente pensadas, todas na mesma direção: tornar segura, e possível, a convivência entre o santo e o comum.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">1 Pedro 1.15-16</span>
+          <p>Mas, como aquele que vos chamou é santo, sede vós também santos em toda a vossa maneira de viver; porquanto está escrito: Sede santos, porque eu sou santo.</p>
+          <span class="ref">— o apóstolo Pedro</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Séculos depois de Números, Pedro escreve a mesma lógica para a igreja: não como ameaça, mas como identidade — um povo chamado a refletir o caráter de quem o chamou. As leis do arraial de Israel eram temporárias e cerimoniais, mas o princípio por trás delas atravessa as Escrituras inteiras: a presença de Deus sempre pede um povo que leve a santidade a sério, não por medo, mas porque pertence a ele.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Descuido com a presença de Deus</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Reverência que também abre caminho</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · os levitas e a santidade do arraial</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revealArraialBencao(){
+    const dots = document.querySelectorAll('#arraialSeqRow .arraial-seq-dot');
+    const lines = document.querySelectorAll('#arraialSeqLines .arraial-seq-line');
+    dots.forEach((d, i) => setTimeout(() => d.classList.add('lit'), i * 450));
+    lines.forEach((l, i) => setTimeout(() => l.classList.add('lit'), i * 450));
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Tocar sem cuidado o que é santo";
+      text.textContent = "É tratar a presença de Deus como algo comum — entrar sem preparo, aproximar-se sem reverência —, e descobrir tarde demais que a proximidade descuidada com o santo não é inofensiva.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Cuidado que também convida";
+      text.textContent = "É a mesma reverência que impõe limites — cobrir, purificar, esperar — abrindo, ao mesmo tempo, um caminho real de acesso: mesmo quem estava impuro ou impedido recebia uma segunda chance de se aproximar.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

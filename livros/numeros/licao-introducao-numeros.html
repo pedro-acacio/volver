@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Números — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .num-bar-outer{ margin-top:18px; }
+  .num-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .num-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .num-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .num-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .num-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .num-seg:nth-child(1){ background:var(--gold); }
+  .num-seg:nth-child(2){ background:var(--worry); }
+  .num-seg:nth-child(3){ background:var(--calm); }
+  .num-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .num-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
+
+  .num-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 4px; flex-wrap:wrap; }
+  .num-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .num-seq-dot.lit{ background:var(--worry); transform:scale(1.2); box-shadow:0 0 9px 1px var(--worry); }
+  .num-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-faint); margin-left:4px; }
+  .num-seq-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">O quarto livro de Moisés · <span class="ref-tag">Números 1—36</span></div>
+  <h1>Introdução a Números</h1>
+  <p class="sub">Dois censos abrem e fecham o livro — e entre eles, quase quarenta anos de deserto. Números conta a história de uma geração que teve tudo para entrar na terra prometida e não entrou, e de uma segunda geração que aprende, com o próprio fracasso da primeira, o que significa confiar em Deus.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor e data</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Como o restante do Pentateuco, Números é atribuído a Moisés, escrito por volta de 1406 a.C. — embora alguns trechos possam ter sido acrescentados posteriormente por profetas seguintes, um pouco como o próprio relato da morte de Moisés no fim de Deuteronômio. O livro é datado como posterior ao livro anterior do Pentateuco: começa no segundo ano depois da saída do Egito, com o povo ainda acampado ao pé do Sinai (1.1), e termina quase quarenta anos depois, nas campinas de Moabe, à beira do rio Jordão — na véspera da entrada na terra prometida.</p>
+          <p>Esse intervalo de quatro décadas é o próprio assunto do livro: entre o primeiro censo, junto ao Sinai, e o segundo, em Moabe, uma geração inteira nasce, envelhece e morre no deserto — e é essa longa espera, mais do que qualquer batalha, que Números precisa explicar.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o nome do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um livro "no deserto"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em hebraico, o nome do livro é <em>Bemidbar</em> — "no deserto" — tirado da quinta palavra do texto original, o mesmo padrão de nomear livros pela primeira palavra significativa que já vimos em Gênesis (<em>Bereshit</em>) e Levítico (<em>Vayikra</em>). É um título mais fiel ao conteúdo do que o nome que conhecemos: quase todo o livro se passa literalmente no deserto, na longa travessia entre o Sinai e as campinas de Moabe.</p>
+          <p>O nome "Números" vem do grego <em>arithmoi</em>, título dado pela Septuaginta (a tradução grega do Antigo Testamento) por causa dos dois censos que abrem e fecham o livro — um contando a primeira geração que saiu do Egito (capítulo 1), outro contando a segunda geração, nascida no deserto, que finalmente entraria em Canaã (capítulo 26). Os números, porém, não são o coração do livro: são apenas a moldura de uma história sobre fé e incredulidade.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → as três partes do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">As três partes do livro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Números se organiza em torno de duas gerações e uma marcha fracassada entre elas. Toque em cada parte para ver o que ela cobre:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 0, 'partsText')">I. A primeira geração se prepara</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 1, 'partsText')">II. A marcha fracassada</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 2, 'partsText')">III. A nova geração herda</button>
+          </div>
+          <div class="chip-text" id="partsText">Toque em cada parte para ver o que ela cobre.</div>
+
+          <div class="num-bar-outer">
+            <div class="num-bar-label">Como essas três partes se distribuem nos 36 capítulos do livro:</div>
+            <div class="num-bar" role="group" aria-label="Distribuição dos capítulos de Números entre as três partes">
+              <button type="button" class="num-seg" style="width:27.78%;" onclick="selectNumBlock(this, 0)" aria-label="A primeira geração se prepara, capítulos 1 a 10"></button>
+              <button type="button" class="num-seg" style="width:41.67%;" onclick="selectNumBlock(this, 1)" aria-label="A marcha fracassada, capítulos 11 a 25"></button>
+              <button type="button" class="num-seg" style="width:30.56%;" onclick="selectNumBlock(this, 2)" aria-label="A nova geração herda, capítulos 26 a 36"></button>
+            </div>
+            <div class="num-bar-ends"><span>cap. 1</span><span>cap. 36</span></div>
+            <div class="num-bar-caption" id="numBarText">Toque em um trecho da barra para ver quantos capítulos ele ocupa.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → uma geração que falha</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Uma geração que falha, uma geração que herda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O propósito de Números é contar como Israel, depois de receber a lei no Sinai, tenta — e primeiro fracassa — conquistar a terra que Deus havia prometido. A primeira geração, apesar de ver o poder de Deus nas pragas do Egito, na travessia do mar e na provisão diária do maná, ainda assim murmura, duvida e se rebela repetidas vezes contra a liderança que Deus escolheu. O ponto mais grave dessa incredulidade é a recusa de entrar em Canaã depois do relatório dos doze espias (capítulos 13—14): por essa desconfiança, essa geração inteira é condenada a morrer no deserto, sem ver a terra prometida.</p>
+          <p>Mas Números não termina em julgamento. O livro registra, ao mesmo tempo, uma fidelidade paciente e severa de Deus, que continua guiando, alimentando e protegendo seu povo mesmo quando o povo falha — e prepara deliberadamente a segunda geração, nascida no próprio deserto, para fazer o que a primeira se recusou a fazer. Um dos temas mais repetidos do livro é, por isso, a santidade da presença de Deus em meio ao acampamento: um Deus santo caminhando literalmente no meio de um povo pecador, exigindo tanto reverência quanto tornando possível a própria caminhada.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo em Números</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo em Números</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Um dos episódios mais estranhos do livro se torna, nas palavras do próprio Jesus, uma das figuras mais claras do evangelho no Antigo Testamento. Depois de mais uma murmuração, serpentes venenosas atacam o acampamento e muitos morrem (21.4-9). Quando o povo se arrepende, Deus não remove as serpentes — em vez disso, manda Moisés erguer uma serpente de bronze num mastro: quem simplesmente olhasse para ela, depois de ter sido mordido, vivia.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 3.14-15</span>
+          <p>E, como Moisés levantou a serpente no deserto, assim importa que o Filho do homem seja levantado; para que todo aquele que nele crê não pereça, mas tenha a vida eterna.</p>
+          <span class="ref">— Jesus, a Nicodemos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus mesmo faz essa ligação, séculos depois: assim como o remédio para o veneno não era um esforço ou um rito, mas um simples olhar de fé para o que fora levantado, a cura para o pecado não vem do próprio esforço, mas de olhar para Cristo levantado na cruz. O mesmo padrão aparece noutros lugares do livro — Paulo chama a rocha da qual brotou água no deserto de "Cristo" (1 Coríntios 10.4), e o próprio Balaão, contratado para amaldiçoar Israel, é forçado a profetizar que "uma estrela procederá de Jacó" (24.17), lida havia séculos como uma promessa messiânica.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Padrão de morder e morrer</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Padrão de olhar e viver</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Números</footer>
+</div>
+
+<script>
+  const partsData = [
+    { text: "Números 1—10 — a primeira geração se prepara: o censo do exército, a organização do acampamento ao redor do tabernáculo, a consagração dos levitas, e os últimos preparativos antes de partir do Sinai." },
+    { text: "Números 11—25 — a marcha fracassada: murmurações repetidas, o relatório dos doze espias e a recusa de entrar em Canaã, a rebelião de Coré, e episódios como a serpente de bronze e Balaão — tudo culminando na morte no deserto de toda a primeira geração." },
+    { text: "Números 26—36 — a nova geração herda: um segundo censo, leis sobre herança e votos, a nomeação de Josué como sucessor de Moisés, e os últimos preparativos para a nova geração finalmente entrar na terra prometida." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const numBarData = [
+    { label: "I. A primeira geração se prepara", range: "capítulos 1–10", chapters: 10 },
+    { label: "II. A marcha fracassada", range: "capítulos 11–25", chapters: 15 },
+    { label: "III. A nova geração herda", range: "capítulos 26–36", chapters: 11 }
+  ];
+
+  function selectNumBlock(btn, i){
+    btn.parentElement.querySelectorAll('.num-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = numBarData[i];
+    document.getElementById('numBarText').textContent = d.label + " ocupa " + d.range + " — " + d.chapters + " dos 36 capítulos do livro (" + Math.round(d.chapters/36*100) + "%).";
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Mordido, e sem remédio próprio";
+      text.textContent = "É o povo que murmura contra Deus, mordido pelo próprio veneno da incredulidade — e que não tem, em si mesmo, nenhum antídoto para curar a ferida que abriu.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Olhando, e vivendo";
+      text.textContent = "É o mesmo povo erguendo os olhos para o que Deus levantou — a serpente de bronze então, Cristo levantado na cruz agora — e vivendo, não por mérito próprio, mas simplesmente por confiar no remédio que foi dado.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

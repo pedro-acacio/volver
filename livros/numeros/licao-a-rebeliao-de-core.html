@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A rebelião de Coré — Números 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — 250 incensários, barra de proporção */
+  .cor-bar-outer{ margin-top:16px; }
+  .cor-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .cor-bar{ display:flex; width:100%; height:22px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .cor-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.85; transition:opacity .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1); }
+  .cor-seg:hover{ opacity:1; }
+  .cor-seg.active{ opacity:1; transform: scaleY(1.15); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); position:relative; z-index:1; }
+  .cor-seg.leaders{ background:var(--worry); width:8%; }
+  .cor-seg.rest{ background:var(--panel-line); width:92%; }
+  .cor-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
+
+  /* Padrão B (segunda peça) — praga: barra de escala numérica */
+  .praga-bar-outer{ margin-top:18px; }
+  .praga-bar-row{ margin-bottom:10px; }
+  .praga-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:6px; }
+  .praga-bar-track{ height:18px; border-radius:9px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .praga-bar-fill{ height:100%; border-radius:9px; width:0%; transition: width 1.1s cubic-bezier(.22,.9,.3,1); background:var(--worry); box-shadow:0 0 10px 1px rgba(168,92,107,.4); }
+  .praga-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">A marcha fracassada</span>
+  </div>
+
+  <div class="eyebrow">A marcha fracassada · <span class="ref-tag">Números 16</span></div>
+  <h1>A rebelião de Coré</h1>
+  <p class="sub">Um levita, dois rubenitas e duzentos e cinquenta líderes reconhecidos desafiam a liderança que Deus escolheu — e pedem para julgar por si mesmos quem tem o direito de se aproximar do Senhor. A resposta vem diretamente de Deus, e é definitiva.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="7" r="2" stroke-width="1.2"/>
+          <circle cx="12" cy="7" r="2" stroke-width="1.2"/>
+          <circle cx="9" cy="12" r="2" stroke-width="1.2"/>
+          <path d="M6 9 L9 10.5 M12 9 L9 10.5" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A conspiração</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Coré, um levita da linhagem de Coate, se levanta junto com Datã e Abirão, da tribo de Rúben, e mais duzentos e cinquenta líderes reconhecidos da congregação — "homens de nome" — para desafiar publicamente a liderança de Moisés e Arão (16.1-2). A acusação soa quase religiosa em sua formulação: "Basta-vos isso; porque toda a congregação, todos são santos, e o Senhor está no meio deles; por que, pois, vos elevais sobre a congregação do Senhor?" (16.3).</p>
+          <p>É uma meia-verdade perigosa: é verdade que todo o povo tinha sido chamado a ser santo (Êxodo 19.6), mas isso não anulava o chamado específico que Deus tinha dado a Moisés e Arão para mediar essa santidade. Moisés cai com o rosto em terra e propõe que o próprio Senhor decida, no dia seguinte, quem é santo e quem pode se aproximar (16.4-5).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o teste dos incensários</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 16 H12 L11 10 H7 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 10 C9 10 7 7 9 4 C11 7 9 10 9 10" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O teste dos incensários</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Moisés propõe um teste simples e público: Coré e cada um dos duzentos e cinquenta homens trarão seu próprio incensário com incenso diante do Senhor, e "há de ser que o homem a quem o Senhor escolher, esse será o santo" (16.6-7). Não é Moisés quem decide — é o próprio Senhor quem julgará quem ele escolheu para se aproximar dele.</p>
+          <p>Moisés ainda tenta dissuadir Datã e Abirão, mas eles se recusam sequer a comparecer, acusando Moisés de tê-los tirado "de uma terra que mana leite e mel" — uma descrição que originalmente pertencia a Canaã, agora aplicada com amargura ao próprio Egito de onde saíram (16.12-14). No dia seguinte, Coré reúne toda a congregação contra Moisés e Arão à porta da tenda, e a glória do Senhor aparece (16.19).</p>
+
+          <div class="cor-bar-outer">
+            <div class="cor-bar-label">Proporção entre os 250 líderes que trouxeram incenso e o restante da congregação de Israel:</div>
+            <div class="cor-bar" role="group" aria-label="Proporção dos 250 líderes diante da congregação">
+              <button type="button" class="cor-seg leaders" onclick="selectCorBlock(this, 0)" aria-label="Os 250 líderes com incensário"></button>
+              <button type="button" class="cor-seg rest" onclick="selectCorBlock(this, 1)" aria-label="O restante da congregação"></button>
+            </div>
+            <div class="cor-bar-caption" id="corBarText">Toque em um trecho da barra para ver quem ele representa.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a terra se abre</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 11 C5 9 7 13 9 11 C11 9 13 13 16 11" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M2 11 V15 H16 V11" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A terra se abre</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus ordena que a congregação se afaste das tendas de Coré, Datã e Abirão (16.23-24). Moisés anuncia o sinal com antecedência: se esses homens morrerem de morte natural, o Senhor não o enviou; mas se o Senhor "criar uma coisa nova", e a terra abrir a boca e os tragar vivos, com tudo o que têm, "descendo vivos ao abismo", saber-se-á que eles "irritaram ao Senhor" (16.28-30).</p>
+          <p>Assim que Moisés acaba de falar, a terra se abre debaixo deles, e Datã e Abirão, com suas famílias e tudo o que possuem, descem vivos à sepultura (16.31-33). No mesmo instante, "saiu fogo de diante do Senhor, e consumiu os duzentos e cinquenta homens que ofereciam o incenso" (16.35) — o próprio teste que eles haviam aceito se torna o instrumento do julgamento.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a praga seguinte</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 6 6 6 9 C6 11.2 7.6 13 9 13 C10.4 13 12 11.2 12 9 C12 6 9 3 9 3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 13 V16" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A murmuração seguinte e a praga</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Seria de esperar que um julgamento tão direto encerrasse a rebelião — mas no dia seguinte toda a congregação murmura contra Moisés e Arão, com uma acusação chocante: "vós matastes o povo do Senhor" (16.41). Diante dessa nova murmuração, a glória do Senhor aparece de novo, e uma praga começa a se espalhar pelo acampamento (16.42-46).</p>
+          <p>Arão, a mando de Moisés, corre para o meio da congregação com o incensário aceso e "expia o povo" (16.47), colocando-se literalmente entre os vivos e os mortos até que a praga se detenha (16.48). Quando finalmente para, o número de mortos chegou a catorze mil e setecentos, sem contar os que morreram por causa de Coré (16.49).</p>
+
+          <div class="praga-bar-outer">
+            <div class="praga-bar-row">
+              <div class="praga-bar-label">Mortos na praga — catorze mil e setecentos (16.49)</div>
+              <div class="praga-bar-track"><div class="praga-bar-fill" id="pragaFill"></div></div>
+            </div>
+            <button class="continue-btn" onclick="revealPraga()" style="margin-top:2px;">Revelar a escala da praga</button>
+            <div class="praga-bar-caption" id="pragaCaption">Toque para ver a escala da praga que Arão deteve com o incensário.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A liderança que Deus escolhe</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Coré tinha razão sobre um ponto: o povo inteiro era, de fato, chamado a ser santo. Seu erro estava em concluir que isso apagava a diferença entre um chamado geral e um chamado específico — como se qualquer pessoa pudesse tomar para si, por reivindicação própria, uma autoridade que só Deus tem o direito de conceder.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Números 16.5</span>
+          <p>Amanhã o Senhor fará saber quem é seu, e quem é o santo, ao qual ele fará chegar a si.</p>
+          <span class="ref">— Moisés, aos rebeldes</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O capítulo seguinte confirma essa lição de outra forma: a vara de Arão, entre as varas de todas as tribos, floresce e dá amêndoas durante a noite, sem intervenção humana — um sinal final de que a escolha de Deus não precisa de defesa própria, porque ele mesmo a torna evidente (17.1-8). A liderança em Israel nunca foi um prêmio a ser tomado; era, e continua sendo, um dom a ser recebido.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAutoridadePropria" onclick="showCoreOutcome('propria')">Reivindicar autoridade por si mesmo</button>
+            <button class="toggle-btn" id="btnAutoridadeDeus" onclick="showCoreOutcome('deus')">Receber autoridade de Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCardCore">
+            <div class="outcome-visual" id="outcomeVisualCore"></div>
+            <h3 id="outcomeTitleCore"></h3>
+            <p id="outcomeTextCore"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · a rebelião de Coré</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const corBarData = [
+    { text: "Os 250 líderes reconhecidos que se juntaram a Coré, Datã e Abirão, trazendo incensários diante do Senhor — todos consumidos pelo fogo (16.2, 35)." },
+    { text: "O restante da congregação de Israel, que apenas observava o teste — e que, no dia seguinte, ainda assim murmurou contra Moisés e Arão (16.41)." }
+  ];
+
+  function selectCorBlock(btn, i){
+    btn.parentElement.querySelectorAll('.cor-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('corBarText').textContent = corBarData[i].text;
+  }
+
+  function revealPraga(){
+    document.getElementById('pragaFill').style.width = '100%';
+    document.getElementById('pragaCaption').textContent = "14.700 mortos em um só dia — mais do que o dobro dos 250 líderes que já tinham sido consumidos pelo fogo. Só o incensário de Arão, correndo entre os vivos e os mortos, deteve o avanço da praga (16.47-48).";
+  }
+
+  function showCoreOutcome(type){
+    const btnP = document.getElementById('btnAutoridadePropria');
+    const btnD = document.getElementById('btnAutoridadeDeus');
+    btnP.classList.remove('active-worry');
+    btnD.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisualCore');
+    const title = document.getElementById('outcomeTitleCore');
+    const text = document.getElementById('outcomeTextCore');
+
+    if (type === 'propria'){
+      btnP.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Elevar-se a si mesmo";
+      text.textContent = "É a pergunta de Coré ecoando contra a própria congregação — \"por que vos elevais sobre a congregação do Senhor?\" (16.3) — dirigida, sem que ele percebesse, contra si mesmo: tomar por conta própria uma posição que nunca lhe fora dada.";
+    } else {
+      btnD.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma vara que floresce sozinha";
+      text.textContent = "É a vara de Arão brotando amêndoas durante a noite, sem esforço humano nenhum (17.8) — prova de que a autoridade que vem de Deus não precisa ser conquistada ou defendida, apenas recebida e exercida com humildade.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

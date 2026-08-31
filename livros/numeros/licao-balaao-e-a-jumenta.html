@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balaão e a jumenta que falou — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .bal-seq-wrap{ margin:16px 0 4px; }
+  .bal-seq-row{ display:flex; align-items:flex-start; gap:18px; margin:14px 0 16px; flex-wrap:wrap; }
+  .bal-seq-item{ display:flex; flex-direction:column; align-items:center; gap:8px; width:104px; }
+  .bal-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .bal-seq-dot.lit{ background:var(--worry); transform:scale(1.2); box-shadow:0 0 9px 1px var(--worry); }
+  .bal-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); text-align:center; line-height:1.3; }
+  .bal-seq-captions{ display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+  .bal-seq-caption-item{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:0; padding:10px 12px; background:var(--panel); border:1px solid var(--panel-line); border-radius:10px; opacity:0; animation: balFadeIn .4s ease forwards; }
+  @keyframes balFadeIn{ from{ opacity:0; transform:translateY(4px); } to{ opacity:1; transform:translateY(0); } }
+  .bal-seq-caption-item b{ color:var(--worry); font-weight:600; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">Balaão e a jumenta</span>
+  </div>
+
+  <div class="eyebrow">A marcha fracassada · <span class="ref-tag">Números 22—24</span></div>
+  <h1>Balaão e a jumenta que falou</h1>
+  <p class="sub">Um rei apavorado contrata o melhor profeta pago que consegue encontrar para amaldiçoar Israel. O que se segue é uma das cenas mais estranhamente cômicas do Antigo Testamento — uma jumenta que enxerga o que seu dono não enxerga — e, logo depois, uma das profecias messiânicas mais citadas de todo o Pentateuco, pronunciada pela boca de um homem contratado para dizer exatamente o oposto.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6.5" cy="6.5" r="2.6" stroke-width="1.3"/>
+          <path d="M4.5 8.7 C4.5 12 8.5 12 8.5 8.7" stroke-width="1.2"/>
+          <path d="M11 8 H15 M13 6 V10" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Balaque contrata Balaão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois das vitórias de Israel contra os amorreus (Números 21.21-35), o povo acampa nas campinas de Moabe, à beira do Jordão. Balaque, rei de Moabe, vê o tamanho do acampamento israelita e é tomado de pavor: "e Moabe andava com muito medo daquele povo, porquanto era muito; e Moabe estava angustiado por causa dos filhos de Israel" (Números 22.3). Em vez de reunir um exército, Balaque manda mensageiros, com o pagamento de adivinhações em mãos, chamar Balaão — um profeta pagão de renome, conhecido por suas bênçãos e maldições eficazes — para vir amaldiçoar Israel (Números 22.4-7).</p>
+          <p>Balaão consulta o Senhor antes de responder, e Deus proíbe claramente que ele vá: "não amaldiçoarás este povo, porque é bendito" (Números 22.12). Diante da recusa, Balaque insiste, enviando mensageiros ainda mais importantes com promessas maiores. Dessa vez Deus permite que Balaão vá — mas deixa uma condição inegociável: ele só poderá dizer o que Deus mesmo lhe disser (Números 22.20). É um profeta pago para um propósito, colocado sob as ordens de um Deus que ele não controla.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a jumenta e o anjo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 L9 4 L15 14" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 10 H12" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A jumenta e o anjo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No caminho, um anjo do Senhor se põe na estrada com a espada desembainhada na mão — mas apenas a jumenta de Balaão o enxerga. Três vezes o anjo aparece, e três vezes a jumenta reage antes que Balaão perceba qualquer coisa. Toque no botão abaixo para acompanhar, em ordem, as três vezes que a jumenta viu o que Balaão não via:</p>
+
+          <div class="bal-seq-wrap">
+            <div class="bal-seq-row" id="balSeqRow"></div>
+            <button class="continue-btn" type="button" onclick="revelarBalSeq()" style="margin:0;">Revelar as três vezes</button>
+            <div class="bal-seq-captions" id="balSeqCaptions"></div>
+          </div>
+
+          <p style="margin-top:16px;">Depois da terceira vez, furioso, Balaão espanca a jumenta com um cajado — e o Senhor abre a boca do animal, que pergunta: "que te fiz eu, que já três vezes me espancaste?" (Números 22.28). Só então o Senhor abre também os olhos de Balaão, que finalmente vê o anjo parado no caminho, espada em punho, dizendo que teria matado o próprio profeta se a jumenta não tivesse se desviado (Números 22.31-33). O vidente contratado para enxergar o futuro de um povo inteiro precisou que o próprio animal que montava enxergasse por ele.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → bênçãos em vez de maldições</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M4 6 L9 3 L14 6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 9 H13" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Bênçãos em vez de maldições</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chegando ao território de Balaque, Balaão é levado a três lugares diferentes de onde pode avistar o acampamento de Israel — cada um escolhido na esperança de que uma nova perspectiva rendesse, finalmente, a maldição desejada (Números 22.41; 23.13-14; 23.27-28). Em cada um dos três lugares, sacrifícios são oferecidos, e Balaão vai à parte para ouvir o que Deus lhe dirá.</p>
+          <p>E, nas três vezes, o que sai da boca de Balaão são bênçãos, não maldições. Já no primeiro oráculo ele declara, quase se desculpando diante de um Balaque cada vez mais furioso: "como amaldiçoarei a quem Deus não amaldiçoou? Como detestarei a quem o Senhor não detestou?" (Números 23.8). Balaque o leva a um segundo lugar, e depois a um terceiro, tentando reformular o pedido — mas o resultado é sempre o mesmo: bênçãos cada vez mais elaboradas sobre a multidão, a força e o futuro de Israel (Números 23.18-24; 24.3-9). Um profeta pago para amaldiçoar descobre, diante de todos, que não tem esse poder quando Deus já abençoou.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a profecia da estrela</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L10.3 7 L14.5 7 L11.1 9.4 L12.4 13.4 L9 11 L5.6 13.4 L6.9 9.4 L3.5 7 L7.7 7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A profecia da estrela</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Balaque desiste de pedir maldições e simplesmente manda Balaão ir embora sem pagamento (Números 24.10-11). Mas antes de partir, Balaão pronuncia um quarto e último oráculo — dessa vez sem sequer ir buscar agouros, como fizera antes (Números 24.1) — e o que sai de sua boca ultrapassa qualquer bênção anterior: "dele procederá uma estrela de Jacó, e um cetro se levantará de Israel, e ferirá os termos de Moabe, e destruirá todos os filhos de Sete" (Números 24.17).</p>
+          <p>É um texto lido havia séculos, tanto por intérpretes judaicos quanto cristãos, como uma promessa messiânica — um rei que haveria de se levantar de Israel para reinar sobre as nações. Um profeta contratado especificamente para impedir o futuro de Israel termina profetizando, sem querer, o mais distante e glorioso desse futuro: a vinda de um governante ungido que nenhum pagamento poderia comprar nem impedir.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Deus soberano sobre o profeta pago</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Deus soberano até sobre um profeta pago</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Toda a narrativa de Balaão é construída sobre uma ironia deliberada: um rei pagão contrata o melhor profeta que o dinheiro pode comprar, especificamente para reverter o favor que Deus já tinha dado a Israel — e cada tentativa se transforma no seu oposto. A jumenta enxerga o que o profeta não enxerga; a boca contratada para amaldiçoar só profere bênçãos; e o oráculo final vai além de qualquer expectativa, apontando para uma estrela e um cetro que nem Balaão nem Balaque poderiam ter imaginado.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Números 23.19-20</span>
+          <p>Deus não é homem, para que minta; nem filho do homem, para que se arrependa. Porventura, tendo ele dito, não o fará? Ou, tendo falado, não o cumprirá? Eis que recebi mandado de abençoar; ele tem abençoado, e eu não o posso revogar.</p>
+          <span class="ref">— o oráculo de Balaão, a Balaque</span>
+        </div>
+
+        <div class="tl-card" style="margin-top:16px;">
+          <p>É fácil ler essa história apenas como um episódio curioso — um profeta pagão, uma jumenta falante, versos difíceis de traduzir. Mas o que Números 22—24 realmente demonstra é que a palavra e a bênção de Deus sobre seu povo não dependem da boa vontade de ninguém, nem mesmo de quem é contratado especificamente para o contrário. Nem dinheiro, nem repetição, nem mudança de estratégia conseguem torcer o que Deus já decidiu declarar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="balBtnWorry" onclick="showBalOutcome('worry')">O que os homens tentam torcer</button>
+            <button class="toggle-btn" id="balBtnCalm" onclick="showBalOutcome('calm')">O que Deus insiste em cumprir</button>
+          </div>
+
+          <div class="outcome" id="balOutcomeCard">
+            <div class="outcome-visual" id="balOutcomeVisual"></div>
+            <h3 id="balOutcomeTitle"></h3>
+            <p id="balOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · Balaão e a jumenta</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const balVezes = [
+    { label: "1ª vez — no campo", detail: "Números 22.23 — o anjo se põe no caminho com a espada na mão; a jumenta desvia para o campo, e Balaão a espanca para trazê-la de volta." },
+    { label: "2ª vez — entre os muros", detail: "Números 22.24-25 — num carreiro estreito entre vinhas com muros dos dois lados, a jumenta se encosta ao muro e esmaga o pé de Balaão contra ele; ele a espanca de novo." },
+    { label: "3ª vez — sem saída", detail: "Números 22.26-27 — num lugar tão estreito que não há para onde desviar, a jumenta simplesmente se deita debaixo de Balaão, que a espanca uma terceira vez, ainda sem ver nada." }
+  ];
+
+  function buildBalSeq(){
+    const row = document.getElementById('balSeqRow');
+    balVezes.forEach((v, i) => {
+      const item = document.createElement('div');
+      item.className = 'bal-seq-item';
+      const dot = document.createElement('div');
+      dot.className = 'bal-seq-dot';
+      dot.id = 'balDot' + i;
+      const label = document.createElement('div');
+      label.className = 'bal-seq-label';
+      label.textContent = v.label;
+      item.appendChild(dot);
+      item.appendChild(label);
+      row.appendChild(item);
+    });
+  }
+  buildBalSeq();
+
+  function revelarBalSeq(){
+    const captions = document.getElementById('balSeqCaptions');
+    captions.innerHTML = '';
+    balVezes.forEach((v, i) => {
+      document.getElementById('balDot' + i).classList.remove('lit');
+    });
+    balVezes.forEach((v, i) => {
+      setTimeout(() => {
+        document.getElementById('balDot' + i).classList.add('lit');
+        const p = document.createElement('p');
+        p.className = 'bal-seq-caption-item';
+        p.innerHTML = '<b>' + v.label + '.</b> ' + v.detail;
+        captions.appendChild(p);
+      }, i * 420);
+    });
+  }
+
+  function showBalOutcome(type){
+    const btnWorry = document.getElementById('balBtnWorry');
+    const btnCalm = document.getElementById('balBtnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('balOutcomeVisual');
+    const title = document.getElementById('balOutcomeTitle');
+    const text = document.getElementById('balOutcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Dinheiro, lugares novos, tentativas repetidas";
+      text.textContent = "É Balaque tentando comprar um resultado diferente, levando Balaão a três lugares distintos, esperando que uma nova perspectiva finalmente rendesse a maldição que ele queria ouvir — e nunca conseguindo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Bênção e promessa, palavra por palavra";
+      text.textContent = "É a palavra de Deus sobre o seu povo, e sobre a estrela que haveria de vir de Jacó, saindo intacta da boca de um profeta pago para dizer o contrário — prova de que nenhuma oposição humana consegue revogar o que Deus decidiu abençoar.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

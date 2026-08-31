@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os fogos da murmuração — Números 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão C — escalada sequencial: queixa -> fogo -> choro -> codornas -> praga */
+  .tab-seq-row{ display:flex; align-items:center; gap:10px; margin:14px 0 4px; flex-wrap:wrap; }
+  .tab-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .tab-seq-dot.lit{ background:var(--worry); transform:scale(1.2); box-shadow:0 0 9px 1px var(--worry); }
+  .tab-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-faint); margin-left:4px; }
+  .tab-seq-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+
+  /* Padrão B — barras comparando fartura x rapidez da praga */
+  .quib-bar-outer{ margin-top:18px; }
+  .quib-bar-row{ margin-bottom:14px; }
+  .quib-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:6px; }
+  .quib-bar-track{ height:18px; border-radius:9px; background:var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .quib-bar-fill{ height:100%; border-radius:9px; width:0%; transition: width 1s cubic-bezier(.22,.9,.3,1); }
+  .quib-bar-fill.gold{ background:var(--gold); box-shadow:0 0 10px 1px rgba(217,164,65,.45); }
+  .quib-bar-fill.worry{ background:var(--worry); box-shadow:0 0 10px 1px rgba(168,92,107,.45); }
+  .quib-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">A marcha fracassada</span>
+  </div>
+
+  <div class="eyebrow">A marcha fracassada · <span class="ref-tag">Números 11</span></div>
+  <h1>Os fogos da murmuração</h1>
+  <p class="sub">Mal o povo deixa o Sinai, a queixa recomeça — e desta vez ela escala. Um fogo consome as bordas do acampamento, um choro coletivo despreza o pão do céu, e uma fartura enviada por Deus se torna, nas mãos de um povo ingrato, o próprio instrumento do julgamento.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 6 6 6 9 C6 11.2 7.6 13 9 13 C10.4 13 12 11.2 12 9 C12 6 9 3 9 3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 13 V16" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O fogo em Taberá</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo se abre sem preâmbulo: "e aconteceu que o povo se queixou aos ouvidos do Senhor" (11.1). Não há motivo declarado — nenhuma fome, nenhuma sede, nenhuma ameaça específica é mencionada. É simplesmente o hábito de um coração descontente, murmurando por murmurar, tão cedo depois de deixar o Sinai onde tinha acabado de receber a lei e selar a aliança.</p>
+          <p>O Senhor ouve — e a resposta é imediata e severa: "acendeu-se a ira do Senhor, e o fogo do Senhor ardeu entre eles, e consumiu os que estavam na última parte do arraial" (11.1). Moisés intercede, o povo clama, e o fogo se apaga (11.2). Mas o lugar recebe um nome que fica: "Taberá", do hebraico para "queimar" — literalmente, "incêndio" (11.3). É o primeiro sinal de que esta segunda etapa da jornada será marcada por queixas repetidas, cada vez mais graves.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o choro por carne</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 4 C6 7 5 9.5 5 11.5 C5 13.9 6.8 16 9 16 C11.2 16 13 13.9 13 11.5 C13 9.5 12 7 9 4 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O choro por carne</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O texto identifica a origem da nova queixa com um cuidado que soa quase como uma pista: foi "o ajuntamento de estrangeiros que estava no meio deles" — pessoas de outras nações que tinham saído junto com Israel do Egito (Êxodo 12.38) — que "cobiçou muito" (11.4). O apetite se espalha depressa: logo "também os filhos de Israel tornaram a chorar", lembrando com saudade "os peixes que no Egito comíamos de graça", os pepinos, os melões, os alhos e as cebolas (11.4-5).</p>
+          <p>A queixa culmina numa frase que expõe o verdadeiro problema — não a falta de comida, mas o desprezo pelo que Deus estava dando: "e agora a nossa alma se seca, sem ver coisa alguma, senão este maná" (11.6). O maná, descrito com quase ternura pelo narrador — como semente de coentro, com sabor de bolo amassado com azeite (11.7-8) — é chamado de nada por um povo que esqueceu de onde veio a escravidão que agora romantiza.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Moisés sobrecarregado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="7" r="2.4" stroke-width="1.3"/>
+          <circle cx="12" cy="7" r="2.4" stroke-width="1.3"/>
+          <path d="M3 15 C3 11.5 5 10 6 10 C7 10 9 11.5 9 15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 15 C9 11.5 11 10 12 10 C13 10 15 11.5 15 15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Moisés sobrecarregado e os setenta anciãos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante do choro do povo "cada um à porta da sua tenda", a ira do Senhor se acende de novo — e desta vez Moisés também se desespera (11.10). Seu desabafo é cru: pergunta a Deus por que colocou sobre ele o peso de "todo este povo", como se Moisés o tivesse gerado, para ter de carregá-lo "como o aio leva o que cria" (11.11-12). Chega a dizer que prefere morrer a continuar vendo aquele "mal" sozinho (11.14-15).</p>
+          <p>A resposta de Deus não é repreender Moisés, mas aliviá-lo: manda reunir setenta dos anciãos de Israel, sobre os quais tira "do espírito que está sobre" o próprio Moisés e o reparte com eles — e os setenta profetizam, confirmando publicamente que agora compartilham a mesma unção para liderar (11.16-17, 24-25). Mesmo dois que ficaram no arraial, Eldade e Medade, profetizam ali mesmo; e quando Josué pede a Moisés que os impeça, ele responde: "quem dera que todo o povo do Senhor fosse profeta, que o Senhor lhes desse o seu Espírito!" (11.26-29).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → as codornizes e a praga</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 12 C4 9 6 7 9 7 C12 7 14 9 14 12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 12 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 7 V4" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">As codornizes e a praga</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus responde ao clamor por carne com uma provisão tão desproporcional que soa como advertência antes mesmo de acontecer: promete carne não por um dia, nem por cinco, mas por um mês inteiro, "até que vos saia pelas narinas, e vos enfade" (11.19-20). Um vento do Senhor levanta codornizes do mar e as espalha ao redor do arraial "quase caminho de um dia de uma banda, e quase caminho de um dia de outra banda", empilhadas a quase um metro do chão (11.31).</p>
+          <p>O povo passa dois dias inteiros recolhendo — o que colhia menos ainda juntava dez ômeres (11.32). Mas "a carne estava ainda entre os seus dentes, antes que fosse mastigada" quando a ira do Senhor se acende de novo, e uma praga muito grande fere o povo (11.33). O lugar é chamado Quibrote-Hataavá — "as sepulturas da cobiça" — porque ali "sepultaram o povo que teve o desejo" (11.34).</p>
+          <div class="quib-bar-outer">
+            <div class="quib-bar-row">
+              <div class="quib-bar-label">Fartura enviada — carne recolhida por dois dias inteiros</div>
+              <div class="quib-bar-track"><div class="quib-bar-fill gold" id="quibFartura"></div></div>
+            </div>
+            <div class="quib-bar-row">
+              <div class="quib-bar-label">Julgamento que se segue — antes de mastigar a primeira porção</div>
+              <div class="quib-bar-track"><div class="quib-bar-fill worry" id="quibPraga"></div></div>
+            </div>
+            <button class="continue-btn" onclick="revealQuibrote()" style="margin-top:2px;">Comparar fartura e julgamento</button>
+            <div class="quib-bar-caption" id="quibCaption">Toque para ver o contraste entre o tempo da provisão e a rapidez da praga.</div>
+          </div>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Fartura recebida com ingratidão</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O capítulo inteiro traça a mesma escalada: uma queixa vaga vira fogo; um choro por carne vira fartura enviada de propósito para expor o coração que a pediu. Toque em cada ponto para acompanhar a sequência de Taberá a Quibrote-Hataavá:</p>
+          <div class="tab-seq-row" id="tabSeqRow"></div>
+          <button class="continue-btn" onclick="revealTaberaSeq()" style="margin-top:2px;">Revelar a escalada</button>
+          <div class="tab-seq-caption" id="tabSeqCaption">Toque no botão para ver os cinco momentos do capítulo, um a um.</div>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Números 11.6</span>
+          <p>E agora a nossa alma se seca, sem ver coisa alguma, senão este maná diante dos nossos olhos.</p>
+          <span class="ref">— o povo, chorando por carne</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Números 11 não ensina que Deus se ofende com qualquer pedido — Moisés também pede alívio, e recebe setenta ajudantes cheios do Espírito. A diferença não está em pedir, mas em como se recebe o que já foi dado. O mesmo maná que sustentou o povo todos os dias no deserto é chamado de "nada" por bocas ingratas; a mesma carne que Deus enviou por misericórdia se torna, nas mãos de um povo insaciável, a ocasião da própria praga.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorryTab" onclick="showTaberaOutcome('worry')">Receber com desprezo</button>
+            <button class="toggle-btn" id="btnCalmTab" onclick="showTaberaOutcome('calm')">Receber com gratidão</button>
+          </div>
+
+          <div class="outcome" id="outcomeCardTab">
+            <div class="outcome-visual" id="outcomeVisualTab"></div>
+            <h3 id="outcomeTitleTab"></h3>
+            <p id="outcomeTextTab"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · os fogos da murmuração</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revealQuibrote(){
+    document.getElementById('quibFartura').style.width = '100%';
+    document.getElementById('quibPraga').style.width = '14%';
+    document.getElementById('quibCaption').textContent = "Dois dias inteiros de codornizes empilhadas — contra uma praga que chega antes da carne ser mastigada. A fartura não bastou para produzir gratidão.";
+  }
+
+  const tabSeqLabels = ["Queixa (11.1)", "Fogo em Taberá (11.1-3)", "Choro por carne (11.4-6)", "Codornizes (11.31-32)", "Praga (11.33-34)"];
+
+  function buildTabSeq(){
+    const el = document.getElementById('tabSeqRow');
+    tabSeqLabels.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'tab-seq-dot';
+      el.appendChild(d);
+    });
+  }
+  buildTabSeq();
+
+  function revealTaberaSeq(){
+    const dots = document.querySelectorAll('#tabSeqRow .tab-seq-dot');
+    dots.forEach((d, i) => setTimeout(() => {
+      d.classList.add('lit');
+      document.getElementById('tabSeqCaption').textContent = tabSeqLabels[i];
+    }, i * 500));
+  }
+
+  function showTaberaOutcome(type){
+    const btnWorry = document.getElementById('btnWorryTab');
+    const btnCalm = document.getElementById('btnCalmTab');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisualTab');
+    const title = document.getElementById('outcomeTitleTab');
+    const text = document.getElementById('outcomeTextTab');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A alma que se seca";
+      text.textContent = "É olhar para o próprio maná diário e enxergar falta, não provisão — trocar a lembrança da escravidão por saudade dela, e transformar o dom de cada manhã em motivo de queixa.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O Espírito repartido";
+      text.textContent = "É o mesmo deserto produzindo setenta anciãos cheios do Espírito de Deus — prova de que a mão que sustenta o povo todos os dias também é capaz de repartir, sem se esgotar, tudo o que é preciso para carregar o peso da caminhada.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

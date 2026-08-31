@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Censo e o Acampamento — Números 1—2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .censo-bars{ display:flex; flex-direction:column; gap:7px; margin-top:14px; }
+  .censo-bar-row{ display:flex; align-items:center; gap:10px; background:none; border:none; padding:4px 3px; cursor:pointer; width:100%; text-align:left; border-radius:7px; transition: background .2s ease; }
+  .censo-bar-row:hover{ background: var(--panel); }
+  .censo-bar-row.active{ background: var(--panel); }
+  .censo-bar-name{ width:78px; flex-shrink:0; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-dim); }
+  .censo-bar-track{ flex:1; height:20px; border-radius:9px; background: var(--panel); border:1px solid var(--panel-line); overflow:hidden; }
+  .censo-bar-fill{ display:block; height:100%; border-radius:9px; background: var(--panel-line); transition: width .5s cubic-bezier(.34,1.56,.64,1), background .3s ease, box-shadow .3s ease; }
+  .censo-bar-row.active .censo-bar-fill{ background: var(--gold); box-shadow: 0 0 10px 1px rgba(217,164,65,.45); }
+  .censo-bar-caption{ font-size:13px; line-height:1.6; color: var(--text-dim); margin-top:10px; min-height:38px; }
+
+  .campo-chip-caption{ font-size:13.5px; line-height:1.6; color: var(--text-dim); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">Números · I. A primeira geração se prepara</span>
+  </div>
+
+  <div class="eyebrow">Organizando o exército · <span class="ref-tag">Números 1—2</span></div>
+  <h1>O censo e o acampamento</h1>
+  <p class="sub">Antes de dar um só passo rumo a Canaã, Israel precisa ser contado e organizado. Dois capítulos que parecem só números escondem uma verdade central do livro: o povo de Deus não é uma multidão qualquer — é um exército disciplinado, arranjado com propósito ao redor da própria presença de Deus.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Por que contar?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No primeiro dia do segundo mês do segundo ano depois da saída do Egito — pouco mais de um ano depois da primeira Páscoa —, Deus fala a Moisés na tenda da congregação, no deserto do Sinai, e manda fazer um censo de toda a congregação de Israel: contar, por famílias e por casas paternas, todo homem, cabeça por cabeça, de vinte anos para cima, apto para sair à guerra (Números 1.1-3). Não é curiosidade estatística. Israel está prestes a deixar o Sinai e marchar rumo a uma terra habitada por povos que vão resistir, e nenhum exército parte sem saber quantos soldados tem.</p>
+          <p>Deus não deixa Moisés e Arão sozinhos nessa tarefa. Um líder de cada uma das doze tribos é designado por nome para ajudar a contar seu próprio povo (1.4-16) — "estes são os chamados da congregação, príncipes das tribos de seus pais, os cabeças dos milhares de Israel". Mesmo o levantamento militar de Israel nasce descentralizado, tribo cuidando de tribo, sob a liderança que Deus já havia estabelecido.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o censo, tribo por tribo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 15 V10 M9 15 V6 M13 15 V11" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M3 15 H15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O censo, tribo por tribo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A contagem segue tribo por tribo, de 1.17 a 1.46, sempre com a mesma fórmula: geração, família, casa paterna, todo homem de vinte anos para cima contado por nome, apto para a guerra. No fim, a soma de todas as tribos chega a 603.550 homens (1.46) — sem contar os levitas, que são contados à parte, como o próprio texto explica. É um exército enorme para os padrões do mundo antigo, e as doze tribos estão longe de ter o mesmo tamanho: Judá sozinha reúne 74.600 homens, a maior de todas (1.27), enquanto Manassés soma apenas 32.200, a menor (1.35).</p>
+          <p>Essa disparidade não é ignorada pelo texto — mais adiante, em Números 2, o tamanho de cada tribo vai definir literalmente sua posição física no acampamento. Toque em cada tribo abaixo para comparar seus efetivos:</p>
+
+          <div class="censo-bars" id="censoBars"></div>
+          <div class="censo-bar-caption" id="censoBarCaption">Toque em uma tribo para ver seu efetivo militar registrado em Números 1.</div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a ordem do acampamento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="7.5" y="7.5" width="3" height="3" stroke-width="1.2"/>
+          <rect x="7.5" y="2" width="3" height="3" stroke-width="1.1"/>
+          <rect x="7.5" y="13" width="3" height="3" stroke-width="1.1"/>
+          <rect x="2" y="7.5" width="3" height="3" stroke-width="1.1"/>
+          <rect x="13" y="7.5" width="3" height="3" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A ordem do acampamento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O capítulo 2 pega esses números e os transforma em geografia. Israel se organiza em quatro grandes agrupamentos de três tribos cada, um de cada lado do tabernáculo, formando um quadrado com a tenda do encontro estritamente no centro (2.1-2). A ordem não é arbitrária: cada lado tem uma tribo líder, e a mesma disposição vai determinar, quase dez capítulos depois, a ordem exata em que o povo marcha (10.14-28).</p>
+          <p>Toque em cada lado do acampamento para ver quem ficava ali:</p>
+
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectCampoChip(this, campoData, 0, 'campoText')">Leste</button>
+            <button class="chip-btn chip-gold" onclick="selectCampoChip(this, campoData, 1, 'campoText')">Sul</button>
+            <button class="chip-btn chip-gold" onclick="selectCampoChip(this, campoData, 2, 'campoText')">Oeste</button>
+            <button class="chip-btn chip-gold" onclick="selectCampoChip(this, campoData, 3, 'campoText')">Norte</button>
+          </div>
+          <div class="campo-chip-caption" id="campoText">Toque em um lado do acampamento para ver quais tribos ficavam ali.</div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → os levitas contados à parte</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 5 V9 C15 13 12 15.5 9 16.5 C6 15.5 3 13 3 9 V5 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Os levitas contados à parte</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma tribo fica de fora do censo militar: Levi. "Mas os levitas, segundo a tribo de seus pais, não foram contados entre eles" (1.47), porque a tarefa deles não é lutar — é servir o tabernáculo: transportá-lo, montá-lo, desmontá-lo e vigiá-lo (1.50-51). Eles acampam ao redor da própria tenda do encontro, um círculo interno dentro do círculo maior das doze tribos (1.53), formando uma espécie de zona intermediária entre o povo comum e a presença santa de Deus.</p>
+          <p>O motivo dado é solene: os levitas ficam responsáveis pelo tabernáculo "para que não haja furor sobre a congregação dos filhos de Israel" (1.53). A proximidade de Deus não é neutra — sem alguém designado para cuidar da fronteira entre o santo e o comum, o contato descuidado com essa presença traria julgamento, não bênção. Levi existe, entre outras coisas, para tornar segura a vizinhança de um Deus santo.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → um povo ao redor de Deus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um povo ao redor de Deus</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Vistos de cima, os dois primeiros capítulos de Números parecem, à primeira vista, só uma questão de logística militar. Mas o detalhe mais importante do arranjo não é estratégico — é teológico: o tabernáculo fica exatamente no centro (2.2), e cada uma das doze tribos recebe um lugar fixo, definido por Deus, ao seu redor. Ninguém acampa por acaso, e ninguém acampa longe demais.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">1 Coríntios 14.33,40</span>
+          <p>Porque Deus não é Deus de confusão, senão de paz... Mas faça-se tudo decentemente e com ordem.</p>
+          <span class="ref">— o apóstolo Paulo, aos coríntios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É a mesma lógica, séculos depois, por trás da instrução de Paulo às igrejas: um Deus de ordem forma um povo ordenado, não porque a ordem seja um fim em si mesma, mas porque ela protege e revela a proximidade da própria presença de Deus no meio do seu povo. O acampamento de Números 2 é uma parábola em forma de mapa — e o mapa aponta sempre para o mesmo centro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um povo espalhado ao acaso</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um povo ordenado ao redor de Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · o censo e o acampamento</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const censoTribos = [
+    { nome: 'Judá', valor: 74600, ref: '1.27' },
+    { nome: 'Dã', valor: 62700, ref: '1.39' },
+    { nome: 'Simeão', valor: 59300, ref: '1.23' },
+    { nome: 'Zebulom', valor: 57400, ref: '1.31' },
+    { nome: 'Issacar', valor: 54400, ref: '1.29' },
+    { nome: 'Naftali', valor: 53400, ref: '1.43' },
+    { nome: 'Rúben', valor: 46500, ref: '1.21' },
+    { nome: 'Gade', valor: 45650, ref: '1.25' },
+    { nome: 'Aser', valor: 41500, ref: '1.41' },
+    { nome: 'Efraim', valor: 40500, ref: '1.33' },
+    { nome: 'Benjamim', valor: 35400, ref: '1.37' },
+    { nome: 'Manassés', valor: 32200, ref: '1.35' }
+  ];
+
+  function buildCensoBars(){
+    const el = document.getElementById('censoBars');
+    const max = Math.max.apply(null, censoTribos.map(t => t.valor));
+    censoTribos.forEach((t, i) => {
+      const row = document.createElement('button');
+      row.type = 'button';
+      row.className = 'censo-bar-row';
+      row.id = 'censoRow' + i;
+      row.setAttribute('aria-label', t.nome);
+      row.onclick = function(){ showCensoTribo(i); };
+      const name = document.createElement('span');
+      name.className = 'censo-bar-name';
+      name.textContent = t.nome;
+      const track = document.createElement('span');
+      track.className = 'censo-bar-track';
+      const fill = document.createElement('span');
+      fill.className = 'censo-bar-fill';
+      fill.style.width = (t.valor / max * 100) + '%';
+      track.appendChild(fill);
+      row.appendChild(name);
+      row.appendChild(track);
+      el.appendChild(row);
+    });
+  }
+  buildCensoBars();
+
+  function showCensoTribo(i){
+    document.querySelectorAll('.censo-bar-row').forEach(r => r.classList.remove('active'));
+    document.getElementById('censoRow' + i).classList.add('active');
+    const t = censoTribos[i];
+    const pct = (t.valor / 603550 * 100).toFixed(1);
+    document.getElementById('censoBarCaption').textContent = t.nome + ': ' + t.valor.toLocaleString('pt-BR') + ' homens de guerra — ' + pct + '% do total de 603.550 (Números ' + t.ref + ').';
+  }
+
+  const campoData = [
+    { text: "Leste, na frente do tabernáculo — o lado de honra, por onde o povo iniciava a marcha: Judá, Issacar e Zebulom (2.3-9)." },
+    { text: "Sul: Rúben, Simeão e Gade (2.10-16)." },
+    { text: "Oeste, atrás do tabernáculo: Efraim, Manassés e Benjamim (2.18-24)." },
+    { text: "Norte, fechando o arraial e geralmente marchando por último, como retaguarda: Dã, Aser e Naftali (2.25-31)." }
+  ];
+
+  function selectCampoChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Cada um por si, sem centro";
+      text.textContent = "É uma multidão sem lugar fixo, cada família cuidando apenas de si, sem ninguém no meio a quem prestar contas — e sem nenhum centro comum ao redor do qual se organizar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um centro, e um lugar para cada um";
+      text.textContent = "É um povo que sabe exatamente onde fica e por quê — porque no meio do acampamento, e não nas margens, está a própria presença de Deus, e cada tribo tem um lugar fixo diante dela.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

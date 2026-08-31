@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Nuvem e a Marcha Começa — Números 9.15—10.36</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .marcha-seq-wrap{ margin-top:14px; }
+  .marcha-seq-row{ display:flex; align-items:center; gap:9px; margin:12px 0 6px; flex-wrap:wrap; }
+  .marcha-seq-item{ display:inline-flex; flex-direction:column; align-items:center; gap:5px; }
+  .marcha-seq-dot{ width:20px; height:20px; border-radius:50%; background: var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .marcha-seq-dot.lit{ background: var(--gold); transform: scale(1.2); box-shadow: 0 0 9px 1px var(--gold); }
+  .marcha-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color: var(--text-faint); opacity:.35; transition: opacity .35s ease; text-align:center; max-width:66px; }
+  .marcha-seq-label.lit{ opacity:1; color: var(--text-dim); }
+  .marcha-seq-caption{ font-size:13px; line-height:1.6; color: var(--text-dim); margin-top:12px; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">Números · I. A primeira geração se prepara</span>
+  </div>
+
+  <div class="eyebrow">A partida do Sinai · <span class="ref-tag">Números 9.15—10.36</span></div>
+  <h1>A nuvem e a marcha começa</h1>
+  <p class="sub">Depois de quase um ano acampado ao pé do Sinai — recebendo a lei, organizando o exército, consagrando os levitas —, Israel finalmente parte. Mas parte sem mapa: a única bússola é uma nuvem que ninguém controla.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 10 C4 7.5 6 6 8 6.5 C8.5 4.5 10.5 3.5 12 5 C14 5 15 6.5 14.5 8.5 C15.5 9 15.5 11 14 11.5 H5 C4 11.5 4 10.5 4 10 Z" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A nuvem sobre o tabernáculo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Desde o dia em que o tabernáculo foi erguido, uma nuvem o cobria — de dia como nuvem, de noite com uma aparência de fogo, visível a todo o acampamento (9.15-16). Enquanto essa nuvem permanecesse parada sobre a tenda, o povo ficava acampado; quando ela se levantava, o povo levantava também e partia atrás dela (9.17). Não havia consulta, votação ou plano alternativo — a nuvem decidia, e Israel seguia.</p>
+          <p>O texto insiste, quase repetindo a mesma frase várias vezes, que o tempo de permanência era imprevisível: "quer fossem dois dias, quer um mês, quer um ano", enquanto a nuvem parasse, o povo ficava (9.22). Às vezes a nuvem se detinha por uma única noite, e ao amanhecer já havia partido; outras vezes permanecia por longos períodos. Israel nunca sabia com antecedência quanto tempo ficaria em cada lugar — só sabia que precisava estar pronto para partir a qualquer momento.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as trombetas de prata</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 8 H10 L15 5.5 V11.5 L10 9" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M3 8 V9.5 H5 V8" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As trombetas de prata</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus manda Moisés fazer duas trombetas de prata batida (10.1-2) — não instrumentos de adoração, mas de comunicação prática para um acampamento de centenas de milhares de pessoas espalhado ao redor do tabernáculo. Um toque longo convocava toda a congregação, ou apenas os líderes, à entrada da tenda (10.3-4); um toque de alarme, em staccato, dava o sinal para os arraiais partirem, cada toque correspondendo a um grupo diferente (10.5-6).</p>
+          <p>As mesmas trombetas tinham um segundo uso, mais grave: tocar alarme de guerra diante do inimigo, "para que sejais lembrados perante o SENHOR, vosso Deus, e sejais salvos dos vossos inimigos" (10.9), e também para marcar as festas e os princípios de mês (10.10). O mesmo instrumento que organizava a logística do acampamento também clamava por socorro em batalha e celebrava diante de Deus — som físico servindo, ao mesmo tempo, ordem, guerra e culto.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a ordem da marcha</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="4" cy="9" r="1.6" stroke-width="1.2"/>
+          <circle cx="9" cy="9" r="1.6" stroke-width="1.2"/>
+          <circle cx="14" cy="9" r="1.6" stroke-width="1.2"/>
+          <path d="M5.6 9 H7.4 M10.6 9 H12.4" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="0.5 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A ordem da marcha</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No vigésimo dia do segundo mês, a nuvem finalmente se levanta de sobre o tabernáculo, e Israel parte do deserto do Sinai pela primeira vez desde que ali chegara (10.11-12). E a ordem em que o povo marcha não é improvisada — é exatamente a ordem organizada em Números 2, mais de dez capítulos antes: primeiro o arraial de Judá, depois os levitas gersonitas e meraritas carregando a estrutura do tabernáculo, depois o arraial de Rúben, depois os coatitas carregando os objetos sagrados — já montado o suficiente para o próximo acampamento —, e assim por diante (10.14-28).</p>
+          <p>O detalhe confirma algo importante sobre os capítulos 1—2: aquela organização não era decorativa. Toque no botão abaixo para ver a marcha em ordem, do sinal até a partida de cada grupo:</p>
+
+          <div class="marcha-seq-wrap">
+            <div class="marcha-seq-row" id="marchaSeqRow"></div>
+            <button class="continue-btn" style="margin-top:0;" onclick="revealMarchaOrdem()">Tocar a trombeta e ver a marcha começar</button>
+            <div class="marcha-seq-caption" id="marchaSeqCaption">Toque no botão para acompanhar a nuvem, a trombeta e a partida das tribos, em ordem.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Hobabe e a arca à frente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6.5 9 H11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Hobabe e a arca à frente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes de partir, Moisés convida seu cunhado Hobabe, midianita, para acompanhar Israel: "tu nos servirás de olhos" (10.31), conhecendo o deserto de um jeito que o povo ainda não conhecia. É um pedido curioso, vindo de quem já tinha a nuvem para guiá-lo — como se Deus também usasse conhecimento humano comum, ao lado da direção sobrenatural, sem que um substituísse o outro.</p>
+          <p>E então, pela primeira vez explicitamente, o texto revela onde ficava a arca da aliança durante a marcha: não no meio da coluna, protegida pelas tribos, mas três dias de caminho à frente de todos, "buscando lugar de descanso para eles" (10.33). Moisés tinha uma oração para cada extremidade da jornada — quando a arca partia: "Levanta-te, SENHOR, e sejam dissipados os teus inimigos, e fujam diante de ti os que te odeiam" (10.35); quando ela parava: "Volta, SENHOR, para os muitos milhares de milhares de Israel" (10.36). A presença de Deus não seguia o povo — ela ia à frente, abrindo caminho.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → obediência sem mapa próprio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Obediência sem mapa próprio</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Israel deixa o Sinai sem itinerário. Ninguém no acampamento sabia, na manhã em que a nuvem se levantava, quantos dias marchariam ou onde parariam. O que existia, em vez de um mapa, era um padrão de atenção diária: observar a nuvem, ouvir a trombeta, e mover-se — ou ficar — de acordo com o que Deus decidisse, mesmo sem explicação alguma para a duração de cada parada.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Provérbios 3.5-6</span>
+          <p>Confia no SENHOR de todo o teu coração, e não te estribes no teu próprio entendimento. Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas.</p>
+          <span class="ref">— o livro de Provérbios</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É a mesma lógica, formulada séculos depois como sabedoria para qualquer israelita: confiar no SENHOR de todo o coração significa, muitas vezes, abrir mão do próprio mapa — não porque planejar seja errado, mas porque o entendimento humano não alcança o suficiente para traçar sozinho o caminho certo. A nuvem de Números 9—10 é a mesma verdade em forma de acampamento: Deus não costuma revelar o itinerário inteiro de uma vez. Ele pede que se siga um passo, e depois o próximo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Planejar o próprio caminho</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Seguir a nuvem, um dia de cada vez</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · a nuvem e a marcha começa</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const marchaPassos = [
+    { label: 'Nuvem levanta', caption: 'A nuvem se levanta de sobre o tabernáculo (10.11) — o sinal de que é hora de partir.' },
+    { label: 'Trombeta toca', caption: 'As trombetas de prata soam o alarme, convocando cada arraial a se preparar (10.5-6).' },
+    { label: 'Judá parte', caption: 'O arraial de Judá, o maior, parte primeiro, abrindo a marcha (10.14).' },
+    { label: 'Tabernáculo desce', caption: 'Gérson e Merari partem levando a estrutura desmontada do tabernáculo (10.17).' },
+    { label: 'Rúben parte', caption: 'O arraial de Rúben parte em seguida (10.18).' },
+    { label: 'Coate parte', caption: 'Os coatitas partem carregando os objetos sagrados, já cobertos (10.21).' },
+    { label: 'Efraim e Dã', caption: 'Os arraiais de Efraim e, por fim, de Dã, fechando a retaguarda, completam a marcha (10.22-28).' }
+  ];
+
+  function buildMarchaSeq(){
+    const el = document.getElementById('marchaSeqRow');
+    marchaPassos.forEach((p, i) => {
+      const item = document.createElement('div');
+      item.className = 'marcha-seq-item';
+      const dot = document.createElement('div');
+      dot.className = 'marcha-seq-dot';
+      dot.id = 'marchaDot' + i;
+      const label = document.createElement('div');
+      label.className = 'marcha-seq-label';
+      label.id = 'marchaLabel' + i;
+      label.textContent = p.label;
+      item.appendChild(dot);
+      item.appendChild(label);
+      el.appendChild(item);
+    });
+  }
+  buildMarchaSeq();
+
+  function revealMarchaOrdem(){
+    marchaPassos.forEach((p, i) => {
+      setTimeout(() => {
+        document.getElementById('marchaDot' + i).classList.add('lit');
+        document.getElementById('marchaLabel' + i).classList.add('lit');
+        document.getElementById('marchaSeqCaption').textContent = p.caption;
+      }, i * 500);
+    });
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Decidir a rota inteira sozinho";
+      text.textContent = "É calcular o destino com antecedência, contar os dias, garantir cada etapa por conta própria — e ficar ansioso justamente porque nenhum plano humano dá conta de controlar o que ainda vai acontecer.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Levantar acampamento quando a nuvem se move";
+      text.textContent = "É prestar atenção, dia após dia, ao que Deus está fazendo agora, confiando que ele mesmo vai à frente abrindo caminho — mesmo sem revelar, de uma vez, o mapa inteiro da jornada.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

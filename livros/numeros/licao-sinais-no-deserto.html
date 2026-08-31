@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinais no deserto — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .sng-seq-wrap{ margin:16px 0 4px; }
+  .sng-seq-row{ display:flex; align-items:flex-start; gap:22px; margin:14px 0 16px; flex-wrap:wrap; }
+  .sng-seq-item{ display:flex; flex-direction:column; align-items:center; gap:8px; width:78px; }
+  .sng-seq-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .sng-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 9px 1px var(--gold); }
+  .sng-seq-label{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); text-align:center; line-height:1.3; }
+  .sng-seq-captions{ display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+  .sng-seq-caption-item{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin:0; padding:10px 12px; background:var(--panel); border:1px solid var(--panel-line); border-radius:10px; opacity:0; animation: sngFadeIn .4s ease forwards; }
+  @keyframes sngFadeIn{ from{ opacity:0; transform:translateY(4px); } to{ opacity:1; transform:translateY(0); } }
+  .sng-seq-caption-item b{ color:var(--gold); font-weight:600; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">Sinais no deserto</span>
+  </div>
+
+  <div class="eyebrow">A marcha fracassada · <span class="ref-tag">Números 17; 20; 21</span></div>
+  <h1>Sinais no deserto: a vara, a água e a serpente</h1>
+  <p class="sub">Entre a rebelião de Coré e a chegada às campinas de Moabe, a mesma geração recebe três sinais visíveis e inconfundíveis: uma vara seca que floresce da noite para o dia, uma rocha da qual jorra água, e uma serpente de bronze erguida como remédio. Cada um resolve uma crise imediata — e, juntos, expõem quão pouco os sinais, por si só, curam um coração que insiste em murmurar.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 8 C6 8 5 6 5 4" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          <path d="M9 11 C12 11 13 9 13 7" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A vara de Arão que floresceu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois da rebelião de Coré e da praga que se segue a ela (Números 16), a pergunta sobre quem Deus realmente escolheu para o sacerdócio continua pairando sobre o acampamento. Em vez de discutir o assunto de novo, Deus propõe um teste que nenhum argumento humano poderia produzir: doze varas, uma para cada tribo, com o nome do respectivo líder escrito nela — a de Levi levando o nome de Arão —, são recolhidas e guardadas durante a noite dentro da tenda da congregação, diante do testemunho (Números 17.1-7).</p>
+          <p>No dia seguinte, Moisés entra na tenda e encontra apenas uma vara diferente das demais: a de Arão "tinha brotado, e produzira botões, e tinha desabrochado flores, e amadurecera amêndoas" (Números 17.8). Um pedaço de madeira morta, cortado da árvore havia tempo, brota, floresce e frutifica da noite para o dia — um sinal que nenhum dos onze líderes rivais poderia forjar ou contestar. A vara é depois guardada permanentemente diante do testemunho, "por sinal aos filhos rebeldes, para fazer cessar as suas murmurações contra mim, para que não morram" (Números 17.10).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a água de Meribá</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 4 9.5 4 12.5 A5 5 0 0 0 14 12.5 C14 9.5 9 3 9 3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A água de Meribá e o pecado de Moisés</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Anos depois, já perto do fim da travessia, o povo chega a Cades e, sem água, volta a murmurar contra Moisés e Arão com a mesma linguagem de sempre: seria melhor ter morrido no Egito do que nesse "lugar mau" sem grão, figo, vide, romã ou água para beber (Números 20.1-5). Moisés e Arão caem com o rosto em terra diante da tenda, e o Senhor dá uma instrução simples: tomar a vara, reunir a congregação e <em>falar</em> à rocha diante de todos, para que ela dê água (Números 20.8).</p>
+          <p>Mas Moisés, depois de décadas carregando as queixas desse povo, reúne a congregação e explode: "Ouvi agora, rebeldes: porventura tiraremos água desta rocha para vós?" (Números 20.10) — e fere a rocha duas vezes com a vara, em vez de simplesmente falar a ela. A água jorra em abundância mesmo assim; a necessidade do povo é suprida. Mas o Senhor diz a Moisés e Arão que, por não terem confiado nele para o santificar diante dos filhos de Israel, nenhum dos dois introduziria essa congregação na terra que lhes fora prometida (Números 20.12). O lugar é chamado Meribá — "contenda" — "porque ali contenderam os filhos de Israel com o Senhor" (Números 20.13). É a geração inteira que perde a terra por incredulidade; e agora até seu maior líder perde o direito de entrar nela, por uma única explosão de raiva diante de um sinal que Deus tinha planejado para ser dado por simples obediência.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a serpente de bronze</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 13 C5 9 7 9 9 13 C11 17 13 17 15 13" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+          <circle cx="15" cy="6" r="1.5" stroke-width="1.2"/>
+          <path d="M15 7.5 V13" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A serpente de bronze</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Contornando a terra de Edom por um caminho mais longo, o povo se impacienta outra vez e fala abertamente contra Deus e contra Moisés: "Por que nos fizestes subir do Egito, para que morrêssemos neste deserto? Porque aqui não há pão nem água, e a nossa alma tem fastio deste pão tão vil" (Números 21.4-5) — desprezando, mais uma vez, o próprio maná que os sustentava havia quase quarenta anos. Não é uma queixa nova; é a mesma murmuração de sempre, agora dirigida contra o alimento que Deus fielmente provia todos os dias.</p>
+          <p>Dessa vez a resposta é imediata: o Senhor manda serpentes ardentes contra o acampamento, e muitos em Israel morrem mordidos (Números 21.6). O povo vem correndo a Moisés, reconhece o próprio pecado — "pecamos, porquanto temos falado contra o Senhor e contra ti" — e pede que ele interceda para que as serpentes sejam retiradas (Números 21.7). Deus, porém, não remove a ameaça: manda Moisés fazer uma serpente de bronze e colocá-la sobre uma haste, no meio do acampamento. A instrução é estranhamente simples — "será que todo mordido que atentar para ela viverá" (Números 21.8) — não um rito, não um sacrifício, apenas um olhar de fé erguido para o que Deus mesmo tinha levantado.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → sinais vistos, sinais esquecidos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Sinais vistos, sinais esquecidos</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O que torna esses três episódios especialmente graves é que se trata, do início ao fim, da mesma geração. É o mesmo povo que viu a vara de Arão florescer da noite para o dia, que bebeu da água que jorrou da rocha, e que foi curado ao simplesmente olhar para a serpente de bronze — e que, entre um sinal e outro, continuava voltando à mesma murmuração. Nenhum desses sinais, por mais espetacular que fosse, produzia por si só um coração que confiasse em Deus.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Números 14.22-23</span>
+          <p>Todos os homens que viram a minha glória e os sinais que fiz no Egito e no deserto, e que já me tentaram dez vezes, e não deram ouvidos à minha voz, de nenhuma maneira verão a terra que jurei a seus pais.</p>
+          <span class="ref">— o Senhor, a respeito da primeira geração</span>
+        </div>
+
+        <div class="tl-card" style="margin-top:16px;">
+          <p>Toque no botão abaixo para rever, em ordem, o que cada um dos três sinais confirmou — ou custou:</p>
+          <div class="sng-seq-wrap">
+            <div class="sng-seq-row" id="sngSeqRow"></div>
+            <button class="continue-btn" type="button" onclick="revelarSngSeq()" style="margin:0;">Revelar os três sinais</button>
+            <div class="sng-seq-captions" id="sngSeqCaptions"></div>
+          </div>
+        </div>
+
+        <div class="tl-card" style="margin-top:16px;">
+          <p>A própria serpente de bronze — o remédio erguido sobre uma haste para quem tinha sido mordido — é lembrada séculos depois por Jesus como figura de si mesmo levantado na cruz (João 3.14-15). Mas o ângulo mais imediato do episódio, dentro do próprio livro de Números, não é apenas para onde a serpente aponta, e sim o que ela revela: um povo que precisava de um sinal novo a cada poucos capítulos, porque os sinais anteriores não tinham deixado nele nenhuma fé duradoura.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="sngBtnWorry" onclick="showSngOutcome('worry')">Ver o sinal e esquecer</button>
+            <button class="toggle-btn" id="sngBtnCalm" onclick="showSngOutcome('calm')">Ver o sinal e confiar</button>
+          </div>
+
+          <div class="outcome" id="sngOutcomeCard">
+            <div class="outcome-visual" id="sngOutcomeVisual"></div>
+            <h3 id="sngOutcomeTitle"></h3>
+            <p id="sngOutcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · Sinais no deserto</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const sngSinais = [
+    { label: "A vara", detail: "Números 17 — uma vara seca floresce da noite para o dia: confirmou o sacerdócio que Deus, e não os líderes rivais, tinha escolhido." },
+    { label: "A água", detail: "Números 20.1-13 — a rocha ferida com raiva ainda deu água ao povo, mas custou a Moisés e a Arão o direito de entrar na terra prometida." },
+    { label: "A serpente", detail: "Números 21.4-9 — uma serpente de bronze erguida numa haste: quem, mordido, apenas olhasse para ela em fé, vivia." }
+  ];
+
+  function buildSngSeq(){
+    const row = document.getElementById('sngSeqRow');
+    sngSinais.forEach((s, i) => {
+      const item = document.createElement('div');
+      item.className = 'sng-seq-item';
+      const dot = document.createElement('div');
+      dot.className = 'sng-seq-dot';
+      dot.id = 'sngDot' + i;
+      const label = document.createElement('div');
+      label.className = 'sng-seq-label';
+      label.textContent = s.label;
+      item.appendChild(dot);
+      item.appendChild(label);
+      row.appendChild(item);
+    });
+  }
+  buildSngSeq();
+
+  function revelarSngSeq(){
+    const captions = document.getElementById('sngSeqCaptions');
+    captions.innerHTML = '';
+    sngSinais.forEach((s, i) => {
+      const dot = document.getElementById('sngDot' + i);
+      dot.classList.remove('lit');
+    });
+    sngSinais.forEach((s, i) => {
+      setTimeout(() => {
+        document.getElementById('sngDot' + i).classList.add('lit');
+        const p = document.createElement('p');
+        p.className = 'sng-seq-caption-item';
+        p.innerHTML = '<b>' + s.label + '.</b> ' + s.detail;
+        captions.appendChild(p);
+      }, i * 420);
+    });
+  }
+
+  function showSngOutcome(type){
+    const btnWorry = document.getElementById('sngBtnWorry');
+    const btnCalm = document.getElementById('sngBtnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('sngOutcomeVisual');
+    const title = document.getElementById('sngOutcomeTitle');
+    const text = document.getElementById('sngOutcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O mesmo ciclo, sinal após sinal";
+      text.textContent = "É o povo que via a vara florescer, bebia da água da rocha, era curado pela serpente — e, poucos capítulos depois, voltava a murmurar como se nada tivesse visto. Um sinal externo, por si só, não muda um coração que se recusa a confiar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um olhar que se torna fé";
+      text.textContent = "É o mordido que, em vez de procurar um remédio próprio, ergue os olhos para o que Deus levantou e vive — não por mérito, mas por confiar no único sinal que já bastava. O mesmo convite que a cruz de Cristo faz a quem olha para ela hoje.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

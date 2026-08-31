@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os doze espias — Números 13—14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — 10 relatórios de medo x 2 de fé */
+  .esp-dot-outer{ margin-top:16px; }
+  .esp-dot-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .esp-dot-grid{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .esp-dot{ width:20px; height:20px; border-radius:50%; background:var(--panel-line); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; cursor:pointer; flex-shrink:0; border:none; padding:0; }
+  .esp-dot.worry{ background:var(--worry); transform:scale(1.15); box-shadow:0 0 8px 1px rgba(168,92,107,.4); }
+  .esp-dot.calm{ background:var(--calm); transform:scale(1.15); box-shadow:0 0 8px 1px rgba(124,154,120,.4); }
+  .esp-dot-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row extra: ver gigantes x ver a Deus */
+  .ver-toggle-outer{ margin-top:16px; }
+  .ver-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .ver-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .ver-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-numeros.html">Volver</a>
+    <span class="brand-track">A marcha fracassada</span>
+  </div>
+
+  <div class="eyebrow">A marcha fracassada · <span class="ref-tag">Números 13—14</span></div>
+  <h1>Os doze espias</h1>
+  <p class="sub">Doze homens veem exatamente a mesma terra. Dez voltam com um relatório de medo; dois, com um relatório de fé. A diferença entre eles não está no que viram, mas em que tamanho deram a Deus diante do que viram — e o preço dessa diferença é uma geração inteira.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 L9 4 L15 14 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="9" cy="10" r="1.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Os doze enviados</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A ordem vem do próprio Senhor: enviar um homem de cada tribo, todos líderes reconhecidos entre o povo, para espiar a terra de Canaã (13.1-2). Moisés escolhe os doze — entre eles Oséias, filho de Num, a quem passa a chamar de Josué (13.16), e Calebe, da tribo de Judá (13.6). Por quarenta dias eles percorrem a terra de norte a sul, de Zim até Reobe, na entrada de Hamate (13.21-25).</p>
+          <p>O relato do que trazem de volta é generoso em detalhe: um só cacho de uvas, colhido no vale de Escol, tão grande que precisa ser carregado por dois homens numa vara, além de romãs e figos (13.23). É uma prova concreta, física, de que a terra é exatamente o que Deus tinha prometido.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → dois relatórios, o mesmo fato</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 V15 M14 3 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 9 H14" stroke-width="1.1" stroke-dasharray="1.6 2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Dois relatórios diante do mesmo fato</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os doze concordam no essencial: a terra "mana leite e mel" e o cacho de uvas está ali para provar (13.27). É exatamente neste ponto — depois de admitir que a promessa é verdadeira — que o relatório se divide. Dez espias passam a enfatizar cidades fortificadas, grandes e amuralhadas, e "os filhos de Anaque", descritos como gigantes diante de quem "éramos como gafanhotos" (13.28, 31-33).</p>
+          <p>Calebe interrompe o povo diante de Moisés com uma frase curta e definitiva: "Subamos animosamente, e possuamo-la em herança; porque, certamente, prevaleceremos contra ela" (13.30). Toque em cada relatório para comparar como dez vozes e duas vozes descreveram a mesma terra:</p>
+
+          <div class="esp-dot-outer">
+            <div class="esp-dot-label">Os doze relatórios — toque nos pontos para ver a divisão</div>
+            <div class="esp-dot-grid" id="espDotGrid"></div>
+            <div class="esp-dot-caption" id="espDotCaption">Toque em um ponto para ver de que lado ele ficou.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a rebelião do povo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V11" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="9" cy="14" r="1" fill="var(--text-dim)" stroke="none"/>
+          <path d="M4 8 L9 3 L14 8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A rebelião do povo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A reação da congregação é imediata e desproporcional: choram a noite inteira (14.1), murmuram contra Moisés e Arão, e chegam a desejar ter morrido no Egito ou no próprio deserto — qualquer coisa menos enfrentar o que os dez espias descreveram (14.2-3). Chegam a propor escolher um novo líder para voltar ao Egito (14.4).</p>
+          <p>Quando Josué e Calebe rasgam suas vestes e insistem que a terra é "muito boa" e que o Senhor está com eles (14.6-9), a resposta do povo não é reconsiderar, mas apedrejá-los — só interrompida pela glória do Senhor que aparece sobre a tenda da congregação (14.10). É o ponto mais grave de toda a viagem: a incredulidade diante da mesma evidência que deveria produzir fé se transforma em violência contra quem ainda confiava.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a intercessão e o julgamento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L15 6 V10 C15 13.5 12.3 15.6 9 16.5 C5.7 15.6 3 13.5 3 10 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A intercessão de Moisés e o julgamento dos quarenta anos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus ameaça ferir o povo com pestilência e desfazê-lo, começando de novo a partir de Moisés (14.11-12). Mas Moisés intercede — não apelando para o mérito do povo, que não existe, mas para o próprio caráter e a reputação de Deus entre as nações: "que dirão os egípcios... dirão: Porquanto o Senhor não podia introduzir este povo na terra" (14.13-16), e cita de volta a própria revelação de Deus sobre si mesmo como "tardio em irar-se, e grande em beneficência, que perdoa a iniquidade e a transgressão" (14.17-18).</p>
+          <p>Deus perdoa — mas o perdão não anula a consequência. Decreta que ninguém daquela geração, de vinte anos para cima, entrará na terra, exceto Josué e Calebe, "porque seguiram ao Senhor perfeitamente" (14.24, 30). O tempo do julgamento espelha deliberadamente o tempo do pecado: um ano de deserto para cada um dos quarenta dias de espionagem (14.34).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Fé e medo diante da mesma evidência</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O episódio dos doze espias não é, no fundo, sobre espionagem militar — é sobre o que dez homens e dois homens escolheram ver diante do mesmo cacho de uvas, das mesmas cidades fortificadas, dos mesmos relatos de gigantes. Todos viram a terra. Só dois viram, ao mesmo tempo, o tamanho de Deus.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Números 13.30</span>
+          <p>Bem podemos subir, e apoderar-nos dela, porque prevaleceremos certamente contra ela.</p>
+          <span class="ref">— Calebe, diante do povo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Séculos depois, o autor de Hebreus retoma esse episódio como advertência viva para a igreja: "Vede, irmãos, que nunca haja em nenhum de vós um coração mau e infiel, para se apartar do Deus vivo" (Hebreus 3.12), lembrando que aquela geração "não puderam entrar por causa da sua incredulidade" (Hebreus 3.19) — e que a mesma promessa de descanso continua aberta a quem crê (Hebreus 4.1-2).</p>
+
+          <div class="ver-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnVerGigantes" onclick="showVerOutcome('gigantes')">Ver os gigantes</button>
+              <button class="toggle-btn" id="btnVerDeus" onclick="showVerOutcome('deus')">Ver a Deus maior que os gigantes</button>
+            </div>
+            <div class="ver-outcome" id="verOutcome">
+              <h4 id="verTitle"></h4>
+              <p id="verText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Números · os doze espias</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const espSpies = [
+    { name: "Samua (Rúben)", side: "worry" },
+    { name: "Safate (Simeão)", side: "worry" },
+    { name: "Calebe (Judá)", side: "calm" },
+    { name: " Igal (Issacar)", side: "worry" },
+    { name: "Oséias / Josué (Efraim)", side: "calm" },
+    { name: "Palti (Benjamim)", side: "worry" },
+    { name: "Gadiel (Zebulom)", side: "worry" },
+    { name: "Gadi (Manassés)", side: "worry" },
+    { name: "Amiel (Dã)", side: "worry" },
+    { name: "Setur (Aser)", side: "worry" },
+    { name: "Nabi (Naftali)", side: "worry" },
+    { name: "Geuel (Gade)", side: "worry" }
+  ];
+
+  function buildEspDots(){
+    const grid = document.getElementById('espDotGrid');
+    espSpies.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'esp-dot';
+      b.setAttribute('aria-label', s.name);
+      b.onclick = function(){ revealEspDot(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildEspDots();
+
+  function revealEspDot(btn, i){
+    const s = espSpies[i];
+    btn.classList.add(s.side);
+    const caption = document.getElementById('espDotCaption');
+    if (s.side === 'worry'){
+      caption.textContent = s.name + " — juntou-se ao relatório de medo: cidades fortificadas, gigantes, e a certeza de que não prevaleceriam (13.28, 31-33).";
+    } else {
+      caption.textContent = s.name + " — insistiu no relatório de fé: a terra é boa, e o Senhor está com o povo (13.30; 14.6-9).";
+    }
+  }
+
+  function showVerOutcome(type){
+    const btnG = document.getElementById('btnVerGigantes');
+    const btnD = document.getElementById('btnVerDeus');
+    btnG.classList.remove('active-worry');
+    btnD.classList.remove('active-calm');
+    const title = document.getElementById('verTitle');
+    const text = document.getElementById('verText');
+
+    if (type === 'gigantes'){
+      btnG.classList.add('active-worry');
+      title.textContent = "Gafanhotos aos próprios olhos";
+      text.textContent = "É medir a promessa de Deus pelo tamanho do obstáculo — e concluir, como os dez espias, que \"éramos aos nossos olhos como gafanhotos\" (13.33), esquecendo que a mesma mão que abriu o mar já provou o que pode fazer diante de qualquer muralha.";
+    } else {
+      btnD.classList.add('active-calm');
+      title.textContent = "O Senhor está conosco";
+      text.textContent = "É repetir, com Josué e Calebe, que \"o Senhor é conosco; não os temais\" (14.9) — não por ingenuidade quanto ao tamanho das cidades, mas por confiança no tamanho de quem prometeu entregar a terra.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
