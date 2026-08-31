@@ -18,6 +18,8 @@
   var SHARE_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 10.5V2M8 2L5 5M8 2L11 5M3 8V12.5C3 13.05 3.45 13.5 4 13.5H12C12.55 13.5 13 13.05 13 12.5V8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var DOWNLOAD_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 2V10.5M8 10.5L5 7.5M8 10.5L11 7.5M3 13H13" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var INFO_ICON = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke-width="1.4"/><path d="M8 7.2V11.3" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="4.9" r="0.9" fill="currentColor" stroke="none"/></svg>';
+  var SPEAKER_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 6H4.3L7.6 3V13L4.3 10H2V6Z" stroke-width="1.3" stroke-linejoin="round"/><path d="M10.2 5.6C11 6.4 11 9.6 10.2 10.4" stroke-width="1.3" stroke-linecap="round"/><path d="M11.8 4C13.3 5.5 13.3 10.5 11.8 12" stroke-width="1.3" stroke-linecap="round"/></svg>';
+  var STOP_ICON = '<svg viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="8" height="8" rx="1" stroke-width="1.3"/></svg>';
   var BOAT_SVG = '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
       '<path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
       '<path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>' +
@@ -114,6 +116,7 @@
       methodology_text: 'a Volver é um complemento da Bíblia, não um substituto — entenda como usar a plataforma da maneira certa.',
       methodology_link: 'Como usar a Volver →',
       favorite_off: 'Favoritar', favorite_on: 'Favoritado', favorite_aria: 'Favoritar',
+      listen_btn: 'Ouvir', listen_btn_playing: 'Parar', listen_aria: 'Ouvir a reflexão em voz alta',
       finish_btn: 'Finalizar reflexão', finish_btn_done: 'Reflexão concluída ✓',
       share_title: 'Compartilhar', pdf_title: 'Baixar como PDF', copied_title: 'Copiado!',
       back_to_prefix: 'Voltar para ',
@@ -165,6 +168,7 @@
       methodology_text: 'Volver is a complement to the Bible, not a substitute — learn how to use the platform the right way.',
       methodology_link: 'How to use Volver →',
       favorite_off: 'Favorite', favorite_on: 'Favorited', favorite_aria: 'Favorite',
+      listen_btn: 'Listen', listen_btn_playing: 'Stop', listen_aria: 'Listen to the reflection aloud',
       finish_btn: 'Finish reflection', finish_btn_done: 'Reflection completed ✓',
       share_title: 'Share', pdf_title: 'Download as PDF', copied_title: 'Copied!',
       back_to_prefix: 'Back to ',
@@ -216,6 +220,7 @@
       methodology_text: 'Volver es un complemento de la Biblia, no un sustituto — entiende cómo usar la plataforma de la manera correcta.',
       methodology_link: 'Cómo usar Volver →',
       favorite_off: 'Favorito', favorite_on: 'En favoritos', favorite_aria: 'Favorito',
+      listen_btn: 'Escuchar', listen_btn_playing: 'Detener', listen_aria: 'Escuchar la reflexión en voz alta',
       finish_btn: 'Finalizar reflexión', finish_btn_done: 'Reflexión concluida ✓',
       share_title: 'Compartir', pdf_title: 'Descargar como PDF', copied_title: '¡Copiado!',
       back_to_prefix: 'Volver a ',
@@ -856,6 +861,80 @@
     return { completed: completed, total: total };
   }
 
+  // ---------------- audio narration (browser text-to-speech) ----------------
+  var speechQueue = [];
+  var speechIndex = 0;
+  var speechPlaying = false;
+
+  function speechLangTag(){
+    var lang = getLang();
+    return lang === 'en' ? 'en-US' : (lang === 'es' ? 'es-ES' : 'pt-BR');
+  }
+  function pickVoice(){
+    if(!window.speechSynthesis) return null;
+    var voices = window.speechSynthesis.getVoices() || [];
+    var tag = speechLangTag();
+    var exact = voices.filter(function(v){ return v.lang === tag; });
+    if(exact.length) return exact[0];
+    var prefix = tag.split('-')[0];
+    var loose = voices.filter(function(v){ return v.lang && v.lang.indexOf(prefix) === 0; });
+    return loose.length ? loose[0] : null;
+  }
+  function collectNarrationText(){
+    var parts = [];
+    var h1 = document.querySelector('h1');
+    var sub = document.querySelector('.sub');
+    if(h1) parts.push(h1.textContent.trim());
+    if(sub) parts.push(sub.textContent.trim());
+    document.querySelectorAll('.tl-item:not(.locked)').forEach(function(item){
+      var eyebrow = item.querySelector('.tl-eyebrow');
+      var titleShort = item.querySelector('.tl-title-short');
+      var heading = [eyebrow ? eyebrow.textContent.trim() : '', titleShort ? titleShort.textContent.trim() : ''].filter(Boolean).join(' — ');
+      if(heading) parts.push(heading);
+      item.querySelectorAll('.tl-card > p').forEach(function(p){
+        var text = p.textContent.trim();
+        if(text) parts.push(text);
+      });
+      item.querySelectorAll('.verse-card').forEach(function(vc){
+        var tag = vc.querySelector('.tag');
+        var verseP = vc.querySelector('p');
+        var ref = vc.querySelector('.ref');
+        var chunk = [tag ? tag.textContent.trim() : '', verseP ? verseP.textContent.trim() : '']
+          .filter(Boolean).join(': ');
+        if(ref) chunk = [chunk, ref.textContent.trim()].filter(Boolean).join(' ');
+        if(chunk) parts.push(chunk);
+      });
+    });
+    return parts.filter(Boolean);
+  }
+  function stopNarration(){
+    if(window.speechSynthesis) window.speechSynthesis.cancel();
+    speechPlaying = false;
+    speechIndex = 0;
+  }
+  function speakNext(onDone){
+    if(speechIndex >= speechQueue.length){
+      speechPlaying = false;
+      onDone();
+      return;
+    }
+    var utter = new SpeechSynthesisUtterance(speechQueue[speechIndex]);
+    utter.lang = speechLangTag();
+    var voice = pickVoice();
+    if(voice) utter.voice = voice;
+    utter.onend = function(){ speechIndex++; speakNext(onDone); };
+    utter.onerror = function(){ speechPlaying = false; onDone(); };
+    window.speechSynthesis.speak(utter);
+  }
+  function startNarration(onDone){
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    speechQueue = collectNarrationText();
+    speechIndex = 0;
+    speechPlaying = true;
+    speakNext(onDone);
+  }
+
   // ---------------- lesson page ----------------
   function enhanceLessonPage(){
     var p = pathParts();
@@ -888,6 +967,25 @@
       });
       var track = bar.querySelector('.brand-track');
       if(track){ bar.insertBefore(favBtn, track); } else { bar.appendChild(favBtn); }
+    }
+
+    if(bar && !document.getElementById('volverListenBtn') && window.speechSynthesis){
+      var listenBtn = document.createElement('button');
+      listenBtn.id = 'volverListenBtn';
+      listenBtn.type = 'button';
+      function renderListen(){
+        listenBtn.className = 'listen-btn-inline' + (speechPlaying ? ' active' : '');
+        listenBtn.setAttribute('aria-label', t('listen_aria'));
+        listenBtn.innerHTML = (speechPlaying ? STOP_ICON : SPEAKER_ICON) + '<span>' + (speechPlaying ? t('listen_btn_playing') : t('listen_btn')) + '</span>';
+      }
+      renderListen();
+      document.addEventListener('volver:lang', renderListen);
+      listenBtn.addEventListener('click', function(){
+        if(speechPlaying){ stopNarration(); renderListen(); }
+        else { startNarration(renderListen); renderListen(); }
+      });
+      var track2 = bar.querySelector('.brand-track');
+      if(track2){ bar.insertBefore(listenBtn, track2); } else { bar.appendChild(listenBtn); }
     }
 
     injectFinishButton(entry);

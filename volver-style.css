@@ -327,6 +327,17 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
 .fav-star-inline.active{ border-color: var(--gold); color: var(--gold); }
 .fav-star-inline.active path{ stroke: var(--gold); fill: var(--gold); }
 
+.listen-btn-inline{
+  display:inline-flex; align-items:center; gap:6px; margin-left:10px;
+  border:1px solid var(--panel-line); border-radius:20px; padding:6px 12px; background:none;
+  font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-dim); cursor:pointer;
+  transition: all .2s ease;
+}
+.listen-btn-inline svg{ width:13px; height:13px; }
+.listen-btn-inline path, .listen-btn-inline rect{ stroke: var(--text-faint); fill:none; transition: all .2s ease; }
+.listen-btn-inline.active{ border-color: var(--gold); color: var(--gold); }
+.listen-btn-inline.active path, .listen-btn-inline.active rect{ stroke: var(--gold); }
+
 .fav-star-card{
   position:absolute; border:none; cursor:pointer; z-index:3;
   width:24px; height:24px; border-radius:50%;
@@ -520,7 +531,7 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   body{ color: var(--text) !important; }
 
   .volver-sidebar, .sidebar-backdrop, .menu-btn, .back-btn, .theme-toggle,
-  .fav-star-inline, .fav-star-card, .finish-row, .inline-complete-back, .celebrate-backdrop,
+  .fav-star-inline, .fav-star-card, .listen-btn-inline, .finish-row, .inline-complete-back, .celebrate-backdrop,
   .intro-splash, .chip-row, footer{ display:none !important; }
 
   .brand-bar{ border-bottom:1.5px solid var(--panel-line); padding-bottom:16px; margin-bottom:26px; }
