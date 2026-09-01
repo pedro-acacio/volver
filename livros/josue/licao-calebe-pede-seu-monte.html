@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calebe pede seu monte — Josué 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — Calebe aos 40 x aos 85 anos */
+  .cal-chip-outer{ margin-top:16px; }
+  .cal-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .cal-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .cal-chip{ border:1px solid var(--panel-line); background:var(--bg); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); cursor:pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .cal-chip.active{ background:var(--calm); border-color:var(--calm); color:#fff; }
+  .cal-chip-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row extra: parte mais fácil x parte mais difícil com fé */
+  .cal-toggle-outer{ margin-top:16px; }
+  .cal-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .cal-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .cal-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A partilha e a aliança</span>
+  </div>
+
+  <div class="eyebrow">A partilha e a aliança · <span class="ref-tag">Josué 14</span></div>
+  <h1>Calebe pede seu monte</h1>
+  <p class="sub">Quarenta e cinco anos depois de ser um dos dois espias que trouxeram um relatório de fé, Calebe, já com oitenta e cinco anos, não pede a terra mais fácil — pede exatamente a montanha mais difícil de conquistar.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A partilha começa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Eleazar, o sacerdote, Josué, e os cabeças das tribos de Israel começam a dividir a terra de Canaã por sorteio entre as nove tribos e meia que ainda não haviam recebido herança (14.1-2). As tribos de Rúben, Gade e a meia-tribo de Manassés já haviam recebido a sua terra a leste do Jordão, ainda no tempo de Moisés (14.3).</p>
+          <p>Os levitas, porém, não recebem porção de terra entre as demais tribos — apenas cidades para habitar, com seus arredores para os rebanhos, "porque o seu sacerdócio era a sua herança" (14.4). A partilha começa, portanto, marcando que nem toda herança em Israel é medida em hectares: a de Levi é o próprio serviço ao Senhor.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Calebe relembra a promessa de quarenta e cinco anos atrás</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 L9 4 L15 14 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="9" cy="10" r="1.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Calebe relembra a promessa de quarenta e cinco anos atrás</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Calebe se apresenta a Josué em Gilgal e relembra publicamente o episódio dos doze espias: ele e Josué foram os únicos dois, entre doze, que trouxeram um relatório de fé sobre a terra (14.6-7). Por isso, diz Calebe, Moisés jurou naquele dia que a terra que seus pés pisaram seria herança sua e de seus filhos "para sempre, porquanto perseveraste em seguir ao Senhor, meu Deus" (14.9).</p>
+          <p>Calebe então cita sua própria idade — oitenta e cinco anos — e declara que está tão forte hoje quanto no dia em que foi enviado como espia, "tanto para a guerra como para sair e para entrar" (14.10-11). Entre a promessa e o pedido se passaram quarenta e cinco anos inteiros — trinta e oito deles no deserto, e mais alguns na própria conquista. Toque nos dois momentos para ver o que os separa e o que permanece igual:</p>
+
+          <div class="cal-chip-outer">
+            <div class="cal-chip-label">Quarenta e cinco anos de distância — toque para comparar</div>
+            <div class="cal-chip-row" id="calChipRow"></div>
+            <div class="cal-chip-caption" id="calChipCaption">Toque em um dos dois momentos para ver o que Calebe fez ali.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o pedido: a montanha dos anaquins</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L6 6 L9 11 L12 4 L16 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O pedido: a montanha dos anaquins</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em vez de pedir uma porção mais fácil ou mais segura, Calebe pede especificamente a região montanhosa que os próprios dez espias, décadas antes, haviam descrito como habitada por gigantes — os anaquins — e cidades grandes e fortificadas (14.12). É exatamente o que causou o pânico original do povo no deserto, o mesmo relatório que fez uma geração inteira morrer sem entrar na terra.</p>
+          <p>A razão de Calebe é explícita, sem rodeios: "se o Senhor for comigo, os expulsarei, como o Senhor disse" (14.12). O pedido é, ele mesmo reconhece, um ato de fé deliberado — não uma tarefa fácil escolhida por último, mas o próprio obstáculo que antes parecia impossível, escolhido de propósito.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Hebrom se torna herança de Calebe</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="8" width="10" height="7" stroke-width="1.3"/>
+          <path d="M3 8 L9 3 L15 8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Hebrom se torna herança de Calebe</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Josué abençoa Calebe e lhe dá Hebrom por herança, cumprindo o juramento que Moisés fizera décadas antes (14.13). O texto observa que Hebrom se chamava antes Quiriate-Arba, em referência a Arba, "o maior homem entre os anaquins" (14.15) — o próprio nome da cidade era um lembrete permanente do que Calebe teria que enfrentar para tomá-la.</p>
+          <p>O capítulo fecha com a nota de que "a terra teve descanso da guerra" (14.15), encerrando essa fase da conquista com a fidelidade de um homem que esperou décadas para receber o que lhe fora prometido, e ainda assim, quando chegou a hora, escolheu o desafio maior em vez do mais seguro.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma fé que atravessou uma geração inteira</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Calebe é uma das poucas figuras do Antigo Testamento explicitamente descritas como tendo "perseverado em seguir ao Senhor" (14.9, repetido três vezes no capítulo — 14.8, 9 e 14) — não por um único ato de coragem diante dos gigantes, mas por décadas de fidelidade sustentada entre a promessa e o cumprimento.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 14.12</span>
+          <p>Agora, pois, dá-me este monte, de que o Senhor falou naquele dia... se o Senhor for comigo, os expulsarei, como o Senhor disse.</p>
+          <span class="ref">— Calebe, a Josué</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Depois de décadas esperando, seria compreensível que Calebe pedisse descanso, não mais uma batalha contra gigantes. Mas a mesma fé que o diferenciou dos outros dez espias aos quarenta anos ainda o define aos oitenta e cinco — ele não quer apenas uma herança qualquer, quer a prova viva de que a promessa de Deus alcança até o obstáculo que antes parecia impossível.</p>
+
+          <div class="cal-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnCalFacil" onclick="showCalOutcome('facil')">Pedir a parte mais fácil</button>
+              <button class="toggle-btn" id="btnCalDificil" onclick="showCalOutcome('dificil')">Pedir a parte mais difícil, com fé</button>
+            </div>
+            <div class="cal-outcome" id="calOutcome">
+              <h4 id="calTitle"></h4>
+              <p id="calText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · Calebe pede seu monte</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const calMoments = [
+    { label: "Calebe aos 40 anos", theme: "um dos dois relatórios de fé em meio a dez de medo", quote: "Bem podemos subir, e apoderar-nos dela, porque prevaleceremos certamente contra ela (Números 13.30)." },
+    { label: "Calebe aos 85 anos", theme: "ainda pedindo a parte mais difícil da conquista", quote: "Agora, pois, dá-me este monte... se o Senhor for comigo, os expulsarei, como o Senhor disse (Josué 14.12)." }
+  ];
+
+  function buildCalChips(){
+    const row = document.getElementById('calChipRow');
+    calMoments.forEach((m, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cal-chip';
+      b.textContent = m.label;
+      b.onclick = function(){ revealCalChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildCalChips();
+
+  function revealCalChip(btn, i){
+    document.querySelectorAll('.cal-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const m = calMoments[i];
+    document.getElementById('calChipCaption').textContent = m.label + " — " + m.theme + ": \"" + m.quote + "\"";
+  }
+
+  function showCalOutcome(type){
+    const btnF = document.getElementById('btnCalFacil');
+    const btnD = document.getElementById('btnCalDificil');
+    btnF.classList.remove('active-worry');
+    btnD.classList.remove('active-calm');
+    const title = document.getElementById('calTitle');
+    const text = document.getElementById('calText');
+
+    if (type === 'facil'){
+      btnF.classList.add('active-worry');
+      title.textContent = "O descanso que seria compreensível";
+      text.textContent = "Depois de quarenta e cinco anos entre a promessa e o cumprimento, ninguém culparia Calebe por pedir uma porção mais tranquila — ele já havia esperado o suficiente, e a idade por si só justificaria escolher menos guerra, não mais (14.10).";
+    } else {
+      btnD.classList.add('active-calm');
+      title.textContent = "A fé que não se aposentou";
+      text.textContent = "É a mesma coragem que o separou dos outros dez espias em Cades-Barneia (Números 13.30) — agora aplicada, aos oitenta e cinco anos, à montanha que ainda tinha gigantes: \"se o Senhor for comigo, os expulsarei, como o Senhor disse\" (14.12).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

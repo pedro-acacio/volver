@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A queda de Jericó — Josué 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Sete dias — seis marchas silenciosas, um grito */
+  .jer-outer{ margin-top:16px; }
+  .jer-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .jer-grid{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .jer-day{ width:34px; height:34px; border-radius:8px; background:var(--panel-line); border:none; padding:0; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--text-dim); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease, color .3s ease; flex-shrink:0; }
+  .jer-day.open{ background:var(--calm); color:#fff; transform:scale(1.08); box-shadow:0 0 8px 1px rgba(124,154,120,.4); }
+  .jer-day.day7{ font-weight:600; }
+  .jer-day.day7.open{ background:var(--gold, #D9A441); color:#2C3459; box-shadow:0 0 10px 2px rgba(217,164,65,.5); }
+  .jer-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* toggle extra — estratégia sem sentido x obediência sem sentido */
+  .est-toggle-outer{ margin-top:16px; }
+  .est-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .est-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .est-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A conquista da terra</span>
+  </div>
+
+  <div class="eyebrow">A conquista da terra · <span class="ref-tag">Josué 6</span></div>
+  <h1>A queda de Jericó</h1>
+  <p class="sub">Sete dias, sete voltas ao redor da cidade, uma trombeta e um grito — e uma muralha fechada cai sem que um único soldado israelita erga a espada contra ela.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Uma cidade fechada, uma ordem estranha</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jericó está trancada por causa dos filhos de Israel; ninguém entra, ninguém sai (6.1). É diante desse cerco que o Senhor dá a Josué uma estratégia sem paralelo em qualquer manual de guerra: marchar ao redor da cidade uma vez por dia, durante seis dias, liderados por sete sacerdotes tocando trombetas de chifre de carneiro à frente da arca.</p>
+          <p>No sétimo dia, a ordem muda: marchar sete vezes ao redor da cidade e, ao toque prolongado da trombeta, todo o povo deve gritar em alta voz — e o muro da cidade cairá abaixo de si mesmo, para que cada um suba diretamente diante de si (6.2-5).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → seis dias de silêncio obediente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Seis dias de silêncio obediente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Josué ordena ao povo: "Não gritareis, nem se ouvirá a vossa voz, nem sairá palavra alguma da vossa boca, até ao dia em que eu vos disser: gritai; então gritareis" (6.10). Por seis dias, a mesma procissão se repete: os homens armados à frente, os sete sacerdotes com as trombetas, a arca da aliança, e a retaguarda fechando a marcha — uma volta por dia, em silêncio total, exceto pelo som contínuo das trombetas (6.6-14).</p>
+          <p>Nada acontece visivelmente. Nenhum muro racha, nenhuma porta se abre. É só mais uma volta, igual à anterior, igual à seguinte. Toque em cada dia para acompanhar como essa repetição se sustenta até o momento em que tudo muda:</p>
+
+          <div class="jer-outer">
+            <div class="jer-label">Os sete dias do cerco — toque em cada um</div>
+            <div class="jer-grid" id="jerGrid"></div>
+            <div class="jer-caption" id="jerCaption">Toque em um dia para ver o que aconteceu nele.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o sétimo dia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O sétimo dia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No sétimo dia, o povo se levanta ao romper da alva e marcha ao redor da cidade sete vezes seguidas — a única vez, em todo o cerco, em que circundam mais de uma vez no mesmo dia (6.15). Na sétima volta, ao toque da trombeta, Josué finalmente ordena o grito, "porque o Senhor vos deu a cidade" (6.16).</p>
+          <p>Junto com a ordem de gritar, vem uma instrução severa: a cidade e tudo o que nela há devem ser anátema — destinados à destruição, consagrados ao Senhor — com uma única exceção: Raabe e todos os que estiverem em sua casa, por causa do juramento feito aos espias (6.17). Prata, ouro, e utensílios de bronze e de ferro devem ser separados para o tesouro do Senhor, não tomados como despojo pessoal (6.18-19).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a muralha cai, Raabe é poupada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A muralha cai, Raabe é poupada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao grito do povo, o muro cai "abaixo de si mesmo", e cada israelita entra na cidade diretamente diante de si e a toma (6.20). Josué cumpre o juramento dos espias: manda tirar Raabe, seu pai, sua mãe, seus irmãos e tudo o que era dela para fora da cidade, poupando toda a sua família (6.22-23).</p>
+          <p>O narrador acrescenta uma nota final, quase como se escrevesse para leitores que ainda conheciam a família dela: "e ela habitou no meio de Israel até hoje" (6.25) — a única casa cananeia que permanece de pé no meio do povo de uma cidade inteiramente destruída.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma obediência que não precisava fazer sentido</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Nada em Jericó 6 é estratégia militar convencional. Marchar em silêncio ao redor de uma cidade fechada, um dia após o outro, sem catapultas, sem aríete, sem nenhum sinal de que algo estava mudando — isso não derruba muros. O que derruba o muro de Jericó é o grito do povo no exato momento ordenado, depois de seis dias em que obedecer parecia não levar a lugar nenhum.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 6.20</span>
+          <p>Gritou, pois, o povo, tocando os sacerdotes as trombetas; e aconteceu que, ouvindo o povo o sonido da trombeta, gritou o povo com grande grito, e o muro caiu abaixo de si mesmo.</p>
+          <span class="ref">— a queda do muro de Jericó</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Séculos depois, o autor de Hebreus resume o episódio numa única frase que credita a vitória não à tática, mas à fé: "Pela fé caíram os muros de Jericó, sendo rodeados sete dias" (Hebreus 11.30). A vitória não veio de uma estratégia superior, mas de obediência sustentada a uma ordem que, por seis dias, não parecia levar a lugar nenhum.</p>
+
+          <div class="est-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnEstEstranha" onclick="showEstOutcome('estranha')">Uma estratégia que não fazia sentido</button>
+              <button class="toggle-btn" id="btnEstObediencia" onclick="showEstOutcome('obediencia')">Uma obediência que não precisava fazer sentido</button>
+            </div>
+            <div class="est-outcome" id="estOutcome">
+              <h4 id="estTitle"></h4>
+              <p id="estText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · a queda de Jericó</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const jerDays = [
+    { day: 1, caption: "Dia 1 — uma volta silenciosa ao redor da cidade, sacerdotes tocando trombetas à frente da arca. Nada visível acontece (6.11)." },
+    { day: 2, caption: "Dia 2 — a mesma marcha, o mesmo silêncio. Igual ao dia anterior (6.14)." },
+    { day: 3, caption: "Dia 3 — uma volta, sem palavra alguma saindo da boca do povo, como Josué havia ordenado (6.10, 14)." },
+    { day: 4, caption: "Dia 4 — outra volta idêntica. O muro segue de pé, sem sinal de rachadura." },
+    { day: 5, caption: "Dia 5 — nada muda no padrão. Só o som contínuo das trombetas quebra o silêncio." },
+    { day: 6, caption: "Dia 6 — a sexta volta, tão indistinguível das anteriores quanto todas as outras (6.14)." },
+    { day: 7, caption: "Dia 7 — o povo se levanta ao romper da alva e marcha sete vezes seguidas; na sétima volta, ao toque da trombeta, Josué ordena o grito — e o muro cai abaixo de si mesmo (6.15-16, 20)." }
+  ];
+
+  function buildJerGrid(){
+    const grid = document.getElementById('jerGrid');
+    jerDays.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'jer-day' + (d.day === 7 ? ' day7' : '');
+      b.textContent = 'Dia ' + d.day;
+      b.setAttribute('aria-label', 'Dia ' + d.day);
+      b.onclick = function(){ revealJerDay(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildJerGrid();
+
+  function revealJerDay(btn, i){
+    btn.classList.add('open');
+    document.getElementById('jerCaption').textContent = jerDays[i].caption;
+  }
+
+  function showEstOutcome(type){
+    const btnE = document.getElementById('btnEstEstranha');
+    const btnO = document.getElementById('btnEstObediencia');
+    btnE.classList.remove('active-worry');
+    btnO.classList.remove('active-calm');
+    const title = document.getElementById('estTitle');
+    const text = document.getElementById('estText');
+
+    if (type === 'estranha'){
+      btnE.classList.add('active-worry');
+      title.textContent = "Uma ordem que convidava à dúvida";
+      text.textContent = "Marchar em silêncio ao redor de uma cidade fechada, dia após dia, sem nenhum resultado visível, é exatamente o tipo de instrução que convida à dúvida — nada nela parece, aos olhos humanos, capaz de derrubar um muro.";
+    } else {
+      btnO.classList.add('active-calm');
+      title.textContent = "A eficácia nunca dependeu de parecer estratégica";
+      text.textContent = "Mas a queda do muro no sétimo dia prova que a eficácia da ordem nunca dependeu de parecer estratégica aos olhos humanos — dependia apenas de vir de Deus, e de ser obedecida até o fim.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

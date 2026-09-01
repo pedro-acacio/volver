@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução aos Evangelhos — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .ev-seq-outer{ margin-top:16px; }
+  .ev-seq-cols{ display:flex; gap:16px; flex-wrap:wrap; }
+  .ev-seq-col{ flex:1; min-width:220px; }
+  .ev-seq-col-title{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+  .ev-seq-row{ display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+  .ev-seq-dot{ width:18px; height:18px; border-radius:50%; background:var(--panel-line); border:none; padding:0; cursor:pointer; flex-shrink:0; transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .ev-seq-dot.lit{ background:var(--gold); transform:scale(1.2); box-shadow:0 0 8px 1px rgba(217,164,65,.4); }
+  .ev-seq-dot-label{ font-size:12px; color:var(--text-dim); cursor:pointer; }
+  .ev-seq-caption{ font-size:13px; line-height:1.58; color:var(--text-dim); margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line); min-height:36px; }
+
+  .syn-outer{ margin-top:16px; }
+  .syn-outcome{ border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); margin-top:10px; }
+  .syn-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15px; margin:0 0 6px; color:var(--text); }
+  .syn-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-livros.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Evangelhos · <span class="ref-tag">Mateus, Marcos, Lucas e João</span></div>
+  <h1>Introdução aos Evangelhos</h1>
+  <p class="sub">Quatro relatos, um mesmo Jesus. Antes de abrir o primeiro evangelho, vale entender o mundo político em que ele nasceu, por que esses livros não são biografias no sentido moderno, e por que três deles se parecem tanto entre si — e o quarto, tão pouco com eles.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O mundo em que os Evangelhos começam</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Herodes, o Grande, morreu pouco depois do nascimento de Jesus, deixando seu reino dividido entre filhos. A Judeia e a Samaria foram para Arquelau — que, herdando as fraquezas do pai sem suas virtudes, foi banido pelos romanos apenas dez anos depois. A partir daí, essas regiões passaram a ser controladas diretamente por Roma, por meio de governadores conhecidos mais tarde como "procuradores" — entre eles Pôncio Pilatos, que ocupava o cargo durante o ministério de Jesus.</p>
+          <p>A Galileia — onde Jesus passou a maior parte de sua vida e ministério — e a Pereia foram entregues a outro filho, Herodes Antipas, mencionado várias vezes nos Evangelhos (por exemplo, Mateus 14.1-12; Lucas 23.6-15). É esse mapa político, fragmentado entre um governo romano direto de um lado e um rei títere do outro, que forma o pano de fundo de tudo o que os quatro Evangelhos contam.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → depois da cruz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 3 H15 V7 L9 9 L15 11 V15 H3 V11 L9 9 L3 7 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Depois da cruz: Agripa, e a revolta que viria</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O reinado de Antipas foi longo, mas em 39 d.C. Herodes Agripa — neto de Herodes, o Grande — conseguiu bani-lo e assumir o controle da Galileia e da Pereia. Dois anos depois, seu amigo de infância Cláudio, agora imperador romano, também o coroou rei da Judeia e da Samaria: pela primeira vez desde Arquelau, um único Herodes voltava a governar toda a Terra Prometida. Agripa tinha o apoio dos judeus, mas seu reinado foi curto — morreu em 44 d.C., depois de perseguir alguns apóstolos e aceitar louvores como se fosse um deus (Atos 12.1-4, 19-23).</p>
+
+          <div class="ev-seq-outer">
+            <div class="ev-seq-cols">
+              <div class="ev-seq-col">
+                <div class="ev-seq-col-title">Judeia e Samaria</div>
+                <div class="ev-seq-row"><button class="ev-seq-dot" onclick="revealEvDot(this, 0)"></button><span class="ev-seq-dot-label" onclick="revealEvDot(this.previousElementSibling, 0)">Herodes, o Grande</span></div>
+                <div class="ev-seq-row"><button class="ev-seq-dot" onclick="revealEvDot(this, 1)"></button><span class="ev-seq-dot-label" onclick="revealEvDot(this.previousElementSibling, 1)">Arquelau (banido em 10 anos)</span></div>
+                <div class="ev-seq-row"><button class="ev-seq-dot" onclick="revealEvDot(this, 2)"></button><span class="ev-seq-dot-label" onclick="revealEvDot(this.previousElementSibling, 2)">Prefeitos romanos, incl. Pilatos</span></div>
+              </div>
+              <div class="ev-seq-col">
+                <div class="ev-seq-col-title">Galileia e Pereia</div>
+                <div class="ev-seq-row"><button class="ev-seq-dot" onclick="revealEvDot(this, 3)"></button><span class="ev-seq-dot-label" onclick="revealEvDot(this.previousElementSibling, 3)">Herodes Antipas</span></div>
+                <div class="ev-seq-row"><button class="ev-seq-dot" onclick="revealEvDot(this, 4)"></button><span class="ev-seq-dot-label" onclick="revealEvDot(this.previousElementSibling, 4)">Herodes Agripa I (39-44 d.C.)</span></div>
+              </div>
+            </div>
+            <div class="ev-seq-caption" id="evSeqCaption">Toque em um nome para ver seu papel nos Evangelhos e em Atos.</div>
+          </div>
+
+          <p style="margin-top:14px;">Depois da morte de Agripa, os romanos reassumiram o governo direto, dando a seu filho, Agripa II, o controle de apenas uma pequena porção da terra (Atos 25.13—26.32). As tensões entre judeus e romanos só se intensificaram nas décadas seguintes, culminando na revolta de 66 d.C. — um conflito com consequências desastrosas, que terminou com a destruição de Jerusalém em 70 d.C.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → não são biografias</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Não são biografias</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Com exceção do Pentateuco, os principais livros históricos do Antigo Testamento — Josué, Juízes, 1º e 2º Samuel, 1º e 2º Reis — são chamados, na tradição judaica, de "Profetas Anteriores". Seu propósito central não é servir de registro histórico nacional, mas de mensagem profética, para repreender e consolar. Os Evangelhos e Atos seguem o mesmo padrão: não fornecem todos os detalhes históricos que um leitor moderno gostaria de ter, e não podem ser chamados, com propriedade, de biografias de Jesus ou dos apóstolos. Antes, registram acontecimentos selecionados, descritos e organizados de um modo específico, para apresentar a mensagem do evangelho.</p>
+          <p>Por isso, ao lermos essas narrativas, devemos nos esforçar para perceber o motivo de certos acontecimentos terem sido incluídos, descritos e organizados do jeito como foram. Detalhes que a princípio parecem insignificantes — como o voto que Paulo faz, registrado quase de passagem em Atos 18.18 — podem se revelar extremamente importantes mais adiante (Atos 21.20-24). E quando um mesmo acontecimento da vida de Jesus é relatado em mais de um Evangelho, muitas vezes conseguimos enxergar mais do seu significado justamente comparando a perspectiva de cada um.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o problema dos sinóticos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.2" stroke-width="1.4"/>
+          <path d="M9 5.5 V9 L11.5 11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O problema dos sinóticos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Até uma leitura superficial dos quatro Evangelhos mostra que três deles — Mateus, Marcos e Lucas — são bastante parecidos, especialmente em contraste com João. Salvo poucas exceções, os acontecimentos incluídos em João (por exemplo, os capítulos 3, 9, 11 e 14) não aparecem nos três primeiros. Por esse motivo, os três primeiros são chamados "sinóticos" — do grego, "mesmo ponto de vista".</p>
+
+          <div class="syn-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnSyn" onclick="showSynOutcome('syn')">Mateus, Marcos e Lucas</button>
+              <button class="toggle-btn" id="btnJoao" onclick="showSynOutcome('joao')">João</button>
+            </div>
+            <div class="syn-outcome" id="synOutcome">
+              <h4 id="synTitle"></h4>
+              <p id="synText"></p>
+            </div>
+          </div>
+
+          <p style="margin-top:14px;">No entanto, uma comparação mais detalhada revela não apenas semelhanças, mas também diferenças entre os sinóticos — o que levanta uma pergunta literária: como esses Evangelhos se originaram? Os autores usaram textos uns dos outros, ou se valeram de outros materiais? O modo mais comum de responder é que Marcos foi o primeiro a ser escrito, e que Mateus e Lucas seguiram seu esboço geral (Marcos 2.1-22; compare Mateus 9.2-17 e Lucas 5.18-38). Mas Mateus e Lucas também têm em comum textos importantes que não aparecem em Marcos (por exemplo, Mateus 7.24-27 e Lucas 6.47-49) — o que leva muitos estudiosos a supor que os dois usaram um segundo documento, hoje perdido, chamado de "teoria das duas fontes".</p>
+          <p>Há teorias alternativas — alguns defendem a prioridade de Mateus, outros a de Lucas — e a maioria dos especialistas reconhece que várias perguntas sobre esse desenvolvimento literário ainda não foram respondidas. Mas isso não é motivo de insegurança: nossa confiança na veracidade dos Evangelhos nunca se baseou na capacidade dos estudiosos de explicar exatamente como eles foram compostos, e sim na inspiração divina por trás de cada um deles.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Inspirados, não apenas bem documentados</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Quatro relatos, escritos de ângulos diferentes, num mundo político turbulento, décadas antes de Jerusalém cair — e ainda assim, apontando com clareza para o mesmo Jesus. A pergunta que fecha essa introdução não é "como os estudiosos explicam a semelhança entre os Evangelhos", mas onde, no fim, repousa a nossa confiança neles.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">2 Timóteo 3.16-17</span>
+          <p>Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça, para que o homem de Deus seja apto e plenamente preparado para toda boa obra.</p>
+          <span class="ref">— Paulo, a Timóteo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>As perguntas literárias sobre como Mateus, Marcos e Lucas se relacionam entre si continuam abertas, e provavelmente vão continuar. Mas a fé cristã nunca dependeu de resolvê-las.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Confiança na erudição literária</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Confiança na inspiração divina</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução aos Evangelhos</footer>
+</div>
+
+<script>
+  const evSeqData = [
+    { text: "Herodes, o Grande — rei de toda a Judeia quando Jesus nasce; morre pouco depois, dividindo o reino entre seus filhos." },
+    { text: "Arquelau — herda a Judeia e a Samaria, mas, faltando as virtudes do pai, é banido pelos romanos apenas dez anos depois." },
+    { text: "Prefeitos romanos — a partir do banimento de Arquelau, Roma passa a governar a Judeia e a Samaria diretamente; Pôncio Pilatos ocupa esse cargo durante o julgamento de Jesus." },
+    { text: "Herodes Antipas — recebe a Galileia e a Pereia, onde Jesus passa a maior parte de seu ministério; é ele quem manda decapitar João Batista e interroga Jesus antes da crucificação." },
+    { text: "Herodes Agripa I — neto de Herodes, o Grande; banindo Antipas em 39 d.C. e depois recebendo também a Judeia e a Samaria de seu amigo, o imperador Cláudio, reúne outra vez toda a terra sob um só governo — mas morre em 44 d.C., depois de perseguir a igreja primitiva (Atos 12)." }
+  ];
+
+  function revealEvDot(btn, i){
+    document.querySelectorAll('.ev-seq-dot').forEach(d => d.classList.remove('lit'));
+    btn.classList.add('lit');
+    document.getElementById('evSeqCaption').textContent = evSeqData[i].text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showSynOutcome(type){
+    const btnSyn = document.getElementById('btnSyn');
+    const btnJoao = document.getElementById('btnJoao');
+    btnSyn.classList.remove('active-worry');
+    btnJoao.classList.remove('active-calm');
+    const title = document.getElementById('synTitle');
+    const text = document.getElementById('synText');
+
+    if (type === 'syn'){
+      btnSyn.classList.add('active-worry');
+      title.textContent = "Mesmo ponto de vista";
+      text.textContent = "Mateus, Marcos e Lucas compartilham a maior parte de seus relatos, muitas vezes com o mesmo conteúdo e até a mesma ordem dos acontecimentos — por isso são vistos \"em conjunto\" (sín-óptico), como se olhassem a vida de Jesus do mesmo ângulo.";
+    } else {
+      btnJoao.classList.add('active-calm');
+      title.textContent = "Um ângulo próprio";
+      text.textContent = "João segue seu próprio caminho: a maior parte de seu conteúdo (como os capítulos 3, 9, 11 e 14) simplesmente não aparece nos outros três — um relato complementar, não concorrente, escrito \"para que creiais que Jesus é o Cristo\" (João 20.31).";
+    }
+  }
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma fé refém da pesquisa acadêmica";
+      text.textContent = "Se a confiança nos Evangelhos dependesse de os especialistas explicarem completamente como Mateus, Marcos e Lucas se relacionam entre si, ela ficaria refém de perguntas que, até hoje, continuam em aberto.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma fé apoiada no próprio Deus que inspirou";
+      text.textContent = "A confiança na veracidade dos Evangelhos não vem da capacidade humana de reconstituir seu processo literário, mas do mesmo Espírito que inspirou cada um dos autores — o mesmo fundamento que sustenta toda a Escritura (2 Timóteo 3.16-17).";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

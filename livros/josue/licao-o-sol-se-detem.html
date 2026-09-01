@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O sol se detém — Josué 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* pedido e resposta — dois chips lado a lado */
+  .sol-outer{ margin-top:16px; }
+  .sol-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .sol-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .sol-chip{ border-radius:12px; padding:12px 16px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:500; color:var(--text-dim); transition: background .3s ease, color .3s ease, transform .2s ease; flex:1 1 160px; text-align:left; }
+  .sol-chip.open{ background:var(--gold, #D9A441); color:#2C3459; transform:scale(1.02); }
+  .sol-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* toggle extra — já bastava x ainda maior */
+  .vit-toggle-outer{ margin-top:16px; }
+  .vit-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .vit-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .vit-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A conquista da terra</span>
+  </div>
+
+  <div class="eyebrow">A conquista da terra · <span class="ref-tag">Josué 10</span></div>
+  <h1>O sol se detém</h1>
+  <p class="sub">Josué pede um dia mais longo do que qualquer general jamais pediu, para terminar uma batalha que já estava vencida — e o Senhor, segundo o texto, atende à voz de um homem como nunca atendeu antes ou depois.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="2" stroke-width="1.2"/>
+          <circle cx="12" cy="5" r="1.6" stroke-width="1.1"/>
+          <circle cx="14" cy="10" r="1.6" stroke-width="1.1"/>
+          <circle cx="9" cy="12" r="1.8" stroke-width="1.2"/>
+          <circle cx="4" cy="12" r="1.4" stroke-width="1"/>
+          <path d="M6 6 L9 12" stroke-width="1" stroke-dasharray="1.3 1.5"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Cinco reis contra Gibeão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao saber que Gibeão fez paz com Israel, o rei de Jerusalém se une a quatro outros reis amorreus para atacar a cidade — agora aliada, ainda que por engano, de Israel — como punição por sua rendição (10.1-4).</p>
+          <p>Os gibeonitas, ameaçados de destruição, enviam mensageiros pedindo socorro urgente a Josué, acampado em Gilgal: "não retires de teus servos a tua mão; sobe apressadamente a nós, e livra-nos, e ajuda-nos" (10.6).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → uma marcha noturna e uma promessa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M11 3 A6 6 0 1 0 15 12 A5 5 0 0 1 11 3 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M3 15 L15 15" stroke-width="1" stroke-dasharray="1 2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Uma marcha noturna e uma promessa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Josué marcha a noite toda desde Gilgal para socorrer Gibeão, e o Senhor lhe promete de antemão: "não temas diante deles, porque os tenho dado nas tuas mãos; nenhum deles te poderá resistir" (10.8). Israel ataca de surpresa e desbarata os cinco exércitos reunidos.</p>
+          <p>No meio da fuga inimiga, o Senhor mesmo intervém: lança sobre eles, dos céus, uma chuva de grandes pedras de saraiva, matando mais homens do que a espada dos próprios israelitas (10.10-11). Neste ponto, a batalha já estava decisivamente vencida por intervenção direta de Deus — antes de qualquer pedido sobre o sol.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → sol, detém-te em Gibeão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.5" stroke-width="1.3"/>
+          <path d="M9 3 V1.5 M9 16.5 V15 M3 9 H1.5 M16.5 9 H15" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Sol, detém-te em Gibeão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No meio dessa vitória já garantida, Josué faz um pedido extraordinário diante de todo o Israel: que o sol se detenha sobre Gibeão e a lua sobre o vale de Aijalom (10.12). Toque nos dois pontos abaixo para ver o pedido e a resposta, lado a lado, tal como o texto registra:</p>
+
+          <div class="sol-outer">
+            <div class="sol-label">O pedido e o resultado</div>
+            <div class="sol-chip-row" id="solChipRow"></div>
+            <div class="sol-caption" id="solCaption">Toque em um dos dois para ler o texto de Josué 10.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a campanha do sul</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 L15 15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M5 15 L5 9 L9 6 L13 9 L13 15" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A campanha do sul</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os cinco reis se escondem numa caverna em Maquedá; Josué manda selar a entrada com grandes pedras e continua perseguindo o exército em fuga, sem deixar que ninguém entre nas cidades (10.16-19). Só depois, com a vitória completa, os cinco reis são trazidos, humilhados publicamente — Josué manda os capitães israelitas pisarem sobre o pescoço deles como sinal de vitória total (10.22-24) — e executados (10.26).</p>
+          <p>A partir daí, Josué toma uma sequência de cidades do sul de Canaã — Maquedá, Libna, Laquis, Eglom, Hebrom, Debir — "porque o Senhor, Deus de Israel, pelejava por Israel" (10.42).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma vitória ainda maior, pedida em oração</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Este episódio, um dos mais debatidos fenômenos do Antigo Testamento por leitores modernos, importa teologicamente menos pelo mecanismo exato do que pelo que revela: um Deus que, segundo a própria Escritura, ajusta a ordem natural em resposta à oração de um homem em aliança com ele — no meio de uma batalha que ele mesmo já estava vencendo por granizo antes que o pedido fosse feito.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 10.14</span>
+          <p>E não houve dia semelhante a esse, nem antes nem depois dele, atendendo o Senhor assim à voz dum homem; porque o Senhor pelejava por Israel.</p>
+          <span class="ref">— o narrador de Josué</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O texto não celebra o sol parado como um fim em si mesmo — celebra que o Senhor "atendeu à voz dum homem". A mesma mão que já havia decidido a batalha com pedras de saraiva ainda tinha espaço para responder a um pedido que ia além do necessário.</p>
+
+          <div class="vit-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnVitBastava" onclick="showVitOutcome('bastava')">Uma vitória que já bastava</button>
+              <button class="toggle-btn" id="btnVitMaior" onclick="showVitOutcome('maior')">Uma vitória ainda maior, pedida em oração</button>
+            </div>
+            <div class="vit-outcome" id="vitOutcome">
+              <h4 id="vitTitle"></h4>
+              <p id="vitText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · o sol se detém</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const solItems = [
+    { label: "O pedido", text: "\"Sol, detém-te em Gibeão; e tu, lua, no vale de Aijalom\" (10.12) — Josué fala diante de todo o Israel, pedindo o que nenhum general antes dele havia pedido." },
+    { label: "O resultado", text: "\"E não houve dia semelhante a esse, nem antes nem depois dele, atendendo o Senhor assim à voz dum homem\" (10.13-14) — o texto cita o Livro de Jasar como fonte e registra o dia mais longo já visto." }
+  ];
+
+  function buildSolChips(){
+    const row = document.getElementById('solChipRow');
+    solItems.forEach((it, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sol-chip';
+      b.textContent = it.label;
+      b.onclick = function(){ revealSolChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildSolChips();
+
+  function revealSolChip(btn, i){
+    btn.classList.add('open');
+    document.getElementById('solCaption').textContent = solItems[i].text;
+  }
+
+  function showVitOutcome(type){
+    const btnB = document.getElementById('btnVitBastava');
+    const btnM = document.getElementById('btnVitMaior');
+    btnB.classList.remove('active-worry');
+    btnM.classList.remove('active-calm');
+    const title = document.getElementById('vitTitle');
+    const text = document.getElementById('vitText');
+
+    if (type === 'bastava'){
+      btnB.classList.add('active-worry');
+      title.textContent = "Humanamente, já era suficiente";
+      text.textContent = "O granizo já havia decidido a batalha antes de qualquer pedido sobre o sol — humanamente, não havia necessidade de pedir mais nada.";
+    } else {
+      btnM.classList.add('active-calm');
+      title.textContent = "Atento até ao que já bastava";
+      text.textContent = "Mas Josué pede mesmo assim, e o Senhor responde, mostrando que ele não apenas atende necessidades, mas recebe com atenção até os pedidos que vão além do que já seria suficiente.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

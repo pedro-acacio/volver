@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A travessia do Jordão — Josué 3—5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — sequência de seis passos, do Jordão ao maná que cessa */
+  .jrd-seq-outer{ margin-top:16px; }
+  .jrd-seq-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .jrd-seq-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .jrd-step{ width:26px; height:26px; border-radius:50%; background:var(--panel-line); color:var(--text-dim); border:none; font-family:'IBM Plex Mono', monospace; font-size:12px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition: background .3s ease, color .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; flex-shrink:0; }
+  .jrd-step.active{ background:var(--calm); color:#fff; transform:scale(1.15); box-shadow:0 0 8px 1px rgba(124,154,120,.4); }
+  .jrd-seq-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row extra do desfecho: parados x atravessando */
+  .jrd-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .jrd-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .jrd-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A entrada na terra</span>
+  </div>
+
+  <div class="eyebrow">A entrada na terra · <span class="ref-tag">Josué 3—5</span></div>
+  <h1>A travessia do Jordão</h1>
+  <p class="sub">Um rio transbordando na época da colheita se detém no exato instante em que os pés dos sacerdotes tocam a água — e o povo atravessa em terra seca para um lugar que nenhum deles jamais tinha pisado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="3" y="4" width="7" height="10" rx="1" stroke-width="1.2"/>
+          <path d="M6.5 4 V2.5 M4.5 14 L4.5 16 M8.5 14 L8.5 16" stroke-width="1"/>
+          <path d="M12 5 L16 9 L12 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A arca vai à frente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de três dias de preparação, Josué instrui o povo a seguir a arca da aliança a uma distância de cerca de mil metros: "para que saibais o caminho por onde haveis de ir, porquanto por este caminho ainda não passastes" (3.1-4). Ninguém ali já tinha pisado esse chão — a arca vai à frente porque só Deus conhece o caminho.</p>
+          <p>Os sacerdotes que carregam a arca devem entrar primeiro nas águas do Jordão, que na época da colheita transborda sobre suas margens (3.15) — não é um rio manso, mas um rio cheio. E no instante exato em que a planta dos pés dos sacerdotes toca a água, o rio, vindo de cima, se detém "como que num montão" (3.13, 15-16).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → terra seca, doze pedras</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="5" cy="9" r="1.6" stroke-width="1.1"/>
+          <circle cx="9" cy="6" r="1.6" stroke-width="1.1"/>
+          <circle cx="13" cy="9" r="1.6" stroke-width="1.1"/>
+          <circle cx="9" cy="13" r="1.6" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Terra seca, doze pedras</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O povo inteiro atravessa em terra seca enquanto os sacerdotes permanecem parados exatamente no meio do leito seco do rio, segurando a arca, até que todos passem (3.17). É um detalhe fácil de deixar passar: eles não atravessam depressa — ficam ali, firmes, sustentando o peso da arca, enquanto uma nação inteira caminha ao redor deles.</p>
+          <p>Depois, Josué ordena que um homem de cada tribo tire uma pedra do exato lugar onde os pés dos sacerdotes estavam, para erguer um memorial em Gilgal, o primeiro acampamento na terra prometida — "para que isto seja por sinal entre vós; e quando vossos filhos amanhã perguntarem... direis a eles que as águas do Jordão se separaram" (4.1-9).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Gilgal: circuncisão e Páscoa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M4 6 H14 M4 12 H14" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Gilgal: circuncisão e Páscoa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Já na terra, antes de qualquer batalha, Josué circuncida toda a geração nascida no deserto, que não havia sido circuncidada durante os anos de peregrinação (5.2-8) — renovando o próprio sinal da aliança de Abraão antes de a conquista começar. É uma pausa estranha do ponto de vista militar: um povo recém-chegado, ainda vulnerável, se detém para um ato que o deixa fisicamente fragilizado por dias, confiando que Deus os protege enquanto isso.</p>
+          <p>Israel celebra então a Páscoa em Gilgal, comendo pela primeira vez do produto da terra; e no dia seguinte, o maná — o pão diário que os sustentou por quarenta anos no deserto — cessa: "e os filhos de Israel não tiveram mais maná; porém, naquele ano, comeram do fruto da terra de Canaã" (5.10-12).</p>
+
+          <div class="jrd-seq-outer">
+            <div class="jrd-seq-label">A sequência completa — toque em cada passo</div>
+            <div class="jrd-seq-row" id="jrdSeqRow"></div>
+            <div class="jrd-seq-caption" id="jrdSeqCaption">Toque em um número para ver o que aconteceu naquele passo.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o príncipe do exército do Senhor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V13" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 5 L9 3 L12 5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 15 H12" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O príncipe do exército do Senhor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Perto de Jericó, Josué encontra um homem com a espada desembainhada na mão e pergunta se é a favor de Israel ou de seus adversários (5.13). A resposta é surpreendente: "Não; mas venho como príncipe do exército do Senhor" (5.14).</p>
+          <p>Josué se prostra em terra e é instruído a tirar as sandálias, "porque o lugar em que estás é santo" (5.15) — o eco quase literal do que Deus disse a Moisés na sarça ardente (Êxodo 3.5). O comandante não escolhe um lado porque ele já é o comandante de ambos os lados; Josué, diante dele, está diante de quem realmente lidera a conquista que está prestes a começar.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">De depender do maná a comer da terra</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Em poucos capítulos, uma geração inteira que cresceu totalmente dependente de um pão que caía do céu todas as manhãs atravessa em terra seca, é circuncidada, come pela primeira vez do fruto da própria terra, e vê o maná parar de vir. O texto não esconde o propósito de tudo isso.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 4.24</span>
+          <p>Para que todos os povos da terra conheçam a mão do Senhor, que é forte; para que temais ao Senhor, vosso Deus, todos os dias.</p>
+          <span class="ref">— o propósito declarado do memorial de Gilgal</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O rio que se abre diante de Israel ecoa deliberadamente o mar Vermelho que se abriu diante da geração anterior — a mesma mão, décadas depois, fazendo de novo o que só ela pode fazer. E o movimento de Gilgal, do maná diário à comida cultivada pelas próprias mãos, aponta para algo maior do que logística: uma fé que aprende a caminhar sem depender, a cada manhã, de um milagre visível repetido — sustentada, ainda assim, pela mesma fidelidade que nunca deixou de prover.</p>
+
+          <div class="jrd-seq-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnJrdParados" onclick="showJrdOutcome('parados')">Parados diante do rio</button>
+              <button class="toggle-btn" id="btnJrdAtravessando" onclick="showJrdOutcome('atravessando')">Atravessando em terra seca</button>
+            </div>
+            <div class="jrd-outcome" id="jrdOutcome">
+              <h4 id="jrdTitle"></h4>
+              <p id="jrdText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · a travessia do Jordão</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const jrdSteps = [
+    { caption: "Os sacerdotes que carregam a arca entram no Jordão (3.13, 15)." },
+    { caption: "No instante em que os pés tocam a água, o rio se detém como num montão (3.13, 16)." },
+    { caption: "O povo inteiro atravessa em terra seca, enquanto os sacerdotes permanecem parados no meio do leito (3.17)." },
+    { caption: "Um homem de cada tribo tira uma pedra do leito do rio para o memorial de Gilgal (4.1-9)." },
+    { caption: "Já na terra, Israel é circuncidado e celebra a Páscoa em Gilgal (5.2-11)." },
+    { caption: "No dia seguinte, o maná cessa: o povo passa a comer do fruto da terra de Canaã (5.12)." }
+  ];
+
+  function buildJrdSteps(){
+    const row = document.getElementById('jrdSeqRow');
+    jrdSteps.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'jrd-step';
+      b.textContent = (i + 1);
+      b.onclick = function(){ revealJrdStep(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildJrdSteps();
+
+  function revealJrdStep(btn, i){
+    document.querySelectorAll('.jrd-step').forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('jrdSeqCaption').textContent = "Passo " + (i + 1) + " — " + jrdSteps[i].caption;
+  }
+
+  function showJrdOutcome(type){
+    const btnP = document.getElementById('btnJrdParados');
+    const btnA = document.getElementById('btnJrdAtravessando');
+    btnP.classList.remove('active-worry');
+    btnA.classList.remove('active-calm');
+    const title = document.getElementById('jrdTitle');
+    const text = document.getElementById('jrdText');
+
+    if (type === 'parados'){
+      btnP.classList.add('active-worry');
+      title.textContent = "A opção mais segura";
+      text.textContent = "O Jordão transbordando era um obstáculo real, e ficar parado diante dele era a opção mais segura — mas também a única que garantia nunca chegar à terra prometida.";
+    } else {
+      btnA.classList.add('active-calm');
+      title.textContent = "O poder que não se esgotou";
+      text.textContent = "O mesmo Deus que abriu o mar Vermelho a uma geração abre o Jordão à seguinte — a prova de que o poder de Deus não se esgotou com a geração anterior, e continua disponível a cada nova travessia de fé.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

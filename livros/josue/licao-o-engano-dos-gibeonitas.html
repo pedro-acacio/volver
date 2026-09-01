@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O engano dos gibeonitas — Josué 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* as provas do disfarce — chip-row com reveal */
+  .gib-outer{ margin-top:16px; }
+  .gib-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .gib-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .gib-chip{ border-radius:20px; padding:8px 14px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); transition: background .3s ease, color .3s ease, transform .2s ease; }
+  .gib-chip.open{ background:var(--worry); color:#fff; transform:scale(1.03); }
+  .gib-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* toggle extra — evidência visível x consultar o Senhor */
+  .dec-toggle-outer{ margin-top:16px; }
+  .dec-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .dec-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .dec-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A conquista da terra</span>
+  </div>
+
+  <div class="eyebrow">A conquista da terra · <span class="ref-tag">Josué 9</span></div>
+  <h1>O engano dos gibeonitas</h1>
+  <p class="sub">Pão bolorento, odres remendados, sandálias gastas de propósito — um disfarce cuidadoso engana os líderes de Israel porque, pela primeira vez na conquista, ninguém pensa em perguntar ao Senhor.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 C4 9 6 5 9 5 C12 5 14 9 14 14" stroke-width="1.3"/>
+          <path d="M6 8 L8 6 M12 8 L10 6" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.4 1.6"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Reis se unem, uma cidade se disfarça</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao ouvirem das vitórias em Jericó e Ai, vários reis cananeus se unem para lutar unidos contra Israel (9.1-2). Mas os habitantes de Gibeão escolhem outro caminho: o engano. Fingem vir de uma terra muito distante, vestindo roupas velhas e remendadas, calçando sandálias gastas e levando pão seco e bolorento, como se tivessem viajado por semanas (9.3-5).</p>
+          <p>Assim disfarçados, se apresentam a Josué em Gilgal, pedindo um pacto de paz: "de uma terra mui remota viemos; fazei, pois, agora, aliança conosco" (9.6).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → as provas do disfarce</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="3" y="6" width="12" height="8" rx="1" stroke-width="1.3"/>
+          <path d="M3 6 L9 10 L15 6" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">As provas do disfarce</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os homens de Israel desconfiam a princípio — talvez esses homens morem perto, e um pacto com povos da própria terra prometida era proibido (9.7). Os gibeonitas então listam suas "provas" com riqueza de detalhe: cada sinal de desgaste tem uma explicação pronta, ligada à longa viagem que, segundo eles, fizeram até ali.</p>
+          <p>Toque em cada item para ver, nas próprias palavras dos gibeonitas, como explicaram o disfarce:</p>
+
+          <div class="gib-outer">
+            <div class="gib-label">As "provas" da longa viagem — toque em cada item</div>
+            <div class="gib-chip-row" id="gibChipRow"></div>
+            <div class="gib-caption" id="gibCaption">Toque em um item para ver a explicação dos gibeonitas sobre ele.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um pacto sem consultar o Senhor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L9 4 L14 14" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 4 V2" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M9 2 L7.5 3.2 M9 2 L10.5 3.2" stroke-width="1" stroke-linecap="round" opacity="0"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um pacto sem consultar o Senhor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A decisão fatal do capítulo está numa única cláusula, quase escondida no meio do versículo: "os homens tomaram da provisão deles, e não pediram conselho ao Senhor" (9.14). Josué faz paz com eles, jurando poupá-los, confirmado pelos príncipes da congregação (9.15).</p>
+          <p>É o único passo que faltou. Depois da vitória sobrenatural em Jericó e da derrota e vitória em Ai — onde Deus foi explicitamente consultado antes de agir — aqui a decisão é tomada só pela evidência física diante dos olhos, sem uma única palavra de oração.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → descoberto o engano, o juramento se mantém</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 L14 14 M14 4 L4 14" stroke-width="1.1" stroke-linecap="round" opacity=".5"/>
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Descoberto o engano, o juramento se mantém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Três dias depois, Israel descobre que os gibeonitas moram perto, dentro da própria terra que estavam conquistando (9.16). A congregação murmura contra os líderes, mas Josué e os príncipes recusam quebrar o juramento: "juramos-lhes pelo Senhor Deus de Israel; agora, pois, não lhes podemos tocar" (9.18-19) — mesmo tendo sido obtido por engano, porque foi feito em nome do Senhor.</p>
+          <p>Em vez de destruí-los, Josué os torna cortadores de lenha e tiradores de água para a congregação e para o altar do Senhor (9.21, 27) — poupados, mas colocados em posição de serviço permanente.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Decidir depois de consultar o Senhor</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O engano dos gibeonitas funciona porque explora exatamente o que os líderes de Israel deixaram de fazer: perguntar a Deus antes de confiar no que os próprios olhos pareciam confirmar. O pão bolorento e as sandálias gastas foram evidência real, tocável — só não eram evidência de que dispensasse a oração.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 9.14</span>
+          <p>Então, aqueles homens tomaram da provisão deles, e não pediram conselho ao Senhor.</p>
+          <span class="ref">— o erro que abriu espaço para o engano</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O contraste com Provérbios 3.5-6 é direto: "não te estribes no teu próprio entendimento... e ele endireitará as tuas veredas." O episódio funciona como um lembrete recorrente no Antigo Testamento de que evidência visível, por mais convincente que pareça, nunca substitui buscar a Deus antes de decidir. Ao mesmo tempo, o cuidado de Josué em manter um juramento feito sob engano mostra o peso que a Escritura dá à palavra dada, mesmo quando dada sem toda a informação.</p>
+
+          <div class="dec-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnDecEvidencia" onclick="showDecOutcome('evidencia')">Decidir pela evidência visível</button>
+              <button class="toggle-btn" id="btnDecSenhor" onclick="showDecOutcome('senhor')">Decidir depois de consultar o Senhor</button>
+            </div>
+            <div class="dec-outcome" id="decOutcome">
+              <h4 id="decTitle"></h4>
+              <p id="decText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · o engano dos gibeonitas</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const gibItems = [
+    { label: "Pão bolorento", text: "\"Este nosso pão tomamo-lo ainda quente de nossas casas por provisão, no dia em que saímos para vir a vós; e eis que agora está seco e mofado\" (9.12)." },
+    { label: "Odres remendados", text: "Os odres de vinho, hoje rotos e remendados, eram novos quando os encheram (9.13) — desgastados, dizem, apenas pelo tempo do caminho." },
+    { label: "Vestes gastas", text: "\"Estas nossas vestes e nossos calçados já se envelheceram, pelo mui longo caminho\" (9.13) — o mesmo argumento aplicado às roupas." },
+    { label: "Sandálias remendadas", text: "As sandálias, junto com as vestes, gastas \"pelo mui longo caminho\" (9.13) — o último detalhe de um disfarce cuidadosamente construído." }
+  ];
+
+  function buildGibChips(){
+    const row = document.getElementById('gibChipRow');
+    gibItems.forEach((it, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'gib-chip';
+      b.textContent = it.label;
+      b.onclick = function(){ revealGibChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildGibChips();
+
+  function revealGibChip(btn, i){
+    document.querySelectorAll('.gib-chip').forEach(c => c.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('gibCaption').textContent = gibItems[i].text;
+  }
+
+  function showDecOutcome(type){
+    const btnE = document.getElementById('btnDecEvidencia');
+    const btnS = document.getElementById('btnDecSenhor');
+    btnE.classList.remove('active-worry');
+    btnS.classList.remove('active-calm');
+    const title = document.getElementById('decTitle');
+    const text = document.getElementById('decText');
+
+    if (type === 'evidencia'){
+      btnE.classList.add('active-worry');
+      title.textContent = "Provas convincentes o bastante";
+      text.textContent = "Pão bolorento e sandálias gastas foram provas físicas convincentes o bastante para dispensar a oração — e o resultado foi um pacto que Israel teria evitado se apenas tivesse perguntado.";
+    } else {
+      btnS.classList.add('active-calm');
+      title.textContent = "O padrão que o próprio livro já mostrou";
+      text.textContent = "O próprio livro de Josué já mostrou, em Jericó e na segunda batalha de Ai, o padrão certo — buscar a Deus antes de agir, não apenas depois de errar.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

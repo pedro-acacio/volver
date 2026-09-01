@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Atos — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .at-bar-outer{ margin-top:16px; }
+  .at-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .at-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .at-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .at-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .at-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .at-seg:nth-child(1){ background:var(--gold); }
+  .at-seg:nth-child(2){ background:var(--worry); }
+  .at-seg:nth-child(3){ background:#8C7AA6; }
+  .at-seg:nth-child(4){ background:var(--calm); }
+  .at-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .at-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:32px; }
+
+  .at-fund-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px; }
+  @media (max-width:520px){ .at-fund-grid{ grid-template-columns:1fr; } }
+  .at-fund-card{ border-radius:11px; padding:13px 14px; border:1px solid var(--panel-line); background:var(--bg); }
+  .at-fund-card p{ font-size:12.5px; line-height:1.5; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-livros.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Histórico · <span class="ref-tag">Atos 1—28</span></div>
+  <h1>Introdução a Atos</h1>
+  <p class="sub">O mesmo autor que escreveu sobre a vida de Jesus escreve agora sobre o que a igreja fez depois que ele subiu ao céu — um relato que começa numa sala em Jerusalém e termina numa casa alugada em Roma, seguindo, passo a passo, um roteiro que o próprio Jesus havia dado antes de partir.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor: o médico amado, companheiro de Paulo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Tradicionalmente, Lucas — "o médico amado" (Colossenses 4.14) — é considerado o autor de Atos. Ele foi companheiro de Paulo durante a segunda e a terceira viagens missionárias, e a igreja primitiva, entre os séculos II e IV, testemunhou de forma consistente que Lucas foi seu autor: Irineu (c. 130-202 d.C.), Clemente de Alexandria (c. 153-217 d.C.), o Cânon Muratoriano (c. 170 d.C.) e Eusébio (c. 325 d.C.) atribuem o livro a ele.</p>
+          <p>O próprio texto oferece duas evidências internas. Primeiro, a referência a Teófilo tanto em Lucas 1.3 quanto em Atos 1.1 liga o livro ao terceiro Evangelho, como sua continuação direta. Segundo, alguns trechos passam a usar a primeira pessoa do plural — "nós" — a partir de 16.10-17, e depois em 20.5-15, 21.1-18 e 27.1—28.16, indicando que o próprio narrador viajou ao lado de Paulo: parece tê-lo acompanhado de Troade até Filipos, retornado depois à Terra Santa, e por fim viajado com ele de Cesareia até Roma. Colossenses 4.10-14 indica que Lucas não era judeu — o que faria dele o único autor gentio de todo o Novo Testamento.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → data: antes da queda de Jerusalém</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 A7 7 0 1 1 8.99 2" stroke-width="1.3"/>
+          <path d="M9 5 V9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Data: escrito antes da queda de Jerusalém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Três datas já foram sugeridas para Atos: entre 105-130 d.C., entre 80-95 d.C., e antes de 70 d.C. As duas primeiras se apoiam, em parte, na teoria de que Lucas teria dependido dos escritos do historiador judeu Josefo — mas essa teoria não é conclusiva, e não há evidência clara de que Lucas tenha, de fato, usado Josefo como fonte.</p>
+          <p>A data mais provável — e a que este projeto segue — é anterior a 70 d.C., por volta de 60-64 d.C. A razão é o próprio final do livro: Atos termina de forma abrupta, com Paulo sob prisão domiciliar em Roma, ainda pregando livremente (28.30-31). O livro não menciona nem o desfecho do julgamento de Paulo, nem sua morte, nem a perseguição de Nero contra os cristãos em 64 d.C., nem a destruição do templo de Jerusalém em 70 d.C. — silêncio difícil de explicar se Lucas já soubesse desses acontecimentos tão significativos para a igreja. O mais natural é que ele tenha escrito exatamente onde a história o alcançou: com Paulo ainda vivo, ainda preso, ainda esperando.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Atos 1.8, o mapa do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M11 5 L15 9 L11 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Atos 1.8, o mapa do livro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes de subir ao céu, Jesus dá aos apóstolos o que funciona como o próprio roteiro do livro que se segue: "sereis minhas testemunhas, tanto em Jerusalém como em toda a Judeia e Samaria, e até aos confins da terra" (Atos 1.8). Toque em cada trecho da barra para ver como essas quatro etapas se distribuem pelos 28 capítulos:</p>
+
+          <div class="at-bar-outer">
+            <div class="at-bar-label">A expansão do evangelho, capítulo por capítulo:</div>
+            <div class="at-bar" role="group" aria-label="Distribuição dos capítulos de Atos segundo o roteiro de Atos 1.8">
+              <button type="button" class="at-seg" style="width:7.1%;" onclick="selectAtBlock(this, 0)" aria-label="O poder do Espírito, capítulos 1 a 2"></button>
+              <button type="button" class="at-seg" style="width:17.9%;" onclick="selectAtBlock(this, 1)" aria-label="Testemunho em Jerusalém, capítulos 3 a 7"></button>
+              <button type="button" class="at-seg" style="width:17.9%;" onclick="selectAtBlock(this, 2)" aria-label="Testemunho na Judeia e Samaria, capítulos 8 a 12"></button>
+              <button type="button" class="at-seg" style="width:57.1%;" onclick="selectAtBlock(this, 3)" aria-label="Testemunho até os confins da terra, capítulos 13 a 28"></button>
+            </div>
+            <div class="at-bar-ends"><span>cap. 1</span><span>cap. 28</span></div>
+            <div class="at-bar-caption" id="atBarText">Toque em um trecho da barra para ver o que ele cobre.</div>
+          </div>
+
+          <p style="margin-top:14px;">Essa mesma divisão explica outra coisa curiosa sobre o livro: embora seja chamado "Atos dos Apóstolos", Lucas concentra a primeira metade quase inteiramente no testemunho de Pedro (capítulos 1—12) e a segunda metade no ministério de Paulo (capítulos 13—28) — o capítulo 12, com a morte de Herodes Agripa I, funciona como uma dobradiça entre as duas partes.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → verdades fundamentais</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L11 7 L16 7.5 L12 11 L13 16 L9 13.3 L5 16 L6 11 L2 7.5 L7 7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Verdades fundamentais</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quatro verdades atravessam o livro inteiro, do Pentecostes em Jerusalém à prisão em Roma — cada uma delas ecoando diretamente a promessa de Atos 1.8:</p>
+
+          <div class="at-fund-grid">
+            <div class="at-fund-card"><p><strong>São capacitadas pelo Espírito Santo.</strong> Nada no livro acontece por estratégia humana — Pentecostes, as pregações, as conversões, tudo começa com o Espírito descendo sobre pessoas comuns.</p></div>
+            <div class="at-fund-card"><p><strong>Sofrem perseguições.</strong> Do apedrejamento de Estêvão às prisões de Paulo, o avanço do evangelho em Atos nunca é indolor.</p></div>
+            <div class="at-fund-card"><p><strong>Estabelecem igrejas.</strong> O testemunho não fica apenas em palavras: comunidades reais nascem em Antioquia, Filipos, Corinto, Éfeso, e em muitas outras cidades.</p></div>
+            <div class="at-fund-card"><p><strong>Vão até os confins da terra.</strong> De uma sala fechada em Jerusalém, com medo, até uma casa alugada em Roma, ainda pregando — o movimento do livro é sempre para fora.</p></div>
+          </div>
+
+          <p style="margin-top:14px;">O destinatário do livro, Teófilo — o mesmo de Lucas 1.3 — é chamado ali de "excelentíssimo", título que sugere alguém de posição social elevada, possivelmente um patrono romano que ajudou a financiar a circulação da obra. Mas o propósito de Atos vai muito além de agradar um único leitor: é um registro histórico verídico do nascimento da igreja, escrito para que qualquer leitor, então e hoje, veja com clareza como o evangelho realmente se espalhou.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Testemunhas até os confins da terra</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Atos termina sem terminar de verdade — Paulo ainda preso, o evangelho ainda avançando, nenhum "e viveram felizes para sempre". É um final propositalmente aberto: o livro não conta a história completa da igreja, conta o início de uma missão que a própria promessa de Jesus definiu como sem fim previsto, até os confins da terra.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 1.8</span>
+          <p>Mas recebereis poder, ao descer sobre vós o Espírito Santo, e ser-me-eis testemunhas, tanto em Jerusalém como em toda a Judeia e Samaria, e até aos confins da terra.</p>
+          <span class="ref">— Jesus, aos apóstolos, antes de subir ao céu</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Lido apenas como registro histórico do século I, Atos é um relato encerrado. Lido como Lucas parece tê-lo pensado — a continuação do que Jesus começou a fazer e ensinar (Atos 1.1) — ele ainda está em andamento.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma igreja presa a Jerusalém</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma igreja enviada ao mundo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Atos</footer>
+</div>
+
+<script>
+  const atBarData = [
+    { label: "O poder do Espírito", range: "capítulos 1–2", chapters: 2, text: "Jesus promete o Espírito e ascende ao céu; dez dias depois, no Pentecostes, os apóstolos recebem poder e a igreja nasce em Jerusalém." },
+    { label: "Testemunho em Jerusalém", range: "capítulos 3–7", chapters: 5, text: "Milagres e pregação em Jerusalém, o crescimento da igreja primitiva, e a primeira perseguição séria — o apedrejamento de Estêvão." },
+    { label: "Testemunho na Judeia e Samaria", range: "capítulos 8–12", chapters: 5, text: "A perseguição espalha os cristãos para além de Jerusalém; o evangelho alcança samaritanos e gentios, e Pedro é milagrosamente libertado da prisão." },
+    { label: "Testemunho até os confins da terra", range: "capítulos 13–28", chapters: 16, text: "As viagens missionárias de Paulo, o julgamento e a prisão, e a viagem final a Roma — o evangelho chegando ao coração do Império." }
+  ];
+
+  function selectAtBlock(btn, i){
+    btn.parentElement.querySelectorAll('.at-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = atBarData[i];
+    document.getElementById('atBarText').textContent = d.label + " (" + d.range + ", " + d.chapters + " dos 28 capítulos): " + d.text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um movimento que ficou onde nasceu";
+      text.textContent = "Se a igreja de Atos tivesse ficado apenas em Jerusalém, satisfeita com o Pentecostes, o livro pararia no capítulo 2 — e a promessa de Atos 1.8 teria ficado pela metade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um movimento que não parou de se espalhar";
+      text.textContent = "É o que Atos realmente registra: um evangelho que atravessa perseguição, fronteiras culturais e um Império inteiro — e que, pela mesma promessa do Espírito, continua se espalhando até hoje.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sê forte e corajoso — Josué 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — três vezes "esforça-te e tem bom ânimo" */
+  .sfc-chip-outer{ margin-top:16px; }
+  .sfc-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .sfc-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .sfc-chip{ border:1px solid var(--panel-line); background:var(--bg); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); cursor:pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .sfc-chip.active{ background:var(--calm); border-color:var(--calm); color:#fff; }
+  .sfc-chip-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row extra: coragem própria x coragem da presença de Deus */
+  .sfc-toggle-outer{ margin-top:16px; }
+  .sfc-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .sfc-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .sfc-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A entrada na terra</span>
+  </div>
+
+  <div class="eyebrow">A entrada na terra · <span class="ref-tag">Josué 1</span></div>
+  <h1>Sê forte e corajoso</h1>
+  <p class="sub">Moisés acaba de morrer, e Deus fala diretamente a um novo líder, repetindo o mesmo mandamento três vezes na mesma página — não porque Josué precise ouvir uma vez, mas porque o medo diante do que vem pela frente precisa ser combatido repetidamente.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 L9 3 L14 15" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 3 V9" stroke-width="1.1" stroke-dasharray="1.4 1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A morte de Moisés, um novo líder</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus fala a Josué logo depois da morte de Moisés: "Moisés, meu servo, é morto; levanta-te, pois, agora, passa este Jordão, tu e todo este povo, à terra que eu dou aos filhos de Israel" (1.1-2). Não há pausa entre o luto e o chamado — a liderança muda de mão no mesmo instante em que o povo perde o único líder que já conheceu desde o Egito.</p>
+          <p>Não há também um vácuo de poder. A iniciativa de erguer Josué não é de Josué, nem de uma votação do povo — é de Deus, que fala primeiro e ordena "levanta-te, pois, agora". A transição de liderança começa como sempre deveria começar: pela palavra de Deus, não pela ambição de um homem.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a promessa de território e presença</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="3" y="4" width="12" height="10" rx="1" stroke-width="1.3"/>
+          <path d="M3 8 H15" stroke-width="1.1"/>
+          <path d="M7 4 V14 M11 4 V14" stroke-width="1" stroke-dasharray="1.2 1.6"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A promessa de território e presença</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus promete entregar "todo o lugar que pisar a planta do vosso pé" e traça as fronteiras da terra, do deserto até o Líbano, do grande rio Eufrates até o mar Grande (1.3-4). É uma promessa territorial concreta, não uma esperança vaga.</p>
+          <p>Mas a promessa mais decisiva não é de terra — é de companhia: "Como fui com Moisés, hei de ser contigo; não te deixarei, nem te desampararei" (1.5). A conquista não vai depender da força militar de Josué diante de cidades fortificadas e povos maiores. Vai depender da mesma presença que já provou fidelidade a uma geração inteira, do mar Vermelho até aqui.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → esforça-te e tem bom ânimo, três vezes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="2.2" stroke-width="1.2"/>
+          <circle cx="9" cy="5" r="2.2" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="2.2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Esforça-te e tem bom ânimo, três vezes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na mesma passagem, o mandamento "esforça-te, e tem bom ânimo" aparece três vezes, e cada vez está amarrado a algo diferente. Não é repetição vazia — é o mesmo chamado à coragem aplicado a três frentes distintas da vida de Josué: a posse da terra, a obediência à Palavra, e a presença de Deus.</p>
+          <p>Vale notar também o v.8, entre a segunda e a terceira repetição: "não se aparte da tua boca o livro desta lei... medita nele dia e noite, para que tenhas cuidado de fazer conforme tudo quanto nele está escrito." A coragem de Josué não está amarrada à sua própria bravura ou experiência militar — está amarrada à Palavra que ele guarda e pratica.</p>
+
+          <div class="sfc-chip-outer">
+            <div class="sfc-chip-label">As três repetições — toque para ver em que cada uma se apoia</div>
+            <div class="sfc-chip-row" id="sfcChipRow"></div>
+            <div class="sfc-chip-caption" id="sfcChipCaption">Toque em uma das três para ver o que está por trás dela.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o povo confirma a liderança</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 13 C4 9 6.5 6 9 6 C11.5 6 14 9 14 13" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3 13 H15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O povo confirma a liderança</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Josué ordena ao povo que se prepare, pois em três dias atravessarão o Jordão (1.10-11). As tribos de Rúben, Gade e a meia-tribo de Manassés — que já haviam recebido terra a leste do Jordão, na condição de atravessar em armas junto com as demais para ajudar na conquista — respondem com uma promessa de obediência total: "conforme em tudo obedecemos a Moisés, assim obedeceremos a ti" (1.16-17).</p>
+          <p>E encerram devolvendo a Josué o próprio mandamento que Deus lhe dera pouco antes: "Sê forte e tem bom ânimo" (1.18). O que começou como palavra de Deus a Josué agora volta como palavra do povo a Josué — a liderança que nasceu de um chamado divino é confirmada pela submissão humana.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A coragem que não nasce de si mesma</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Josué 1 não descreve um homem naturalmente corajoso recebendo um cargo que lhe cai bem. Descreve um homem que precisa ouvir, três vezes, para não temer — e cuja coragem só se sustenta porque está amarrada a uma promessa e a uma Palavra que não dependem dele.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 1.9</span>
+          <p>Não to mandei eu? Esforça-te, e tem bom ânimo; não pasmes, nem te espantes; porque o Senhor teu Deus é contigo, por onde quer que andares.</p>
+          <span class="ref">— o Senhor, a Josué</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Séculos depois, o autor de Hebreus retoma exatamente essa mesma promessa e a aplica a todo cristão: "porque ele disse: Não te deixarei, nem te desampararei. De sorte que ousadamente digamos: O Senhor é o meu ajudador; não temerei o que me possa fazer o homem" (Hebreus 13.5-6). A promessa que sustentou Josué diante do Jordão sustenta hoje quem enfrenta o que teme, pela mesma presença.</p>
+
+          <div class="sfc-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnSfcPropria" onclick="showSfcOutcome('propria')">Coragem que vem de si mesmo</button>
+              <button class="toggle-btn" id="btnSfcDeus" onclick="showSfcOutcome('deus')">Coragem que vem da presença de Deus</button>
+            </div>
+            <div class="sfc-outcome" id="sfcOutcome">
+              <h4 id="sfcTitle"></h4>
+              <p id="sfcText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · sê forte e corajoso</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const sfcReps = [
+    { label: "1ª vez · v.6", theme: "a posse da terra prometida aos pais", quote: "Esforça-te, e tem bom ânimo, porque tu farás a este povo herdar a terra que jurei a seus pais lhes daria." },
+    { label: "2ª vez · v.7", theme: "a obediência cuidadosa à lei de Deus", quote: "Tão-somente esforça-te e tem mui bom ânimo, para teres cuidado de fazer conforme toda a lei que meu servo Moisés te ordenou... para que prudentemente te conduzas por onde quer que andares." },
+    { label: "3ª vez · v.9", theme: "a presença de Deus com Josué", quote: "Esforça-te, e tem bom ânimo; não pasmes, nem te espantes; porque o Senhor teu Deus é contigo, por onde quer que andares." }
+  ];
+
+  function buildSfcChips(){
+    const row = document.getElementById('sfcChipRow');
+    sfcReps.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sfc-chip';
+      b.textContent = r.label;
+      b.onclick = function(){ revealSfcChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildSfcChips();
+
+  function revealSfcChip(btn, i){
+    document.querySelectorAll('.sfc-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const r = sfcReps[i];
+    document.getElementById('sfcChipCaption').textContent = "Ligada a " + r.theme + ": \"" + r.quote + "\" (" + r.label.split(' · ')[1] + ")";
+  }
+
+  function showSfcOutcome(type){
+    const btnP = document.getElementById('btnSfcPropria');
+    const btnD = document.getElementById('btnSfcDeus');
+    btnP.classList.remove('active-worry');
+    btnD.classList.remove('active-calm');
+    const title = document.getElementById('sfcTitle');
+    const text = document.getElementById('sfcText');
+
+    if (type === 'propria'){
+      btnP.classList.add('active-worry');
+      title.textContent = "Uma coragem que se esgota";
+      text.textContent = "É a coragem que depende do próprio ânimo, da própria experiência ou da própria força — e que se esgota diante do primeiro obstáculo real, como quase aconteceu com o próprio povo décadas antes, diante dos gigantes de Canaã (Números 13.31-33).";
+    } else {
+      btnD.classList.add('active-calm');
+      title.textContent = "Uma coragem que não depende de si";
+      text.textContent = "É a mesma coragem prometida a Josué três vezes na mesma página — sustentada não por bravura própria, mas pela presença de quem prometeu \"não te deixarei, nem te desampararei\" (1.5), e que continua disponível, pela mesma presença, a todo aquele que hoje enfrenta o que teme.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

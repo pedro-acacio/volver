@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução ao Novo Testamento — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .nt-bar-outer{ margin-top:16px; }
+  .nt-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .nt-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .nt-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .nt-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .nt-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .nt-seg:nth-child(1){ background:var(--gold); }
+  .nt-seg:nth-child(2){ background:var(--worry); }
+  .nt-seg:nth-child(3){ background:var(--calm); }
+  .nt-seg:nth-child(4){ background:#8C7AA6; }
+  .nt-seg:nth-child(5){ background:#5B8FA8; }
+  .nt-seg:nth-child(6){ background:#B98857; }
+  .nt-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:32px; }
+
+  .nt-lang-outer{ margin-top:16px; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); }
+  .nt-lang-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .nt-lang-item{ flex:1; min-width:150px; }
+  .nt-lang-title{ font-family:'Fraunces', serif; font-weight:600; font-size:14.5px; color:var(--gold); margin-bottom:4px; }
+  .nt-lang-text{ font-size:12.5px; line-height:1.55; color:var(--text-dim); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-livros.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Antes dos Evangelhos · <span class="ref-tag">João 1.14</span></div>
+  <h1>Introdução ao Novo Testamento</h1>
+  <p class="sub">Vinte e sete livros, escritos por nove autores diferentes, num espaço de no máximo setenta anos — e um único evento no centro de todos eles. Antes de abrir o primeiro evangelho, vale entender o que é o Novo Testamento, quem o escreveu, como se organiza, e por que "testamento" é, na verdade, outra palavra para aliança.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O evento que divide a história</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A Bíblia não é um único livro, mas uma coletânea de várias obras escritas ao longo de um longo período, por pessoas diferentes. Uma das divisões que fazemos para entender melhor sua mensagem é entre o Antigo Testamento, a primeira parte, e o Novo Testamento, a segunda — que nos conta sobre a vida de Jesus e sobre as primeiras décadas da era cristã. O Novo Testamento tem vinte e sete livros, escritos por nove autores, num espaço de no máximo setenta anos.</p>
+          <p>Por que dividimos a Bíblia exatamente entre Malaquias e Mateus? Qual foi o acontecimento definitivo que redefiniu a história? A resposta é o nascimento de Jesus. É a encarnação de Cristo que muda a história, divide as Escrituras e recomeça o próprio calendário que usamos até hoje. O Novo Testamento não é o lugar onde Deus passa a existir — é o lugar da Bíblia onde ele se encarna e passa a viver entre os homens, revelando-se a todos.</p>
+          <div class="verse-card" style="margin-top:14px;">
+            <span class="tag">João 1.14</span>
+            <p>Aquele que é a Palavra tornou-se carne e viveu entre nós. Vimos a sua glória, glória como do Unigênito vindo do Pai, cheio de graça e de verdade.</p>
+            <span class="ref">— o apóstolo João</span>
+          </div>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os escritores e a língua de Jesus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Os escritores, e a língua de Jesus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Apesar de o Novo Testamento nos trazer os ensinos de Jesus em primeira mão, ele mesmo não deixou nenhum material escrito. Os escritores — apóstolos e companheiros próximos deles — foram inspirados pelo Espírito Santo para registrar suas experiências, o que testemunharam e o que ouviram, cada um com seu próprio vocabulário e estilo, mas sob a mesma inspiração divina.</p>
+          <p>O idioma mais falado em Israel no primeiro século era o aramaico, uma variação do hebraico — foi nessa língua que Jesus pregava, ensinava e conversava com seus discípulos. Mas, ao ser registrado, o Novo Testamento foi escrito majoritariamente em grego koiné, o idioma universal daquela época; há inclusive uma suspeita antiga de que o evangelho de Mateus tenha sido escrito primeiro em aramaico e só depois traduzido para o grego.</p>
+
+          <div class="nt-lang-outer">
+            <div class="nt-lang-row">
+              <div class="nt-lang-item">
+                <div class="nt-lang-title">Aramaico</div>
+                <div class="nt-lang-text">A língua falada — o idioma em que Jesus de fato pregou, ensinou e viveu, e provavelmente o idioma original do evangelho de Mateus.</div>
+              </div>
+              <div class="nt-lang-item">
+                <div class="nt-lang-title">Grego koiné</div>
+                <div class="nt-lang-text">A língua escrita — o idioma universal do primeiro século, usado para que o registro pudesse circular por todo o Império.</div>
+              </div>
+            </div>
+            <div class="nt-lang-text" style="margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line);">O material usado para escrever era um papiro orgânico, que se desintegra com o tempo — por isso não temos os manuscritos originais do Novo Testamento, apenas cópias. A cópia mais antiga que possuímos é apenas um fragmento, de João 18.31-33 e 37-38, datado de cerca de 110 d.C. — poucas décadas depois dos originais.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → como o Novo Testamento está dividido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Como o Novo Testamento está dividido</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os vinte e sete livros se organizam em seis categorias. Toque em cada uma para ver o que ela reúne:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, divisionData, 0, 'divisionText')">Evangelhos</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, divisionData, 1, 'divisionText')">Histórico</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, divisionData, 2, 'divisionText')">Cartas paulinas</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, divisionData, 3, 'divisionText')">Cartas pastorais</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, divisionData, 4, 'divisionText')">Cartas gerais</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, divisionData, 5, 'divisionText')">Profético</button>
+          </div>
+          <div class="chip-text" id="divisionText">Toque em cada categoria para ver quais livros ela reúne.</div>
+
+          <div class="nt-bar-outer">
+            <div class="nt-bar-label">Como os 27 livros se distribuem entre as seis categorias:</div>
+            <div class="nt-bar" role="group" aria-label="Distribuição dos 27 livros do Novo Testamento entre as seis categorias">
+              <button type="button" class="nt-seg" style="width:14.8%;" onclick="selectNtBlock(this, 0)" aria-label="Evangelhos, 4 livros"></button>
+              <button type="button" class="nt-seg" style="width:3.7%;" onclick="selectNtBlock(this, 1)" aria-label="Histórico, 1 livro"></button>
+              <button type="button" class="nt-seg" style="width:33.3%;" onclick="selectNtBlock(this, 2)" aria-label="Cartas paulinas, 9 livros"></button>
+              <button type="button" class="nt-seg" style="width:14.8%;" onclick="selectNtBlock(this, 3)" aria-label="Cartas pastorais, 4 livros"></button>
+              <button type="button" class="nt-seg" style="width:29.6%;" onclick="selectNtBlock(this, 4)" aria-label="Cartas gerais, 8 livros"></button>
+              <button type="button" class="nt-seg" style="width:3.7%;" onclick="selectNtBlock(this, 5)" aria-label="Profético, 1 livro"></button>
+            </div>
+            <div class="nt-bar-caption" id="ntBarText">Toque em um trecho da barra para ver quantos livros ele reúne.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o que significa "testamento"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O que significa "testamento"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A palavra "testamento" significa aliança. Um "novo" testamento não significa que Deus mudou de ideia — significa que ele permanece fiel à aliança que já havia feito com a humanidade, agora sob uma nova forma. O perdão provisório, antes simbolizado pelo sacrifício repetido de animais, é finalmente completo no sacrifício único de Jesus na cruz. A nova aliança que temos com Deus é feita com base no sangue de Jesus, não mais no sangue de bodes e novilhos.</p>
+          <div class="verse-card" style="margin-top:14px;">
+            <span class="tag">Lucas 22.20</span>
+            <p>Da mesma forma, depois da ceia, tomou o cálice, dizendo: "Este cálice é a nova aliança no meu sangue, derramado em favor de vocês."</p>
+            <span class="ref">— Jesus, na última ceia</span>
+          </div>
+          <p style="margin-top:14px;">De acordo com o autor de Hebreus, todas as festas religiosas, os sistemas de sacrifícios, as leis cerimoniais e os dias sagrados do Antigo Testamento eram sombra de algo melhor que haveria de vir — ordenanças exteriores que tratavam de comida, bebida e purificação com água, mas que não podiam dar ao adorador uma consciência perfeitamente limpa. Quando Cristo veio como sumo sacerdote, ele não entrou num tabernáculo feito por mãos humanas, e não ofereceu sangue de animais, mas o seu próprio sangue — obtendo, de uma vez por todas, eterna redenção.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O mediador de uma nova aliança</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Vinte e sete livros, nove autores, setenta anos — mas um único evento, contado repetidas vezes de ângulos diferentes: Deus se fez carne, viveu entre os homens, morreu e ressuscitou, para selar uma aliança que nenhum sacrifício de animal jamais poderia selar de forma definitiva.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Hebreus 9.15</span>
+          <p>Por essa razão, Cristo é o mediador de uma nova aliança, para que os que são chamados recebam a promessa da herança eterna, visto que ele morreu como resgate pelas transgressões cometidas sob a primeira aliança.</p>
+          <span class="ref">— Carta aos Hebreus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Ler o Novo Testamento como apenas uma "parte dois", ou uma coleção de biografias e cartas antigas, perde exatamente o que os próprios autores queriam comunicar: não um capítulo novo desconectado do anterior, mas o cumprimento de uma única aliança, prometida desde o princípio e finalmente selada no sangue de Jesus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma aliança repetida, sem cessar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma aliança selada, de uma vez por todas</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução ao Novo Testamento</footer>
+</div>
+
+<script>
+  const divisionData = [
+    { text: "Evangelhos (4 livros) — Mateus, Marcos, Lucas e João contam, cada um a seu modo, a vida, morte e ressurreição de Jesus." },
+    { text: "Histórico (1 livro) — Atos dos Apóstolos narra o nascimento da igreja e o avanço do evangelho de Jerusalém até Roma." },
+    { text: "Cartas paulinas (9 livros) — Romanos, Gálatas, 1ª e 2ª Coríntios, Efésios, Colossenses, Filipenses, 1ª e 2ª Tessalonicenses: cartas de Paulo a igrejas." },
+    { text: "Cartas pastorais (4 livros) — 1ª e 2ª Timóteo, Tito e Filemom: cartas de Paulo a líderes e indivíduos, não a igrejas inteiras." },
+    { text: "Cartas gerais (8 livros) — Hebreus, Tiago, 1ª e 2ª Pedro, 1ª, 2ª e 3ª João e Judas: cartas de outros apóstolos, endereçadas de forma mais ampla." },
+    { text: "Profético (1 livro) — o Apocalipse de João encerra o cânon com uma visão do triunfo final de Cristo sobre o mal." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const ntBarData = [
+    { label: "Evangelhos", books: 4 },
+    { label: "Histórico", books: 1 },
+    { label: "Cartas paulinas", books: 9 },
+    { label: "Cartas pastorais", books: 4 },
+    { label: "Cartas gerais", books: 8 },
+    { label: "Profético", books: 1 }
+  ];
+
+  function selectNtBlock(btn, i){
+    btn.parentElement.querySelectorAll('.nt-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = ntBarData[i];
+    document.getElementById('ntBarText').textContent = d.label + " reúne " + d.books + " dos 27 livros do Novo Testamento (" + Math.round(d.books/27*100) + "%).";
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um perdão que nunca se completava";
+      text.textContent = "Sob a primeira aliança, o mesmo sacrifício precisava ser repetido ano após ano — uma prova de que ele nunca conseguia, sozinho, limpar de vez a consciência de quem o oferecia.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um sacrifício que não precisa se repetir";
+      text.textContent = "É exatamente o que o Novo Testamento anuncia: Cristo entrou uma vez, com o seu próprio sangue, e obteve uma redenção eterna — não mais um perdão provisório, mas uma aliança selada para sempre.";
+    }
+  }
+</script>
+<script defer src="../volver-app.js"></script>
+</body>
+</html>

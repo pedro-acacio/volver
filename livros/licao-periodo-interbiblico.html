@@ -9,6 +9,26 @@
 <link rel="stylesheet" href="../volver-style.css">
 <style>
   body{ display:flex; justify-content:center; }
+
+  .per-bar-outer{ margin-top:18px; }
+  .per-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .per-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .per-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .per-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .per-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .per-seg:nth-child(1){ background:var(--gold); }
+  .per-seg:nth-child(2){ background:var(--worry); }
+  .per-seg:nth-child(3){ background:#8C7AA6; }
+  .per-seg:nth-child(4){ background:var(--calm); }
+  .per-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .per-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:32px; }
+
+  .dss-outer{ margin-top:16px; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); }
+  .dss-row{ display:flex; gap:18px; flex-wrap:wrap; margin-bottom:10px; }
+  .dss-stat{ text-align:center; }
+  .dss-stat b{ display:block; font-family:'Fraunces', serif; font-weight:600; font-size:19px; color:var(--gold); }
+  .dss-stat span{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); }
+  .dss-text{ font-size:12.5px; line-height:1.55; color:var(--text-dim); padding-top:10px; border-top:1px dashed var(--panel-line); }
 </style>
 </head>
 <body>
@@ -67,10 +87,24 @@
             <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 1, 'eventsText')">Alexandre e a helenização</button>
             <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 2, 'eventsText')">A Septuaginta</button>
             <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 3, 'eventsText')">Antíoco Epifânio</button>
-            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 4, 'eventsText')">Os Macabeus</button>
-            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 5, 'eventsText')">Roma toma Jerusalém</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 4, 'eventsText')">A profanação do templo</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 5, 'eventsText')">Os Macabeus</button>
+            <button class="chip-btn chip-worry" onclick="selectChip(this, eventsData, 6, 'eventsText')">Roma toma Jerusalém</button>
           </div>
           <div class="chip-text" id="eventsText">Toque em cada item para acompanhar os quatro séculos entre os testamentos.</div>
+
+          <div class="per-bar-outer">
+            <div class="per-bar-label">Quatro impérios, ~427 anos — toque num trecho da barra para ver o período:</div>
+            <div class="per-bar" role="group" aria-label="Distribuição dos impérios que governaram Israel entre os testamentos">
+              <button type="button" class="per-seg" style="width:23.4%;" onclick="selectPerBlock(this, 0)" aria-label="Domínio persa, 433 a 332 a.C."></button>
+              <button type="button" class="per-seg" style="width:38.9%;" onclick="selectPerBlock(this, 1)" aria-label="Grécia: Alexandre e sucessores, 332 a 166 a.C."></button>
+              <button type="button" class="per-seg" style="width:24.1%;" onclick="selectPerBlock(this, 2)" aria-label="Independência macabaica e hasmoneus, 166 a 63 a.C."></button>
+              <button type="button" class="per-seg" style="width:13.6%;" onclick="selectPerBlock(this, 3)" aria-label="Domínio romano até o nascimento de Cristo, 63 a 5 a.C."></button>
+            </div>
+            <div class="per-bar-ends"><span>433 a.C.</span><span>5 a.C.</span></div>
+            <div class="per-bar-caption" id="perBarText">Toque em um trecho da barra para ver quanto tempo cada império durou.</div>
+          </div>
+
           <button class="continue-btn" onclick="openStage(3)">Continuar → o que nasceu no silêncio</button>
         </div>
       </div>
@@ -91,10 +125,11 @@
         <div class="tl-card">
           <p>Quando o Novo Testamento começa, ele encontra um mundo religioso já formado — nenhuma dessas peças existia no Antigo Testamento. Toque para conhecer cada uma:</p>
           <div class="chip-row">
-            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 0, 'groupsText')">A sinagoga</button>
-            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 1, 'groupsText')">Fariseus e saduceus</button>
-            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 2, 'groupsText')">Os essênios de Qumran</button>
-            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 3, 'groupsText')">A esperança messiânica</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 0, 'groupsText')">A Diáspora e a sinagoga</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 1, 'groupsText')">Os saduceus</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 2, 'groupsText')">Os fariseus</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 3, 'groupsText')">Os essênios de Qumran</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, groupsData, 4, 'groupsText')">A esperança messiânica</button>
           </div>
           <div class="chip-text" id="groupsText">Toque em cada item para ver o que estava pronto quando Jesus nasceu.</div>
           <button class="continue-btn" onclick="openStage(4)">Continuar → a visão protestante</button>
@@ -119,6 +154,18 @@
           <p>A Igreja Católica e a Ortodoxa os incluem no cânon bíblico — oficializado pelo Concílio de Trento, em 1546, numa reação direta à Reforma. Os protestantes, seguindo a tradição da Reforma — e, antes dela, estudiosos como Jerônimo, tradutor da Vulgata, que já os distinguia das Escrituras hebraicas — não os consideram inspirados, por razões como:</p>
           <p>Não faziam parte do cânon hebraico reconhecido pelos próprios judeus da época, testemunhado por Flávio Josefo. Jesus e os apóstolos citam livremente o Antigo Testamento canônico no Novo Testamento, mas nunca citam esses livros como Escritura. Alguns trazem afirmações problemáticas para a teologia reformada, como a oração pelos mortos em 2 Macabeus 12:44-45. E não aparecem nas primeiras listas cristãs de cânon, como a de Melito de Sardes, já no século II.</p>
           <p>Isso não os torna inúteis — são fontes históricas valiosas: é deles, por exemplo, que vem boa parte do que se sabe sobre a revolta dos Macabeus. A posição protestante é que eles ajudam a entender o contexto, mas não têm autoridade de Escritura inspirada — o que mantém o Antigo Testamento em 39 livros e o Novo em 27, os mesmos 66 catalogados nesta trilha.</p>
+
+          <p>Um segundo grupo de textos desse período, os Manuscritos do Mar Morto, tem um papel diferente: não como candidatos ao cânon, mas como testemunha da fidelidade com que o próprio Antigo Testamento foi copiado. Em 1947, um pastor árabe encontrou, numa caverna nas colinas a sudoeste do Mar Morto, o que ficou conhecido como "a maior descoberta dos tempos modernos" — milhares de manuscritos e fragmentos judaicos, produzidos pela comunidade de Qumran, com mais de dois mil anos.</p>
+
+          <div class="dss-outer">
+            <div class="dss-row">
+              <div class="dss-stat"><b>~⅓</b><span>dos manuscritos são livros bíblicos</span></div>
+              <div class="dss-stat"><b>1947</b><span>ano da descoberta</span></div>
+              <div class="dss-stat"><b>~8 m</b><span>comprimento do rolo completo de Isaías</span></div>
+            </div>
+            <div class="dss-text">Os livros mais copiados entre os manuscritos bíblicos encontrados foram Salmos, Deuteronômio e Isaías — e um rolo completo de Isaías, de quase oito metros, se tornou uma das descobertas mais notáveis. Comparado ao texto hebraico que já usávamos, ele confirmou, mais de mil anos antes de qualquer cópia anterior conhecida, que as Escrituras haviam sido copiadas com extremo cuidado — uma prova concreta da confiabilidade do texto do Antigo Testamento que chegou até nós.</div>
+          </div>
+
           <button class="continue-btn" onclick="openStage(5)">Continuar → a plenitude dos tempos</button>
         </div>
       </div>
@@ -170,19 +217,21 @@
 
 <script>
   const eventsData = [
-    { text: "O período começa sob o domínio persa — o mesmo império de Esdras e Neemias, relativamente tolerante com a religião e a reconstrução judaica." },
-    { text: "Em 332 a.C., Alexandre, o Grande, conquista a região quase sem resistência. Sua morte prematura divide o império entre generais, e a Judeia passa a ser disputada entre os Ptolomeus, no Egito, e os Selêucidas, na Síria." },
-    { text: "Em Alexandria, por volta de 250 a.C., estudiosos judeus traduzem o Antigo Testamento para o grego — a Septuaginta (LXX). É a versão que os apóstolos vão citar na maior parte das vezes no Novo Testamento." },
-    { text: "Em 167 a.C., o rei selêucida Antíoco IV Epifânio profana o templo, erguendo um altar pagão sobre o altar de Deus e proibindo a prática judaica sob pena de morte." },
-    { text: "A família de Matatias e seu filho Judas Macabeu lidera uma revolta armada contra os selêucidas, reconquista e purifica o templo — origem da festa judaica de Hanucá — e conquista décadas de independência sob a dinastia hasmonaica." },
-    { text: "Em 63 a.C., o general romano Pompeu toma Jerusalém, encerrando a breve independência judaica. É sob esse mesmo império, décadas depois, que Jesus nasce, é julgado e crucificado." }
+    { text: "O período começa sob o domínio persa — o mesmo império de Esdras e Neemias, relativamente tolerante com a religião e a reconstrução judaica. Sobre os últimos anos desse domínio quase não há informação: nossa principal fonte, o historiador Josefo, é praticamente omissa." },
+    { text: "Em 332 a.C., Alexandre, o Grande, conquista a região quase sem resistência, iniciando um mundo novo, unido pela língua e pela cultura grega — a helenização. Sua morte prematura, em 323 a.C., divide o império entre generais, e a Judeia passa a ser disputada entre os Ptolomeus, no Egito, e os Selêucidas, na Síria e na Mesopotâmia." },
+    { text: "Por volta de 250 a.C., sob os Ptolomeus, setenta estudiosos judeus reunidos em Alexandria, a pedido de Ptolomeu Filadelfo, produzem uma tradução do Antigo Testamento para o grego — a Septuaginta (do latim para \"setenta\", abreviada LXX). É a versão que os apóstolos vão citar na maior parte das vezes no Novo Testamento, e que leva as Escrituras judaicas, pela primeira vez, a todo o mundo de fala grega." },
+    { text: "Os primeiros anos de domínio selêucida seguem, em boa parte, o mesmo tom tolerante dos ptolomaicos. Isso muda quando Antíoco IV Epifânio — cujo nome significa \"deus manifestado\" — assume o trono em 175 a.C. e passa a impor a helenização à força: proíbe práticas judaicas fundamentais, destrói cópias da Torá e exige ofertas ao deus grego Zeus." },
+    { text: "Em 168-167 a.C., Antíoco profana o templo, erguendo um altar a Zeus sobre o altar de Deus e sacrificando um porco no próprio templo de Jerusalém — o ápice de sua campanha contra a religião judaica." },
+    { text: "Matatias, um sacerdote idoso, e seus cinco filhos — entre eles Judas, apelidado \"Macabeu\", provavelmente \"o martelador\" — lideram a revolta armada. A guerra dura vinte e quatro anos (166-142 a.C.) e termina com a independência de Judá: o templo é reconquistado e purificado, origem da festa judaica de Hanucá." },
+    { text: "A vitória da família de Matatias foi ilusória: com a morte de Simão, o último dos cinco irmãos, a dinastia hasmonaica que herdou o poder logo se tornou tão helenista quanto os próprios selêucidas que combateu — e, sob Alexandre Janeu (103-76 a.C.), chegou a perseguir os fariseus. Em 63 a.C., o general romano Pompeu interveio numa disputa dinástica entre dois herdeiros hasmoneus, tomou Jerusalém, massacrou sacerdotes e profanou o Lugar Santíssimo — encerrando de vez a independência judaica sob o mesmo império que, décadas depois, julgaria e crucificaria Jesus." }
   ];
 
   const groupsData = [
-    { text: "Sem templo durante o exílio babilônico, os judeus começam a se reunir em sinagogas locais para orar e ouvir as Escrituras — um costume que sobrevive à reconstrução do templo e que os próprios apóstolos usam como ponto de partida para pregar (Atos 13:14-15)." },
-    { text: "Nesse período surgem os grupos religiosos que o Novo Testamento encontra prontos: fariseus, rigorosos guardiões da lei oral, e saduceus, ligados ao sacerdócio do templo e céticos quanto à ressurreição." },
-    { text: "Um terceiro grupo, os essênios, se retira para o deserto perto do Mar Morto, em Qumran, à espera de um Messias — e copiando manuscritos que, séculos depois, seriam descobertos como os Manuscritos do Mar Morto, a cópia mais antiga que temos de boa parte do Antigo Testamento." },
-    { text: "A opressão estrangeira contínua alimenta uma expectativa cada vez mais viva por um Messias libertador — o pano de fundo emocional com que o povo judeu recebe, ou rejeita, um carpinteiro de Nazaré séculos depois." }
+    { text: "A Diáspora — a dispersão de Israel pelo mundo — começou no exílio babilônico e se acelerou muito durante o período intertestamentário, a ponto de judeus estarem, na época de Jesus, espalhados \"por todas as terras e mares\". Sem templo à mão, esses judeus concentraram sua vida religiosa na sinagoga (seu centro local de oração e ensino) e na Torá — os próprios apóstolos usam a sinagoga como ponto de partida para pregar aos gentios (Atos 13.14-15), e a Diáspora acabou preparando o caminho para o evangelho cristão." },
+    { text: "Os saduceus formavam o partido do templo: um grupo relativamente pequeno, mas de posição elevada, ligado de perto ao sumo sacerdócio e a interesses aristocráticos. Rejeitavam toda a tradição oral e qualquer doutrina que não encontrassem nos cinco livros de Moisés — entre elas, notavelmente, a ressurreição dos mortos." },
+    { text: "Os fariseus eram o partido da sinagoga: dedicavam-se a reinterpretar a lei, construindo uma \"cerca\" de tradições ao redor dela para que o povo pudesse viver em retidão diante de Deus num mundo que havia mudado. Eram poucos, mas influenciavam profundamente a opinião popular — e foram o único grupo judaico a sobreviver à destruição do templo em 70 d.C., tornando-se precursores do judaísmo moderno." },
+    { text: "Um terceiro grupo, os essênios, praticamente desconhecido até a descoberta dos Manuscritos do Mar Morto, havia se separado do judaísmo comum — muitos acreditam que a comunidade de Qumran, responsável pelos manuscritos, era essênia. Consideravam o templo corrompido, rejeitavam boa parte do sistema sacrificial, e esperavam uma guerra final entre os \"Filhos da Luz\" e os \"Filhos das Trevas\", seguindo os ensinamentos de seu \"Mestre da Retidão\" e aguardando a vinda de dois, ou até três, messias. Alguns estudiosos tentam ligar os essênios às origens do cristianismo — alguns chegam a sugerir que João Batista ou o próprio Jesus teriam sido membros da seita — mas essas conjecturas se apoiam apenas em especulação superficial, sem base sólida." },
+    { text: "A opressão estrangeira contínua — persas, gregos, selêucidas, hasmoneus helenizados, romanos — alimenta uma expectativa cada vez mais viva por um Messias libertador: o pano de fundo emocional com que o povo judeu recebe, ou rejeita, um carpinteiro de Nazaré séculos depois." }
   ];
 
   let currentMax = 1;
@@ -207,6 +256,20 @@
     btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const perBarData = [
+    { label: "Domínio persa", range: "433–332 a.C.", years: 100, text: "a continuação tolerante do império que já vigorava desde Esdras e Neemias." },
+    { label: "Grécia: Alexandre e sucessores", range: "332–166 a.C.", years: 166, text: "a conquista de Alexandre, a divisão do império, e a crescente pressão helenizadora que culmina em Antíoco Epifânio." },
+    { label: "Independência macabaica e hasmoneus", range: "166–63 a.C.", years: 103, text: "da revolta de Judas Macabeu à independência — e ao lento declínio da própria dinastia que a conquistou." },
+    { label: "Domínio romano até Cristo", range: "63–5 a.C.", years: 58, text: "Pompeu toma Jerusalém; décadas depois, sob esse mesmo império, Jesus nasce." }
+  ];
+
+  function selectPerBlock(btn, i){
+    btn.parentElement.querySelectorAll('.per-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = perBarData[i];
+    document.getElementById('perBarText').textContent = d.label + " (" + d.range + ", ~" + d.years + " anos) — " + d.text;
   }
 
   function showOutcome(type){

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Josué — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .jos-bar-outer{ margin-top:18px; }
+  .jos-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .jos-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .jos-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .jos-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .jos-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .jos-seg:nth-child(1){ background:var(--gold); }
+  .jos-seg:nth-child(2){ background:var(--worry); }
+  .jos-seg:nth-child(3){ background:var(--calm); }
+  .jos-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .jos-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:18px; }
+
+  .jos-name-outer{ margin-top:16px; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); }
+  .jos-name-row{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .jos-name-item{ text-align:center; }
+  .jos-name-word{ font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--gold); }
+  .jos-name-sub{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:2px; }
+  .jos-name-arrow{ color:var(--text-faint); font-size:16px; }
+  .jos-name-caption{ font-size:13px; line-height:1.6; color:var(--text-dim); margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">O primeiro livro histórico · <span class="ref-tag">Josué 1—24</span></div>
+  <h1>Introdução a Josué</h1>
+  <p class="sub">Moisés morre nas campinas de Moabe sem pisar na terra prometida — e o livro seguinte começa com Deus chamando um novo líder para terminar o que ele começou. Josué conta como uma promessa feita séculos antes a Abraão finalmente se cumpre: uma terra, entregue a um povo, por um Deus que não falha em nenhuma palavra que fala.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor e data</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O próprio livro registra que Josué "escreveu estas palavras no livro da lei de Deus" (24.26), e a tradição judaica e cristã sempre atribuiu a ele a maior parte do texto — testemunha ocular de quase tudo o que relata, desde os espias em Jericó até a partilha da terra. Alguns trechos finais, como o relato da morte e sepultamento do próprio Josué (24.29-31), foram naturalmente acrescentados depois, possivelmente por Eleazar ou por Finéias, num padrão parecido com os últimos versículos de Deuteronômio sobre a morte de Moisés.</p>
+          <p>Os acontecimentos cobrem cerca de vinte e cinco anos: a conquista inicial da terra leva por volta de sete anos, e o livro termina décadas depois, com Josué já velho, "entrado em dias" (23.1), pouco antes de morrer aos cento e dez anos (24.29). É a continuação direta e imediata de Deuteronômio — começa no exato ponto em que Moisés morre, com o povo ainda acampado à beira do Jordão.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o nome do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Um nome que significa "o Senhor salva"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diferente de Gênesis, Êxodo, Levítico e Números — nomeados pela primeira palavra ou pelo conteúdo do texto hebraico — Josué é um dos poucos livros do Pentateuco e dos históricos nomeado por uma pessoa: o próprio protagonista. Seu nome original era Oséias ("salvação"), mas Moisés o renomeia Josué — <em>Yehoshua</em>, em hebraico — logo antes de enviá-lo como espia à terra prometida (Números 13.16). O novo nome acrescenta o nome do próprio Deus ao antigo: <em>Yehoshua</em> significa literalmente "o SENHOR salva" ou "o SENHOR é salvação".</p>
+          <p>É a mesma raiz hebraica por trás do nome que conhecemos em português como Jesus — a forma grega de <em>Yeshua</em>, a contração aramaica tardia do próprio <em>Yehoshua</em>. Josué e Jesus carregam, literalmente, o mesmo nome.</p>
+
+          <div class="jos-name-outer">
+            <div class="jos-name-row">
+              <div class="jos-name-item">
+                <div class="jos-name-word">Yehoshua</div>
+                <div class="jos-name-sub">hebraico · Josué</div>
+              </div>
+              <div class="jos-name-arrow">→</div>
+              <div class="jos-name-item">
+                <div class="jos-name-word">Yeshua</div>
+                <div class="jos-name-sub">forma contraída</div>
+              </div>
+              <div class="jos-name-arrow">→</div>
+              <div class="jos-name-item">
+                <div class="jos-name-word">Iēsous</div>
+                <div class="jos-name-sub">grego · Jesus</div>
+              </div>
+            </div>
+            <div class="jos-name-caption">"O SENHOR salva" — o mesmo nome, atravessando três línguas, ligando o general que conquistou uma terra ao Salvador que conquistaria bem mais que uma terra.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → as três partes do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">As três partes do livro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Josué se organiza numa sequência simples e militar: entrar, conquistar, dividir. Toque em cada parte para ver o que ela cobre:</p>
+          <div class="chip-row">
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 0, 'partsText')">I. A entrada na terra</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 1, 'partsText')">II. A conquista da terra</button>
+            <button class="chip-btn chip-gold" onclick="selectChip(this, partsData, 2, 'partsText')">III. A partilha e a aliança</button>
+          </div>
+          <div class="chip-text" id="partsText">Toque em cada parte para ver o que ela cobre.</div>
+
+          <div class="jos-bar-outer">
+            <div class="jos-bar-label">Como essas três partes se distribuem nos 24 capítulos do livro:</div>
+            <div class="jos-bar" role="group" aria-label="Distribuição dos capítulos de Josué entre as três partes">
+              <button type="button" class="jos-seg" style="width:20.83%;" onclick="selectJosBlock(this, 0)" aria-label="A entrada na terra, capítulos 1 a 5"></button>
+              <button type="button" class="jos-seg" style="width:29.17%;" onclick="selectJosBlock(this, 1)" aria-label="A conquista da terra, capítulos 6 a 12"></button>
+              <button type="button" class="jos-seg" style="width:50%;" onclick="selectJosBlock(this, 2)" aria-label="A partilha e a aliança, capítulos 13 a 24"></button>
+            </div>
+            <div class="jos-bar-ends"><span>cap. 1</span><span>cap. 24</span></div>
+            <div class="jos-bar-caption" id="josBarText">Toque em um trecho da barra para ver quantos capítulos ele ocupa.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o tema central</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Nenhuma palavra falhou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O propósito de Josué é mostrar Deus cumprindo, ponto por ponto, uma promessa feita séculos antes a Abraão: dar a seus descendentes a terra de Canaã. Logo no início, Deus repete a Josué a mesma garantia que deu a Moisés — "Como fui com Moisés, hei de ser contigo; não te deixarei, nem te desampararei" (1.5) — e o convoca três vezes, na mesma página, a "esforçar-se e ter bom ânimo" (1.6-9). A liderança muda de mão, mas a fidelidade de Deus não muda.</p>
+          <p>O livro inteiro caminha até uma única frase de resumo, quase no fim: "Palavra alguma faltou de todas as boas coisas que o Senhor falara à casa de Israel; tudo se cumpriu" (21.45). Josué também deixa claro que a posse da terra dependia de obediência, não de mérito — as vitórias vêm quando o povo confia e obedece (Jericó), e as derrotas vêm quando alguém age por conta própria (Acã, em Ai). É um livro sobre o que significa receber, com fé e obediência, algo que já havia sido prometido de graça.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Cristo em Josué</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo em Josué</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Josué conduz o povo de Deus, depois de uma longa peregrinação, a um descanso real: o fim da jornada pelo deserto, uma terra própria, inimigos vencidos. Mas séculos depois, o autor de Hebreus olha para trás e nota algo importante: aquele descanso, por mais real que fosse, não era o descanso final que Deus tinha em mente.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Hebreus 4.8-9</span>
+          <p>Porque, se Josué lhes houvera dado repouso, nunca depois teria falado de outro dia. Portanto, resta ainda um repouso para o povo de Deus.</p>
+          <span class="ref">— Carta aos Hebreus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Josué deu ao seu povo uma terra — mas Israel continuaria precisando de libertação, continuaria pecando, e séculos depois seria expulso da própria terra que Josué conquistou. O descanso que ele trouxe era real, mas parcial: uma sombra apontando para algo maior. É por isso que o nome dos dois — Josué e Jesus, "o SENHOR salva" — não é coincidência. Um conquistou uma terra para um povo; o outro conquistou o pecado e a morte para todo aquele que confia nele, dando um descanso que nenhuma conquista militar jamais poderia dar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">O descanso que Josué deu</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">O descanso que Jesus dá</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Josué</footer>
+</div>
+
+<script>
+  const partsData = [
+    { text: "Josué 1—5 — a entrada na terra: a comissão de Josué, os espias em Jericó recebidos por Raabe, a travessia milagrosa do Jordão, e a renovação da aliança em Gilgal antes da primeira batalha." },
+    { text: "Josué 6—12 — a conquista da terra: a queda de Jericó, o pecado de Acã e a derrota em Ai, o engano dos gibeonitas, a batalha em que o sol se detém, e o resumo das campanhas do sul e do norte." },
+    { text: "Josué 13—24 — a partilha e a aliança: a divisão da terra entre as tribos, as cidades de refúgio, o altar à beira do Jordão, e o discurso final de Josué renovando a aliança em Siquém." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  const josBarData = [
+    { label: "I. A entrada na terra", range: "capítulos 1–5", chapters: 5 },
+    { label: "II. A conquista da terra", range: "capítulos 6–12", chapters: 7 },
+    { label: "III. A partilha e a aliança", range: "capítulos 13–24", chapters: 12 }
+  ];
+
+  function selectJosBlock(btn, i){
+    btn.parentElement.querySelectorAll('.jos-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = josBarData[i];
+    document.getElementById('josBarText').textContent = d.label + " ocupa " + d.range + " — " + d.chapters + " dos 24 capítulos do livro (" + Math.round(d.chapters/24*100) + "%).";
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma terra, por um tempo";
+      text.textContent = "Um descanso geográfico e temporário — real, mas que ainda dependia da fidelidade contínua do povo, e que seria perdido séculos depois no exílio.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um descanso que nada tira";
+      text.textContent = "O mesmo nome, \"o Senhor salva\", agora cumprido de forma definitiva: não uma terra conquistada por um exército, mas uma salvação conquistada por Jesus, que nenhum exílio pode desfazer.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

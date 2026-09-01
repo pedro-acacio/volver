@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O pecado de Acã — Josué 7—8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* o que Acã escondeu — chip-row com reveal */
+  .aca-outer{ margin-top:16px; }
+  .aca-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .aca-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .aca-chip{ border-radius:20px; padding:8px 14px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); transition: background .3s ease, color .3s ease, transform .2s ease; }
+  .aca-chip.open{ background:var(--worry); color:#fff; transform:scale(1.03); }
+  .aca-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* toggle extra — escondido x exposto */
+  .esc-toggle-outer{ margin-top:16px; }
+  .esc-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .esc-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .esc-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-josue.html">Volver</a>
+    <span class="brand-track">A conquista da terra</span>
+  </div>
+
+  <div class="eyebrow">A conquista da terra · <span class="ref-tag">Josué 7—8</span></div>
+  <h1>O pecado de Acã</h1>
+  <p class="sub">Um homem esconde debaixo da própria tenda o que deveria ter sido destruído — e a nação inteira, sem saber por quê, perde a próxima batalha, uma que já deveria ter sido fácil.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L15 15 H3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 8 V11" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="9" cy="13" r="0.6" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A derrota inesperada em Ai</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois da vitória esmagadora em Jericó, Israel envia apenas alguns milhares de homens contra Ai, uma cidade pequena — uma formalidade, aparentemente (7.2-3). Mas Israel é derrotado, fugindo diante dos homens de Ai, com trinta e seis mortos (7.4-5).</p>
+          <p>O texto já revelou ao leitor, antes mesmo do relato da batalha, a razão oculta: "os filhos de Israel cometeram um trespasso no anátema, porque Acã... tomou do anátema" (7.1). Josué e o povo, porém, ainda não sabem disso — a derrota chega como um mistério para eles.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Josué se lança rosto em terra</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 4 V12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 12 H13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 12 L6 15 M9 12 L12 15" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Josué se lança rosto em terra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Josué rasga suas vestes e cai com o rosto em terra diante da arca até à tarde, junto com os anciãos de Israel, lançando pó sobre a cabeça (7.6) — a mesma reação de luto e desespero que os dez espias haviam causado décadas antes.</p>
+          <p>Ele questiona a Deus quase de forma acusatória: por que atravessar o Jordão só para serem entregues nas mãos dos amorreus e destruídos? E o que Deus fará pelo seu próprio "grande nome" quando as nações cananeias ouvirem falar dessa derrota (7.7-9)?</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o que Acã escondeu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M6 7 V5 A3 3 0 0 1 12 5 V7" stroke-width="1.2"/>
+          <circle cx="9" cy="11" r="1" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O que Acã escondeu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Deus responde que Israel pecou, quebrando a aliança ao tomar do anátema, e que não haverá vitória até que o pecado seja removido do meio deles (7.10-12). Um processo de seleção por sorteio — tribo, depois família, depois homem — aponta finalmente para Acã, da tribo de Judá (7.16-18).</p>
+          <p>Acã confessa: viu entre o despojo de Jericó um belo manto babilônico, duzentos siclos de prata e uma cunha de ouro de cinquenta siclos, cobiçou tudo, tomou e escondeu debaixo da terra, dentro da própria tenda (7.20-21). Toque em cada item para ver, nas próprias palavras do texto, o que ele fez:</p>
+
+          <div class="aca-outer">
+            <div class="aca-label">O que Acã tomou — toque em cada item</div>
+            <div class="aca-chip-row" id="acaChipRow"></div>
+            <div class="aca-caption" id="acaCaption">Toque em um item para ver a confissão de Acã sobre ele.</div>
+          </div>
+
+          <p style="margin-top:12px;">Acã, sua família e tudo o que possuía são levados ao vale de Acor e apedrejados (7.24-25); o local recebe esse nome — "vale da perturbação" — como lembrete permanente do que ali aconteceu.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a segunda batalha por Ai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 13 L8 8 L11 11 L15 5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 5 H15 V9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A segunda batalha por Ai</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Com o pecado removido do meio do povo, Deus ordena a Josué atacar Ai novamente — desta vez com uma estratégia de emboscada: parte do exército finge recuar, atraindo os homens de Ai para fora da cidade, enquanto uma tropa escondida entra e incendeia a cidade pelas costas (8.1-8, 18-19).</p>
+          <p>A cidade cai, e desta vez Israel pode tomar o despojo e o gado para si mesmo (8.2, 27) — a mesma permissão negada em Jericó, agora concedida. A diferença mostra que a regra do anátema era específica de Jericó, as "primícias" da conquista, consagradas ao Senhor, e não uma regra permanente para toda batalha futura.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Exposto diante de Deus</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O pecado de um único homem, escondido debaixo de uma tenda, sem testemunhas humanas, foi suficiente para custar trinta e seis vidas e uma derrota que parecia inexplicável para toda a nação. Nada no capítulo sugere que Acã pretendia prejudicar alguém além de si mesmo — mas o pecado escondido dentro de uma comunidade de aliança nunca permanece privado.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Josué 7.13</span>
+          <p>Santifica o povo, e dize: Santificai-vos para amanhã, porque assim diz o Senhor Deus de Israel: Um anátema há no meio de ti, ó Israel; não poderás deter-te diante de teus inimigos, até que tireis o anátema do meio de vós.</p>
+          <span class="ref">— o Senhor, a Josué</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O mesmo padrão ecoa séculos depois, em 1 Coríntios 5.6, quando Paulo pergunta à igreja de Corinto: "não sabeis que um pouco de fermento leveda a massa toda?" — um lembrete de que o pecado tolerado dentro de uma comunidade não fica contido, ele se espalha.</p>
+
+          <div class="esc-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnEscTenda" onclick="showEscOutcome('tenda')">Escondido debaixo da tenda</button>
+              <button class="toggle-btn" id="btnEscDeus" onclick="showEscOutcome('deus')">Exposto diante de Deus</button>
+            </div>
+            <div class="esc-outcome" id="escOutcome">
+              <h4 id="escTitle"></h4>
+              <p id="escText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Josué · o pecado de Acã</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const acaItems = [
+    { label: "Manto babilônico", text: "\"Vi entre os despojos um belo manto babilônico\" — o primeiro item que atraiu os olhos de Acã entre o que devia ser destruído (7.21)." },
+    { label: "Duzentos siclos de prata", text: "\"E duzentos siclos de prata\" — somados ao manto, parte do que Acã ajuntou e escondeu (7.21)." },
+    { label: "Cunha de ouro de cinquenta siclos", text: "\"E uma cunha de ouro de peso de cinquenta siclos\" — o terceiro item, o mais valioso dos três (7.21)." }
+  ];
+  const acaConfession = "\"Cobicei-os, e os tomei; e eis que estão escondidos na terra, no meio da minha tenda, e a prata debaixo disso\" (7.21) — a confissão completa de Acã sobre os três itens juntos.";
+
+  function buildAcaChips(){
+    const row = document.getElementById('acaChipRow');
+    acaItems.forEach((it, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'aca-chip';
+      b.textContent = it.label;
+      b.onclick = function(){ revealAcaChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildAcaChips();
+
+  function revealAcaChip(btn, i){
+    document.querySelectorAll('.aca-chip').forEach(c => c.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('acaCaption').textContent = acaItems[i].text + " " + acaConfession;
+  }
+
+  function showEscOutcome(type){
+    const btnT = document.getElementById('btnEscTenda');
+    const btnD = document.getElementById('btnEscDeus');
+    btnT.classList.remove('active-worry');
+    btnD.classList.remove('active-calm');
+    const title = document.getElementById('escTitle');
+    const text = document.getElementById('escText');
+
+    if (type === 'tenda'){
+      btnT.classList.add('active-worry');
+      title.textContent = "Ninguém tinha visto";
+      text.textContent = "Acã contou com o fato de que ninguém tinha visto — mas esconder algo dos olhos humanos nunca significou escondê-lo dos olhos de Deus, e o custo de manter o pecado escondido recaiu sobre toda a nação, não só sobre ele.";
+    } else {
+      btnD.classList.add('active-calm');
+      title.textContent = "Verdadeiramente pequei";
+      text.textContent = "A confissão de Acã, ainda que tardia e já sob julgamento, é ao menos honesta — \"verdadeiramente pequei\" — um lembrete de que o pecado exposto e tratado, por mais doloroso que seja, é o único caminho de volta à vitória.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Josué</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Históricos</div>
+    <h1>Josué</h1>
+    <p class="lede">O primeiro livro histórico: a promessa feita a Abraão finalmente se cumpre, terra por terra, batalha por batalha. Josué conta como um povo que só conheceu deserto aprende a receber, com fé e obediência, o que Deus havia prometido de graça.</p>
+    <div class="stats-row">
+      <div class="stat"><b>10</b>disponíveis</div>
+      <div class="stat"><b>3</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-josue.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução a Josué</div>
+        <div class="p-ref">Autor, estrutura e Cristo em Josué</div>
+        <p class="p-teaser">Um nome que significa "o Senhor salva" — o mesmo nome que, séculos depois, um anjo mandaria dar a um menino em Belém.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. A ENTRADA NA TERRA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. A entrada na terra</h3>
+      <span class="cat-ref">Josué 1—5</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-se-forte-e-corajoso.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Sê forte e corajoso</div>
+        <div class="p-ref">Josué 1</div>
+        <p class="p-teaser">Moisés está morto, e um novo líder recebe a mesma promessa três vezes na mesma página.</p>
+      </a>
+      <a class="p-card available" href="licao-raabe-e-os-espias.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Raabe e os espias</div>
+        <div class="p-ref">Josué 2</div>
+        <p class="p-teaser">Uma prostituta cananeia esconde dois espias no telhado — e um cordão vermelho na janela se torna sua salvação.</p>
+      </a>
+      <a class="p-card available" href="licao-a-travessia-do-jordao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A travessia do Jordão</div>
+        <div class="p-ref">Josué 3—5</div>
+        <p class="p-teaser">Um rio transbordando se detém no instante em que os pés dos sacerdotes tocam a água.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. A CONQUISTA DA TERRA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. A conquista da terra</h3>
+      <span class="cat-ref">Josué 6—12</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-queda-de-jerico.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A queda de Jericó</div>
+        <div class="p-ref">Josué 6</div>
+        <p class="p-teaser">Sete dias, sete voltas, uma trombeta — e uma muralha que cai sem um único golpe de espada.</p>
+      </a>
+      <a class="p-card available" href="licao-o-pecado-de-aca.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O pecado de Acã</div>
+        <div class="p-ref">Josué 7—8</div>
+        <p class="p-teaser">Um homem esconde o que deveria ser destruído — e uma nação inteira paga o preço da derrota.</p>
+      </a>
+      <a class="p-card available" href="licao-o-engano-dos-gibeonitas.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O engano dos gibeonitas</div>
+        <div class="p-ref">Josué 9</div>
+        <p class="p-teaser">Pão bolorento, sandálias gastas — um disfarce que engana Israel porque ninguém consultou o Senhor.</p>
+      </a>
+      <a class="p-card available" href="licao-o-sol-se-detem.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O sol se detém</div>
+        <div class="p-ref">Josué 10</div>
+        <p class="p-teaser">Josué pede um dia mais longo do que qualquer general jamais pediu — e o Senhor responde.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. A PARTILHA E A ALIANÇA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. A partilha e a aliança</h3>
+      <span class="cat-ref">Josué 13—24</span>
+      <span class="cat-count">2 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-calebe-pede-seu-monte.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Calebe pede seu monte</div>
+        <div class="p-ref">Josué 14</div>
+        <p class="p-teaser">Aos oitenta e cinco anos, o único desejo de Calebe é a montanha mais difícil de conquistar.</p>
+      </a>
+      <a class="p-card available" href="licao-eu-e-minha-casa-serviremos-ao-senhor.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Eu e a minha casa serviremos ao Senhor</div>
+        <div class="p-ref">Josué 24</div>
+        <p class="p-teaser">No mesmo lugar onde Abraão ergueu seu primeiro altar, Josué convoca o povo a escolher a quem vai servir.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Josué · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
