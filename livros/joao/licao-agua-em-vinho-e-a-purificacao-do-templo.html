@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Água em vinho e a purificação do templo — João 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — as talhas de purificação x o vinho novo */
+  .talha-toggle-outer{ margin-top:16px; }
+  .talha-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .talha-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .talha-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho — templo de pedra x templo do corpo */
+  .tpl-toggle-outer{ margin-top:16px; }
+  .tpl-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .tpl-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .tpl-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Os primeiros sinais</span>
+  </div>
+
+  <div class="eyebrow">Os primeiros sinais · <span class="ref-tag">João 2</span></div>
+  <h1>Água em vinho e a purificação do templo</h1>
+  <p class="sub">O primeiro sinal, numa festa de casamento sem vinho, e a primeira purificação, num templo virado feira — dois lados da mesma glória revelada.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 L12 9 C12 11 10.5 12 9 12 C7.5 12 6 11 6 9 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 12 V15 M6 15 H12" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Bodas em Caná</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus, sua mãe e seus discípulos são convidados a um casamento em Caná da Galileia. No meio da festa, o vinho acaba (2.3) — um problema social sério para a época, capaz de marcar uma família com vergonha por anos. Maria percebe e vai diretamente a Jesus.</p>
+          <p>A resposta dele soa quase distante: "que tenho eu contigo, mulher? ainda não é chegada a minha hora" (2.4). Mas Maria não discute — apenas se vira para os servos e instrui: "Fazei tudo o que ele vos disser" (2.5). É uma confiança tranquila, sem exigir explicação.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o primeiro sinal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 3 H12 M7 3 V5.5 L4.5 13 C4.2 14 4.8 15 6 15 H12 C13.2 15 13.8 14 13.5 13 L11 5.5 V3" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O primeiro sinal</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ali perto estavam seis talhas de pedra, usadas para o rito judaico de purificação — cada uma com capacidade entre oitenta e cento e vinte litros (2.6). Jesus manda os servos enchê-las de água até a borda, tirar um pouco e levar ao mestre-sala. O que chega no copo já não é água: é o melhor vinho da festa (2.9-10).</p>
+          <p>João chama isso o "princípio dos sinais", que Jesus "manifestou a sua glória; e os seus discípulos creram nele" (2.11). Toque para comparar o que aquelas talhas representavam antes e depois desse momento:</p>
+
+          <div class="talha-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnTalhaPurificacao" onclick="showTalhaOutcome('purificacao')">As talhas da purificação</button>
+              <button class="toggle-btn" id="btnTalhaVinho" onclick="showTalhaOutcome('vinho')">O vinho novo</button>
+            </div>
+            <div class="talha-outcome" id="talhaOutcome">
+              <h4 id="talhaTitle"></h4>
+              <p id="talhaText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a purificação do templo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 4 L6 6 L4 8 L8 10 L5 12 L10 14" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A purificação do templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na Páscoa, Jesus sobe a Jerusalém e encontra o pátio do templo transformado em mercado: vendedores de bois, ovelhas e pombas, e cambistas sentados às mesas (2.14). Faz um chicote de cordas e os expulsa a todos, derrubando as mesas dos cambistas, dizendo: "não façais da casa de meu Pai casa de negócio" (2.15-16).</p>
+          <p>Os discípulos se lembram então de um salmo que descreve exatamente essa intensidade: "o zelo da tua casa me consumirá" (Salmo 69.9). Não é raiva descontrolada — é indignação diante de algo sagrado tratado como oportunidade de lucro.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → destruí este templo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 H15 M4 15 V6 M14 15 V6 M2.5 6 H15.5 L9 3 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Destruí este templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os judeus exigem um sinal que justifique tamanha autoridade. Jesus responde de forma enigmática: "Destruí este templo, e em três dias o levantarei" (2.19). Eles entendem literalmente, escandalizados — o templo levava quarenta e seis anos em construção. Mas o narrador esclarece: Jesus falava do templo do seu próprio corpo, e só depois de ressuscitado os discípulos entenderam o que ele quisera dizer (2.20-22).</p>
+          <p>João acrescenta uma nota importante sobre esses primeiros dias: Jesus "não confiava neles" — na multidão que passou a crer nele só por causa dos sinais — porque "conhecia a todos" e sabia exatamente o que havia no coração humano, sem precisar que ninguém lhe testificasse nada (2.23-25).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Dois lados da mesma glória</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Água transformada em vinho e um templo derrubado que voltará a se erguer: são as duas primeiras cenas públicas do ministério de Jesus em João, e ambas apontam além de si mesmas — para uma purificação e uma alegria que nenhum rito ou reforma conseguiria produzir sozinho.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 2.19</span>
+          <p>Destruí este templo, e em três dias o levantarei.</p>
+          <span class="ref">— Jesus, no templo de Jerusalém</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Um templo de pedra pode ser purificado hoje e sujo de novo amanhã, exigindo repetição sem fim. Mas o templo que Jesus prometeu levantar em três dias aponta para uma purificação definitiva, cumprida na sua própria ressurreição.</p>
+
+          <div class="tpl-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnTplPedra" onclick="showTplOutcome('pedra')">Um templo de pedra</button>
+              <button class="toggle-btn" id="btnTplCorpo" onclick="showTplOutcome('corpo')">O templo do seu corpo</button>
+            </div>
+            <div class="tpl-outcome" id="tplOutcome">
+              <h4 id="tplTitle"></h4>
+              <p id="tplText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · água em vinho e a purificação do templo</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showTalhaOutcome(type){
+    const btnA = document.getElementById('btnTalhaPurificacao');
+    const btnB = document.getElementById('btnTalhaVinho');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('talhaTitle');
+    const text = document.getElementById('talhaText');
+
+    if (type === 'purificacao'){
+      btnA.classList.add('active-worry');
+      title.textContent = "O sistema antigo de limpeza externa";
+      text.textContent = "Seis talhas de pedra, cada uma com oitenta a cento e vinte litros, usadas para o rito judaico de purificação ritual — lavar as mãos, os utensílios, seguir a lei cerimonial ponto por ponto, sempre de novo (2.6).";
+      } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Algo novo enchendo o antigo";
+      text.textContent = "A mesma água, transformada no melhor vinho da festa — Jesus enche o próprio símbolo do sistema antigo com algo inteiramente novo, e João chama isso o \"princípio dos sinais\" que revelou sua glória (2.9-11).";
+    }
+  }
+
+  function showTplOutcome(type){
+    const btnA = document.getElementById('btnTplPedra');
+    const btnB = document.getElementById('btnTplCorpo');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('tplTitle');
+    const text = document.getElementById('tplText');
+
+    if (type === 'pedra'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Uma pureza que precisa ser refeita";
+      text.textContent = "Um templo físico pode ser purificado hoje e sujo de novo amanhã — mesas de cambistas voltam, vendedores voltam, exigindo repetição sem fim (2.14-16).";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Uma purificação definitiva";
+      text.textContent = "O templo que Jesus prometeu levantar em três dias era o templo do seu próprio corpo — uma purificação cumprida de uma vez por todas na sua morte e ressurreição (2.19-21).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

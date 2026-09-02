@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A ressurreição de Lázaro — João 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 4 — pedido e resposta, em dois passos */
+  .laz-steps{ margin-top:16px; }
+  .laz-step-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .laz-step-btn{
+    flex:1; min-width:150px; padding:13px 14px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    text-align:left; transition: transform .18s ease, border-color .2s ease, color .2s ease, background .2s ease, box-shadow .2s ease;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  .laz-step-btn:hover:not(:disabled){ transform: translateY(-2px); }
+  .laz-step-btn:disabled{ opacity:.4; cursor:not-allowed; }
+  .laz-step-btn.done{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .laz-step-panel{
+    border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--panel);
+    margin-bottom:10px; display:none;
+  }
+  .laz-step-panel.show{ display:block; animation: chip-text-in .3s ease both; }
+  .laz-step-panel .laz-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color: var(--gold); display:block; margin-bottom:8px; }
+  .laz-step-panel p{ font-size:13.5px; line-height:1.6; color: var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">O Bom Pastor e o sinal máximo</span>
+  </div>
+
+  <div class="eyebrow">O Bom Pastor e o sinal máximo · <span class="ref-tag">João 11</span></div>
+  <h1>A ressurreição de Lázaro</h1>
+  <p class="sub">O sétimo e maior sinal do Evangelho: um homem morto há quatro dias, já em decomposição, é chamado para fora do túmulo pela própria voz de Jesus.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V10" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 6 L9 3 L13 6" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 14 H14" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="1.6 2.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Esta enfermidade não é para morte</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Lázaro, de Betânia, irmão de Marta e Maria, adoece. As irmãs mandam avisar Jesus — "aquele a quem amas está enfermo" — sabendo o quanto ele estima essa família. Mas, ao ouvir a notícia, Jesus intencionalmente permanece onde estava por mais dois dias, dizendo aos discípulos que a enfermidade "não é para morte, mas para glória de Deus; para que o Filho de Deus seja glorificado por ela" (11.1-6).</p>
+          <p>Quando finalmente decide ir para a Judeia — região onde pouco antes tentaram apedrejá-lo — os discípulos hesitam. Tomé, resignado, resume o clima entre eles: "Vamos nós também, para morrermos com ele" (11.16).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Eu sou a ressurreição e a vida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 5.5 V9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Eu sou a ressurreição e a vida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus chega e encontra Lázaro já morto havia quatro dias. Marta sai ao seu encontro com uma frase que mistura fé e lamento: "Senhor, se estivesses aqui, meu irmão não teria morrido" (11.21). Jesus promete que ele ressuscitará; Marta responde pensando na ressurreição do último dia — uma esperança distante, correta, mas ainda longe demais.</p>
+          <p>Jesus então aproxima essa esperança do presente: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá; e todo aquele que vive, e crê em mim, nunca morrerá" (11.25-26). Diante disso, Marta confessa o que talvez nem soubesse que já cria: "Creio que tu és o Cristo, o Filho de Deus, que havia de vir ao mundo" (11.27).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Jesus chorou</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 6 5 8 5 10.5 C5 13 7 15 9 15 C11 15 13 13 13 10.5 C13 8 12 6 9 3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Jesus chorou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Maria também vem ao encontro de Jesus, chorando, e repete quase as mesmas palavras da irmã: "Senhor, se estivesses aqui, meu irmão não teria morrido" (11.32). Ao ver o choro dela e dos que a acompanhavam, Jesus se comove profundamente, e se perturba (11.33).</p>
+          <p>O versículo que segue é o mais curto de toda a Bíblia — "Chorou Jesus" (11.35) — e um dos mais reveladores. Mesmo sabendo exatamente o que estava prestes a fazer, Jesus não trata a morte como algo trivial nem finge indiferença diante da dor real das pessoas que ama. Sua humanidade é tão genuína quanto seu poder.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Lázaro, sai para fora!</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 16 V8 C5 5 7 3 9 3 C11 3 13 5 13 8 V16" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M5 11 H13" stroke-width="1.1" stroke-dasharray="1.4 1.8"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Lázaro, sai para fora!</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante do túmulo, Jesus manda tirar a pedra. Marta hesita — já há mau cheiro, quatro dias se passaram — mas Jesus insiste: "não te disse eu que, se creres, verás a glória de Deus?" (11.39-40). Toque nos dois passos, na ordem, para ver o que acontece:</p>
+
+          <div class="laz-steps">
+            <div class="laz-step-row">
+              <button class="laz-step-btn" id="lazBtn1" onclick="showLazStep(1)">Passo 1 — A oração em voz alta</button>
+              <button class="laz-step-btn" id="lazBtn2" onclick="showLazStep(2)" disabled>Passo 2 — "Lázaro, sai para fora!"</button>
+            </div>
+            <div class="laz-step-panel" id="lazPanel1">
+              <span class="laz-tag">João 11.41-42</span>
+              <p>Antes de qualquer coisa, Jesus ergue os olhos e ora: "Pai, graças te dou por me haveres ouvido. Eu bem sabia que sempre me ouves; mas disse isto por causa da multidão que está ao redor, para que creiam que tu me enviaste." A oração não pede — agradece. Jesus já sabe o que vai acontecer; fala em voz alta para que a multidão veja de onde vem o poder que está prestes a se manifestar.</p>
+            </div>
+            <div class="laz-step-panel" id="lazPanel2">
+              <span class="laz-tag">João 11.43-44</span>
+              <p>Então, em alta voz, Jesus clama: "Lázaro, sai para fora!" E o que estava morto sai — ainda enfaixado, de pés e mãos, com o rosto envolto num lenço. Jesus manda: "desligai-o e deixai-o ir." Uma só palavra, dirigida a um homem morto há quatro dias, e ele obedece.</p>
+            </div>
+          </div>
+
+          <p>Esse sinal, o mais dramático de todos os que Jesus realiza no Evangelho de João, tem um efeito imediato e paradoxal: leva diretamente à decisão final do Sinédrio de matá-lo. O sumo sacerdote Caifás profetiza, sem saber o alcance do que diz, que "convinha que um homem morresse pelo povo" (11.49-52) — palavras que descrevem exatamente o que Jesus está prestes a fazer, por um motivo bem diferente do que Caifás imaginava.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Vivo, à voz daquele que é a ressurreição</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Nenhum dos sinais de João é apenas espetáculo. Este, o último e mais dramático antes da própria cruz, aponta diretamente para o que Jesus está prestes a fazer por si mesmo — e para o que promete fazer, um dia, por todos os que estão nele: chamar os mortos de volta à vida, com uma só palavra.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 11.25-26</span>
+          <p>Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá; e todo aquele que vive, e crê em mim, nunca morrerá.</p>
+          <span class="ref">— Jesus, a Marta</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Toque para comparar:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnLazMorto" onclick="showLazOutcome('morto')">Morto há quatro dias</button>
+            <button class="toggle-btn" id="btnLazVivo" onclick="showLazOutcome('vivo')">Vivo, à voz daquele que é a ressurreição</button>
+          </div>
+          <div class="ver-outcome" id="lazOutcome">
+            <h4 id="lazTitle"></h4>
+            <p id="lazText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a ressurreição de Lázaro</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showLazStep(n){
+    const panel = document.getElementById('lazPanel' + n);
+    const btn = document.getElementById('lazBtn' + n);
+    panel.classList.add('show');
+    btn.classList.add('done');
+    if (n === 1){
+      document.getElementById('lazBtn2').disabled = false;
+    }
+  }
+
+  function showLazOutcome(type){
+    const btnM = document.getElementById('btnLazMorto');
+    const btnV = document.getElementById('btnLazVivo');
+    btnM.classList.remove('active-worry');
+    btnV.classList.remove('active-calm');
+    const title = document.getElementById('lazTitle');
+    const text = document.getElementById('lazText');
+
+    if (type === 'morto'){
+      btnM.classList.add('active-worry');
+      title.textContent = "Quatro dias pareciam ser tarde demais";
+      text.textContent = "Quatro dias de decomposição pareciam tornar qualquer esperança absurda — até para as irmãs que mais amavam Lázaro e mais confiavam em Jesus. Marta mesma hesita diante da pedra do túmulo (11.39).";
+    } else {
+      btnV.classList.add('active-calm');
+      title.textContent = "Uma só palavra bastou";
+      text.textContent = "Para quem é a própria ressurreição e a vida, nem quatro dias de morte são obstáculo. Uma única palavra — \"Lázaro, sai para fora!\" — foi suficiente para que o morto saísse andando, ainda enfaixado (11.43-44).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

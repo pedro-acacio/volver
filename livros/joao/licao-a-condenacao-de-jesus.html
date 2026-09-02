@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A condenação de Jesus — João 18.26—19.16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Widget: "não acho nele crime algum" x escalada da multidão */
+  .inoc-outer{ margin-top:16px; }
+  .inoc-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .inoc-steps{ display:flex; gap:8px; margin-bottom:10px; }
+  .inoc-step{
+    flex:1; padding:12px 8px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:12.5px; font-weight:500; cursor:pointer;
+    text-align:center; transition: all .2s ease; font-family:'IBM Plex Mono', monospace;
+  }
+  .inoc-step:hover{ transform: translateY(-2px); }
+  .inoc-step.done{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); box-shadow: 0 0 0 3px rgba(168,92,107,0.12); }
+  .inoc-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; min-height:80px; }
+  .inoc-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .inoc-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0 0 8px; }
+  .inoc-outcome p.inoc-crowd{ color: var(--worry); font-style:italic; margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">A Paixão</span>
+  </div>
+
+  <div class="eyebrow">A Paixão · <span class="ref-tag">João 18.26—19.16</span></div>
+  <h1>A condenação de Jesus</h1>
+  <p class="sub">Diante de um governador romano que repete três vezes não encontrar culpa nenhuma nele, uma multidão pressionada pelos líderes religiosos escolhe libertar um insurgente e crucificar o próprio Rei que dizem não querer.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15 V14 H3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M3 6 L9 10 L15 6" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Não entramos, para não nos contaminarmos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>De madrugada, levam Jesus da casa de Caifás ao pretório de Pilatos (18.28). Os judeus, porém, não entram no ambiente gentio — para não se contaminarem ritualmente antes de comerem a Páscoa (18.28). É uma ironia amarga: prestes a matar o Cordeiro de Deus, preocupam-se com pureza cerimonial.</p>
+          <p>Pilatos sai até eles. Eles pedem a pena de morte, que só Roma podia autorizar (18.31) — cumprindo, observa o narrador, "a palavra que Jesus tinha dito, significando de que morte havia de morrer" (18.32), ou seja, a crucificação romana, não o apedrejamento judaico.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Minha realeza não é deste mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L9 15 M5 6 H13" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 6 L3.5 10 H6.5 Z M13 6 L11.5 10 H14.5 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Minha realeza não é deste mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A sós com Jesus, Pilatos pergunta se ele é o rei dos judeus. Jesus responde que seu reino não é deste mundo — "se o meu reino fosse deste mundo, os meus servos pelejariam" (18.36) — mas confirma a pergunta de fundo: "para isto vim ao mundo, a fim de dar testemunho da verdade. Todo aquele que é da verdade ouve a minha voz" (18.37).</p>
+          <p>Pilatos responde com a pergunta mais famosa e mais cínica do capítulo: "Que é a verdade?" (18.38) — e sai sem esperar resposta, deixando a pergunta mais importante da sala pairando no ar, sem interesse em ouvi-la.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Não acho nele crime algum</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V9 L12.5 11" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="9" cy="9" r="6.2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Não acho nele crime algum</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pilatos sai e declara ao povo não achar culpa em Jesus — e propõe soltá-lo, por costume da Páscoa; a multidão pede Barrabás, "um salteador", em seu lugar (18.38-40). Pilatos manda açoitar Jesus; os soldados o coroam com espinhos, vestem-no de púrpura e zombam dele como "rei dos judeus" (19.1-3). Ao apresentá-lo de novo, diz: "eis o homem!" (19.5).</p>
+          <p>Três vezes, ao longo dessa cena, Pilatos declara publicamente o mesmo veredito — e, a cada vez, a multidão responde com mais pressão, não menos. Toque nos três passos para acompanhar a contradição entre o veredito e a ação:</p>
+
+          <div class="inoc-outer">
+            <div class="inoc-label">Veredito de Pilatos x pressão da multidão — toque em cada passo</div>
+            <div class="inoc-steps" id="inocSteps"></div>
+            <div class="inoc-outcome" id="inocOutcome">
+              <h4 id="inocTitle"></h4>
+              <p id="inocText"></p>
+              <p class="inoc-crowd" id="inocCrowd"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Não tens autoridade nenhuma sobre mim</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L15 6 V10 C15 13.5 12.3 15.6 9 16.5 C5.7 15.6 3 13.5 3 10 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Não tens autoridade nenhuma sobre mim</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao ouvir que Jesus se disse "Filho de Deus", Pilatos fica ainda mais receoso, e pergunta de onde ele vem (19.7-9). Jesus, silencioso a princípio, depois responde: "não terias sobre mim autoridade nenhuma, se de cima não te fora dado" (19.11) — mesmo naquele julgamento injusto, Deus continua soberano sobre tudo o que acontece.</p>
+          <p>Os judeus pressionam com uma ameaça política: "se soltas a este, não és amigo de César" (19.12). Pilatos, cedendo ao medo, senta-se no tribunal e entrega Jesus para ser crucificado — e os principais sacerdotes chegam a declarar, contra a própria fé, "não temos rei, senão César" (19.15).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Nenhuma autoridade fora do controle de Deus</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Ao longo de toda a cena, Pilatos tem, na aparência, o poder de decidir — soltar ou crucificar. Mas é o próprio Jesus, no meio do interrogatório, quem aponta para a verdadeira fonte de qualquer autoridade humana naquela sala.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 19.11</span>
+          <p>Não terias sobre mim autoridade nenhuma, se de cima não te fora dado.</p>
+          <span class="ref">— Jesus, a Pilatos, no pretório</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Pilatos tinha, na aparência, todo o poder naquela sala. Toque nas duas frases para ver o que estava realmente em jogo:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnReiMundo" onclick="showCondFinal('mundo')">Um rei deste mundo</button>
+            <button class="toggle-btn" id="btnReiVerdade" onclick="showCondFinal('verdade')">Um rei que veio testemunhar da verdade</button>
+          </div>
+          <div class="outcome" id="condFinalOutcome">
+            <h4 id="condFinalTitle"></h4>
+            <p id="condFinalText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a condenação de Jesus</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const inocSteps = [
+    {
+      label: "1º veredito",
+      title: "\"Não acho nele crime algum\" (18.38)",
+      text: "Pilatos sai ao povo pela primeira vez e declara não encontrar culpa alguma em Jesus — e propõe soltá-lo, por costume da festa.",
+      crowd: "A multidão responde: \"Solta-nos Barrabás\" (18.40) — preferindo libertar um insurgente a Jesus."
+    },
+    {
+      label: "2º veredito",
+      title: "\"Não acho nele crime algum\" (19.4)",
+      text: "Depois de mandar açoitar Jesus e apresentá-lo coroado de espinhos, com \"eis o homem!\", Pilatos repete: não encontra culpa nele.",
+      crowd: "Os principais sacerdotes e guardas gritam: \"Crucifica-o! Crucifica-o!\" (19.6)."
+    },
+    {
+      label: "3º veredito",
+      title: "\"Não acho nele crime algum\" (19.6)",
+      text: "Pilatos insiste pela terceira vez: \"Levai-o vós, e crucificai-o, porque eu não acho nele crime algum.\"",
+      crowd: "A multidão grita de novo por sua crucificação — a pressão só cresce a cada veredito repetido."
+    }
+  ];
+
+  function buildInocSteps(){
+    const row = document.getElementById('inocSteps');
+    inocSteps.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'inoc-step';
+      b.textContent = (i+1) + '. ' + s.label;
+      b.onclick = function(){ revealInocStep(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildInocSteps();
+
+  function revealInocStep(btn, i){
+    btn.classList.add('done');
+    const s = inocSteps[i];
+    document.getElementById('inocTitle').textContent = s.title;
+    document.getElementById('inocText').textContent = s.text;
+    document.getElementById('inocCrowd').textContent = s.crowd;
+  }
+
+  function showCondFinal(type){
+    const btnM = document.getElementById('btnReiMundo');
+    const btnV = document.getElementById('btnReiVerdade');
+    btnM.classList.remove('active-worry');
+    btnV.classList.remove('active-calm');
+    const title = document.getElementById('condFinalTitle');
+    const text = document.getElementById('condFinalText');
+
+    if (type === 'mundo'){
+      btnM.classList.add('active-worry');
+      title.textContent = "Todo o poder, na aparência";
+      text.textContent = "Pilatos tinha, na aparência, todo o poder naquela sala — o poder de soltar ou de crucificar, decidido por medo de uma multidão e de uma ameaça política.";
+    } else {
+      btnV.classList.add('active-calm');
+      title.textContent = "Nenhuma autoridade fora do controle de Deus";
+      text.textContent = "Mas o próprio Jesus deixa claro que nenhuma autoridade humana age fora do controle final de Deus, nem mesmo na hora mais injusta de toda a história (19.11).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

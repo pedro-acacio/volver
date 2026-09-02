@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução ao Evangelho segundo João — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .joa-bar-outer{ margin-top:16px; }
+  .joa-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .joa-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .joa-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .joa-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .joa-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .joa-seg:nth-child(1){ background:var(--gold); }
+  .joa-seg:nth-child(2){ background:var(--calm); }
+  .joa-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .joa-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:32px; }
+
+  .sinais-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+  @media (max-width:560px){ .sinais-grid{ grid-template-columns:1fr; } }
+  .sinal-btn{ display:flex; align-items:center; gap:10px; text-align:left; background:var(--bg); border:1px solid var(--panel-line); border-radius:10px; padding:9px 12px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; color:var(--text-dim); transition:border-color .2s ease; }
+  .sinal-btn:hover{ border-color:var(--gold); }
+  .sinal-btn.active{ border-color:var(--gold); background:rgba(217,164,65,0.08); }
+  .sinal-num{ font-family:'Fraunces', serif; font-weight:600; color:var(--gold); font-size:15px; flex-shrink:0; width:18px; }
+  .sinal-label{ font-size:12.5px; }
+  .sinal-caption{ font-size:13px; line-height:1.58; color:var(--text-dim); margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line); min-height:40px; }
+
+  .eusou-note{ margin-top:14px; border-radius:11px; padding:12px 14px; border:1px dashed var(--panel-line); background:var(--bg); font-size:12.5px; line-height:1.55; color:var(--text-dim); }
+  .eusou-note a{ color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Evangelhos · <span class="ref-tag">João 20.31</span></div>
+  <h1>Introdução ao Evangelho segundo João</h1>
+  <p class="sub">O quarto Evangelho não conta a mesma história dos outros três da mesma forma — é o relato de quem esteve mais perto de Jesus, escrito décadas depois, com um propósito que o próprio autor declara sem rodeios: fazer o leitor crer. Antes da primeira reflexão, vale entender quem escreveu, quando, por quê, e como o livro se organiza.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor: o discípulo amado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Evangelho é formalmente anônimo, mas está cheio de pistas sobre quem o escreveu. O autor quase certamente era judeu — o texto demonstra profundo conhecimento dos costumes, das festas e das crenças judaicas — e seu conhecimento detalhado da geografia sugere que era nativo da Palestina. Em vários pontos, parece ter sido testemunha ocular dos próprios acontecimentos que registra (19.35).</p>
+          <p>Este é também o único Evangelho que se refere a um discípulo como "aquele a quem Jesus amava", sem nunca dizer seu nome (por exemplo, 13.23) — e é justamente esse discípulo, anônimo, quem dá testemunho dessas coisas e as escreveu (21.24). Chama a atenção que João, filho de Zebedeu — um dos discípulos mais próximos de Jesus nos outros Evangelhos — nunca seja mencionado pelo nome neste livro. É difícil explicar essa ausência a não ser que o próprio João seja o autor, e sua modéstia o tenha impedido de se nomear diretamente. A tradição da igreja primitiva, já a partir de Irineu no século II, atribui de forma explícita e consistente este Evangelho ao apóstolo João — e, apesar de estudiosos modernos por vezes questionarem essa tradição, nenhum outro nome proposto explica melhor os fatos.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → data: um fragmento de papiro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 A7 7 0 1 1 8.99 2" stroke-width="1.3"/>
+          <path d="M9 5 V9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Data: um fragmento de papiro que mudou o debate</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A tradição da igreja primitiva sugere que João escreveu este Evangelho perto do fim de sua vida, possivelmente entre 85 e 90 d.C. Alguns estudiosos, no fim do século XIX e início do XX, propuseram uma data bem mais tardia — já no século II — duvidando que um apóstolo tivesse escrito algo teologicamente tão desenvolvido.</p>
+          <p>Duas descobertas mudaram esse debate. A primeira foi o fragmento de papiro Rylands — um pequeno pedaço, com alguns versículos do capítulo 18, datado no máximo até 130 d.C., encontrado no Egito, longe de Éfeso, onde João provavelmente escreveu. Se uma cópia já circulava tão longe e tão cedo, o original precisa ser bem mais antigo. A segunda foram os Manuscritos do Mar Morto, que aumentaram muito o entendimento sobre a Palestina do primeiro século e confirmaram que os detalhes judaicos e geográficos do Evangelho pertencem exatamente àquele mundo — não a uma invenção tardia e helenizada. As duas descobertas juntas forçaram muitos estudiosos a voltar à data tradicional.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → propósito: para que creiais</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Propósito: para que creiais</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diferente de muitos livros bíblicos, este descreve seu próprio propósito sem ambiguidade: "estes, porém, foram escritos para que creiais que Jesus é o Cristo, o Filho de Deus, e para que, crendo, tenhais vida em seu nome" (20.31). Há debate sobre se João mira principalmente incrédulos, que ainda precisam vir à fé, ou crentes, que precisam ser confirmados nela — a gramática grega permite as duas leituras, e não há necessidade de escolher uma em detrimento da outra: o livro serve às duas.</p>
+          <p>Esse propósito explica o tom do Evangelho inteiro. Logo no prólogo, João resume a tragédia central da história: "veio para o que era seu, e os seus não o receberam" (1.11). Jesus vai a Jerusalém repetidamente, muitas vezes por ocasião das grandes festas judaicas, e usa o significado de cada festa para revelar quem ele é — mas seu próprio povo, em sua maioria, não o recebe. João não trata essa rejeição como um mistério nem como uma falha de Jesus: é sintoma do próprio pecado humano. As pessoas não rejeitaram Jesus por ele ser estranho, mas porque amaram mais as trevas do que a luz.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → como o livro se organiza</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Como o livro se organiza</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de um prólogo (1.1-18) que apresenta Jesus como o Verbo eterno que se fez carne, os estudiosos costumam dividir o restante do Evangelho em duas grandes partes: o "Livro dos Sinais" (capítulos 1—12), marcado por milagres públicos e discursos, muitas vezes ligados a festas judaicas; e o "Livro da Glória" (capítulos 13—21), em que Jesus se volta para preparar seus discípulos antes de sua "hora" — a cruz, a ressurreição, a glorificação final.</p>
+
+          <div class="joa-bar-outer">
+            <div class="joa-bar-label">As duas metades do livro, capítulo por capítulo:</div>
+            <div class="joa-bar" role="group" aria-label="Distribuição dos capítulos de João entre o Livro dos Sinais e o Livro da Glória">
+              <button type="button" class="joa-seg" style="width:57.1%;" onclick="selectJoaBlock(this, 0)" aria-label="Livro dos Sinais, capítulos 1 a 12"></button>
+              <button type="button" class="joa-seg" style="width:42.9%;" onclick="selectJoaBlock(this, 1)" aria-label="Livro da Glória, capítulos 13 a 21"></button>
+            </div>
+            <div class="joa-bar-ends"><span>cap. 1</span><span>cap. 21</span></div>
+            <div class="joa-bar-caption" id="joaBarText">Toque em um trecho da barra para ver o que ele cobre.</div>
+          </div>
+
+          <p style="margin-top:16px;">Dentro do Livro dos Sinais, sete milagres públicos funcionam como marcos da narrativa — cada um revelando algo sobre quem Jesus é. Toque em cada um:</p>
+
+          <div class="sinais-grid" id="sinaisGrid"></div>
+          <div class="sinal-caption" id="sinalCaption">Toque em um sinal para ver o que ele revela.</div>
+
+          <div class="eusou-note">Correndo em paralelo aos sinais, João também registra sete afirmações de Jesus começando com "Eu sou" — "Eu sou o pão da vida", "Eu sou a luz do mundo", e assim por diante — cada uma reivindicando, com a mesma expressão usada por Deus a Moisés na sarça ardente, uma identidade divina. Este projeto já tem uma trilha própria dedicada só a elas: <a href="../../eu-sou/biblioteca-eu-sou.html">Eu Sou</a>.</div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Luz e trevas, desde a primeira página</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O estilo deste Evangelho é marcado por temas contrastantes, colocados lado a lado sem meio-termo: luz e trevas, amor e ódio (15.17-18), o que vem de cima e o que vem debaixo (8.23), vida e morte (6.57-58), verdade e mentira (8.32-47). Não é apenas um recurso literário — é o próprio convite do livro: diante de Jesus, não existe neutralidade.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 20.31</span>
+          <p>Estes, porém, foram escritos para que creiais que Jesus é o Cristo, o Filho de Deus, e para que, crendo, tenhais vida em seu nome.</p>
+          <span class="ref">— o autor, encerrando seu propósito</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Antes mesmo do primeiro sinal, o prólogo já anuncia o veredito que vai se repetir capítulo após capítulo: "a luz brilha nas trevas, e as trevas não prevaleceram contra ela" (1.5). Cada reflexão desta trilha vai revisitar essa mesma escolha, sob um ângulo novo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Amar as trevas</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Vir à luz</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução ao Evangelho segundo João</footer>
+</div>
+
+<script>
+  const joaBarData = [
+    { label: "Livro dos Sinais", range: "capítulos 1–12", chapters: 12, text: "o ministério público de Jesus, marcado por sete sinais e por discursos ligados às festas judaicas — termina com a rejeição pública do próprio povo de Jesus." },
+    { label: "Livro da Glória", range: "capítulos 13–21", chapters: 9, text: "Jesus se volta para os discípulos, na última ceia e no discurso de despedida, antes de sua prisão, morte, ressurreição e aparições — sua \"hora\" de ser glorificado." }
+  ];
+
+  function selectJoaBlock(btn, i){
+    btn.parentElement.querySelectorAll('.joa-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = joaBarData[i];
+    document.getElementById('joaBarText').textContent = d.label + " (" + d.range + ", " + d.chapters + " dos 21 capítulos): " + d.text;
+  }
+
+  const sinaisData = [
+    { label: "Água em vinho", ref: "2.1-11", text: "nas bodas de Caná, o primeiro sinal, revelando sua glória e despertando a fé de seus discípulos." },
+    { label: "Cura do filho do oficial", ref: "4.46-54", text: "à distância, com uma só palavra — um gentio, não um judeu, é o segundo a crer por causa de um sinal." },
+    { label: "Cura do paralítico", ref: "5.1-15", text: "trinta e oito anos de enfermidade curados num sábado, no tanque de Betesda — o que acende o primeiro grande conflito com as autoridades." },
+    { label: "Multiplicação dos pães", ref: "6.1-14", text: "cinco pães e dois peixes alimentam uma multidão — o sinal que leva ao longo discurso \"Eu sou o pão da vida\"." },
+    { label: "Andar sobre o mar", ref: "6.16-21", text: "Jesus caminha sobre as águas agitadas até o barco dos discípulos, dizendo \"Sou eu, não temais\"." },
+    { label: "Cura do cego de nascença", ref: "9.1-41", text: "um homem que nunca viu recebe a visão — e ainda assim enxerga mais quem Jesus é do que os fariseus que já viam." },
+    { label: "Ressurreição de Lázaro", ref: "11.1-44", text: "o sétimo e maior sinal: um homem morto há quatro dias volta à vida, antecipando a própria ressurreição de Jesus." }
+  ];
+
+  function buildSinaisGrid(){
+    const grid = document.getElementById('sinaisGrid');
+    sinaisData.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sinal-btn';
+      b.innerHTML = '<span class="sinal-num">' + (i+1) + '</span><span class="sinal-label">' + s.label + '</span>';
+      b.onclick = function(){ revealSinal(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildSinaisGrid();
+
+  function revealSinal(btn, i){
+    document.querySelectorAll('.sinal-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const s = sinaisData[i];
+    document.getElementById('sinalCaption').textContent = "Sinal " + (i+1) + " — " + s.label + " (João " + s.ref + "): " + s.text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Rejeitar não por ignorância, mas por escolha";
+      text.textContent = "\"E o juízo é este: A luz veio ao mundo, e os homens amaram mais as trevas do que a luz, porque as suas obras eram más\" (3.19) — em João, ninguém rejeita Jesus por falta de evidência; rejeita porque prefere as trevas.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Crer, e ter vida em seu nome";
+      text.textContent = "É exatamente o convite que abre este Evangelho e o fecha: a todos os que o receberam, deu-lhes o poder de se tornarem filhos de Deus (1.12) — a mesma luz que expõe as trevas é a que oferece vida a quem vem a ela.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A videira verdadeira — João 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .vid-toggle-outer{ margin-top:16px; }
+  .vid-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .vid-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .vid-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">O discurso de despedida</span>
+  </div>
+
+  <div class="eyebrow">O discurso de despedida · <span class="ref-tag">João 15</span></div>
+  <h1>A videira verdadeira</h1>
+  <p class="sub">"Permanecei em mim" — a última grande imagem que Jesus deixa com os discípulos antes de sair do cenáculo, sobre o que realmente sustenta quem o segue.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V9" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 9 C6 9 5 6 5 4 M9 9 C12 9 13 6 13 4" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="5" cy="3.4" r="1.1" stroke-width="1"/>
+          <circle cx="13" cy="3.4" r="1.1" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Eu sou a videira verdadeira</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus se apresenta com uma imagem agrícola simples e conhecida de todos ali: "Eu sou a videira verdadeira, e meu Pai é o lavrador" (15.1). Todo ramo que nele não dá fruto, o Pai corta; e todo o que dá fruto, ele "o limpa, para que dê mais fruto" (15.2). A poda não é punição — é o cuidado de um agricultor que quer mais fruto, não menos.</p>
+          <p>Depois vem a frase que sustenta todo o capítulo: "permanecei em mim, e eu permanecerei em vós; como a vara de si mesma não pode dar fruto, se não estiver na videira, assim também vós, se não estiverdes em mim" (15.4). O fruto nunca é produto do esforço isolado de um ramo — é o resultado natural de estar ligado à videira.</p>
+
+          <div class="vid-toggle-outer">
+            <div class="chip-row">
+              <button class="chip-btn chip-worry" id="vidBtnSeparado" onclick="showVidOutcome('separado')">Um ramo separado</button>
+              <button class="chip-btn chip-calm" id="vidBtnPermanece" onclick="showVidOutcome('permanece')">Um ramo que permanece</button>
+            </div>
+            <div class="vid-outcome" id="vidOutcome">
+              <h4 id="vidTitle"></h4>
+              <p id="vidText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Permanecei no meu amor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C4 11 3 8 3 6 C3 4 5 3 6.5 4 C8 5 9 6.5 9 6.5 C9 6.5 10 5 11.5 4 C13 3 15 4 15 6 C15 8 14 11 9 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Permanecei no meu amor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Como o Pai me amou, também eu vos amei a vós; permanecei no meu amor" (15.9). E permanecer nesse amor não é um sentimento vago — está diretamente ligado a guardar seus mandamentos, "como eu também tenho guardado os mandamentos de meu Pai, e permaneço no seu amor" (15.10).</p>
+          <p>Jesus resume tudo num único mandamento: "que vos ameis uns aos outros, assim como eu vos amei" (15.12) — e vai além, definindo o próprio limite máximo desse amor: "ninguém tem maior amor do que este, de dar a sua vida pelos seus amigos" (15.13). E chama os discípulos, ali mesmo, de amigos, não mais de servos, "porque tudo quanto ouvi de meu Pai vos tenho feito conhecer" (15.14-15).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → O mundo vos odiará</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L15 6 V10 C15 13.5 12.3 15.6 9 16.5 C5.7 15.6 3 13.5 3 10 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6.5 9 L11.5 9" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O mundo vos odiará</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus prepara os discípulos para a hostilidade que vem: "se o mundo vos odeia, sabei que, primeiro do que a vós, me odiou a mim" (15.18). Ele lembra um princípio que já havia ensinado antes: "não é o servo maior do que o seu senhor. Se a mim me perseguiram, também vos perseguirão a vós" (15.20).</p>
+          <p>A rejeição do mundo, portanto, não é sinal de que algo deu errado — é a consequência esperada e previsível de pertencer a alguém que o mundo já rejeitou primeiro. E é uma rejeição sem desculpa: "se eu não viera, e lhes não falara, não teriam pecado; mas agora não têm desculpa do seu pecado" (15.22).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → O Espírito da verdade</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C5 3 3 7 3 9 C3 11 5 15 9 15 C13 15 15 11 15 9 C15 7 13 3 9 3 Z" stroke-width="1.3"/>
+          <circle cx="9" cy="9" r="2" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O Espírito da verdade dará testemunho</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No meio do aviso sobre a hostilidade que vem, Jesus repete a promessa do Consolador: "quando vier o Consolador, que eu da parte do Pai vos hei de enviar, esse Espírito de verdade, que procede do Pai, ele testificará de mim" (15.26).</p>
+          <p>E acrescenta algo importante: os próprios discípulos também darão testemunho, "porque estais comigo desde o princípio" (15.27). O testemunho do Espírito e o testemunho dos discípulos não competem entre si — caminham juntos, um confirmando o outro diante de um mundo hostil.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Sem mim, nada podeis fazer</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Todo o capítulo gira em torno de uma única condição, repetida de vários jeitos: permanecer. Não é um esforço extra que se soma à fé — é a própria condição para que qualquer fruto verdadeiro apareça, para que o amor tenha raiz, e para que a hostilidade do mundo não abale quem está ligado à videira.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 15.5</span>
+          <p>Eu sou a videira, vós, as varas; quem permanece em mim e eu nele, esse dá muito fruto; porque sem mim nada podeis fazer.</p>
+          <span class="ref">— Jesus, aos discípulos, no cenáculo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Um ramo cortado da videira pode até parecer verde por algum tempo, mas sem a seiva da videira, ele definha e não produz nada real. Toque nas duas frases para ver a diferença que Jesus estabelece entre elas:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnVidSeparados" onclick="showVidFinal('separados')">Separados, nada podemos fazer</button>
+            <button class="toggle-btn" id="btnVidFruto" onclick="showVidFinal('fruto')">Permanecendo, muito fruto</button>
+          </div>
+          <div class="outcome" id="vidFinalOutcome">
+            <h4 id="vidFinalTitle"></h4>
+            <p id="vidFinalText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a videira verdadeira</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showVidOutcome(type){
+    const btnS = document.getElementById('vidBtnSeparado');
+    const btnP = document.getElementById('vidBtnPermanece');
+    btnS.classList.remove('active');
+    btnP.classList.remove('active');
+    const title = document.getElementById('vidTitle');
+    const text = document.getElementById('vidText');
+
+    if (type === 'separado'){
+      btnS.classList.add('active');
+      title.textContent = "Um ramo separado";
+      text.textContent = "\"Separados de mim, nada podeis fazer\" (15.5). Um ramo cortado da videira não produz nada, por mais esforço que faça — a energia não vem dele mesmo, vem da raiz de onde foi arrancado.";
+    } else {
+      btnP.classList.add('active');
+      title.textContent = "Um ramo que permanece";
+      text.textContent = "O Pai, como agricultor, poda todo ramo que dá fruto, para que dê ainda mais fruto (15.2). O fruto nunca vem do esforço isolado do ramo — vem de permanecer ligado à videira (15.1-5).";
+    }
+  }
+
+  function showVidFinal(type){
+    const btnS = document.getElementById('btnVidSeparados');
+    const btnF = document.getElementById('btnVidFruto');
+    btnS.classList.remove('active-worry');
+    btnF.classList.remove('active-calm');
+    const title = document.getElementById('vidFinalTitle');
+    const text = document.getElementById('vidFinalText');
+
+    if (type === 'separados'){
+      btnS.classList.add('active-worry');
+      title.textContent = "Verde por fora, morto por dentro";
+      text.textContent = "Um ramo cortado da videira pode até parecer verde por um tempo, mas sem a seiva que o sustenta, ele definha e não produz nada real — por mais esforço que faça sozinho.";
+    } else {
+      btnF.classList.add('active-calm');
+      title.textContent = "A condição, não o extra";
+      text.textContent = "Permanecer não é um esforço a mais que se soma à fé — é a própria condição para que qualquer fruto verdadeiro apareça. Quem permanece na videira, esse dá muito fruto.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

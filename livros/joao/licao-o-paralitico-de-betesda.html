@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O paralítico de Betesda — João 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 4 — obedecer à regra x reconhecer a autoridade por trás dela */
+  .sab-outer{ margin-top:16px; }
+  .sab-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .sab-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .sab-chip{ border-radius:12px; padding:12px 16px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:500; color:var(--text-dim); transition: background .3s ease, color .3s ease, transform .2s ease; flex:1 1 200px; text-align:left; }
+  .sab-chip.open{ background:var(--gold); color:#2C3459; transform:scale(1.02); }
+  .sab-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Sinais e conflitos em Jerusalém e na Galileia</span>
+  </div>
+
+  <div class="eyebrow">Sinais e conflitos em Jerusalém e na Galileia · <span class="ref-tag">João 5</span></div>
+  <h1>O paralítico de Betesda</h1>
+  <p class="sub">Trinta e oito anos de enfermidade curados com uma única palavra, num sábado — e uma acusação que acende o primeiro grande conflito entre Jesus e as autoridades religiosas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12c1.3-1.1 2.6-1.1 3.9 0s2.6 1.1 3.9 0 2.6-1.1 3.9 0" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 3 V9" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="9" cy="10.5" r="1" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Trinta e oito anos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No tanque de Betesda, em Jerusalém, cercado de cinco alpendres, uma multidão de enfermos, cegos, coxos e paralíticos esperava a água se agitar — uma crença popular de que o primeiro a entrar depois disso seria curado (5.1-3). Entre eles, um homem já há trinta e oito anos enfermo, tempo suficiente para que a esperança de ser curado tivesse se tornado quase um hábito de espera, não mais uma expectativa viva.</p>
+          <p>Jesus o vê, sabe que ele está naquele estado havia muito tempo, e faz uma pergunta que parece óbvia demais para precisar ser feita: "Queres ficar são?" (5.6). O homem responde com uma queixa, não com um sim direto — não tem ninguém para ajudá-lo a entrar na água a tempo, e outro sempre desce antes dele (5.7). Jesus não espera por mais explicação: "Levanta-te, toma o teu leito, e anda." E, imediatamente, o homem fica são, toma o seu leito e anda (5.8-9).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → isso é sábado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 13 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4.5 13 V9 H13.5 V13" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 9 V4" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Isso é sábado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O milagre acontece num sábado — e é isso, não a cura em si, que os judeus contestam. Ao verem o homem carregando seu leito, o repreendem: "Hoje é sábado; não te é lícito levar o leito" (5.10), aplicando à letra a proibição de trabalho no dia de descanso. O homem simplesmente responde que foi quem o curou que lhe deu a ordem — e admite, quando perguntado, que não sabia quem era, pois Jesus já havia se retirado entre a multidão (5.11-13).</p>
+          <p>Depois, Jesus o encontra no templo e lhe diz: "Eis que ficaste são; não peques mais, para que não te suceda coisa pior" (5.14) — uma advertência que liga a enfermidade anterior, de algum modo particular a esse homem, a um chamado real à mudança de vida, não a uma acusação genérica. O homem então vai contar aos judeus que fora Jesus quem o curara (5.15), entregando o nome que acenderia o conflito seguinte.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → meu Pai trabalha até agora</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6.5" cy="9" r="2.6" stroke-width="1.2"/>
+          <circle cx="12.3" cy="9" r="1.8" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Meu Pai trabalha até agora</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Por causa disso, os judeus começam a perseguir Jesus, "porque fazia estas coisas no sábado" (5.16). A resposta de Jesus não é uma defesa jurídica sobre o que a lei permite ou proíbe — é uma afirmação sobre quem ele é: "Meu Pai trabalha até agora, e eu trabalho também" (5.17). Deus não descansa de sustentar e agir sobre sua criação nem mesmo no sábado; e Jesus reivindica o mesmo direito de agir.</p>
+          <p>Os judeus entendem exatamente o que Jesus está dizendo — e é por isso, e não por engano, que a hostilidade se intensifica: ele não estava apenas quebrando o sábado, mas "chamando a Deus seu próprio Pai, fazendo-se igual a Deus" (5.18). A partir desse momento, o texto registra que procuravam ainda mais matá-lo — o conflito deixa de ser sobre uma regra e passa a ser sobre uma identidade.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → quem honra o Filho honra o Pai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 13 L5 6 L9 10 L13 6 L15 13 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M3 13 H15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Quem honra o Filho honra o Pai</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus não recua diante da acusação — ele a explica. Diz que o Filho não pode fazer coisa alguma de si mesmo, "a não ser o que vir o Pai fazer", porque tudo o que o Pai faz, o Filho também faz igualmente (5.19). O Pai lhe mostra tudo o que faz, entregou-lhe o próprio direito de julgar, "para que todos honrem o Filho, como honram o Pai. Quem não honra o Filho não honra o Pai que o enviou" (5.22-23).</p>
+          <p>Para os fariseus, carregar um leito num sábado era uma violação clara da regra. Para Jesus, a pergunta certa era outra: quem tem autoridade sobre o sábado — e sobre tudo o mais? Ele expande a promessa ainda mais longe: "Quem ouve a minha palavra, e crê naquele que me enviou, tem a vida eterna, e não entrará em juízo, mas já passou da morte para a vida" (5.24).</p>
+
+          <div class="sab-outer">
+            <div class="sab-label">Duas leituras do mesmo sábado</div>
+            <div class="sab-chip-row" id="sabChipRow"></div>
+            <div class="sab-caption" id="sabCaption">Toque em uma das duas leituras para comparar.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Passado da morte para a vida</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O paralítico de Betesda foi curado sem sequer saber quem o havia curado. Os líderes religiosos, que sabiam exatamente quem ele era, não se interessaram pela cura — só pela regra que julgavam quebrada. Entre uma cura física ignorada por uns e uma acusação de blasfêmia levantada por outros, Jesus oferece algo que nenhum dos dois lados estava pedindo: vida que atravessa a própria morte.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 5.24</span>
+          <p>Em verdade, em verdade vos digo que quem ouve a minha palavra, e crê naquele que me enviou, tem a vida eterna, e não entrará em juízo, mas passou da morte para a vida.</p>
+          <span class="ref">— Jesus, no templo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O capítulo termina com Jesus apontando ainda mais longe: as próprias Escrituras que os judeus escrutinavam testificam dele, mas eles se recusam a vir a ele para terem vida (5.39-40). O paralítico recebeu pernas que andam; a promessa de Jesus é maior — uma travessia definitiva, de quem ouve e crê, da morte para a vida.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Curado, mas ainda sob julgamento</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Curado, e passado da morte para a vida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · o paralítico de Betesda</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const sabData = [
+    { key:'regra', label:"Obedecer à regra", text:"Para os fariseus, o sábado exigia repouso total — e carregar um leito era, em si, uma violação clara. A regra tinha se tornado o próprio ponto final: quem a quebrava estava errado, sem que importasse quem o curou ou por quê (5.10)." },
+    { key:'autoridade', label:"Reconhecer a autoridade por trás da regra", text:"Jesus não ignora o sábado — reivindica ser o Senhor sobre ele, agindo como o Pai age. \"O Filho não pode fazer coisa alguma de si mesmo, senão o que vir o Pai fazer\" (5.19); quem honra o Filho honra o Pai que o enviou (5.23)." }
+  ];
+
+  function buildSabChips(){
+    const row = document.getElementById('sabChipRow');
+    sabData.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sab-chip';
+      b.textContent = d.label;
+      b.onclick = function(){ revealSab(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildSabChips();
+
+  function revealSab(btn, i){
+    document.querySelectorAll('.sab-chip').forEach(b => b.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('sabCaption').textContent = sabData[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Julgado por uma regra, não por quem o curou";
+      text.textContent = "O paralítico foi curado fisicamente, mas os líderes religiosos o julgam por carregar um leito num sábado — sem nenhum interesse em saber quem foi capaz de curar trinta e oito anos de enfermidade com uma só palavra (5.10-13).";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Da morte para a vida";
+      text.textContent = "O próprio Jesus oferece algo maior que a cura física: \"quem ouve a minha palavra, e crê naquele que me enviou, tem a vida eterna... e passou da morte para a vida\" (5.24) — uma travessia definitiva, não uma cura provisória.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

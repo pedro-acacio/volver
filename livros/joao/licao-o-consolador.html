@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Consolador — João 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .dor-toggle-outer{ margin-top:16px; }
+  .dor-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .dor-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .dor-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">O discurso de despedida</span>
+  </div>
+
+  <div class="eyebrow">O discurso de despedida · <span class="ref-tag">João 16</span></div>
+  <h1>O Consolador</h1>
+  <p class="sub">Jesus promete que sua partida não vai deixar os discípulos órfãos — na verdade, ela é o que abre espaço para que o próprio Espírito Santo venha habitar neles.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 5 H14 V12 H8 L5 15 V12 H4 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Convém que eu vá</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus avisa os discípulos com antecedência do que virá: serão expulsos das sinagogas, e chegará tempo em que quem os matar pensará estar prestando culto a Deus (16.1-2). Ele diz isso "para que, quando chegar a hora, vos lembreis disso, que eu vo-lo tinha dito" (16.4) — não para assustá-los sem propósito, mas para que a dor, quando vier, não os pegue de surpresa nem abale a fé.</p>
+          <p>E então faz uma afirmação que soa quase contraditória: "convém que eu vos vá; porque, se eu não for, o Consolador não virá a vós; mas, se eu for, vo-lo enviarei" (16.7). A partida de Jesus não é uma perda sem compensação — é a própria condição para que o Consolador venha.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Ele convencerá o mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.3" stroke-width="1.3"/>
+          <path d="M9 5.5 V9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Ele convencerá o mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O trabalho do Espírito, quando vier, é descrito em três frentes: convencer o mundo do pecado, "porquanto não creem em mim"; da justiça, "porquanto vou para meu Pai"; e do juízo, "porquanto já o príncipe deste mundo está julgado" (16.8-11).</p>
+          <p>Jesus acrescenta que o Espírito guiará os discípulos "a toda a verdade" — não falando de si mesmo, mas anunciando o que ouvir, e glorificará Jesus, "porque há de tomar do que é meu, e vo-lo há de anunciar" (16.13-14). Nada disso é uma revelação nova e independente — é a continuação direta da própria obra de Jesus.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Um pouco, e não me vereis</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C9 3 4 7 4 11 C4 13.5 6.5 15 9 15 C11.5 15 14 13.5 14 11 C14 7 9 3 9 3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um pouco, e não me vereis</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus repete uma frase enigmática que deixa os discípulos confusos: "um pouco, e não me vereis; e outra vez um pouco, e ver-me-eis" (16.16-19). Para explicar a dor que essa ausência trará, ele recorre a uma imagem bem concreta:</p>
+
+          <div class="dor-toggle-outer">
+            <div class="chip-row">
+              <button class="chip-btn chip-worry" id="dorBtnParto" onclick="showDorOutcome('parto')">A dor do parto</button>
+              <button class="chip-btn chip-calm" id="dorBtnAlegria" onclick="showDorOutcome('alegria')">A alegria de um nascimento</button>
+            </div>
+            <div class="dor-outcome" id="dorOutcome">
+              <h4 id="dorTitle"></h4>
+              <p id="dorText"></p>
+            </div>
+          </div>
+
+          <p>É a mesma promessa aplicada à tristeza dos discípulos: com a morte e a ressurreição de Jesus, essa tristeza será revertida em "alegria que ninguém vos tirará" (16.22).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Eu venci o mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12 L7 6 L11 10 L15 4" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 4 L15 8 M15 4 L11 4" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Tende bom ânimo; eu venci o mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus promete que, naquele dia, os discípulos orarão diretamente em seu nome, e que o próprio Pai os ama, "porquanto vós me amastes, e crestes que saí de Deus" (16.26-27). Os discípulos, animados, declaram que agora entendem tudo e creem sem reservas (16.29-30) — uma declaração talvez precipitada.</p>
+          <p>Jesus os avisa que estão prestes a se dispersar, cada um para o seu lado, deixando-o só (16.32) — mas termina com uma das promessas mais citadas de todo o livro: "no mundo tereis aflições; mas tende bom ânimo, eu venci o mundo" (16.33).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Eu venci o mundo</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Todo o capítulo caminha entre a franqueza sobre a dor que vem e a certeza de uma vitória já garantida. Jesus não esconde dos discípulos o que vai custar segui-lo — mas também não os deixa sem uma âncora para o dia em que essa dor chegar.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 16.33</span>
+          <p>No mundo tereis aflições; mas tende bom ânimo, eu venci o mundo.</p>
+          <span class="ref">— Jesus, aos discípulos, no cenáculo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus não promete uma vida sem aflições — promete o contrário, que elas virão, com toda certeza. A pergunta que fica é onde os discípulos vão fixar o ânimo:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnAflicao" onclick="showConsFinal('aflicao')">Aflição no mundo</button>
+            <button class="toggle-btn" id="btnAnimo" onclick="showConsFinal('animo')">Ânimo porque ele já venceu</button>
+          </div>
+          <div class="outcome" id="consFinalOutcome">
+            <h4 id="consFinalTitle"></h4>
+            <p id="consFinalText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · o Consolador</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showDorOutcome(type){
+    const btnP = document.getElementById('dorBtnParto');
+    const btnA = document.getElementById('dorBtnAlegria');
+    btnP.classList.remove('active');
+    btnA.classList.remove('active');
+    const title = document.getElementById('dorTitle');
+    const text = document.getElementById('dorText');
+
+    if (type === 'parto'){
+      btnP.classList.add('active');
+      title.textContent = "A dor do parto";
+      text.textContent = "\"A mulher, quando está para dar à luz, tem tristeza, porque é chegada a sua hora\" (16.21) — uma dor real e intensa enquanto dura, sem atalho possível.";
+    } else {
+      btnA.classList.add('active');
+      title.textContent = "A alegria de um nascimento";
+      text.textContent = "\"Mas, depois de ter dado à luz a criança, já se não lembra da aflição, pelo prazer de haver nascido um homem no mundo\" (16.21). A dor não é apagada — é transformada em alegria que a supera (16.20-21).";
+    }
+  }
+
+  function showConsFinal(type){
+    const btnAf = document.getElementById('btnAflicao');
+    const btnAn = document.getElementById('btnAnimo');
+    btnAf.classList.remove('active-worry');
+    btnAn.classList.remove('active-calm');
+    const title = document.getElementById('consFinalTitle');
+    const text = document.getElementById('consFinalText');
+
+    if (type === 'aflicao'){
+      btnAf.classList.add('active-worry');
+      title.textContent = "A promessa que Jesus não fez";
+      text.textContent = "Jesus não promete uma vida sem aflições — promete o oposto, que elas virão, com toda certeza. Não há atalho evangélico que remova esse fato.";
+    } else {
+      btnAn.classList.add('active-calm');
+      title.textContent = "A base do ânimo já estava garantida";
+      text.textContent = "Mas a base do ânimo dos discípulos nunca foi a ausência de problemas — foi a certeza de que a vitória decisiva já havia sido conquistada por ele: \"eu venci o mundo\" (16.33).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

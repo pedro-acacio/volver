@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O batismo de Jesus e os primeiros discípulos — João 1.19-51</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — a cadeia dos primeiros seguidores */
+  .disc-chip-outer{ margin-top:16px; }
+  .disc-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .disc-chip-grid{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:10px; }
+  .disc-chip{
+    padding:9px 15px; border-radius:20px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:12.5px; font-weight:500; cursor:pointer;
+    transition: all .25s ease; flex-shrink:0;
+  }
+  .disc-chip:hover{ transform: translateY(-2px); }
+  .disc-chip.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .disc-caption{ font-size:13.5px; line-height:1.6; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Desfecho — buscar sinais x vir e ver */
+  .cord-toggle-outer{ margin-top:16px; }
+  .cord-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .cord-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .cord-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">O Verbo se fez carne</span>
+  </div>
+
+  <div class="eyebrow">O Verbo se fez carne · <span class="ref-tag">João 1.19-51</span></div>
+  <h1>O batismo de Jesus e os primeiros discípulos</h1>
+  <p class="sub">João Batista nega ser o Cristo, aponta para o Cordeiro de Deus, e em poucos dias os primeiros discípulos começam a segui-lo — um convite de cada vez.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 6.5 C6 4.5 7.5 3.3 9 3.3 C10.7 3.3 12 4.5 12 6.2 C12 8 9 8.3 9 10.5" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="9" cy="13.5" r="0.9" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Quem és tu?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sacerdotes e levitas enviados de Jerusalém perguntam a João Batista, sem rodeios, quem ele é. Ele nega ser o Cristo (1.20), nega ser Elias, nega ser "o profeta" esperado (1.21). Quando insistem por uma resposta, ele se descreve apenas como "a voz do que clama no deserto: Endireitai o caminho do Senhor" — citando Isaías 40.3 (1.23).</p>
+          <p>Batiza com água, diz, mas alguém maior já está no meio deles, alguém "cuja correia da alparca" ele não é digno de desatar (1.26-27). João sabe exatamente qual é o seu papel — e o tamanho dele. Não é o centro da história; é quem aponta para o centro.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → eis o Cordeiro de Deus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 10 C5 6 8 5 9 5 C10 5 13 6 15 10" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 V12" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M9 12 L6.5 15 M9 12 L11.5 15" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Eis o Cordeiro de Deus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No dia seguinte, João vê Jesus vindo em sua direção e diz a frase que resume seu ministério inteiro: "Eis o Cordeiro de Deus, que tira o pecado do mundo" (1.29). É uma imagem carregada de sacrifício — o cordeiro que carrega o que não é seu, para que outros sejam livres.</p>
+          <p>João testifica ter visto o Espírito descer do céu como pomba e repousar sobre Jesus — o sinal que o próprio Deus lhe dera para reconhecer o Messias antes de qualquer outra prova (1.32-33). E chega a uma conclusão sem meias palavras: "Eu tenho visto e testificado que este é o Filho de Deus" (1.34).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → vinde e vede</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="2.5" y="6" width="6" height="6" rx="3" stroke-width="1.2"/>
+          <rect x="9.5" y="6" width="6" height="6" rx="3" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Vinde e vede</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Assim que João aponta Jesus de novo como o Cordeiro de Deus, dois de seus discípulos o deixam para seguir Jesus. Ele se vira e pergunta: "que buscais?" — e o convite que responde é simples: "Vinde e vede" (1.38-39). Um deles é André, que passa o resto do dia com Jesus e, antes de qualquer outra coisa, vai buscar seu irmão Simão: "Achamos o Messias" (1.41).</p>
+          <p>Cada nome, nesse trecho, chega a Jesus pela mão de outro alguém. Toque nos nomes para ver como cada um foi encontrado:</p>
+
+          <div class="disc-chip-outer">
+            <div class="disc-chip-label">Os primeiros seguidores — toque para ver como cada um chegou</div>
+            <div class="disc-chip-grid" id="discChipGrid"></div>
+            <div class="disc-caption" id="discCaption">Toque em um nome para ver a cadeia de convites.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → vem e vê: Natanael</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 V9" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 9 C4 9 4 3.5 9 3.5 C14 3.5 14 9 9 9 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Vem e vê: Natanael</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus chama Filipe diretamente, e Filipe corre atrás de Natanael dizendo ter achado "aquele de quem escreveram Moisés na lei, e os profetas" (1.45). Natanael duvida, quase com desprezo: "Pode vir alguma coisa boa de Nazaré?" (1.46) — Nazaré era uma vila pequena e sem prestígio algum. Filipe não discute; responde com a mesma frase que ouviu de Jesus: "Vem e vê."</p>
+          <p>Quando Natanael se aproxima, Jesus o descreve como "um israelita, em quem não há dolo" — e revela tê-lo visto debaixo da figueira antes de ser chamado (1.47-48). É o suficiente para Natanael confessar, sem hesitar: "Tu és o Filho de Deus, tu és o Rei de Israel" (1.49). Jesus promete que ele verá coisas ainda maiores: o céu aberto e os anjos subindo e descendo sobre o Filho do Homem (1.51) — um eco direto da escada de Jacó em Gênesis 28.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um convite de cada vez</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Nenhum dos primeiros discípulos chega a Jesus sozinho, e nenhum chega por meio de um discurso ou de uma prova irrefutável. Chegam por causa de um convite simples, repetido de pessoa em pessoa: vem e vê.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 1.29</span>
+          <p>Eis o Cordeiro de Deus, que tira o pecado do mundo.</p>
+          <span class="ref">— João Batista, sobre Jesus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Natanael quase perde o encontro mais importante de sua vida por causa de um preconceito sobre Nazaré. Mas ele aceita o convite simples de Filipe — "vem e vê" — e encontra muito mais do que esperava.</p>
+
+          <div class="cord-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnCordSinais" onclick="showCordOutcome('sinais')">Buscar sinais e provas</button>
+              <button class="toggle-btn" id="btnCordVer" onclick="showCordOutcome('ver')">Vir e ver por si mesmo</button>
+            </div>
+            <div class="cord-outcome" id="cordOutcome">
+              <h4 id="cordTitle"></h4>
+              <p id="cordText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · o batismo de Jesus e os primeiros discípulos</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const discChain = [
+    { name: "André", text: "Ouve João apontar Jesus como o Cordeiro de Deus pela segunda vez e o segue. Quando Jesus pergunta \"que buscais?\", o convite é \"Vinde e vede\" — André passa o resto do dia com ele (1.36-39)." },
+    { name: "Simão Pedro", text: "André o busca primeiro, dizendo \"Achamos o Messias\" (1.41). Jesus olha para ele e lhe dá um novo nome: \"Tu és Simão... tu serás chamado Cefas\", que significa Pedro, \"rocha\" (1.42)." },
+    { name: "Filipe", text: "Jesus mesmo o encontra e diz apenas: \"Segue-me\" (1.43) — um chamado direto, sem intermediário, que ainda assim vira o começo de uma nova cadeia de convites." },
+    { name: "Natanael", text: "Filipe o busca dizendo ter achado \"aquele de quem escreveram Moisés e os profetas\" (1.45). Natanael duvida de Nazaré, mas aceita o convite de Filipe — \"Vem e vê\" — e termina confessando Jesus como Filho de Deus e Rei de Israel (1.46-49)." }
+  ];
+
+  function buildDiscChips(){
+    const grid = document.getElementById('discChipGrid');
+    discChain.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'disc-chip';
+      b.textContent = d.name;
+      b.onclick = function(){ revealDiscChip(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildDiscChips();
+
+  function revealDiscChip(btn, i){
+    document.querySelectorAll('.disc-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('discCaption').textContent = discChain[i].text;
+  }
+
+  function showCordOutcome(type){
+    const btnA = document.getElementById('btnCordSinais');
+    const btnB = document.getElementById('btnCordVer');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('cordTitle');
+    const text = document.getElementById('cordText');
+
+    if (type === 'sinais'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Um preconceito antes do encontro";
+      text.textContent = "\"Pode vir alguma coisa boa de Nazaré?\" (1.46) — Natanael quase deixa uma suposição sobre o lugar de origem de Jesus decidir por ele, antes mesmo de olhar para a pessoa.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Vem e vê";
+      text.textContent = "Filipe não discute com Natanael; repete o convite que recebeu de Jesus. E é indo pessoalmente, vendo com os próprios olhos, que Natanael chega à confissão: \"Tu és o Filho de Deus, tu és o Rei de Israel\" (1.49).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

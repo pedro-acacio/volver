@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A restauração de Pedro — João 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — três perguntas, três restaurações */
+  .rest-outer{ margin-top:16px; }
+  .rest-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .rest-pair{ display:flex; gap:10px; align-items:stretch; margin-bottom:10px; flex-wrap:wrap; }
+  .rest-pair-num{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-faint); width:100%; margin-bottom:2px; }
+  .rest-fall, .rest-mend{
+    flex:1; min-width:220px; border-radius:10px; padding:12px 14px; border:1.5px solid var(--panel-line);
+    background: var(--bg); cursor:pointer; text-align:left; transition: transform .18s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .rest-fall:hover, .rest-mend:hover{ transform: translateY(-2px); }
+  .rest-fall .rest-k, .rest-mend .rest-k{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-faint); display:block; margin-bottom:4px; }
+  .rest-fall p, .rest-mend p{ font-size:13px; line-height:1.5; color:var(--text-dim); margin:0; }
+  .rest-fall.open{ border-color: var(--worry); box-shadow: 0 0 0 3px rgba(168,92,107,.12); }
+  .rest-mend.open{ border-color: var(--calm); box-shadow: 0 0 0 3px rgba(124,154,120,.12); }
+  .rest-caption{ font-size:13px; color:var(--text-dim); margin-top:4px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">A Ressurreição</span>
+  </div>
+
+  <div class="eyebrow">A Ressurreição · <span class="ref-tag">João 21</span></div>
+  <h1>A restauração de Pedro</h1>
+  <p class="sub">Numa manhã de pesca na Galileia, depois de uma noite inteira sem pegar nada, Jesus pergunta a Pedro três vezes a mesma coisa — uma pergunta para cada negação — e o restaura por completo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 8 C6 4 12 4 16 8" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M3 8 V14 L9 16 L15 14 V8" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Não pescaram nada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro, Tomé, Natanael, os filhos de Zebedeu e outros dois discípulos voltam à Galileia. Pedro anuncia que vai pescar, e os outros vão junto — mas passam a noite inteira sem pegar nada (21.1-3). Ao amanhecer, um homem parado na praia, que eles não reconhecem, manda lançar a rede do lado direito do barco. A pesca é tão grande — cento e cinquenta e três peixes — que não conseguem recolhê-la (21.4-6,11).</p>
+          <p>O discípulo amado é o primeiro a entender: "É o Senhor!" Pedro, impulsivo como sempre, veste a roupa e se atira ao mar, chegando à praia mais rápido do que o barco conseguiria trazê-lo (21.7-8). Ali, Jesus já preparou peixe e pão numa fogueira de brasas (21.9) — a mesma cena, uma fogueira de carvão, que estava presente na noite em que Pedro o negou três vezes (18.18), um detalhe que o leitor atento de toda esta trilha reconhece.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "Simão, filho de João, tu me amas?"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C5 12 3 9.5 3 7 C3 5 4.5 3.5 6.5 3.5 C7.7 3.5 8.6 4.1 9 5 C9.4 4.1 10.3 3.5 11.5 3.5 C13.5 3.5 15 5 15 7 C15 9.5 13 12 9 15 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Simão, filho de João, tu me amas?"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de comerem, Jesus pergunta a Simão Pedro, três vezes, a mesma coisa: "Amas-me?" Cada resposta afirmativa de Pedro recebe de volta um mandamento — "apascenta os meus cordeiros... pastoreia as minhas ovelhas... apascenta as minhas ovelhas" (21.15-17). Pedro se entristece com a repetição da pergunta pela terceira vez — mas a tríplice pergunta não é crueldade. É a forma exata de desfazer, um a um, cada negação da noite do julgamento.</p>
+
+          <div class="rest-outer">
+            <div class="rest-label">Três negações, três restaurações — toque em cada par</div>
+
+            <div class="rest-pair">
+              <span class="rest-pair-num">Primeira</span>
+              <button class="rest-fall" id="restFall1" onclick="revealRest(1)">
+                <span class="rest-k">A negação (18.17)</span>
+                <p>À porteira, quando perguntada se era discípulo de Jesus, Pedro responde: "Não sou."</p>
+              </button>
+              <button class="rest-mend" id="restMend1" onclick="revealRest(1)">
+                <span class="rest-k">A restauração (21.15)</span>
+                <p>"Simão, filho de João, amas-me mais do que estes?" — "Apascenta os meus cordeiros."</p>
+              </button>
+            </div>
+
+            <div class="rest-pair">
+              <span class="rest-pair-num">Segunda</span>
+              <button class="rest-fall" id="restFall2" onclick="revealRest(2)">
+                <span class="rest-k">A negação (18.25)</span>
+                <p>Aquecendo-se ao fogo com os outros, perguntado de novo, Pedro nega outra vez.</p>
+              </button>
+              <button class="rest-mend" id="restMend2" onclick="revealRest(2)">
+                <span class="rest-k">A restauração (21.16)</span>
+                <p>"Simão, filho de João, amas-me?" — "Pastoreia as minhas ovelhas."</p>
+              </button>
+            </div>
+
+            <div class="rest-pair">
+              <span class="rest-pair-num">Terceira</span>
+              <button class="rest-fall" id="restFall3" onclick="revealRest(3)">
+                <span class="rest-k">A negação (18.26-27)</span>
+                <p>Um parente de Malco pergunta se não o vira no jardim; Pedro nega pela terceira vez, e o galo canta.</p>
+              </button>
+              <button class="rest-mend" id="restMend3" onclick="revealRest(3)">
+                <span class="rest-k">A restauração (21.17)</span>
+                <p>"Amas-me?", pela terceira vez. Pedro, entristecido, responde: "Senhor, tu sabes todas as coisas; tu sabes que te amo." — "Apascenta as minhas ovelhas."</p>
+              </button>
+            </div>
+
+            <div class="rest-caption" id="restCaption">Toque em qualquer par para destacar a simetria entre queda e restauração.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → "Segue-me"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 L9 4 L14 15" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.5 10 H11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">"Segue-me"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus então prediz que, quando Pedro for velho, outro o cingirá e o levará para onde ele não quer ir. O narrador esclarece que isso foi dito para indicar com que morte Pedro haveria de glorificar a Deus — uma referência velada ao seu próprio martírio (21.18-19).</p>
+          <p>E encerra com o mesmo convite com que tudo começou, no primeiro capítulo do Evangelho: "Segue-me." A restauração de Pedro não termina numa emoção — termina num chamado renovado, o mesmo de sempre.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → "Muitas outras coisas fez Jesus"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V13 L11 15 L8 13 L4 15 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M6.5 7 H11.5 M6.5 9.5 H11.5" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"Muitas outras coisas fez Jesus"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro, curioso, olha para o discípulo amado e pergunta: "e este, que?" Jesus responde, essencialmente, que isso não é da conta de Pedro: "Se eu quero que ele fique até que eu venha, que te importa? Segue-me tu" (21.20-22).</p>
+          <p>O livro termina com uma nota final do próprio autor: este é o discípulo que dá testemunho destas coisas e as escreveu, e seu testemunho é verdadeiro (21.24). E há tantas outras coisas que Jesus fez que, se fossem escritas uma a uma, o próprio mundo não poderia conter os livros que se escreveriam (21.25).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Restaurado, e enviado de novo</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A mesma fogueira de carvão que testemunhou a queda de Pedro testemunha agora sua restauração completa. Três negações desfeitas por três perguntas; um chamado à vergonha respondido com um chamado a pastorear; e, no fim, o mesmo convite do primeiro dia: "Segue-me."</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 21.19</span>
+          <p>E, dizendo isto, disse-lhe: Segue-me.</p>
+          <span class="ref">— Jesus, a Pedro, na praia da Galileia</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Toque para comparar:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Definido pela queda</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Restaurado, e enviado de novo</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a restauração de Pedro</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const restCaptions = [
+    "À porteira, Pedro nega conhecer Jesus por medo. Junto à fogueira, é confrontado com amor e comissionado a cuidar dos cordeiros — o cuidado que ele havia recusado assumir.",
+    "Junto ao fogo, Pedro nega pela segunda vez diante dos que se aqueciam. Agora, junto a outra fogueira, recebe a mesma pergunta e o mandamento de pastorear as ovelhas.",
+    "A terceira negação vem completa, com o galo cantando logo depois — o ponto mais baixo. A terceira pergunta também vem completa, e Pedro, já entristecido, apela para o que Jesus sabe: \"tu sabes que te amo.\""
+  ];
+
+  function revealRest(i){
+    for (let n = 1; n <= 3; n++){
+      document.getElementById('restFall'+n).classList.remove('open');
+      document.getElementById('restMend'+n).classList.remove('open');
+    }
+    document.getElementById('restFall'+i).classList.add('open');
+    document.getElementById('restMend'+i).classList.add('open');
+    document.getElementById('restCaption').textContent = restCaptions[i-1];
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Marcado pela pior noite";
+      text.textContent = "Seria fácil, depois de negar Jesus três vezes diante de estranhos, deixar que essa falha definisse Pedro pelo resto da vida — a última palavra sobre ele sendo a covardia junto à fogueira (18.17,25,27).";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma pergunta para cada queda";
+      text.textContent = "Jesus não deixa a última palavra sobre Pedro ser a negação — cada pergunta desfaz uma queda, e o mesmo convite do primeiro dia, \"segue-me\", volta a valer (21.15-19).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

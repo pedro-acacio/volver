@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>"Está consumado" — João 19.17-42</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — tetelestai: dívida em aberto x paga por inteiro */
+  .tet-outer{ margin-top:16px; }
+  .tet-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .tet-toggle-row{ display:flex; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+  .tet-btn{
+    flex:1; min-width:180px; padding:13px 14px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    text-align:left; transition: transform .18s ease, border-color .2s ease, color .2s ease, background .2s ease, box-shadow .2s ease;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  .tet-btn:hover{ transform: translateY(-2px); }
+  .tet-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .tet-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .tet-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .tet-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">A Paixão</span>
+  </div>
+
+  <div class="eyebrow">A Paixão · <span class="ref-tag">João 19.17-42</span></div>
+  <h1>"Está consumado"</h1>
+  <p class="sub">No Gólgota, entre dois criminosos, a última palavra de Jesus antes de morrer não é de derrota — é a declaração de uma obra terminada.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15 M4 6 H14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O Rei dos Judeus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Carregando sua própria cruz, Jesus é levado para fora da cidade, a um lugar chamado Gólgota — "lugar da Caveira" — e ali é crucificado entre outros dois, um de cada lado, com ele no meio (19.17-18). Pilatos manda escrever um título e colocá-lo sobre a cruz, em hebraico, latim e grego, para que todos pudessem ler: "JESUS NAZARENO, O REI DOS JUDEUS" (19.19-20).</p>
+          <p>Os principais sacerdotes protestam: que se escreva, em vez disso, que ele apenas disse ser rei dos judeus. Pilatos recusa, com uma frase seca e definitiva: "O que escrevi, escrevi" (19.21-22). A acusação que os inimigos de Jesus pretendiam como zombaria se torna, sem que percebam, a verdade proclamada em três línguas ao mundo inteiro.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → repartiram entre si as minhas vestes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 5 L9 3 L15 5 V9 C15 12.5 12.3 14.6 9 15.5 C5.7 14.6 3 12.5 3 9 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 3 V15.5" stroke-width="1" stroke-dasharray="1.4 1.8"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Repartiram entre si as minhas vestes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os soldados que crucificaram Jesus tomam suas vestes e as dividem em quatro partes, uma para cada um. Mas a túnica, tecida sem costura de alto a baixo, é boa demais para rasgar — então lançam sortes por ela, cumprindo sem saber o que já estava escrito: "Repartiram entre si as minhas vestes e sobre a minha túnica lançaram sortes" (19.23-24; Salmo 22.18).</p>
+          <p>Em meio à própria agonia, Jesus vê sua mãe e, perto dela, o discípulo a quem amava. Diz a ela: "Mulher, eis aí o teu filho"; e ao discípulo: "Eis aí a tua mãe." Dali em diante, esse discípulo a leva para sua própria casa (19.25-27) — um gesto de responsabilidade filial que Jesus não deixa de exercer nem no momento de maior sofrimento.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → está consumado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 10 L7.5 13.5 L14 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Está consumado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sabendo que já tudo estava consumado, Jesus diz, para que se cumprisse a Escritura, "tenho sede." Colocam uma esponja embebida em vinagre numa haste de hissopo e a levam à sua boca (19.28-29). Então ele diz suas últimas palavras: "Está consumado" — e, inclinando a cabeça, entrega o espírito, por sua própria vontade (19.30).</p>
+          <p>A palavra grega por trás de "está consumado" é <em>tetelestai</em>, e carregava um peso muito específico no primeiro século.</p>
+
+          <div class="tet-outer">
+            <div class="tet-label">Tetelestai — toque para comparar dois sentidos possíveis</div>
+            <div class="tet-toggle-row">
+              <button class="tet-btn" id="tetBtnDivida" onclick="showTetOutcome('divida')">Uma dívida em aberto</button>
+              <button class="tet-btn" id="tetBtnPago" onclick="showTetOutcome('pago')">Pago por inteiro</button>
+            </div>
+            <div class="tet-outcome" id="tetOutcome">
+              <h4 id="tetTitle"></h4>
+              <p id="tetText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → viram aquele a quem traspassaram</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 L14 14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 9 C7.5 7.5 7 5.5 8 4" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="6" cy="14" r="1" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Viram aquele a quem traspassaram</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Para que os corpos não permanecessem na cruz durante o sábado — que naquele ano coincidia com a própria Páscoa — os judeus pedem que se acelerem as mortes. Os soldados quebram as pernas dos dois que foram crucificados com Jesus, mas, ao chegar a ele, o encontram já morto e não quebram as suas (19.31-33), cumprindo a palavra escrita sobre o cordeiro pascal: "nenhum de seus ossos será quebrado" (Êxodo 12.46).</p>
+          <p>Um dos soldados, em vez disso, fura o lado de Jesus com uma lança, e logo sai sangue e água. O narrador insiste em ter visto isso pessoalmente, e testemunha que é verdade, "para que também vós creiais" (19.34-35), lembrando ainda outra Escritura: "Verão aquele a quem traspassaram" (Zacarias 12.10).</p>
+          <p>José de Arimateia, discípulo secreto por medo dos judeus, pede o corpo a Pilatos. Nicodemos o acompanha — a terceira vez que aparece no Evangelho, cada vez com mais coragem — trazendo quase trinta e três quilos de mirra e aloés. Envolvem o corpo em faixas de linho com as especiarias, como é costume dos judeus sepultar, e o depositam num sepulcro novo, num jardim ali perto, por causa da urgência da véspera do sábado (19.38-42).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma obra terminada</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Nada no Gólgota acontece por acaso ou por acidente: a inscrição irônica de Pilatos, a túnica sem costura, o cuidado com Maria, a sede que cumpre a Escritura, os ossos que permanecem intactos, o sangue e a água. Cada detalhe converge para a mesma conclusão: o que parecia o fim trágico de um homem bom era, na verdade, o cumprimento deliberado de uma obra planejada desde antes.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 19.30</span>
+          <p>Está consumado! E, inclinando a cabeça, entregou o espírito.</p>
+          <span class="ref">— últimas palavras de Jesus, na cruz</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Toque para comparar:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma vida perdida</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma obra terminada</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · "está consumado"</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showTetOutcome(type){
+    const btnD = document.getElementById('tetBtnDivida');
+    const btnP = document.getElementById('tetBtnPago');
+    btnD.classList.remove('active');
+    btnP.classList.remove('active');
+    const title = document.getElementById('tetTitle');
+    const text = document.getElementById('tetText');
+
+    if (type === 'divida'){
+      btnD.classList.add('active');
+      title.textContent = "Um grito de fracasso";
+      text.textContent = "Lido apressadamente, \"está consumado\" pode soar como o suspiro cansado de alguém que apenas chegou ao fim — a última palavra antes de uma derrota, o fechamento de uma vida interrompida pelos próprios inimigos.";
+    } else {
+      btnP.classList.add('active');
+      title.textContent = "Recibo quitado";
+      text.textContent = "No grego do primeiro século, \"tetelestai\" era a palavra usada em recibos comerciais para marcar uma dívida totalmente paga. Jesus não diz \"acabou\" — diz \"está pago por inteiro\". Sabendo que tudo já estava consumado, ele entrega o espírito por sua própria vontade (19.28,30).";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O fim trágico de um bom homem";
+      text.textContent = "Vista de fora, a crucificação parecia o fim prematuro e injusto de um homem bom, derrotado pelos próprios inimigos religiosos e políticos — mais uma vida interrompida à força.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma obra deliberadamente terminada";
+      text.textContent = "A última palavra de Jesus não é de derrota — é a declaração de que a obra pela qual veio ao mundo estava, naquele exato momento, completamente paga e terminada (19.30).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

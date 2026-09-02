@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A desilusão de Pedro — João 18.1-26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Widget: as três negações — sequência numerada */
+  .neg-outer{ margin-top:16px; }
+  .neg-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .neg-steps{ display:flex; gap:8px; margin-bottom:10px; }
+  .neg-step{
+    flex:1; padding:12px 8px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:12.5px; font-weight:500; cursor:pointer;
+    text-align:center; transition: all .2s ease; font-family:'IBM Plex Mono', monospace;
+  }
+  .neg-step:hover{ transform: translateY(-2px); }
+  .neg-step.done{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); box-shadow: 0 0 0 3px rgba(168,92,107,0.12); }
+  .neg-crow{ border-color: var(--gold, var(--worry)); }
+  .neg-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; min-height:60px; }
+  .neg-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .neg-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">A Paixão</span>
+  </div>
+
+  <div class="eyebrow">A Paixão · <span class="ref-tag">João 18.1-26</span></div>
+  <h1>A desilusão de Pedro</h1>
+  <p class="sub">No pátio do sumo sacerdote, à luz de uma fogueira, o discípulo que jurou horas antes morrer por Jesus nega sequer conhecê-lo — três vezes, exatamente como Jesus havia previsto.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 15 C6 15 3 12.5 3 9.5 C3 6.5 6 3 9 3 C12 3 15 6.5 15 9.5 C15 12.5 12 15 9 15 Z" stroke-width="1.3"/>
+          <path d="M4 6.5 L14 6.5" stroke-width="1" stroke-dasharray="1.4 1.8"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Sou eu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus vai com os discípulos a um jardim além do ribeiro de Cedrom (18.1). Judas, que conhecia bem aquele lugar, chega ali com uma tropa de soldados romanos e guardas do templo, munidos de lanternas, tochas e armas (18.3).</p>
+          <p>Jesus, "sabendo tudo o que lhe havia de suceder", toma a iniciativa e pergunta a quem procuram (18.4). Ao responderem "Jesus, o nazareno", ele diz apenas "Sou eu" (18.5) — um eco do próprio nome divino, "Eu Sou" — e, diante dessa afirmação, todos recuam e caem por terra (18.6). Mesmo no momento de se entregar voluntariamente, Jesus mantém o controle da cena.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Embainha a espada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L13 5" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M11 3 L15 7 L13 9 L9 5 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Embainha a espada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro saca uma espada e corta a orelha direita de Malco, servo do sumo sacerdote (18.10). Jesus o repreende de imediato: "embainha a tua espada; não beberei eu o cálice que o Pai me deu?" (18.11).</p>
+          <p>A resposta de Jesus deixa claro o que está acontecendo: sua prisão não é uma derrota inesperada, nem algo que precisa ser evitado à força — é o cumprimento voluntário da missão que ele já havia aceitado do Pai.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Não sou</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V8 C4 6 5.5 5 7 5 H11 C12.5 5 14 6 14 8 V15" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="9" cy="9.5" r="1.4" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Não sou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus é levado primeiro a Anás, sogro do sumo sacerdote Caifás (18.13). Pedro e outro discípulo — provavelmente João — o seguem à distância, e esse outro discípulo, conhecido do sumo sacerdote, consegue fazer Pedro entrar até o pátio (18.15-16).</p>
+          <p>Ali, uma porteira pergunta a Pedro: "Não és tu também dos discípulos deste homem?" Ele responde: "Não sou" (18.17). É a primeira negação — dita a uma simples serva, enquanto ele mesmo se aquece junto a uma fogueira, ao lado dos mesmos homens que haviam prendido Jesus (18.18).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Imediatamente cantou o galo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 4 C6 4 4 6.5 4.5 9.5 C3.2 10 3 11.5 4 12 C4.5 10.8 5.3 10.5 5.3 10.5 C6 12.5 8 13.5 9 13.5 C10.5 13.5 14 12.5 14 8 C14 5.5 11.8 4 9 4 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M13.5 8.5 L15.5 7.5 M13.8 10 L15.7 10" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">E imediatamente cantou o galo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enquanto isso, Anás interroga Jesus sobre seus discípulos e sua doutrina; Jesus responde que sempre ensinou abertamente, em público, "no templo, onde os judeus se ajuntam" — e nada falou em oculto (18.20-21). Por essa resposta, considerada insolente, um dos guardas lhe dá um tapa (18.22).</p>
+          <p>No pátio, a pressão sobre Pedro continua. Toque nos três passos para acompanhar as negações, uma a uma:</p>
+
+          <div class="neg-outer">
+            <div class="neg-label">As três negações — toque em cada passo</div>
+            <div class="neg-steps" id="negSteps"></div>
+            <div class="neg-outcome" id="negOutcome">
+              <h4 id="negTitle"></h4>
+              <p id="negText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A previsão cumprida à letra</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Horas antes, na última ceia, Pedro havia jurado a Jesus: "Ainda que todos se escandalizem em ti, eu nunca me escandalizarei" — e Jesus lhe respondeu, com precisão: "antes que o galo cante, três vezes me negarás" (Mateus 26.33-34; cf. João 13.38). No pátio de Anás, cada palavra dessa previsão se cumpre, uma a uma.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 18.27</span>
+          <p>Então, Pedro negou outra vez; e logo cantou o galo.</p>
+          <span class="ref">— cumprindo o que Jesus já havia dito em 13.38</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Horas antes, Pedro jurou estar disposto a morrer por Jesus — mas diante de uma simples pergunta de uma serva, o medo falou mais alto que a promessa. Toque nas duas frases:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnPertoFogo" onclick="showPedroFinal('fogo')">Perto do fogo, longe da coragem</button>
+            <button class="toggle-btn" id="btnPrevisao" onclick="showPedroFinal('previsao')">A previsão de Jesus, cumprida à letra</button>
+          </div>
+          <div class="outcome" id="pedroFinalOutcome">
+            <h4 id="pedroFinalTitle"></h4>
+            <p id="pedroFinalText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a desilusão de Pedro</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const negSteps = [
+    {
+      label: "1ª negação",
+      title: "A porteira, na entrada",
+      text: "\"Não és tu também dos discípulos deste homem? Disse ele: Não sou\" (18.17). A primeira negação sai fácil, diante de uma pergunta quase casual de uma serva na porta."
+    },
+    {
+      label: "2ª negação",
+      title: "Os que se aqueciam ao fogo",
+      text: "Pedro está junto ao fogo, aquecendo-se com servos e guardas; perguntam-lhe de novo se é discípulo de Jesus. \"Ele negou, e disse: Não sou\" (18.25)."
+    },
+    {
+      label: "3ª negação",
+      title: "Um parente de Malco",
+      text: "Um dos servos do sumo sacerdote, parente daquele a quem Pedro cortara a orelha, pergunta: \"Não te vi eu no jardim com ele?\" (18.26). Pedro nega outra vez."
+    }
+  ];
+
+  function buildNegSteps(){
+    const row = document.getElementById('negSteps');
+    negSteps.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'neg-step';
+      b.textContent = (i+1) + '. ' + s.label;
+      b.onclick = function(){ revealNegStep(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildNegSteps();
+
+  function revealNegStep(btn, i){
+    btn.classList.add('done');
+    const s = negSteps[i];
+    document.getElementById('negTitle').textContent = s.title;
+    document.getElementById('negText').textContent = s.text;
+
+    const allDone = document.querySelectorAll('#negSteps .neg-step.done').length === negSteps.length;
+    if (allDone){
+      document.getElementById('negTitle').textContent = "E imediatamente cantou o galo";
+      document.getElementById('negText').textContent = "\"Então, Pedro negou outra vez; e logo cantou o galo\" (18.27) — exatamente como Jesus havia predito na última ceia (13.38).";
+    }
+  }
+
+  function showPedroFinal(type){
+    const btnF = document.getElementById('btnPertoFogo');
+    const btnP = document.getElementById('btnPrevisao');
+    btnF.classList.remove('active-worry');
+    btnP.classList.remove('active-calm');
+    const title = document.getElementById('pedroFinalTitle');
+    const text = document.getElementById('pedroFinalText');
+
+    if (type === 'fogo'){
+      btnF.classList.add('active-worry');
+      title.textContent = "Perto do fogo, longe da coragem";
+      text.textContent = "Horas antes, Pedro jurou estar disposto a morrer por Jesus — mas diante de uma simples pergunta de uma serva, o medo fala mais alto do que a promessa feita à mesa.";
+    } else {
+      btnP.classList.add('active-calm');
+      title.textContent = "Nada disso pegou Jesus de surpresa";
+      text.textContent = "Mesmo essa queda já havia sido prevista por Jesus (13.38) e, como o resto do livro vai mostrar, não é a palavra final sobre Pedro.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

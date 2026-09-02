@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicodemos — João 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — nascimento físico x nascimento espiritual */
+  .nasc-toggle-outer{ margin-top:16px; }
+  .nasc-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .nasc-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .nasc-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho — nascido uma vez x nascido de novo */
+  .reg-toggle-outer{ margin-top:16px; }
+  .reg-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .reg-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .reg-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Os primeiros sinais</span>
+  </div>
+
+  <div class="eyebrow">Os primeiros sinais · <span class="ref-tag">João 3</span></div>
+  <h1>Nicodemos</h1>
+  <p class="sub">Um fariseu respeitado, membro do Sinédrio, visita Jesus escondido pela noite — e ouve que toda a sua religiosidade não basta: ele precisa nascer de novo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M12.5 3.5 C9 3.5 6.5 6.3 6.5 9.5 C6.5 12.7 9 15 12 15 C9.8 16 6.8 15.6 5 13.5 C2.8 11 2.9 6.8 5.5 4.5 C7.3 2.9 10.2 2.7 12.5 3.5 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um mestre de Israel, de noite</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nicodemos era fariseu e "príncipe dos judeus" — membro do Sinédrio, o conselho mais alto de Israel. Vem a Jesus de noite, talvez por medo de ser visto, talvez por deferência, e reconhece algo que muitos de sua posição não admitiriam: "sabemos que és Mestre, vindo de Deus; porque ninguém pode fazer estes sinais que tu fazes, se Deus não for com ele" (3.2).</p>
+          <p>Jesus não elogia a observação nem entra em debate teológico. Responde diretamente ao que Nicodemos nem chegou a perguntar: "em verdade, em verdade te digo que aquele que não nascer de novo não pode ver o reino de Deus" (3.3). Toda a autoridade e o estudo de Nicodemos não tocam no problema real.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → como pode um homem nascer, sendo velho?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2.5 6 H11 C12.5 6 12.5 3.5 11 3.5 C10 3.5 9.7 4.3 9.7 5" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2.5 9.5 H13.5 C15.3 9.5 15.3 12.5 13.5 12.5 C12.2 12.5 11.8 11.5 11.9 10.6" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2.5 13.5 H8" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Como pode um homem nascer, sendo velho?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nicodemos leva a frase ao pé da letra: "porventura pode um homem nascer, sendo velho? pode, porventura, tornar a entrar no ventre de sua mãe, e nascer?" (3.4). Jesus então distingue dois tipos de nascimento — um que Nicodemos conhece bem, e outro que ele precisa entender: "aquele que não nascer da água e do Espírito não pode entrar no reino de Deus" (3.5).</p>
+          <p>Compara o Espírito ao vento: "não sabes de onde vem, nem para onde vai" — invisível em sua origem, mas visível em seus efeitos (3.8). Compare as duas colunas para ver o contraste que Jesus está traçando:</p>
+
+          <div class="nasc-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnNascFisico" onclick="showNascOutcome('fisico')">Nascimento físico</button>
+              <button class="toggle-btn" id="btnNascEspiritual" onclick="showNascOutcome('espiritual')">Nascimento espiritual</button>
+            </div>
+            <div class="nasc-outcome" id="nascOutcome">
+              <h4 id="nascTitle"></h4>
+              <p id="nascText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → como pode ser isso?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 5 C7 6 6 8 8.5 8.5 C11 9 10 11 7 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Como pode ser isso?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nicodemos ainda não entende, e Jesus o repreende com gentileza: "és tu mestre de Israel, e não sabes isto?" (3.10). Mas em vez de abandoná-lo na confusão, liga o momento a uma passagem que Nicodemos, como estudioso da Torá, conhecia de cor.</p>
+          <p>"E como Moisés levantou a serpente no deserto, assim importa que o Filho do Homem seja levantado; para que todo aquele que nele crê não pereça, mas tenha a vida eterna" (3.14-15) — uma referência direta a Números 21, quando quem olhasse para a serpente de bronze levantada por Moisés era curado da mordida mortal. Jesus está dizendo a Nicodemos: olhar para mim, levantado, será exatamente isso.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → porque Deus amou o mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.2"/>
+          <path d="M3 9 H15 M9 3 C11.5 5.5 11.5 12.5 9 15 C6.5 12.5 6.5 5.5 9 3 Z" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Porque Deus amou o mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chegamos ao ápice do capítulo, e talvez do evangelho inteiro: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna" (3.16). Deus não enviou o Filho para condenar o mundo, "mas para que o mundo fosse salvo por ele" (3.17); quem não crê já está condenado, não por um decreto arbitrário, mas por rejeitar o único remédio oferecido.</p>
+          <p>O capítulo fecha retomando o mesmo tema de luz e trevas do prólogo: "os homens amaram mais as trevas do que a luz, porque as suas obras eram más" (3.19). A questão nunca foi falta de evidência — é preferir a escuridão onde as próprias obras não precisam ser expostas.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um novo nascimento, não uma nova religião</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Nicodemos chega a Jesus com todas as credenciais religiosas possíveis — estudo, posição, reputação — e ouve que nada disso é o ponto. A pergunta nunca foi "quanto você sabe" ou "quanto você observa", mas "você nasceu de novo?"</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 3.16</span>
+          <p>Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.</p>
+          <span class="ref">— João 3.16</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nascer apenas uma vez, fisicamente, deixa a pessoa presa ao mesmo padrão de vida, sem acesso ao reino de Deus — por mais religiosa ou bem-intencionada que seja, como o próprio Nicodemos. Nascer de novo, pelo Espírito, não é uma conquista humana, mas um dom — e abre os olhos para um reino que a religiosidade sozinha nunca alcançaria.</p>
+
+          <div class="reg-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnRegUmaVez" onclick="showRegOutcome('umavez')">Nascido uma vez</button>
+              <button class="toggle-btn" id="btnRegDeNovo" onclick="showRegOutcome('denovo')">Nascido de novo</button>
+            </div>
+            <div class="reg-outcome" id="regOutcome">
+              <h4 id="regTitle"></h4>
+              <p id="regText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · Nicodemos</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showNascOutcome(type){
+    const btnA = document.getElementById('btnNascFisico');
+    const btnB = document.getElementById('btnNascEspiritual');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('nascTitle');
+    const text = document.getElementById('nascText');
+
+    if (type === 'fisico'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Do ventre, uma vez só";
+      text.textContent = "O nascimento físico acontece uma única vez, é visível do início ao fim, e depende inteiramente da vontade e da ação de outros — ninguém pode fazer isso por si mesmo (3.4).";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Da água e do Espírito";
+      text.textContent = "O nascimento espiritual é comparado ao vento: invisível em sua origem e destino, mas visível em seus efeitos, e iniciado inteiramente por Deus, não pela vontade humana (3.5-8).";
+    }
+  }
+
+  function showRegOutcome(type){
+    const btnA = document.getElementById('btnRegUmaVez');
+    const btnB = document.getElementById('btnRegDeNovo');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('regTitle');
+    const text = document.getElementById('regText');
+
+    if (type === 'umavez'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Preso ao mesmo padrão";
+      text.textContent = "Nascer apenas uma vez, fisicamente, deixa a pessoa sem acesso ao reino de Deus, por mais religiosa ou bem-intencionada que seja — como o próprio Nicodemos, mestre de Israel, ainda assim precisando ouvir isso de Jesus (3.3, 10).";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Um dom, não uma conquista";
+      text.textContent = "Nascer de novo, pelo Espírito, não é algo que a pessoa realiza por esforço próprio, mas um dom recebido — e abre os olhos para um reino que toda a religiosidade sozinha jamais alcançaria (3.5-6, 16).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

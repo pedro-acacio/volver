@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A multiplicação dos pães — João 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 4 — a multidão que buscava pão x os doze que ficaram pela palavra */
+  .pao-outer{ margin-top:16px; }
+  .pao-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .pao-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .pao-chip{ border-radius:12px; padding:12px 16px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:500; color:var(--text-dim); transition: background .3s ease, color .3s ease, transform .2s ease; flex:1 1 200px; text-align:left; }
+  .pao-chip.open{ background:var(--gold); color:#2C3459; transform:scale(1.02); }
+  .pao-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Sinais e conflitos em Jerusalém e na Galileia</span>
+  </div>
+
+  <div class="eyebrow">Sinais e conflitos em Jerusalém e na Galileia · <span class="ref-tag">João 6</span></div>
+  <h1>A multiplicação dos pães</h1>
+  <p class="sub">Cinco pães e dois peixes alimentam uma multidão de milhares — e o sinal que deveria confirmar a fé das pessoas se torna, num discurso difícil, o motivo de muitos discípulos desistirem de segui-lo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 14 C5 9 6.6 5 9 5 C11.4 5 13 9 13 14 Z" stroke-width="1.2"/>
+          <circle cx="14.5" cy="11" r="1.7" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Cinco pães, dois peixes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma grande multidão segue Jesus através do mar da Galileia, atraída pelos sinais que via nos enfermos que ele curava (6.1-2). Diante da fome de milhares de pessoas, Filipe faz as contas e conclui que nem duzentos denários de pão seriam suficientes (6.7); é André quem nota um detalhe quase irrisório: um menino ali tem cinco pães de cevada e dois peixinhos — "mas que é isto para tantos?" (6.8-9).</p>
+          <p>Jesus manda o povo se assentar, toma os pães, dá graças e os distribui — e faz o mesmo com os peixes, "quanto queriam" (6.11). Todos comem à vontade, e ainda sobram doze cestos cheios dos pedaços que restaram (6.12-13). A multidão, ao ver o sinal, conclui que ele é "o profeta que devia vir ao mundo" e planeja tomá-lo à força para fazê-lo rei — mas Jesus se retira sozinho para o monte (6.14-15).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → andando sobre o mar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 13c1.3-1.1 2.6-1.1 3.9 0s2.6 1.1 3.9 0 2.6-1.1 3.9 0" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 10 L9 4 L12 10" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Andando sobre o mar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>À noite, os discípulos descem sozinhos até o mar e partem de barco para Cafarnaum, sem Jesus (6.16-17). Já escurecera, e o vento forte levanta o mar contra eles; remam por cerca de vinte e cinco ou trinta estádios quando veem algo inesperado: Jesus andando sobre as águas, aproximando-se do barco — e ficam com medo (6.18-19).</p>
+          <p>Ele os tranquiliza com uma frase curta: "Sou eu, não temais" (6.20). Eles o recebem no barco de bom grado, e imediatamente a embarcação chega à terra para onde iam (6.21). O mesmo poder que multiplicou pão para milhares também governa o vento e o mar diante de uns poucos discípulos assustados, no meio da noite.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → eu sou o pão da vida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 8 C4 5.5 6.2 4 9 4 C11.8 4 14 5.5 14 8 C14 11 11.5 13 9 15 C6.5 13 4 11 4 8 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M6.5 8 H11.5" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Eu sou o pão da vida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No dia seguinte, a multidão o encontra em Cafarnaum, e Jesus vai direto ao ponto: "Vós me buscais... porque comestes o pão e vos fartastes" (6.26). Os convida a trabalhar não pela comida que perece, mas pelo "alimento que permanece para a vida eterna", que o Filho do Homem lhes daria (6.27). Quando pedem um sinal como o maná no deserto, comparável ao que Moisés deu (Êxodo 16), Jesus corrige a memória deles: não foi Moisés quem deu aquele pão do céu, mas o Pai — e o verdadeiro pão do céu é "aquele que desce do céu e dá vida ao mundo" (6.32-33).</p>
+          <p>Diante do pedido "Senhor, dá-nos sempre desse pão" (6.34), Jesus declara: "Eu sou o pão da vida; aquele que vem a mim não terá fome, e quem crê em mim nunca terá sede" (6.35). Não é apenas um pão que sustenta o corpo por um dia, como o de Betesda alimentou uma multidão uma única vez — é ele mesmo, oferecido de forma permanente a quem vem a ele.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → um discurso difícil demais</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 5 H14 M4 9 H14 M4 13 H10" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Um discurso difícil demais</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus intensifica a linguagem ainda mais: para ter vida, é preciso "comer a carne do Filho do Homem e beber o seu sangue" (6.53-54) — uma metáfora chocante, ligada à sua morte próxima, para uma dependência total dele e comunhão real com ele, não um ensino sobre canibalismo. Muitos de seus próprios discípulos reagem: "Duro é este discurso; quem o pode ouvir?" (6.60), e "voltaram atrás, e já não andavam com ele" (6.66).</p>
+          <p>Jesus se volta então para os doze com uma pergunta direta: "Quereis vós também retirar-vos?" (6.67). É Pedro quem responde, em nome do grupo, sem pretender entender tudo, mas reconhecendo que não há para onde ir: "Senhor, para quem iremos? Tu tens as palavras da vida eterna. E nós temos crido e conhecido que és o Cristo, o Filho do Deus vivente" (6.68-69).</p>
+
+          <div class="pao-outer">
+            <div class="pao-label">Duas respostas ao mesmo discurso difícil</div>
+            <div class="pao-chip-row" id="paoChipRow"></div>
+            <div class="pao-caption" id="paoCaption">Toque em cada grupo para ver como reagiu.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Palavras de vida eterna</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Uma multidão inteira comeu do pão multiplicado e, no dia seguinte, ainda buscava Jesus — mas era pelo pão que enche o estômago por um dia, não pelo pão que ele afirmava ser. Quando o ensino deixou de ser confortável, a multidão foi embora tão depressa quanto tinha chegado. Só os doze ficaram, e nem todos por razões perfeitas: entre eles estava também Judas Iscariotes, de quem Jesus já sabia que o entregaria (6.70-71).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 6.68</span>
+          <p>Senhor, para quem iremos? Tu tens as palavras da vida eterna.</p>
+          <span class="ref">— Pedro, em nome dos doze</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A pergunta de Jesus aos doze — "quereis vós também retirar-vos?" — não fica só naquele barco, naquele discurso, naquele dia. Todo ensino difícil de Jesus repete, de algum jeito, a mesma pergunta a quem o segue.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Seguir pelo pão que acaba</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Ficar pelas palavras de vida eterna</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a multiplicação dos pães</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const paoData = [
+    { key:'multidao', label:"A multidão que buscava pão", text:"Seguiram Jesus enquanto ele dava comida de graça, e chegaram a querer fazê-lo rei à força por isso (6.15). Mas, no instante em que o ensino ficou exigente, \"voltaram atrás, e já não andavam com ele\" (6.66)." },
+    { key:'doze', label:"Os doze que ficaram pela palavra", text:"Sem entender tudo, e sem conforto fácil, reconhecem que não há para onde ir: \"Senhor, para quem iremos? Tu tens as palavras da vida eterna\" (6.68) — creram e conheceram que ele é o Cristo (6.69)." }
+  ];
+
+  function buildPaoChips(){
+    const row = document.getElementById('paoChipRow');
+    paoData.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pao-chip';
+      b.textContent = d.label;
+      b.onclick = function(){ revealPao(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildPaoChips();
+
+  function revealPao(btn, i){
+    document.querySelectorAll('.pao-chip').forEach(b => b.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('paoCaption').textContent = paoData[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma multidão que veio pelo pão e foi embora pela palavra";
+      text.textContent = "Milhares seguiram Jesus enquanto ele dava comida de graça — e o abandonaram no instante em que o ensino deixou de ser confortável, achando o discurso \"duro demais\" para se ouvir (6.60,66).";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Sem para onde ir";
+      text.textContent = "Os doze, mesmo sem entender tudo, reconhecem que não há alternativa: só ele tem palavras de vida eterna (6.68) — permanecer não exige entender tudo primeiro, exige reconhecer que não há outro lugar para ir.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

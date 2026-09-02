@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de João</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Evangelhos</div>
+    <h1>João</h1>
+    <p class="lede">O quarto Evangelho, escrito para que o leitor creia. Sete sinais, sete afirmações "Eu sou", um discurso de despedida inteiro dedicado aos discípulos, e uma paixão contada por quem, ao que tudo indica, esteve mais perto de Jesus do que qualquer outro escritor do Novo Testamento.</p>
+    <div class="stats-row">
+      <div class="stat"><b>24</b>disponíveis</div>
+      <div class="stat"><b>7</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-joao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução ao Evangelho segundo João</div>
+        <div class="p-ref">Autor, data, propósito e estrutura</div>
+        <p class="p-teaser">Um evangelho anônimo cheio de pistas sobre quem o escreveu — e um propósito declarado sem rodeios: "para que creiais".</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. O VERBO SE FEZ CARNE ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. O Verbo se fez carne</h3>
+      <span class="cat-ref">João 1</span>
+      <span class="cat-count">2 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-verbo-se-fez-carne.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O Verbo se fez carne</div>
+        <div class="p-ref">João 1.1-18</div>
+        <p class="p-teaser">Antes de qualquer milagre, uma afirmação: o mesmo Verbo que estava com Deus, e era Deus, se fez carne entre nós.</p>
+      </a>
+      <a class="p-card available" href="licao-o-batismo-de-jesus-e-os-primeiros-discipulos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O batismo de Jesus e os primeiros discípulos</div>
+        <div class="p-ref">João 1.19-51</div>
+        <p class="p-teaser">João Batista aponta para o Cordeiro de Deus, e os primeiros discípulos começam a segui-lo, um convite de cada vez.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. OS PRIMEIROS SINAIS ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. Os primeiros sinais</h3>
+      <span class="cat-ref">João 2—4</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-agua-em-vinho-e-a-purificacao-do-templo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Água em vinho e a purificação do templo</div>
+        <div class="p-ref">João 2</div>
+        <p class="p-teaser">O primeiro sinal, numa festa de casamento, e a primeira purificação — dois lados da mesma glória revelada.</p>
+      </a>
+      <a class="p-card available" href="licao-nicodemos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Nicodemos</div>
+        <div class="p-ref">João 3</div>
+        <p class="p-teaser">Um fariseu respeitado visita Jesus de noite e ouve que precisa nascer de novo.</p>
+      </a>
+      <a class="p-card available" href="licao-a-mulher-samaritana.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A mulher samaritana</div>
+        <div class="p-ref">João 4</div>
+        <p class="p-teaser">No poço de Jacó, ao meio-dia, uma conversa que atravessa preconceitos de gênero, raça e religião.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. SINAIS E CONFLITOS EM JERUSALÉM E NA GALILEIA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. Sinais e conflitos em Jerusalém e na Galileia</h3>
+      <span class="cat-ref">João 5—9</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-paralitico-de-betesda.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O paralítico de Betesda</div>
+        <div class="p-ref">João 5</div>
+        <p class="p-teaser">Trinta e oito anos de enfermidade curados num sábado — e uma acusação que quase custa a vida de Jesus.</p>
+      </a>
+      <a class="p-card available" href="licao-a-multiplicacao-dos-paes.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A multiplicação dos pães</div>
+        <div class="p-ref">João 6</div>
+        <p class="p-teaser">Cinco pães, dois peixes, uma multidão alimentada — e um discurso que faz muitos discípulos desistirem.</p>
+      </a>
+      <a class="p-card available" href="licao-a-fonte-de-agua-viva.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A fonte de água viva</div>
+        <div class="p-ref">João 7</div>
+        <p class="p-teaser">No meio da Festa dos Tabernáculos, Jesus se levanta e clama que quem tiver sede venha a ele.</p>
+      </a>
+      <a class="p-card available" href="licao-a-mulher-adultera.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A mulher adúltera</div>
+        <div class="p-ref">João 8</div>
+        <p class="p-teaser">Uma armadilha montada para condenar alguém termina condenando os próprios acusadores.</p>
+      </a>
+      <a class="p-card available" href="licao-o-cego-de-nascenca.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O cego de nascença</div>
+        <div class="p-ref">João 9</div>
+        <p class="p-teaser">Um homem que nunca viu recebe a visão — e enxerga mais do que os que já viam.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== IV. O BOM PASTOR E O SINAL MÁXIMO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">IV. O Bom Pastor e o sinal máximo</h3>
+      <span class="cat-ref">João 10—12</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-redil-e-o-bom-pastor.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O redil e o Bom Pastor</div>
+        <div class="p-ref">João 10</div>
+        <p class="p-teaser">Jesus se descreve como a porta das ovelhas e o pastor que dá a vida por elas, não como o assalariado que foge.</p>
+      </a>
+      <a class="p-card available" href="licao-a-ressurreicao-de-lazaro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ressurreição de Lázaro</div>
+        <div class="p-ref">João 11</div>
+        <p class="p-teaser">O maior dos sete sinais: um homem morto há quatro dias sai vivo do túmulo.</p>
+      </a>
+      <a class="p-card available" href="licao-a-entrada-triunfal.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A entrada triunfal</div>
+        <div class="p-ref">João 12</div>
+        <p class="p-teaser">Multidões agitam ramos de palmeira, sem saber que estão aclamando um rei que vai morrer em poucos dias.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== V. O DISCURSO DE DESPEDIDA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">V. O discurso de despedida</h3>
+      <span class="cat-ref">João 13—17</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-jesus-lava-os-pes-dos-discipulos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Jesus lava os pés dos discípulos</div>
+        <div class="p-ref">João 13</div>
+        <p class="p-teaser">Na última ceia, o Mestre se ajoelha diante dos próprios discípulos com uma bacia e uma toalha.</p>
+      </a>
+      <a class="p-card available" href="licao-jesus-o-unico-caminho.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Jesus, o único caminho</div>
+        <div class="p-ref">João 14</div>
+        <p class="p-teaser">"Eu sou o caminho, a verdade e a vida" — a resposta de Jesus a um discípulo perdido, na véspera de sua morte.</p>
+      </a>
+      <a class="p-card available" href="licao-a-videira-verdadeira.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A videira verdadeira</div>
+        <div class="p-ref">João 15</div>
+        <p class="p-teaser">"Permanecei em mim" — a última imagem de Jesus antes de deixar o cenáculo, sobre o que sustenta quem o segue.</p>
+      </a>
+      <a class="p-card available" href="licao-o-consolador.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O Consolador</div>
+        <div class="p-ref">João 16</div>
+        <p class="p-teaser">Jesus promete que sua partida não deixará os discípulos órfãos: o próprio Espírito Santo virá habitar neles.</p>
+      </a>
+      <a class="p-card available" href="licao-a-oracao-pela-unidade.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A oração pela unidade</div>
+        <div class="p-ref">João 17</div>
+        <p class="p-teaser">Antes de ser preso, Jesus ora — não por si mesmo, mas por seus discípulos, e por todos os que ainda vão crer.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VI. A PAIXÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VI. A Paixão</h3>
+      <span class="cat-ref">João 18—19</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-desilusao-de-pedro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A desilusão de Pedro</div>
+        <div class="p-ref">João 18.1-26</div>
+        <p class="p-teaser">No pátio do sumo sacerdote, o discípulo que jurou morrer por Jesus nega sequer conhecê-lo, três vezes.</p>
+      </a>
+      <a class="p-card available" href="licao-a-condenacao-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A condenação de Jesus</div>
+        <div class="p-ref">João 18.26—19.16</div>
+        <p class="p-teaser">Diante de Pilatos, uma multidão escolhe um insurgente no lugar do próprio Rei que dizem não querer.</p>
+      </a>
+      <a class="p-card available" href="licao-esta-consumado.html"><span class="badge on">Disponível</span>
+        <div class="p-title">"Está consumado"</div>
+        <div class="p-ref">João 19.17-42</div>
+        <p class="p-teaser">No Gólgota, a última palavra de Jesus não é de derrota, mas de uma obra terminada.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VII. A RESSURREIÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VII. A Ressurreição</h3>
+      <span class="cat-ref">João 20—21</span>
+      <span class="cat-count">2 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-ressurreicao-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ressurreição de Jesus</div>
+        <div class="p-ref">João 20</div>
+        <p class="p-teaser">Um túmulo vazio, um jardim, e um nome sussurrado que muda tudo: "Maria!"</p>
+      </a>
+      <a class="p-card available" href="licao-a-restauracao-de-pedro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A restauração de Pedro</div>
+        <div class="p-ref">João 21</div>
+        <p class="p-teaser">Numa manhã de pesca na Galileia, Jesus pergunta três vezes a Pedro a mesma coisa — e o restaura, uma negação de cada vez.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de João · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O redil e o Bom Pastor — João 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — assalariado x bom pastor */
+  .past-toggle-outer{ margin-top:16px; }
+  .past-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .past-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .past-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">O Bom Pastor e o sinal máximo</span>
+  </div>
+
+  <div class="eyebrow">O Bom Pastor e o sinal máximo · <span class="ref-tag">João 10</span></div>
+  <h1>O redil e o Bom Pastor</h1>
+  <p class="sub">Continuando a resposta aos fariseus do capítulo anterior, Jesus se descreve com duas imagens pastoris: ele é a porta por onde as ovelhas entram em segurança, e o pastor que dá a própria vida por elas — não o assalariado que foge.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 16 V6 L9 3 L14 6 V16" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 16 V11" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Eu sou a porta das ovelhas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus contrasta o pastor legítimo, que entra pela porta do aprisco, com o ladrão e o salteador, que sobem por outro lugar. As ovelhas conhecem a voz do pastor verdadeiro e o seguem; a voz de um estranho, ao contrário, as faz fugir (10.1-5).</p>
+          <p>Diante da confusão dos ouvintes, Jesus é ainda mais direto: "Eu sou a porta das ovelhas" (10.7). Quem entra por ele será salvo, entrará e sairá livremente, e achará pastagens. Veio para que as ovelhas tenham vida, "e a tenham com abundância" — em contraste direto com o ladrão, que vem apenas para roubar, matar e destruir (10.9-10).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Eu sou o Bom Pastor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 3 4 5 4 8 C4 12 9 16 9 16 C9 16 14 12 14 8 C14 5 12 3 9 3 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Eu sou o Bom Pastor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Eu sou o bom Pastor" (10.11). A marca que distingue o pastor verdadeiro de qualquer substituto não é a proximidade com as ovelhas em dias tranquilos, mas o que ele faz quando o lobo aparece. Toque nos dois quadros para comparar:</p>
+
+          <div class="past-toggle-outer">
+            <div class="chip-row">
+              <button class="chip-btn chip-worry" id="pastBtnAssalariado" onclick="showPastOutcome('assalariado')">O assalariado que foge</button>
+              <button class="chip-btn chip-calm" id="pastBtnPastor" onclick="showPastOutcome('pastor')">O pastor que dá a vida</button>
+            </div>
+            <div class="past-outcome" id="pastOutcome">
+              <h4 id="pastTitle"></h4>
+              <p id="pastText"></p>
+            </div>
+          </div>
+
+          <p>Jesus acrescenta ainda que tem "outras ovelhas que não são deste aprisco" — os gentios — que também precisa trazer, "para que haja um rebanho e um pastor" (10.16).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Minhas ovelhas ouvem a minha voz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 C3 6 6 4 9 4 C12 4 15 6 15 9" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="9" cy="13" r="2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Minhas ovelhas ouvem a minha voz</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma nova divisão se abre entre os judeus: alguns dizem que Jesus tem demônio e está fora de si; outros ponderam que essas não são palavras de quem está endemoninhado (10.19-21). Já na Festa da Dedicação, em Jerusalém, perguntam abertamente se ele é o Cristo. Jesus responde que já disse, e as obras que faz em nome do Pai já testificam dele — mas eles não creem, "porque não sois das minhas ovelhas" (10.24-26).</p>
+          <p>Segue então uma das declarações mais firmes do Evangelho: "As minhas ovelhas ouvem a minha voz, e eu as conheço, e elas me seguem; e eu lhes dou a vida eterna, e nunca hão de perecer, e ninguém as arrebatará da minha mão." E acrescenta: "Eu e o Pai somos um" (10.27-30).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Apedrejado por blasfêmia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="12" r="1.4" stroke-width="1.2"/>
+          <circle cx="10" cy="14" r="1.4" stroke-width="1.2"/>
+          <circle cx="13" cy="10" r="1.4" stroke-width="1.2"/>
+          <path d="M9 3 L9 8" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Apedrejado por blasfêmia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os judeus pegam pedras para apedrejá-lo. Ao ser questionados, explicam o motivo: "não por boa obra te apedrejamos, mas pela blasfêmia; e porque, sendo tu homem, te fazes Deus" (10.31-33). Jesus responde a partir do próprio texto da Escritura — um salmo em que juízes humanos são chamados "deuses" (Salmo 82.6) — para mostrar que sua reivindicação, longe de ser absurda, é exatamente coerente com quem ele é: aquele a quem o Pai santificou e enviou ao mundo (10.34-36).</p>
+          <p>Jesus escapa das mãos deles e se retira para além do Jordão, para o lugar onde João batizava no início. Ali, muitos creem nele, lembrando que tudo o que João disse a seu respeito era verdade (10.39-42).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Conhecidas pelo nome, seguras na mão dele</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Porta e pastor não são duas imagens concorrentes, mas complementares: pela porta se entra em segurança; pelo pastor se é conhecido, guiado e protegido até o fim. E a prova de que esse pastor é digno de confiança não é uma promessa abstrata — é o fato de que ele já deu a própria vida pelas ovelhas, por vontade própria, e tem autoridade para retomá-la (10.17-18).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 10.27-28</span>
+          <p>As minhas ovelhas ouvem a minha voz, e eu as conheço, e elas me seguem; e eu lhes dou a vida eterna, e nunca hão de perecer, e ninguém as arrebatará da minha mão.</p>
+          <span class="ref">— Jesus, na Festa da Dedicação</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Toque para comparar o que significa pertencer a esse rebanho:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnRedilSem" onclick="showRedilOutcome('sem')">Ovelhas sem pastor</button>
+            <button class="toggle-btn" id="btnRedilCom" onclick="showRedilOutcome('com')">Conhecidas pelo nome, seguras na mão dele</button>
+          </div>
+          <div class="ver-outcome" id="redilOutcome">
+            <h4 id="redilTitle"></h4>
+            <p id="redilText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · o redil e o bom pastor</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showPastOutcome(type){
+    const btnA = document.getElementById('pastBtnAssalariado');
+    const btnP = document.getElementById('pastBtnPastor');
+    btnA.classList.remove('active');
+    btnP.classList.remove('active');
+    const title = document.getElementById('pastTitle');
+    const text = document.getElementById('pastText');
+
+    if (type === 'assalariado'){
+      btnA.classList.add('active');
+      title.textContent = "Foge quando vê o lobo chegar";
+      text.textContent = "O assalariado não é o pastor, e as ovelhas não são suas; por isso, ao ver o lobo se aproximar, ele as abandona e foge, e o lobo as arrebata e dispersa — porque, no fundo, não se importa com as ovelhas (10.12-13).";
+    } else {
+      btnP.classList.add('active');
+      title.textContent = "Dá a própria vida por vontade própria";
+      text.textContent = "O bom Pastor dá a sua vida pelas ovelhas — não por acidente, mas por decisão, e com autoridade para retomá-la de novo. \"Ninguém a tira de mim, mas eu de mim mesmo a dou\" (10.18): um mandamento recebido do Pai, apontando diretamente para a cruz e a ressurreição.";
+    }
+  }
+
+  function showRedilOutcome(type){
+    const btnS = document.getElementById('btnRedilSem');
+    const btnC = document.getElementById('btnRedilCom');
+    btnS.classList.remove('active-worry');
+    btnC.classList.remove('active-calm');
+    const title = document.getElementById('redilTitle');
+    const text = document.getElementById('redilText');
+
+    if (type === 'sem'){
+      btnS.classList.add('active-worry');
+      title.textContent = "Protegidas só enquanto for conveniente";
+      text.textContent = "Um assalariado protege as ovelhas apenas enquanto isso não lhe custa nada, e foge no primeiro sinal de perigo real — deixando quem confiou nele exposto exatamente na hora em que mais precisava de proteção.";
+    } else {
+      btnC.classList.add('active-calm');
+      title.textContent = "Conhecidas, guardadas, jamais arrebatadas";
+      text.textContent = "O Bom Pastor já provou, ao dar a própria vida, que suas ovelhas nunca serão abandonadas nem arrebatadas de sua mão — não por sentimento, mas por uma entrega que já foi paga até o fim.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

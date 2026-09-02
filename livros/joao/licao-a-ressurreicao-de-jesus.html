@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A ressurreição de Jesus — João 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — confusão e reconhecimento, em dois passos */
+  .mar-steps{ margin-top:16px; }
+  .mar-step-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+  .mar-step-btn{
+    flex:1; min-width:150px; padding:13px 14px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); color: var(--text-dim); font-size:13px; font-weight:500; cursor:pointer;
+    text-align:left; transition: transform .18s ease, border-color .2s ease, color .2s ease, background .2s ease, box-shadow .2s ease;
+    font-family:'IBM Plex Sans', sans-serif;
+  }
+  .mar-step-btn:hover:not(:disabled){ transform: translateY(-2px); }
+  .mar-step-btn:disabled{ opacity:.4; cursor:not-allowed; }
+  .mar-step-btn.done{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .mar-step-panel{
+    border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--panel);
+    margin-bottom:10px; display:none;
+  }
+  .mar-step-panel.show{ display:block; animation: chip-text-in .3s ease both; }
+  .mar-step-panel .mar-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color: var(--gold); display:block; margin-bottom:8px; }
+  .mar-step-panel p{ font-size:13.5px; line-height:1.6; color: var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">A Ressurreição</span>
+  </div>
+
+  <div class="eyebrow">A Ressurreição · <span class="ref-tag">João 20</span></div>
+  <h1>A ressurreição de Jesus</h1>
+  <p class="sub">Um túmulo vazio, um jardim ao amanhecer, e um nome sussurrado que muda tudo: "Maria!"</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V8 C4 5 6.5 3 9 3 C11.5 3 14 5 14 8 V15" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2.5 15 H15.5" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 15 V11 H12 V15" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O túmulo vazio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No primeiro dia da semana, ainda escuro, Maria Madalena vai ao túmulo e encontra a pedra removida. Corre avisar Simão Pedro e o outro discípulo, aquele a quem Jesus amava: "Tiraram do sepulcro o Senhor, e não sabemos onde o puseram" (20.1-2) — sua primeira suposição não é ressurreição, é roubo.</p>
+          <p>Os dois correm juntos; o outro discípulo chega primeiro, mas não entra — apenas se abaixa e olha os panos de linho ali largados. Pedro entra logo em seguida e vê os mesmos panos, e o lenço que estivera sobre a cabeça de Jesus, não junto aos panos, mas dobrado à parte, num lugar (20.3-7) — um detalhe que sugere ordem, não a pressa de um roubo. Então o outro discípulo também entra, "e viu, e creu" — ainda sem entender plenamente que as Escrituras já anunciavam que ele haveria de ressuscitar (20.8-9).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → "Maria!"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="7" r="3" stroke-width="1.3"/>
+          <path d="M4 15 C4 11.5 6 10 9 10 C12 10 14 11.5 14 15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">"Maria!"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enquanto os discípulos voltam para casa, Maria fica chorando junto ao túmulo. Toque nos dois passos, na ordem, para acompanhar a cena:</p>
+
+          <div class="mar-steps">
+            <div class="mar-step-row">
+              <button class="mar-step-btn" id="marBtn1" onclick="showMarStep(1)">Passo 1 — Confusão junto ao túmulo</button>
+              <button class="mar-step-btn" id="marBtn2" onclick="showMarStep(2)" disabled>Passo 2 — "Maria!"</button>
+            </div>
+            <div class="mar-step-panel" id="marPanel1">
+              <span class="mar-tag">João 20.11-15</span>
+              <p>Chorando, Maria se abaixa e olha dentro do túmulo, e vê dois anjos sentados onde estivera o corpo de Jesus, que perguntam por que ela chora. Ela responde com o mesmo temor de antes: levaram o Senhor, e não sabe onde o puseram. Ao se virar, vê alguém de pé, mas não o reconhece — pensa se tratar do jardineiro, e pergunta onde ele levou o corpo, oferecendo-se para ir buscá-lo.</p>
+            </div>
+            <div class="mar-step-panel" id="marPanel2">
+              <span class="mar-tag">João 20.16-18</span>
+              <p>Jesus diz apenas uma palavra: "Maria!" E, ao ouvir seu próprio nome pronunciado por essa voz, ela o reconhece imediatamente e responde: "Raboni!" — que quer dizer Mestre. Jesus a envia aos discípulos com um anúncio: ele vai subir "para meu Pai e vosso Pai, meu Deus e vosso Deus." Maria vai e conta aos discípulos que vira o Senhor — tornando-se a primeira testemunha e a primeira a proclamar a ressurreição.</p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → recebei o Espírito Santo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="4" width="10" height="10" rx="1" stroke-width="1.3"/>
+          <path d="M7 9 L8.5 10.5 L11.5 7" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Recebei o Espírito Santo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Já à noite daquele mesmo dia, com as portas trancadas por medo dos judeus, Jesus aparece no meio dos discípulos e diz: "Paz seja convosco." Mostra-lhes as mãos e o lado, e eles se alegram ao ver o Senhor (20.19-20).</p>
+          <p>Ele repete a saudação de paz e lhes dá um envio: "Assim como o Pai me enviou, também eu vos envio." Então sopra sobre eles e diz: "Recebei o Espírito Santo" (20.21-22) — uma antecipação simbólica do que aconteceria plenamente em Pentecostes. Acrescenta ainda autoridade para anunciar perdão de pecados em seu nome (20.23).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → "Meu Senhor e meu Deus!"</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 9 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 6 V4 M9 14 V12" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="1" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">"Meu Senhor e meu Deus!"</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Tomé não estava presente naquela noite. Quando os outros lhe dizem "vimos o Senhor", ele se recusa a crer sem prova concreta: "Se eu não vir o sinal dos cravos em suas mãos... não crerei" (20.24-25).</p>
+          <p>Oito dias depois, com Tomé presente desta vez, Jesus aparece de novo entre portas trancadas e oferece exatamente a prova que Tomé exigira, dizendo: "Chega aqui o teu dedo... e não sejas incrédulo, mas crente" (20.26-27). Diante disso, Tomé responde com a confissão de fé mais alta de todo o Evangelho: "Senhor meu, e Deus meu!" (20.28). Jesus lhe diz: "Porque me viste, Tomé, creste? Bem-aventurados os que não viram e creram" (20.29) — uma bênção endereçada diretamente a todo leitor que viria depois.</p>
+          <p>O capítulo fecha com o propósito de todo o livro: "estes, porém, foram escritos para que creiais que Jesus é o Cristo, o Filho de Deus, e para que, crendo, tenhais vida em seu nome" (20.30-31) — a mesma frase que já apareceu no início desta trilha, agora não como novidade, mas como o fecho natural de tudo o que o Evangelho construiu.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Bem-aventurados os que creem sem ver</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>De um túmulo vazio a um nome sussurrado, de portas trancadas por medo a um sopro que antecipa o Espírito, de uma exigência de prova física à confissão mais alta do livro — o capítulo 20 percorre toda a distância entre a confusão e a fé. E termina olhando direto para fora da página, para quem lê sem nunca ter estado ali.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 20.29</span>
+          <p>Porque me viste, Tomé, creste? Bem-aventurados os que não viram e creram.</p>
+          <span class="ref">— Jesus, a Tomé</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Toque para comparar:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Preciso ver para crer</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Bem-aventurados os que creem sem ver</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a ressurreição de Jesus</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showMarStep(n){
+    const panel = document.getElementById('marPanel' + n);
+    const btn = document.getElementById('marBtn' + n);
+    panel.classList.add('show');
+    btn.classList.add('done');
+    if (n === 1){
+      document.getElementById('marBtn2').disabled = false;
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma exigência compreensível";
+      text.textContent = "Exigir prova física antes de crer é uma postura compreensível, especialmente diante de algo tão extraordinário quanto uma ressurreição — foi exatamente o que Tomé pediu (20.25).";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma bênção para todo leitor";
+      text.textContent = "A bênção final do capítulo não é para quem viu e creu — é para todo leitor deste Evangelho, então e agora, que crê sem nunca ter visto (20.29).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

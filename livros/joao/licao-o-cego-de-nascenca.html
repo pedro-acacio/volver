@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O cego de nascença — João 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — a clareza crescente do homem, passo a passo */
+  .vis-outer{ margin-top:16px; }
+  .vis-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .vis-step-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .vis-step{
+    display:flex; align-items:center; gap:8px; border-radius:12px; padding:10px 14px;
+    background:var(--panel-line); border:none; cursor:pointer; flex:1 1 150px; text-align:left;
+    font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; font-weight:500; color:var(--text-dim);
+    transition: background .3s ease, color .3s ease, transform .2s ease;
+  }
+  .vis-step.open{ background:var(--gold); color:#2C3459; transform:scale(1.02); }
+  .vis-num{
+    flex-shrink:0; width:20px; height:20px; border-radius:50%; background:var(--bg);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-dim);
+  }
+  .vis-step.open .vis-num{ background:#2C3459; color:var(--gold); }
+  .vis-caption{ font-size:13px; line-height:1.55; color:var(--text-dim); margin-top:8px; min-height:36px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Sinais e conflitos em Jerusalém e na Galileia</span>
+  </div>
+
+  <div class="eyebrow">Sinais e conflitos em Jerusalém e na Galileia · <span class="ref-tag">João 9</span></div>
+  <h1>O cego de nascença</h1>
+  <p class="sub">Um homem que nunca viu recebe a visão física num sábado — e, ao longo de um interrogatório cada vez mais hostil, também recebe uma visão espiritual que os próprios fariseus, que sempre enxergaram, não têm.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2.5 9 C5 5 13 5 15.5 9 C13 13 5 13 2.5 9 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="9" cy="9" r="1.8" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Quem pecou?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao passar, Jesus vê um homem cego de nascença, e seus discípulos fazem a pergunta que refletia a lógica religiosa comum da época: "Quem pecou, este ou seus pais, para que nascesse cego?" (9.1-2). Jesus corrige o pressuposto por trás da pergunta: nem um nem outro pecou para causar aquilo, "mas foi para que nele se manifestassem as obras de Deus" (9.3).</p>
+          <p>Sem que o homem tenha pedido nada, Jesus cospe na terra, faz lama com a saliva, unge os olhos dele, e o manda lavar-se no tanque de Siloé — "que significa Enviado" (9.6-7). O homem obedece, vai, lava-se, e volta vendo. É um sinal físico completo, mas, como o resto do capítulo mostrará, apenas o começo de algo maior.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → uma coisa sei</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 6 H14 M4 9 H14 M4 12 H10.5" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13 4 L15 6 L13 8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Uma coisa sei</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os vizinhos e conhecidos do homem duvidam que seja o mesmo mendigo de sempre — alguns dizem que sim, outros que apenas se parece com ele; o próprio homem precisa insistir: "Sou eu" (9.8-9). Levado aos fariseus, eles se dividem: uns dizem "esse homem não é de Deus, pois não guarda o sábado", outros perguntam "como pode um homem pecador fazer tais sinais?" (9.16).</p>
+          <p>Interrogado outra vez, sob pressão crescente para negar o que aconteceu ou explicar Jesus de outro jeito, o homem responde com uma honestidade simples, que só fica mais firme a cada nova pergunta: "Uma coisa sei: eu era cego, e agora vejo" (9.25). Ele não tem argumentos teológicos sofisticados — só um fato que ninguém consegue desmentir.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → vós não sabeis de onde ele é</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2.5 V4.5 M9 13.5 V15.5 M2.5 9 H4.5 M13.5 9 H15.5" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="3.2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Vós não sabeis de onde ele é</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao longo do interrogatório, a forma como o homem descreve Jesus muda — não porque alguém lhe ensinou uma doutrina pronta, mas porque ele mesmo vai reconhecendo, passo a passo, o que a própria experiência lhe mostra. Ao mesmo tempo, na direção oposta, os fariseus — que enxergavam perfeitamente e conheciam as Escrituras de cor — ficam cada vez mais fechados, até expulsá-lo da sinagoga, furiosos (9.34).</p>
+          <p>Toque em cada passo para acompanhar essa clareza crescente, lado a lado com a cegueira crescente de quem o interrogava:</p>
+
+          <div class="vis-outer">
+            <div class="vis-label">Como o homem descreveu Jesus, do início ao fim</div>
+            <div class="vis-step-row" id="visStepRow"></div>
+            <div class="vis-caption" id="visCaption">Toque no passo 1 para começar.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → para julgamento vim a este mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V13 L9 16 L4 13 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M6.5 9 L8.3 10.8 L11.5 7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Para julgamento vim a este mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de expulso da sinagoga, Jesus vai ao seu encontro e pergunta se ele crê no Filho do Homem; quando o homem pergunta quem é, para que possa crer, Jesus se revela: "tu já o viste, e é ele quem fala contigo" (9.35-37). O homem responde com uma única palavra que resume toda a sua jornada: "Creio, Senhor" — e o adora (9.38).</p>
+          <p>Jesus então declara o propósito por trás de tudo: "Para julgamento vim a este mundo; para que os que não veem, vejam, e os que veem, se tornem cegos" (9.39). Alguns fariseus que ouvem perguntam se também são cegos; Jesus responde que, se fossem cegos, não teriam pecado — mas, por dizerem "vemos", o seu pecado permanece (9.40-41).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Eu era cego, e agora vejo</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Os fariseus tinham olhos perfeitos e Escrituras memorizadas desde a infância — e, ainda assim, não reconheceram quem estava diante deles. O mendigo cego, sem nenhuma instrução religiosa, sem nenhum título, termina o capítulo vendo mais claramente do que qualquer um deles: física e espiritualmente.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 9.25</span>
+          <p>Uma coisa sei: eu era cego, e agora vejo.</p>
+          <span class="ref">— o homem que foi curado</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Ver não é a mesma coisa que enxergar. É possível ter olhos perfeitos, conhecer a lei de cor, ocupar um lugar de autoridade religiosa — e, mesmo assim, não reconhecer quem Jesus é quando ele está bem diante de si.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Ver, e não enxergar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Ser cego, e finalmente ver</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · o cego de nascença</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const visSteps = [
+    { label:"Um homem chamado Jesus (9.11)", text:"Recém-curado, o homem descreve Jesus apenas pelo que sabe de fato: \"aquele homem chamado Jesus fez lama, untou-me os olhos... e vi\" — enquanto isso, os fariseus já começam a se dividir sobre o sábado (9.16)." },
+    { label:"É um profeta (9.17)", text:"Pressionado a explicar quem o curou, o homem avança na própria conclusão: \"É profeta.\" Os fariseus, ao mesmo tempo, chamam seus pais para tentar desmentir o milagre (9.18-19)." },
+    { label:"Se ele não fosse de Deus, nada poderia fazer (9.33)", text:"Depois de ser interrogado outra vez com hostilidade, o homem raciocina com clareza cada vez maior: \"se este não fosse de Deus, nada poderia fazer.\" Os fariseus reagem o expulsando da sinagoga, furiosos (9.34)." },
+    { label:"Creio, Senhor (9.38)", text:"Quando Jesus mesmo se revela a ele como o Filho do Homem, a clareza chega ao ápice: \"Creio, Senhor\" — e o adora (9.38). Os fariseus, que sempre viram, ouvem de Jesus que o pecado deles permanece (9.41)." }
+  ];
+
+  function buildVisSteps(){
+    const row = document.getElementById('visStepRow');
+    visSteps.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'vis-step';
+      b.innerHTML = '<span class="vis-num">' + (i+1) + '</span><span>' + s.label + '</span>';
+      b.onclick = function(){ revealVis(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildVisSteps();
+
+  function revealVis(btn, i){
+    document.querySelectorAll('.vis-step').forEach(b => b.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('visCaption').textContent = visSteps[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Olhos perfeitos, coração fechado";
+      text.textContent = "Os fariseus tinham olhos perfeitos e Escrituras memorizadas — e ainda assim não reconheceram quem estava diante deles. Por dizerem \"vemos\", o seu pecado permanece (9.41).";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "De mendigo cego a adorador";
+      text.textContent = "Sem instrução religiosa, sem título, o mendigo termina o capítulo vendo mais claramente do que qualquer fariseu: \"Creio, Senhor\" — e o adora (9.38), física e espiritualmente curado.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

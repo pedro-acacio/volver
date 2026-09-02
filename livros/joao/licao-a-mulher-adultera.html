@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A mulher adúltera — João 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — a retirada gradual dos acusadores, em quatro passos */
+  .pedra-outer{ margin-top:16px; }
+  .pedra-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .pedra-step-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .pedra-step{
+    display:flex; align-items:center; gap:8px; border-radius:12px; padding:10px 14px;
+    background:var(--panel-line); border:none; cursor:pointer; flex:1 1 150px; text-align:left;
+    font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; font-weight:500; color:var(--text-dim);
+    transition: background .3s ease, color .3s ease, transform .2s ease;
+  }
+  .pedra-step.open{ background:var(--gold); color:#2C3459; transform:scale(1.02); }
+  .pedra-num{
+    flex-shrink:0; width:20px; height:20px; border-radius:50%; background:var(--bg);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-dim);
+  }
+  .pedra-step.open .pedra-num{ background:#2C3459; color:var(--gold); }
+  .pedra-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-joao.html">Volver</a>
+    <span class="brand-track">Sinais e conflitos em Jerusalém e na Galileia</span>
+  </div>
+
+  <div class="eyebrow">Sinais e conflitos em Jerusalém e na Galileia · <span class="ref-tag">João 8</span></div>
+  <h1>A mulher adúltera</h1>
+  <p class="sub">Escribas e fariseus armam uma cilada para condenar uma mulher e, junto com ela, o próprio Jesus — e terminam sendo os primeiros a se retirar, condenados pela própria consciência.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 15 L9 4 L12 15" stroke-width="1.2" stroke-linejoin="round"/>
+          <circle cx="9" cy="9" r="2" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Apanhada em flagrante</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus ensina no templo, cedo pela manhã, cercado por todo o povo (8.1-2), quando escribas e fariseus trazem até ele uma mulher "apanhada em flagrante adultério" e a colocam no meio de todos (8.3). Citam a lei de Moisés, que ordenava o apedrejamento em casos assim (Levítico 20.10; Deuteronômio 22.22), e perguntam a Jesus o que ele diz sobre o caso (8.4-5).</p>
+          <p>O próprio texto revela que a pergunta não nascia de zelo pela justiça, mas de uma armadilha: "diziam isto, tentando-o, para o poderem acusar" (8.6). Se Jesus dissesse para não apedrejá-la, pareceria contrariar a lei de Moisés; se dissesse para apedrejá-la, contrariaria sua reputação de misericórdia e entraria em choque com a autoridade romana, que reservava para si o direito de aplicar a pena capital. Era uma cilada dupla, contra a mulher e contra Jesus ao mesmo tempo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → aquele que estiver sem pecado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 14 L12 8 L14 10 L8 14" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M12 8 L13.5 5" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Aquele que estiver sem pecado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante da pergunta, Jesus não responde de imediato — abaixa-se e escreve no chão com o dedo (8.6), o único registro em toda a Bíblia de Jesus escrevendo algo, e o texto nunca diz o quê. Como insistem em perguntar, ele se levanta e responde com uma única frase, que desarma toda a armadilha: "Aquele que dentre vós está sem pecado seja o primeiro que atire pedra contra ela" (8.7).</p>
+          <p>Em seguida, volta a abaixar-se e a escrever no chão (8.8) — e o que acontece depois é silencioso e progressivo: "ouvindo eles isto, e acusados pela própria consciência, saíam um a um, a começar pelos mais velhos até aos derradeiros" (8.9). Toque em cada passo para acompanhar a cena:</p>
+
+          <div class="pedra-outer">
+            <div class="pedra-label">A cena, passo a passo (8.6-9)</div>
+            <div class="pedra-step-row" id="pedraStepRow"></div>
+            <div class="pedra-caption" id="pedraCaption">Toque no passo 1 para começar.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → nem eu te condeno</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 8 L7.5 11.5 L14 5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Nem eu te condeno</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quando todos se retiram, Jesus fica sozinho com a mulher, ainda de pé no meio de onde estava (8.9). Ele se levanta e pergunta: "Mulher, onde estão aqueles teus acusadores? Ninguém te condenou?" Ela responde: "Ninguém, Senhor" (8.10-11).</p>
+          <p>A resposta de Jesus não absolve o pecado como se não importasse, nem condena a mulher como seus acusadores queriam: "Nem eu te condeno; vai-te, e não peques mais" (8.11). É perdão real, dirigido a uma pessoa real — e, junto com o perdão, um chamado igualmente real a uma vida diferente.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → eu sou a luz do mundo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="2.6" stroke-width="1.2"/>
+          <path d="M9 2.5 V4.5 M9 13.5 V15.5 M2.5 9 H4.5 M13.5 9 H15.5 M4.6 4.6 L6 6 M12 12 L13.4 13.4 M13.4 4.6 L12 6 M6 12 L4.6 13.4" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Eu sou a luz do mundo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus continua ensinando no templo e declara: "Eu sou a luz do mundo; quem me segue não andará em trevas, mas terá a luz da vida" (8.12). Os fariseus contestam a validade do seu próprio testemunho sobre si mesmo; Jesus responde que seu testemunho é verdadeiro porque não está sozinho — o Pai que o enviou também testifica dele (8.13-18).</p>
+          <p>Ele adverte que, se não crerem que ele é quem diz ser, morrerão em seus pecados (8.24), e promete que "a verdade vos libertará" a quem permanecer em sua palavra (8.31-32). Mas é ao afirmar, sobre sua própria existência, "antes que Abraão existisse, EU SOU" — reivindicando para si o mesmo nome divino revelado a Moisés na sarça (Êxodo 3.14) — que a reação se torna violenta: pegam pedras para atirar nele (8.58-59).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Nem eu te condeno</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Os acusadores da mulher chegaram com pedras nas mãos e com uma pergunta desenhada para condenar tanto ela quanto Jesus. Saem sem atirar uma única pedra, um a um, começando pelos mais velhos — os que, com mais anos de vida, tinham mais motivo para reconhecer a própria culpa diante da pergunta de Jesus.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">João 8.10-11</span>
+          <p>Mulher, onde estão aqueles teus acusadores? Ninguém te condenou? [...] Nem eu te condeno; vai-te, e não peques mais.</p>
+          <span class="ref">— Jesus, à mulher</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Chegar armado de pedras contra o pecado alheio é fácil — até alguém apontar o próprio pecado de volta. Diante de Jesus, os acusadores mais convictos são os primeiros a reconhecer que também precisam de graça, e é exatamente isso que a mulher recebe, sem que o mal que ela fez deixe de importar.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Os primeiros a apedrejar</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Os primeiros a se retirar</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de João · a mulher adúltera</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const pedraSteps = [
+    { label:"Jesus escreve", text:"Diante da pergunta armadilha, Jesus não responde de imediato — abaixa-se e escreve no chão com o dedo, o único registro bíblico dele escrevendo algo (8.6). O silêncio já começa a desarmar a cena." },
+    { label:"O desafio", text:"Como insistem, Jesus se levanta e diz uma única frase: \"Aquele que dentre vós está sem pecado seja o primeiro que atire pedra contra ela\" (8.7) — e volta a escrever no chão (8.8)." },
+    { label:"Os mais velhos saem primeiro", text:"\"Acusados pela própria consciência, saíam um a um, a começar pelos mais velhos\" (8.9) — os que tinham mais anos de vida foram os primeiros a reconhecer, em silêncio, a própria culpa." },
+    { label:"Todos se retiram", text:"Um a um, até os derradeiros, todos os acusadores se vão — sem que uma única pedra tenha sido atirada. Jesus fica sozinho com a mulher, no meio de onde ela havia sido colocada (8.9)." }
+  ];
+
+  function buildPedraSteps(){
+    const row = document.getElementById('pedraStepRow');
+    pedraSteps.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pedra-step';
+      b.innerHTML = '<span class="pedra-num">' + (i+1) + '</span><span>' + s.label + '</span>';
+      b.onclick = function(){ revealPedra(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildPedraSteps();
+
+  function revealPedra(btn, i){
+    document.querySelectorAll('.pedra-step').forEach(b => b.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('pedraCaption').textContent = pedraSteps[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Fácil até alguém apontar de volta";
+      text.textContent = "Chegar armado de pedras contra o pecado alheio é fácil — até Jesus perguntar quem, entre os acusadores, está sem pecado (8.7). Nenhum deles resistiu à própria consciência.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Perdão real, chamado real";
+      text.textContent = "Diante de Jesus, os acusadores mais convictos foram os primeiros a se retirar, reconhecendo que também precisavam de graça — e é exatamente essa graça que a mulher recebe: \"nem eu te condeno; vai-te, e não peques mais\" (8.11).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
