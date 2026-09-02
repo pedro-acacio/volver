@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A traição e o julgamento — Mateus 26.47-75</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* A pergunta de Caifás x a resposta que sela a condenação */
+  .caif-grid{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .caif-item{ display:flex; align-items:flex-start; gap:12px; border-radius:11px; padding:12px 14px; border:1px solid var(--panel-line); background:var(--bg); cursor:pointer; text-align:left; width:100%; transition:border-color .2s ease; }
+  .caif-item:hover{ border-color:var(--gold); }
+  .caif-num{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--gold); flex-shrink:0; width:20px; }
+  .caif-body{ flex:1; }
+  .caif-title{ font-size:13.5px; color:var(--text); font-weight:600; }
+  .caif-ref{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:1px; }
+  .caif-text{ font-size:13px; line-height:1.55; color:var(--text-dim); margin-top:10px; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">A paixão e a ressurreição</span>
+  </div>
+
+  <div class="eyebrow">A paixão e a ressurreição · <span class="ref-tag">Mateus 26.47-75</span></div>
+  <h1>A traição e o julgamento</h1>
+  <p class="sub">Um beijo entrega Jesus a uma multidão armada; do lado de fora do julgamento, Pedro nega conhecê-lo três vezes antes que o galo cante.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L9 9" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 9 L14 4" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="4" cy="14" r="1.6" stroke-width="1.1"/>
+          <circle cx="14" cy="4" r="1.6" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A traição com um beijo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Judas chega ao Getsêmani à frente de uma grande multidão armada de espadas e varapaus, enviada pelos principais sacerdotes e anciãos do povo. Havia combinado com eles um sinal: "aquele que eu beijar, esse é; prendei-o." Aproxima-se de Jesus, diz "salve, Mestre", e o beija (26.47-49). Jesus responde com uma serenidade que desarma qualquer expectativa de resistência: "amigo, a que vieste?" (26.50) — chamando de amigo o próprio homem que o está entregando.</p>
+          <p>Um dos que estavam com Jesus saca uma espada e fere o servo do sumo sacerdote, decepando-lhe a orelha. Jesus o repreende: "todos os que lançarem mão da espada, à espada morrerão" — e observa que poderia pedir ao Pai mais de doze legiões de anjos, mas isso teria que acontecer "para que se cumpram as Escrituras, que dizem que assim convém que aconteça" (26.51-54). Não é uma prisão imposta a um homem indefeso: é uma prisão que só acontece porque Jesus, podendo evitá-la com um pedido, escolhe permiti-la.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → diante do Sinédrio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V14 H4 Z" stroke-width="1.3"/>
+          <path d="M4 8 H14" stroke-width="1.1"/>
+          <path d="M9 4 V14" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Diante do Sinédrio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Levado a Caifás, o sumo sacerdote, Jesus enfrenta ali todo o Sinédrio reunido, buscando falso testemunho para poder matá-lo — mas nada de consistente aparece, até que duas testemunhas distorcem algo que ele disse sobre destruir e reedificar o templo (26.57-61). Diante do silêncio de Jesus quanto a essas acusações, Caifás o pressiona diretamente, sob juramento: "conjuro-te, pelo Deus vivo, que nos digas se tu és o Cristo, o Filho de Deus" (26.63).</p>
+          <p>Jesus responde afirmativamente, e acrescenta algo ainda mais ousado: "vós o dissestes; e digo-vos mais: desde agora vereis o Filho do Homem assentado à direita do Todo-poderoso, e vindo sobre as nuvens do céu" — uma alusão direta a Daniel 7.13-14, onde um "filho do homem" recebe domínio, glória e reino eternos, diretamente de Deus. Caifás rasga suas vestes, declarando blasfêmia consumada, e todo o Sinédrio o condena à morte, cuspindo nele e esbofeteando-o (26.64-68).</p>
+
+          <p>Toque abaixo para ver como a pergunta e a resposta se encaixam:</p>
+          <div class="caif-grid" id="caifGrid"></div>
+          <div class="caif-text" id="caifText">Toque em cada item para ver o que ele revela.</div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a negação de Pedro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A negação de Pedro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enquanto isso, Pedro está sentado no pátio, do lado de fora. Uma criada se aproxima e o reconhece: "tu também estavas com Jesus, o galileu." Ele nega diante de todos: "não sei o que dizes" (26.69-70). Sai para o alpendre; outra criada o identifica de novo diante dos que ali estavam; ele nega mais uma vez, agora com juramento: "não conheço tal homem" (26.71-72).</p>
+          <p>Pouco depois, os que ali estavam se aproximam e insistem: "verdadeiramente também tu és um deles, pois a tua fala te denuncia" — o próprio sotaque galileu de Pedro o entrega. Ele nega pela terceira vez, "e começou a praguejar e a jurar, dizendo: não conheço esse homem." E, no mesmo instante, o galo canta (26.73-74).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o choro amargo de Pedro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 8 C6 6 7.2 5 9 5 C10.8 5 12 6 12 8 C12 10.5 9 13 9 13 C9 13 6 10.5 6 8 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O choro amargo de Pedro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No instante em que o galo canta, Pedro se lembra da palavra que Jesus lhe havia dito poucas horas antes: "antes que o galo cante, três vezes me negarás." Saindo dali, "chorou amargamente" (26.75) — sem tentar se justificar diante de ninguém, sem minimizar o que acabara de fazer, sem procurar uma explicação que o absolvesse. Só o choro, cru e imediato, diante da própria falha.</p>
+          <p>É impossível não colocar esse choro lado a lado com o que o capítulo seguinte revela sobre Judas: dois discípulos que falharam gravemente na mesma noite, um negando conhecer Jesus, o outro entregando-o por dinheiro. Mas os caminhos depois da falha se separam de forma radical — e é justamente essa diferença que o próximo movimento revela.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um choro que não é o fim da história</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A queda de Pedro é grave: negar publicamente, com juramento, sob pressão mínima — não uma espada apontada para ele, apenas a pergunta de uma criada — conhecer o próprio Mestre com quem havia vivido por três anos. Mas o Evangelho não trata essa queda como definitiva. Antes mesmo de acontecer, Jesus já havia prometido ir adiante de Pedro para a Galileia depois de ressuscitar (26.32) — uma promessa de reencontro feita antes mesmo da falha que a tornaria necessária.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 26.75</span>
+          <p>E lembrou-se Pedro das palavras de Jesus, que lhe dissera: Antes que o galo cante, três vezes me negarás. E, saindo dali, chorou amargamente.</p>
+          <span class="ref">— o choro de Pedro</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A diferença entre Pedro e Judas não está no tamanho da falha — negar sob juramento e trair por dinheiro são ambos atos graves. A diferença está no que vem depois: um remorso que reconhece o pecado diante de Deus e se deixa restaurar, e um remorso que se fecha em desespero. O choro amargo de Pedro, por mais doloroso que fosse naquela noite, era exatamente o tipo de queda da qual ainda se pode voltar — porque a graça que o esperava na Galileia já estava prometida antes de ele cair.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma queda que parece o fim</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma queda da qual ainda se pode voltar</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · a traição e o julgamento</footer>
+</div>
+
+<script>
+  const caifData = [
+    { num: "1", title: "A pergunta sob juramento", ref: "Mateus 26.63", text: "Caifás pressiona diretamente: \"conjuro-te, pelo Deus vivo, que nos digas se tu és o Cristo, o Filho de Deus.\" Uma pergunta que exigia resposta clara, sob a mais séria fórmula legal judaica." },
+    { num: "2", title: "A resposta que se afirma", ref: "Mateus 26.64a", text: "\"Tu o dissestes.\" Jesus não recua, não ambiguiza, não busca uma saída diplomática — confirma, sob o mesmo juramento, exatamente a acusação que decidiria seu destino." },
+    { num: "3", title: "A alusão a Daniel 7", ref: "Mateus 26.64b", text: "\"Vereis o Filho do Homem assentado à direita do Todo-poderoso, e vindo sobre as nuvens do céu\" — a mesma figura de Daniel 7.13-14, que recebe domínio, glória e reino eternos diretamente de Deus." },
+    { num: "4", title: "A condenação selada", ref: "Mateus 26.65-66", text: "Caifás rasga as próprias vestes e declara blasfêmia. É exatamente a verdade dita sem rodeios — quem Jesus é — que sela sua condenação; ele não é condenado por um crime, mas por afirmar sua própria identidade." }
+  ];
+
+  function buildCaifGrid(){
+    const grid = document.getElementById('caifGrid');
+    caifData.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'caif-item';
+      b.innerHTML = '<span class="caif-num">' + d.num + '</span><span class="caif-body"><span class="caif-title">' + d.title + '</span><span class="caif-ref">' + d.ref + '</span></span>';
+      b.onclick = function(){ document.getElementById('caifText').textContent = d.text; };
+      grid.appendChild(b);
+    });
+  }
+  buildCaifGrid();
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Negar, sob juramento, com uma praga na boca";
+      text.textContent = "Diante de uma simples criada, e não de uma espada, Pedro nega três vezes conhecer Jesus — a última vez praguejando e jurando. Vista sozinha, é uma queda que parece encerrar qualquer futuro com Cristo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma promessa feita antes da queda";
+      text.textContent = "Horas antes de Pedro negar, Jesus já havia prometido ir adiante dele para a Galileia depois de ressuscitar (26.32) — a graça que restauraria Pedro estava garantida antes mesmo de ele precisar dela.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

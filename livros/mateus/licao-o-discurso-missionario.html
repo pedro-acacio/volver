@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O discurso missionário — Mateus 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Como o Mestre, assim o discípulo */
+  .dm-outer{ margin-top:16px; }
+  .dm-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .dm-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .dm-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .dm-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">As obras do Reino</span>
+  </div>
+
+  <div class="eyebrow">As obras do Reino · <span class="ref-tag">Mateus 10</span></div>
+  <h1>O discurso missionário</h1>
+  <p class="sub">Jesus envia os doze com autoridade sobre doenças e demônios — e os avisa, sem rodeios, que serão perseguidos por causa do seu nome.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="2.4" stroke-width="1.2"/>
+          <circle cx="4" cy="12" r="2.4" stroke-width="1.2"/>
+          <circle cx="14" cy="12" r="2.4" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Os doze enviados</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus dá aos doze discípulos — nomeados um a um (10.2-4), incluindo "Mateus, o publicano" e "Judas Iscariotes, que também o traiu" — autoridade sobre espíritos imundos e para curar toda enfermidade e toda espécie de moléstia. Os envia, num primeiro momento, apenas às "ovelhas perdidas da casa de Israel" (10.6): não ainda aos gentios ou aos samaritanos, cuja missão viria depois, após a ressurreição (28.19).</p>
+          <p>Instrui-os a irem sem provisões extras — sem ouro, prata, cobre, alforje, sandálias sobressalentes ou bordão — pois "de graça recebestes, de graça dai" (10.8-10). Onde não forem recebidos, devem sacudir o pó dos pés ao sair, como testemunho contra aquela casa ou cidade (10.14).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → como ovelhas entre lobos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C6 5 4 8 4 11 A5 5 0 0 0 14 11 C14 8 12 5 9 2 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Como ovelhas no meio de lobos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus avisa com franqueza total: os enviará "como ovelhas ao meio de lobos" (10.16). Serão entregues a tribunais, açoitados em sinagogas, levados perante governadores e reis por causa dele; até dentro das próprias famílias haverá traição — "o irmão entregará à morte o irmão, e o pai, ao filho" (10.17-21). Não há promessa de circunstâncias fáceis.</p>
+          <p>Mas promete que o Espírito do Pai falará por meio deles na hora certa, e resume o padrão com uma frase que atravessa toda a missão cristã: "não é o discípulo mais do que o seu mestre, nem o servo mais do que o seu senhor... se ao pai de família chamaram Belzebu, quanto mais aos seus domésticos?" (10.24-25).</p>
+
+          <div class="dm-outer">
+            <div class="dm-label">Como o Mestre, assim o discípulo</div>
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnDmMestre" onclick="showDmOutcome('mestre')">Como trataram o Mestre</button>
+              <button class="toggle-btn" id="btnDmDiscipulo" onclick="showDmOutcome('discipulo')">O que os discípulos deveriam esperar</button>
+            </div>
+            <div class="dm-outcome" id="dmOutcome">
+              <h4 id="dmTitle"></h4>
+              <p id="dmText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → não temais os que matam o corpo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L9 16 M4 6 L14 6" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="6" cy="4" r="1.4" stroke-width="1"/>
+          <circle cx="12" cy="4" r="1.4" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Não temais os que matam o corpo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Não temais, pois, os que matam o corpo e não podem matar a alma; temei antes aquele que pode fazer perecer no inferno tanto a alma como o corpo" (10.28). O temor devido a Deus reordena qualquer outro medo humano — inclusive o medo da perseguição que acabara de ser anunciada.</p>
+          <p>Jesus ilustra o cuidado do Pai com dois exemplos do cotidiano: pardais, vendidos por quase nada, mas dos quais nenhum cai por terra sem que o Pai saiba; e os próprios cabelos da cabeça, todos contados (10.29-30). Se o cuidado de Deus alcança até isso, quanto mais os discípulos enviados em seu nome. Promete ainda que quem o confessar diante dos homens, ele o confessará diante do Pai — e o inverso também é verdade (10.32-33).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → não vim trazer paz, mas espada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L14 4" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M10 4 H14 V8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Não vim trazer paz, mas espada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um dos ditos mais duros do discurso: "não cuideis que vim trazer paz à terra; não vim trazer paz, mas espada" (10.34). O evangelho dividirá até famílias — e quem amar pai ou mãe, filho ou filha, mais do que a Jesus, "não é digno de mim" (10.37). Quem perder a vida por causa dele a achará (10.39).</p>
+          <p>O discurso encerra, porém, com uma promessa de recompensa a quem receber os discípulos e aos que eles representam: até "um copo de água fria" dado apenas "em nome de discípulo" não perderá sua recompensa (10.42). Depois de tanta advertência severa, a última palavra é sobre o cuidado que Deus tem até com o menor gesto de acolhida à sua missão.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Enviados sem falsas garantias</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Ao contrário de um recrutador que promete apenas sucesso, Jesus prepara seus discípulos com honestidade total sobre o custo da missão — tribunais, açoites, traição familiar, até a morte. E mesmo assim os envia, não confiantes em circunstâncias fáceis, mas no cuidado minucioso do Pai, que conta pardais e cabelos.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 10.29-31</span>
+          <p>Não se vendem dois passarinhos por um ceitil? E nenhum deles cairá em terra sem a vontade de vosso Pai... e até mesmo os cabelos da vossa cabeça estão todos contados. Não temais, pois; mais valeis vós do que muitos passarinhos.</p>
+          <span class="ref">— aos doze, antes do envio</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O padrão do discurso é claro: quanto mais próximo alguém vive de Jesus, mais deve esperar o mesmo tratamento que ele recebeu. Mas a resposta a esse tratamento nunca é o pânico — é um temor reorientado, que reconhece em Deus, não nos homens, a única autoridade final sobre a vida.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Temer os que só ferem o corpo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Temer, e confiar, somente em Deus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · o discurso missionário</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showDmOutcome(type){
+    const btnM = document.getElementById('btnDmMestre');
+    const btnD = document.getElementById('btnDmDiscipulo');
+    btnM.classList.remove('active-worry');
+    btnD.classList.remove('active-calm');
+    const title = document.getElementById('dmTitle');
+    const text = document.getElementById('dmText');
+
+    if (type === 'mestre'){
+      btnM.classList.add('active-worry');
+      title.textContent = "Chamaram Belzebu ao Mestre";
+      text.textContent = "Os próprios líderes religiosos, incapazes de negar seus milagres, atribuíram o poder de Jesus ao \"príncipe dos demônios\" — a mais alta autoridade caluniada pela mais alta rejeição.";
+    } else {
+      btnD.classList.add('active-calm');
+      title.textContent = "Quanto mais aos seus domésticos";
+      text.textContent = "Se trataram assim o pai de família, os discípulos não deveriam esperar tratamento melhor — mas também não deveriam temer, pois o mesmo Mestre caluniado é quem os sustenta.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um temor que não alcança a alma";
+      text.textContent = "Tribunais, açoites, até a morte física — tudo isso os perseguidores podem infligir, mas nenhum deles pode tocar o que realmente importa diante de Deus.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Contado até o último cabelo";
+      text.textContent = "O mesmo Pai que sabe de cada pardal que cai conhece cada discípulo enviado — e é só diante dele, não dos homens, que o verdadeiro temor faz sentido.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

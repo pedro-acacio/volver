@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A multiplicação dos pães — Mateus 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Cinco pães, dois peixes — o medidor da desproporção */
+  .mp-scale-outer{ margin-top:16px; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); }
+  .mp-scale-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .mp-scale-row{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:12px; }
+  .mp-scale-btn{ font-family:'IBM Plex Sans', sans-serif; font-size:13px; font-weight:500; padding:8px 14px; border-radius:20px; border:1.5px solid var(--panel-line); background:transparent; color:var(--text-dim); cursor:pointer; transition: all .25s ease; }
+  .mp-scale-btn:hover{ transform: translateY(-2px); }
+  .mp-scale-btn.mp-active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .mp-scale-bar-outer{ height:22px; border-radius:8px; background: var(--panel-line); overflow:hidden; }
+  .mp-scale-bar{ height:100%; background: var(--gold); width:3%; border-radius:8px; transition: width .7s cubic-bezier(.34,1.56,.64,1); }
+  .mp-scale-caption{ font-size:13px; line-height:1.55; color:var(--text-dim); margin-top:10px; min-height:36px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">A autoridade do Reino</span>
+  </div>
+
+  <div class="eyebrow">A autoridade do Reino · <span class="ref-tag">Mateus 14</span></div>
+  <h1>A multiplicação dos pães</h1>
+  <p class="sub">Cinco mil homens alimentados com cinco pães e dois peixes; depois, Jesus caminha sobre as águas de um mar agitado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L9 2 L14 6" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 16 H15" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A morte de João Batista</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Herodes Antipas ouve falar de Jesus e teme que seja João Batista ressuscitado dos mortos — tal era a impressão que os milagres causavam (14.1-2). O texto então retrocede para explicar por quê: Herodes havia prendido João por causa de Herodias, mulher de seu irmão, a quem João ousara confrontar publicamente, dizendo "não te é lícito possuí-la"; Herodes queria matá-lo, mas temia o povo, que tinha João como profeta (14.3-5).</p>
+          <p>No aniversário de Herodes, a filha de Herodias dança diante dos convidados e agrada tanto o rei que ele promete, sob juramento, dar-lhe o que pedisse. Instruída pela mãe, ela pede a cabeça de João Batista numa salva. Por causa do juramento e dos que estavam à mesa, Herodes manda decapitá-lo na prisão. Os discípulos de João tomam o corpo, sepultam-no, e vão contar a Jesus (14.6-12) — o pano de fundo sombrio sobre o qual o resto do capítulo se desenrola: o custo real de anunciar a verdade a um poder corrupto.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → cinco pães, dois peixes, cinco mil homens</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <ellipse cx="9" cy="9" rx="6" ry="4" stroke-width="1.3"/>
+          <path d="M5.5 9 H12.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Cinco pães, dois peixes, cinco mil homens</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao ouvir da morte de João, Jesus se retira de barco a um lugar deserto, sozinho — mas as multidões, sabendo, o seguem a pé desde as cidades. Vendo-as, tem compaixão delas e cura seus enfermos (14.13-14). Ao anoitecer, os discípulos pedem que despache o povo para que vá às aldeias comprar comida; Jesus responde: "não necessitam ir; dai-lhes vós de comer" (14.15-16).</p>
+          <p>Diante de apenas cinco pães e dois peixes para uma multidão enorme, Jesus manda o povo se assentar sobre a relva, toma os pães, olha para o céu, abençoa-os, parte-os e os dá aos discípulos para distribuir; o mesmo faz com os peixes. Todos comem e se fartam, e ainda sobram doze cestos cheios de pedaços — cerca de cinco mil homens estavam presentes, sem contar mulheres e crianças (14.17-21).</p>
+
+          <div class="mp-scale-outer">
+            <div class="mp-scale-label">A desproporção entre o que havia e o que sobrou</div>
+            <div class="mp-scale-row">
+              <button type="button" class="mp-scale-btn" id="mpBtnAntes" onclick="showMpScale('antes')">O que havia</button>
+              <button type="button" class="mp-scale-btn" id="mpBtnDepois" onclick="showMpScale('depois')">O que sobrou</button>
+            </div>
+            <div class="mp-scale-bar-outer"><div class="mp-scale-bar" id="mpScaleBar"></div></div>
+            <div class="mp-scale-caption" id="mpScaleCaption">Toque em um dos botões para comparar o ponto de partida com o resultado.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Jesus anda sobre o mar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 Q5 9 9 12 T16 12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M2 15 Q5 12 9 15 T16 15" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="9" cy="6" r="2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Jesus anda sobre o mar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois, Jesus obriga os discípulos a entrarem no barco e seguirem adiante, enquanto ele despede a multidão e sobe sozinho a um monte para orar (14.22-23). De madrugada, com o barco já distante da terra e açoitado pelas ondas, Jesus vai ao encontro deles andando sobre o mar; os discípulos, vendo-o, gritam de terror, pensando ser um fantasma. Ele fala imediatamente: "tende bom ânimo, sou eu; não temais" (14.24-27).</p>
+          <p>Pedro pede permissão para ir a seu encontro sobre as águas; Jesus diz "vem", e Pedro efetivamente anda sobre o mar em direção a ele — até reparar na força do vento, temer, e começar a afundar, clamando "Senhor, salva-me!". Jesus estende a mão imediatamente e o segura, perguntando "homem de pequena fé, por que duvidaste?". Ao subirem no barco, o vento se aquieta, e os que estavam ali o adoram: "verdadeiramente és Filho de Deus" (14.28-33).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → curas em Genesaré</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 6 L4 4 M9 6 L14 4" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M3 15 H15" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Curas em Genesaré</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Atravessando o mar, chegam à terra de Genesaré; assim que os homens do lugar reconhecem Jesus, mandam aviso por toda a região circunvizinha e trazem-lhe todos os que estavam enfermos (14.34-35).</p>
+          <p>Pediam apenas que pudessem tocar a orla de sua veste — e "todos os que a tocaram ficaram curados" (14.36), um eco ampliado do episódio da mulher com o fluxo de sangue no capítulo anterior (9.20-22), agora multiplicado por uma região inteira que já ouvira falar do poder que emanava dele.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Por que duvidaste?</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A caminhada de Pedro sobre as águas é um retrato em miniatura de toda a vida de fé. Enquanto seus olhos estão fixos em quem o chamou, ele faz o impossível — anda sobre o mesmo mar que, um instante antes, ameaçava afundar o barco inteiro. No momento em que os olhos se deslocam para a circunstância — "vendo o vento forte" — o mesmo Pedro que andava começa a afundar.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 14.31</span>
+          <p>E Jesus, estendendo logo a mão, segurou-o, e disse-lhe: Homem de pequena fé, por que duvidaste?</p>
+          <span class="ref">— Jesus segura Pedro nas águas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Mas o texto não termina no afundar: termina na mão que se estende "logo", imediatamente, antes mesmo de qualquer explicação ser pedida. A dúvida de Pedro é real e é repreendida — mas não é maior do que a mão que o segura. É essa combinação, e não uma fé perfeita, que leva os discípulos a adorá-lo no barco.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Olhar para o vento</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Olhar para quem chama</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · a multiplicação dos pães</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showMpScale(type){
+    const btnAntes = document.getElementById('mpBtnAntes');
+    const btnDepois = document.getElementById('mpBtnDepois');
+    btnAntes.classList.remove('mp-active');
+    btnDepois.classList.remove('mp-active');
+    const bar = document.getElementById('mpScaleBar');
+    const caption = document.getElementById('mpScaleCaption');
+
+    if (type === 'antes'){
+      btnAntes.classList.add('mp-active');
+      bar.style.width = '3%';
+      caption.textContent = "Cinco pães e dois peixes — tudo o que os discípulos tinham em mãos diante de uma multidão de milhares (14.17).";
+    } else {
+      btnDepois.classList.add('mp-active');
+      bar.style.width = '100%';
+      caption.textContent = "Cerca de cinco mil homens comem e se fartam, sem contar mulheres e crianças — e ainda sobram doze cestos cheios de pedaços (14.20-21).";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A circunstância cresce até ocupar tudo";
+      text.textContent = "Assim que Pedro repara na força do vento, o próprio vento — que já estava lá desde o início — passa a ocupar todo o seu campo de visão, e ele começa a afundar no mesmo mar que segundos antes pisava com firmeza.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A mão que segura antes de qualquer explicação";
+      text.textContent = "Jesus estende a mão \"logo\", sem esperar Pedro se explicar ou se recompor sozinho — a fé cristã não é ausência de dúvida, mas a certeza de que a mão de Cristo alcança quem duvida antes mesmo de ser chamada.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

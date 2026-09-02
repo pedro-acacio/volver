@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chamado em meio à oposição — Mateus 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Quem merecia x quem foi chamado */
+  .ch-outer{ margin-top:16px; }
+  .ch-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .ch-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .ch-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .ch-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">As obras do Reino</span>
+  </div>
+
+  <div class="eyebrow">As obras do Reino · <span class="ref-tag">Mateus 9</span></div>
+  <h1>Chamado em meio à oposição</h1>
+  <p class="sub">Um paralítico é perdoado antes de ser curado; um cobrador de impostos é chamado da própria mesa de trabalho.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="5" y="4" width="8" height="10" rx="1" stroke-width="1.3"/>
+          <path d="M7 8 H11 M7 11 H11" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O paralítico perdoado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Amigos trazem a Jesus um paralítico deitado numa maca. Vendo a fé deles, Jesus diz primeiro algo que ninguém esperava: "tem bom ânimo, filho, perdoados são os teus pecados" (9.2) — não a cura física que todos aguardavam, mas algo mais fundamental. Alguns escribas pensam consigo: "este blasfema."</p>
+          <p>Sabendo seus pensamentos, Jesus pergunta o que é mais fácil dizer — "perdoados são os teus pecados" ou "levanta-te e anda"? — e cura o homem fisicamente "para que saibais que o Filho do homem tem sobre a terra o poder de perdoar pecados" (9.5-6). A cura visível prova a autoridade invisível; o milagre existe para credenciar a afirmação mais ousada.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o chamado de Mateus</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M11 5 L15 9 L11 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O chamado de Mateus e a nova aliança</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus vê Mateus — o próprio autor deste evangelho — sentado na coletoria de impostos, e diz apenas duas palavras: "segue-me" (9.9). Mateus se levanta e o segue imediatamente, sem hesitação registrada. Depois, janta em sua própria casa com "muitos publicanos e pecadores", escandalizando os fariseus, que perguntam aos discípulos por que seu mestre come com gente assim.</p>
+          <p>Jesus responde: "não necessitam de médico os sãos, mas, sim, os doentes... eu não vim chamar justos, mas pecadores, ao arrependimento" (9.12-13). Questionado depois sobre jejum, fala de vinho novo em odres novos e pano novo em veste velha (9.16-17) — algo genuinamente novo chegou, que não cabe nas categorias religiosas antigas.</p>
+
+          <div class="ch-outer">
+            <div class="ch-label">Um contraste direto</div>
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnChFariseus" onclick="showChOutcome('fariseus')">Quem os fariseus achavam que merecia Jesus</button>
+              <button class="toggle-btn" id="btnChJesus" onclick="showChOutcome('jesus')">Quem Jesus veio buscar</button>
+            </div>
+            <div class="ch-outcome" id="chOutcome">
+              <h4 id="chTitle"></h4>
+              <p id="chText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a filha do chefe e a mulher curada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L9 15 M4 8 L14 8" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A filha do chefe e a mulher com hemorragia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um chefe da sinagoga pede que Jesus venha ressuscitar sua filha recém-morta. No caminho, uma mulher com um fluxo de sangue havia doze anos toca a orla da veste de Jesus, crendo que só isso bastaria — é curada instantaneamente. Jesus a chama "filha" e elogia sua fé: "tem bom ânimo, filha, a tua fé te salvou" (9.20-22).</p>
+          <p>Chegando à casa do chefe, apesar da zombaria dos que já choravam a menina como morta, Jesus a ressuscita com apenas uma palavra e o toque da mão (9.23-26). Duas mulheres — uma idosa em sofrimento crônico, uma menina recém-morta — recebem, cada uma a seu modo, exatamente o que precisavam de quem tem autoridade até sobre a morte.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → dois cegos, um mudo, e a seara grande</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 12 Q9 4 16 12" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="9" cy="11" r="2" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Dois cegos, um mudo, e a seara grande</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dois cegos clamam "tem misericórdia de nós, Filho de Davi" e são curados conforme sua fé (9.27-31). Um mudo endemoninhado é libertado e fala, para espanto das multidões — enquanto os fariseus, incapazes de negar o milagre, atribuem o poder de Jesus a "o príncipe dos demônios" (9.32-34), a mesma acusação que voltará com mais força no capítulo 12.</p>
+          <p>Jesus percorre cidades e aldeias, "vendo as multidões, teve compaixão delas, porque andavam desgarradas, e lançadas por terra, como ovelhas que não têm pastor" (9.36). Conclui com uma imagem agrícola: "a seara é realmente grande, mas os trabalhadores são poucos; rogai, pois, ao Senhor da seara que mande trabalhadores para a sua seara" (9.37-38) — preparando a transição direta para o envio dos doze, no capítulo seguinte.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Compaixão que chama trabalhadores</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O capítulo termina não com mais um milagre, mas com a compaixão de Jesus diante de multidões perdidas — o mesmo padrão que percorre todo o capítulo, em que a cura física sempre aponta para uma necessidade mais profunda: pecado perdoado, uma vida inteira transformada por um chamado, fé reconhecida onde ninguém mais olhava. Jesus não vê números; vê ovelhas sem pastor.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 9.36-38</span>
+          <p>E, vendo as multidões, teve compaixão delas, porque andavam desgarradas, e lançadas por terra, como ovelhas que não têm pastor... a seara é realmente grande, mas os trabalhadores são poucos.</p>
+          <span class="ref">— antes do envio dos doze</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Do paralítico ao cobrador de impostos, da mulher enferma às multidões sem rumo, este capítulo mostra um Rei que se move em direção à necessidade, não se afasta dela. É essa mesma compaixão que, no capítulo seguinte, se transforma em envio — trabalhadores para uma seara grande demais para qualquer um cuidar sozinho.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Ovelhas sem pastor</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um Pastor cheio de compaixão</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · chamado em meio à oposição</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showChOutcome(type){
+    const btnF = document.getElementById('btnChFariseus');
+    const btnJ = document.getElementById('btnChJesus');
+    btnF.classList.remove('active-worry');
+    btnJ.classList.remove('active-calm');
+    const title = document.getElementById('chTitle');
+    const text = document.getElementById('chText');
+
+    if (type === 'fariseus'){
+      btnF.classList.add('active-worry');
+      title.textContent = "Os que já pareciam justos";
+      text.textContent = "Os fariseus esperavam que um mestre religioso se cercasse de gente respeitável — os que já guardavam a lei, os que não precisavam, aos seus próprios olhos, de médico algum.";
+    } else {
+      btnJ.classList.add('active-calm');
+      title.textContent = "Os que sabiam que precisavam de médico";
+      text.textContent = "Jesus janta com publicanos e pecadores, chama um cobrador de impostos da própria mesa de trabalho: \"eu não vim chamar justos, mas pecadores, ao arrependimento\" (9.13).";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Desgarradas e lançadas por terra";
+      text.textContent = "Multidões inteiras, vistas de perto por Jesus, sem direção, sem cuidado, sem ninguém que respondesse por elas — exatamente como ovelhas sem pastor.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Compaixão que se move para agir";
+      text.textContent = "A compaixão de Jesus não termina em sentimento; termina em oração por trabalhadores e, no capítulo seguinte, no envio de doze homens para a mesma seara.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Mateus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Evangelhos</div>
+    <h1>Mateus</h1>
+    <p class="lede">Jesus apresentado como o Rei prometido, cumprindo as Escrituras judaicas passo a passo. Um cobrador de impostos chamado por Jesus organiza o maior ensino que já ouviu em cinco grandes discursos — ecoando os cinco livros de Moisés — para mostrar a leitores judeus que o Reino dos céus finalmente chegou.</p>
+    <div class="stats-row">
+      <div class="stat"><b>28</b>disponíveis</div>
+      <div class="stat"><b>7</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-mateus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução a Mateus</div>
+        <div class="p-ref">Autor, data e a estrutura em cinco discursos</div>
+        <p class="p-teaser">Um cobrador de impostos escreve o Evangelho mais judaico do Novo Testamento — cinco discursos, ecoando os cinco livros de Moisés.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. PRÓLOGO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. Prólogo</h3>
+      <span class="cat-ref">Mateus 1—2</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-genealogia-e-o-nascimento.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A genealogia e o nascimento</div>
+        <div class="p-ref">Mateus 1—2</div>
+        <p class="p-teaser">Uma lista de nomes credencia um Rei; magos do oriente seguem uma estrela até um menino que Herodes quer morto.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. A VINDA DO REINO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. A vinda do Reino</h3>
+      <span class="cat-ref">Mateus 3—7</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-joao-batista-e-o-batismo-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">João Batista e o batismo de Jesus</div>
+        <div class="p-ref">Mateus 3</div>
+        <p class="p-teaser">Uma voz no deserto prepara o caminho — e o próprio céu se abre quando Jesus entra nas águas do Jordão.</p>
+      </a>
+      <a class="p-card available" href="licao-as-tentacoes-no-deserto.html"><span class="badge on">Disponível</span>
+        <div class="p-title">As tentações no deserto</div>
+        <div class="p-ref">Mateus 4</div>
+        <p class="p-teaser">Quarenta dias em jejum, três propostas do diabo — e um Rei que responde cada uma delas apenas com a Escritura.</p>
+      </a>
+      <a class="p-card available" href="licao-o-sermao-do-monte-a-lei-cumprida.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O Sermão do Monte: a lei cumprida</div>
+        <div class="p-ref">Mateus 5</div>
+        <p class="p-teaser">"Ouvistes o que foi dito... eu, porém, vos digo" — Jesus não abole a lei, aprofunda-a até o coração.</p>
+      </a>
+      <a class="p-card available" href="licao-o-sermao-do-monte-piedade-e-confianca.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O Sermão do Monte: piedade e confiança</div>
+        <div class="p-ref">Mateus 6—7</div>
+        <p class="p-teaser">Esmola, oração e jejum em segredo; nenhuma ansiedade pelo amanhã; uma casa construída sobre a rocha.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. AS OBRAS DO REINO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. As obras do Reino</h3>
+      <span class="cat-ref">Mateus 8—10</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-milagres-que-revelam-o-rei.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Milagres que revelam o Rei</div>
+        <div class="p-ref">Mateus 8</div>
+        <p class="p-teaser">Um leproso, um centurião, uma tempestade acalmada — cada cura é uma credencial do Reino que chegou.</p>
+      </a>
+      <a class="p-card available" href="licao-chamado-em-meio-a-oposicao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Chamado em meio à oposição</div>
+        <div class="p-ref">Mateus 9</div>
+        <p class="p-teaser">Um paralítico perdoado antes de curado; um cobrador de impostos chamado da própria mesa de trabalho.</p>
+      </a>
+      <a class="p-card available" href="licao-o-discurso-missionario.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O discurso missionário</div>
+        <div class="p-ref">Mateus 10</div>
+        <p class="p-teaser">Jesus envia os doze com autoridade — e os avisa, sem rodeios, que serão perseguidos por causa do seu nome.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== IV. A NATUREZA DO REINO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">IV. A natureza do Reino</h3>
+      <span class="cat-ref">Mateus 11—13</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-joao-batista-e-o-juizo-das-cidades.html"><span class="badge on">Disponível</span>
+        <div class="p-title">João Batista e o juízo das cidades</div>
+        <div class="p-ref">Mateus 11</div>
+        <p class="p-teaser">Preso e em dúvida, João pergunta se Jesus é mesmo aquele que haveria de vir.</p>
+      </a>
+      <a class="p-card available" href="licao-o-senhor-do-sabado.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O Senhor do sábado</div>
+        <div class="p-ref">Mateus 12</div>
+        <p class="p-teaser">Espigas colhidas num sábado, uma mão ressequida curada — e uma acusação de que o poder de Jesus vem do próprio Belzebu.</p>
+      </a>
+      <a class="p-card available" href="licao-a-parabola-do-semeador.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A parábola do semeador</div>
+        <div class="p-ref">Mateus 13.1-23</div>
+        <p class="p-teaser">A mesma semente cai em quatro tipos de solo — e apenas um deles dá fruto.</p>
+      </a>
+      <a class="p-card available" href="licao-as-parabolas-do-reino-e-a-rejeicao-em-nazare.html"><span class="badge on">Disponível</span>
+        <div class="p-title">As demais parábolas do Reino</div>
+        <div class="p-ref">Mateus 13.24-58</div>
+        <p class="p-teaser">Joio entre o trigo, um grão de mostarda, um tesouro escondido — e a própria cidade natal de Jesus o rejeita.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== V. A AUTORIDADE DO REINO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">V. A autoridade do Reino</h3>
+      <span class="cat-ref">Mateus 14—18</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-multiplicacao-dos-paes.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A multiplicação dos pães</div>
+        <div class="p-ref">Mateus 14</div>
+        <p class="p-teaser">Cinco mil homens alimentados com cinco pães; depois, Jesus caminha sobre as águas do mar agitado.</p>
+      </a>
+      <a class="p-card available" href="licao-o-que-contamina-o-homem.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O que contamina o homem</div>
+        <div class="p-ref">Mateus 15</div>
+        <p class="p-teaser">Uma mãe cananeia recusa desistir; Jesus ensina que o que contamina não entra pela boca, mas sai do coração.</p>
+      </a>
+      <a class="p-card available" href="licao-a-confissao-de-pedro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A confissão de Pedro</div>
+        <div class="p-ref">Mateus 16</div>
+        <p class="p-teaser">"Tu és o Cristo, o Filho do Deus vivo" — e, na mesma conversa, a primeira predição da cruz.</p>
+      </a>
+      <a class="p-card available" href="licao-a-transfiguracao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A transfiguração</div>
+        <div class="p-ref">Mateus 17</div>
+        <p class="p-teaser">No alto de um monte, o rosto de Jesus brilha como o sol — e uma voz do céu confirma quem ele é.</p>
+      </a>
+      <a class="p-card available" href="licao-o-discurso-sobre-a-igreja.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O discurso sobre a igreja</div>
+        <div class="p-ref">Mateus 18</div>
+        <p class="p-teaser">Quem é o maior no Reino? Uma ovelha perdida, um processo de restauração, e um perdão sem limite de contagem.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VI. AS MUDANÇAS DO REINO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VI. As mudanças do Reino</h3>
+      <span class="cat-ref">Mateus 19—25</span>
+      <span class="cat-count">6 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-jovem-rico.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O jovem rico</div>
+        <div class="p-ref">Mateus 19</div>
+        <p class="p-teaser">"Vende os teus bens..." — um jovem se afasta triste, incapaz de largar aquilo que mais amava.</p>
+      </a>
+      <a class="p-card available" href="licao-os-trabalhadores-da-vinha.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Os trabalhadores da vinha</div>
+        <div class="p-ref">Mateus 20</div>
+        <p class="p-teaser">Contratados em horas diferentes, todos recebem o mesmo salário — a graça não se mede pelo mérito.</p>
+      </a>
+      <a class="p-card available" href="licao-a-entrada-triunfal.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A entrada triunfal</div>
+        <div class="p-ref">Mateus 21</div>
+        <p class="p-teaser">Um Rei manso, sobre um jumento, entra em Jerusalém — e vira as mesas dos que lucravam no templo.</p>
+      </a>
+      <a class="p-card available" href="licao-perguntas-capciosas-e-os-sete-ais.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Perguntas capciosas e os sete ais</div>
+        <div class="p-ref">Mateus 22—23</div>
+        <p class="p-teaser">Armadilhas sobre tributo, ressurreição e o maior mandamento — respondidas, e depois devolvidas com sete lamentos.</p>
+      </a>
+      <a class="p-card available" href="licao-o-discurso-do-monte-das-oliveiras.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O discurso do Monte das Oliveiras</div>
+        <div class="p-ref">Mateus 24</div>
+        <p class="p-teaser">Guerras, falsos cristos, a destruição do templo — e um chamado repetido a vigiar, pois ninguém sabe o dia.</p>
+      </a>
+      <a class="p-card available" href="licao-as-parabolas-do-juizo-final.html"><span class="badge on">Disponível</span>
+        <div class="p-title">As parábolas do juízo final</div>
+        <div class="p-ref">Mateus 25</div>
+        <p class="p-teaser">Dez virgens, talentos investidos, ovelhas separadas de bodes — três formas de perguntar: você estava pronto?</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VII. A PAIXÃO E A RESSURREIÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VII. A paixão e a ressurreição</h3>
+      <span class="cat-ref">Mateus 26—28</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-ultima-ceia-e-getsemani.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A última ceia e Getsêmani</div>
+        <div class="p-ref">Mateus 26.1-46</div>
+        <p class="p-teaser">Pão e vinho ganham um novo significado; num jardim, Jesus ora com tanta angústia que sua alma "está profundamente triste".</p>
+      </a>
+      <a class="p-card available" href="licao-a-traicao-e-o-julgamento.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A traição e o julgamento</div>
+        <div class="p-ref">Mateus 26.47-75</div>
+        <p class="p-teaser">Um beijo entrega Jesus ao Sinédrio; do lado de fora, Pedro nega conhecê-lo três vezes antes do galo cantar.</p>
+      </a>
+      <a class="p-card available" href="licao-a-crucificacao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A crucificação</div>
+        <div class="p-ref">Mateus 27</div>
+        <p class="p-teaser">Pilatos lava as mãos; o Rei dos judeus é crucificado entre dois ladrões, e o véu do templo se rasga em dois.</p>
+      </a>
+      <a class="p-card available" href="licao-a-ressurreicao-e-a-grande-comissao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ressurreição e a Grande Comissão</div>
+        <div class="p-ref">Mateus 28</div>
+        <p class="p-teaser">O túmulo está vazio; Jesus ressuscitado envia seus discípulos a todas as nações, prometendo estar com eles até o fim.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Mateus · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

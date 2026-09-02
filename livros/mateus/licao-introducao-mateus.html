@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Mateus — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  .mt-bar-outer{ margin-top:16px; }
+  .mt-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .mt-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .mt-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .mt-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .mt-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .mt-seg:nth-child(1){ background:var(--gold); }
+  .mt-seg:nth-child(2){ background:var(--worry); }
+  .mt-seg:nth-child(3){ background:#8C7AA6; }
+  .mt-seg:nth-child(4){ background:var(--calm); }
+  .mt-seg:nth-child(5){ background:#6C93A8; }
+  .mt-seg:nth-child(6){ background:#B08A5C; }
+  .mt-seg:nth-child(7){ background:#8C9A5C; }
+  .mt-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .mt-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:32px; }
+
+  .mt-disc-grid{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .mt-disc-item{ display:flex; align-items:center; gap:12px; border-radius:11px; padding:11px 14px; border:1px solid var(--panel-line); background:var(--bg); cursor:pointer; text-align:left; width:100%; transition:border-color .2s ease; }
+  .mt-disc-item:hover{ border-color:var(--gold); }
+  .mt-disc-num{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--gold); flex-shrink:0; width:20px; }
+  .mt-disc-body{ flex:1; }
+  .mt-disc-title{ font-size:13.5px; color:var(--text); font-weight:600; }
+  .mt-disc-ref{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:1px; }
+  .mt-disc-text{ font-size:13px; line-height:1.55; color:var(--text-dim); margin-top:10px; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Evangelhos · <span class="ref-tag">Mateus 1—28</span></div>
+  <h1>Introdução a Mateus</h1>
+  <p class="sub">Um cobrador de impostos, odiado pelo seu próprio povo por servir a Roma, é chamado por Jesus e se torna o autor do evangelho mais judaico do Novo Testamento — um livro escrito para provar, com página após página de Escritura cumprida, que Jesus é exatamente o Rei que Israel esperava.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V6 M9 12 V16 M3 3 H15 L10 9 L15 15 H3 L8 9 Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor: o publicano chamado por Jesus</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A tradição da igreja primitiva — Papias no início do século II, depois Ireneu por volta de 180 d.C. — atribui este Evangelho ao apóstolo Mateus, também chamado Levi, o cobrador de impostos que Jesus chamou de sua mesa de trabalho (Mateus 9.9-13). É um detalhe que o próprio autor não esconde: diferente de outros relatos que o chamam apenas de "Levi", o Evangelho segundo Mateus o identifica sem rodeios como "Mateus, o publicano" (10.3) — um homem que vivia da posição mais desprezada que um judeu podia ocupar, cobrando impostos para o Império que ocupava sua própria terra.</p>
+          <p>Alguns estudiosos modernos questionam a autoria apostólica, notando a forte semelhança literária entre Mateus e o Evangelho de Marcos — o que sugeriria que Mateus, testemunha ocular, teria se apoiado no relato de outro. Mas nenhuma hipótese alternativa reúne mais evidência do que essa antiga e consistente tradição, e a proximidade entre os dois textos também pode simplesmente refletir duas testemunhas próximas narrando os mesmos acontecimentos. O que importa, no fim, é que ouvimos no Evangelho a voz do seu principal Autor: o próprio Espírito de Deus.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → data e público original</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 A7 7 0 1 1 8.99 2" stroke-width="1.3"/>
+          <path d="M9 5 V9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Data e público original</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A data mais provável para Mateus é entre 60 e 70 d.C. — antes da destruição de Jerusalém. O próprio texto sugere isso: em 12.5-7 e 23.16-22, Jesus fala do templo e dos seus sacrifícios como algo ainda em funcionamento, e o Evangelho ainda pressupõe os saduceus como um grupo religioso ativo, algo que deixou de ser verdade depois de 70 d.C. Considerando também que Mateus parece ter usado o Evangelho de Marcos — provavelmente escrito em Roma, em associação com Pedro, por volta de 64 d.C. — como uma de suas fontes, essa década de 60 a 70 d.C. é o período mais provável de composição.</p>
+          <p>Inácio, o primeiro pai da igreja a citar Mateus, era bispo de Antioquia, na Síria — e tudo indica que foi ali que este Evangelho circulou primeiro. Antioquia tinha uma congregação mista de judeus e gentios (Atos 15 registra justamente dali a disputa sobre exigir ou não a lei judaica dos convertidos gentios), o que ajuda a explicar por que Mateus, mais que qualquer outro Evangelho, se preocupa tanto em mostrar aos seus leitores judeus que Jesus cumpre, ponto a ponto, as Escrituras que eles já conheciam bem.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o Rei que cumpre as Escrituras</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O Rei que cumpre as Escrituras</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Nenhum Evangelho cita o Antigo Testamento com mais frequência ou mais deliberação do que Mateus. Mas o objetivo não é apenas reunir "previsões" cumpridas, como uma lista de provas — é mostrar que toda a esperança do Antigo Testamento, todo o plano de Deus desde a Queda (Gênesis 3.15), sempre esteve caminhando em direção a este único ponto. É por isso que o livro abre com uma genealogia (1.1-17): antes de qualquer milagre ou ensino, Mateus já credencia Jesus como "filho de Davi, filho de Abraão" — herdeiro da promessa real feita a Davi e da promessa de bênção a todas as nações feita a Abraão.</p>
+          <p>Esse fio de cumprimento aparece de novo e de novo, marcado quase como um refrão ao longo do livro. Toque em cada citação para ver onde ela aparece:</p>
+
+          <div class="mt-disc-grid" id="fulfillGrid"></div>
+          <div class="mt-disc-text" id="fulfillText">Toque em uma citação para ver o que ela anuncia.</div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a estrutura em cinco discursos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M11 5 L15 9 L11 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A estrutura em cinco discursos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Mateus organiza o ensino de Jesus em cinco grandes discursos, cada um encerrado pela mesma fórmula quase idêntica: "E aconteceu que, tendo Jesus concluído estas palavras..." (7.28; 11.1; 13.53; 19.1; 26.1). Cinco discursos, estruturando um livro sobre o maior mestre de Israel, não é acidente: é um eco deliberado dos cinco livros de Moisés, apresentando Jesus como "aquele profeta" que Moisés mesmo havia prometido — "o Senhor teu Deus te suscitará um profeta do meio de ti... a ele ouvireis" (Deuteronômio 18.18) — mas maior do que o próprio Moisés. Cada bloco de discurso é precedido por uma seção narrativa que responde à pergunta "quem é o Rei?"; o discurso então se volta para o povo do Rei.</p>
+
+          <div class="mt-bar-outer">
+            <div class="mt-bar-label">As sete partes do livro, capítulo por capítulo:</div>
+            <div class="mt-bar" role="group" aria-label="Distribuição dos capítulos de Mateus entre as sete partes do esboço">
+              <button type="button" class="mt-seg" style="width:7.1%;" onclick="selectMtBlock(this, 0)" aria-label="Prólogo, capítulos 1 a 2"></button>
+              <button type="button" class="mt-seg" style="width:17.9%;" onclick="selectMtBlock(this, 1)" aria-label="A vinda do reino, capítulos 3 a 7"></button>
+              <button type="button" class="mt-seg" style="width:10.7%;" onclick="selectMtBlock(this, 2)" aria-label="As obras do reino, capítulos 8 a 10"></button>
+              <button type="button" class="mt-seg" style="width:10.7%;" onclick="selectMtBlock(this, 3)" aria-label="A natureza do reino, capítulos 11 a 13"></button>
+              <button type="button" class="mt-seg" style="width:17.9%;" onclick="selectMtBlock(this, 4)" aria-label="A autoridade do reino, capítulos 14 a 18"></button>
+              <button type="button" class="mt-seg" style="width:25%;" onclick="selectMtBlock(this, 5)" aria-label="As mudanças do reino, capítulos 19 a 25"></button>
+              <button type="button" class="mt-seg" style="width:10.7%;" onclick="selectMtBlock(this, 6)" aria-label="A paixão e a ressurreição, capítulos 26 a 28"></button>
+            </div>
+            <div class="mt-bar-ends"><span>cap. 1</span><span>cap. 28</span></div>
+            <div class="mt-bar-caption" id="mtBarText">Toque em um trecho da barra para ver o que ele cobre.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Não vim revogar, vim cumprir</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Ainda no Sermão do Monte, quase no início do seu próprio ministério público, Jesus resume o projeto inteiro do Evangelho de Mateus numa única frase — o motivo pelo qual a genealogia, os discursos e as dezenas de citações do Antigo Testamento estão todos ali, apontando para o mesmo lugar.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 5.17</span>
+          <p>Não cuideis que vim destruir a lei ou os profetas: não vim ab-rogar, mas cumprir.</p>
+          <span class="ref">— Jesus, no Sermão do Monte</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Mateus não escreve sobre um profeta a mais, na longa fila de profetas que Israel já conhecia — nem sobre um mestre que substitui Moisés com uma lei nova e diferente. Escreve sobre Aquele para quem Moisés e todos os profetas sempre estiveram apontando: o Rei prometido, filho de Davi e filho de Abraão, que não abole a lei, mas a cumpre inteiramente — e que, ao final do livro, comissiona seus discípulos a levar esse mesmo cumprimento a todas as nações (28.18-20).</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Cinco livros, dados por Moisés</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Cinco discursos, dados pelo maior que Moisés</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha dos livros · introdução a Mateus</footer>
+</div>
+
+<script>
+  const fulfillData = [
+    { num: "1", title: "Emanuel, Deus conosco", ref: "Mateus 1.23 — cumprindo Isaías 7.14", text: "O nascimento virginal de Jesus cumpre a promessa de um sinal dado a Acaz: um filho chamado Emanuel, \"Deus conosco\" — o próprio Deus vindo habitar entre o seu povo." },
+    { num: "2", title: "Chamado do Egito", ref: "Mateus 2.15 — cumprindo Oséias 11.1", text: "A fuga da família de Jesus para o Egito, e o retorno depois da morte de Herodes, ecoa a própria história de Israel: \"Do Egito chamei o meu filho\" — Jesus recapitula, em sua própria infância, a jornada do povo inteiro." },
+    { num: "3", title: "Luz sobre a Galileia dos gentios", ref: "Mateus 4.15-16 — cumprindo Isaías 9.1-2", text: "Ao começar seu ministério na Galileia, região desprezada e mista de judeus e gentios, Jesus cumpre a promessa de Isaías de que ali, no \"caminho do mar\", brilharia uma grande luz sobre um povo que jazia em trevas." },
+    { num: "4", title: "O Rei manso, sobre um jumento", ref: "Mateus 21.5 — cumprindo Zacarias 9.9", text: "A entrada de Jesus em Jerusalém, montado sobre um jumentinho em vez de um cavalo de guerra, cumpre deliberadamente a profecia de um rei que viria manso e mesmo assim vitorioso." }
+  ];
+
+  function buildFulfillGrid(){
+    const grid = document.getElementById('fulfillGrid');
+    fulfillData.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mt-disc-item';
+      b.innerHTML = '<span class="mt-disc-num">' + d.num + '</span><span class="mt-disc-body"><span class="mt-disc-title">' + d.title + '</span><span class="mt-disc-ref">' + d.ref + '</span></span>';
+      b.onclick = function(){ document.getElementById('fulfillText').textContent = d.text; };
+      grid.appendChild(b);
+    });
+  }
+  buildFulfillGrid();
+
+  const mtBarData = [
+    { label: "I. Prólogo", range: "capítulos 1–2", chapters: 2, text: "a genealogia, o nascimento, os magos e a fuga ao Egito — demonstram que Jesus é o Messias tão esperado, desde a primeira infância." },
+    { label: "II. A vinda do Reino", range: "capítulos 3–7", chapters: 5, text: "João Batista, as tentações no deserto e o Sermão do Monte — Jesus se mostra digno do seu papel como doador de leis divinamente autorizado." },
+    { label: "III. As obras do Reino", range: "capítulos 8–10", chapters: 3, text: "milagres que estabelecem o poder do Reino, e o envio dos discípulos para espalhá-lo — junto do aviso de que perseguição virá." },
+    { label: "IV. A natureza do Reino", range: "capítulos 11–13", chapters: 3, text: "Jesus revela, a João Batista e aos judeus, que o Reino já havia chegado — e usa parábolas para explicá-lo às expectativas populares." },
+    { label: "V. A autoridade do Reino", range: "capítulos 14–18", chapters: 5, text: "milagres extraordinários demonstram a supremacia de Jesus como Messias — e ele ensina que viver sob seu reinado é diferente de viver sob qualquer outro." },
+    { label: "VI. As mudanças do Reino", range: "capítulos 19–25", chapters: 7, text: "ações, parábolas e respostas a desafios revelam mudanças extraordinárias na crença e na prática do povo de Deus — e uma condenação severa da hipocrisia religiosa." },
+    { label: "VII. A paixão e a ressurreição", range: "capítulos 26–28", chapters: 3, text: "Jesus passa por aflições, morre como o Rei sofredor dos judeus, e é exaltado na ressurreição como o vitorioso Rei que comissiona seus discípulos a todas as nações." }
+  ];
+
+  function selectMtBlock(btn, i){
+    btn.parentElement.querySelectorAll('.mt-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = mtBarData[i];
+    document.getElementById('mtBarText').textContent = d.label + " (" + d.range + ", " + d.chapters + " dos 28 capítulos): " + d.text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma lei para guiar um povo";
+      text.textContent = "Os cinco livros de Moisés deram a Israel a lei, a promessa e a esperança de um Reino — mas apontavam para frente, para algo que ainda viria completar o que começaram.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um Rei que cumpre tudo que veio antes";
+      text.textContent = "Os cinco discursos de Jesus não substituem a lei de Moisés por outra qualquer — cumprem-na, revelando o Reino que toda a Escritura sempre esperou, agora aberto a todas as nações.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

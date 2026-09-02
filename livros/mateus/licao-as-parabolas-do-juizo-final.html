@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As parábolas do juízo final — Mateus 25</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* pj — servir por medo x servir por fé (os talentos) */
+  .pj-toggle-outer{ margin-top:16px; }
+  .pj-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .pj-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .pj-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">As mudanças do Reino</span>
+  </div>
+
+  <div class="eyebrow">As mudanças do Reino · <span class="ref-tag">Mateus 25</span></div>
+  <h1>As parábolas do juízo final</h1>
+  <p class="sub">Dez virgens, talentos investidos, ovelhas separadas de bodes — três formas diferentes de fazer a mesma pergunta: você estava pronto?</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 4 C9 4 7 6 7 9 C7 11 8 12.5 9 15 C10 12.5 11 11 11 9 C11 6 9 4 9 4 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">As dez virgens</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Dez virgens saem ao encontro do noivo, cinco sábias, levando óleo extra para suas lâmpadas, e cinco insensatas, sem óleo de reserva (25.1-4). O noivo demora, e todas adormecem (25.5). Ao ouvir o grito "eis que vem o noivo", as insensatas percebem que faltará óleo e pedem às sábias, que recusam — não por egoísmo, mas porque dividir deixaria todas sem luz suficiente (25.6-9).</p>
+          <p>Enquanto vão comprar mais óleo, o noivo chega; as prontas entram para a festa, e a porta se fecha (25.10). As que voltam tarde batem, mas ouvem: "não vos conheço" (25.11-12). A parábola encerra com o mesmo aviso do capítulo anterior: "vigiai, pois, porque não sabeis o dia nem a hora" (25.13).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → os talentos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="9" r="3" stroke-width="1.2"/>
+          <circle cx="12" cy="9" r="3" stroke-width="1.2"/>
+          <path d="M9 6.8 A3 3 0 0 1 9 11.2" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Os talentos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um homem, antes de viajar, confia bens a três servos segundo sua capacidade — cinco talentos a um, dois a outro, um a outro (25.14-15). Os dois primeiros negociam e dobram o que receberam; o terceiro, com medo, esconde seu único talento na terra (25.16-18).</p>
+          <p>Ao voltar, o senhor elogia os dois primeiros igualmente — "bem está, servo bom e fiel... sobre o pouco foste fiel, sobre muito te colocarei" (25.21,23) — independente da quantidade original recebida: o critério não é o tamanho do talento, mas a fidelidade com o que foi dado. Repreende duramente o terceiro, chamando-o "servo mau e negligente" (25.26), por ter agido por medo em vez de fé, e ordena que seu único talento seja dado ao que já tem dez (25.28).</p>
+
+          <div class="pj-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="pjBtnMedo" onclick="showPjOutcome('medo')">Servir por medo, escondendo</button>
+              <button class="toggle-btn" id="pjBtnFe" onclick="showPjOutcome('fe')">Servir por fé, investindo</button>
+            </div>
+            <div class="pj-outcome" id="pjOutcome">
+              <h4 id="pjTitle"></h4>
+              <p id="pjText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → as ovelhas e os bodes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="7" r="2.6" stroke-width="1.2"/>
+          <path d="M2.5 15 C2.5 12 4 10.5 6 10.5 C8 10.5 9.5 12 9.5 15" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M12 4 L15.5 9 L12 14" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">As ovelhas e os bodes: o critério do julgamento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quando o Filho do homem vier em sua glória, separará todas as nações como um pastor separa ovelhas de bodes (25.31-33). Às ovelhas, à direita, dirá: "Vinde, benditos de meu Pai, possuí por herança o reino" (25.34). A razão: "Tive fome, e destes-me de comer; tive sede, e destes-me de beber; era estrangeiro, e hospedastes-me; estava nu, e vestistes-me; estava enfermo, e visitastes-me; estava preso, e fostes ver-me" (25.35-36).</p>
+          <p>Os justos, surpresos, perguntam quando fizeram isso (25.37-39). A resposta: "Quando o fizestes a um dos meus pequeninos irmãos, a mim o fizestes" (25.40) — um cuidado genuíno pelos mais vulneráveis é tratado como cuidado prestado ao próprio Cristo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a condenação dos bodes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 A6 6 0 1 0 9.01 3" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A condenação dos bodes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Aos bodes, à esquerda, a sentença é oposta e igualmente solene: "Apartai-vos de mim, malditos, para o fogo eterno" (25.41). A razão espelha exatamente a anterior — não fizeram ao mais pequenino, e por isso não fizeram a Cristo (25.42-45).</p>
+          <p>O capítulo encerra com uma das declarações mais solenes de todo o Evangelho, sobre a realidade e a duração paralela tanto do castigo eterno quanto da vida eterna: "E irão estes para o tormento eterno, mas os justos para a vida eterna" (25.46) — a mesma palavra grega para "eterno" descrevendo os dois destinos, sem deixar espaço para imaginar que um dure menos que o outro.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Prontidão que se prova em fidelidade e amor</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>As três parábolas do capítulo 25, juntas, formam um só retrato do julgamento final: prontidão genuína, como o óleo de reserva das virgens sábias; fidelidade ativa com o que foi confiado, como os dois primeiros servos que investiram seus talentos; e amor prático aos mais vulneráveis, como as ovelhas que alimentaram, vestiram e visitaram sem sequer perceber que serviam ao próprio Cristo. Nenhuma das três é o que salva — mas todas são o que uma fé real produz, de forma tão natural que muitas vezes nem os próprios justos percebem estar fazendo.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 25.40</span>
+          <p>E, respondendo o Rei, lhes dirá: Em verdade vos digo que, quando o fizestes a um dos meus pequeninos irmãos, a mim o fizestes.</p>
+          <span class="ref">— o Rei, no julgamento final</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Óleo de reserva, talentos investidos, um copo de água a um estranho — nenhuma dessas coisas parece, à primeira vista, decisiva. Mas o capítulo 25 revela que é exatamente nelas, nas coisas pequenas e constantes, que se prova se a prontidão de alguém era real ou apenas aparente.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Prontidão apenas de aparência</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Fé viva, provada em fidelidade</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · as parábolas do juízo final</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showPjOutcome(type){
+    const btnM = document.getElementById('pjBtnMedo');
+    const btnF = document.getElementById('pjBtnFe');
+    btnM.classList.remove('active-worry');
+    btnF.classList.remove('active-calm');
+    const title = document.getElementById('pjTitle');
+    const text = document.getElementById('pjText');
+
+    if (type === 'medo'){
+      btnM.classList.add('active-worry');
+      title.textContent = "\"Tive medo, e fui esconder\"";
+      text.textContent = "O terceiro servo justifica sua inação pelo medo de um senhor que julgava severo: \"conhecendo-te, que és um homem duro... e, atemorizado, escondi na terra o teu talento\" (25.24-25) — o medo, não a falta de recursos, foi o que o paralisou.";
+    } else {
+      btnF.classList.add('active-calm');
+      title.textContent = "\"Sobre o pouco foste fiel\"";
+      text.textContent = "Os dois primeiros servos não são elogiados pelo tamanho do lucro, mas pela fidelidade com que negociaram o que receberam — o critério do Reino nunca foi o volume do talento, mas a fé em ação com o que foi confiado, seja pouco ou muito (25.21,23).";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Lâmpadas sem óleo de reserva";
+      text.textContent = "As virgens insensatas tinham lâmpadas, e o servo negligente tinha um talento — a aparência de estar pronto, sem a substância que só se prova quando o momento decisivo finalmente chega.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Ao mais pequenino, a mim o fizestes";
+      text.textContent = "Uma fé que investe o que recebeu, mantém óleo de reserva e cuida de quem tem fome, sede ou está preso — não para merecer o Reino, mas porque essa é a forma natural de quem já pertence a ele.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

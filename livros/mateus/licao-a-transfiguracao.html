@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A transfiguração — Mateus 17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Moisés e Elias — a Lei e os Profetas testemunhando de Cristo */
+  .tf-toggle-outer{ margin-top:16px; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); }
+  .tf-toggle-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .tf-toggle-row{ display:flex; gap:9px; flex-wrap:wrap; margin-bottom:12px; }
+  .tf-toggle-btn{ font-family:'Fraunces', serif; font-weight:500; font-size:14.5px; padding:9px 18px; border-radius:20px; border:1.5px solid var(--panel-line); background:transparent; color:var(--text-dim); cursor:pointer; transition: all .25s ease; }
+  .tf-toggle-btn:hover{ transform: translateY(-2px); }
+  .tf-toggle-btn.tf-active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .tf-toggle-text{ font-size:13.5px; line-height:1.58; color:var(--text-dim); min-height:54px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">A autoridade do Reino</span>
+  </div>
+
+  <div class="eyebrow">A autoridade do Reino · <span class="ref-tag">Mateus 17</span></div>
+  <h1>A transfiguração</h1>
+  <p class="sub">No alto de um monte, o rosto de Jesus brilha como o sol — e uma voz do céu confirma, mais uma vez, quem ele realmente é.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 L7 6 L10 11 L12 7 L16 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="9" cy="4" r="1.6" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A transfiguração</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Seis dias depois da confissão de Pedro, Jesus leva Pedro, Tiago e João a um monte alto, à parte. Ali, é transfigurado diante deles — seu rosto resplandece como o sol, suas vestes ficam brancas como a luz. Moisés e Elias aparecem, falando com ele (17.1-3).</p>
+          <p>Pedro, tomado de entusiasmo, propõe fazer três tabernáculos — um para Jesus, um para Moisés, um para Elias (17.4). Enquanto ainda fala, uma nuvem luminosa os cobre, e a mesma voz ouvida no batismo declara: "Este é o meu Filho amado, em quem me comprazo; a ele ouvi" (17.5). Os discípulos caem com o rosto em terra, aterrorizados, até Jesus os tocar e dizer: "Levantai-vos, e não temais" (17.6-8).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → descendo do monte</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 L13 4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 15 H4 V13" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Descendo do monte</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus ordena que não contem a visão a ninguém até que o Filho do homem ressuscite dos mortos (17.9). Os discípulos perguntam por que os escribas dizem que Elias precisa vir primeiro. Jesus explica que Elias — numa aplicação, não numa identidade literal — já veio, na pessoa de João Batista, e não foi reconhecido, sofrendo o que quiseram; assim como o Filho do homem também sofreria por suas mãos (17.10-13).</p>
+          <p>A aparição de Moisés e Elias ao lado de Jesus não é ornamento da visão: os dois representam, respectivamente, a Lei e os Profetas — as duas grandes divisões das Escrituras hebraicas — e ambos, no monte, testemunham de Cristo, exatamente como toda a Escritura, lida com atenção, sempre apontou para ele.</p>
+
+          <div class="tf-toggle-outer">
+            <div class="tf-toggle-label">Dois nomes, um só testemunho</div>
+            <div class="tf-toggle-row">
+              <button type="button" class="tf-toggle-btn" id="tfBtnMoises" onclick="showTfToggle('moises')">Moisés</button>
+              <button type="button" class="tf-toggle-btn" id="tfBtnElias" onclick="showTfToggle('elias')">Elias</button>
+            </div>
+            <p class="tf-toggle-text" id="tfToggleText">Toque em cada nome para ver o que ele representa no monte da transfiguração.</p>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o menino epiléptico</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="3" stroke-width="1.3"/>
+          <path d="M5 16 Q5 11 9 11 Q13 11 13 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O menino epiléptico</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao descerem, um homem se ajoelha diante de Jesus, implorando a cura de seu filho, atormentado por convulsões severas — um caso de possessão demoníaca — que os discípulos não conseguiram curar (17.14-16). Jesus, lamentando "ó geração incrédula e perversa, até quando estarei convosco? Até quando vos sofrerei?", cura o menino instantaneamente (17.17-18).</p>
+          <p>Quando perguntado em particular por que não conseguiram, responde: "Por causa da vossa pouca fé; porque em verdade vos digo que, se tiverdes fé como um grão de mostarda, direis a este monte: passa daqui para acolá, e há de passar; e nada vos será impossível" (17.19-21).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o peixe e a moeda do templo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 9 Q9 3 16 9 Q9 15 2 9 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="12.5" cy="9" r="0.9" fill="currentColor" stroke-width="0"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O peixe e a moeda do templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus repete a predição de sua morte e ressurreição, e os discípulos se entristecem profundamente (17.22-23). Em Cafarnaum, cobradores do imposto do templo perguntam a Pedro se Jesus o paga. Jesus explica, com uma pergunta retórica sobre reis que não cobram tributo dos próprios filhos, que ele, como Filho, estaria isento (17.24-26).</p>
+          <p>Mas, "para que não os escandalizemos", manda Pedro pescar, encontrar uma moeda na boca do primeiro peixe, e pagar por ambos (17.27) — um pequeno milagre final que mostra tanto a autoridade real de Jesus quanto sua disposição de ceder um direito legítimo para não causar tropeço desnecessário.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A ele ouvi</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Do monte da glória visível ao vale da incredulidade dos discípulos, do menino atormentado à moeda encontrada num peixe, Mateus 17 percorre registros muito diferentes — mas todos giram em torno da mesma ordem dada pela voz do céu no início do capítulo: "a ele ouvi".</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 17.5</span>
+          <p>Este é o meu Filho amado, em quem me comprazo; a ele ouvi.</p>
+          <span class="ref">— a voz do Pai, no monte da transfiguração</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É tentador querer viver apenas no monte, como Pedro, construindo tabernáculos para prolongar o momento de glória visível. Mas o mesmo Jesus que resplandeceu como o sol é o que desce ao vale para curar um menino que os discípulos não conseguiram ajudar, e que manda pagar um imposto do templo para não escandalizar ninguém. Ouvir a Jesus significa segui-lo tanto no monte quanto no vale.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um momento de glória visível</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma vida comum de fé e obediência</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · a transfiguração</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showTfToggle(who){
+    const btnM = document.getElementById('tfBtnMoises');
+    const btnE = document.getElementById('tfBtnElias');
+    btnM.classList.remove('tf-active');
+    btnE.classList.remove('tf-active');
+    const text = document.getElementById('tfToggleText');
+
+    if (who === 'moises'){
+      btnM.classList.add('tf-active');
+      text.textContent = "Moisés representa a Lei — o próprio mediador que recebeu os mandamentos no Sinai. Sua presença no monte diz: tudo o que a Lei exigia e apontava, Cristo cumpre.";
+    } else {
+      btnE.classList.add('tf-active');
+      text.textContent = "Elias representa os Profetas — o maior deles, que nunca viu a morte, mas foi levado ao céu. Sua presença no monte diz: tudo o que os profetas anunciaram sobre o Messias, Cristo realiza.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O monte, por si só, não basta";
+      text.textContent = "Pedro queria fixar residência ali, prolongando a experiência visível de glória — mas nem a transfiguração, nem qualquer outro êxtase espiritual, substitui a obediência diária que Jesus exige logo depois, no vale.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O mesmo Filho amado, no monte e no vale";
+      text.textContent = "Curar um menino que a fé pequena dos discípulos não alcançou, e pagar um imposto para não escandalizar ninguém, são tão parte de \"ouvir a Jesus\" quanto testemunhar seu rosto brilhando como o sol.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

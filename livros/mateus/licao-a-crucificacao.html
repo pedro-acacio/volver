@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A crucificação — Mateus 27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Salmo 22: profecia e cumprimento */
+  .sl22-grid{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .sl22-item{ display:flex; align-items:flex-start; gap:12px; border-radius:11px; padding:12px 14px; border:1px solid var(--panel-line); background:var(--bg); cursor:pointer; text-align:left; width:100%; transition:border-color .2s ease; }
+  .sl22-item:hover{ border-color:var(--gold); }
+  .sl22-num{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--gold); flex-shrink:0; width:20px; }
+  .sl22-body{ flex:1; }
+  .sl22-title{ font-size:13.5px; color:var(--text); font-weight:600; }
+  .sl22-ref{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:1px; }
+  .sl22-text{ font-size:13px; line-height:1.55; color:var(--text-dim); margin-top:10px; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">A paixão e a ressurreição</span>
+  </div>
+
+  <div class="eyebrow">A paixão e a ressurreição · <span class="ref-tag">Mateus 27</span></div>
+  <h1>A crucificação</h1>
+  <p class="sub">Pilatos lava as mãos; o Rei dos judeus é crucificado entre dois ladrões, e o véu do templo se rasga em dois.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 4 C5 4 5 9 9 9 C13 9 13 4 13 4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 9 V14" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 14 H12" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O remorso de Judas e o julgamento de Pilatos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Vendo Jesus já condenado, Judas é tomado de remorso e tenta devolver as trinta moedas de prata aos principais sacerdotes, confessando: "pequei, traindo o sangue inocente." Eles se recusam a recebê-las de volta — "que nos importa? Vê tu disso" (27.3-4). Judas lança as moedas no templo e vai se enforcar (27.5): um remorso real diante do próprio pecado, mas sem arrependimento genuíno diante de Deus — termina em desespero fechado, não em restauração, diferente do choro de Pedro.</p>
+          <p>Diante de Pilatos, Jesus responde pouco às acusações, "de sorte que o presidente se maravilhava muito" (27.14). Percebendo que o entregaram por inveja, Pilatos tenta libertá-lo oferecendo à multidão a escolha, num costume da festa, entre Jesus e Barrabás, um preso notório. Pressionada pelos principais sacerdotes e anciãos, a multidão pede Barrabás, e grita sobre Jesus: "seja crucificado" (27.15-23). Pilatos lava publicamente as mãos, declarando-se inocente do sangue daquele justo — e, mesmo assim, o entrega para ser crucificado (27.24-26).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → escárnio e o caminho ao Gólgota</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L11 7 L15.5 7.6 L12.2 10.6 L13 15 L9 12.8 L5 15 L5.8 10.6 L2.5 7.6 L7 7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Escárnio e o caminho ao Gólgota</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os soldados romanos zombam de Jesus: vestem-no com um manto de escarlate, colocam-lhe uma coroa de espinhos na cabeça e uma cana na mão direita, como um cetro simulado, ajoelham-se diante dele dizendo "salve, rei dos judeus", cospem nele e batem-lhe na cabeça com a mesma cana (27.27-30). Cada gesto de escárnio, sem que os soldados percebam, é ironicamente verdadeiro — ele é, de fato, um rei, coroado e investido diante de toda a zombaria.</p>
+          <p>Levam-no então ao Gólgota, "que quer dizer lugar da Caveira." Simão de Cirene é obrigado a carregar a cruz por ele (27.31-32). Oferecem a Jesus vinho misturado com fel, um leve narcótico que aliviaria a dor — mas, ao prová-lo, ele recusa beber (27.34), escolhendo enfrentar plenamente consciente, sem nenhum atenuante, tudo o que estava por vir.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a crucificação e a escuridão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 H14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A crucificação e a escuridão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Crucificam Jesus, repartindo suas vestes entre si por sorteio, e colocam sobre sua cabeça a acusação: "ESTE É JESUS, O REI DOS JUDEUS." Dois ladrões são crucificados ao seu lado, um à direita, outro à esquerda (27.35-38). Passantes, principais sacerdotes e escribas zombam dele, meneando a cabeça: "salvou os outros, a si mesmo não pode salvar-se... se é Rei de Israel, desça agora da cruz, e creremos nele" (27.39-42) — sem perceber que é exatamente por recusar descer que a salvação deles seria possível.</p>
+          <p>Desde a hora sexta até a hora nona, trevas cobrem toda a terra. Perto da hora nona, Jesus clama em alta voz: "Eli, Eli, lamá sabactâni?" — "Deus meu, Deus meu, por que me desamparaste?" (27.45-46), citando o Salmo 22.1. É a única vez em todo o Evangelho em que Jesus, que sempre chamou Deus de Pai, o chama de Deus — marcando o peso terrível de levar sobre si o pecado. Por fim, "Jesus, clamando outra vez com grande voz, rendeu o espírito" (27.50).</p>
+
+          <p>Toque abaixo para ver como o Salmo 22 se cumpre na cruz:</p>
+          <div class="sl22-grid" id="sl22Grid"></div>
+          <div class="sl22-text" id="sl22Text">Toque em cada item para ver a profecia e seu cumprimento.</div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o véu rasgado e o sepultamento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 V16" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="2 2"/>
+          <path d="M4 2 V16 M14 2 V16" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O véu rasgado e o sepultamento</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No momento da morte de Jesus, o véu do templo — que separava o Lugar Santíssimo, símbolo do acesso restrito a Deus — se rasga em dois, de alto a baixo. A terra treme, rochas se fendem, e túmulos se abrem, com corpos de santos ressuscitando e aparecendo em Jerusalém depois da ressurreição de Jesus (27.51-53). O centurião romano e os que vigiavam, vendo o terremoto e tudo o que se passava, declaram apavorados: "verdadeiramente este era Filho de Deus" (27.54) — a primeira confissão humana clara desse tipo diante da cruz, vinda, surpreendentemente, de um soldado romano pagão.</p>
+          <p>José de Arimateia, discípulo secreto e homem rico, pede o corpo a Pilatos e o sepulta num túmulo novo, escavado na rocha (27.57-60). Os principais sacerdotes, lembrando-se da promessa de ressurreição de Jesus, pedem a Pilatos uma guarda romana e um selo sobre a pedra, "para que não venham os discípulos, de noite, e o furtem, e digam ao povo: ressuscitou dos mortos" (27.62-66) — sem saber que estavam, sem querer, tornando ainda mais inegável o que aconteceria três dias depois.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O véu rasgado, o acesso aberto</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>De todos os sinais que acompanham a morte de Jesus — o terremoto, as rochas fendidas, os túmulos abertos — nenhum carrega um significado teológico tão direto quanto o véu do templo se rasgando exatamente no momento em que ele morre. Aquele véu não era decoração: separava o Lugar Santíssimo, onde a presença de Deus habitava de modo especial, de todo o restante do templo — e só o sumo sacerdote podia atravessá-lo, uma vez por ano, com sangue de sacrifício, no Dia da Expiação.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 27.51</span>
+          <p>E eis que o véu do templo se rasgou em dois, de alto a baixo, e tremeu a terra, e fenderam-se as pedras.</p>
+          <span class="ref">— no momento da morte de Jesus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Um véu que separava o acesso a Deus, reservado a um único homem, uma vez por ano, mediante sacrifício de sangue, agora é rasgado — não por baixo, como se alguém no templo o tivesse rompido, mas de cima para baixo, o gesto do próprio Deus abrindo o caminho. O sacrifício de Cristo faz o que nenhum sacrifício anual do Dia da Expiação jamais poderia fazer de forma definitiva: abrir, de uma vez por todas, o acesso direto a Deus para todo aquele que confia nele.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um véu que separava</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um caminho agora aberto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · a crucificação</footer>
+</div>
+
+<script>
+  const sl22Data = [
+    { num: "1", title: "As vestes repartidas por sorte", ref: "Mateus 27.35 — Salmo 22.18", text: "\"Repartem entre si as minhas vestes, e sobre a minha túnica lançam sortes\" (Salmo 22.18). Os soldados fazem exatamente isso ao pé da cruz, sem saber que estão cumprindo uma profecia escrita séculos antes." },
+    { num: "2", title: "A zombaria dos que passam", ref: "Mateus 27.43 — Salmo 22.7-8", text: "\"Confiou no Senhor, livre-o ele\" (Salmo 22.8) ecoa quase palavra por palavra o escárnio dos principais sacerdotes: \"confiou em Deus; livre-o agora, se o quer\" (27.43)." },
+    { num: "3", title: "O clamor de abandono", ref: "Mateus 27.46 — Salmo 22.1", text: "\"Deus meu, Deus meu, por que me desamparaste?\" — Jesus ora com as próprias palavras iniciais do Salmo 22, um salmo de sofrimento profundo que, mesmo assim, termina em vitória e louvor." },
+    { num: "4", title: "Um sofrimento que termina em glória", ref: "Salmo 22.27-28", text: "O mesmo salmo que descreve mãos e pés perfurados (22.16) termina anunciando que \"todos os limites da terra se lembrarão... porque o reino é do Senhor\" — sofrimento e vitória final, unidos no mesmo poema, cumpridos na cruz e na ressurreição." }
+  ];
+
+  function buildSl22Grid(){
+    const grid = document.getElementById('sl22Grid');
+    sl22Data.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'sl22-item';
+      b.innerHTML = '<span class="sl22-num">' + d.num + '</span><span class="sl22-body"><span class="sl22-title">' + d.title + '</span><span class="sl22-ref">' + d.ref + '</span></span>';
+      b.onclick = function(){ document.getElementById('sl22Text').textContent = d.text; };
+      grid.appendChild(b);
+    });
+  }
+  buildSl22Grid();
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um único homem, uma vez por ano";
+      text.textContent = "Antes da cruz, o acesso ao Lugar Santíssimo era restrito ao sumo sacerdote, uma vez por ano, no Dia da Expiação, e sempre mediante sangue de sacrifício — um lembrete constante de que o pecado ainda separava o povo de Deus.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Rasgado de alto a baixo, por Deus mesmo";
+      text.textContent = "No momento em que Jesus morre, o véu se rasga de cima para baixo — o próprio Deus abrindo o caminho, de uma vez por todas, para todo aquele que confia no sacrifício definitivo de Cristo.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O discurso sobre a igreja — Mateus 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* O processo de restauração — quatro degraus clicáveis */
+  .rst-outer{ margin-top:16px; }
+  .rst-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .rst-steps{ display:flex; flex-direction:column; gap:8px; }
+  .rst-step{ display:flex; align-items:center; gap:12px; border-radius:10px; padding:10px 14px; border:1.5px solid var(--panel-line); background:transparent; cursor:pointer; text-align:left; transition: all .25s ease; width:100%; }
+  .rst-step:hover{ transform: translateX(3px); }
+  .rst-step.rst-active{ border-color: var(--gold); background: rgba(217,164,65,0.08); box-shadow: 0 0 0 3px rgba(217,164,65,0.1); }
+  .rst-num{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--text-faint); flex-shrink:0; width:18px; }
+  .rst-step.rst-active .rst-num{ color: var(--gold); }
+  .rst-step-title{ font-family:'IBM Plex Sans', sans-serif; font-size:13.5px; font-weight:500; color:var(--text); }
+  .rst-caption{ font-size:13px; line-height:1.58; color:var(--text-dim); margin-top:12px; min-height:40px; padding-top:10px; border-top:1px dashed var(--panel-line); }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">A autoridade do Reino</span>
+  </div>
+
+  <div class="eyebrow">A autoridade do Reino · <span class="ref-tag">Mateus 18</span></div>
+  <h1>O discurso sobre a igreja</h1>
+  <p class="sub">Quem é o maior no Reino? Uma ovelha perdida, um processo cuidadoso de restauração, e um perdão sem limite de contagem.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="6" r="3" stroke-width="1.3"/>
+          <path d="M5 16 Q5 11 9 11 Q13 11 13 16" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Tornar-se como uma criança</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os discípulos perguntam quem é o maior no reino dos céus. Jesus chama uma criança, coloca-a no meio deles, e responde que, se não se converterem e não se tornarem como crianças, "de modo nenhum entrareis no reino dos céus" (18.1-4) — humildade, não status, é a medida da grandeza no Reino.</p>
+          <p>Adverte com severidade sobre o perigo de escandalizar "um destes pequeninos que creem em mim", preferindo até que uma pedra de moinho fosse pendurada no pescoço de quem faz isso e fosse lançado ao fundo do mar (18.5-6). Usa linguagem hiperbólica sobre cortar a mão ou arrancar o olho que causa tropeço, para enfatizar a seriedade de remover qualquer coisa que leve ao pecado (18.7-9).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a ovelha perdida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.3"/>
+          <path d="M6 9 L8.2 11.5 L12.5 6.5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A ovelha perdida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus adverte para não desprezar nenhum desses pequeninos, cujos anjos "sempre veem a face de meu Pai que está nos céus" (18.10). Conta então a parábola do pastor que, tendo cem ovelhas e perdendo uma, deixa as noventa e nove no monte para ir buscar a que se desviou (18.11-12).</p>
+          <p>Ele se alegra mais por essa ovelha do que pelas noventa e nove que nunca se perderam — "assim, não é da vontade de vosso Pai, que está nos céus, que um só destes pequeninos se perca" (18.13-14).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o processo de restauração</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 V3 M3 15 H15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 15 V11 H9 V8 H12 V15" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O processo de restauração</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus ensina um processo cuidadoso e gradual para lidar com um irmão que pecou: primeiro em particular, "somente tu e ele"; se não ouvir, com mais uma ou duas testemunhas; se ainda não ouvir, perante a igreja toda; e se recusar até isso, deve ser tratado "como gentio e publicano" (18.15-17) — não vingança, mas um processo desenhado para restaurar, com a exclusão como último recurso, não o primeiro.</p>
+          <p>Promete que o que ligarem ou desligarem na terra será ligado ou desligado no céu, e que onde dois ou três estiverem reunidos em seu nome, ali ele estará no meio deles (18.18-20).</p>
+
+          <div class="rst-outer">
+            <div class="rst-label">Os quatro passos do processo — toque em cada um</div>
+            <div class="rst-steps" id="rstSteps"></div>
+            <div class="rst-caption" id="rstCaption">Toque em um passo para ver seu propósito.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → setenta vezes sete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 H14 V13 H7 L4 16 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 7 V10 M9 11.5 V11.6" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Setenta vezes sete e o servo que não perdoou</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro pergunta quantas vezes deve perdoar um irmão que peca contra ele, sugerindo generosamente sete vezes. Jesus responde: "não te digo que até sete, mas até setenta vezes sete" (18.21-22) — um número que não é literal, mas significa perdão sem limite de contagem.</p>
+          <p>Conta a parábola do servo que devia uma quantia impossível de pagar (dez mil talentos) ao seu senhor, é perdoado integralmente ao implorar, mas depois se recusa a perdoar um colega que lhe devia uma quantia insignificante em comparação, mandando-o prender (18.23-30). Ao saber disso, o senhor entrega o servo cruel aos "atormentadores" até que pagasse tudo — encerrando com o aviso: "assim vos fará também meu Pai celestial, se do coração não perdoardes, cada um a seu irmão" (18.31-35).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Perdoados para perdoar</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A humildade de uma criança, o pastor que busca a ovelha perdida, a paciência do processo de restauração, o perdão sem limite de contagem — os quatro movimentos de Mateus 18 fluem de uma mesma fonte. Quem já recebeu a misericórdia imensurável de Deus — uma dívida de dez mil talentos, impossível de quitar — não tem base moral para negar misericórdia proporcionalmente pequena a outros.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 18.32-33</span>
+          <p>Não devias tu igualmente ter compaixão do teu conservo, como eu também tive compaixão de ti? E, indignado, o seu senhor o entregou aos atormentadores, até que pagasse tudo o que lhe devia.</p>
+          <span class="ref">— a parábola do servo cruel</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O servo da parábola não é condenado por ter uma dívida — todos, diante de Deus, começam devendo o que não têm como pagar. É condenado por ter recebido perdão total e, minutos depois, tratado um colega com uma dureza que sua própria história deveria ter tornado impensável. A igreja que Jesus descreve neste capítulo é, antes de tudo, uma comunidade de dívidas perdoadas.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um servo perdoado que não perdoa</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um Pai que busca até a última ovelha perdida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · o discurso sobre a igreja</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const rstData = [
+    { title: "1. Em particular — \"somente tu e ele\"", text: "O primeiro passo protege a reputação do irmão e busca a restauração mais simples e menos exposta possível — a maioria dos conflitos deveria se resolver aqui mesmo (18.15)." },
+    { title: "2. Com uma ou duas testemunhas", text: "Se o primeiro passo falha, testemunhas confirmam os fatos e reforçam o apelo — não para acusar, mas para que \"toda a palavra se estabeleça\" com justiça (18.16)." },
+    { title: "3. Perante a igreja", text: "Só depois de duas tentativas privadas o caso vem à comunidade — a igreja toda se torna testemunha e, ao mesmo tempo, instrumento final de apelo antes da ruptura (18.17a)." },
+    { title: "4. Como gentio e publicano", text: "A recusa persistente em ouvir leva à exclusão da comunhão — o último recurso, não o primeiro, e ainda assim voltado à esperança de que o irmão, como um gentio ouvindo o evangelho pela primeira vez, possa um dia ser alcançado (18.17b)." }
+  ];
+
+  function buildRstSteps(){
+    const container = document.getElementById('rstSteps');
+    rstData.forEach((step, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'rst-step';
+      b.innerHTML = '<span class="rst-num">' + (i + 1) + '</span><span class="rst-step-title">' + step.title.replace(/^\d+\.\s*/, '') + '</span>';
+      b.onclick = function(){ revealRstStep(b, i); };
+      container.appendChild(b);
+    });
+  }
+  buildRstSteps();
+
+  function revealRstStep(btn, i){
+    document.querySelectorAll('.rst-step').forEach(b => b.classList.remove('rst-active'));
+    btn.classList.add('rst-active');
+    document.getElementById('rstCaption').textContent = rstData[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma memória curta demais";
+      text.textContent = "O servo sai do encontro com seu senhor já esquecido da própria dívida perdoada — a mesma boca que implorou misericórdia se recusa a estendê-la, na primeira oportunidade, a alguém que lhe devia infinitamente menos.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Nenhum pequenino é dispensável";
+      text.textContent = "O mesmo Pai que perdoa uma dívida impagável é o pastor que deixa noventa e nove ovelhas para buscar uma só — a lógica do capítulo inteiro é a de um Deus que não trata ninguém como pequeno demais para importar.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

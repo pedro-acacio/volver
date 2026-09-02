@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As tentações no deserto — Mateus 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* três tentações — mapa clicável */
+  .tt-grid{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .tt-item{ display:flex; align-items:center; gap:12px; border-radius:11px; padding:11px 14px; border:1px solid var(--panel-line); background:var(--bg); cursor:pointer; text-align:left; width:100%; transition:border-color .2s ease; }
+  .tt-item:hover{ border-color:var(--gold); }
+  .tt-num{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--gold); flex-shrink:0; width:20px; }
+  .tt-body{ flex:1; }
+  .tt-title{ font-size:13.5px; color:var(--text); font-weight:600; }
+  .tt-ref{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:1px; }
+  .tt-text{ font-size:13px; line-height:1.55; color:var(--text-dim); margin-top:10px; padding-top:10px; border-top:1px dashed var(--panel-line); min-height:20px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-mateus.html">Volver</a>
+    <span class="brand-track">A vinda do Reino</span>
+  </div>
+
+  <div class="eyebrow">A vinda do Reino · <span class="ref-tag">Mateus 4</span></div>
+  <h1>As tentações no deserto</h1>
+  <p class="sub">Quarenta dias em jejum, três propostas do diabo — e um Rei que responde cada uma delas apenas com a Escritura.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 14 Q9 10 16 14" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="13.5" cy="4.5" r="2.2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Levado pelo Espírito, quarenta dias em jejum</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois do batismo, "então foi conduzido Jesus pelo Espírito ao deserto, para ser tentado pelo diabo" (4.1) — o mesmo Espírito que desceu sobre ele como pomba agora o leva, deliberadamente, ao lugar do confronto. Jesus jejua quarenta dias e quarenta noites, e depois tem fome (4.2).</p>
+          <p>O número não é acidental: é um eco proposital dos quarenta anos que Israel passou no deserto depois do Êxodo. Mas onde Israel, provado repetidamente pela fome, pela sede e pela incerteza, falhou em confiar em Deus — murmurando, duvidando, voltando-se para outros deuses — Jesus, o novo e verdadeiro Israel, está prestes a resistir onde o povo antigo cedeu.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a primeira e a segunda tentação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A primeira e a segunda tentação</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Se tu és o Filho de Deus, dize que estas pedras se tornem pães" (4.3) — o tentador apela à fome real e legítima de Jesus, propondo que use seu poder divino por conta própria, em vez de confiar no Pai que o havia levado ali. Jesus responde citando Deuteronômio 8.3: "nem só de pão viverá o homem, mas de toda a palavra que sai da boca de Deus" (4.4) — a mesma passagem em que Moisés lembra Israel de que a provação da fome no deserto ensinava, precisamente, essa dependência.</p>
+          <p>Na segunda tentação, o diabo leva Jesus ao pináculo do templo e, desta vez, ele mesmo cita Escritura — o Salmo 91 — torcendo-a para sugerir que Jesus se jogue e prove que anjos o sustentarão (4.6). Jesus responde com outra passagem de Deuteronômio: "não tentarás o Senhor teu Deus" (4.7; Deuteronômio 6.16) — recusando transformar confiança em Deus num teste manipulado por conta própria.</p>
+
+          <div class="tt-grid" id="ttGrid"></div>
+          <div class="tt-text" id="ttText">Toque em cada tentação para ver a passagem usada e a resposta de Jesus.</div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a terceira tentação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A terceira tentação</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O diabo mostra a Jesus, de um monte muito alto, todos os reinos do mundo e sua glória, oferecendo-os inteiros em troca de um único ato: "se, prostrado, me adorares" (4.9). É a proposta mais direta de todas — tomar atalho para a glória que o Pai já havia prometido dar ao Filho, mas sem passar pelo caminho da cruz. Jesus responde com Deuteronômio 6.13: "ao Senhor teu Deus adorarás, e só a ele servirás" (4.10). O diabo o deixa, e eis que anjos vieram e o serviam (4.11).</p>
+          <p>Vale notar que as três respostas de Jesus vêm todas do mesmo livro — Deuteronômio, no contexto do próprio deserto de Israel. Jesus vence exatamente onde o povo antigo falhou, usando a mesma Escritura que Israel já possuía e não obedeceu. Ele não inventa uma defesa nova; recorre, com precisão, à Palavra que já estava escrita.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o início do ministério na Galileia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3" stroke-width="1.3"/>
+          <path d="M9 2 V4 M9 14 V16 M2 9 H4 M14 9 H16 M4.2 4.2 L5.6 5.6 M12.4 12.4 L13.8 13.8 M4.2 13.8 L5.6 12.4 M12.4 5.6 L13.8 4.2" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O início do ministério na Galileia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao saber que João havia sido preso, Jesus se retira para a Galileia, fixando residência em Cafarnaum, à beira-mar (4.12-13) — cumprindo Isaías 9.1-2, sobre uma grande luz brilhando sobre o povo que andava em trevas, na "Galileia dos gentios" (4.15-16). É ali, numa região mista e desprezada pelos centros religiosos, que Jesus começa a pregar: "arrependei-vos, porque é chegado o reino dos céus" (4.17) — as mesmas palavras de João Batista, agora ditas pelo próprio Rei.</p>
+          <p>Chama os primeiros discípulos — Pedro e André, depois Tiago e João — que deixam as redes imediatamente para segui-lo (4.18-22). Sua fama se espalha por toda a Síria; trazem-lhe todos os enfermos, atormentados e endemoninhados, e ele os cura; grandes multidões o seguem, vindas da Galileia, Decápolis, Jerusalém, Judeia e dalém do Jordão (4.23-25).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Onde Israel falhou, o Rei venceu</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Jesus é o verdadeiro e fiel Israel: passa pelo mesmo teste do deserto que o povo antigo enfrentou — fome, incerteza, a tentação de forçar a mão de Deus, a oferta de atalhos para a glória — e, ao contrário do povo, permanece fiel até o fim, usando a própria Palavra de Deus como arma contra cada proposta do tentador.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Mateus 4.4</span>
+          <p>Ele, porém, respondendo, disse: Está escrito: Nem só de pão viverá o homem, mas de toda a palavra que sai da boca de Deus.</p>
+          <span class="ref">— Jesus, respondendo à primeira tentação</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Israel, alimentado com maná no deserto, ainda assim murmurou contra Deus, duvidando de sua provisão e de seu cuidado. Jesus, faminto depois de quarenta dias, não murmura — confia. Essa vitória no deserto não é apenas um exemplo moral a imitar; é o começo de um ministério em que o próprio Rei prova, desde o primeiro confronto, que é digno de confiança total, porque ele mesmo confiou totalmente no Pai.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um povo que murmurou no deserto</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um Rei que resistiu no deserto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Mateus · as tentações no deserto</footer>
+</div>
+
+<script>
+  const ttData = [
+    { num: "1", title: "Pão pela fome", ref: "Mateus 4.3-4 — usa/responde com Deuteronômio 8.3", text: "\"Dize que estas pedras se tornem pães\" — apela à fome real de Jesus para que use seu poder por conta própria. Jesus responde: \"nem só de pão viverá o homem, mas de toda a palavra que sai da boca de Deus.\"" },
+    { num: "2", title: "Um salto do templo", ref: "Mateus 4.5-7 — o diabo cita/Jesus responde com Deuteronômio 6.16", text: "O diabo cita o Salmo 91 torcido, sugerindo que Jesus force um resgate angelical. Jesus responde: \"não tentarás o Senhor teu Deus\" — recusando testar a Deus por conta própria." },
+    { num: "3", title: "Todos os reinos", ref: "Mateus 4.8-10 — responde com Deuteronômio 6.13", text: "O diabo oferece todos os reinos do mundo em troca de um único ato de adoração. Jesus responde: \"ao Senhor teu Deus adorarás, e só a ele servirás\" — recusando um atalho para a glória fora do caminho do Pai." }
+  ];
+
+  function buildTtGrid(){
+    const grid = document.getElementById('ttGrid');
+    ttData.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tt-item';
+      b.innerHTML = '<span class="tt-num">' + d.num + '</span><span class="tt-body"><span class="tt-title">' + d.title + '</span><span class="tt-ref">' + d.ref + '</span></span>';
+      b.onclick = function(){ document.getElementById('ttText').textContent = d.text; };
+      grid.appendChild(b);
+    });
+  }
+  buildTtGrid();
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Quarenta anos, fé repetidamente quebrada";
+      text.textContent = "Alimentado com maná, guiado por nuvem e fogo, Israel ainda assim murmurou contra Deus no deserto, duvidando de sua provisão a cada nova provação.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Quarenta dias, fé mantida até o fim";
+      text.textContent = "Faminto e sozinho, Jesus resiste às três propostas do tentador usando apenas a Palavra que Israel já tinha — provando-se o Israel fiel que o povo antigo nunca conseguiu ser.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
