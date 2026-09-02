@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A primeira viagem missionária — Atos 13—14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* rota da primeira viagem — cidades clicáveis */
+  .pvm-outer{ margin-top:16px; }
+  .pvm-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .pvm-route{ display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:10px; }
+  .pvm-stop{ border-radius:20px; padding:7px 13px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-dim); transition: background .3s ease, color .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease; }
+  .pvm-stop.open{ background:var(--gold); color:#2C3459; transform:scale(1.05); box-shadow:0 0 8px 1px rgba(217,164,65,.4); }
+  .pvm-arrow{ color:var(--text-faint); font-size:12px; }
+  .pvm-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* toggle extra — aplauso x relevância mesmo com sofrimento */
+  .pvm-toggle-outer{ margin-top:16px; }
+  .pvm-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .pvm-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .pvm-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho até os confins da terra</span>
+  </div>
+
+  <div class="eyebrow">Testemunho até os confins da terra · <span class="ref-tag">Atos 13—14</span></div>
+  <h1>A primeira viagem missionária</h1>
+  <p class="sub">Separados pelo Espírito Santo em meio a jejum e adoração, Barnabé e Saulo partem na primeira viagem missionária organizada da história da igreja.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 5 V9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Separados pelo Espírito em Antioquia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A igreja de Antioquia tinha profetas e mestres — Barnabé, Simeão, Lúcio, Manaém e Saulo entre eles. Enquanto ministravam ao Senhor e jejuavam, o Espírito Santo fala com uma clareza incomum: "apartai-me a Barnabé e a Saulo para a obra a que já os tenho chamado" (13.2). Não é a igreja que escolhe seus melhores homens para um projeto; é o próprio Espírito que reclama dois obreiros já ocupados na obra local para uma tarefa maior.</p>
+          <p>A resposta da igreja não é imediata nem informal: jejuam de novo, oram, impõem as mãos sobre os dois e os despedem (13.3). É o primeiro envio missionário deliberado e comissionado do Novo Testamento — não um espalhamento por perseguição, como em Atos 8, mas uma igreja local, reunida em oração, obedecendo a uma ordem explícita do Espírito Santo para enviar seus próprios membros para fora.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Chipre e o mago Elimas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Chipre e o confronto com o mago Elimas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enviados pelo Espírito Santo, Barnabé e Saulo descem a Selêucia e navegam para Chipre, pregando a palavra de Deus nas sinagogas judaicas de Salamina. Ao atravessarem a ilha até Pafos, encontram um mago judeu, falso profeta chamado Barjesus — também conhecido como Elimas — que está junto do procônsul romano Sérgio Paulo, homem prudente que desejava ouvir a palavra de Deus, e que o mago tenta impedir de crer, torcendo os caminhos retos do Senhor (13.6-8).</p>
+          <p>É aqui que o texto passa a chamar Saulo pela primeira vez de Paulo (13.9). Cheio do Espírito Santo, ele fixa os olhos em Elimas e o repreende sem meias palavras: "ó filho do diabo, cheio de todo o engano e de toda a malícia... não cessarás de perverter os caminhos retos do Senhor?" (13.10). Elimas fica cego por um tempo, andando às apalpadelas em busca de quem o guiasse; vendo o que se passara, o procônsul crê, maravilhado com a doutrina do Senhor (13.11-12).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Antioquia da Pisídia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M11 5 L15 9 L11 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Antioquia da Pisídia — sermão e rejeição</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na sinagoga de Antioquia da Pisídia, convidado a falar, Paulo faz um sermão que percorre toda a história de Israel — a escolha dos patriarcas, o êxodo, os juízes, Davi — até chegar a Jesus, "da descendência deste, conforme a promessa" (13.23), sua morte injusta e sua ressurreição, aplicando o Salmo 2 ("meu filho és tu, hoje te gerei") e Isaías 55 ("vos darei as santas e fiéis bênçãos de Davi") como cumpridos nele (13.32-35). Termina anunciando que, por meio de Jesus, é anunciada a remissão dos pecados, e que todo o que crê é justificado de tudo o que pela lei de Moisés não pôde ser justificado (13.38-39).</p>
+          <p>No sábado seguinte, quase toda a cidade se ajunta para ouvir a palavra do Senhor — mas os judeus, cheios de inveja diante da multidão, contradizem e blasfemam o que Paulo diz. Ele e Barnabé respondem com ousadia: "era necessário que a palavra de Deus vos fosse anunciada primeiro a vós; mas, visto que a rejeitais... eis que nos voltamos para os gentios" (13.46). Os gentios se alegram e creem, "e criam todos os que estavam ordenados para a vida eterna" (13.48); expulsos da região pela agitação dos judeus, Paulo e Barnabé sacodem o pó dos pés contra eles e seguem para Icônio.</p>
+
+          <div class="pvm-outer">
+            <div class="pvm-label">A rota da primeira viagem — toque em cada parada</div>
+            <div class="pvm-route" id="pvmRoute"></div>
+            <div class="pvm-caption" id="pvmCaption">Toque em uma cidade para ver o que aconteceu ali.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Listra: curado, adorado, apedrejado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L14 4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 4 L14 14" stroke-width="1.3" stroke-linecap="round" opacity=".4"/>
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Listra: curado, adorado como deuses, apedrejado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Listra, Paulo repara num homem coxo de nascença, que nunca havia andado, e o cura diante de todos: "levanta-te sobre os teus pés" (14.10). A multidão, vendo o que Paulo fizera, levanta a voz em licaônio, dizendo que os deuses desceram até eles em forma humana — chamam Barnabé de Zeus e Paulo, o principal orador, de Hermes — e o sacerdote de Zeus traz até bois e grinaldas às portas, pronto para lhes oferecer sacrifícios (14.11-13).</p>
+          <p>Ao ouvirem isso, Paulo e Barnabé rasgam as próprias vestes, horrorizados, e correm para o meio da multidão gritando que são homens sujeitos às mesmas paixões que eles, e que os anunciam justamente para que se convertam desses ídolos vãos ao Deus vivo (14.14-15). Mal conseguem impedir que o povo lhes ofereça sacrifício. Pouco depois, porém, chegam judeus de Antioquia e Icônio, persuadem a mesma multidão, e o povo que os queria adorar como deuses agora apedreja Paulo e o arrasta para fora da cidade, julgando-o morto (14.19) — mas ele se levanta e volta à cidade.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Por muitas tribulações</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Depois de pregar em Derbe, Paulo e Barnabé não seguem direto de volta a Antioquia da Síria pelo caminho mais curto; voltam pelas mesmas cidades onde tinham sido rejeitados e apedrejados — Listra, Icônio, Antioquia da Pisídia — confirmando o ânimo dos discípulos, exortando-os a permanecer na fé, e nomeando presbíteros em cada igreja, com jejum e oração, encomendando-os ao Senhor em quem haviam crido (14.21-23).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 14.22</span>
+          <p>Confirmando os ânimos dos discípulos, exortando-os a permanecer na fé, dizendo que por muitas tribulações nos importa entrar no reino de Deus.</p>
+          <span class="ref">— Paulo e Barnabé, na volta das igrejas recém-plantadas</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Nesse mesmo trajeto está uma cena impossível de ignorar: a mesma cidade de Listra que quase ofereceu sacrifícios a Paulo como se fosse um deus, dias depois o apedreja como se fosse um criminoso — e ele volta a ela mesmo assim, para fortalecer os que ali creram. A ovação de uma multidão e a pedra de outra vieram do mesmo lugar, quase ao mesmo tempo.</p>
+
+          <div class="pvm-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnPvmFacil" onclick="showPvmOutcome('facil')">Um ministério fácil e aplaudido</button>
+              <button class="toggle-btn" id="btnPvmRelevante" onclick="showPvmOutcome('relevante')">Um ministério relevante, mesmo com sofrimento</button>
+            </div>
+            <div class="pvm-outcome" id="pvmOutcome">
+              <h4 id="pvmTitle"></h4>
+              <p id="pvmText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · a primeira viagem missionária</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const pvmStops = [
+    { name: "Antioquia da Síria", caption: "Ponto de partida — a igreja jejua, ora, impõe as mãos e envia Barnabé e Saulo, obedecendo à ordem do Espírito Santo (13.2-3)." },
+    { name: "Chipre", caption: "Em Salamina e Pafos, o mago Elimas tenta impedir a fé do procônsul Sérgio Paulo e fica cego; o procônsul crê (13.6-12)." },
+    { name: "Antioquia da Pisídia", caption: "Paulo prega o evangelho na sinagoga, é rejeitado pelos judeus e se volta formalmente para os gentios (13.14-51)." },
+    { name: "Icônio", caption: "Grande multidão de judeus e gregos crê, mas uma conspiração de apedrejamento os força a fugir para Listra (14.1-6)." },
+    { name: "Listra", caption: "Um coxo é curado; a multidão os adora como deuses; dias depois, apedrejam Paulo e o dão como morto (14.8-19)." },
+    { name: "Derbe", caption: "Pregam o evangelho e fazem muitos discípulos, o ponto mais distante da viagem (14.20-21)." },
+    { name: "Volta às igrejas", caption: "Revisitam Listra, Icônio e Antioquia da Pisídia, fortalecendo os discípulos e nomeando presbíteros em cada igreja (14.21-23)." }
+  ];
+
+  function buildPvmRoute(){
+    const route = document.getElementById('pvmRoute');
+    pvmStops.forEach((s, i) => {
+      if (i > 0){
+        const arrow = document.createElement('span');
+        arrow.className = 'pvm-arrow';
+        arrow.textContent = '→';
+        route.appendChild(arrow);
+      }
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pvm-stop';
+      b.textContent = s.name;
+      b.onclick = function(){ revealPvmStop(b, i); };
+      route.appendChild(b);
+    });
+  }
+  buildPvmRoute();
+
+  function revealPvmStop(btn, i){
+    document.querySelectorAll('.pvm-stop').forEach(b => b.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('pvmCaption').textContent = pvmStops[i].caption;
+  }
+
+  function showPvmOutcome(type){
+    const btnF = document.getElementById('btnPvmFacil');
+    const btnR = document.getElementById('btnPvmRelevante');
+    btnF.classList.remove('active-worry');
+    btnR.classList.remove('active-calm');
+    const title = document.getElementById('pvmTitle');
+    const text = document.getElementById('pvmText');
+
+    if (type === 'facil'){
+      btnF.classList.add('active-worry');
+      title.textContent = "O que a multidão de Listra queria oferecer";
+      text.textContent = "Bois, grinaldas, um sacrifício de adoração — a resposta mais fácil de aceitar seria deixar a multidão continuar achando que eram deuses. Um ministério medido pelo aplauso teria parado ali.";
+    } else {
+      btnR.classList.add('active-calm');
+      title.textContent = "A mesma cidade, dias depois";
+      text.textContent = "Paulo rasga as vestes diante da adoração vazia e volta à mesma cidade depois de ser apedrejado nela — porque a aprovação humana nunca foi a medida de um ministério genuíno; a fidelidade ao chamado, sim.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

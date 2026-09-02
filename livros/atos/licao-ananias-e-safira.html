@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananias e Safira — Atos 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* O pecado que pareceu ser x o pecado que realmente foi */
+  .an1-outer{ margin-top:16px; }
+  .an1-row{ display:flex; gap:10px; margin: 6px 0 12px; flex-wrap:wrap; }
+  .an1-btn{
+    flex:1; min-width:150px; padding:12px 14px; border-radius:10px;
+    border:1px solid var(--panel-line); background:var(--panel);
+    font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim);
+    cursor:pointer; transition: all .2s ease; text-align:left;
+  }
+  .an1-btn:hover{ transform: translateY(-2px); }
+  .an1-btn.an1-worry.active{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); box-shadow: 0 0 0 3px rgba(168,92,107,0.12); transform: translateY(-1px); }
+  .an1-btn.an1-calm.active{ border-color: var(--calm); color: var(--calm); background: rgba(124,154,120,0.1); box-shadow: 0 0 0 3px rgba(124,154,120,0.12); transform: translateY(-1px); }
+  .an1-panel{ border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); min-height:60px; }
+  .an1-panel h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15px; margin:0 0 6px; color:var(--text); }
+  .an1-panel p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho em Jerusalém</span>
+  </div>
+
+  <div class="eyebrow">Testemunho em Jerusalém · <span class="ref-tag">Atos 5</span></div>
+  <h1>Ananias e Safira</h1>
+  <p class="sub">Um casal mente sobre o valor de uma doação — e aprende, da forma mais severa possível, que mentir para o Espírito Santo não é uma mentira pequena.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A mentira de Ananias e Safira</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois do exemplo de Barnabé, que vendeu um campo e trouxe todo o valor aos apóstolos, um casal chamado Ananias e Safira faz o mesmo gesto público — mas com um detalhe escondido. Vendem uma propriedade e, "de comum acordo", retêm parte do valor, trazendo o restante como se fosse o total da venda (5.1-2). O pecado não está em guardar uma parte; está em fingir que estavam dando tudo.</p>
+          <p>Pedro confronta Ananias diretamente: "por que encheu Satanás o teu coração, para que mentisses ao Espírito Santo, e retivesses parte do preço da herdade?... não mentiste aos homens, mas a Deus" (5.3-4). Ao ouvir essas palavras, Ananias cai e expira; grande temor vem sobre todos os que ouvem. Cerca de três horas depois, Safira entra sem saber o que havia acontecido; perguntada se foi por aquele preço que venderam a terra, sustenta a mesma mentira — e também cai morta aos pés de Pedro (5.5-10). "E houve grande temor em toda a igreja, e em todos os que ouviram estas coisas" (5.11).</p>
+
+          <div class="an1-outer">
+            <div class="an1-row">
+              <button class="an1-btn an1-worry" id="an1BtnA" onclick="showAn1('pareceu')">O pecado que pareceu ser</button>
+              <button class="an1-btn an1-calm" id="an1BtnB" onclick="showAn1('foi')">O pecado que realmente foi</button>
+            </div>
+            <div class="an1-panel" id="an1Panel">
+              <h4 id="an1Title">Toque em uma das opções acima</h4>
+              <p id="an1Text">Pedro deixa claro em 5.4 qual era exatamente o problema — e qual não era.</p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → sinais e prodígios</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Sinais e prodígios, o povo teme aproximar-se</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois desse episódio severo, Lucas registra que "muitos sinais e prodígios eram feitos entre o povo pelas mãos dos apóstolos" (5.12). O efeito é duplo e paradoxal: o povo tinha os apóstolos "em grande estima", mas "dos outros, ninguém ousava ajuntar-se a eles" — o temor gerado pelo julgamento de Ananias e Safira tornou a igreja, ao mesmo tempo, admirada e temida por quem estava de fora, sem compromisso genuíno.</p>
+          <p>A fé no poder de Deus através dos apóstolos chega a um ponto extremo: traziam os enfermos para as ruas, colocados em leitos e camas, "para que ao menos a sombra de Pedro, ao passar, cobrisse a algum deles" (5.15). Multidões vêm até das cidades vizinhas a Jerusalém, trazendo enfermos e atormentados por espíritos imundos, "e todos eram curados" (5.16). O texto não afirma que a sombra tinha poder mágico próprio; registra apenas a fé do povo e a fidelidade de Deus em responder.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → presos de novo, libertados por um anjo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Presos de novo, libertados por um anjo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O sumo sacerdote e os saduceus, "cheios de inveja", prendem os apóstolos e os lançam na cadeia pública (5.17-18). Mas de noite um anjo do Senhor abre as portas da prisão, tira-os e ordena: "ide, apresentai-vos no templo, e falai ao povo todas as palavras desta vida" (5.19-20) — a mesma ordem de continuar testemunhando, não de fugir ou se esconder.</p>
+          <p>Eles obedecem imediatamente, entrando no templo ao romper do dia e ensinando. Quando o Sinédrio manda buscá-los na prisão, os guardas voltam intrigados: as portas estavam fechadas com toda a segurança, mas dentro não havia ninguém (5.21-23). Levados de novo diante do conselho, e lembrados de que haviam sido proibidos de ensinar naquele nome, Pedro e os apóstolos respondem com a mesma firmeza de antes: "importa antes obedecer a Deus que aos homens" (5.29).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o conselho de Gamaliel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O conselho de Gamaliel</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Furiosos, os membros do Sinédrio querem matar os apóstolos (5.33). Levanta-se então Gamaliel, "doutor da lei, venerado por todo o povo", e pede que os retirem por um momento. Cita exemplos passados de movimentos liderados por Teudas e por Judas, o galileu, que reuniram seguidores mas se desfizeram assim que seus líderes morreram (5.34-37).</p>
+          <p>Sua conclusão se tornaria um dos princípios mais citados de todo o livro: "não vos meteis com estes homens, nem lhes toqueis; porque, se esse conselho ou esta obra é de homens, se desfará; mas, se é de Deus, não a podereis desfazer; não aconteça que sejais também achados a lutar contra Deus" (5.38-39). O conselho aceita o argumento, mas ainda assim manda açoitar os apóstolos antes de soltá-los, ordenando novamente que não falem no nome de Jesus. Eles saem "regozijando-se de terem sido julgados dignos de sofrer afronta pelo nome de Jesus" — e não deixam, nem por um dia, de ensinar e pregar (5.40-42).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Importa antes obedecer a Deus</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Os dois episódios de Atos 5 parecem, à primeira vista, sem relação: um julgamento severo dentro da igreja, e uma perseguição vinda de fora dela. Mas os dois giram em torno do mesmo eixo — sinceridade e integridade diante de Deus, e não apenas diante dos homens. Ananias e Safira quiseram parecer generosos sem realmente ser; os apóstolos, ao contrário, escolheram parecer desobedientes aos homens para permanecerem fiéis a Deus.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 5.29</span>
+          <p>Importa antes obedecer a Deus que aos homens.</p>
+          <span class="ref">— resposta dos apóstolos ao Sinédrio</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Um casal mentiu para parecer mais generoso do que realmente foi, e a mentira lhes custou a vida. Um grupo de apóstolos recusou-se a mentir sobre o que tinha visto e ouvido, mesmo sob ameaça de morte, e saiu do julgamento regozijando-se. Em ambos os casos, o teste real não era o que os homens veriam ou pensariam, mas o que era verdadeiro diante de Deus — e Atos 5 mostra, de dois ângulos opostos, o preço de cada escolha.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma mentira para parecer generoso</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma obediência que não teme os homens</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · Ananias e Safira</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showAn1(type){
+    const btnA = document.getElementById('an1BtnA');
+    const btnB = document.getElementById('an1BtnB');
+    btnA.classList.remove('active');
+    btnB.classList.remove('active');
+    const title = document.getElementById('an1Title');
+    const text = document.getElementById('an1Text');
+
+    if (type === 'pareceu'){
+      btnA.classList.add('active');
+      title.textContent = "Reter parte do dinheiro";
+      text.textContent = "É fácil ler o episódio como se o pecado fosse ter guardado uma parte do valor da venda para si — como se a generosidade total fosse obrigatória.";
+    } else {
+      btnB.classList.add('active');
+      title.textContent = "Mentir fingindo ter dado tudo";
+      text.textContent = "Pedro deixa claro em 5.4 que a propriedade e o dinheiro eram deles, livres para dispor como quisessem, antes e depois da venda. O pecado não foi reter — foi mentir, fingindo diante da igreja e de Deus que estavam dando o total.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Ananias e Safira";
+      text.textContent = "Trouxeram parte do valor da venda fingindo que era o total — uma mentira ao Espírito Santo, cometida para parecer mais generosos diante da igreja do que realmente eram.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Os apóstolos diante do Sinédrio";
+      text.textContent = "Recusaram-se a esconder ou negar o que haviam visto e ouvido, mesmo sob ameaça — \"importa antes obedecer a Deus que aos homens\" (5.29), e saíram regozijando-se de sofrer por isso.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

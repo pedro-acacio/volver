@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tempestade, naufrágio e Roma — Atos 27—28</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Catorze dias à deriva — barra de dias clicável */
+  .tnr-outer{ margin-top:16px; }
+  .tnr-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .tnr-grid{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .tnr-day{ width:30px; height:30px; border-radius:7px; background:var(--panel-line); border:none; padding:0; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-dim); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease, color .3s ease; flex-shrink:0; }
+  .tnr-day.open{ background:var(--worry); color:#fff; transform:scale(1.08); box-shadow:0 0 8px 1px rgba(168,92,107,.4); }
+  .tnr-day.day14{ font-weight:600; }
+  .tnr-day.day14.open{ background:var(--gold, #D9A441); color:#2C3459; box-shadow:0 0 10px 2px rgba(217,164,65,.5); }
+  .tnr-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  .tnr-count-outer{ margin-top:18px; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); text-align:center; }
+  .tnr-count-num{ font-family:'Fraunces', serif; font-weight:600; font-size:34px; color:var(--gold); line-height:1; }
+  .tnr-count-sub{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-faint); margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho até os confins da terra</span>
+  </div>
+
+  <div class="eyebrow">Testemunho até os confins da terra · <span class="ref-tag">Atos 27—28</span></div>
+  <h1>Tempestade, naufrágio e Roma</h1>
+  <p class="sub">Catorze dias à deriva numa tempestade, um naufrágio, e depois uma cobra venenosa — e ao fim de tudo isso, Paulo finalmente chega a Roma, ainda pregando livremente.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A tempestade e a promessa em meio à perda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Embarcado como prisioneiro rumo a Roma, sob os cuidados do centurião Júlio, Paulo avisa que a viagem, naquela época do ano, trará dano e muita perda — mas o centurião dá mais crédito ao piloto e ao dono do navio do que às palavras de Paulo, e seguem viagem (27.9-11). Um forte vento tempestuoso, chamado Euroclidão, arrasta o navio por dias inteiros; sem sol nem estrelas visíveis por muitas jornadas, a tripulação perde toda esperança de se salvar, lançando ao mar a carga e até o próprio equipamento do navio (27.14-20).</p>
+          <p>Em meio ao desespero geral, um anjo de Deus aparece a Paulo de noite, dizendo que ele deve comparecer perante César, e que Deus lhe concedeu a vida de todos os que navegam com ele — nenhuma se perderá, somente o navio (27.23-24). Paulo então anima a todos: "tende bom ânimo, porque nenhuma alma de vós perecerá, mas somente o navio" (27.22, 25).</p>
+
+          <div class="tnr-outer">
+            <div class="tnr-label">Catorze dias à deriva — toque para acompanhar</div>
+            <div class="tnr-grid" id="tnrGrid"></div>
+            <div class="tnr-caption" id="tnrCaption">Toque em um dia para ver o que aconteceu nele.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o naufrágio em Malta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O naufrágio em Malta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na décima quarta noite, os marinheiros percebem terra se aproximando; temendo dar em rochedos, lançam quatro âncoras e esperam ansiosamente o amanhecer (27.27-29). Paulo insiste que todos comam algo para se fortalecerem, garantindo mais uma vez que nenhum cabelo da cabeça de ninguém pereceria (27.33-34). Ao amanhecer, encalham o navio num banco de areia, e a proa fica presa enquanto a popa começa a se despedaçar pela força das ondas (27.39-41).</p>
+          <p>Os soldados, temendo que os presos fujam a nado, querem matá-los — mas o centurião, querendo salvar Paulo, impede o plano (27.42-43). Todos os duzentos e setenta e seis a bordo chegam salvos à terra, uns nadando, outros sobre tábuas ou destroços do próprio navio, exatamente como havia sido prometido (27.37, 44).</p>
+
+          <div class="tnr-count-outer">
+            <div class="tnr-count-num">276</div>
+            <div class="tnr-count-sub">pessoas a bordo — nenhuma vida perdida (27.37, 44)</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a cobra e a hospitalidade de Malta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A cobra e a hospitalidade de Malta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os habitantes da ilha de Malta recebem os náufragos com uma humanidade incomum, acendendo uma fogueira por causa da chuva e do frio (28.1-2). Enquanto Paulo ajunta um feixe de lenha, uma víbora, fugindo do calor, prende-se à sua mão. Vendo o animal pendurado, os habitantes concluem entre si que ele deve ser um assassino a quem a justiça divina não permite viver, mesmo depois de escapar do mar (28.3-4).</p>
+          <p>Paulo sacode a cobra no fogo sem sofrer mal algum; esperando vê-lo inchar e cair morto de repente, e não acontecendo nada, os habitantes mudam de ideia e passam a dizer que ele é um deus (28.5-6). Hospedado na casa do principal da ilha, Públio, Paulo cura o pai dele de febre e disenteria por meio de oração e imposição de mãos — e, depois disso, muitos outros doentes da ilha também são curados (28.7-9).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a chegada a Roma</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A chegada a Roma — dois anos pregando livremente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de três meses em Malta, embarcam de novo, passando por Siracusa, Régio e Putéoli, onde encontram irmãos que os convidam a ficar uma semana (28.11-14). Ao se aproximarem de Roma, irmãos da cidade, já sabendo da chegada de Paulo, saem ao seu encontro — e Paulo, ao vê-los, "cobra ânimo", dando graças a Deus (28.15).</p>
+          <p>Chegando, recebe permissão para morar por conta própria, com apenas um soldado guardando-o. Convoca os principais dos judeus, explica sua situação, e passa dois anos inteiros numa casa alugada, recebendo a todos que o procuravam, "pregando o reino de Deus, e ensinando com toda a liberdade, sem impedimento, as coisas concernentes ao Senhor Jesus Cristo" — as últimas palavras do livro de Atos (28.30-31).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Sem impedimento</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Atos termina de um jeito que qualquer editor moderno rejeitaria: sem resolver o julgamento de Paulo diante de César, sem dizer se ele foi absolvido ou condenado, sem sequer contar sua morte. Lucas simplesmente para, no meio de uma casa alugada em Roma, com Paulo ainda pregando. É um final propositalmente aberto — e essa abertura é o próprio ponto do livro.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 28.30-31</span>
+          <p>E Paulo ficou dois anos inteiros em sua própria casa alugada, e recebia a todos os que o vinham visitar, pregando o reino de Deus, e ensinando com toda a liberdade, sem impedimento, as coisas concernentes ao Senhor Jesus Cristo.</p>
+          <span class="ref">— as últimas palavras do livro de Atos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Atos não termina porque a história do evangelho termina; termina porque Lucas já fez o que se propôs a mostrar — a palavra saindo de Jerusalém, passando pela Judeia e Samaria, e chegando, apesar de tempestades, naufrágios e tribunais, "até aos confins da terra" (1.8). A última palavra grega do livro, traduzida "sem impedimento", não fecha uma porta; deixa-a escancarada. A missão continua além da última página, na igreja que lê essas palavras muito depois de Paulo já não estar mais vivo para escrevê-las.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um fim trágico e fechado</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um fim aberto e cheio de esperança</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · tempestade, naufrágio e Roma</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const tnrDays = [
+    { day: 1, caption: "Dia 1 — o navio deixa Cesareia, sob boa vontade inicial, apesar do aviso de Paulo sobre os riscos da estação (27.9-13)." },
+    { day: 2, caption: "Dia 2 — o Euroclidão atinge o navio; a tripulação já não consegue enfrentar o vento e se deixa levar à deriva (27.14-15)." },
+    { day: 3, caption: "Dia 3 — lançam ao mar parte da carga, tentando aliviar o navio (27.18)." },
+    { day: 4, caption: "Dia 4 — lançam ao mar até o equipamento do navio com as próprias mãos (27.19)." },
+    { day: 5, caption: "Dia 5 — nem sol nem estrelas aparecem; a tempestade não dá trégua." },
+    { day: 6, caption: "Dia 6 — toda esperança de se salvarem já havia se perdido entre a tripulação (27.20)." },
+    { day: 7, caption: "Dia 7 — os dias se repetem sem mudança visível, todos exaustos e famintos." },
+    { day: 8, caption: "Dia 8 — em meio ao desespero geral, ninguém ainda sabe o que está por vir." },
+    { day: 9, caption: "Dia 9 — o navio segue arrastado, sem controle sobre a rota." },
+    { day: 10, caption: "Dia 10 — a fome e o medo se agravam a bordo." },
+    { day: 11, caption: "Dia 11 — um anjo do Senhor aparece a Paulo de noite, prometendo que nenhuma vida se perderá (27.23-24)." },
+    { day: 12, caption: "Dia 12 — Paulo anima a todos com a promessa recebida: 'tende bom ânimo' (27.25)." },
+    { day: 13, caption: "Dia 13 — os marinheiros pressentem a proximidade de terra (27.27)." },
+    { day: 14, caption: "Dia 14 — à meia-noite, lançam âncoras temendo os rochedos; ao amanhecer, o navio encalha e todos os 276 chegam salvos à praia (27.27-44)." }
+  ];
+
+  function buildTnrGrid(){
+    const grid = document.getElementById('tnrGrid');
+    tnrDays.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'tnr-day' + (d.day === 14 ? ' day14' : '');
+      b.textContent = d.day;
+      b.setAttribute('aria-label', 'Dia ' + d.day);
+      b.onclick = function(){ revealTnrDay(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildTnrGrid();
+
+  function revealTnrDay(btn, i){
+    btn.classList.add('open');
+    document.getElementById('tnrCaption').textContent = tnrDays[i].caption;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O que o livro poderia ter sido";
+      text.textContent = "Um relato que termina com a execução de Paulo em Roma fecharia a história com um ponto final trágico, como se a missão dependesse inteiramente da sobrevivência de um único homem.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O que o livro realmente é";
+      text.textContent = "Lucas fecha Atos com Paulo ainda vivo, ainda pregando, 'sem impedimento' — porque o evangelho nunca dependeu de um único mensageiro; a mesma palavra que saiu de Jerusalém continua avançando muito além da última linha do livro (28.31).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

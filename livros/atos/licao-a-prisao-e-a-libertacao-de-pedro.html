@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A prisão e a libertação de Pedro — Atos 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* a porta de Rode — fechada / aberta */
+  .ped-outer{ margin-top:16px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .ped-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; flex-basis:100%; }
+  .ped-door{ width:64px; height:90px; border:none; padding:0; cursor:pointer; background:var(--panel-line); border-radius:4px 4px 2px 2px; position:relative; transition: background .3s ease, box-shadow .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1); flex-shrink:0; }
+  .ped-door::after{ content:''; position:absolute; top:8px; right:8px; width:6px; height:6px; border-radius:50%; background:var(--text-faint); transition: background .3s ease; }
+  .ped-door.open{ background:var(--calm); box-shadow:0 0 10px 2px rgba(124,154,120,.4); transform: scale(1.04); }
+  .ped-door.open::after{ background:#fff; }
+  .ped-caption{ font-size:13px; color:var(--text-dim); line-height:1.58; max-width:340px; min-height:54px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho na Judeia e Samaria</span>
+  </div>
+
+  <div class="eyebrow">Testemunho na Judeia e Samaria · <span class="ref-tag">Atos 12</span></div>
+  <h1>A prisão e a libertação de Pedro</h1>
+  <p class="sub">Tiago é morto pela espada, Pedro é preso para o mesmo destino — mas a igreja ora sem cessar, e um anjo abre as portas da prisão.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Tiago morto, Pedro preso</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O rei Herodes — Agripa I, neto de Herodes, o Grande — estende a mão para maltratar alguns da igreja, e manda matar à espada Tiago, irmão de João, um dos três discípulos mais próximos de Jesus (12.1-2). É a primeira morte de um apóstolo registrada em Atos, e o texto não se demora nela; uma única frase encerra o que havia sido, para Tiago, três anos ao lado do próprio Cristo.</p>
+          <p>Vendo que isso agrada aos judeus, Herodes prossegue e prende também Pedro, durante os dias dos pães ázimos (12.3). Entrega-o a quatro grupos de quatro soldados para guardá-lo, pretendendo apresentá-lo ao povo depois da Páscoa (12.4) — uma segurança desproporcional para um único prisioneiro, sinal de que Herodes não queria repetir nenhum escape anterior da prisão pelos apóstolos. Diante disso, a única resposta registrada da igreja não é protesto nem plano de resgate: "a igreja, pois, fazia contínua oração a Deus por ele" (12.5).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a libertação miraculosa</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A libertação miraculosa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Na noite anterior ao dia em que Herodes o apresentaria, Pedro dorme entre dois soldados, preso com duas cadeias, enquanto guardas vigiam a porta da prisão (12.6) — dormindo, note-se, na véspera de uma execução provável, num detalhe que o próprio texto parece registrar com certa admiração. De repente, um anjo do Senhor aparece, e uma luz resplandece na cela; tocando Pedro no lado, o desperta: "levanta-te depressa". As cadeias caem de suas mãos (12.7).</p>
+          <p>O anjo manda-o cingir-se, calçar as sandálias e segui-lo; Pedro obedece sem saber ainda se é real, pensando ver uma visão (12.8-9). Passam pela primeira e pela segunda guarda, e chegam à porta de ferro que dá para a cidade, a qual se abre por si mesma (12.10). Só na rua, sozinho, Pedro cai em si: "agora sei, verdadeiramente, que o Senhor enviou o seu anjo, e me livrou da mão de Herodes, e de tudo o que o povo dos judeus esperava" (12.11).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a incredulidade de Rode e da igreja</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A incredulidade de Rode e da igreja</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro segue diretamente para a casa de Maria, mãe de João Marcos, onde muitos estavam reunidos, orando (12.12) — exatamente o mesmo grupo, é razoável supor, que fazia "contínua oração a Deus por ele" desde a sua prisão. Bate à porta do vestíbulo; uma criada chamada Rode vem escutar, e, reconhecendo a voz de Pedro, de tanta alegria não abre a porta — corre para dentro para anunciar que Pedro está ali fora (12.13-14).</p>
+          <p>Disseram-lhe que estava louca; ela, porém, insistia que assim era. Concluíram então: "deve ser o seu anjo" (12.15) — a mesma igreja que orava sem cessar por sua libertação, diante da resposta real à própria oração, prefere qualquer explicação a acreditar que Deus de fato a atendeu. Pedro continua batendo até que finalmente abrem a porta e ficam pasmados ao vê-lo (12.16).</p>
+
+          <div class="ped-outer">
+            <div class="ped-label">Toque na porta</div>
+            <button class="ped-door" id="pedDoor" onclick="togglePedDoor()" aria-label="Abrir ou fechar a porta"></button>
+            <div class="ped-caption" id="pedCaption">A porta está fechada — Rode ouve a voz de Pedro do lado de fora, mas corre, de alegria, para contar aos outros sem abrir (12.13-14).</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a morte de Herodes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A morte de Herodes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao amanhecer, há grande alvoroço entre os soldados sobre o que teria acontecido a Pedro (12.18). Herodes o procura sem encontrá-lo e, depois de interrogar os guardas, manda executá-los (12.19) — a mesma severidade desproporcional que já havia mostrado ao prender Pedro se volta agora contra os próprios homens que falharam em guardá-lo.</p>
+          <p>Pouco depois, num dia marcado, Herodes se assenta em seu trono, vestido de trajes reais, e faz um discurso público ao povo de Tiro e Sidom (12.21). O povo o aclama, dizendo: "voz de deus, e não de homem!" (12.22) — e Herodes não recusa a honra. "No mesmo instante, um anjo do Senhor o feriu, porque não deu glória a Deus; e, comido de vermes, expirou" (12.23). O rei que matou um apóstolo e se deixou chamar de deus morre de forma humilhante, enquanto "a palavra de Deus crescia e se multiplicava" (12.24).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A igreja orava sem cessar</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Atos 12 coloca lado a lado dois tipos de poder. De um lado, Herodes: soldados, cadeias, um trono, um discurso aplaudido como voz divina — poder visível, institucional, capaz de matar um apóstolo e prender outro sem qualquer resistência humana. Do outro, uma igreja reunida numa casa comum, sem exército, sem influência política, fazendo a única coisa que lhe restava: orar, sem cessar, por um homem preso para morrer.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 12.5</span>
+          <p>Pedro, pois, era guardado na prisão; mas a igreja fazia contínua oração a Deus por ele.</p>
+          <span class="ref">— a única resposta da igreja à prisão de Pedro</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O capítulo termina com uma ironia deliberada: o rei que se deixou aclamar como deus morre comido de vermes, enquanto a oração de uma igreja sem poder algum é respondida por um anjo que abre portas de ferro sozinhas. Nem a incredulidade de Rode diminui a resposta; nem o poder de Herodes a impede. "A palavra de Deus crescia e se multiplicava" (12.24) — o verdadeiro poder, em Atos 12, nunca esteve no trono.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um rei que se fez deus e morreu</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma igreja que orou e foi ouvida</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · a prisão e a libertação de pedro</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  let pedOpen = false;
+  function togglePedDoor(){
+    pedOpen = !pedOpen;
+    const door = document.getElementById('pedDoor');
+    const caption = document.getElementById('pedCaption');
+    if (pedOpen){
+      door.classList.add('open');
+      caption.textContent = "A porta se abre — e ali está Pedro, de verdade, do lado de fora, enquanto os de dentro ainda discutem se ele é ou não o seu anjo (12.15-16).";
+    } else {
+      door.classList.remove('open');
+      caption.textContent = "A porta está fechada — Rode ouve a voz de Pedro do lado de fora, mas corre, de alegria, para contar aos outros sem abrir (12.13-14).";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O trono de Herodes";
+      text.textContent = "Soldados, cadeias, um discurso aclamado como voz de deus — poder visível o bastante para matar um apóstolo, mas incapaz de resistir a um único anjo, e finalmente ferido por não dar glória a Deus (12.21-23).";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A oração da igreja";
+      text.textContent = "Sem exército, sem influência, apenas contínua oração por um homem preso — respondida por um anjo que abre correntes e portas de ferro sozinhas, ainda que a própria igreja mal acreditasse que fora ouvida (12.5, 15-16).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filipe em Samaria — Atos 8</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* A expansão geográfica do evangelho em Atos 8 */
+  .fil-outer{ margin-top:16px; }
+  .fil-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .fil-route{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .fil-point{ padding:8px 13px; border-radius:20px; background:var(--panel-line); border:none; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--text-dim); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease, color .3s ease; flex-shrink:0; }
+  .fil-point.open{ background:var(--calm); color:#fff; transform:scale(1.05); box-shadow:0 0 8px 1px rgba(124,154,120,.4); }
+  .fil-point.last.open{ background:var(--gold, #D9A441); color:#2C3459; box-shadow:0 0 10px 2px rgba(217,164,65,.5); }
+  .fil-arrow{ color:var(--text-faint); font-size:14px; }
+  .fil-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:36px; }
+
+  /* toggle final — poder que se compra x evangelho que se recebe */
+  .fil-toggle-outer{ margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho na Judeia e Samaria</span>
+  </div>
+
+  <div class="eyebrow">Testemunho na Judeia e Samaria · <span class="ref-tag">Atos 8</span></div>
+  <h1>Filipe em Samaria</h1>
+  <p class="sub">A perseguição espalha a igreja para fora de Jerusalém — e o evangelho, pela primeira vez, atravessa uma fronteira étnica e religiosa que os judeus normalmente evitavam.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A dispersão e Filipe em Samaria</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois da morte de Estêvão, "levantou-se, naquele dia, grande perseguição contra a igreja que estava em Jerusalém" (8.1). Saulo assola a igreja, entrando de casa em casa, arrastando homens e mulheres para a prisão (8.3). O resultado, porém, inverte a intenção: todos os discípulos, exceto os apóstolos, são dispersos pela Judeia e Samaria — e "os que foram dispersos iam por toda parte, anunciando a palavra" (8.1, 4). A perseguição que deveria calar a igreja acaba sendo o vento que a espalha.</p>
+          <p>Filipe, um dos sete escolhidos para servir às mesas (6.5), desce a uma cidade de Samaria e prega ali a Cristo (8.5). As multidões, unânimes, atendem ao que Filipe diz, vendo os sinais que fazia — espíritos imundos saindo aos gritos, paralíticos e coxos sendo curados — "e havia grande alegria naquela cidade" (8.6-8). É um passo deliberadamente incômodo: samaritanos eram considerados meio-estrangeiros, de culto misturado, e um judeu piedoso normalmente evitava até atravessar sua região.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Simão, o mago</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Simão, o mago</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Antes de Filipe chegar, um certo Simão já exercia artes mágicas na cidade, dizendo ser alguém grande — e o povo, do menor ao maior, o seguia, chamando-o "a grande virtude de Deus" (8.9-11). Diante da pregação de Filipe, o próprio Simão crê e é batizado, ficando maravilhado ao ver os sinais e grandes milagres que se faziam (8.13). Quando Pedro e João descem de Jerusalém e impõem as mãos para que os samaritanos recebam o Espírito Santo, Simão vê ali algo que reconhece: poder visível, demonstrável — e oferece dinheiro para comprá-lo, pedindo que também ele receba essa autoridade (8.18-19).</p>
+          <p>Pedro o repreende sem meio-termo: "o teu dinheiro seja contigo para perdição, pois cuidaste que o dom de Deus se alcança por dinheiro... arrepende-te, pois vejo que estás em fel de amargura" (8.20-23). O contraste é o núcleo do episódio: Simão trata o Espírito Santo como uma mercadoria de poder a mais em seu repertório de truques, exatamente o oposto de um dom recebido de graça.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o eunuco etíope</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O encontro no caminho de Gaza</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um anjo do Senhor envia Filipe para longe do sucesso samaritano, a um caminho deserto que desce de Jerusalém a Gaza (8.26). Ali ele encontra um eunuco etíope, alto funcionário de Candace, rainha da Etiópia, encarregado de todo o seu tesouro — um homem que havia subido a Jerusalém para adorar e agora regressava, sentado em sua carruagem, lendo o profeta Isaías sem entender o que lia (8.27-28).</p>
+          <p>Guiado pelo Espírito a se aproximar, Filipe ouve o eunuco ler e pergunta: "entendes tu o que lês?" O homem responde: "e como poderei entender, se alguém não me ensinar?", convidando Filipe a subir e sentar-se com ele (8.30-31). O trecho lido é a passagem sobre a ovelha levada ao matadouro, que ele não sabe se fala do profeta ou de outro; "e, abrindo Filipe a boca, e começando desta mesma escritura, lhe anunciou a Jesus" (8.32-35).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o batismo e Filipe arrebatado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O batismo e Filipe arrebatado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Enquanto seguem pelo caminho, chegam a um lugar com água, e o eunuco pergunta, sem rodeios: "eis aqui água; que impede que eu seja batizado?" (8.36). Não há negociação, não há prova de status a apresentar — apenas um pedido simples, de quem acabou de entender algo que buscava havia tempo. Mandando parar a carruagem, ambos descem à água, e Filipe o batiza (8.38).</p>
+          <p>Ao saírem da água, "o Espírito do Senhor arrebatou a Filipe, e não mais o viu o eunuco; e, jubiloso, seguia o seu caminho" (8.39). Filipe reaparece em Azoto e vai pregando o evangelho em todas as cidades até chegar a Cesareia (8.40). Nenhum dos dois volta a se encontrar nesta narrativa — mas cada um segue levando o que recebeu ainda mais longe.</p>
+
+          <div class="fil-outer">
+            <div class="fil-label">A expansão do evangelho em Atos 8 — toque em cada ponto</div>
+            <div class="fil-route" id="filRoute"></div>
+            <div class="fil-caption" id="filCaption">Toque em um lugar para ver o que aconteceu ali.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um poder que não se compra</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Atos 8 coloca lado a lado dois homens diante do mesmo Espírito de Deus. Simão viu nele um poder a ser adquirido — algo que somaria à sua própria reputação de "grande virtude", uma ferramenta de status entre os que já o seguiam. O eunuco não pediu poder nenhum; pediu apenas para entender uma escritura, e quando entendeu, pediu apenas para ser batizado. Um queria acrescentar o Espírito à própria grandeza; o outro simplesmente recebeu o que lhe foi dado.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 8.35</span>
+          <p>Então, abrindo Filipe a boca, e começando desta mesma escritura, lhe anunciou a Jesus.</p>
+          <span class="ref">— o encontro no caminho de Gaza</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O contraste continua até a última linha de cada história: Simão é advertido, repreendido, e some do relato pedindo apenas que a ameaça de Pedro não se cumpra (8.24) — sem alegria alguma registrada. O eunuco, batizado num lugar deserto, sem igreja, sem comunidade visível ao seu redor, "seguia o seu caminho, cheio de alegria" (8.39). A diferença entre os dois não é de talento ou posição social, mas de como cada um se aproximou do dom de Deus.</p>
+
+          <div class="fil-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um poder que se compra e se ostenta</button>
+              <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um evangelho que se recebe com alegria</button>
+            </div>
+
+            <div class="outcome" id="outcomeCard">
+              <div class="outcome-visual" id="outcomeVisual"></div>
+              <h3 id="outcomeTitle"></h3>
+              <p id="outcomeText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · filipe em samaria</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const filPoints = [
+    { label: "Jerusalém", caption: "De onde a perseguição contra a igreja começa — e de onde, sem intenção nenhuma, ela é espalhada por toda a Judeia e Samaria (8.1)." },
+    { label: "Samaria", caption: "Filipe desce a uma cidade de Samaria e prega a Cristo; multidões creem, e há grande alegria — o evangelho atravessa, pela primeira vez, uma fronteira que os judeus normalmente evitavam (8.5-8)." },
+    { label: "Caminho de Gaza", caption: "Um anjo envia Filipe a um caminho deserto, longe de qualquer multidão, para encontrar um único homem lendo Isaías sem entender (8.26-28)." },
+    { label: "Etiópia (África)", caption: "Batizado, o eunuco segue, jubiloso, de volta ao seu continente — levando o evangelho para além das fronteiras que os próprios apóstolos ainda não haviam cruzado (8.39)." }
+  ];
+
+  function buildFilRoute(){
+    const route = document.getElementById('filRoute');
+    filPoints.forEach((p, i) => {
+      if (i > 0){
+        const arrow = document.createElement('span');
+        arrow.className = 'fil-arrow';
+        arrow.textContent = '→';
+        route.appendChild(arrow);
+      }
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'fil-point' + (i === filPoints.length - 1 ? ' last' : '');
+      b.textContent = p.label;
+      b.setAttribute('aria-label', p.label);
+      b.onclick = function(){ revealFilPoint(b, i); };
+      route.appendChild(b);
+    });
+  }
+  buildFilRoute();
+
+  function revealFilPoint(btn, i){
+    btn.classList.add('open');
+    document.getElementById('filCaption').textContent = filPoints[i].caption;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O caminho de Simão";
+      text.textContent = "Um poder tratado como mercadoria a mais numa reputação já construída sobre magia e status — algo a se possuir e exibir, não a se receber com humildade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O caminho do eunuco";
+      text.textContent = "Um homem que não pediu poder nenhum, apenas entendimento — e que, ao recebê-lo, seguiu seu caminho cheio de alegria, sem exigir mais nada além do que lhe foi dado de graça.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

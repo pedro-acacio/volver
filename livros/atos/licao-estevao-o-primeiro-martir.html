@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estêvão, o primeiro mártir — Atos 6—7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Mini-timeline do discurso de Estêvão */
+  .es1-outer{ margin-top:16px; }
+  .es1-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .es1-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .es1-btn{
+    padding:9px 13px; border-radius:20px; border:1px solid var(--panel-line);
+    background:var(--panel); font-family:'IBM Plex Mono', monospace; font-size:12px;
+    color:var(--text-dim); cursor:pointer; transition: all .2s ease;
+  }
+  .es1-btn:hover{ transform: translateY(-2px); }
+  .es1-btn.active{ border-color: var(--gold); color: var(--gold); background: rgba(217,164,65,0.1); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); transform: translateY(-1px); }
+  .es1-panel{ border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); min-height:60px; }
+  .es1-panel h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15px; margin:0 0 6px; color:var(--text); }
+  .es1-panel p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho em Jerusalém</span>
+  </div>
+
+  <div class="eyebrow">Testemunho em Jerusalém · <span class="ref-tag">Atos 6—7</span></div>
+  <h1>Estêvão, o primeiro mártir</h1>
+  <p class="sub">Escolhido apenas para servir mesas, Estêvão se torna o primeiro cristão a morrer por Cristo — orando por seus próprios assassinos enquanto morre.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A escolha dos sete</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Com o crescimento do número de discípulos, surge uma queixa: os helenistas — judeus de cultura e língua grega — reclamam dos hebreus porque suas viúvas estavam sendo negligenciadas na distribuição diária de alimento (6.1). É o primeiro conflito interno registrado na igreja, e os apóstolos não o ignoram nem o tratam como secundário.</p>
+          <p>Reúnem toda a multidão de discípulos e explicam que "não é razoável" que eles deixem a palavra de Deus para servir às mesas (6.2); pedem que a própria igreja escolha "sete homens de boa reputação, cheios do Espírito Santo e de sabedoria", para cuidar dessa necessidade prática, enquanto os apóstolos permanecem dedicados à oração e ao ministério da palavra (6.3-4). Entre os sete escolhidos está Estêvão, descrito como "homem cheio de fé e do Espírito Santo" (6.5). A palavra de Deus crescia, e o número dos discípulos se multiplicava muito em Jerusalém, "e grande número de sacerdotes obedecia à fé" (6.7).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Estêvão preso por falso testemunho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Estêvão preso por falso testemunho</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Escolhido apenas para uma função prática de serviço, Estêvão logo se mostra muito mais do que isso: "cheio de graça e poder, fazia prodígios e grandes sinais entre o povo" (6.8). Alguns membros da sinagoga chamada dos Libertinos — junto com cireneus, alexandrinos e outros da Cilícia e da Ásia — discutem com ele, mas "não podiam resistir à sabedoria e ao espírito com que falava" (6.9-10).</p>
+          <p>Incapazes de vencê-lo em argumento, subornam homens para dizer que o ouviram proferir palavras blasfemas contra Moisés e contra Deus (6.11). Isso agita o povo, os anciãos e os escribas, que o prendem e o levam ao Sinédrio, apresentando falsas testemunhas que o acusam de falar contra o templo e a lei (6.12-14). No meio de tudo isso, o narrador registra um detalhe marcante: "todos os que estavam assentados no Sinédrio... viram o seu rosto como o rosto de um anjo" (6.15).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o discurso de Estêvão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O discurso de Estêvão — a história da rejeição</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Perguntado pelo sumo sacerdote se as acusações são verdadeiras, Estêvão responde com o discurso mais longo de todo o livro de Atos: um resumo cuidadoso da história de Israel, desde Abraão até Salomão (7.2-53). Não é uma defesa direta ponto a ponto; é uma demonstração, através da própria narrativa que aquele povo mais reverenciava, de um padrão que se repete: Deus levanta um libertador, e o povo o rejeita.</p>
+          <p>José é vendido pelos próprios irmãos, mas depois se torna quem os salva da fome (7.9-14). Moisés é rejeitado pelos seus quando tenta libertá-los pela primeira vez — "quem te constituiu príncipe e juiz sobre nós?" (7.27, 35) — antes de ser o próprio instrumento da libertação do Egito. O tabernáculo, e depois o templo que Salomão construiu, nunca continham a presença de Deus por completo, pois "o Altíssimo não habita em templos feitos por mãos de homens" (7.48). Toque nos nomes abaixo para acompanhar como cada elo da história aponta para a mesma rejeição que Estêvão está enfrentando:</p>
+
+          <div class="es1-outer">
+            <div class="es1-label">O discurso de Estêvão — toque em cada nome</div>
+            <div class="es1-row" id="es1Row"></div>
+            <div class="es1-panel" id="es1Panel">
+              <h4 id="es1Title">Toque em um nome acima</h4>
+              <p id="es1Text">Cada figura da história de Israel repete, de algum modo, o mesmo padrão: o mensageiro de Deus é rejeitado pelo próprio povo.</p>
+            </div>
+          </div>
+
+          <p>Estêvão fecha o discurso virando a acusação contra os próprios juízes: "vós sempre resistis ao Espírito Santo; como vossos pais, assim também vós" (7.51) — o mesmo padrão de rejeitar os mensageiros de Deus, culminando agora na rejeição do próprio Messias que os profetas anunciaram (7.52).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a visão e o martírio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A visão e o martírio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao ouvir a acusação virada contra eles, os membros do Sinédrio "ficaram furiosos em seus corações, e rangiam os dentes contra ele" (7.54). Mas Estêvão, "cheio do Espírito Santo", olha fixamente para o céu e vê a glória de Deus, e Jesus em pé à direita de Deus — não assentado, um detalhe que o próprio narrador destaca duas vezes (7.55-56), diferente das outras referências do Novo Testamento a Jesus assentado à direita do Pai.</p>
+          <p>Enfurecidos, tapam os ouvidos, dão em uníssono contra ele, e o arrastam para fora da cidade para apedrejá-lo; as testemunhas depositam suas capas aos pés de um jovem chamado Saulo (7.57-58) — a primeira menção, nesse ponto discreta, de quem se tornaria o maior missionário da igreja. Enquanto é apedrejado, Estêvão ora: "Senhor Jesus, recebe o meu espírito." Então, de joelhos, clama em alta voz: "Senhor, não lhes imputes este pecado." E, tendo dito isto, adormece (7.59-60).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma morte que ecoa a cruz</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>As últimas palavras de Estêvão não são improvisadas nem originais no sentido de nunca terem sido ditas antes — são um eco deliberado das últimas palavras do próprio Jesus na cruz. Na cruz, Jesus orou "Pai, perdoa-lhes, porque não sabem o que fazem" (Lucas 23.34) e, ao morrer, "Pai, nas tuas mãos entrego o meu espírito" (Lucas 23.46). Estêvão, morrendo, ora quase as mesmas duas coisas: "Senhor Jesus, recebe o meu espírito" e "Senhor, não lhes imputes este pecado."</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 7.59-60</span>
+          <p>E apedrejavam Estêvão, invocando ele ao Senhor, e dizendo: Senhor Jesus, recebe o meu espírito. E, pondo-se de joelhos, clamou em alta voz: Senhor, não lhes imputes este pecado. E, tendo dito isto, adormeceu.</p>
+          <span class="ref">— o martírio de Estêvão</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A palavra que Lucas escolhe para descrever a morte de Estêvão — "adormeceu" — não é eufemismo vazio; é a linguagem cristã da morte como sono temporário, à espera da ressurreição. Estêvão não morre como uma vítima aterrorizada, apegada à vida a qualquer custo; morre como um discípulo, imitando o próprio Mestre até o fim, com os olhos já fixos no céu aberto que acabara de ver.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">A última palavra de um homem morrendo</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">A oração de um homem que já via o céu aberto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · Estêvão, o primeiro mártir</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const es1Points = [
+    { label: "Abraão", text: "Deus chama Abraão para fora de sua terra rumo a uma herança que ele nunca chegaria a possuir por completo em vida (7.2-5) — a fidelidade de Deus antecede qualquer posse visível." },
+    { label: "José", text: "Vendido pelos próprios irmãos por inveja, José se torna, mesmo assim, o instrumento que Deus usa para salvá-los da fome (7.9-14) — rejeitado por quem deveria recebê-lo, exaltado depois por Deus." },
+    { label: "Moisés", text: "Rejeitado pelos seus na primeira tentativa de libertá-los — \"quem te constituiu príncipe e juiz sobre nós?\" (7.27, 35) — antes de ser o próprio libertador que Deus enviou." },
+    { label: "Davi e Salomão", text: "Salomão constrói um templo para Deus, mas o próprio Estêvão lembra que \"o Altíssimo não habita em templos feitos por mãos de homens\" (7.47-48) — a presença de Deus nunca esteve presa a um edifício." }
+  ];
+
+  function buildEs1(){
+    const row = document.getElementById('es1Row');
+    es1Points.forEach((p, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'es1-btn';
+      b.textContent = p.label;
+      b.onclick = function(){ selectEs1(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildEs1();
+
+  function selectEs1(btn, i){
+    btn.parentElement.querySelectorAll('.es1-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('es1Title').textContent = es1Points[i].label;
+    document.getElementById('es1Text').textContent = es1Points[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Se fosse apenas isso";
+      text.textContent = "Uma última frase qualquer, dita sob dor e medo, sem sentido além do momento em que foi pronunciada — o fim de uma vida interrompida à força.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O que realmente foi";
+      text.textContent = "Uma oração consciente, ecoando deliberadamente as palavras de Jesus na cruz — perdão para os assassinos, entrega do próprio espírito a um Senhor que Estêvão já via, de pé, à direita de Deus.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

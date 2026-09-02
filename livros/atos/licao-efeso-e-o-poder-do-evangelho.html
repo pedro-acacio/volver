@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Éfeso e o poder do evangelho — Atos 19</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* medidor do valor dos livros de magia queimados */
+  .efe-outer{ margin-top:16px; }
+  .efe-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .efe-meter-btn{
+    display:block; width:100%; text-align:left; border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line);
+    background: var(--panel); cursor:pointer; font-family:'IBM Plex Sans', sans-serif; transition: border-color .25s ease, transform .2s ease;
+  }
+  .efe-meter-btn:hover{ transform: translateY(-2px); }
+  .efe-meter-btn.open{ border-color: var(--gold); }
+  .efe-meter-num{ font-family:'Fraunces', serif; font-weight:600; font-size:24px; color:var(--gold); margin:0 0 4px; }
+  .efe-meter-sub{ font-size:12.5px; color:var(--text-faint); }
+  .efe-bar-track{ width:100%; height:10px; border-radius:6px; background: var(--panel-line); overflow:hidden; margin:12px 0 4px; }
+  .efe-bar-fill{ height:100%; width:0%; background: var(--gold); border-radius:6px; transition: width 1s cubic-bezier(.22,1,.36,1); }
+  .efe-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho até os confins da terra</span>
+  </div>
+
+  <div class="eyebrow">Testemunho até os confins da terra · <span class="ref-tag">Atos 19</span></div>
+  <h1>Éfeso e o poder do evangelho</h1>
+  <p class="sub">Livros de magia avaliados numa fortuna são queimados em praça pública — em Éfeso, o evangelho não deixa espaço para meio-termo com o ocultismo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 V6 L9 3 L14 6 V14" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M9 9 V14" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Discípulos de João Batista recebem o Espírito Santo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao chegar a Éfeso, Paulo encontra alguns discípulos e lhes pergunta se receberam o Espírito Santo quando creram. A resposta surpreende: "nós nem ainda ouvimos que haja Espírito Santo" (19.2). Perguntados sobre que batismo haviam recebido, dizem que o batismo de João — um batismo de arrependimento, que apontava para aquele que viria depois dele, ou seja, para Jesus Cristo (19.3-4).</p>
+          <p>Eram sinceros na fé que tinham, mas incompletos no que conheciam — pareciam ter parado exatamente no ponto em que João apontava adiante, sem chegar ao próprio Jesus. Ouvindo isso, são batizados em nome do Senhor Jesus; Paulo lhes impõe as mãos, e o Espírito Santo vem sobre eles, de modo que falam em línguas e profetizam (19.5-6). O episódio mostra que conhecer parcialmente a verdade, mesmo com sinceridade, não substitui conhecer a Cristo por completo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → dois anos no salão de Tirano</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 H15 M3 4 H15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M5 4 V14 M13 4 V14" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Dois anos no salão de Tirano</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Paulo ensina três meses na sinagoga, discutindo e persuadindo acerca do reino de Deus. Quando alguns endurecem o coração e falam mal do Caminho diante da multidão, ele separa os discípulos e passa a ensinar diariamente na escola de um certo Tirano — por dois anos inteiros, de modo que todos os que habitavam na província da Ásia, judeus e gregos, ouviram a palavra do Senhor Jesus (19.8-10).</p>
+          <p>Nesse período, Deus faz milagres extraordinários pelas mãos de Paulo, a ponto de lenços e aventais que haviam tocado seu corpo serem levados aos enfermos, e as doenças os deixarem, saindo também os espíritos malignos (19.11-12). Não é o objeto em si que cura — é o mesmo poder de Deus que já operava por meio da pregação, tornado visível também nesses sinais, num contexto onde a cidade estava profundamente mergulhada em magia e superstição.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → os filhos de Ceva e a queima dos livros</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 3 L9 9 L6 15 M12 3 L9 9 L12 15" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+          <path d="M4 14 C6 8 12 8 14 14" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Os filhos de Ceva e a queima dos livros de magia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Alguns judeus exorcistas ambulantes tentam invocar o nome de Jesus sobre endemoninhados sem crer nele, como uma fórmula mágica a mais: "esconjuro-vos por Jesus, a quem Paulo prega" (19.13). Sete filhos de um certo Ceva, principal dos sacerdotes, tentam isso — mas o espírito maligno responde algo que expõe toda a fraude: "a Jesus conheço, e sei quem é Paulo; mas vós, quem sois?" (19.15). O homem em quem estava o espírito maligno se lança sobre eles, e os domina e fere de tal maneira que fogem daquela casa nus e feridos (19.16).</p>
+          <p>O episódio se espalha, e o temor cai sobre todos em Éfeso, judeus e gregos, e o nome do Senhor Jesus é engrandecido (19.17). Muitos dos que já criam vêm confessar e revelar publicamente as suas práticas ocultas; e muitos dos que exerciam artes mágicas, ajuntando os seus livros, os queimam diante de todos — quando calculado o valor deles, chega a cinquenta mil moedas de prata (19.18-19).</p>
+
+          <div class="efe-outer">
+            <div class="efe-label">O valor dos livros queimados — toque para revelar o contexto</div>
+            <button type="button" class="efe-meter-btn" id="efeMeterBtn" onclick="revealEfeMeter()">
+              <div class="efe-meter-num">50.000 moedas de prata</div>
+              <div class="efe-meter-sub">o valor calculado dos livros de magia queimados em praça pública (19.19)</div>
+              <div class="efe-bar-track"><div class="efe-bar-fill" id="efeBarFill"></div></div>
+            </button>
+            <div class="efe-caption" id="efeCaption">Toque no medidor para ver o que essa fortuna representava.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o tumulto de Demétrio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.2"/>
+          <path d="M6 6 L12 12 M12 6 L6 12" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O tumulto de Demétrio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um ourives chamado Demétrio, que lucrava fazendo réplicas de prata do templo de Diana (Ártemis) — uma das sete maravilhas do mundo antigo, centro religioso e econômico de Éfeso — reúne outros artesãos do mesmo ofício, alarmado: a pregação de Paulo, dizendo que não são deuses os feitos por mãos humanas, ameaça reduzir a demanda por esses ídolos, pondo em risco tanto o comércio quanto a própria reputação do templo da grande deusa (19.24-27).</p>
+          <p>A multidão se enche de fúria e grita por cerca de duas horas: "grande é a Diana dos efésios!" (19.28, 34). A cidade inteira entra em confusão; arrastam companheiros de Paulo para o teatro, e o próprio Paulo quer entrar diante do povo, mas os discípulos e até alguns principais da província o impedem (19.29-31). Por fim, o escrivão da cidade acalma a multidão, afirmando que nada ilegal foi feito e que, se há queixa, deveriam resolvê-la nos tribunais próprios, sob risco de serem acusados de sedição por aquele ajuntamento sem motivo legal (19.35-41).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um poder que se compra e imita, e um poder que só vem do Espírito</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Éfeso 19 coloca lado a lado três formas de "poder" que os efésios conheciam bem: a magia, que se aprende e se vende em livros; os ídolos de Diana, defendidos não por convicção religiosa profunda, mas por interesse comercial direto; e o poder do Espírito Santo, que nem os filhos de Ceva conseguiram imitar mesmo pronunciando as palavras certas. Só o terceiro é genuíno — e, por ser genuíno, não pode ser comprado, fabricado nem falsificado.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 19.20</span>
+          <p>Assim a palavra do Senhor crescia poderosamente e prevalecia.</p>
+          <span class="ref">— resumo do ministério de Paulo em Éfeso</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Os que queimam seus livros de magia não fazem um gesto simbólico barato — abrem mão de uma fortuna real, de anos de investimento numa arte que prometia controle e vantagem. E o fazem porque, ao conhecer o poder verdadeiro do nome de Jesus, toda imitação perde o valor. É o mesmo padrão visto no confronto com os filhos de Ceva: o nome de Jesus não é uma fórmula a mais para acrescentar ao arsenal de alguém — ou se rende a ele com fé genuína, ou ele expõe a farsa de quem só o usa como técnica.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um poder que se finge ou se compra</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um poder que só vem do nome de Jesus</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · Éfeso e o poder do evangelho</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function revealEfeMeter(){
+    const btn = document.getElementById('efeMeterBtn');
+    btn.classList.add('open');
+    document.getElementById('efeBarFill').style.width = '100%';
+    document.getElementById('efeCaption').textContent = "Uma dracma de prata equivalia, no período, a cerca de um dia de salário de um trabalhador comum. Cinquenta mil moedas de prata representam, portanto, o equivalente a dezenas e dezenas de anos de trabalho — não um gesto simbólico, mas uma renúncia financeira real e enorme, feita de uma só vez, em praça pública.";
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma fórmula, não uma fé";
+      text.textContent = "Os filhos de Ceva tratam o nome de Jesus como técnica a ser copiada, e os artesãos de Diana defendem seus ídolos por causa do lucro que geram — em ambos os casos, um poder de fachada, sem substância nenhuma por trás.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um poder que expõe toda imitação";
+      text.textContent = "O mesmo poder que curava pelos lenços tocados por Paulo é o que dominou os sete filhos de Ceva quando tentaram usá-lo sem fé — e é o que levou tantos a queimar uma fortuna em livros de magia, porque, uma vez conhecido, nenhuma imitação satisfaz mais.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

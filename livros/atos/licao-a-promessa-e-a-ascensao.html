@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A promessa e a ascensão — Atos 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Dez dias entre a ascensão e o Pentecostes */
+  .pr1-outer{ margin-top:16px; }
+  .pr1-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .pr1-grid{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .pr1-day{ width:34px; height:34px; border-radius:8px; background:var(--panel-line); border:none; padding:0; cursor:pointer; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--text-dim); transition: background .3s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease, color .3s ease; flex-shrink:0; }
+  .pr1-day.open{ background:var(--calm); color:#fff; transform:scale(1.08); box-shadow:0 0 8px 1px rgba(124,154,120,.4); }
+  .pr1-day.day10{ font-weight:600; }
+  .pr1-day.day10.open{ background:var(--gold, #D9A441); color:#2C3459; box-shadow:0 0 10px 2px rgba(217,164,65,.5); }
+  .pr1-caption{ font-size:13px; color:var(--text-dim); margin-top:8px; min-height:18px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">O poder do Espírito</span>
+  </div>
+
+  <div class="eyebrow">O poder do Espírito · <span class="ref-tag">Atos 1</span></div>
+  <h1>A promessa e a ascensão</h1>
+  <p class="sub">Jesus, prestes a subir aos céus, é questionado pelos discípulos sobre restaurar o reino a Israel — e responde redirecionando-os a uma missão muito maior.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A pergunta errada e a resposta certa</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Reunidos com Jesus depois da ressurreição, os discípulos fazem a pergunta que carregavam havia gerações: "Senhor, restaurarás tu, neste tempo, o reino a Israel?" (1.6). É uma pergunta política, nacionalista, presa a uma expectativa de trono terreno e libertação do domínio romano — a mesma esperança que já os havia feito discutir, antes da crucificação, quem seria o maior no reino.</p>
+          <p>Jesus não corrige o calendário deles nem confirma a expectativa: "não vos pertence saber os tempos ou as estações que o Pai reservou ao seu próprio poder" (1.7). Em vez disso, dá a chave estrutural de todo o livro que se segue: "recebereis a virtude do Espírito Santo, que há de vir sobre vós; e ser-me-eis testemunhas, tanto em Jerusalém como em toda a Judeia e Samaria, e até aos confins da terra" (1.8). A pergunta era sobre um reino restaurado a uma nação; a resposta é sobre uma missão enviada ao mundo inteiro.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a ascensão e a promessa da volta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A ascensão e a promessa da volta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Assim que termina de falar, "vendo-o eles, foi elevado às alturas, e uma nuvem o recebeu, ocultando-o dos seus olhos" (1.9). Os discípulos ficam com os olhos fixos no céu, tentando ainda enxergar o que já não podem ver — um gesto humano, quase ingênuo, diante de algo definitivo demais para se assimilar de imediato.</p>
+          <p>É nesse instante que dois homens vestidos de branco aparecem ao lado deles com uma pergunta e uma promessa: "por que estais olhando para o céu?... Este Jesus, que dentre vós foi recebido em cima no céu, há de vir assim como para o céu o vistes ir" (1.10-11). A ascensão não é um adeus sem retorno; é a partida de um rei que voltará do mesmo modo, visivelmente, como subiu.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → dez dias de oração unânime</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Dez dias de oração unânime</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Do monte das Oliveiras, os discípulos voltam a Jerusalém e sobem ao cenáculo onde estavam hospedados (1.12-13). Ali estão os onze, mas não sozinhos: "perseveravam unânimes em oração e súplicas, com as mulheres, e Maria, mãe de Jesus, e com os irmãos dele" (1.14) — os mesmos irmãos que, durante o ministério de Jesus, não criam nele, agora reunidos em oração ao lado dos apóstolos.</p>
+          <p>Não há programa, não há estratégia de expansão traçada naquele quarto. Há apenas espera obediente diante de uma promessa ainda não cumprida — dez dias entre a ascensão e o Pentecostes em que a única tarefa da igreja nascente era orar, unânime, sem saber exatamente o que viria a seguir. Toque nos dias abaixo para acompanhar essa espera:</p>
+
+          <div class="pr1-outer">
+            <div class="pr1-label">Os dez dias entre a ascensão e o Pentecostes — toque em cada um</div>
+            <div class="pr1-grid" id="pr1Grid"></div>
+            <div class="pr1-caption" id="pr1Caption">Toque em um dia para ver como era essa espera.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a escolha de Matias</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A escolha de Matias</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No meio dessa espera, Pedro se levanta em meio aos irmãos — cerca de cento e vinte pessoas ao todo — e trata de um assunto pendente: o lugar deixado por Judas, que traiu Jesus e depois morreu, precisa ser preenchido (1.15-20). O critério que Pedro estabelece não é carisma nem talento, mas testemunho ocular contínuo: alguém "que entre e saia conosco todo o tempo em que o Senhor Jesus andou entre nós, começando desde o batismo de João até ao dia em que dentre nós foi recebido em cima" (1.21-22).</p>
+          <p>Dois nomes atendem ao critério: José, chamado Barsabás, e Matias. Em vez de escolher por votação ou preferência pessoal, oram — "mostra qual destes dois tu elegeste" — e lançam sortes; a sorte cai sobre Matias, que é contado com os onze apóstolos (1.23-26). É a última vez, em todo o livro de Atos, que a igreja decide algo dessa forma; depois do Pentecostes, o padrão muda.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma pergunta sobre poder, uma missão de testemunho</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Atos 1 não abre com uma estratégia. Abre com uma pergunta mal direcionada, uma promessa redirecionadora, uma partida visível e dez dias em que a única atividade registrada da igreja é esperar, unânime, em oração. A igreja não nasce de um plano humano bem desenhado; nasce da obediência a uma ordem que ainda não fazia sentido completo — ficar em Jerusalém até que o poder prometido viesse.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 1.8</span>
+          <p>Mas recebereis a virtude do Espírito Santo, que há de vir sobre vós; e ser-me-eis testemunhas, tanto em Jerusalém como em toda a Judeia e Samaria, e até aos confins da terra.</p>
+          <span class="ref">— as últimas palavras de Jesus antes de subir ao céu</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Essa única frase é o roteiro de todo o livro de Atos: Jerusalém (capítulos 1—7), Judeia e Samaria (capítulos 8—12), e os confins da terra (capítulos 13—28). Os discípulos queriam saber quando o reino seria restaurado a uma nação; Jesus lhes deu, em vez disso, uma missão que não teria fronteira nenhuma.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um reino restaurado a uma nação</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma missão enviada a todas as nações</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · a promessa e a ascensão</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const pr1Days = [
+    { day: 1, caption: "Dia 1 — a nuvem acaba de encobrir Jesus. Os discípulos descem do monte das Oliveiras ainda tentando entender o que viram (1.9-12)." },
+    { day: 2, caption: "Dia 2 — reunidos no cenáculo, sem saber quanto tempo essa espera vai durar, apenas obedecendo à ordem de ficar em Jerusalém." },
+    { day: 3, caption: "Dia 3 — mais um dia de oração unânime, ao lado das mulheres e dos irmãos de Jesus (1.14)." },
+    { day: 4, caption: "Dia 4 — nada de visível acontece. A promessa do Espírito ainda não tem data marcada." },
+    { day: 5, caption: "Dia 5 — a mesma perseverança, o mesmo lugar, a mesma oração compartilhada." },
+    { day: 6, caption: "Dia 6 — Pedro se levanta entre os irmãos para tratar do lugar vago de Judas (1.15-20)." },
+    { day: 7, caption: "Dia 7 — dois nomes são apresentados: José Barsabás e Matias, ambos testemunhas de todo o ministério de Jesus (1.21-23)." },
+    { day: 8, caption: "Dia 8 — oram pedindo que Deus revele sua escolha antes de lançar as sortes (1.24-25)." },
+    { day: 9, caption: "Dia 9 — a sorte cai sobre Matias, que passa a ser contado com os onze apóstolos (1.26)." },
+    { day: 10, caption: "Dia 10 — o último dia de espera. Amanhã é o dia de Pentecostes, e tudo o que foi prometido finalmente chega." }
+  ];
+
+  function buildPr1Grid(){
+    const grid = document.getElementById('pr1Grid');
+    pr1Days.forEach((d, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'pr1-day' + (d.day === 10 ? ' day10' : '');
+      b.textContent = 'Dia ' + d.day;
+      b.setAttribute('aria-label', 'Dia ' + d.day);
+      b.onclick = function(){ revealPr1Day(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildPr1Grid();
+
+  function revealPr1Day(btn, i){
+    btn.classList.add('open');
+    document.getElementById('pr1Caption').textContent = pr1Days[i].caption;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "A pergunta que os discípulos trouxeram";
+      text.textContent = "Um trono restaurado, um inimigo estrangeiro expulso, uma nação liberta — a esperança que os discípulos carregavam desde antes da cruz, ainda presa a fronteiras nacionais e a um calendário que não lhes cabia saber.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A missão que Jesus entregou";
+      text.textContent = "Poder do Espírito Santo para testemunhar — não a um povo, mas a Jerusalém, Judeia, Samaria e aos confins da terra. Um reino que não se restaura por fronteiras políticas, mas se expande por testemunho.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

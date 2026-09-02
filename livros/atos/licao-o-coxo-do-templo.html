@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O coxo do templo — Atos 3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* O que Pedro não tinha x o que Pedro tinha */
+  .ct1-outer{ margin-top:16px; }
+  .ct1-row{ display:flex; gap:10px; margin: 6px 0 12px; flex-wrap:wrap; }
+  .ct1-btn{
+    flex:1; min-width:150px; padding:12px 14px; border-radius:10px;
+    border:1px solid var(--panel-line); background:var(--panel);
+    font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim);
+    cursor:pointer; transition: all .2s ease; text-align:left;
+  }
+  .ct1-btn:hover{ transform: translateY(-2px); }
+  .ct1-btn.ct1-worry.active{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); box-shadow: 0 0 0 3px rgba(168,92,107,0.12); transform: translateY(-1px); }
+  .ct1-btn.ct1-calm.active{ border-color: var(--calm); color: var(--calm); background: rgba(124,154,120,0.1); box-shadow: 0 0 0 3px rgba(124,154,120,0.12); transform: translateY(-1px); }
+  .ct1-panel{ border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); min-height:60px; }
+  .ct1-panel h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15px; margin:0 0 6px; color:var(--text); }
+  .ct1-panel p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho em Jerusalém</span>
+  </div>
+
+  <div class="eyebrow">Testemunho em Jerusalém · <span class="ref-tag">Atos 3</span></div>
+  <h1>O coxo do templo</h1>
+  <p class="sub">"Prata e ouro não tenho; mas o que tenho, isso te dou" — um mendigo coxo de nascença caminha, e uma multidão se reúne no templo para saber por quê.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O pedido de esmola e a resposta inesperada</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro e João sobem ao templo "à hora da oração, a nona" — por volta das três da tarde, um dos horários fixos de oração judaica (3.1). Junto à porta chamada Formosa está um homem coxo desde o ventre de sua mãe, colocado ali todos os dias para pedir esmola a quem entrava (3.2). Ao vê-los, pede também a eles.</p>
+          <p>Pedro fixa os olhos nele, e diz algo que nenhum mendigo daquele portão jamais tinha ouvido: "não tenho prata nem ouro; mas o que tenho, isso te dou: em nome de Jesus Cristo, o nazareno, anda" (3.6). Toma-o pela mão direita e o levanta; imediatamente os pés e artelhos do homem se firmam, e ele, saltando, se põe em pé, anda, e entra com eles no templo, "andando, e saltando, e louvando a Deus" (3.7-8).</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a multidão espantada</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A multidão espantada e o início do sermão de Pedro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Todo o povo reconhece o homem — era ele mesmo que se assentava pedindo esmola à porta Formosa do templo — e fica "cheio de pasmo e assombro" com o que lhe tinha acontecido (3.9-10). Enquanto o homem se apega a Pedro e João, o povo corre para junto deles no pórtico chamado de Salomão.</p>
+          <p>Vendo isso, Pedro pergunta ao povo: "por que vos maravilhais disto? Ou, por que olhais tanto para nós, como se por nosso próprio poder ou piedade fizéssemos andar este homem?" (3.12). Ele recusa qualquer crédito pessoal e aponta imediatamente para Jesus, "a quem vós entregastes, e perante a face de Pilatos negastes" — o mesmo Jesus que pediram fosse morto em troca de um assassino solto, e a quem Deus ressuscitou dentre os mortos (3.13-15). Pedro o chama de "o Autor da vida": o próprio homem que mataram é quem devolveu a vida ao coxo.</p>
+
+          <div class="ct1-outer">
+            <div class="ct1-row">
+              <button class="ct1-btn ct1-worry" id="ct1BtnA" onclick="showCt1('semNada')">O que Pedro não tinha</button>
+              <button class="ct1-btn ct1-calm" id="ct1BtnB" onclick="showCt1('tinha')">O que Pedro tinha</button>
+            </div>
+            <div class="ct1-panel" id="ct1Panel">
+              <h4 id="ct1Title">Toque em uma das opções acima</h4>
+              <p id="ct1Text">Compare o que faltava a Pedro com o que ele realmente possuía, segundo suas próprias palavras em 3.6.</p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um chamado ao arrependimento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um chamado ao arrependimento e à esperança profética</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro não deixa a multidão apenas maravilhada; a conduz ao arrependimento. Reconhece que agiram "por ignorância", assim como as autoridades (3.17) — não uma desculpa que anula a culpa, mas uma explicação que abre espaço para o perdão. Chama-os então a arrepender-se e se converter, "para que sejam apagados os vossos pecados, e venham, assim, os tempos de refrigério, pela presença do Senhor" (3.19).</p>
+          <p>Em seguida, ancora tudo isso na expectativa profética de Israel: "coisas que Deus já dantes anunciara, pela boca de todos os seus santos profetas" — o próprio Moisés falou de um profeta como ele que o Senhor levantaria, a quem todo aquele que não ouvir será exterminado do meio do povo (3.20-23). "Também todos os profetas, desde Samuel e os que depois se seguiram, todos quantos falaram, anunciaram estes dias" (3.24) — Jesus não é uma novidade inesperada, mas o cumprimento de tudo o que a Escritura de Israel já apontava.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a promessa a Abraão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A promessa a Abraão para todas as famílias da terra</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro fecha o sermão voltando à raiz da própria identidade daquele povo: são "filhos dos profetas, e da aliança que Deus fez com nossos pais, dizendo a Abraão: e em tua semente serão benditas todas as famílias da terra" (3.25). A aliança abraâmica, feita séculos antes, ainda está em vigor — e Jesus, o servo de Deus, é a semente através da qual essa bênção finalmente se realiza.</p>
+          <p>O alcance dessa bênção, porém, começa por eles mesmos: "Deus, tendo ressuscitado a seu Filho, primeiramente vo-lo enviou a vós, para que ele vos abençoasse, desviando-vos, a cada um, das vossas maldades" (3.26). O mesmo texto que promete bênção a todas as famílias da terra oferece primeiro, a esse povo específico, ali mesmo no templo, a chance de se afastar do mal.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O que eu tenho, isso te dou</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>O coxo pedia esmola havia uma vida inteira, esperando algo que aliviasse por um momento sua condição sem mudá-la. Pedro não tinha o que ele pedia — mas tinha algo que o pedido nem sequer imaginava pedir. A cena inteira gira em torno dessa inversão: o que parecia pobreza (nenhuma prata, nenhum ouro) se revela a fonte de uma riqueza que nenhuma esmola jamais poderia dar.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 3.6</span>
+          <p>Não tenho prata nem ouro; mas o que tenho, isso te dou: em nome de Jesus Cristo, o nazareno, anda.</p>
+          <span class="ref">— Pedro, ao coxo da porta Formosa</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O nome de Jesus não é uma fórmula mágica que Pedro descobriu usar; é a autoridade de um Senhor vivo, ressuscitado, agindo através de quem o invoca com fé. A riqueza material tem limites óbvios — alivia por um tempo, nunca cura de fato, e um dia se esgota. O nome de Jesus não tem esse limite: cura o que o dinheiro nunca curaria, e oferece o que nenhuma moeda jamais compraria.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Riqueza que passa</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um nome que cura</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · o coxo do templo</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showCt1(type){
+    const btnA = document.getElementById('ct1BtnA');
+    const btnB = document.getElementById('ct1BtnB');
+    btnA.classList.remove('active');
+    btnB.classList.remove('active');
+    const title = document.getElementById('ct1Title');
+    const text = document.getElementById('ct1Text');
+
+    if (type === 'semNada'){
+      btnA.classList.add('active');
+      title.textContent = "Prata e ouro — nenhum dos dois";
+      text.textContent = "Pedro é honesto de imediato: não tem dinheiro para dar. Não finge uma generosidade material que não possuía, nem promete o que não podia cumprir.";
+    } else {
+      btnB.classList.add('active');
+      title.textContent = "O nome de Jesus Cristo, o nazareno";
+      text.textContent = "O que Pedro realmente tinha era autoridade emprestada de um Senhor vivo — algo que nenhuma quantia de prata ou ouro jamais poderia comprar, e que devolveu ao coxo o que ele nunca teve: os próprios pés.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O que uma esmola pode dar";
+      text.textContent = "Uma moeda alivia a fome de um dia, mas não muda a condição de quem a recebe; amanhã o coxo estaria de volta ao mesmo lugar, pedindo de novo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O que o nome de Jesus deu";
+      text.textContent = "Não um alívio passageiro, mas uma cura completa e definitiva — pés e artelhos firmados, um homem que entra andando, saltando e louvando a Deus no mesmo templo onde antes só podia mendigar.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

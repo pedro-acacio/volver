@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cornélio: a porta aberta aos gentios — Atos 10—11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* o significado da visão de Pedro — comida ou pessoas */
+  .cor-outer{ margin-top:16px; }
+  .cor-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .cor-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .cor-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .cor-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho na Judeia e Samaria</span>
+  </div>
+
+  <div class="eyebrow">Testemunho na Judeia e Samaria · <span class="ref-tag">Atos 10—11</span></div>
+  <h1>Cornélio: a porta aberta aos gentios</h1>
+  <p class="sub">Um centurião romano teme a Deus sem conhecer a lei judaica — e uma visão de um lençol cheio de animais impuros ensina Pedro que Deus não faz distinção entre as pessoas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A visão de Cornélio e a visão de Pedro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Cesareia vive Cornélio, centurião de uma coorte italiana, descrito como "piedoso e temente a Deus com toda a sua casa", generoso em esmolas ao povo e constante em orações (10.1-2) — um gentio que se aproximou da fé de Israel sem se tornar prosélito completo. Em visão, à hora nona, um anjo lhe diz que suas orações e esmolas subiram como memorial diante de Deus, e o instrui a mandar homens a Jope para chamar Simão, chamado Pedro (10.3-6).</p>
+          <p>No dia seguinte, enquanto os mensageiros de Cornélio se aproximam da cidade, Pedro sobe ao eirado da casa para orar, por volta da hora sexta, e tem fome (10.9-10). Cai em êxtase e vê o céu aberto, e um objeto como um grande lençol descendo, contendo toda sorte de quadrúpedes, répteis e aves que a lei declarava impuros, com uma voz ordenando: "levanta-te, Pedro, mata e come" (10.11-13). Pedro resiste: "de modo nenhum, Senhor, porque nunca comi coisa alguma comum e imunda" (10.14) — e a voz responde, pela segunda vez: "o que Deus purificou, não chames tu comum" (10.15).</p>
+
+          <div class="cor-outer">
+            <div class="cor-label">Toque para ver o que a visão realmente significava</div>
+            <div class="toggle-row">
+              <button class="toggle-btn" id="corBtnLiteral" onclick="showCorMeaning('literal')">O que a visão parecia dizer</button>
+              <button class="toggle-btn" id="corBtnReal" onclick="showCorMeaning('real')">O que a visão realmente dizia</button>
+            </div>
+            <div class="cor-outcome" id="corOutcome">
+              <h4 id="corTitle"></h4>
+              <p id="corText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Pedro na casa de Cornélio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Pedro na casa de Cornélio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro só entende o real alcance da visão quando o Espírito lhe ordena descer e ir com os homens de Cornélio, "nada duvidando" (10.19-20). Chegando a Cesareia, entra na casa de um gentio — algo que um judeu piedoso normalmente evitaria — e diz abertamente: "vós sabeis que não é lícito a um varão judeu ajuntar-se ou chegar-se a estrangeiro; mas Deus mostrou-me que a nenhum homem chame comum ou imundo" (10.28).</p>
+          <p>Cornélio conta sua própria visão e explica por que reuniu ali parentes e amigos íntimos, todos prontos a ouvir tudo o que Deus lhe ordenasse dizer (10.30-33). É então que Pedro declara, com todas as letras, a conclusão que a visão do lençol estava preparando: "reconheço, por verdade, que Deus não faz acepção de pessoas; mas que, em qualquer nação, aquele que o teme e pratica a justiça lhe é agradável" (10.34-35). O lençol nunca foi sobre dieta; era sobre quem pode se aproximar de Deus.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o Espírito desce sobre os gentios</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O Espírito desce sobre os gentios</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro ainda está falando sobre Jesus — que todos os profetas testificam dele, que quem nele crê recebe remissão de pecados pelo seu nome (10.43) — quando o Espírito Santo cai sobre todos os que ouviam a palavra (10.44). Não há espera, não há período probatório, não há batismo primeiro e Espírito depois: o dom desce em pleno meio da pregação, antes mesmo de Pedro terminar de falar.</p>
+          <p>Os crentes judeus que acompanharam Pedro de Jope ficam maravilhados de que o dom do Espírito Santo fosse derramado também sobre os gentios — pois os ouviam falar em línguas e magnificar a Deus (10.45-46). Diante disso, Pedro não vê como negar a água do batismo a quem já recebera o Espírito Santo "como nós" (10.47), e ordena que sejam batizados em nome do Senhor.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Pedro presta contas em Jerusalém</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Pedro presta contas em Jerusalém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A notícia chega a Jerusalém antes de Pedro: os gentios também receberam a palavra de Deus. Ao subir, os da circuncisão o contendem: "entraste em casa de varões incircuncisos, e comeste com eles" (11.1-3) — a acusação não é sobre o batismo, mas sobre a mesa compartilhada, o gesto mais íntimo de aceitação social entre judeus e gentios.</p>
+          <p>Pedro responde contando toda a história, ponto por ponto, desde a visão do lençol até o Espírito caindo sobre a casa de Cornélio, e conclui com uma pergunta que fecha qualquer objeção: "quem era eu, que podia estorvar a Deus?" (11.17). Ao ouvir isso, os irmãos se aquietam, glorificam a Deus e reconhecem: "logo, também aos gentios deu Deus arrependimento para a vida" (11.18). A porta que se abriu em Cesareia é agora confirmada, com hesitação e tudo, pela própria igreja de Jerusalém.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Deus não faz acepção de pessoas</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Nada em Atos 10—11 acontece por iniciativa humana. Cornélio não decide se converter; recebe uma visão. Pedro não decide abrir a porta aos gentios; recebe uma visão que resiste por instinto e só entende depois. A igreja de Jerusalém não planeja uma missão aos gentios; recebe um relato e é obrigada a reconhecer o que Deus já havia feito antes de ser consultada. Em cada etapa, Deus toma a iniciativa que homens piedosos, por hábito e formação, jamais tomariam sozinhos.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 10.34-35</span>
+          <p>E, abrindo Pedro a boca, disse: Reconheço, por verdade, que Deus não faz acepção de pessoas; mas que, em qualquer nação, aquele que o teme e pratica a justiça lhe é agradável.</p>
+          <span class="ref">— Pedro, na casa de Cornélio</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O que separava judeus de gentios não era uma barreira que Deus tivesse esquecido de derrubar; era um costume que a própria igreja precisou ser convencida, passo a passo, a deixar para trás. A mesma palavra que abriu a boca de Pedro para pregar a Cornélio é a que hoje continua alcançando quem quer que seja, "em qualquer nação" — sem exigir primeiro que se pareça com quem já está dentro.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma porta fechada por costume</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma porta aberta pelo Espírito</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · cornélio: a porta aberta aos gentios</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showCorMeaning(type){
+    const btnLiteral = document.getElementById('corBtnLiteral');
+    const btnReal = document.getElementById('corBtnReal');
+    btnLiteral.classList.remove('active-worry');
+    btnReal.classList.remove('active-calm');
+    const title = document.getElementById('corTitle');
+    const text = document.getElementById('corText');
+
+    if (type === 'literal'){
+      btnLiteral.classList.add('active-worry');
+      title.textContent = "Lida à letra: sobre comida";
+      text.textContent = "Um lençol cheio de animais que a lei declarava impuros, e uma ordem para comê-los — algo que atravessava diretamente os hábitos alimentares que Pedro seguira a vida inteira (10.11-14).";
+    } else {
+      btnReal.classList.add('active-calm');
+      title.textContent = "O verdadeiro alcance: sobre pessoas";
+      text.textContent = "Pedro só entende o real significado no capítulo seguinte, ao ser convidado à casa de um gentio: 'Deus mostrou-me que a nenhum homem chame comum ou imundo' (10.28) — a barreira que caía não era dietética, mas humana.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O costume que Pedro carregava";
+      text.textContent = "Não é lícito a um judeu ajuntar-se a estrangeiro — uma fronteira mantida havia gerações, sustentada não pela lei em si, mas pelo hábito de tratar certas pessoas como fora do alcance de Deus.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "A porta que o Espírito abriu";
+      text.textContent = "O dom cai sobre a casa de Cornélio antes mesmo do batismo, antes de qualquer aprovação humana — prova de que Deus já havia decidido o que a igreja ainda discutia.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

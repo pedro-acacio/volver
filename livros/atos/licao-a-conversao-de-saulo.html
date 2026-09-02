@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A conversão de Saulo — Atos 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* antes / depois de Saulo */
+  .sau-outer{ margin-top:16px; }
+  .sau-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .sau-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .sau-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .sau-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho na Judeia e Samaria</span>
+  </div>
+
+  <div class="eyebrow">Testemunho na Judeia e Samaria · <span class="ref-tag">Atos 9</span></div>
+  <h1>A conversão de Saulo</h1>
+  <p class="sub">Um perseguidor cai cego no caminho de Damasco — e o maior inimigo da igreja se torna, da noite para o dia, seu maior missionário.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Respirando ameaças e mortes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Saulo reaparece no relato exatamente como o deixamos em Atos 8: consentindo na morte de Estêvão, assolando a igreja. Agora, "ainda respirando ameaças e mortes contra os discípulos do Senhor", ele vai ao sumo sacerdote e pede cartas para as sinagogas de Damasco (9.1-2). O alcance do pedido revela o tamanho da obsessão: Damasco fica a mais de duzentos quilômetros de Jerusalém, fora da jurisdição direta do sumo sacerdote — Saulo está disposto a estender a perseguição para além das fronteiras naturais do seu próprio poder.</p>
+          <p>A finalidade das cartas é explícita: encontrar quem quer que seguisse o Caminho, "quer homens, quer mulheres", e trazê-los presos a Jerusalém (9.2). Não é um zelo abstrato; é uma campanha planejada, com autorização formal e alvo definido, movida por alguém convencido de estar servindo a Deus ao tentar apagar um movimento que considerava blasfemo.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a luz e a voz no caminho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A luz e a voz no caminho</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Perto de Damasco, já quase no fim da viagem, uma luz do céu o cerca repentinamente. Saulo cai por terra e ouve uma voz: "Saulo, Saulo, por que me persegues?" (9.3-4). Ele pergunta quem fala, e a resposta desmonta de uma só vez toda a certeza que o havia trazido até ali: "Eu sou Jesus, a quem tu persegues" (9.5). O homem que Saulo julgava morto, derrotado, um blasfemo justamente eliminado, está vivo — e se identifica pessoalmente com cada discípulo que Saulo prendeu.</p>
+          <p>Levanta-se da terra sem conseguir ver nada; os homens que o acompanhavam o conduzem pela mão até Damasco (9.7-8). Ali passa três dias sem ver, sem comer, sem beber (9.9) — um jejum forçado e cego, um perseguidor reduzido à mesma vulnerabilidade que impunha aos outros, esperando sem saber ainda o que viria.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Ananias e a hesitação obediente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Ananias e a hesitação obediente</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Senhor aparece em visão a um discípulo chamado Ananias, mandando-o ir à rua chamada Direita, à casa de Judas, para impor as mãos sobre Saulo, que ali ora e já teve uma visão de sua chegada (9.10-12). Ananias hesita — e sua hesitação é razoável, não rebelde: "já ouvi de muitos acerca deste homem, quanto mal tem feito aos teus santos em Jerusalém; e aqui tem poder dos principais dos sacerdotes para prender todos os que invocam o teu nome" (9.13-14). Ele conhece a reputação de Saulo melhor do que ninguém teria razão de duvidar.</p>
+          <p>A resposta do Senhor não minimiza o risco, mas revela o plano: "vai, porque este é para mim um vaso escolhido, para levar o meu nome diante dos gentios, e dos reis, e dos filhos de Israel; porque eu lhe mostrarei quanto lhe é necessário padecer pelo meu nome" (9.15-16). Ananias obedece apesar do medo, encontra Saulo, impõe as mãos chamando-o "irmão Saulo" — e, como que escamas, algo cai dos seus olhos, e ele recupera a vista, sendo em seguida batizado (9.17-18).</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → pregando o mesmo Cristo que perseguia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Pregando o mesmo Cristo que perseguia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Recuperada a força, Saulo permanece alguns dias com os discípulos em Damasco e logo começa a pregar nas sinagogas que Jesus é o Filho de Deus (9.19-20) — as mesmas sinagogas para as quais havia pedido cartas de prisão. Todos os que o ouvem ficam atônitos: "não é este aquele que perseguia em Jerusalém os que invocavam este nome, e para isso veio aqui?" (9.21). Saulo, porém, se fortalece cada vez mais, confundindo os judeus ao provar que Jesus era o Cristo.</p>
+          <p>Passados muitos dias, os judeus tramam matá-lo; ele descobre a cilada e escapa de noite, descido num cesto pela muralha (9.23-25). Chegando a Jerusalém, os discípulos têm medo dele, não crendo que fosse de fato discípulo, até Barnabé o tomar e apresentá-lo aos apóstolos, contando como Saulo vira o Senhor no caminho e pregara ousadamente em Damasco (9.26-27). Com isso a igreja, "por toda a Judeia, e Galileia, e Samaria, tinha paz, e se edificava", crescendo no temor do Senhor (9.31).</p>
+
+          <div class="sau-outer">
+            <div class="sau-label">Toque para comparar quem Saulo era e quem ele se tornou</div>
+            <div class="toggle-row">
+              <button class="toggle-btn" id="sauBtnBefore" onclick="showSauState('before')">Quem Saulo era</button>
+              <button class="toggle-btn" id="sauBtnAfter" onclick="showSauState('after')">Quem Saulo se tornou</button>
+            </div>
+            <div class="sau-outcome" id="sauOutcome">
+              <h4 id="sauTitle"></h4>
+              <p id="sauText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um vaso escolhido</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Não há, em toda a narrativa de Atos 9, um único passo dado por Saulo em direção à graça. Ele está a caminho de prender e talvez matar discípulos quando a luz o derruba; não busca, não pede, não se arrepende antes do encontro — é interrompido, cego, e só depois recebe a explicação do que aconteceu. A conversão de Saulo não é a história de um homem em busca de Deus, mas de um Deus que alcança, sem aviso, o mais empenhado dos seus adversários.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 9.15</span>
+          <p>Disse-lhe, porém, o Senhor: Vai, porque este é para mim um vaso escolhido, para levar o meu nome diante dos gentios, e dos reis, e dos filhos de Israel.</p>
+          <span class="ref">— o Senhor a Ananias, sobre Saulo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É precisamente esse vaso escolhido em meio à perseguição que escreverá, anos depois, boa parte do Novo Testamento e se tornará o maior missionário da igreja primitiva — algo que nenhum plano humano teria arriscado apostar em Saulo de Tarso. A soberania da graça em Atos 9 não escolhe o candidato mais provável; escolhe, para espanto de todos, justamente aquele que ninguém esperaria ver um dia pregando o nome que antes perseguia.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">O que Saulo era</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">O que a graça fez dele</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · a conversão de saulo</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showSauState(type){
+    const btnBefore = document.getElementById('sauBtnBefore');
+    const btnAfter = document.getElementById('sauBtnAfter');
+    btnBefore.classList.remove('active-worry');
+    btnAfter.classList.remove('active-calm');
+    const title = document.getElementById('sauTitle');
+    const text = document.getElementById('sauText');
+
+    if (type === 'before'){
+      btnBefore.classList.add('active-worry');
+      title.textContent = "Respirando ameaças e mortes";
+      text.textContent = "Perseguidor autorizado pelo sumo sacerdote, caçando discípulos de casa em casa, arrastando homens e mulheres para a prisão (8.3; 9.1-2) — o inimigo mais temido da igreja nascente.";
+    } else {
+      btnAfter.classList.add('active-calm');
+      title.textContent = "Um vaso escolhido para levar o nome de Cristo";
+      text.textContent = "Pregando nas mesmas sinagogas onde antes buscava mandados de prisão, anunciando que Jesus é o Filho de Deus (9.20), para espanto de todos os que sabiam quem ele fora.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um perseguidor a caminho de Damasco";
+      text.textContent = "Ameaças, mortes, cartas de prisão contra o Caminho — Saulo não estava em dúvida, não estava em busca; estava plenamente convicto de estar servindo a Deus ao tentar apagar a igreja.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um vaso escolhido para levar o nome de Cristo";
+      text.textContent = "Interrompido sem ter pedido, alcançado sem ter buscado — e transformado no instrumento que levaria o evangelho a gentios, reis e ao próprio povo de Israel.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

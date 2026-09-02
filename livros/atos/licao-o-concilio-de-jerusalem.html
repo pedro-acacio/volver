@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O concílio de Jerusalém — Atos 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* toggle — o que alguns exigiam x o que o concílio decidiu */
+  .ccj-outer{ margin-top:16px; }
+  .ccj-toggle-row{ display:flex; gap:10px; margin: 6px 0 12px; flex-wrap:wrap; }
+  .ccj-btn{
+    flex:1; min-width:160px; padding:10px 14px; border-radius:10px; border:1px solid var(--panel-line);
+    background: var(--panel); color: var(--text-dim); font-family:'IBM Plex Sans', sans-serif; font-size:13px;
+    cursor:pointer; transition: border-color .25s ease, color .25s ease, transform .2s ease, background .25s ease;
+  }
+  .ccj-btn:hover{ transform: translateY(-2px); }
+  .ccj-btn.open.exigiam{ border-color: var(--worry); color: var(--worry); background: rgba(168,92,107,0.1); }
+  .ccj-btn.open.decidiu{ border-color: var(--calm); color: var(--calm); background: rgba(124,154,120,0.1); }
+  .ccj-panel{ border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); min-height:20px; }
+  .ccj-panel p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho até os confins da terra</span>
+  </div>
+
+  <div class="eyebrow">Testemunho até os confins da terra · <span class="ref-tag">Atos 15</span></div>
+  <h1>O concílio de Jerusalém</h1>
+  <p class="sub">Alguns ensinam que é preciso guardar a lei de Moisés para ser salvo — e a igreja se reúne pela primeira vez, formalmente, para decidir junto o que é, de fato, o evangelho.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M6.5 7 L11.5 11 M11.5 7 L6.5 11" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A disputa sobre a circuncisão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Alguns homens descidos da Judeia chegam a Antioquia ensinando aos irmãos: "se não vos circuncidardes segundo o rito de Moisés, não podeis ser salvos" (15.1). Não é uma questão periférica de costume, mas uma tentativa de acrescentar uma condição à salvação já pregada por Paulo e Barnabé entre os gentios. A reação dos dois é imediata e forte — "dissensão e contenda não pequena" — e a igreja de Antioquia decide enviá-los, junto com outros, a Jerusalém, para tratar da questão com os apóstolos e presbíteros de lá (15.2).</p>
+          <p>Em Jerusalém, o problema não desaparece: alguns fariseus que haviam crido se levantam dizendo que era necessário circuncidar os gentios convertidos e mandar-lhes guardar a lei de Moisés (15.5). O que está em jogo, no fundo, é se a fé em Cristo basta para salvar, ou se precisa ser completada por obediência à lei cerimonial de Israel — a mesma pergunta, em essência, que Paulo enfrentaria mais tarde ao escrever aos gálatas.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Pedro fala da graça</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 L15 6 V12 L9 16 L3 12 V6 Z" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Pedro fala da graça</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de muita discussão, Pedro se levanta e lembra ao concílio algo que só ele podia testemunhar em primeira pessoa: foi Deus quem escolheu, por sua própria vontade, que os gentios ouvissem dele o evangelho e cressem — na casa de Cornélio — e Deus, que conhece os corações, deu-lhes testemunho, concedendo-lhes o Espírito Santo tal como aos judeus, "não fazendo diferença alguma entre nós e eles, purificando os seus corações pela fé" (15.8-9).</p>
+          <p>Ele então faz a pergunta que corta a raiz do problema: por que tentar a Deus, pondo sobre a cerviz dos discípulos um jugo que nem os pais deles nem eles mesmos puderam suportar? E fecha com uma frase que se torna o eixo teológico de todo o concílio: "cremos que seremos salvos pela graça do Senhor Jesus Cristo, do mesmo modo que eles também" (15.11). A ordem da salvação não muda entre judeu e gentio — é graça, do início ao fim, para ambos.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Tiago e a decisão do concílio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 6 L5 12 M9 5 L9 13 M13 6 L13 12" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Tiago e a decisão do concílio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Barnabé e Paulo tomam a palavra e relatam os sinais e prodígios que Deus fizera por meio deles entre os gentios (15.12). Depois deles, Tiago — líder da igreja de Jerusalém — cita o profeta Amós sobre reedificar o tabernáculo caído de Davi, "para que o resto dos homens busque ao Senhor, e todos os gentios, sobre os quais o meu nome é invocado" (15.16-17), lendo nisso a prova de que a inclusão dos gentios sem a lei já estava nas Escrituras, não era novidade improvisada.</p>
+          <p>Sua proposta é clara: não pôr mais dificuldades aos gentios que se convertem a Deus, pedindo apenas que se abstenham de coisas contaminadas pelos ídolos, da prostituição, do que é sufocado e do sangue — questões práticas para permitir a convivência entre crentes judeus e gentios numa mesma mesa, não requisitos para a salvação (15.19-20). O concílio concorda; uma carta é redigida e enviada a Antioquia com Judas e Silas, deixando registrado, por escrito, que a graça, não a lei, é o fundamento comum.</p>
+
+          <div class="ccj-outer">
+            <div class="ccj-toggle-row">
+              <button class="ccj-btn" id="btnExigiam" onclick="showCcjPanel('exigiam')">O que alguns exigiam</button>
+              <button class="ccj-btn" id="btnDecidiu" onclick="showCcjPanel('decidiu')">O que o concílio decidiu</button>
+            </div>
+            <div class="ccj-panel" id="ccjPanel">
+              <p id="ccjPanelText">Toque em um dos lados para comparar.</p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a separação de Paulo e Barnabé</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 9 H8 M10 9 H14" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 5 L9 13" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A separação de Paulo e Barnabé</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Algum tempo depois, Paulo propõe a Barnabé voltar a visitar os irmãos em cada cidade onde haviam anunciado a palavra do Senhor na primeira viagem. Barnabé quer levar de novo João Marcos; Paulo não concorda, pois Marcos os havia abandonado no meio da viagem anterior, em Panfília (15.37-38, cf. 13.13). A discordância se torna tão aguda que os dois se separam um do outro (15.39).</p>
+          <p>Barnabé leva Marcos consigo e navega para Chipre; Paulo escolhe Silas e parte pela Síria e Cilícia, encomendado pelos irmãos à graça do Senhor (15.40-41). O texto não esconde nem justifica o atrito — é um desentendimento humano real, entre dois homens de fé genuína. E, ainda assim, na providência de Deus, o resultado não é a obra encerrada, mas duplicada: onde havia uma equipe missionária, agora saem duas.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Salvos pela graça, do mesmo modo</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Atos 15 registra a primeira grande crise doutrinária da igreja — e a resolve não por decreto de um único líder, mas por um processo: disputa aberta, testemunho apostólico, exame das Escrituras e decisão conjunta. O que estava em risco não era um detalhe de prática, mas o próprio evangelho: se a obra de Cristo basta, ou se precisa ser somada a algo mais.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 15.11</span>
+          <p>Mas cremos que seremos salvos pela graça do Senhor Jesus Cristo, do mesmo modo que eles também.</p>
+          <span class="ref">— Pedro, diante do concílio de Jerusalém</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A frase de Pedro fecha a porta a qualquer evangelho que acrescente condições humanas à graça de Deus — seja a circuncisão exigida no primeiro século, seja qualquer outra obra exigida hoje. A salvação não muda de fórmula entre judeu e gentio, entre ontem e hoje: é sempre pela graça, recebida pela fé, do mesmo modo, para todos.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um evangelho com condições extras</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um evangelho só de graça</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · o concílio de Jerusalém</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showCcjPanel(type){
+    const btnE = document.getElementById('btnExigiam');
+    const btnD = document.getElementById('btnDecidiu');
+    btnE.classList.remove('open','exigiam');
+    btnD.classList.remove('open','decidiu');
+    const text = document.getElementById('ccjPanelText');
+
+    if (type === 'exigiam'){
+      btnE.classList.add('open','exigiam');
+      text.textContent = "Circuncisão segundo o rito de Moisés e obediência a toda a lei — um jugo que, nas palavras do próprio Pedro, nem os pais deles nem eles mesmos puderam suportar (15.1, 5, 10).";
+    } else {
+      btnD.classList.add('open','decidiu');
+      text.textContent = "Apenas orientações práticas para a convivência entre judeus e gentios — abster-se de ídolos, prostituição, sufocados e sangue — fundamentadas não em mérito, mas na graça já recebida por ambos (15.19-20, 11).";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um jugo que ninguém consegue carregar";
+      text.textContent = "Se a salvação depende também de circuncisão e da lei cumprida à risca, ninguém — judeu ou gentio — tem certeza de já ter feito o suficiente. É exatamente o jugo que Pedro diz que nem os pais deles puderam suportar.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Um jugo que Cristo já carregou";
+      text.textContent = "Salvos pela graça do Senhor Jesus Cristo, do mesmo modo — não por etapas ou méritos acrescentados, mas por aquilo que ele já cumpriu por completo, recebido apenas pela fé.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

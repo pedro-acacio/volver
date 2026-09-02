@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumo a Jerusalém — Atos 21—22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* conselho humano x convicção de Paulo */
+  .rj-outer{ margin-top:16px; }
+  .rj-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .rj-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .rj-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho até os confins da terra</span>
+  </div>
+
+  <div class="eyebrow">Testemunho até os confins da terra · <span class="ref-tag">Atos 21—22</span></div>
+  <h1>Rumo a Jerusalém</h1>
+  <p class="sub">Avisado repetidas vezes de que prisão e aflições o esperam, Paulo segue mesmo assim rumo a Jerusalém, pronto até para morrer pelo nome de Jesus.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="7" width="10" height="8" stroke-width="1.3"/>
+          <path d="M4 7 L9 3 L14 7" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M2 15 H16" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Os avisos no caminho — Ágabo e a profecia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Tiro, discípulos guiados pelo Espírito dizem a Paulo, "por intermédio do Espírito", que não suba a Jerusalém (21.4). Em Cesareia, o profeta Ágabo desce da Judeia, toma o cinto de Paulo, ata as próprias mãos e pés com ele, e profetiza: "assim ligarão os judeus em Jerusalém o varão de quem é este cinto, e o entregarão nas mãos dos gentios" (21.10-11). O aviso é dramatizado, físico, impossível de ignorar.</p>
+          <p>Todos os presentes — inclusive Lucas, que narra em primeira pessoa — rogam a Paulo que não suba. Ele responde: "que fazeis chorando e magoando-me o coração? Porque eu estou pronto não só a ser preso, mas ainda a morrer em Jerusalém pelo nome do Senhor Jesus" (21.13). Vendo que não conseguem convencê-lo, se calam, dizendo apenas: "faça-se a vontade do Senhor" (21.14).</p>
+
+          <div class="rj-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnRjWorry" onclick="showRjOutcome('worry')">O conselho humano — "não vá"</button>
+              <button class="toggle-btn" id="btnRjCalm" onclick="showRjOutcome('calm')">A convicção de Paulo — "devo ir"</button>
+            </div>
+            <div class="rj-outcome" id="rjOutcome">
+              <h4 id="rjTitle"></h4>
+              <p id="rjText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a chegada e a prisão no templo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M6.5 6.5 L11.5 11.5 M11.5 6.5 L6.5 11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A chegada e a prisão no templo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chegando a Jerusalém, Paulo é recebido com alegria pelos irmãos (21.17), mas logo os líderes da igreja o alertam sobre rumores de que ele ensinava os judeus da diáspora a abandonar Moisés (21.20-21). Para mostrar que ele mesmo continua observando a lei, participa de um voto de purificação no templo junto com quatro outros homens (21.23-26).</p>
+          <p>Mas judeus da Ásia o reconhecem no templo, o acusam de ensinar contra o povo, a lei e o próprio lugar, e ainda de ter profanado o templo trazendo um grego para dentro — o que não era verdade (21.27-29). Incitam a cidade inteira; Paulo é arrastado para fora do templo para ser morto, e só a intervenção do comandante romano, com seus soldados, o salva da multidão enfurecida, prendendo-o em correntes (21.30-33).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o discurso de defesa em hebraico</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.3"/>
+          <path d="M9 9 L9 5 M9 9 L11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O discurso de defesa em hebraico</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Paulo pede permissão ao comandante para falar ao povo, e fala em hebraico — o que os aquieta ainda mais (21.40-22.2). Conta sua própria história: fariseu zeloso, instruído aos pés de Gamaliel, perseguidor da igreja "até à morte", carregando cartas para prender cristãos até em Damasco (22.3-5). Depois narra a luz e a voz repentinas no caminho, a cegueira que o derruba, e Ananias, enviado para lhe devolver a vista e lhe anunciar sua missão (22.6-16).</p>
+          <p>Termina relatando uma visão posterior, já de volta em Jerusalém, orando no templo: caído em êxtase, ouve o Senhor lhe dizer para sair depressa de Jerusalém, "porque não receberão o teu testemunho a meu respeito" — e o envia "para longe, aos gentios" (22.17-21). É a mesma história da conversão contada uma segunda vez no livro, agora diante da multidão que quase o matou.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o direito de cidadão romano</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M4 6 L3 13 M8 6 L7.3 13 M14 6 L15 13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 15 L16 15" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.6 2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O direito de cidadão romano</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Ao ouvir a palavra "gentios", a multidão explode de novo em fúria, gritando que Paulo não deveria viver (22.22). O comandante ordena que o levem à fortaleza e o açoitem, para arrancar dele a verdade por tortura (22.24). Enquanto o estendem para o açoite, Paulo pergunta ao centurião presente se é lícito açoitar um cidadão romano sem julgamento (22.25).</p>
+          <p>A pergunta muda tudo. Ao saber que Paulo nasceu cidadão romano — um privilégio que o próprio comandante havia comprado por muito dinheiro — os soldados se retiram imediatamente, e até o comandante teme, por ter mandado prendê-lo em correntes (22.26-29). Um detalhe legal e circunstancial da vida de Paulo se torna, no momento exato, sua proteção.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Pronto para morrer pelo nome de Jesus</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Poucos personagens do Novo Testamento caminham para o perigo com os olhos tão abertos quanto Paulo nesses dois capítulos. Não é ingenuidade nem obstinação vazia: ele ouve os avisos, reconhece o perigo, chora junto com quem chora — e ainda assim segue, porque sua vida, como já declarara em Mileto, não vale mais do que cumprir a carreira recebida do Senhor Jesus.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 21.13</span>
+          <p>Mas Paulo respondeu: que fazeis chorando e magoando-me o coração? Porque eu estou pronto não só a ser preso, mas ainda a morrer em Jerusalém pelo nome do Senhor Jesus.</p>
+          <span class="ref">— resposta de Paulo aos que tentavam impedi-lo</span>
+        </div>
+
+        <div class="tl-card">
+          <p>E é justamente no meio desse caminho perigoso que Deus usa algo puramente circunstancial — a cidadania romana de Paulo, adquirida por nascimento, sem nenhum mérito espiritual — para protegê-lo no momento certo diante do açoite. A providência de Deus não anula os riscos reais que Paulo assume; ela os atravessa, usando até os detalhes mais comuns da vida de um homem para cumprir um propósito maior.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Um caminho evitável</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Um chamado assumido de olhos abertos</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · rumo a Jerusalém</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showRjOutcome(type){
+    const btnW = document.getElementById('btnRjWorry');
+    const btnC = document.getElementById('btnRjCalm');
+    btnW.classList.remove('active-worry');
+    btnC.classList.remove('active-calm');
+    const title = document.getElementById('rjTitle');
+    const text = document.getElementById('rjText');
+
+    if (type === 'worry'){
+      btnW.classList.add('active-worry');
+      title.textContent = "Discípulos guiados pelo Espírito";
+      text.textContent = "Em Tiro e depois em Cesareia, irmãos guiados pelo Espírito interpretam a profecia de Ágabo como um sinal para deter Paulo — um discernimento comunitário genuíno, nascido de amor e de temor real pelo que estava por vir (21.4, 12).";
+    } else {
+      btnC.classList.add('active-calm');
+      title.textContent = "Uma convicção pessoal diante do chamado";
+      text.textContent = "Paulo não nega a profecia nem discorda de que a prisão virá — apenas entende, de forma pessoal e inegociável, que seu chamado é ir mesmo assim, pronto até para morrer pelo nome de Jesus (21.13). O texto não resolve a tensão; deixa as duas leituras lado a lado.";
+    }
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "O que Paulo poderia ter escolhido";
+      text.textContent = "Com tantos avisos claros — em Tiro, em Cesareia, pela boca de um profeta — evitar Jerusalém teria parecido sensato, até prudente, aos olhos de qualquer conselheiro.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "O que Paulo realmente escolheu";
+      text.textContent = "Ele sobe mesmo assim, não por desprezar o perigo, mas por já ter decidido, muito antes, que sua vida não valia mais do que cumprir a missão recebida do Senhor Jesus (20.24; 21.13).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

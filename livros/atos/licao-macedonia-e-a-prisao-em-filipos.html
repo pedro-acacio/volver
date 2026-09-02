@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macedônia e a prisão em Filipos — Atos 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* três vidas tocadas pelo evangelho em Filipos */
+  .mpf-outer{ margin-top:16px; }
+  .mpf-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .mpf-chip-row{ display:flex; gap:9px; margin: 0 0 12px; flex-wrap:wrap; }
+  .mpf-chip{
+    border-radius:20px; padding:8px 14px; background:var(--panel-line); border:none; cursor:pointer;
+    font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim);
+    transition: background .3s ease, color .3s ease, transform .2s ease, box-shadow .3s ease;
+  }
+  .mpf-chip:hover{ transform: translateY(-2px); }
+  .mpf-chip.open{ background: var(--gold); color:#2C3459; box-shadow:0 0 8px 1px rgba(217,164,65,.4); }
+  .mpf-panel{ border-radius:12px; padding:16px 18px; border:1px solid var(--panel-line); background: var(--bg); min-height:20px; }
+  .mpf-panel p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-atos.html">Volver</a>
+    <span class="brand-track">Testemunho até os confins da terra</span>
+  </div>
+
+  <div class="eyebrow">Testemunho até os confins da terra · <span class="ref-tag">Atos 16</span></div>
+  <h1>Macedônia e a prisão em Filipos</h1>
+  <p class="sub">Um sonho com um homem macedônio pedindo ajuda muda a rota da missão — e leva Paulo a uma prisão onde um carcereiro desesperado pergunta: que farei para me salvar?</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V9 L12 12" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="9" cy="9" r="6.5" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Timóteo e o chamado macedônico</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Em Listra, Paulo encontra Timóteo, discípulo bem recomendado pelos irmãos de Listra e Icônio; leva-o consigo, circuncidando-o antes por causa dos judeus daquela região, que sabiam que seu pai era grego — não por necessidade teológica, já que Timóteo já era crente, mas por prudência missionária, para não fechar portas desnecessárias entre os judeus (16.1-3). Impedidos pelo Espírito Santo de pregar a palavra na Ásia, e depois de tentarem entrar na Bitínia sem que o Espírito de Jesus lho permitisse, chegam a Trôade (16.6-8).</p>
+          <p>Ali, de noite, Paulo tem uma visão: um homem da Macedônia, em pé, lhe roga: "passa à Macedônia, e ajuda-nos" (16.9). Ao ver a visão, concluem logo que Deus os havia chamado para pregar o evangelho ali — uma virada decisiva na direção da missão, do continente asiático para o europeu, guiada não por planejamento humano, mas por duas portas fechadas e uma visão aberta.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Lídia, a vendedora de púrpura</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C9 2 5 7 5 10.5 A4 4 0 0 0 13 10.5 C13 7 9 2 9 2 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Lídia, a vendedora de púrpura</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Chegam a Filipos, "a primeira cidade desse território da Macedônia, e uma colônia romana" (16.12). Num sábado, sem encontrar sinagoga, saem até a beira de um rio, onde supunham haver lugar de oração, e falam a mulheres ali reunidas. Entre elas está Lídia, vendedora de púrpura, natural de Tiatira, já temente a Deus (16.13-14) — provavelmente uma mulher de posses, já que a púrpura era um tingimento caro, ligado ao comércio de elite.</p>
+          <p>O texto marca com precisão a origem da fé dela: "o Senhor lhe abriu o coração para que atendesse às coisas que Paulo dizia" (16.14) — não uma decisão que nasce de puro raciocínio humano, mas um coração aberto por Deus antes mesmo de a mensagem terminar. Ela e sua casa são batizadas, e ela insiste, com hospitalidade que beira a teimosia, que Paulo e seus companheiros fiquem hospedados em sua casa (16.15).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a escrava adivinhadora e a prisão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="6" y="8" width="6" height="7" stroke-width="1.3"/>
+          <path d="M7 8 V6 A2 2 0 0 1 11 6 V8" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A escrava adivinhadora e a prisão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Uma jovem escrava, com espírito de adivinhação, dava grande lucro a seus senhores por meio de suas previsões. Ela passa a seguir Paulo e seus companheiros, gritando repetidamente que eles são "servos do Deus Altíssimo, os quais vos anunciam o caminho da salvação" (16.17) — uma afirmação verdadeira, mas vinda de fonte demoníaca. Depois de muitos dias, incomodado, Paulo se volta e ordena ao espírito, em nome de Jesus Cristo, que saia dela; e ele sai na mesma hora (16.18).</p>
+          <p>Vendo que a esperança de lucro havia ido embora com o espírito, os senhores dela arrastam Paulo e Silas à praça, diante das autoridades, acusando-os de perturbar a cidade com costumes que não é lícito aos romanos receber (16.19-21). São espancados com varas, lançados na prisão, e o carcereiro recebe ordem de guardá-los com segurança, prendendo-lhes os pés no tronco (16.23-24).</p>
+
+          <div class="mpf-outer">
+            <div class="mpf-label">Três vidas alcançadas pelo evangelho em Filipos — toque em cada uma</div>
+            <div class="mpf-chip-row" id="mpfChipRow"></div>
+            <div class="mpf-panel"><p id="mpfPanelText">Toque em um nome para ver quem era essa pessoa.</p></div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o terremoto e o carcereiro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 14 L6 8 L9 11 L12 5 L16 14" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O terremoto e o carcereiro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>À meia-noite, Paulo e Silas, com os pés ainda no tronco, oram e cantam hinos a Deus, sendo ouvidos pelos outros presos (16.25). De repente um forte terremoto abala os alicerces da prisão; todas as portas se abrem, e as correntes de todos se soltam (16.26). O carcereiro, despertando e vendo as portas abertas, saca da espada para se matar, supondo que os presos haviam fugido — sabia que responderia com a própria vida por isso — mas Paulo grita em alta voz: "não te faças nenhum mal, que todos aqui estamos" (16.27-28).</p>
+          <p>Trêmulo, o carcereiro pede luz, entra correndo e cai aos pés de Paulo e Silas, perguntando: "senhores, que me é necessário fazer para me salvar?" (16.30). A resposta não exige rito nem preparação: "crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa" (16.31). Ele os leva para lavar-lhes as feridas, e é batizado com toda a sua família naquela mesma hora da noite, cheio de alegria por ter crido em Deus (16.33-34).</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Que farei para me salvar</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Poucas perguntas na Bíblia são feitas em circunstância tão extrema quanto essa: um homem armado, prestes a se matar, num prédio que acabara de tremer, cercado por presos que ele mesmo torturara horas antes. Não há tempo para uma explicação longa, e não é oferecida uma. A resposta de Paulo é curta o bastante para ser compreendida em segundos e ampla o bastante para alcançar uma casa inteira.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Atos 16.31</span>
+          <p>E eles disseram: Crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa.</p>
+          <span class="ref">— Paulo e Silas, ao carcereiro de Filipos</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O carcereiro que temia por sua vida naquela madrugada termina a mesma noite lavando as feridas dos mesmos homens que prendera, servindo-lhes uma mesa, e batizado junto com toda a sua casa — não porque tenha realizado algum feito, mas porque creu. A urgência da pergunta não tornou a resposta mais complicada; tornou mais claro que a salvação nunca dependeu de mérito ou de tempo de preparação, só de fé em Cristo.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Uma pergunta feita em desespero</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Uma resposta simples o bastante para uma casa inteira crer</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Atos · Macedônia e a prisão em Filipos</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const mpfPeople = [
+    { name: "Lídia", text: "Comerciante próspera de púrpura, já temente a Deus; o Senhor lhe abre o coração junto ao rio, e ela abre sua casa a Paulo (16.14-15)." },
+    { name: "A jovem escrava", text: "Explorada por seus senhores por causa de um espírito de adivinhação; libertada por Paulo em nome de Jesus, sem lucro nenhum para ninguém (16.16-18)." },
+    { name: "O carcereiro", text: "Funcionário romano prestes a se matar; pergunta o que fazer para se salvar e é batizado com toda a sua casa na mesma noite (16.27-34)." }
+  ];
+
+  function buildMpfChips(){
+    const row = document.getElementById('mpfChipRow');
+    mpfPeople.forEach((p, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mpf-chip';
+      b.textContent = p.name;
+      b.onclick = function(){ revealMpfPerson(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildMpfChips();
+
+  function revealMpfPerson(btn, i){
+    document.querySelectorAll('.mpf-chip').forEach(b => b.classList.remove('open'));
+    btn.classList.add('open');
+    document.getElementById('mpfPanelText').textContent = mpfPeople[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Uma espada já na mão";
+      text.textContent = "O carcereiro pergunta não por curiosidade teológica, mas porque estava prestes a tirar a própria vida — a mesma noite que quase terminou em morte terminou em batismo.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma frase, uma casa inteira";
+      text.textContent = "\"Crê no Senhor Jesus Cristo, e serás salvo\" não exige rito, tempo ou mérito — e é ampla o bastante para alcançar, na mesma hora, toda a família de quem crê.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

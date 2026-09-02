@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Atos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Histórico</div>
+    <h1>Atos</h1>
+    <p class="lede">Do Pentecostes até Roma: como um punhado de discípulos escondidos numa sala se tornou uma igreja que atravessou o Império. Lucas segue o roteiro que o próprio Jesus deu antes de subir aos céus — Jerusalém, Judeia e Samaria, os confins da terra — e mostra, capítulo por capítulo, o Espírito Santo abrindo portas que ninguém mais conseguiria abrir.</p>
+    <div class="stats-row">
+      <div class="stat"><b>20</b>disponíveis</div>
+      <div class="stat"><b>4</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="../licao-introducao-atos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução a Atos</div>
+        <div class="p-ref">Autor, data e o mapa do livro</div>
+        <p class="p-teaser">Lucas, o médico amado, escreve a continuação do seu próprio Evangelho — desta vez sobre o que a igreja fez depois que Jesus subiu ao céu.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. O PODER DO ESPÍRITO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. O poder do Espírito</h3>
+      <span class="cat-ref">Atos 1—2</span>
+      <span class="cat-count">2 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-promessa-e-a-ascensao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A promessa e a ascensão</div>
+        <div class="p-ref">Atos 1</div>
+        <p class="p-teaser">Os discípulos perguntam sobre um reino restaurado; Jesus responde com uma missão para o mundo inteiro.</p>
+      </a>
+      <a class="p-card available" href="licao-pentecostes.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Pentecostes</div>
+        <div class="p-ref">Atos 2</div>
+        <p class="p-teaser">Um vento, línguas como fogo, e três mil pessoas batizadas num único dia — a igreja nasce visivelmente.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. TESTEMUNHO EM JERUSALÉM ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. Testemunho em Jerusalém</h3>
+      <span class="cat-ref">Atos 3—7</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-coxo-do-templo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O coxo do templo</div>
+        <div class="p-ref">Atos 3</div>
+        <p class="p-teaser">"Prata e ouro não tenho" — um mendigo cadeirante caminha, e uma multidão se reúne para ouvir o motivo.</p>
+      </a>
+      <a class="p-card available" href="licao-presos-mas-destemidos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Presos, mas destemidos</div>
+        <div class="p-ref">Atos 4</div>
+        <p class="p-teaser">Diante do Sinédrio, Pedro e João voltam à igreja — e a resposta ao perigo não é um plano, é uma oração.</p>
+      </a>
+      <a class="p-card available" href="licao-ananias-e-safira.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Ananias e Safira</div>
+        <div class="p-ref">Atos 5</div>
+        <p class="p-teaser">Um casal mente sobre uma doação — e aprende, da pior forma, que mentir para o Espírito Santo não é uma mentira pequena.</p>
+      </a>
+      <a class="p-card available" href="licao-estevao-o-primeiro-martir.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Estêvão, o primeiro mártir</div>
+        <div class="p-ref">Atos 6—7</div>
+        <p class="p-teaser">Escolhido para servir mesas, Estêvão se torna o primeiro cristão a morrer por Cristo, orando por seus assassinos.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. TESTEMUNHO NA JUDEIA E SAMARIA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. Testemunho na Judeia e Samaria</h3>
+      <span class="cat-ref">Atos 8—12</span>
+      <span class="cat-count">4 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-filipe-em-samaria.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Filipe em Samaria</div>
+        <div class="p-ref">Atos 8</div>
+        <p class="p-teaser">A perseguição espalha a igreja para fora de Jerusalém — e o evangelho atravessa, pela primeira vez, uma fronteira que os judeus evitavam.</p>
+      </a>
+      <a class="p-card available" href="licao-a-conversao-de-saulo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A conversão de Saulo</div>
+        <div class="p-ref">Atos 9</div>
+        <p class="p-teaser">Um perseguidor cai cego no caminho de Damasco — e o maior inimigo da igreja se torna seu maior missionário.</p>
+      </a>
+      <a class="p-card available" href="licao-cornelio-e-a-porta-aberta-aos-gentios.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Cornélio: a porta aberta aos gentios</div>
+        <div class="p-ref">Atos 10—11</div>
+        <p class="p-teaser">Uma visão de um lençol cheio de animais impuros ensina Pedro que Deus não faz acepção de pessoas.</p>
+      </a>
+      <a class="p-card available" href="licao-a-prisao-e-a-libertacao-de-pedro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A prisão e a libertação de Pedro</div>
+        <div class="p-ref">Atos 12</div>
+        <p class="p-teaser">Tiago é morto pela espada, Pedro é preso para o mesmo destino — mas a igreja ora, e um anjo abre a porta.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== IV. TESTEMUNHO ATÉ OS CONFINS DA TERRA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">IV. Testemunho até os confins da terra</h3>
+      <span class="cat-ref">Atos 13—28</span>
+      <span class="cat-count">9 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-primeira-viagem-missionaria.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A primeira viagem missionária</div>
+        <div class="p-ref">Atos 13—14</div>
+        <p class="p-teaser">Separados pelo Espírito Santo em Antioquia, Barnabé e Saulo partem na primeira viagem missionária da história da igreja.</p>
+      </a>
+      <a class="p-card available" href="licao-o-concilio-de-jerusalem.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O concílio de Jerusalém</div>
+        <div class="p-ref">Atos 15</div>
+        <p class="p-teaser">Alguns exigem a circuncisão para a salvação — e a igreja se reúne pela primeira vez para decidir, junto, o que é o evangelho.</p>
+      </a>
+      <a class="p-card available" href="licao-macedonia-e-a-prisao-em-filipos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Macedônia e a prisão em Filipos</div>
+        <div class="p-ref">Atos 16</div>
+        <p class="p-teaser">Um sonho muda a rota da missão — e leva Paulo a uma prisão onde um carcereiro pergunta: que farei para me salvar?</p>
+      </a>
+      <a class="p-card available" href="licao-atenas-e-o-deus-desconhecido.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Atenas e o Deus desconhecido</div>
+        <div class="p-ref">Atos 17—18</div>
+        <p class="p-teaser">Numa cidade cheia de ídolos, Paulo usa um altar "ao Deus desconhecido" como ponte para pregar a ressurreição.</p>
+      </a>
+      <a class="p-card available" href="licao-efeso-e-o-poder-do-evangelho.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Éfeso e o poder do evangelho</div>
+        <div class="p-ref">Atos 19</div>
+        <p class="p-teaser">Livros de magia avaliados numa fortuna são queimados em praça pública — sem espaço para meio-termo com o ocultismo.</p>
+      </a>
+      <a class="p-card available" href="licao-a-despedida-em-mileto.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A despedida em Mileto</div>
+        <div class="p-ref">Atos 20</div>
+        <p class="p-teaser">Um jovem cai morto durante a pregação de Paulo — mas o verdadeiro milagre da noite é o cuidado pastoral por trás dela.</p>
+      </a>
+      <a class="p-card available" href="licao-rumo-a-jerusalem.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Rumo a Jerusalém</div>
+        <div class="p-ref">Atos 21—22</div>
+        <p class="p-teaser">Avisado repetidas vezes de que prisão e aflições o esperam, Paulo segue mesmo assim, pronto até para morrer.</p>
+      </a>
+      <a class="p-card available" href="licao-paulo-diante-dos-governadores.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Paulo diante dos governadores</div>
+        <div class="p-ref">Atos 23—26</div>
+        <p class="p-teaser">Da fúria do Sinédrio ao trono de Agripa, Paulo se defende quatro vezes — e cada defesa vira outro sermão sobre a ressurreição.</p>
+      </a>
+      <a class="p-card available" href="licao-tempestade-naufragio-e-roma.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Tempestade, naufrágio e Roma</div>
+        <div class="p-ref">Atos 27—28</div>
+        <p class="p-teaser">Catorze dias à deriva, um naufrágio, uma cobra venenosa — e ao fim, Paulo chega a Roma, ainda pregando livremente.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Atos · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
