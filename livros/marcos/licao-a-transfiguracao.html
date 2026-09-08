@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Transfiguração — Marcos 9.2-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — o monte x o vale */
+  .trf-toggle-outer{ margin-top:16px; }
+  .trf-toggle-outer > p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0 0 10px; }
+  .trf-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .trf-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .trf-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho */
+  .trf2-toggle-outer{ margin-top:16px; }
+  .trf2-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .trf2-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .trf2-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">A Transfiguração</span>
+  </div>
+
+  <div class="eyebrow">A Transfiguração · <span class="ref-tag">Marcos 9.2-13</span></div>
+  <h1>A Transfiguração</h1>
+  <p class="sub">Seis dias depois da confissão de Pedro, três discípulos sobem um monte com Jesus e veem, por um instante, a glória que estava escondida o tempo todo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.4" stroke-width="1.3"/>
+          <path d="M9 1.6 V4.3 M9 13.7 V16.4 M1.6 9 H4.3 M13.7 9 H16.4 M3.7 3.7 L5.6 5.6 M12.4 12.4 L14.3 14.3 M14.3 3.7 L12.4 5.6 M5.6 12.4 L3.7 14.3" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Um monte alto, à parte</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Seis dias depois da confissão de Pedro (8.29) e da dura notícia sobre a cruz (8.31), Jesus leva Pedro, Tiago e João, só eles, a um monte alto. Ali "transfigurou-se diante deles": suas vestes ficam de um branco resplandecente, "como nenhum lavandeiro sobre a terra as poderia branquear" (9.3) — Marcos, sempre atento a detalhes concretos e domésticos, escolhe justamente uma imagem doméstica para descrever algo que ultrapassa qualquer categoria doméstica.</p>
+          <p>E então, sem aviso, aparecem Elias e Moisés, conversando com Jesus. A Lei (Moisés) e os Profetas (Elias) — todo o Antigo Testamento resumido em duas figuras — não desaparecem diante do Filho, mas se colocam ao lado dele, como quem confirma que o caminho que acabara de ser anunciado, o da cruz, era exatamente para onde toda a Escritura sempre apontou. Por um instante, o véu que cobre a identidade de Jesus ao longo do livro se abre, e três pares de olhos humanos veem o que sempre esteve ali.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a voz da nuvem</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4.5 11.5 C3 11.5 2 10.4 2 9.1 C2 7.8 3 6.9 4.2 6.9 C4.5 5 6.1 3.6 8 3.6 C9.7 3.6 11.1 4.7 11.6 6.2 C13.1 6.3 14.3 7.5 14.3 9 C14.3 10.6 13 11.8 11.4 11.8 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M6.5 14.5 L6.5 15.8 M9 14.5 L9 16.3 M11.5 14.5 L11.5 15.8" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A voz da nuvem</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pedro, "não sabendo o que dizia, porque estavam atemorizados", propõe fazer três tendas — uma para Jesus, uma para Moisés, uma para Elias. É uma reação bem humana: tentar prender, organizar, hospedar aquilo que só se pode receber, nunca administrar. Antes que ele termine, uma nuvem os cobre — a mesma nuvem que guiava Israel no deserto e enchia o tabernáculo — e dela sai uma voz: "Este é o meu Filho amado; a ele ouvi" (9.7).</p>
+          <p>É quase a mesma frase do batismo (1.11), mas com uma diferença que muda tudo: lá a voz falava a Jesus ("Tu és o meu Filho amado"); aqui fala aos discípulos, sobre Jesus ("Este é..."), e acrescenta um mandamento — ouvi-o. De repente, olhando em redor, "não viram mais a ninguém, senão só a Jesus" (9.8). Moisés e Elias se retiram; a Lei e os Profetas cumpriram seu papel de apontar; agora só resta ouvir a um.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Elias já veio</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 14 L6 8 L9 11 L12.5 4.5 L16 14" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Elias já veio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Descendo do monte, Jesus ordena, mais uma vez, silêncio sobre o que viram — mas agora com prazo definido: até que o Filho do homem ressuscite dos mortos (9.9). O segredo messiânico, que em outras cenas parecia não ter fim à vista, ganha aqui uma data: só depois da ressurreição essa palavra será libertada, porque só depois dela o que os três viram no monte fará sentido para qualquer um que ouvir.</p>
+          <p>Os discípulos, intrigados, perguntam por que os escribas ensinam que Elias precisa vir primeiro. Jesus responde que Elias "já veio", e "fizeram-lhe tudo quanto quiseram" — referência velada a João Batista, preso e decapitado (6.17-29). A lógica é dura e clara: se o precursor foi rejeitado e morto, o mesmo caminho espera aquele a quem ele preparou o caminho.</p>
+
+          <div class="trf-toggle-outer">
+            <p>Antes de continuar, vale comparar duas cenas que Marcos coloca lado a lado — o topo do monte, e o que espera Jesus assim que desce (9.14-29):</p>
+            <div class="toggle-row">
+              <button class="toggle-btn" id="trfBtnMonte" onclick="trfShow('monte')">O monte da transfiguração</button>
+              <button class="toggle-btn" id="trfBtnVale" onclick="trfShow('vale')">O vale logo abaixo</button>
+            </div>
+            <div class="trf-outcome" id="trfOutcome">
+              <h4 id="trfTitle"></h4>
+              <p id="trfText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 12.5 C4 11.5 3.5 9 4.8 7 C6 5.2 8.5 4.5 9 6.5 C9.3 7.7 8.3 8 8.6 9.2 C8.9 10.4 10.2 10.3 11 9.5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="12.5" cy="7.3" r="0.9" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Este é o meu Filho amado</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A transfiguração não foi dada para ser guardada num monte, com tendas e uma memória fixa; foi dada para autenticar, bem no meio do caminho até a cruz, a quem obedecer. O impulso de Pedro — preservar o momento — é compreensível, mas a voz da nuvem não pede um santuário: pede atenção contínua, uma obediência que desce o monte junto com Jesus, rumo ao sofrimento que ele acabara de anunciar.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 9.7</span>
+          <p>E desceu uma nuvem que os cobriu com a sua sombra, e saiu da nuvem uma voz que dizia: Este é o meu Filho amado; a ele ouvi.</p>
+          <span class="ref">— Marcos 9.7</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A mesma voz que, no batismo, declarava a identidade de Jesus a ele mesmo (1.11), agora fala aos discípulos e acrescenta uma ordem. Não basta reconhecer quem Jesus é — como Pedro já havia feito, corretamente, no capítulo anterior; é preciso ouvi-lo, inclusive quando ele fala de sofrimento, cruz e perda, que é justamente o que Pedro havia recusado ouvir.</p>
+
+          <div class="trf2-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="trfBtnTendas" onclick="trfShow2('tendas')">Construir tendas para guardar o momento</button>
+              <button class="toggle-btn" id="trfBtnDescer" onclick="trfShow2('descer')">Descer o monte e ouvi-lo</button>
+            </div>
+            <div class="trf2-outcome" id="trf2Outcome">
+              <h4 id="trf2Title"></h4>
+              <p id="trf2Text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · a Transfiguração</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function trfShow(type){
+    const btnA = document.getElementById('trfBtnMonte');
+    const btnB = document.getElementById('trfBtnVale');
+    btnA.classList.remove('active-calm');
+    btnB.classList.remove('active-worry');
+    const title = document.getElementById('trfTitle');
+    const text = document.getElementById('trfText');
+
+    if (type === 'monte'){
+      btnA.classList.add('active-calm');
+      title.textContent = "O monte: glória revelada";
+      text.textContent = "No alto, por um instante, a identidade escondida de Jesus se mostra sem véu: vestes resplandecentes, Moisés e Elias ao seu lado, a voz do Pai. É um vislumbre da glória que só será plenamente manifesta depois da ressurreição.";
+    } else {
+      btnB.classList.add('active-worry');
+      title.textContent = "O vale: um pai desesperado";
+      text.textContent = "Assim que descem (9.14-29), encontram uma multidão, um pai aflito e discípulos incapazes de curar seu filho. A glória do monte não isenta ninguém do sofrimento humano lá embaixo — ela dá forças para voltar a enfrentá-lo.";
+    }
+  }
+
+  function trfShow2(type){
+    const btnA = document.getElementById('trfBtnTendas');
+    const btnB = document.getElementById('trfBtnDescer');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('trf2Title');
+    const text = document.getElementById('trf2Text');
+
+    if (type === 'tendas'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Guardar o instante";
+      text.textContent = "Pedro quer fixar a glória num lugar — três tendas, um santuário para o momento perfeito. É o impulso de transformar um encontro com Deus num monumento, em vez de deixá-lo mudar o caminho a seguir.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Ouvir e seguir";
+      text.textContent = "A voz da nuvem não pede tendas, pede obediência: \"a ele ouvi\". A glória do monte não foi dada para ficar no monte — foi dada para sustentar os discípulos exatamente na descida, rumo ao anúncio da cruz que Jesus acabara de fazer.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autoridade para perdoar pecados — Marcos 2.1-3.6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 4 — os cinco confrontos */
+  .conf-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+  @media (max-width:560px){ .conf-grid{ grid-template-columns:1fr; } }
+  .conf-btn{ display:flex; align-items:center; gap:10px; text-align:left; background:var(--bg); border:1px solid var(--panel-line); border-radius:10px; padding:9px 12px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; color:var(--text-dim); transition:border-color .2s ease; }
+  .conf-btn:hover{ border-color:var(--gold); }
+  .conf-btn.active{ border-color:var(--gold); background:rgba(217,164,65,0.08); }
+  .conf-num{ font-family:'Fraunces', serif; font-weight:600; color:var(--gold); font-size:15px; flex-shrink:0; width:18px; }
+  .conf-label{ font-size:12.5px; }
+  .conf-caption{ font-size:13px; line-height:1.58; color:var(--text-dim); margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line); min-height:56px; }
+
+  /* Desfecho */
+  .cat-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .cat-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .cat-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">Autoridade para perdoar pecados</span>
+  </div>
+
+  <div class="eyebrow">II. Autoridade e chamado · <span class="ref-tag">Marcos 2.1—3.6</span></div>
+  <h1>Autoridade para perdoar pecados</h1>
+  <p class="sub">Cinco confrontos, um atrás do outro, em que Jesus desafia as categorias religiosas da sua época.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 8 H15 V15 H3 Z" stroke-width="1.3"/>
+          <path d="M3 8 L9 3 L15 8" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6.5 15 V11 H11.5 V15" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O paralítico descido pelo telhado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus está em casa, em Cafarnaum, e a multidão se aperta tanto que nem à porta há mais espaço. Quatro homens trazem um paralítico numa maca e, sem conseguir chegar até Jesus pelo caminho normal, sobem ao telhado e abrem um buraco para descê-lo bem na frente dele — uma cena de determinação e de fé coletiva tão marcante que Marcos observa explicitamente: "vendo Jesus a fé deles" (2.5), a fé dos quatro amigos, não necessariamente a do próprio paralítico.</p>
+          <p>A resposta de Jesus surpreende a todos: "filho, os teus pecados te são perdoados" (2.5) — não a cura física que todos esperavam, mas o perdão. Escribas presentes pensam consigo mesmos: "por que fala este assim? Isto é blasfêmia. Quem pode perdoar pecados, senão só Deus?" — um raciocínio teologicamente correto, mas que não conta com quem está diante deles. Jesus, percebendo o pensamento deles, faz a pergunta decisiva: o que é mais fácil dizer, "perdoados te são os pecados", ou "levanta-te, toma o teu leito, e anda"? E, "para que saibais que o Filho do homem tem na terra autoridade para perdoar pecados", ordena ao paralítico que se levante — e ele se levanta, na hora, diante de todos. A cura visível é a prova pública de uma autoridade invisível.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o chamado de Levi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="3" y="6" width="12" height="8" rx="1" stroke-width="1.3"/>
+          <path d="M6 6 V4.5 H12 V6" stroke-width="1.1"/>
+          <circle cx="9" cy="10" r="1.2" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O chamado de Levi e a mesa com pecadores</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Passando pela coletoria de impostos, Jesus chama Levi, filho de Alfeu, com a mesma simplicidade com que chamou os pescadores: "segue-me. E, levantando-se, o seguiu" (2.14). Um cobrador de impostos era visto pelos judeus da época como um traidor — alguém que enriquecia cobrando tributos para Roma em cima do próprio povo. Chamar um homem assim para o círculo mais próximo era, aos olhos de muitos, um escândalo por si só.</p>
+          <p>O escândalo cresce quando Jesus janta na casa de Levi, "reclinados à mesa com ele muitos publicanos e pecadores" — porque, observa Marcos, "havia muitos, e o tinham seguido" (2.15). Escribas dos fariseus perguntam aos discípulos por que Jesus come com essa companhia; a resposta de Jesus vai direto ao coração do seu ministério: "não necessitam de médico os sãos, mas sim os que estão enfermos; eu não vim chamar os justos, mas sim os pecadores, ao arrependimento" (2.17). Ele não está ali apesar de eles serem pecadores, mas por causa disso — a mesa não é uma concessão, é a própria lógica da sua missão.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → jejum e vinho novo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M6 3 C5 6 5 8 6 10 C7 12 7 14 6 15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M12 3 C11 6 11 8 12 10 C13 12 13 14 12 15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Jejum e vinho novo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Perguntam a Jesus por que os discípulos de João e dos fariseus jejuam, mas os dele não — outra categoria religiosa esperada, outra vez quebrada. Jesus responde com uma imagem de casamento: "podem, porventura, os convidados das bodas jejuar enquanto o noivo está com eles? Enquanto tiverem consigo o noivo, não podem jejuar" (2.19) — a presença dele é motivo de festa, não de luto; o jejum terá seu tempo, "quando lhes for tirado o noivo", uma alusão discreta à sua morte futura, plantada bem cedo no livro.</p>
+          <p>Duas imagens curtas encerram o ensino: ninguém costura remendo de pano novo em roupa velha, porque o remendo encolhe e rasga o velho ainda mais; e ninguém põe vinho novo em odres velhos, porque o odre, já sem elasticidade, arrebenta com a fermentação, perdendo o vinho e o odre juntos. "Mas o vinho novo deve ser posto em odres novos" (2.22) — o que Jesus traz não é um remendo ou um complemento ao sistema religioso antigo, mas algo genuinamente novo, que exige categorias novas para contê-lo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → senhor do sábado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 A7 7 0 1 1 8.99 2" stroke-width="1.3"/>
+          <path d="M9 5 V9 L12 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Senhor do sábado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Colhendo espigas num sábado, os discípulos são acusados pelos fariseus de fazer "o que não é lícito". Jesus responde citando Davi, que em necessidade comeu os pães da proposição, reservados apenas aos sacerdotes (1Samuel 21.1-6) — e conclui com uma afirmação que reordena a própria lógica do mandamento: "o sábado foi feito por causa do homem, e não o homem por causa do sábado. De sorte que o Filho do homem até do sábado é Senhor" (2.27-28). Não é uma anulação do sábado, mas uma correção de quem serve a quem.</p>
+          <p>Na sinagoga seguinte, um homem com a mão ressequida está presente, e os fariseus observam Jesus, "para o acusarem", se ele o curaria em sábado. Jesus pergunta abertamente: "é lícito no sábado fazer bem, ou fazer mal? Salvar a vida, ou matar?" — e diante do silêncio deles, "olhando em redor para eles com indignação, condoendo-se da dureza do seu coração", cura o homem com uma palavra. A reação não é gratidão, mas conspiração: fariseus e herodianos, adversários naturais que se unem contra um inimigo comum, "tomaram conselho contra ele para o matarem" (3.6) — a sequência de cinco confrontos termina, já aqui, com a sentença de morte sendo arquitetada.</p>
+
+          <p style="margin-top:16px;">Os cinco confrontos deste bloco, em sequência:</p>
+          <div class="conf-grid" id="confGrid"></div>
+          <div class="conf-caption" id="confCaption">Toque em um confronto para ver o resumo.</div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma autoridade que reescreve as categorias</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Em cinco cenas seguidas, Marcos mostra Jesus colidindo com as fronteiras que organizavam a religião da sua época — puro e impuro, justo e pecador, permitido e proibido. Em cada uma, ele não ignora a categoria, mas a atravessa com autoridade.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 2.17</span>
+          <p>Não necessitam de médico os sãos, mas sim os que estão enfermos; eu não vim chamar os justos, mas sim os pecadores, ao arrependimento.</p>
+          <span class="ref">— Jesus, respondendo aos escribas dos fariseus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Compare os dois sistemas em jogo nesta sequência de confrontos:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnCat1" onclick="showCatOutcome('fechada')">Categorias fechadas</button>
+            <button class="toggle-btn" id="btnCat2" onclick="showCatOutcome('autoridade')">A autoridade que as reescreve</button>
+          </div>
+
+          <div class="cat-outcome" id="catOutcome">
+            <h4 id="catTitle"></h4>
+            <p id="catText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · autoridade para perdoar pecados</footer>
+</div>
+
+<script>
+  const confData = [
+    { num: 1, label: "O perdão", text: "O paralítico descido pelo telhado — Jesus perdoa pecados antes de curar o corpo, provando sua autoridade com o milagre visível (2.1-12)." },
+    { num: 2, label: "A mesa", text: "O chamado de Levi — Jesus janta com publicanos e pecadores, dizendo que veio para os doentes, não para os sãos (2.13-17)." },
+    { num: 3, label: "O jejum", text: "Vinho novo em odres novos — os discípulos não jejuam porque o noivo ainda está com eles (2.18-22)." },
+    { num: 4, label: "As espigas no sábado", text: "\"O sábado foi feito por causa do homem\" — o Filho do homem é Senhor até do sábado (2.23-28)." },
+    { num: 5, label: "A mão ressequida", text: "Cura em sábado na sinagoga; o silêncio dos acusadores termina em conspiração para matá-lo (3.1-6)." }
+  ];
+
+  function buildConfGrid(){
+    const grid = document.getElementById('confGrid');
+    confData.forEach((c, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'conf-btn';
+      b.innerHTML = '<span class="conf-num">' + c.num + '</span><span class="conf-label">' + c.label + '</span>';
+      b.onclick = function(){ revealConf(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildConfGrid();
+
+  function revealConf(btn, i){
+    document.querySelectorAll('.conf-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const c = confData[i];
+    document.getElementById('confCaption').textContent = "Confronto " + c.num + " — " + c.label + ": " + c.text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showCatOutcome(type){
+    const btnA = document.getElementById('btnCat1');
+    const btnB = document.getElementById('btnCat2');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('catTitle');
+    const text = document.getElementById('catText');
+
+    if (type === 'fechada'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Puro e impuro, permitido e proibido";
+      text.textContent = "A religião que os escribas e fariseus defendiam nesta sequência tinha limites bem definidos: só Deus perdoa pecados, não se come com pecadores, o jejum é obrigatório, o sábado tem regras fixas — e Jesus os quebra, um a um.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Uma autoridade que atravessa as fronteiras";
+      text.textContent = "Jesus não ignora as categorias — ele age dentro delas com uma autoridade que ninguém mais tinha: perdoa pecados, janta com pecadores, redefine o jejum pela sua própria presença, e declara-se Senhor do sábado (2.28).";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

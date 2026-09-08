@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>As parábolas do Reino — Marcos 4.1-34</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 1 — os quatro solos */
+  .prb-outer{ margin-top:16px; }
+  .prb-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">As parábolas do Reino</span>
+  </div>
+
+  <div class="eyebrow">As parábolas do Reino · <span class="ref-tag">Marcos 4.1-34</span></div>
+  <h1>As parábolas do Reino</h1>
+  <p class="sub">Jesus se senta num barco e começa a ensinar em parábolas — histórias simples que revelam tanto quanto escondem.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 H16" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="6" cy="11" r="1.1"/>
+          <circle cx="10" cy="12.5" r="1.1"/>
+          <circle cx="13" cy="10" r="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O semeador</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sentado num barco, um pouco afastado da multidão que se comprimia na praia, Jesus conta a parábola de um semeador cuja semente cai em quatro lugares diferentes: à beira do caminho, onde as aves a devoram antes que possa germinar; em pedregulho, onde nasce depressa, mas seca sem raiz assim que o sol se levanta; entre espinhos, que a sufocam; e em boa terra, que produz trinta, sessenta, até cem por um (4.3-8). Encerra com o convite que atravessa os evangelhos: "quem tem ouvidos para ouvir, ouça" (4.9).</p>
+          <p>Mais tarde, a sós com os doze e mais alguns que o cercavam, Jesus explica cada solo: a semente à beira do caminho é a palavra que Satanás arrebata assim que é ouvida; a do pedregulho é recebida com alegria, mas sem raiz, e cede à primeira tribulação; a dos espinhos é sufocada pelos cuidados deste século, o engano das riquezas e a cobiça de outras coisas; a da boa terra é ouvida, aceita, e dá fruto (4.14-20). Toque em cada solo para ver a explicação que Jesus deu em particular:</p>
+
+          <div class="prb-outer">
+            <div class="prb-label">Os quatro solos — toque em cada um para ver sua explicação</div>
+            <div class="chip-row">
+              <button class="chip-btn chip-worry" onclick="selectChip(this, prbData, 0, 'prbText')">Beira do caminho</button>
+              <button class="chip-btn chip-worry" onclick="selectChip(this, prbData, 1, 'prbText')">Pedregulho</button>
+              <button class="chip-btn chip-worry" onclick="selectChip(this, prbData, 2, 'prbText')">Espinhos</button>
+              <button class="chip-btn chip-calm" onclick="selectChip(this, prbData, 3, 'prbText')">Boa terra</button>
+            </div>
+            <div class="chip-text" id="prbText">Toque em um solo para ver a explicação de Jesus.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → por que parábolas?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="8" r="4.5" stroke-width="1.2"/>
+          <path d="M7 15 H11 M7.5 16.4 H10.5" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Por que parábolas?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Quando ficam a sós, os que estavam ao redor de Jesus com os doze perguntam sobre as parábolas. Ele responde que a eles foi dado conhecer o mistério do reino de Deus, mas que "aos que estão de fora, todas estas coisas se lhes dizem por parábolas" — citando a antiga advertência de Isaías sobre um povo que vê sem perceber e ouve sem entender, para que não se convertam e sejam perdoados (4.11-12). É uma das afirmações mais desconfortáveis do evangelho: a mesma história que abre os olhos de uns fecha os de outros, dependendo da disposição do coração que a recebe.</p>
+          <p>Mas Jesus não deixa a ideia terminar num mistério trancado: "não há coisa oculta que não haja de ser manifesta; e nada se faz para se ocultar, mas para vir à luz" (4.22); "ninguém, tendo acendido uma candeia, a cobre com uma vasilha, ou a põe debaixo da cama" (4.21). A parábola esconde por um tempo, mas não indefinidamente — separa quem está disposto a se debruçar sobre ela de quem apenas a ouve de passagem. "Com a medida com que medis vos medirão a vós; e a vós, que ouvis, ainda vos será acrescentado" (4.24) — o esforço para entender é proporcional ao que se recebe de volta.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a semente e o grão de mostarda</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V9" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 9 C9 6 6 5 4 5 C4 8 6.5 9.6 9 9" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M9 11.4 C9 9 11.5 8 13.5 8 C13.5 10.4 11.5 11.9 9 11.4" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A semente e o grão de mostarda</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Duas parábolas curtas descrevem o mesmo mistério por ângulos diferentes. Na primeira, um homem lança semente à terra e depois dorme e se levanta, noite e dia, sem saber como a semente germina e cresce: "a terra por si mesma frutifica, primeiro erva, depois espiga, e por fim trigo cheio na espiga" (4.26-28). O crescimento do reino não depende da vigilância nem da compreensão de quem semeia — ele acontece por uma força que está fora do controle humano, até chegar a hora da ceifa.</p>
+          <p>Na segunda, o grão de mostarda — "menor do que todas as sementes" que há na terra — torna-se, ao crescer, "maior do que todas as hortaliças", grande o bastante para que as aves do céu façam ninho à sua sombra (4.30-32). Um começo minúsculo, quase invisível, e um resultado que ultrapassa toda expectativa razoável — o mesmo padrão do próprio ministério de Jesus, que começa com um pregador e doze homens na Galileia e alcançará, segundo a promessa do evangelho, todas as nações.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → parábolas em público, explicação em particular</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 5 C7.5 4 4.5 4 3 4.5 V14 C4.5 13.5 7.5 13.5 9 14.5 C10.5 13.5 13.5 13.5 15 14 V4.5 C13.5 4 10.5 4 9 5 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M9 5 V14.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Parábolas em público, explicação em particular</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Marcos fecha o capítulo com uma nota sobre o método de Jesus: "com muitas parábolas tais lhes dizia a palavra, conforme o que podiam ouvir; e sem parábola nenhuma lhes falava; mas em particular explicava tudo a seus discípulos" (4.33-34). Duas plateias, dois níveis de acesso — não porque Jesus quisesse excluir alguém arbitrariamente, mas porque só um círculo comprometido a segui-lo ficava, perguntava e pedia a explicação.</p>
+          <p>O leitor do evangelho de Marcos ocupa hoje o lugar daquele círculo: tem diante de si tanto a parábola quanto a explicação, registradas lado a lado no mesmo capítulo. Isso não elimina a exigência original — ouvir de verdade continua sendo uma escolha, não um acidente — mas remove a desculpa de não ter tido acesso. Quem lê o capítulo inteiro já recebeu o que antes só era dado em particular, ao redor de um barco puxado à praia.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Que solo somos</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A parábola do semeador funciona como uma lente para todas as outras deste capítulo: o reino de Deus cresce de forma silenciosa e às vezes imperceptível, mas seu resultado, quando chega, é desproporcional ao pequeno começo. A pergunta que ela deixa não é sobre técnica de pregação nem sobre o tamanho do começo, mas sobre a disposição do coração que recebe a palavra.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 4.20</span>
+          <p>E estes são os que foram semeados em boa terra: os que ouvem a palavra, e a recebem, e dão fruto, um a trinta, outro a sessenta, e outro a cem.</p>
+          <span class="ref">— a explicação da boa terra</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Beira do caminho, pedregulho e espinhos não são três falhas diferentes de um mesmo tipo — são três formas comuns de ouvir sem que a palavra dê fruto: sem entendimento, sem raiz, ou sufocada pelos cuidados do dia a dia. Só a boa terra ouve, recebe e produz — e o convite de "quem tem ouvidos para ouvir, ouça" (4.9,23) continua sendo dirigido a quem lê esta página agora.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">Ouvir sem entender</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Ouvir, receber e dar fruto</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · as parábolas do Reino</footer>
+</div>
+
+<script>
+  const prbData = [
+    { text: "À beira do caminho — a palavra é ouvida, mas Satanás logo vem e a arrebata, sem que tenha tempo de penetrar (4.15)." },
+    { text: "Em pedregulho — recebida com alegria imediata, mas sem raiz; ao vir tribulação ou perseguição por causa da palavra, logo se escandaliza (4.16-17)." },
+    { text: "Entre espinhos — ouvida de fato, mas os cuidados deste século, o engano das riquezas e a cobiça de outras coisas a sufocam, tornando-a infrutífera (4.18-19)." },
+    { text: "Boa terra — quem ouve a palavra, a recebe, e dá fruto, um a trinta, outro a sessenta, outro a cem por um (4.20)." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectChip(btn, data, i, targetId){
+    btn.parentElement.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(targetId).textContent = data[i].text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Caminho, pedregulho, espinhos";
+      text.textContent = "Três formas diferentes de a palavra não dar fruto — sem entendimento, sem raiz, ou sufocada pela ansiedade e pela riqueza. Nenhuma delas exige rejeição aberta; basta a distração ou a superficialidade.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Boa terra, fruto duradouro";
+      text.textContent = "Ouvir e receber de verdade, deixando a palavra criar raiz e espaço para crescer, produz fruto real — não uniforme, mas sempre visível com o tempo.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

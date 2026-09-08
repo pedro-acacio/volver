@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução ao Evangelho segundo Marcos — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — a cadência do "logo" */
+  .euthys-list{ display:flex; flex-direction:column; gap:8px; margin-top:14px; }
+  .euthys-btn{ display:flex; align-items:baseline; gap:10px; text-align:left; background:var(--bg); border:1px solid var(--panel-line); border-radius:10px; padding:9px 12px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; color:var(--text-dim); transition:border-color .2s ease; width:100%; }
+  .euthys-btn:hover{ border-color:var(--gold); }
+  .euthys-btn.active{ border-color:var(--gold); background:rgba(217,164,65,0.08); }
+  .euthys-ref{ font-family:'IBM Plex Mono', monospace; font-weight:500; color:var(--gold); font-size:12px; flex-shrink:0; }
+  .euthys-label{ font-size:12.5px; }
+  .euthys-caption{ font-size:13px; line-height:1.58; color:var(--text-dim); margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line); min-height:40px; }
+
+  /* Movimento 4 — a barra de três partes */
+  .mar-bar-outer{ margin-top:16px; }
+  .mar-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .mar-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .mar-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .mar-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .mar-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .mar-seg:nth-child(1){ background:var(--gold); }
+  .mar-seg:nth-child(2){ background:var(--calm); }
+  .mar-seg:nth-child(3){ background:var(--worry); }
+  .mar-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .mar-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:32px; }
+
+  .segredo-note{ margin-top:16px; border-radius:11px; padding:12px 14px; border:1px dashed var(--panel-line); background:var(--bg); font-size:12.5px; line-height:1.55; color:var(--text-dim); }
+
+  /* Desfecho */
+  .fdd-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .fdd-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .fdd-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Evangelhos · <span class="ref-tag">Marcos 10.45</span></div>
+  <h1>Introdução ao Evangelho segundo Marcos</h1>
+  <p class="sub">O evangelho mais curto e mais rápido dos quatro — escrito não por um apóstolo, mas pelo intérprete de Pedro, para contar às igrejas de Roma quem é esse Jesus que morreu como um servo e ressuscitou como o Filho de Deus.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 A7 7 0 1 1 8.99 2" stroke-width="1.3"/>
+          <path d="M6.5 7 Q9 5 11.5 7" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6.5 11 Q9 13 11.5 11" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor: João Marcos, intérprete de Pedro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Como os outros três evangelhos, este livro é formalmente anônimo — o título "segundo Marcos" foi acrescentado depois, não pelo autor. Mas a tradição da igreja primitiva é notavelmente unânime a respeito de quem o escreveu: Papias, bispo do início do século II, já registra que "Marcos, tendo-se tornado intérprete de Pedro, escreveu com exatidão tudo o que se lembrava" da pregação do apóstolo. Justino Mártir, Irineu e Clemente de Alexandria, escrevendo em lugares e décadas diferentes, repetem a mesma informação sem nenhuma voz dissonante. Esse João Marcos não era um dos doze — ele aparece em Atos como um jovem cristão de Jerusalém, sobrinho de Barnabé, que mais tarde acompanhou Paulo e, segundo essa tradição, tornou-se companheiro e "filho" espiritual de Pedro (1Pedro 5.13).</p>
+          <p>Se Marcos escreveu a partir da memória de Pedro, isso explicaria um detalhe curioso do livro: ele conserva notas de cor e de detalhe pessoal que soam menos como resumo teológico e mais como lembrança de testemunha ocular — a relva verde sobre a qual a multidão se assentou (6.39), a almofada na popa do barco (4.38), os grupos de cem e de cinquenta (6.40), o nome dos filhos de Simão de Cirene (15.21). São o tipo de detalhe que um pregador guarda na memória, não o tipo que um compilador inventaria décadas depois. Marcos escreve como quem transcreve a voz de outro homem, não como quem constrói uma biografia a partir de fontes distantes.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → data e ocasião</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H14 V15 H4 Z" stroke-width="1.4"/>
+          <path d="M4 6.5 H14" stroke-width="1.1"/>
+          <path d="M7 3 V1.5 M11 3 V1.5" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Data e ocasião: escrito em Roma, para gentios</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Se Mateus e Lucas usaram Marcos como uma de suas fontes — como a maioria dos estudiosos hoje aceita, e como a extensão do material compartilhado sugere fortemente — então Marcos é, por necessidade, o mais antigo dos quatro evangelhos. Mateus e Lucas costumam ser datados de 80 a 90 d.C.; Marcos, portanto, deve ter sido escrito bem antes disso, provavelmente entre 62 e 69 d.C., dentro da geração que conheceu Jesus pessoalmente e antes da destruição de Jerusalém em 70 d.C.</p>
+          <p>Várias pistas internas apontam para Roma como o lugar de composição. Pedro, de quem Marcos era intérprete, escreve sua primeira carta saudando os leitores em nome da igreja "que está em Babilônia" (1Pedro 5.13) — um código bem entendido para Roma, capital do império que os cristãos comparavam ao antigo opressor. O grego de Marcos está salpicado de latinismos — palavras e expressões emprestadas do latim (4.21, "candeeiro" via modius; 5.9, "legião"; 6.27, "carrasco" via speculator; 12.14, "tributo" via census) — naturais para quem escrevia num ambiente romano. E o autor faz uma provável referência a membros conhecidos da igreja de Roma ao identificar Simão de Cirene como "pai de Alexandre e de Rufo" (15.21), nomes que reaparecem entre os saudados por Paulo em Romanos 16.13. O público, por sua vez, é claramente majoritariamente gentio: o autor traduz termos aramaicos que um leitor judeu já entenderia (3.17; 5.41; 15.22,34) e para de explicar costumes judaicos que precisariam de nota para quem não cresceu dentro deles (7.2-4; 15.42).</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um evangelho de ação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 L7 8 L10 11 L15 4" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.5 4 H15 V7.5" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um evangelho de ação e urgência</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Marcos é, de longe, o mais curto dos quatro evangelhos — e também, na sensação de quem o lê, o mais rápido. Há quase nenhum discurso longo (comparado, por exemplo, com o Sermão do Monte em Mateus ou os capítulos do cenáculo em João); em vez disso, cena se empilha sobre cena, quase sem pausa para respirar. Parte desse efeito vem de uma única palavra grega, <em>euthys</em>, geralmente traduzida "logo" ou "imediatamente", que Marcos usa dezenas de vezes — muito mais do que qualquer outro evangelho — dando à narrativa um ritmo quase ofegante.</p>
+          <p>O resultado é um Jesus que não se demora: ele se move de um lugar a outro, de um milagre a outro, de uma multidão a outra, como se o tempo fosse curto e a missão urgente. Toque em cada referência para ver a cadência do texto:</p>
+
+          <div class="euthys-list" id="euthysList"></div>
+          <div class="euthys-caption" id="euthysCaption">Toque em uma referência para ver o texto.</div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → como o livro se organiza</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15 M3 9 L7 5 M3 9 L7 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 4 V14" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Como o livro se organiza</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Marcos organiza sua narrativa em três grandes blocos geográficos, quase como um itinerário: o breve início do ministério, o longo trabalho na Galileia, e a semana final em Jerusalém e na Judeia. O que chama a atenção é a desproporção deliberada entre eles — quase metade do livro está dedicada a uma única semana da vida de Jesus.</p>
+
+          <div class="mar-bar-outer">
+            <div class="mar-bar-label">As três partes do livro, capítulo por capítulo:</div>
+            <div class="mar-bar" role="group" aria-label="Distribuição dos capítulos de Marcos entre as três partes do livro">
+              <button type="button" class="mar-seg" style="width:6%;" onclick="selectMarBlock(this, 0)" aria-label="Início do ministério, 1.1-13"></button>
+              <button type="button" class="mar-seg" style="width:53%;" onclick="selectMarBlock(this, 1)" aria-label="Ministério na Galileia, 1.14 a 9.50"></button>
+              <button type="button" class="mar-seg" style="width:41%;" onclick="selectMarBlock(this, 2)" aria-label="Ministério na Judeia, 10.1 a 16.20"></button>
+            </div>
+            <div class="mar-bar-ends"><span>cap. 1</span><span>cap. 16</span></div>
+            <div class="mar-bar-caption" id="marBarText">Toque em um trecho da barra para ver o que ele cobre.</div>
+          </div>
+
+          <div class="segredo-note">Ao longo de todo o livro corre um fio estranho, conhecido pelos estudiosos como o "segredo messiânico": repetidas vezes, depois de um milagre ou de um reconhecimento de sua identidade, Jesus ordena silêncio — a demônios, a curados, aos próprios discípulos (1.25,34,44; 3.12; 5.43; 7.36; 8.30; 9.9). O leitor sabe, desde a primeira linha, que este é "Jesus Cristo, o Filho de Deus" (1.1) — mas dentro da própria história, ninguém entende plenamente o que isso significa até a cruz, quando um centurião romano, vendo como Jesus morreu, finalmente diz em voz alta o que o livro sabia o tempo todo.</div>
+
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O Filho de Deus que veio para servir</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Todo o evangelho caminha entre esses dois polos: a identidade que o leitor conhece desde o versículo 1, e o caminho surpreendente — o serviço, o sofrimento, a morte — pelo qual essa identidade se revela e se cumpre dentro da história.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 10.45</span>
+          <p>Porque o Filho do homem também não veio para ser servido, mas para servir, e para dar a sua vida em resgate de muitos.</p>
+          <span class="ref">— Marcos 10.45</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Marcos é o evangelho que junta as duas coisas sem deixar que uma apague a outra: o Filho de Deus é, precisamente, o Servo que morre. Compare as duas faces da mesma identidade:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnFdd1" onclick="showFddOutcome('filho')">O Filho de Deus</button>
+            <button class="toggle-btn" id="btnFdd2" onclick="showFddOutcome('servo')">O Servo que morre</button>
+          </div>
+
+          <div class="fdd-outcome" id="fddOutcome">
+            <h4 id="fddTitle"></h4>
+            <p id="fddText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · introdução ao Evangelho segundo Marcos</footer>
+</div>
+
+<script>
+  const euthysData = [
+    { ref: "1.10", text: "\"E logo, saindo da água, viu abrir-se os céus, e o Espírito, como pomba, descer sobre ele.\" — o batismo e a voz do céu chegam sem intervalo." },
+    { ref: "1.12", text: "\"E logo o Espírito o impeliu para o deserto.\" — da bênção do batismo direto para a prova da tentação, sem pausa." },
+    { ref: "1.18", text: "\"E logo, deixando as suas redes, o seguiram.\" — o chamado dos primeiros discípulos, respondido sem hesitação nem negociação." },
+    { ref: "1.28", text: "\"E logo se espalhou a sua fama por toda a província da Galileia.\" — a notícia de Jesus corre tão depressa quanto ele se move." }
+  ];
+
+  function buildEuthysList(){
+    const list = document.getElementById('euthysList');
+    euthysData.forEach((e, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'euthys-btn';
+      b.innerHTML = '<span class="euthys-ref">' + e.ref + '</span><span class="euthys-label">Marcos ' + e.ref + '</span>';
+      b.onclick = function(){ revealEuthys(b, i); };
+      list.appendChild(b);
+    });
+  }
+  buildEuthysList();
+
+  function revealEuthys(btn, i){
+    document.querySelectorAll('.euthys-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('euthysCaption').textContent = euthysData[i].text;
+  }
+
+  const marBarData = [
+    { label: "I. Início do ministério", range: "1.1-13", text: "João Batista, o batismo de Jesus e a tentação no deserto — um único capítulo, servindo de pórtico para tudo o que vem depois." },
+    { label: "II. Ministério na Galileia", range: "1.14—9.50", text: "o corpo principal do livro — nove capítulos cheios de milagres, ensino em parábolas e confrontos crescentes com as autoridades religiosas." },
+    { label: "III. Ministério na Judeia", range: "10.1—16.20", text: "a última semana de vida de Jesus — entrada em Jerusalém, controvérsias no templo, prisão, julgamento, morte e ressurreição. Quase metade do livro para poucos dias." }
+  ];
+
+  function selectMarBlock(btn, i){
+    btn.parentElement.querySelectorAll('.mar-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = marBarData[i];
+    document.getElementById('marBarText').textContent = d.label + " (" + d.range + "): " + d.text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showFddOutcome(type){
+    const btnA = document.getElementById('btnFdd1');
+    const btnB = document.getElementById('btnFdd2');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('fddTitle');
+    const text = document.getElementById('fddText');
+
+    if (type === 'filho'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Uma identidade conhecida desde a primeira linha";
+      text.textContent = "\"Princípio do evangelho de Jesus Cristo, Filho de Deus\" (1.1) — o leitor recebe a resposta antes mesmo de a pergunta ser feita dentro da história. Ninguém no livro sabe disso com clareza até o fim; o leitor sabe desde a primeira frase.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Uma identidade revelada pelo caminho mais improvável";
+      text.textContent = "\"O Filho do homem também não veio para ser servido, mas para servir, e para dar a sua vida em resgate de muitos\" (10.45) — a glória do Filho de Deus não aparece apesar do serviço e da cruz, mas precisamente através deles.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

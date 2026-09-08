@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unção em Betânia e a Última Ceia — Marcos 14.1-31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — devoção x traição */
+  .unc-toggle-outer{ margin-top:16px; }
+  .unc-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .unc-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .unc-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho — devoção lembrada x queda predita */
+  .unc-toggle-outer2{ margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">Unção em Betânia e a Última Ceia</span>
+  </div>
+
+  <div class="eyebrow">Ministério na Judeia · <span class="ref-tag">Marcos 14.1-31</span></div>
+  <h1>Unção em Betânia e a Última Ceia</h1>
+  <p class="sub">Um perfume derramado, uma traição combinada, e uma última refeição em que o pão e o vinho ganham um significado novo.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6.5 6 6.5 10 9 15 C11.5 10 11.5 6 9 3 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M5 10.5 C6 9 7.5 8.5 9 9" stroke-width="1" stroke-linecap="round"/>
+          <path d="M13 10.5 C12 9 10.5 8.5 9 9" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A unção em Betânia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Faltavam dois dias para a Páscoa, e os principais sacerdotes e escribas já buscavam um jeito de prender Jesus "com dolo" — mas não durante a festa, "para que não haja tumulto entre o povo". No meio dessa conspiração silenciosa, Marcos insere uma cena de beleza quase deslocada: em Betânia, na casa de Simão, o leproso, uma mulher (Marcos não a nomeia) quebra um vaso de alabastro com nardo puríssimo — um perfume importado, de valor altíssimo — e o derrama todo sobre a cabeça de Jesus.</p>
+          <p>Alguns dos presentes se indignam: "para que se fez este desperdício de unguento? Pois este unguento podia vender-se por mais de trezentos dinheiros" — quase um ano de salário de um trabalhador — "e dá-lo aos pobres." Jesus a defende sem hesitar: "deixai-a, para que a molestais? ela fez uma obra excelente para comigo... ela fez o que pôde; ela se antecipou a ungir o meu corpo para a sepultura." E acrescenta uma promessa notável: "em qualquer parte do mundo onde for pregado este evangelho, também isto que ela fez será contado para sua memória." A mulher, sem saber, unge o corpo de um rei para o seu enterro.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Judas combina a traição</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.2"/>
+          <path d="M9 6 V9 M6.5 8.5 L11.5 9.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Judas combina a traição</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Marcos posiciona a próxima cena logo depois, sem pausa, como se quisesse que o leitor sentisse o choque do contraste: "então Judas Iscariotes, um dos doze, foi ter com os principais sacerdotes para lhes entregar Jesus." Um dos doze escolhidos, alguém que caminhara com Jesus por três anos, que testemunhara os milagres e ouvira os ensinos, agora negocia a entrega do próprio mestre. Os sacerdotes, ao ouvir, "se alegraram, e prometeram dar-lhe dinheiro". Judas, a partir daquele momento, "buscava como o entregaria a tempo oportuno."</p>
+          <p>As duas cenas, colocadas lado a lado de propósito, formam um dos contrastes mais nítidos de todo o evangelho: de um lado, um gesto de devoção tão extravagante que parece desperdício aos olhos calculistas; do outro, um gesto de traição tão calculado que se resume a um preço acertado. Toque para comparar os dois gestos, na ordem exata em que Marcos os narra:</p>
+
+          <div class="unc-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="uncBtnDevocao" onclick="uncShow('devocao')">O gesto de devoção</button>
+              <button class="toggle-btn" id="uncBtnTraicao" onclick="uncShow('traicao')">O gesto de traição</button>
+            </div>
+            <div class="unc-outcome" id="uncOutcome">
+              <h4 id="uncTitle"></h4>
+              <p id="uncText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a última ceia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <ellipse cx="9" cy="9" rx="7" ry="3" stroke-width="1.2"/>
+          <path d="M6 9 V6.5 M9 9.5 V6 M12 9 V6.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A última ceia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>No primeiro dia dos pães ázimos, quando se imolava a Páscoa, os discípulos preparam a refeição conforme as instruções precisas de Jesus. À mesa, ele anuncia algo devastador: "em verdade vos digo que um de vós, que come comigo, me há de trair." Cada um, em vez de suspeitar dos outros, pergunta, entristecido: "porventura sou eu?" — uma resposta que revela mais humildade do que certeza sobre a própria fidelidade.</p>
+          <p>É nesse contexto de traição anunciada que Jesus institui a ceia que a igreja repetiria para sempre. Toma o pão, abençoa, parte e dá aos discípulos: "tomai, comei, isto é o meu corpo." Depois toma o cálice, dá graças, e todos bebem dele: "isto é o meu sangue, o sangue da nova aliança, que é derramado por muitos" — linguagem que remete diretamente ao sangue da aliança de Êxodo 24 e ao "servo sofredor" de Isaías 53, que entrega a vida por muitos. Jesus promete ainda que não beberá mais do fruto da videira "até àquele dia em que o beber, novo, no reino de Deus" — a ceia aponta para um banquete futuro, além da cruz que está prestes a acontecer.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a negação predita</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 5 C7 8 11 8 14 5" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M4 13 C7 10 11 10 14 13" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A negação predita</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de cantarem um hino — provavelmente parte do Hallel, os salmos tradicionais da Páscoa — saem para o monte das Oliveiras. No caminho, Jesus faz outra predição sombria: "todos vós vos escandalizareis esta noite em mim", citando Zacarias 13.7: "ferirei o pastor, e as ovelhas se dispersarão." Mas mesmo essa dispersão vem cercada de esperança: "depois que eu ressuscitar, irei adiante de vós para a Galileia" — a queda não é a última palavra.</p>
+          <p>Pedro protesta, convicto de sua própria força: "ainda que todos se escandalizem, nunca, todavia, me escandalizarei eu." Jesus responde com uma precisão que soa quase cruel de tão exata: "em verdade te digo que hoje, nesta mesma noite, antes que o galo cante duas vezes, três vezes me negarás." Pedro, ainda mais veemente, insiste: "ainda que me seja necessário morrer contigo, de maneira nenhuma te negarei." E todos os outros discípulos dizem o mesmo. A noite mostrará quão frágil é a coragem quando falada de antemão, e quão firme continua sendo o conhecimento de Jesus sobre o coração humano.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.2"/>
+          <path d="M6.5 9 L8.3 10.8 L11.5 6.8" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">O sangue da aliança, derramado por muitos</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Numa única noite, Marcos reúne o gesto de devoção mais bonito do evangelho, a traição mais calculada, a instituição da ceia que atravessaria os séculos, e a predição exata da queda do discípulo mais confiante de todos. É uma noite densa demais para ser resumida em uma só cena — e talvez seja exatamente por isso que a igreja continua voltando a ela.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 14.24</span>
+          <p>E disse-lhes: Isto é o meu sangue, o sangue do novo testamento, que é derramado por muitos.</p>
+          <span class="ref">— Marcos 14.24</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A mesma noite guarda dois destinos completamente diferentes, ambos já conhecidos por Jesus de antemão. A mulher de Betânia recebe uma promessa de memória eterna: seu gesto seria contado onde quer que o evangelho fosse pregado. Pedro recebe uma predição de fracasso, dita com uma precisão que ele mesmo relembraria, chorando, poucas horas depois. Nenhuma das duas coisas surpreende Jesus — e nenhuma delas encerra a história de quem as viveu.</p>
+
+          <div class="unc-toggle-outer2">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="uncBtnFezOQuePode" onclick="uncShowFinal('devocao')">Ela fez o que pôde</button>
+              <button class="toggle-btn" id="uncBtnGaloCante" onclick="uncShowFinal('galo')">Antes que o galo cante duas vezes</button>
+            </div>
+            <div class="unc-outcome" id="uncFinalOutcome">
+              <h4 id="uncFinalTitle"></h4>
+              <p id="uncFinalText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · unção em Betânia e a última ceia</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function uncShow(type){
+    const btnA = document.getElementById('uncBtnDevocao');
+    const btnB = document.getElementById('uncBtnTraicao');
+    btnA.classList.remove('active-calm');
+    btnB.classList.remove('active-worry');
+    const title = document.getElementById('uncTitle');
+    const text = document.getElementById('uncText');
+
+    if (type === 'devocao'){
+      btnA.classList.add('active-calm');
+      title.textContent = "Um perfume de trezentos dinheiros";
+      text.textContent = "Uma mulher quebra um vaso de nardo puríssimo e o derrama sobre a cabeça de Jesus — um gesto caro, público e, para alguns, um \"desperdício\". Jesus o interpreta como uma unção antecipada para o seu sepultamento, e promete que seria lembrado para sempre (14.3-9).";
+    } else {
+      btnB.classList.add('active-worry');
+      title.textContent = "Um preço combinado";
+      text.textContent = "Logo depois, Judas Iscariotes, um dos doze, procura os principais sacerdotes para entregar Jesus. Eles se alegram e prometem dinheiro; Judas passa a buscar \"tempo oportuno\" para consumar a traição (14.10-11).";
+    }
+  }
+
+  function uncShowFinal(type){
+    const btnA = document.getElementById('uncBtnFezOQuePode');
+    const btnB = document.getElementById('uncBtnGaloCante');
+    btnA.classList.remove('active-calm');
+    btnB.classList.remove('active-worry');
+    const title = document.getElementById('uncFinalTitle');
+    const text = document.getElementById('uncFinalText');
+
+    if (type === 'devocao'){
+      btnA.classList.add('active-calm');
+      title.textContent = "Uma memória para sempre";
+      text.textContent = "\"Em qualquer parte do mundo onde for pregado este evangelho, também isto que ela fez será contado para sua memória\" (14.9) — a devoção extravagante de uma mulher sem nome, preservada em todas as línguas para onde o evangelho chegasse.";
+    } else {
+      btnB.classList.add('active-worry');
+      title.textContent = "Uma queda já conhecida";
+      text.textContent = "Jesus prediz, com precisão exata, que Pedro o negaria três vezes antes do segundo canto do galo (14.30) — e ainda assim promete ir adiante dos discípulos para a Galileia depois de ressuscitar (14.28). A queda predita não é a palavra final sobre Pedro.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

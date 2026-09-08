@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Marcos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Evangelhos</div>
+    <h1>Marcos</h1>
+    <p class="lede">O evangelho mais curto e mais rápido dos quatro — escrito por João Marcos, intérprete de Pedro, para as igrejas de Roma. Um Jesus de ação, cena após cena, que resiste ao reconhecimento público até a cruz, onde um centurião gentio finalmente diz em voz alta o que o leitor sabia desde o primeiro versículo.</p>
+    <div class="stats-row">
+      <div class="stat"><b>24</b>disponíveis</div>
+      <div class="stat"><b>7</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-marcos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução ao Evangelho segundo Marcos</div>
+        <div class="p-ref">Autor, data, propósito e estrutura</div>
+        <p class="p-teaser">O intérprete de Pedro escreve o evangelho da ação e da urgência — e ainda assim reserva quase metade do livro para uma única semana.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. O INÍCIO DO MINISTÉRIO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. O início do ministério</h3>
+      <span class="cat-ref">Marcos 1.1-13</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-inicio-das-boas-novas.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O início das boas-novas</div>
+        <div class="p-ref">Marcos 1.1-13</div>
+        <p class="p-teaser">João Batista, a voz do céu no batismo, e quarenta dias entre feras e anjos no deserto.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. AUTORIDADE E CHAMADO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. Autoridade e chamado</h3>
+      <span class="cat-ref">Marcos 1—3</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-chamado-dos-primeiros-discipulos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O chamado dos primeiros discípulos</div>
+        <div class="p-ref">Marcos 1.14-45</div>
+        <p class="p-teaser">Um dia inteiro em Cafarnaum: chamado, exorcismo, cura, e um leproso que Jesus ousa tocar.</p>
+      </a>
+      <a class="p-card available" href="licao-autoridade-para-perdoar-pecados.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Autoridade para perdoar pecados</div>
+        <div class="p-ref">Marcos 2.1—3.6</div>
+        <p class="p-teaser">Cinco confrontos seguidos em que Jesus desafia as categorias religiosas da sua época.</p>
+      </a>
+      <a class="p-card available" href="licao-o-chamado-dos-doze-e-a-verdadeira-familia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O chamado dos doze e a verdadeira família</div>
+        <div class="p-ref">Marcos 3.7-35</div>
+        <p class="p-teaser">Doze homens escolhidos para uma missão, e uma pergunta sobre quem pertence de verdade à família de Jesus.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. PARÁBOLAS E MILAGRES DE PODER ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. Parábolas e milagres de poder</h3>
+      <span class="cat-ref">Marcos 4—6</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-as-parabolas-do-reino.html"><span class="badge on">Disponível</span>
+        <div class="p-title">As parábolas do Reino</div>
+        <div class="p-ref">Marcos 4.1-34</div>
+        <p class="p-teaser">Histórias simples que revelam tanto quanto escondem — o semeador, a semente que cresce sozinha, o grão de mostarda.</p>
+      </a>
+      <a class="p-card available" href="licao-milagres-de-poder.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Milagres de poder</div>
+        <div class="p-ref">Marcos 4.35—5.43</div>
+        <p class="p-teaser">Sobre a natureza, os demônios, a doença crônica e a própria morte — quatro domínios, um só Senhor.</p>
+      </a>
+      <a class="p-card available" href="licao-rejeicao-em-nazare-e-o-envio-dos-doze.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Rejeição em Nazaré e o envio dos doze</div>
+        <div class="p-ref">Marcos 6.1-30</div>
+        <p class="p-teaser">Um profeta sem honra na própria terra, uma missão bem-sucedida, e a morte sombria de João Batista.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== IV. MULTIDÕES, TRADIÇÃO E FÉ ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">IV. Multidões, tradição e fé</h3>
+      <span class="cat-ref">Marcos 6—8</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-alimentacao-dos-cinco-mil-e-jesus-anda-sobre-o-mar.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A alimentação dos cinco mil e Jesus anda sobre o mar</div>
+        <div class="p-ref">Marcos 6.31-56</div>
+        <p class="p-teaser">Um lugar deserto vira banquete, e uma noite de tempestade vira um encontro com Jesus sobre as águas.</p>
+      </a>
+      <a class="p-card available" href="licao-tradicao-humana-e-a-fe-da-mulher-sirofenicia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Tradição humana e a fé da mulher sirofenícia</div>
+        <div class="p-ref">Marcos 7.1-37</div>
+        <p class="p-teaser">O que realmente contamina o coração — e dois milagres em território gentio.</p>
+      </a>
+      <a class="p-card available" href="licao-a-alimentacao-dos-quatro-mil-e-o-fermento-dos-fariseus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A alimentação dos quatro mil e o fermento dos fariseus</div>
+        <div class="p-ref">Marcos 8.1-26</div>
+        <p class="p-teaser">Outro milagre de fartura, um pedido de sinal recusado, e um cego curado em duas etapas.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== V. RUMO À CRUZ ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">V. Rumo à cruz</h3>
+      <span class="cat-ref">Marcos 8—9</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-confissao-de-pedro-e-o-primeiro-anuncio-da-cruz.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A confissão de Pedro e o primeiro anúncio da cruz</div>
+        <div class="p-ref">Marcos 8.27—9.1</div>
+        <p class="p-teaser">"Tu és o Cristo" — a resposta certa, seguida de um entendimento completamente errado.</p>
+      </a>
+      <a class="p-card available" href="licao-a-transfiguracao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A Transfiguração</div>
+        <div class="p-ref">Marcos 9.2-13</div>
+        <p class="p-teaser">Por um instante, três discípulos veem a glória que estava escondida o tempo todo.</p>
+      </a>
+      <a class="p-card available" href="licao-quem-e-o-maior-no-reino.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Quem é o maior no Reino</div>
+        <div class="p-ref">Marcos 9.14-50</div>
+        <p class="p-teaser">Um pai desesperado, discípulos incapazes, e uma disputa embaraçosa sobre grandeza.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VI. ENSINO E ENTRADA EM JERUSALÉM ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VI. Ensino e entrada em Jerusalém</h3>
+      <span class="cat-ref">Marcos 10—11</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-jovem-rico-e-as-criancinhas.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O jovem rico e as criancinhas</div>
+        <div class="p-ref">Marcos 10.1-31</div>
+        <p class="p-teaser">O que realmente vale mais do que tudo — o casamento, as crianças, e as riquezas.</p>
+      </a>
+      <a class="p-card available" href="licao-vim-para-servir.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Vim para servir</div>
+        <div class="p-ref">Marcos 10.32-45</div>
+        <p class="p-teaser">Pela terceira vez Jesus anuncia sua morte — e dois discípulos pedem os melhores lugares.</p>
+      </a>
+      <a class="p-card available" href="licao-bartimeu-e-a-entrada-triunfal.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Bartimeu e a entrada triunfal</div>
+        <div class="p-ref">Marcos 10.46—11.11</div>
+        <p class="p-teaser">Um mendigo cego grita e recebe visão, pouco antes de Jesus entrar em Jerusalém como um rei mal-entendido.</p>
+      </a>
+      <a class="p-card available" href="licao-a-purificacao-do-templo-e-a-figueira-seca.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A purificação do templo e a figueira seca</div>
+        <div class="p-ref">Marcos 11.12-26</div>
+        <p class="p-teaser">Uma figueira sem fruto emoldura um templo que virou covil de ladrões.</p>
+      </a>
+      <a class="p-card available" href="licao-controversias-no-templo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Controvérsias no templo</div>
+        <div class="p-ref">Marcos 11.27—12.44</div>
+        <p class="p-teaser">Uma sequência de armadilhas verbais — e o elogio inesperado a uma viúva pobre.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VII. A PAIXÃO E A RESSURREIÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VII. A Paixão e a Ressurreição</h3>
+      <span class="cat-ref">Marcos 13—16</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-discurso-do-monte-das-oliveiras.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O discurso do monte das Oliveiras</div>
+        <div class="p-ref">Marcos 13</div>
+        <p class="p-teaser">A destruição do templo, sinais dos tempos, e um chamado repetido: vigiai.</p>
+      </a>
+      <a class="p-card available" href="licao-uncao-em-betania-e-a-ultima-ceia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Unção em Betânia e a Última Ceia</div>
+        <div class="p-ref">Marcos 14.1-31</div>
+        <p class="p-teaser">Um perfume derramado, uma traição combinada, e o pão e o vinho ganhando um sentido novo.</p>
+      </a>
+      <a class="p-card available" href="licao-getsemani-e-a-negacao-de-pedro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Getsêmani e a negação de Pedro</div>
+        <div class="p-ref">Marcos 14.32-72</div>
+        <p class="p-teaser">Uma noite de agonia solitária, uma prisão, e a queda exata que Jesus havia predito horas antes.</p>
+      </a>
+      <a class="p-card available" href="licao-o-julgamento-e-a-crucificacao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O julgamento e a crucificação</div>
+        <div class="p-ref">Marcos 15</div>
+        <p class="p-teaser">Pilatos, Barrabás, uma coroa de espinhos — e a confissão que fecha o círculo aberto no versículo 1.</p>
+      </a>
+      <a class="p-card available" href="licao-a-ressurreicao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ressurreição</div>
+        <div class="p-ref">Marcos 16</div>
+        <p class="p-teaser">Um túmulo vazio, um anjo, mulheres com medo — e o final que Marcos escolheu para seu evangelho.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Marcos · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

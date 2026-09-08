@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A ressurreição — Marcos 16.1-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — nota textual + medo x envio */
+  .res-note{ border-radius:12px; padding:16px 18px; border:1px dashed var(--panel-line); background: var(--bg); margin: 12px 0 4px; }
+  .res-note p{ font-size:13px; line-height:1.6; color:var(--text-dim); margin:0; }
+  .res-note .res-note-tag{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color: var(--gold); display:block; margin-bottom:6px; }
+
+  .res-toggle-outer{ margin-top:16px; }
+  .res-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .res-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .res-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho — 1.1 x 16.6 */
+  .res-toggle-outer2{ margin-top:16px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">A ressurreição</span>
+  </div>
+
+  <div class="eyebrow">Ministério na Judeia · <span class="ref-tag">Marcos 16.1-20</span></div>
+  <h1>A ressurreição</h1>
+  <p class="sub">Um túmulo vazio, um anjo, mulheres com muito medo — e o final abrupto e intrigante que Marcos escolheu para seu evangelho.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="10" r="6.2" stroke-width="1.2"/>
+          <path d="M4 12.5 A6.2 6.2 0 0 1 14 12.5" stroke-width="1"/>
+          <circle cx="12.5" cy="5.5" r="1.4" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">O túmulo vazio</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Passado o sábado, de madrugada, no primeiro dia da semana, Maria Madalena, Maria mãe de Tiago, e Salomé vêm ao sepulcro com especiarias que compraram para ungir o corpo de Jesus — o mesmo gesto de devoção que a mulher de Betânia já havia antecipado dias antes, sem que elas soubessem. No caminho, discutem entre si uma preocupação prática: "quem nos revolverá a pedra da porta do sepulcro?" — a pedra era grande, e elas eram apenas três mulheres, sem ajuda combinada.</p>
+          <p>Ao chegar, porém, encontram a pedra já removida. Entrando no sepulcro, veem um jovem sentado à direita, vestido de comprido roupão branco — descrição típica de um anjo nas Escrituras — e "ficaram muito atônitas". O detalhe da pedra "que era muito grande" já removida antes mesmo de elas chegarem sinaliza, sem precisar dizer diretamente, que algo além da força humana já havia acontecido ali.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → ele ressuscitou; não está aqui</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V9 C4 5.5 6.5 3 9 3 C11.5 3 14 5.5 14 9 V15 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M9 15 V6" stroke-width="1" stroke-dasharray="1.4 1.6"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Ele ressuscitou; não está aqui</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O jovem vestido de branco fala antes que elas consigam dizer qualquer coisa: "não vos assusteis; buscais a Jesus, o Nazareno, que foi crucificado; já ressuscitou, não está aqui; eis aqui o lugar onde o puseram." É a primeira proclamação da ressurreição em toda a história, dita a três mulheres num túmulo vazio, antes de qualquer discípulo saber de algo. O anjo dá uma instrução específica: que avisem os discípulos "e a Pedro" que Jesus vai adiante deles para a Galileia, ali o verão, como já lhes tinha dito — Pedro nomeado à parte, uma nota de graça deliberada depois da sua tríplice negação, poucos dias antes.</p>
+          <p>E então o texto mais antigo do evangelho termina de um jeito que intriga leitores há séculos: as mulheres saem do sepulcro e fogem, "porque temor e assombro as tinha possuído; e não diziam nada a ninguém, porque tinham medo" (16.8). Nenhuma aparição do próprio Jesus ressuscitado é narrada nesse ponto — o evangelho mais rápido e mais cheio de ação de todos os quatro termina, paradoxalmente, num silêncio carregado de medo e espanto.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o final mais longo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <rect x="4" y="3" width="10" height="12" rx="1" stroke-width="1.2"/>
+          <path d="M6.5 6.5 H11.5 M6.5 9 H11.5 M6.5 11.5 H9.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O final mais longo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Boa parte das Bíblias impressas continua o texto depois do verso 8 com um trecho conhecido como "o final mais longo" de Marcos (16.9-20): aparições de Jesus ressuscitado a Maria Madalena, a dois discípulos no caminho, e aos onze à mesa; a repreensão pela incredulidade deles; a grande comissão — "ide por todo o mundo, e pregai o evangelho a toda criatura" — e, por fim, a ascensão de Jesus ao céu, "e assentou-se à direita de Deus".</p>
+          <p>Vale registrar isso com a mesma simplicidade com que este site trata outras questões de texto e cânon: os manuscritos mais antigos e mais confiáveis do evangelho de Marcos terminam em 16.8, sem esses versículos finais. Eles aparecem em manuscritos posteriores, e a tradição cristã, de modo geral, os reconhece como um resumo fiel do que os outros evangelhos e o livro de Atos já registram sobre o mesmo período — mesmo sem certeza de que tenham sido escritos pelo próprio Marcos. Isso não abala em nada a ressurreição em si, atestada de forma independente por Mateus, Lucas, João e por Paulo em 1 Coríntios 15 — a única coisa em aberto é a forma exata como Marcos concluiu seu próprio livro.</p>
+
+          <div class="res-note">
+            <span class="res-note-tag">Nota de texto</span>
+            <p>Marcos 16.9-20 não está nos manuscritos gregos mais antigos que sobreviveram. A prática comum das Bíblias de estudo é imprimir esses versículos com uma nota explicando a questão — não como um segredo escondido, mas como um dado conhecido de crítica textual há séculos, semelhante ao que ocorre com os livros apócrifos do Antigo Testamento: material historicamente interessante, mas de origem e autoridade diferentes do texto principal.</p>
+          </div>
+
+          <p>Toque para comparar o medo com que o texto mais antigo termina e o envio com que o final mais longo continua a história:</p>
+
+          <div class="res-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="resBtnMedo" onclick="resShow('medo')">O medo das mulheres (16.8)</button>
+              <button class="toggle-btn" id="resBtnIde" onclick="resShow('ide')">Ide, pregai o evangelho (16.15)</button>
+            </div>
+            <div class="res-outcome" id="resOutcome">
+              <h4 id="resTitle"></h4>
+              <p id="resText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.2"/>
+          <path d="M6 9 L8.2 11.2 L12.5 6.5" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Já ressuscitou, não está aqui</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Do primeiro versículo ao último, Marcos conta uma única história com uma única pergunta de fundo: quem é este Jesus? A resposta é dada de forma direta logo na abertura, é escondida e revelada aos poucos ao longo da narrativa, é confessada em voz alta diante da cruz, e agora, no túmulo vazio, recebe sua confirmação final.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 16.6</span>
+          <p>Não vos assusteis; buscais a Jesus, o Nazareno, que foi crucificado; já ressuscitou, não está aqui; eis aqui o lugar onde o puseram.</p>
+          <span class="ref">— Marcos 16.6</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Marcos abriu seu evangelho com uma frase do narrador, dirigida ao leitor, antes de qualquer cena começar; fecha com uma frase de um anjo, dirigida a três mulheres apavoradas, diante de um túmulo aberto. No meio das duas, um homem que serviu, ensinou, sofreu, morreu e — segundo o testemunho unânime dos quatro evangelhos — ressuscitou. É a mesma história, do início ao fim: quem é Jesus, e o que ele veio fazer.</p>
+
+          <div class="res-toggle-outer2">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="resBtnInicio" onclick="resShowFinal('inicio')">"Filho de Deus" — 1.1</button>
+              <button class="toggle-btn" id="resBtnFim" onclick="resShowFinal('fim')">"Já ressuscitou" — 16.6</button>
+            </div>
+            <div class="res-outcome" id="resFinalOutcome">
+              <h4 id="resFinalTitle"></h4>
+              <p id="resFinalText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · a ressurreição</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function resShow(type){
+    const btnA = document.getElementById('resBtnMedo');
+    const btnB = document.getElementById('resBtnIde');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('resTitle');
+    const text = document.getElementById('resText');
+
+    if (type === 'medo'){
+      btnA.classList.add('active-worry');
+      title.textContent = "O texto mais antigo termina em silêncio";
+      text.textContent = "\"E não diziam nada a ninguém, porque tinham medo\" (16.8) é onde os manuscritos mais antigos de Marcos param — um final abrupto, humano, sem triunfalismo, que deixa o leitor com a mesma pergunta que as mulheres levaram embora.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "O final mais longo continua com envio";
+      text.textContent = "\"Ide por todo o mundo, e pregai o evangelho a toda criatura\" (16.15) é como o final mais longo, de origem posterior, resume a mesma comissão que os outros evangelhos e o livro de Atos também registram — o medo inicial dando lugar, com o tempo, ao anúncio.";
+    }
+  }
+
+  function resShowFinal(type){
+    const btnA = document.getElementById('resBtnInicio');
+    const btnB = document.getElementById('resBtnFim');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('resFinalTitle');
+    const text = document.getElementById('resFinalText');
+
+    if (type === 'inicio'){
+      btnA.classList.add('active-worry');
+      title.textContent = "A identidade anunciada de antemão";
+      text.textContent = "\"Princípio do evangelho de Jesus Cristo, Filho de Deus\" (1.1) — o leitor sabe, desde a primeira linha, para onde a história caminha, ainda que ninguém dentro dela entenda isso plenamente por muitos capítulos.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "A última palavra sobre ele";
+      text.textContent = "\"Já ressuscitou, não está aqui\" (16.6) — a confirmação final de que aquele Filho de Deus anunciado no início realmente venceu a morte, exatamente como havia predito três vezes no caminho para Jerusalém.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

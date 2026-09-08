@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vim para servir — Marcos 10.32-45</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — governantes dos gentios x entre vós */
+  .vps-toggle-outer{ margin-top:16px; }
+  .vps-toggle-outer > p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0 0 10px; }
+  .vps-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .vps-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .vps-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho */
+  .vps2-toggle-outer{ margin-top:16px; }
+  .vps2-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .vps2-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .vps2-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">Vim para servir</span>
+  </div>
+
+  <div class="eyebrow">Vim para servir · <span class="ref-tag">Marcos 10.32-45</span></div>
+  <h1>Vim para servir</h1>
+  <p class="sub">Pela terceira vez Jesus anuncia sua morte com detalhes cada vez mais precisos — e dois discípulos respondem pedindo os melhores lugares.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2.5 15 L7 8 L10 11 L15.5 3" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="2.5" cy="15" r="0.9" fill="var(--text-dim)" stroke="none"/>
+          <circle cx="15.5" cy="3" r="0.9" fill="var(--text-dim)" stroke="none"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Subindo para Jerusalém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"E iam pelo caminho, subindo a Jerusalém; e Jesus ia adiante deles, e eles estavam espantados, e o seguiam atemorizados" (10.32) — um dos versículos mais físicos e tensos do evangelho: ninguém precisa explicar aos discípulos que algo grave está por vir; dá para sentir só de ver Jesus andando à frente, decidido, rumo à cidade onde ele já disse, duas vezes, que vai morrer.</p>
+          <p>Ele reúne os doze outra vez e detalha, mais do que nas duas vezes anteriores, exatamente o que vai acontecer: será entregue aos principais sacerdotes e escribas, condenado à morte, entregue aos gentios, escarnecido, cuspido, açoitado e morto — e ao terceiro dia ressuscitará. Cada anúncio da paixão em Marcos (8.31; 9.31; 10.33-34) vem com mais detalhe que o anterior, como se Jesus insistisse, sem sucesso, em fazer a notícia realmente ser ouvida.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o pedido de Tiago e João</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3.5 15 V9.5 H7 V15" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M11 15 V9.5 H14.5 V15" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 15 V4.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Que queres que te faça?</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois dessa descrição detalhada de sofrimento — cuspe, açoites, morte — os dois filhos de Zebedeu, Tiago e João, se aproximam com um pedido: "concede-nos que na tua glória nos assentemos, um à tua direita, e outro à tua esquerda". Jesus pergunta: "que queres que te faça?" (10.36) — uma pergunta que ele vai repetir, quase palavra por palavra, a um mendigo cego à beira do caminho poucos capítulos adiante (10.51).</p>
+          <p>Jesus pergunta se eles podem beber o cálice que ele vai beber e ser batizados com o batismo dele — imagens de sofrimento e morte. Eles respondem "podemos", sem entender direito o que estão prometendo. Jesus confirma que vão, de fato, sofrer também — mas os lugares de honra "não me pertence a mim dá-los, mas será dado àqueles para quem está preparado".</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → não veio para ser servido</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12 C3 15.3 15 15.3 15 12" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M3 12 H15" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Vim para servir</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os outros dez ficam indignados com Tiago e João — não necessariamente porque discordem da ambição, é bem provável que quisessem o mesmo lugar. Jesus reúne todos e nomeia o padrão que rege o mundo ao redor deles: os governantes dos gentios "dominam sobre elas, e os seus grandes exercem autoridade sobre elas" — poder como controle sobre os outros.</p>
+          <p>"Mas entre vós não será assim; antes, qualquer que entre vós quiser tornar-se grande, será vosso serviço; e qualquer que entre vós quiser ser o primeiro, será servo de todos." E então a frase que resume o evangelho inteiro: "Porque o Filho do homem também não veio para ser servido, mas para servir, e para dar a sua vida em resgate de muitos" (10.45) — o próprio Jesus como o exemplo, não apenas o professor, desse padrão.</p>
+
+          <div class="vps-toggle-outer">
+            <p>O contraste que sustenta todo o ensino:</p>
+            <div class="toggle-row">
+              <button class="toggle-btn" id="vpsBtnGentios" onclick="vpsShow('gentios')">Os governantes dos gentios</button>
+              <button class="toggle-btn" id="vpsBtnEntreVos" onclick="vpsShow('entrevos')">"Entre vós não será assim"</button>
+            </div>
+            <div class="vps-outcome" id="vpsOutcome">
+              <h4 id="vpsTitle"></h4>
+              <p id="vpsText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4.5 4.5 H13.5 L12.3 10 C11.9 11.8 10.2 13 9 13 C7.8 13 6.1 11.8 5.7 10 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 13 V15.5 M6.5 15.5 H11.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Dar a vida em resgate de muitos</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Marcos 10.45 não é só o resumo desta cena — é o resumo do evangelho inteiro, o versículo que dá título à trilha (o "Filho do homem que veio para servir e dar a vida em resgate"). Tudo o que Jesus ensina sobre grandeza, aqui, ele já está prestes a viver: em poucos capítulos, ele mesmo vai ser servido por ninguém, entregue, açoitado e morto — não como vítima impotente, mas como quem "dá" a própria vida.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 10.45</span>
+          <p>Porque o Filho do homem também não veio para ser servido, mas para servir, e para dar a sua vida em resgate de muitos.</p>
+          <span class="ref">— Marcos 10.45</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Resgate" é uma palavra de mercado de escravos — o preço pago para libertar alguém que não podia se libertar sozinho. Jesus não apenas ensina serviço; ele se oferece como o próprio pagamento pela liberdade de "muitos". O modelo de grandeza que ele define é, ao mesmo tempo, o preço que ele mesmo escolhe pagar.</p>
+
+          <div class="vps2-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="vps2BtnPedir" onclick="vps2Show('pedir')">Pedir os melhores lugares</button>
+              <button class="toggle-btn" id="vps2BtnDar" onclick="vps2Show('dar')">Dar a vida em resgate de muitos</button>
+            </div>
+            <div class="vps2-outcome" id="vps2Outcome">
+              <h4 id="vps2Title"></h4>
+              <p id="vps2Text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · vim para servir</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function vpsShow(type){
+    const btnA = document.getElementById('vpsBtnGentios');
+    const btnB = document.getElementById('vpsBtnEntreVos');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('vpsTitle');
+    const text = document.getElementById('vpsText');
+
+    if (type === 'gentios'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Dominar e exercer autoridade";
+      text.textContent = "O padrão do mundo ao redor: grandeza como poder sobre os outros, posição que se defende e se exibe, autoridade que subordina.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Servir e ser o último";
+      text.textContent = "O padrão do reino: grandeza como serviço, o primeiro lugar reservado a quem se coloca por último — o exato oposto do que Tiago e João acabaram de pedir.";
+    }
+  }
+
+  function vps2Show(type){
+    const btnA = document.getElementById('vps2BtnPedir');
+    const btnB = document.getElementById('vps2BtnDar');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('vps2Title');
+    const text = document.getElementById('vps2Text');
+
+    if (type === 'pedir'){
+      btnA.classList.add('active-worry');
+      title.textContent = "O que Tiago e João pediram";
+      text.textContent = "Um lugar de honra ao lado de Jesus na glória — pedido logo depois de ouvirem, em detalhe, que aquela glória passa antes por sofrimento e morte.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "O que Jesus define e vive";
+      text.textContent = "Não pedir lugar nenhum, mas entregar a própria vida como resgate — o modelo de grandeza que o Filho do homem estabelece justamente ao recusar ser servido.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

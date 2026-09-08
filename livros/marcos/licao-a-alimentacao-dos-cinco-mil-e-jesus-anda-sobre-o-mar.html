@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A alimentação dos cinco mil e Jesus anda sobre o mar — Marcos 6.31-56</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 2 — contador visual da multiplicação */
+  .cnt-outer{ margin-top:16px; }
+  .cnt-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .cnt-row{ display:flex; gap:9px; margin: 6px 0 14px; flex-wrap:wrap; }
+  .cnt-step{
+    flex:1; min-width:110px; padding:14px 12px; border-radius:10px; border:1.5px solid var(--panel-line);
+    background: var(--bg); text-align:center; cursor:pointer;
+    transition: transform .18s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .cnt-step:hover{ transform: translateY(-2px); }
+  .cnt-step.active{ border-color: var(--gold); box-shadow: 0 0 0 3px rgba(217,164,65,0.12); }
+  .cnt-num{ font-family:'Fraunces', serif; font-weight:600; font-size:22px; color: var(--gold); display:block; }
+  .cnt-cap{ font-size:11.5px; color: var(--text-faint); margin-top:2px; display:block; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">Os cinco mil e o mar</span>
+  </div>
+
+  <div class="eyebrow">A alimentação dos cinco mil e Jesus anda sobre o mar · <span class="ref-tag">Marcos 6.31-56</span></div>
+  <h1>A alimentação dos cinco mil e Jesus anda sobre o mar</h1>
+  <p class="sub">Um lugar deserto vira um banquete para milhares, e uma noite de tempestade vira um encontro com Jesus caminhando sobre as águas.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M13 3 C13 3 9 5 9 9 V15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13 3 C13 4.3 12 5.1 10.8 5.1" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="5" cy="12" r="2.3" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Ovelhas sem pastor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os doze voltam da missão que Jesus lhes confiara e relatam tudo o que fizeram e ensinaram. Vendo que estavam exaustos, cercados por tanta gente "que nem tinham tempo para comer", Jesus os convida: "vinde vós, à parte, a um lugar deserto, e repousai um pouco" (6.30-31). Mas o plano de descanso não dura: a multidão os vê partir, adivinha o destino, e chega a pé antes deles, vinda de todas as cidades ao redor.</p>
+          <p>Em vez de frustração, Marcos registra a reação de Jesus: "teve compaixão deles, porque eram como ovelhas que não têm pastor" (6.34) — uma imagem que ecoa passagens do Antigo Testamento sobre líderes que abandonam o povo (Ezequiel 34; Números 27.17). Sem descansar, ele começa a ensiná-los sobre muitas coisas — a compaixão vence o cansaço, e a multidão que interrompeu o descanso planejado se torna o próprio objeto do cuidado de Jesus.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → cinco pães e dois peixes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 C6 5 12 5 15 9 C12 13 6 13 3 9 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M3 9 L1.4 7.2 M3 9 L1.4 10.8" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Cinco pães e dois peixes para cinco mil</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Já tarde, os discípulos sugerem a solução óbvia: despedir a multidão para que comprem comida nas aldeias vizinhas. Jesus responde com uma ordem que soa quase absurda diante de cinco mil homens (sem contar mulheres e crianças): "dai-lhes vós de comer" (6.37). Os discípulos calculam o custo — duzentos denários, quase um ano de salário de um trabalhador comum — não bastariam. Tudo o que têm à mão são cinco pães e dois peixes.</p>
+          <p>Jesus manda que a multidão se reclina em grupos, sobre a relva verde, "em ranchos de cem e de cinquenta" (6.40) — uma organização deliberada, não um amontoado caótico. Toma os pães e os peixes, olha para o céu, abençoa, parte, e vai entregando aos discípulos para que distribuam. "E todos comeram, e se fartaram", e ainda recolheram doze cestos cheios de pedaços — a fartura, não a escassez, é o que sobra depois do milagre (6.41-43).</p>
+
+          <div class="cnt-outer">
+            <div class="cnt-label">A conta da fartura — toque em cada passo</div>
+            <div class="cnt-row">
+              <div class="cnt-step" onclick="selectCnt(this, cntData, 0)"><span class="cnt-num">5 + 2</span><span class="cnt-cap">pães e peixes</span></div>
+              <div class="cnt-step" onclick="selectCnt(this, cntData, 1)"><span class="cnt-num">5.000</span><span class="cnt-cap">homens alimentados</span></div>
+              <div class="cnt-step" onclick="selectCnt(this, cntData, 2)"><span class="cnt-num">12</span><span class="cnt-cap">cestos que sobraram</span></div>
+            </div>
+            <div class="chip-text" id="cntText">Toque em um número para ver o versículo correspondente.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → Jesus anda sobre o mar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 13 C4 11 6 11 8 13 C10 15 12 15 14 13 C15 12 16 12 16.5 13" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="9" cy="6" r="1.6" stroke-width="1.1"/>
+          <path d="M9 7.6 V11" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Jesus anda sobre o mar</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Logo depois, Jesus manda os discípulos entrarem no barco e irem adiante para Betsaida, enquanto ele despede a multidão e sobe ao monte, sozinho, para orar. De noite, vendo que os discípulos remavam com dificuldade, "porque o vento lhes era contrário" (6.48), ele vem a eles andando sobre o mar — e, segundo o texto, "queria passar adiante deles", como se apenas pretendesse acompanhá-los à distância.</p>
+          <p>Os discípulos, vendo-o, gritam de pavor, pensando ser um fantasma; Jesus fala imediatamente: "Tende bom ânimo, sou eu, não temais" (6.50). Ele entra no barco, e o vento se aquieta. Mas Marcos acrescenta uma nota incomum, mais dura do que qualquer repreensão explícita: "porque ainda não tinham compreendido o milagre dos pães; antes o seu coração estava endurecido" (6.52) — o mesmo grupo que distribuiu os pães multiplicados às próprias mãos ainda não havia entendido quem estava com eles no barco.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Sou eu, não temais</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Os dois milagres desta passagem estão ligados por um mesmo tema: a compaixão de Jesus que multiplica pão para uma multidão faminta é a mesma presença que atravessa a água para alcançar discípulos exaustos, remando contra o vento no meio da noite. Em ambos os casos, o problema não é a ausência de Jesus, mas a incapacidade de reconhecê-lo — mesmo depois de ter distribuído pão multiplicado com as próprias mãos.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 6.50</span>
+          <p>Tende bom ânimo, sou eu, não temais.</p>
+          <span class="ref">— Jesus, aos discípulos, no meio da tempestade</span>
+        </div>
+
+        <div class="tl-card">
+          <p>"Não tinham compreendido o milagre dos pães; antes o seu coração estava endurecido" (6.52) — a nota mais dura de Marcos sobre os discípulos até este ponto do evangelho. O problema não era falta de evidência: eles tinham acabado de ver cinco mil pessoas comerem até se fartar. O problema era um coração ainda incapaz de deixar essa evidência mudar o que esperavam de Jesus.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnWorry" onclick="showOutcome('worry')">O coração endurecido</button>
+            <button class="toggle-btn" id="btnCalm" onclick="showOutcome('calm')">Sou eu, não temais</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · os cinco mil e Jesus anda sobre o mar</footer>
+</div>
+
+<script>
+  const cntData = [
+    { title: "Cinco pães e dois peixes", text: "Tudo o que os discípulos conseguem reunir diante de uma multidão faminta — quase nada, aos olhos humanos (6.38)." },
+    { title: "Cinco mil homens alimentados", text: "Sem contar mulheres e crianças, cinco mil homens comem \"e se fartaram\" a partir daquele pouco (6.42-44)." },
+    { title: "Doze cestos que sobraram", text: "Depois de todos comerem à vontade, ainda sobram doze cestos cheios de pedaços de pão e de peixe (6.43) — a fartura excede a necessidade." }
+  ];
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function selectCnt(el, data, i){
+    el.parentElement.querySelectorAll('.cnt-step').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    const item = data[i];
+    document.getElementById('cntText').innerHTML = '<strong style="color:var(--text); font-family:\'Fraunces\', serif; font-weight:500;">' + item.title + '</strong><br>' + item.text;
+  }
+
+  function showOutcome(type){
+    const btnWorry = document.getElementById('btnWorry');
+    const btnCalm = document.getElementById('btnCalm');
+    btnWorry.classList.remove('active-worry');
+    btnCalm.classList.remove('active-calm');
+    const visual = document.getElementById('outcomeVisual');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'worry'){
+      btnWorry.classList.add('active-worry');
+      visual.innerHTML = '<div class="loop-dot"></div>';
+      title.textContent = "Um coração que ainda não entendeu";
+      text.textContent = "\"Não tinham compreendido o milagre dos pães\" (6.52) — nem toda evidência visível é suficiente quando o coração ainda resiste a reconhecer quem Jesus é.";
+    } else {
+      btnCalm.classList.add('active-calm');
+      visual.innerHTML = '<div class="anchor-line"></div>';
+      title.textContent = "Uma presença no meio da tempestade";
+      text.textContent = "\"Tende bom ânimo, sou eu, não temais\" (6.50) — a resposta de Jesus ao medo não é uma explicação, mas a própria presença dele reconhecida em meio à noite.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

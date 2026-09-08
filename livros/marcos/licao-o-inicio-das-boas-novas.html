@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O início das boas-novas — Marcos 1.1-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 3 — as três cenas do deserto ao Jordão */
+  .cenas-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:14px; }
+  @media (max-width:560px){ .cenas-grid{ grid-template-columns:1fr; } }
+  .cena-btn{ display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; background:var(--bg); border:1px solid var(--panel-line); border-radius:10px; padding:12px 10px; cursor:pointer; font-family:'IBM Plex Sans', sans-serif; color:var(--text-dim); transition:border-color .2s ease; }
+  .cena-btn:hover{ border-color:var(--gold); }
+  .cena-btn.active{ border-color:var(--gold); background:rgba(217,164,65,0.08); }
+  .cena-btn svg{ stroke:var(--gold); }
+  .cena-label{ font-size:12px; line-height:1.3; }
+  .cena-caption{ font-size:13px; line-height:1.58; color:var(--text-dim); margin-top:12px; padding-top:12px; border-top:1px dashed var(--panel-line); min-height:56px; }
+
+  /* Desfecho */
+  .idn-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .idn-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .idn-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-marcos.html">Volver</a>
+    <span class="brand-track">O início das boas-novas</span>
+  </div>
+
+  <div class="eyebrow">I. O início do ministério · <span class="ref-tag">Marcos 1.1-13</span></div>
+  <h1>O início das boas-novas</h1>
+  <p class="sub">O evangelho começa sem genealogia nem natividade: direto com um pregador no deserto, uma voz do céu, e um confronto com Satanás.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 C4 9 6 4 9 2 C12 4 14 9 14 15 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 12 H12" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">João Batista, a voz que prepara o caminho</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Marcos não perde tempo com genealogias nem com a história do nascimento de Jesus — outros evangelistas cuidarão disso. Ele abre com uma única frase, "princípio do evangelho de Jesus Cristo, Filho de Deus" (1.1), e imediatamente salta para uma citação composta de dois profetas: Malaquias 3.1 ("eis que envio o meu anjo ante a tua face") e Isaías 40.3 ("voz do que clama no deserto: preparai o caminho do Senhor"). Séculos de expectativa profética convergem, sem introdução, direto para um homem vestido de pelos de camelo, com um cinto de couro na cintura, comendo gafanhotos e mel silvestre — a mesma imagem de Elias (2Reis 1.8), o profeta que a tradição judaica esperava que voltasse antes do Messias.</p>
+          <p>João prega no deserto "um batismo de arrependimento para remissão dos pecados", e "toda a província da Judeia e todos os de Jerusalém" saem ao seu encontro — uma resposta em massa que mostra o quanto o povo ansiava por um sinal de que Deus voltara a agir. Mas João é claro sobre seu próprio papel: ele é apenas a voz, não a mensagem. "Após mim vem aquele que é mais poderoso do que eu, do qual não sou digno de, curvando-me, desatar a correia das alparcas" — uma tarefa tão humilde que nem mesmo um escravo era obrigado a fazê-la por outro homem, e ainda assim João se declara indigno até disso diante daquele que está para chegar.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o batismo e a voz do céu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 11 C3 8 6 8 6 11 C6 8 9 8 9 11 C9 8 12 8 12 11 C12 8 15 8 15 11" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 4 L9 8" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 4 C7.5 4 7 5 9 5.5 C11 5 10.5 4 9 4 Z" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O batismo de Jesus e a voz do céu</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sem cerimônia, Jesus "veio de Nazaré da Galileia, e foi batizado por João no Jordão" (1.9) — misturado, aparentemente, entre a multidão que respondia ao chamado de arrependimento, embora ele mesmo não tivesse pecado a confessar. É um dos muitos momentos em que Marcos deixa o leitor sentir o peso da humildade de Jesus sem parar para explicá-la: o Filho de Deus se posiciona ao lado dos pecadores antes de fazer qualquer coisa por eles.</p>
+          <p>O que acontece em seguida é breve, mas denso: "e logo, saindo da água, viu abrir-se os céus, e o Espírito, como pomba, descer sobre ele. E ouviu-se uma voz dos céus, que dizia: Tu és o meu Filho amado, em ti me comprazo" (1.10-11). Nessa única cena, as três pessoas da Trindade aparecem juntas — o Filho sendo batizado, o Espírito descendo visivelmente, o Pai falando do céu — confirmando, num único instante público, tudo o que o versículo 1 já havia dito ao leitor. Ainda assim, é uma revelação estranhamente privada: o texto não diz que a multidão ouviu a voz ou viu o Espírito descer, apenas que Jesus mesmo viu e ouviu.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a tentação no deserto</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 15 Q5 9 9 15 Q13 9 16 15" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="9" cy="6" r="2.4" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A tentação no deserto</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Onde Mateus e Lucas dedicam vários versículos a narrar as três tentações específicas de Satanás, Marcos resume tudo em duas frases econômicas: "e logo o Espírito o impeliu para o deserto. E esteve ali no deserto quarenta dias, tentado por Satanás; e estava com as feras, e os anjos o serviam" (1.12-13). É a mesma palavra "logo" que já apareceu no batismo — sem pausa entre a bênção da voz celestial e a provação do deserto, como se a confirmação da identidade de Jesus viesse imediatamente acompanhada do teste dela.</p>
+          <p>O detalhe "estava com as feras" é exclusivo de Marcos, e carrega um eco quase edênico: um homem entre animais selvagens, mas protegido, servido por anjos em vez de destruído por eles — uma pequena imagem de restauração no meio da hostilidade do deserto. Repare como as três cenas deste primeiro movimento do evangelho se encadeiam sem intervalo:</p>
+
+          <div class="cenas-grid" id="cenasGrid"></div>
+          <div class="cena-caption" id="cenaCaption">Toque em uma cena para reler o que aconteceu nela.</div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o início da pregação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 9 H15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M11 5 L15 9 L11 13" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O início da pregação na Galileia</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>"Depois que João foi entregue à prisão, veio Jesus para a Galileia, pregando o evangelho do reino de Deus" (1.14) — uma única frase de transição faz a ponte entre o pórtico do livro (1.1-13) e todo o ministério público que vem a seguir. Marcos não perde tempo explicando os detalhes da prisão de João; ele guarda esse relato para mais tarde (6.17-29) e, por ora, usa-o apenas como marcador de tempo: um profeta é silenciado, e outro, maior, começa a falar.</p>
+          <p>A primeira mensagem de Jesus resume, em uma frase, tudo o que estava por vir: "o tempo está cumprido, e é chegado o reino de Deus: arrependei-vos, e crede no evangelho" (1.15). Não é uma proposta nem uma sugestão religiosa entre outras — é o anúncio de que a longa espera profética de Israel havia chegado ao seu ponto de virada, e que a resposta correta a esse anúncio é o arrependimento e a fé. Tudo o que Marcos vai narrar daqui até a cruz é, de certa forma, um desdobramento dessa única frase.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma identidade que só a cruz vai declarar em voz alta</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A voz do céu no Jordão é o primeiro dos vários momentos em que a identidade real de Jesus é afirmada dentro do livro — mas quase sempre em segredo, longe do olhar público. É um padrão que atravessa todo o evangelho e só vai se resolver na cena final da crucificação.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Marcos 1.11</span>
+          <p>Tu és o meu Filho amado, em ti me comprazo.</p>
+          <span class="ref">— voz dos céus, no batismo de Jesus</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Compare o momento em que essa identidade é declarada pela primeira vez com o momento em que, finalmente, alguém a declara em voz alta, diante de todos:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnIdn1" onclick="showIdnOutcome('segredo')">Declarada em segredo</button>
+            <button class="toggle-btn" id="btnIdn2" onclick="showIdnOutcome('cruz')">Confirmada na cruz</button>
+          </div>
+
+          <div class="idn-outcome" id="idnOutcome">
+            <h4 id="idnTitle"></h4>
+            <p id="idnText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Marcos · o início das boas-novas</footer>
+</div>
+
+<script>
+  const cenasData = [
+    { label: "Deserto e pregação", text: "João Batista prega arrependimento no deserto, vestido como Elias, e aponta para \"aquele que vem depois de mim\" (1.4-8)." },
+    { label: "Batismo e voz do céu", text: "Jesus é batizado no Jordão; os céus se abrem, o Espírito desce como pomba, e a voz do Pai o declara Filho amado (1.9-11)." },
+    { label: "Tentação e anjos", text: "Logo em seguida, o Espírito o impele ao deserto por quarenta dias; tentado por Satanás, entre feras, servido por anjos (1.12-13)." }
+  ];
+
+  const cenaIcons = [
+    '<svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor"><path d="M4 15 C4 9 6 4 9 2 C12 4 14 9 14 15 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>',
+    '<svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor"><path d="M3 11 C3 8 6 8 6 11 C6 8 9 8 9 11 C9 8 12 8 12 11 C12 8 15 8 15 11" stroke-width="1.2" stroke-linecap="round"/><path d="M9 4 L9 8" stroke-width="1.2" stroke-linecap="round"/></svg>',
+    '<svg width="20" height="20" viewBox="0 0 18 18" fill="none" stroke="currentColor"><path d="M2 15 Q5 9 9 15 Q13 9 16 15" stroke-width="1.2" stroke-linecap="round"/><circle cx="9" cy="6" r="2.4" stroke-width="1.2"/></svg>'
+  ];
+
+  function buildCenasGrid(){
+    const grid = document.getElementById('cenasGrid');
+    cenasData.forEach((c, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cena-btn';
+      b.innerHTML = cenaIcons[i] + '<span class="cena-label">' + c.label + '</span>';
+      b.onclick = function(){ revealCena(b, i); };
+      grid.appendChild(b);
+    });
+  }
+  buildCenasGrid();
+
+  function revealCena(btn, i){
+    document.querySelectorAll('.cena-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('cenaCaption').textContent = cenasData[i].text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showIdnOutcome(type){
+    const btnA = document.getElementById('btnIdn1');
+    const btnB = document.getElementById('btnIdn2');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('idnTitle');
+    const text = document.getElementById('idnText');
+
+    if (type === 'segredo'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Uma voz que só o céu e Jesus ouvem";
+      text.textContent = "No Jordão, a declaração \"tu és o meu Filho amado\" (1.11) não parece ter sido ouvida pela multidão — é uma confirmação íntima, entre o Pai e o Filho, no início de um caminho que ainda vai levar longe.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Um centurião pagão diz em voz alta o que o céu já sabia";
+      text.textContent = "\"E o centurião, que estava defronte dele, vendo que assim clamando expirara, disse: Verdadeiramente este homem era o Filho de Deus\" (15.39) — o mesmo título do batismo, agora declarado publicamente, por um gentio, diante da cruz.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
