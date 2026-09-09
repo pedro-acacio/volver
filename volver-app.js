@@ -36,7 +36,8 @@
     var segs = location.pathname.split('/').filter(Boolean);
     var file = segs[segs.length - 1] || 'index.html';
     var folder = segs.length > 1 ? segs[segs.length - 2] : null;
-    return { file: file, folder: folder };
+    var dir = segs.slice(0, -1).join('/');
+    return { file: file, folder: folder, dir: dir };
   }
 
   // ---------------- theme ----------------
@@ -758,6 +759,30 @@
     return segs.length > 1 ? segs[segs.length - 2] : (pathParts().folder || 'geral');
   }
 
+  // ---------------- one-time repair: hrefs saved before the nested-book-folder fix ----------------
+  // "livros/<livro>/licao-*.html" lessons are two folders deep, but an older bug stored their
+  // href as just "<livro>/licao-*.html" (missing the "livros/" prefix), breaking links rendered
+  // from root pages like continue-a-volver.html / favoritos.html (404 on the live site).
+  var NESTED_CATEGORY_PARENT = {
+    genesis: 'livros', exodo: 'livros', levitico: 'livros', numeros: 'livros', deuteronomio: 'livros',
+    josue: 'livros', mateus: 'livros', joao: 'livros', marcos: 'livros', lucas: 'livros', atos: 'livros'
+  };
+  function migrateNestedHrefs(){
+    [STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_FAV].forEach(function(storageKey){
+      var data = readJSON(storageKey);
+      var changed = false;
+      Object.keys(data).forEach(function(k){
+        var entry = data[k];
+        var parent = entry && NESTED_CATEGORY_PARENT[entry.category];
+        if(parent && entry.href && entry.href.indexOf(parent + '/') !== 0){
+          entry.href = parent + '/' + entry.href;
+          changed = true;
+        }
+      });
+      if(changed) writeJSON(storageKey, data);
+    });
+  }
+
   // ---------------- card enhancement: index.html .show-card rows ----------------
   function enhanceShowCards(scope){
     var cards = (scope || document).querySelectorAll('a.show-card[href]');
@@ -816,7 +841,9 @@
   function enhancePCards(scope){
     var cards = (scope || document).querySelectorAll('a.p-card.available[href]');
     var completed = 0, total = 0;
-    var category = pathParts().folder;
+    var pp = pathParts();
+    var category = pp.folder;
+    var dir = pp.dir;
     cards.forEach(function(card){
       var href = card.getAttribute('href');
       var slug = href.replace(/\.html$/, '').split('/').pop();
@@ -835,7 +862,7 @@
           var now = toggleFavorite({
             category: category, slug: slug,
             title: titleEl ? titleEl.textContent.trim() : slug,
-            ref: refElx.childNodes[0] ? refElx.childNodes[0].textContent.trim() : '', href: category + '/' + href
+            ref: refElx.childNodes[0] ? refElx.childNodes[0].textContent.trim() : '', href: dir ? dir + '/' + href : href
           });
           starBtn.classList.toggle('active', now);
         });
@@ -989,7 +1016,7 @@
     var refEl = document.querySelector('.ref-tag');
     var title = h1 ? h1.textContent.trim() : document.title;
     var ref = refEl ? refEl.textContent.trim() : '';
-    var href = category + '/' + p.file;
+    var href = p.dir ? p.dir + '/' + p.file : p.file;
     var entry = { category: category, slug: slug, title: title, ref: ref, href: href };
     recordVisit(entry);
 
@@ -1328,6 +1355,7 @@
 
   // ---------------- boot ----------------
   function init(){
+    migrateNestedHrefs();
     applyTheme();
     applyFontSize();
     applyLanguage();
