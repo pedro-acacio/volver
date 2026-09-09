@@ -8,6 +8,8 @@
   var STORAGE_FONTSIZE = 'volver_fontsize';
   var STORAGE_LANG = 'volver_lang';
   var STORAGE_SESSION_SHOWN = 'volver_session_shown';
+  var STORAGE_STREAK = 'volver_streak';
+  var STREAK_MILESTONES = [3, 7, 14, 30, 60, 100, 200, 365];
 
   var STAR_ICON = '<svg viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.5 7.5 L18.5 8.3 L14 12.4 L15.2 18.3 L10 15.3 L4.8 18.3 L6 12.4 L1.5 8.3 L7.5 7.5 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>';
   var CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 8.5 L6 12.5 L14 3.5" stroke="#12162A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -20,6 +22,7 @@
   var INFO_ICON = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke-width="1.4"/><path d="M8 7.2V11.3" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="4.9" r="0.9" fill="currentColor" stroke="none"/></svg>';
   var SPEAKER_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 6H4.3L7.6 3V13L4.3 10H2V6Z" stroke-width="1.3" stroke-linejoin="round"/><path d="M10.2 5.6C11 6.4 11 9.6 10.2 10.4" stroke-width="1.3" stroke-linecap="round"/><path d="M11.8 4C13.3 5.5 13.3 10.5 11.8 12" stroke-width="1.3" stroke-linecap="round"/></svg>';
   var STOP_ICON = '<svg viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="8" height="8" rx="1" stroke-width="1.3"/></svg>';
+  var FLAME_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 1.3C8 1.3 4.6 5.2 4.6 8.6C4.6 11.1 6.1 12.7 8 12.7C9.9 12.7 11.4 11.1 11.4 8.6C11.4 7.3 10.8 6.3 10.2 5.6C10.3 6.6 9.7 7.3 9 7.4C9.5 5.7 8.7 3.7 8 1.3Z" stroke-width="1.2" stroke-linejoin="round"/></svg>';
   var BOAT_SVG = '<svg class="intro-boat" viewBox="0 0 52 52" fill="none">' +
       '<path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>' +
       '<path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>' +
@@ -137,6 +140,15 @@
       cfg_clear_confirm: 'Confirmar (clique de novo)', cfg_clear_done: 'Apagado ✓',
       card_completed_tag: 'Concluído', card_progress_tag: 'Em andamento',
       count_completed_label: 'concluídas',
+      streak_badge_one: '{n} dia seguido', streak_badge_many: '{n} dias seguidos',
+      streak_milestone: 'Nova marca pessoal!',
+      streak_pill_active: 'voltando à Palavra todo dia.',
+      streak_pill_risk: 'está em risco — conclua uma reflexão hoje para não perder.',
+      streak_sidebar_title: 'Sequência de {n}',
+      profile_streak_current: 'Sequência atual', profile_streak_longest: 'Recorde',
+      profile_streak_history: 'Últimos 7 dias',
+      profile_streak_empty: 'Conclua uma reflexão hoje para começar sua sequência.',
+      cfg_streak_reset: 'Reiniciar',
       onb: [
         { eyebrow: '1 de 6 · Sobre a Volver', title: 'O que é a Volver',
           body: '<p>A Volver é uma metodologia para ajudar sua mente a se encontrar com os ensinamentos bíblicos, de um jeito visual e interativo.</p>' +
@@ -189,6 +201,15 @@
       cfg_clear_confirm: 'Confirm (click again)', cfg_clear_done: 'Erased ✓',
       card_completed_tag: 'Completed', card_progress_tag: 'In progress',
       count_completed_label: 'completed',
+      streak_badge_one: '{n} day in a row', streak_badge_many: '{n} days in a row',
+      streak_milestone: 'New personal best!',
+      streak_pill_active: 'returning to the Word each day.',
+      streak_pill_risk: 'is at risk — complete a reflection today to keep it.',
+      streak_sidebar_title: '{n} streak',
+      profile_streak_current: 'Current streak', profile_streak_longest: 'Best streak',
+      profile_streak_history: 'Last 7 days',
+      profile_streak_empty: 'Complete a reflection today to start your streak.',
+      cfg_streak_reset: 'Reset',
       onb: [
         { eyebrow: '1 of 6 · About Volver', title: 'What Volver is',
           body: '<p>Volver is a methodology to help your mind engage with biblical teaching, in a visual and interactive way.</p>' +
@@ -241,6 +262,15 @@
       cfg_clear_confirm: 'Confirmar (haz clic de nuevo)', cfg_clear_done: 'Borrado ✓',
       card_completed_tag: 'Concluido', card_progress_tag: 'En curso',
       count_completed_label: 'concluidas',
+      streak_badge_one: '{n} día seguido', streak_badge_many: '{n} días seguidos',
+      streak_milestone: '¡Nueva marca personal!',
+      streak_pill_active: 'volviendo a la Palabra cada día.',
+      streak_pill_risk: 'está en riesgo — completa una reflexión hoy para no perderla.',
+      streak_sidebar_title: 'Racha de {n}',
+      profile_streak_current: 'Racha actual', profile_streak_longest: 'Mejor racha',
+      profile_streak_history: 'Últimos 7 días',
+      profile_streak_empty: 'Completa una reflexión hoy para empezar tu racha.',
+      cfg_streak_reset: 'Reiniciar',
       onb: [
         { eyebrow: '1 de 6 · Sobre Volver', title: 'Qué es Volver',
           body: '<p>Volver es una metodología para ayudar a tu mente a encontrarse con las enseñanzas bíblicas, de una manera visual e interactiva.</p>' +
@@ -297,6 +327,7 @@
     cfg_fontsize_title: 'Text size', cfg_fontsize_desc: 'Increases or decreases the text size of reflections and pages, in 5 levels, for more comfortable reading.',
     cfg_fontsize_dec_aria: 'Decrease text size', cfg_fontsize_inc_aria: 'Increase text size',
     cfg_lang_title: 'Language', cfg_lang_desc: 'Translates the platform’s menus, buttons, and fixed text. The reflections themselves remain in Portuguese for now.',
+    cfg_streak_title: 'Reset streak', cfg_streak_desc: 'Resets the day-streak count. Your best streak and completed reflections are not erased.', cfg_streak_reset: 'Reset',
     cfg_clear_title: 'Erase progress', cfg_clear_desc: 'Choose which completed reflections should have their progress erased. They will appear as not started again.',
     cfg_clear_manage: 'Manage',
     cfg_clear_warning: 'Warning: erasing a reflection’s progress means you will need to redo it from the beginning.',
@@ -410,6 +441,7 @@
     cfg_fontsize_title: 'Tamaño del texto', cfg_fontsize_desc: 'Aumenta o disminuye el tamaño del texto de las reflexiones y páginas, en 5 niveles, para una lectura más cómoda.',
     cfg_fontsize_dec_aria: 'Disminuir tamaño del texto', cfg_fontsize_inc_aria: 'Aumentar tamaño del texto',
     cfg_lang_title: 'Idioma', cfg_lang_desc: 'Traduce los menús, botones y textos fijos de la plataforma. Las reflexiones en sí permanecen en portugués por ahora.',
+    cfg_streak_title: 'Reiniciar racha', cfg_streak_desc: 'Pone en cero la racha de días. Tu mejor racha y las reflexiones ya concluidas no se borran.', cfg_streak_reset: 'Reiniciar',
     cfg_clear_title: 'Borrar progreso', cfg_clear_desc: 'Elige qué reflexiones concluidas tendrán su progreso borrado. Volverán a aparecer como no iniciadas.',
     cfg_clear_manage: 'Gestionar',
     cfg_clear_warning: 'Atención: borrar el progreso de una reflexión significa que tendrás que rehacerla desde el principio.',
@@ -638,6 +670,15 @@
       themeLabel.textContent = t('sidebar_theme_label');
       foot.appendChild(themeLabel);
 
+      var streakInfo = getStreakInfo();
+      if(streakInfo.current > 0){
+        var streakEl = document.createElement('div');
+        streakEl.className = 'sidebar-streak' + (streakInfo.atRisk ? ' at-risk' : '');
+        streakEl.title = t('streak_sidebar_title').replace('{n}', streakLabel(streakInfo.current));
+        streakEl.innerHTML = FLAME_ICON + '<b>' + streakInfo.current + '</b>';
+        foot.appendChild(streakEl);
+      }
+
       nav.querySelector('#volverSidebarClose').addEventListener('click', closeSidebar);
       var homeToggle = nav.querySelector('#sidebarHomeToggle');
       var lessonsPanel = nav.querySelector('#sidebarLessons');
@@ -757,6 +798,86 @@
   function categoryFromHref(href){
     var segs = href.split('/');
     return segs.length > 1 ? segs[segs.length - 2] : (pathParts().folder || 'geral');
+  }
+
+  // ---------------- streak (consecutive days with at least one completed reflection) ----------------
+  function pad2(n){ return (n < 10 ? '0' : '') + n; }
+  function dateKey(d){
+    d = d || new Date();
+    return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate());
+  }
+  function shiftDateKey(key, deltaDays){
+    var d = new Date(key + 'T00:00:00');
+    d.setDate(d.getDate() + deltaDays);
+    return dateKey(d);
+  }
+  function getStreakData(){
+    var d = readJSON(STORAGE_STREAK);
+    if(!d.days) d.days = {};
+    if(typeof d.longest !== 'number') d.longest = 0;
+    return d;
+  }
+  // Counts the run of consecutive days ending at `today` (or, if today has no
+  // completion yet, ending at yesterday — the streak stays "alive" until the
+  // current day fully passes without a completion).
+  function computeCurrentStreak(days, today){
+    var cursor = today;
+    if(!days[cursor]){
+      var yesterday = shiftDateKey(cursor, -1);
+      if(!days[yesterday]) return 0;
+      cursor = yesterday;
+    }
+    var count = 0;
+    while(days[cursor]){
+      count++;
+      cursor = shiftDateKey(cursor, -1);
+    }
+    return count;
+  }
+  function recordStreakDay(){
+    var data = getStreakData();
+    var today = dateKey();
+    var wasNewDay = !data.days[today];
+    data.days[today] = true;
+    var current = computeCurrentStreak(data.days, today);
+    var isNewLongest = current > data.longest;
+    if(isNewLongest) data.longest = current;
+    writeJSON(STORAGE_STREAK, data);
+    return {
+      current: current,
+      longest: data.longest,
+      isNewDay: wasNewDay,
+      isNewLongest: wasNewDay && isNewLongest && current > 1,
+      milestone: (wasNewDay && STREAK_MILESTONES.indexOf(current) !== -1) ? current : null
+    };
+  }
+  function getStreakInfo(){
+    var data = getStreakData();
+    var today = dateKey();
+    var current = computeCurrentStreak(data.days, today);
+    return {
+      current: current,
+      longest: data.longest,
+      doneToday: !!data.days[today],
+      atRisk: current > 0 && !data.days[today]
+    };
+  }
+  function getStreakHistory(n){
+    var data = getStreakData();
+    var out = [];
+    var base = new Date();
+    for(var i = n - 1; i >= 0; i--){
+      var d = new Date(base.getFullYear(), base.getMonth(), base.getDate() - i);
+      var key = dateKey(d);
+      out.push({ key: key, done: !!data.days[key], isToday: i === 0 });
+    }
+    return out;
+  }
+  function resetStreak(){
+    writeJSON(STORAGE_STREAK, { days: {}, longest: 0 });
+  }
+  function streakLabel(n){
+    return t(n === 1 ? 'streak_badge_one' : 'streak_badge_many').replace('{n}', n);
   }
 
   // ---------------- one-time repair: hrefs saved before the nested-book-folder fix ----------------
@@ -1137,10 +1258,11 @@
 
     btn.addEventListener('click', function(){
       markCompleted(entry);
+      var streak = recordStreakDay();
       btn.disabled = true;
       renderBtn();
       renderInlineActions();
-      celebrateCompletion(entry, hubHref, categoryLabelText);
+      celebrateCompletion(entry, hubHref, categoryLabelText, streak);
     });
   }
 
@@ -1197,7 +1319,7 @@
     outcomeCard.insertAdjacentElement('afterend', dual);
   }
 
-  function celebrateCompletion(entry, hubHref, categoryLabelText){
+  function celebrateCompletion(entry, hubHref, categoryLabelText, streak){
     var old = document.getElementById('volverCelebrate');
     if(old) old.remove();
 
@@ -1238,6 +1360,12 @@
         '</div>' +
       '</div>' +
       '<div class="celebrate-sub">' + entry.title + (entry.ref ? ' · ' + entry.ref : '') + '</div>' +
+      (streak && streak.current > 0 ?
+        '<div class="celebrate-streak' + ((streak.milestone || streak.isNewLongest) ? ' milestone' : '') + '">' +
+          FLAME_ICON +
+          '<span>' + streakLabel(streak.current) + '</span>' +
+          ((streak.milestone || streak.isNewLongest) ? '<b class="celebrate-streak-tag">' + t('streak_milestone') + '</b>' : '') +
+        '</div>' : '') +
       '<a class="celebrate-btn primary celebrate-back" href="' + hubHref + '">' + t('back_to_prefix') + categoryLabelText + '</a>';
 
     modal.insertBefore(burst, modal.firstChild);
@@ -1271,10 +1399,27 @@
   }
 
   // ---------------- homepage ----------------
+  function injectStreakPill(target, beforeEl){
+    if(!target || document.getElementById('volverStreakPill')) return;
+    var info = getStreakInfo();
+    if(info.current === 0) return;
+    var pill = document.createElement('div');
+    pill.className = 'streak-pill' + (info.atRisk ? ' at-risk' : '');
+    pill.id = 'volverStreakPill';
+    function render(){
+      var key = info.atRisk ? 'streak_pill_risk' : 'streak_pill_active';
+      pill.innerHTML = FLAME_ICON +
+        '<p><b>' + streakLabel(info.current) + '</b> ' + t(key) + '</p>';
+    }
+    render();
+    document.addEventListener('volver:lang', render);
+    if(beforeEl){ target.insertBefore(pill, beforeEl); } else { target.appendChild(pill); }
+  }
+
   function enhanceIndexPage(){
     var wrap = document.querySelector('.wrap');
     var heroFeature = document.querySelector('.hero-feature');
-    if(wrap && heroFeature){ injectMethodologyBanner(wrap, heroFeature); }
+    if(wrap && heroFeature){ injectStreakPill(wrap, heroFeature); injectMethodologyBanner(wrap, heroFeature); }
     var rows = document.querySelectorAll('.row[data-has-content="true"]');
     rows.forEach(function(row){
       var stats = enhanceShowCards(row);
@@ -1395,6 +1540,10 @@
     t: t,
     categoryLabel: categoryLabel,
     clearProgressForKeys: clearProgressForKeys,
-    getSummary: getSummary
+    getSummary: getSummary,
+    getStreakInfo: getStreakInfo,
+    getStreakHistory: getStreakHistory,
+    resetStreak: resetStreak,
+    streakLabel: streakLabel
   };
 })();

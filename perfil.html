@@ -10,6 +10,31 @@
 <style>
   body{ display:flex; justify-content:center; }
 
+  .streak-banner{
+    display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+    background: var(--panel); border:1px solid var(--panel-line); border-radius:14px;
+    padding:20px 22px; margin-top:28px;
+  }
+  .streak-main{ display:flex; align-items:center; gap:14px; }
+  .streak-flame{ width:32px; height:32px; flex-shrink:0; }
+  .streak-flame path{ stroke: var(--gold); }
+  .streak-main b{ display:block; font-family:'Fraunces', serif; font-weight:600; font-size:26px; color: var(--gold); line-height:1.15; }
+  .streak-main span{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); text-transform:uppercase; letter-spacing:.05em; }
+  .streak-longest{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); text-align:right; text-transform:uppercase; letter-spacing:.05em; }
+  .streak-longest b{ display:block; color: var(--text); font-family:'Fraunces', serif; font-weight:600; font-size:16px; text-transform:none; letter-spacing:normal; }
+  .streak-history-label{
+    width:100%; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color: var(--text-faint);
+    text-transform:uppercase; letter-spacing:.05em; margin-top:16px; padding-top:16px; border-top:1px solid var(--panel-line);
+  }
+  .streak-history{ display:flex; gap:6px; width:100%; margin-top:10px; }
+  .streak-day{ flex:1; display:flex; flex-direction:column; align-items:center; gap:6px; }
+  .streak-day-dot{ width:22px; height:22px; border-radius:50%; border:1.5px solid var(--panel-line); background: var(--bg); transition: background .2s ease, border-color .2s ease; }
+  .streak-day-dot.done{ background: var(--gold); border-color: var(--gold); }
+  .streak-day.today .streak-day-dot{ outline:2px solid var(--gold); outline-offset:2px; }
+  .streak-day-label{ font-family:'IBM Plex Mono', monospace; font-size:9.5px; color: var(--text-faint); }
+  .streak-empty{ font-size:12.5px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; }
+  @media (max-width:480px){ .streak-banner{ padding:18px; } .streak-longest{ text-align:left; } }
+
   .profile-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin: 28px 0 8px; }
   @media (max-width:600px){ .profile-grid{ grid-template-columns:1fr; } }
   .profile-stat{ background: var(--panel); border:1px solid var(--panel-line); border-radius:14px; padding:20px 22px; text-align:center; }
@@ -46,6 +71,8 @@
   <h1 data-i18n="profile_title">Perfil</h1>
   <p class="sub" data-i18n="profile_sub">Um resumo do que você já concluiu, do que está em andamento e do que favoritou — tudo salvo neste navegador.</p>
 
+  <div class="streak-banner" id="streakBanner"></div>
+
   <div class="profile-grid" id="profileGrid"></div>
 
   <div class="profile-section">
@@ -68,10 +95,38 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function(){
+    function renderStreak(){
+      var V = window.Volver;
+      var info = V.getStreakInfo();
+      var history = V.getStreakHistory(7);
+      var banner = document.getElementById('streakBanner');
+      if(info.current === 0 && info.longest === 0){
+        banner.innerHTML = '<div class="streak-empty">' + V.t('profile_streak_empty') + '</div>';
+        return;
+      }
+      banner.innerHTML =
+        '<div class="streak-main">' +
+          '<svg class="streak-flame" viewBox="0 0 16 16" fill="none"><path d="M8 1.3C8 1.3 4.6 5.2 4.6 8.6C4.6 11.1 6.1 12.7 8 12.7C9.9 12.7 11.4 11.1 11.4 8.6C11.4 7.3 10.8 6.3 10.2 5.6C10.3 6.6 9.7 7.3 9 7.4C9.5 5.7 8.7 3.7 8 1.3Z" stroke-width="1.2" stroke-linejoin="round"/></svg>' +
+          '<div><b>' + info.current + '</b><span>' + V.t('profile_streak_current') + '</span></div>' +
+        '</div>' +
+        '<div class="streak-longest"><b>' + info.longest + '</b>' + V.t('profile_streak_longest') + '</div>' +
+        '<div class="streak-history-label">' + V.t('profile_streak_history') + '</div>' +
+        '<div class="streak-history">' +
+          history.map(function(d){
+            var day = parseInt(d.key.split('-')[2], 10);
+            return '<div class="streak-day' + (d.isToday ? ' today' : '') + '">' +
+              '<div class="streak-day-dot' + (d.done ? ' done' : '') + '"></div>' +
+              '<span class="streak-day-label">' + day + '</span>' +
+            '</div>';
+          }).join('') +
+        '</div>';
+    }
+
     function render(){
       if(!window.Volver) return;
       var V = window.Volver;
       var s = V.getSummary();
+      renderStreak();
       document.getElementById('profileGrid').innerHTML =
         '<div class="profile-stat"><b>' + s.completed.length + '</b><span>' + V.t('stat_completed') + '</span></div>' +
         '<div class="profile-stat"><b>' + s.inProgress.length + '</b><span>' + V.t('stat_progress') + '</span></div>' +

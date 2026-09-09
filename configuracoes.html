@@ -114,6 +114,11 @@
     </select>
   </div>
 
+  <div class="settings-row">
+    <div class="settings-info"><h3 data-i18n="cfg_streak_title">Reiniciar sequência</h3><p data-i18n="cfg_streak_desc">Zera a contagem de dias seguidos. O recorde e as reflexões já concluídas não são apagados.</p></div>
+    <button id="cfgStreakReset" class="settings-btn danger" type="button" data-i18n="cfg_streak_reset">Reiniciar</button>
+  </div>
+
   <div class="settings-row stacked">
     <div class="settings-row-head">
       <div class="settings-info"><h3 data-i18n="cfg_clear_title">Apagar progresso</h3><p data-i18n="cfg_clear_desc">Escolha quais reflexões concluídas terão o progresso apagado. Elas voltam a aparecer como não iniciadas.</p></div>
@@ -170,6 +175,14 @@
     var langSelect = document.getElementById('cfgLang');
     langSelect.value = V.getLang();
     langSelect.addEventListener('change', function(){ V.setLang(langSelect.value); });
+
+    // ---- streak reset ----
+    var streakResetBtn = document.getElementById('cfgStreakReset');
+    streakResetBtn.addEventListener('click', function(){
+      armConfirm(streakResetBtn, function(){
+        V.resetStreak();
+      }, function(){ streakResetBtn.textContent = V.t('cfg_streak_reset'); });
+    });
 
     // ---- selective progress clearing ----
     var clearToggle = document.getElementById('cfgClearToggle');
