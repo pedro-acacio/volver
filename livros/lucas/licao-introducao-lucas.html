@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução ao Evangelho segundo Lucas — Reflexão Interativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 4 — barra segmentada com as 6 partes do livro */
+  .luc-bar-outer{ margin-top:16px; }
+  .luc-bar-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:8px; }
+  .luc-bar{ display:flex; width:100%; height:30px; border-radius:9px; overflow:hidden; border:1.5px solid var(--panel-line); background:var(--bg); }
+  .luc-seg{ height:100%; border:none; padding:0; margin:0; cursor:pointer; opacity:.82; transition:opacity .25s ease, outline .25s ease, transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease; }
+  .luc-seg:hover{ opacity:1; transform: scaleY(1.08); }
+  .luc-seg.active{ opacity:1; outline:2px solid var(--bg); outline-offset:-2px; transform: scaleY(1.12); box-shadow: 0 0 10px 2px rgba(217,164,65,0.35); z-index:1; position:relative; }
+  .luc-seg:nth-child(1){ background:var(--text-faint); }
+  .luc-seg:nth-child(2){ background:var(--gold); opacity:.6; }
+  .luc-seg:nth-child(3){ background:var(--gold); opacity:.8; }
+  .luc-seg:nth-child(4){ background:var(--gold); }
+  .luc-seg:nth-child(5){ background:var(--calm); }
+  .luc-seg:nth-child(6){ background:var(--worry); }
+  .luc-bar-ends{ display:flex; justify-content:space-between; font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-faint); margin-top:4px; }
+  .luc-bar-caption{ font-size:13px; color:var(--text-dim); margin-top:10px; min-height:48px; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-lucas.html">Volver</a>
+    <span class="brand-track">Reflexão de abertura</span>
+  </div>
+
+  <div class="eyebrow">Evangelhos · <span class="ref-tag">Lucas 1.3-4</span></div>
+  <h1>Introdução ao Evangelho segundo Lucas</h1>
+  <p class="sub">O evangelho mais longo dos quatro, escrito por um médico gentio que nunca conheceu Jesus em carne — mas que investigou tudo cuidadosamente, desde o começo, para escrever a um certo Teófilo, e a nós depois dele, uma exposição em ordem que dá plena certeza.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M14 3 L4 13 L3 16 L6 15 L16 5 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M11 6 L14 9" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor: Lucas, o médico amado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os quatro evangelhos são, na superfície, anônimos — nenhum deles abre dizendo "eu, Fulano, escrevo isto". Mas a tradição da igreja, desde os primeiros séculos, atribui este terceiro evangelho e o livro de Atos à mesma pessoa: Lucas. A evidência interna aponta na mesma direção. Os dois livros compartilham o mesmo prefácio dirigido a um certo Teófilo (Lucas 1.1-4; Atos 1.1), o mesmo vocabulário refinado e o mesmo cuidado narrativo — e Atos retoma a história exatamente onde o Evangelho de Lucas termina, com a ascensão de Jesus, como dois volumes de uma só obra.</p>
+          <p>Boa parte de Atos é narrada em terceira pessoa, mas em quatro trechos o autor muda inesperadamente para a primeira pessoa do plural — "nós partimos", "nós chegamos" (Atos 16.10-17; 20.5-16; 21.1-18; 27.1—28.16) — sinal claro de que ele mesmo viajou com Paulo nessas etapas da missão. E é o próprio Paulo quem nomeia esse companheiro: "Lucas, o médico amado" (Colossenses 4.14), lembrado também como um dos poucos que permaneceram fiéis a ele até o fim (2Timóteo 4.11; Filemom 24). Diferente de Mateus e João, Lucas não foi testemunha ocular de Jesus — ele mesmo admite isso já nas primeiras linhas, dizendo que investigou tudo cuidadosamente desde o princípio, apoiado no testemunho de quem viu com os próprios olhos (1.1-2). É a voz de um pesquisador, não de uma testemunha — e isso não diminui, mas explica, o cuidado histórico do livro inteiro.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → data: escrito antes da queda de Jerusalém</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 3 H13 M5 15 H13 M5 3 C5 8 13 8 13 3 M5 15 C5 10 13 10 13 15" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Data: escrito antes da queda de Jerusalém</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Lucas e Atos formam uma obra em duas partes, escrita pela mesma mão, na mesma sequência de composição. E é justamente o fim de Atos que ajuda a datar os dois livros: a narrativa termina com Paulo preso em Roma, aguardando julgamento, mas pregando livremente — sem dizer uma palavra sequer sobre o desfecho desse julgamento, sua eventual libertação ou sua morte, eventos que sabemos terem ocorrido por volta de 62 a 64 d.C. Um historiador tão cuidadoso quanto Lucas dificilmente deixaria de registrar o fim da história de seu personagem principal, se já a conhecesse. O silêncio sugere que Atos foi concluído antes disso — e, portanto, que o Evangelho de Lucas, escrito antes de Atos, é anterior ainda, provavelmente por volta de 60 a 63 d.C.</p>
+          <p>Nem todos os estudiosos aceitam essa data antiga. Alguns propõem uma composição bem mais tardia, entre 75 e 85 d.C., lendo a profecia de Jesus sobre a destruição de Jerusalém (21.20) como uma descrição escrita depois do fato, disfarçada de previsão. Mas o texto não contém nenhum detalhe específico do que de fato aconteceu no cerco romano de 70 d.C. — nenhuma menção ao incêndio do templo, à fome extrema, aos pormenores que qualquer testemunha ocular teria incluído. A linguagem usada é a de qualquer cerco militar antigo, genérica o bastante para se aplicar a qualquer época. Diante disso, a data mais antiga continua sendo a explicação mais simples, a que exige menos suposições.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → um relato "em ordem" para Teófilo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 5 H15 V13 H3 Z" stroke-width="1.3"/>
+          <path d="M3 5 L9 10 L15 5" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Um relato "em ordem" para Teófilo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Lucas dedica formalmente seu livro a "excelentíssimo Teófilo" (1.3) — um nome que, em grego, significa literalmente "amigo de Deus" ou "amado por Deus". Alguns já sugeriram que seria um nome simbólico, representando qualquer leitor cristão; mas o título "excelentíssimo", usado em outros lugares do Novo Testamento para governadores romanos e oficiais de alta posição (Atos 23.26; 24.3; 26.25), sugere fortemente uma pessoa real, de status social elevado — não uma figura genérica inventada como recurso literário.</p>
+          <p>Quem seria esse homem? As duas hipóteses mais comuns não se excluem: pode ter sido um patrono que financiou a pesquisa cuidadosa e a publicação de um livro que exigia tempo e recursos consideráveis; ou um crente recém-convertido, de origem gentia, que precisava de uma base histórica sólida para a fé que já havia recebido. O propósito declarado por Lucas aponta para essa segunda leitura: não uma novidade teológica, mas "para que tenhas plena certeza das verdades em que foste instruído" (1.4). Esse compromisso com a precisão marca o livro inteiro — Lucas é o único evangelista a ancorar o início do ministério de João Batista e o nascimento de Jesus em relação a governantes históricos específicos e verificáveis (2.1-2; 3.1-2), como quem diz: isto não aconteceu "era uma vez"; isto aconteceu num tempo e lugar reais.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → como o livro se organiza</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 15 C3 10 8 12 8 8 C8 4 13 6 13 2" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="3" cy="15" r="1.3"/>
+          <circle cx="13" cy="2" r="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Como o livro se organiza, e o que o torna único</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O Evangelho de Lucas é o mais longo dos quatro — e o primeiro volume de uma obra maior que continua em Atos. Sua estrutura acompanha, em linhas gerais, a geografia do ministério de Jesus: da preparação, à Galileia, à longa viagem final a Jerusalém, à própria Jerusalém, até a paixão e a ressurreição. Toque em cada trecho da barra abaixo para ver o que ele cobre:</p>
+
+          <div class="luc-bar-outer">
+            <div class="luc-bar-label">As seis partes do livro, capítulo por capítulo:</div>
+            <div class="luc-bar" role="group" aria-label="Distribuição das partes do Evangelho de Lucas">
+              <button type="button" class="luc-seg" style="width:2%;" onclick="selectLucBlock(this, 0)" aria-label="Introdução"></button>
+              <button type="button" class="luc-seg" style="width:14%;" onclick="selectLucBlock(this, 1)" aria-label="Preparação do ministério"></button>
+              <button type="button" class="luc-seg" style="width:20%;" onclick="selectLucBlock(this, 2)" aria-label="Ministério na Galileia"></button>
+              <button type="button" class="luc-seg" style="width:40%;" onclick="selectLucBlock(this, 3)" aria-label="A viagem a Jerusalém"></button>
+              <button type="button" class="luc-seg" style="width:10%;" onclick="selectLucBlock(this, 4)" aria-label="Ministério em Jerusalém"></button>
+              <button type="button" class="luc-seg" style="width:14%;" onclick="selectLucBlock(this, 5)" aria-label="Paixão e ressurreição"></button>
+            </div>
+            <div class="luc-bar-ends"><span>1.1</span><span>24.53</span></div>
+            <div class="luc-bar-caption" id="lucBarText">Toque em um trecho da barra para ver o que ele cobre.</div>
+          </div>
+
+          <p style="margin-top:16px;">Um detalhe chama atenção nessa distribuição: quase 40% do livro — dos capítulos 9 a 19 — é dedicado a uma única viagem, a caminhada final de Jesus rumo a Jerusalém. Nenhum outro evangelho dá tanto espaço a esse trecho, e é ali que aparecem quase todas as parábolas mais conhecidas de Jesus, que só Lucas registra: o bom samaritano, o filho pródigo, o rico e Lázaro, o fariseu e o publicano, entre outras.</p>
+
+          <p>Esse bloco não é o único traço distintivo do livro. Lucas dá mais atenção a mulheres do que qualquer outro evangelho — Isabel, Maria, Ana, a viúva de Naim, a mulher pecadora que unge os pés de Jesus, Marta e Maria, e o grupo de mulheres que sustentava financeiramente o ministério (8.1-3); registra mais parábolas exclusivas, mais atenção a pobres e marginalizados, e mais orações de Jesus do que qualquer um dos outros três — um Jesus que ora nos momentos mais decisivos de sua vida, e que só Lucas faz questão de mostrar orando.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um relato que busca o perdido</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Um relato investigado com o rigor de um médico e a paciência de um historiador — mas escrito, do início ao fim, por um coração pastoral. Teófilo não precisava apenas de fatos: precisava de certeza. E é exatamente isso que o livro entrega, capítulo após capítulo, até a frase que resume por que Jesus veio.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Lucas 19.10</span>
+          <p>Porque o Filho do homem veio buscar e salvar o que se havia perdido.</p>
+          <span class="ref">— Lucas 19.10</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Essa frase, dita por Jesus já perto do fim da longa viagem a Jerusalém, poderia servir de resumo para o livro inteiro. Toque abaixo para comparar as duas camadas do mesmo Evangelho:</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnFatos" onclick="showOutcome('fatos')">Um relato sobre fatos</button>
+            <button class="toggle-btn" id="btnPerdido" onclick="showOutcome('perdido')">Um relato que busca o perdido</button>
+          </div>
+
+          <div class="outcome" id="outcomeCard">
+            <div class="outcome-visual" id="outcomeVisual"></div>
+            <h3 id="outcomeTitle"></h3>
+            <p id="outcomeText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Lucas · introdução ao Evangelho segundo Lucas</footer>
+</div>
+
+<script>
+  const lucBarData = [
+    { label: "Introdução", range: "1.1-4", text: "o breve prefácio em que Lucas explica seu método: investigar tudo cuidadosamente, desde o princípio, para escrever uma exposição em ordem." },
+    { label: "Preparação do ministério", range: "1.5—4.13", text: "os anúncios angélicos, os nascimentos de João e de Jesus, a infância, o batismo e a tentação no deserto — tudo o que precede o início público do ministério." },
+    { label: "Ministério na Galileia", range: "4.14—9.50", text: "o sermão em Nazaré, o chamado dos discípulos, curas, exorcismos e os primeiros ensinos e parábolas, até a transfiguração." },
+    { label: "A viagem a Jerusalém", range: "9.51—19.27", text: "o bloco mais distintivo de Lucas — quase 40% do livro — cheio de parábolas que nenhum outro evangelho registra, enquanto Jesus caminha deliberadamente rumo à cruz." },
+    { label: "Ministério em Jerusalém", range: "19.28—21.38", text: "a entrada triunfal, a purificação do templo, as controvérsias com as autoridades religiosas e o discurso sobre os últimos tempos." },
+    { label: "Paixão e ressurreição", range: "22—24", text: "a última ceia, o Getsêmani, a prisão, os julgamentos, a crucificação, e a ressurreição — incluindo os discípulos de Emaús, únicos de Lucas." }
+  ];
+
+  function selectLucBlock(btn, i){
+    btn.parentElement.querySelectorAll('.luc-seg').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const d = lucBarData[i];
+    document.getElementById('lucBarText').textContent = d.label + " (" + d.range + "): " + d.text;
+  }
+
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showOutcome(type){
+    const btnA = document.getElementById('btnFatos');
+    const btnB = document.getElementById('btnPerdido');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('outcomeTitle');
+    const text = document.getElementById('outcomeText');
+
+    if (type === 'fatos'){
+      btnA.classList.add('active-worry');
+      title.textContent = "Um relato ancorado em nomes, datas e testemunhas";
+      text.textContent = "Governantes romanos citados pelo nome, um censo verificável, testemunhas oculares consultadas com cuidado (1.1-2) — Lucas escreve como um investigador que quer que sua história resista ao escrutínio histórico, não apenas à devoção religiosa.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "Um relato que busca quem se perdeu";
+      text.textContent = "Por trás de toda a pesquisa está um propósito pastoral: \"o Filho do homem veio buscar e salvar o que se havia perdido\" (19.10). Teófilo — e cada leitor depois dele — não é apenas informado sobre fatos; é convidado a reconhecer que já foi buscado por um Deus que corre atrás de quem se perdeu.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

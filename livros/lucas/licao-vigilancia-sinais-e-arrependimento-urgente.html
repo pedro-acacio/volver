@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vigilância, sinais e arrependimento urgente — Lucas 12.35—13.9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 1 — servo vigilante x servo infiel */
+  .vig-toggle-outer{ margin-top:16px; }
+  .vig-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .vig-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .vig-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho — machado x paciência */
+  .vig2-toggle-outer{ margin-top:16px; }
+  .vig2-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .vig2-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .vig2-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-lucas.html">Volver</a>
+    <span class="brand-track">Vigilância, sinais e arrependimento urgente</span>
+  </div>
+
+  <div class="eyebrow">Vigilância e arrependimento urgente · <span class="ref-tag">Lucas 12.35—13.9</span></div>
+  <h1>Vigilância, sinais e arrependimento urgente</h1>
+  <p class="sub">Servos que vigiam para quando o Senhor voltar, um chamado a discernir os tempos como se discerne o céu, e uma figueira que ganha mais um ano antes do machado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C7 6 6.6 7.6 9 7.6 C11.4 7.6 11 6 9 3 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 7.6 V13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 13 H12 L11.3 16 H6.7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Servos vigilantes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus conta a parábola de servos que aguardam o senhor voltar de um casamento, sem saber a que horas ele chegará: "estejam cingidos os vossos lombos, e acesas as vossas candeias" (12.35). Bem-aventurados os servos que o senhor encontrar vigiando — e a imagem se inverte de um jeito que nenhum ouvinte esperaria: o próprio senhor "se cingirá, e os fará assentar à mesa, e, chegando-se, os servirá" (12.37). O dono da casa serve os servos que ficaram acordados por ele. É um retrato antecipado de quem Jesus é e do que ele vai fazer, culminando na última ceia e na cruz.</p>
+          <p>Pedro pergunta se a parábola é só para os doze ou para todos; Jesus responde com a figura do mordomo fiel e prudente, posto sobre a casa do senhor para dar o sustento a seu tempo — bem-aventurado se for encontrado fazendo assim quando o senhor voltar. Mas há também o retrato oposto: o servo que diz a si mesmo "o meu senhor tarda em vir", começa a espancar os outros servos e a embriagar-se, e é surpreendido no dia em que menos espera. A conclusão pesa sobre quem já recebeu mais: "a quem muito foi dado, muito se lhe pedirá; e a quem muito se confiou, muito mais se lhe pedirá" (12.48).</p>
+
+          <div class="vig-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnVigFiel" onclick="showVigOutcome('fiel')">O servo vigilante</button>
+              <button class="toggle-btn" id="btnVigInfiel" onclick="showVigOutcome('infiel')">O servo infiel</button>
+            </div>
+            <div class="vig-outcome" id="vigOutcome">
+              <h4 id="vigTitle"></h4>
+              <p id="vigText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → fogo e divisão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 2 C6.3 6 6.3 9 9 9 C11.7 9 11.7 6 9 2 Z" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M9 9 L5 16 M9 9 L13 16" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Fogo e divisão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Do tom pastoral da vigilância, Jesus vira abruptamente para uma declaração dura: "vim lançar fogo na terra; e que quero, se já está aceso?" (12.49). Fala de um batismo que ainda precisa sofrer, e de como está "angustiado até que se cumpra" — uma referência velada à própria cruz, o fogo do juízo e da purificação que ele mesmo vai atravessar primeiro, para depois se espalhar através de quem o segue.</p>
+          <p>"Cuidais vós que vim dar paz à terra? não, vos digo, antes divisão" (12.51) — não porque o evangelho seja hostil à paz, mas porque a resposta a Jesus divide o que antes parecia unido: pai contra filho, mãe contra filha, sogra contra nora, em uma mesma casa. Seguir Jesus tem um custo relacional real, não apenas espiritual — um aviso que ecoa adiante, no Movimento 3 da lição sobre o grande banquete e o discipulado, quando Jesus exigir que o amor a ele supere até os laços de família.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → discernir os tempos</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4.5 12.5 a2.8 2.8 0 0 1 0-5.6 a3.8 3.8 0 0 1 7.3-1.4 a3 3 0 0 1 1.2 6.9 Z" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M6.5 15.2 H11" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">Discernir os tempos</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Jesus se volta às multidões com uma acusação de hipocrisia mais sutil do que a dos escribas: "quando vedes uma nuvem levantar-se do ocidente, logo dizeis: lá vem chuva; e assim acontece. E, quando o vento sopra do sul, dizeis: haverá calor; e assim sucede" (12.54-55). Ninguém disputa a capacidade humana de ler o céu com precisão. O problema é outro: "como não sabeis dar razão deste tempo?" (12.56) — o mesmo instinto usado para prever o clima simplesmente não é aplicado ao momento presente, ao próprio Jesus parado diante deles, cumprindo as Escrituras.</p>
+          <p>A aplicação prática vem numa pequena parábola jurídica: se alguém está a caminho do juiz com um adversário, é sensato procurar reconciliação ainda no caminho, antes de ser arrastado ao tribunal, entregue ao oficial e lançado na prisão até pagar o último centavo (12.58-59). O ponto não é sobre litígios comuns, mas sobre urgência: há uma janela de decisão diante de Jesus que não permanece aberta para sempre, e adiar essa resposta tem um custo que só cresce com o tempo.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → arrependimento urgente</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 16 V9.5" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 9.5 C6.2 9.5 5.2 6.8 6.2 4.6 C7.2 6.6 9 6.6 9 3.4 C9 6.6 10.8 6.6 11.8 4.6 C12.8 6.8 11.8 9.5 9 9.5 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Arrependei-vos, ou perecereis</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Alguns trazem a Jesus notícias de duas tragédias recentes: galileus que Pilatos mandou matar bem no ato de oferecer seus sacrifícios, e dezoito pessoas mortas quando a torre de Siloé desabou sobre elas. A pergunta implícita é a de sempre: essas pessoas sofreram porque eram piores pecadoras que as outras? Jesus rejeita a equação direta entre sofrimento e culpa proporcional — "não, vos digo" — duas vezes seguidas, para deixar claro que não é assim que o mal e a graça se distribuem no mundo.</p>
+          <p>Mas Jesus não usa as tragédias para tranquilizar; usa-as para advertir: "se não vos arrependerdes, todos de igual modo perecereis" (13.3,5) — a urgência do arrependimento não depende de quão grave é o pecado do vizinho, mas do fato de que ninguém está isento do juízo. Em seguida conta a parábola da figueira plantada numa vinha, sem dar fruto há três anos; o dono já quer cortá-la — "para que ocupa ela ainda a terra?" — mas o jardineiro intercede: "deixa-a este ano ainda, até que eu a escave em redor, e lhe deite estrume; e, se der fruto, ficará; e, se não, depois a mandarás cortar" (13.8-9). É a mesma urgência do Movimento 3, mas agora com um rosto: um pouco mais de tempo, ganho por intercessão, antes que a sentença se cumpra.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 3 H13 M5 15 H13" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M5 3 C5 7 9 7.4 9 9 C9 7.4 13 7 13 3" stroke-width="1.1" stroke-linejoin="round"/>
+          <path d="M5 15 C5 11 9 10.6 9 9 C9 10.6 13 11 13 15" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Mais um ano, antes do machado</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Toda a passagem caminha do quadro geral (vigiar, discernir, reconciliar-se a tempo) até uma imagem concreta e pessoal: uma árvore que já deveria ter sido cortada, mas que ganha mais uma estação de cuidado. É assim que Deus trata o arrependimento adiado — não com indiferença ao pecado, mas com uma paciência que continua trabalhando a terra em volta de quem ainda não deu fruto.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Lucas 13.8-9</span>
+          <p>Respondendo ele, disse-lhe: Senhor, deixa-a este ano ainda, até que eu a escave em redor, e lhe deite estrume; e, se der fruto, ficará; e, se não, depois a mandarás cortar.</p>
+          <span class="ref">— Lucas 13.8-9</span>
+        </div>
+
+        <div class="tl-card">
+          <p>A figueira, cortada de imediato, teria recebido exatamente o que a lei da vinha permitiria: uma árvore improdutiva não merece o lugar nem os recursos gastos com ela. Mas o jardineiro pede — e recebe — mais tempo, mais trabalho, mais uma chance de que a raiz responda ao cuidado. É a mesma paciência que sustenta cada advertência deste trecho: o julgamento é real, mas ainda não chegou a hora final.</p>
+
+          <div class="vig2-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnVig2Machado" onclick="showVig2Outcome('machado')">O machado imediato</button>
+              <button class="toggle-btn" id="btnVig2Paciencia" onclick="showVig2Outcome('paciencia')">Mais um ano de paciência</button>
+            </div>
+            <div class="vig2-outcome" id="vig2Outcome">
+              <h4 id="vig2Title"></h4>
+              <p id="vig2Text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Lucas · vigilância e arrependimento urgente</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showVigOutcome(type){
+    const btnA = document.getElementById('btnVigFiel');
+    const btnB = document.getElementById('btnVigInfiel');
+    btnA.classList.remove('active-calm');
+    btnB.classList.remove('active-worry');
+    const title = document.getElementById('vigTitle');
+    const text = document.getElementById('vigText');
+
+    if (type === 'fiel'){
+      btnA.classList.add('active-calm');
+      title.textContent = "Encontrado vigiando";
+      text.textContent = "O servo prudente, posto sobre a casa, continua dando o sustento a seu tempo mesmo sem saber a hora exata da volta do senhor. Quando ele chega, encontra fidelidade constante — e é posto sobre tudo o que o senhor possui (12.42-44).";
+    } else {
+      btnB.classList.add('active-worry');
+      title.textContent = "Surpreendido despreparado";
+      text.textContent = "\"Meu senhor tarda em vir\" — o servo que troca vigilância por presunção começa a maltratar os outros e a se embriagar; é surpreendido num dia e numa hora que não esperava, e recebe a mesma sorte dos infiéis (12.45-46).";
+    }
+  }
+
+  function showVig2Outcome(type){
+    const btnA = document.getElementById('btnVig2Machado');
+    const btnB = document.getElementById('btnVig2Paciencia');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('vig2Title');
+    const text = document.getElementById('vig2Text');
+
+    if (type === 'machado'){
+      btnA.classList.add('active-worry');
+      title.textContent = "O que a figueira mereceria";
+      text.textContent = "Três anos sem fruto, ocupando terra que poderia produzir — pela lógica estrita da vinha, cortar a árvore imediatamente seria justo, e ninguém poderia reclamar.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "O que ela recebeu";
+      text.textContent = "Um jardineiro que intercede, mais uma estação de escavar e adubar em volta da raiz — a graça que ainda trabalha o solo antes de declarar o caso encerrado, sem nunca fingir que o tempo é infinito.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

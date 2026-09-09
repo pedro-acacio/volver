@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A pesca milagrosa e a autoridade de Jesus — Lucas 5.1-26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Movimento 1 — lógica da experiência x lógica da obediência */
+  .pes-toggle-outer{ margin-top:16px; }
+  .pes-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .pes-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .pes-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+
+  /* Desfecho — afastar-se x ser chamado */
+  .cha-toggle-outer{ margin-top:16px; }
+  .cha-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .cha-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .cha-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-lucas.html">Volver</a>
+    <span class="brand-track">A pesca milagrosa e a autoridade de Jesus</span>
+  </div>
+
+  <div class="eyebrow">A pesca milagrosa e a autoridade de Jesus · <span class="ref-tag">Lucas 5.1-26</span></div>
+  <h1>A pesca milagrosa e a autoridade de Jesus</h1>
+  <p class="sub">Uma pescaria impossível que muda a vida de Simão Pedro para sempre, um leproso tocado, e um paralítico descido pelo telhado.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M2 10 C5 12 13 12 16 10" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M4 10 L4 6 M14 10 L14 6" stroke-width="1" stroke-linecap="round"/>
+          <path d="M4 6 Q9 3 14 6" stroke-width="1.1"/>
+          <path d="M3 13 C5 14.5 13 14.5 15 13" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A pesca milagrosa e o chamado de Pedro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>À beira do lago de Genesaré, a multidão aperta Jesus para ouvir a palavra de Deus; ele entra no barco de Simão, pede que se afaste um pouco da praia, e ensina sentado, usando a água como distância natural entre ele e a multidão. Terminado o ensino, dá uma ordem que não tem nada a ver com pregação: "faze-te ao mar alto, e lançai as vossas redes para pescar" (5.4). Simão responde com a voz cansada de quem trabalhou a noite inteira sem resultado: "trabalhamos a noite toda, e nada apanhamos." E então, apesar disso, acrescenta a frase que muda tudo: "mas, à tua palavra, lançarei a rede" (5.5).</p>
+          <p>A pesca é tão grande que as redes quase se rompem, e é preciso chamar outro barco para ajudar a recolher — ambos ficam tão carregados que quase afundam. Diante disso, Simão não reage com euforia, mas cai aos pés de Jesus: "retira-te de mim, Senhor, porque sou um homem pecador" (5.8) — o mesmo poder que acabou de encher suas redes revela, ao mesmo tempo, a distância entre ele e aquele que o exerce. Jesus responde não com afastamento, mas com um chamado: "não temas; de agora em diante serás pescador de homens" (5.10). Só em Lucas o chamado de Pedro vem depois desse milagre específico, e não antes — a autoridade de Jesus sobre a natureza é o que abre caminho para o chamado ao discipulado.</p>
+
+          <div class="pes-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnPesExp" onclick="showPesOutcome('experiencia')">A lógica da experiência</button>
+              <button class="toggle-btn" id="btnPesObe" onclick="showPesOutcome('obediencia')">A lógica da obediência</button>
+            </div>
+            <div class="pes-outcome" id="pesOutcome">
+              <h4 id="pesTitle"></h4>
+              <p id="pesText"></p>
+            </div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o leproso purificado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V8" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 12 L9 8 L12 12" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="9" cy="8" r="0.6" stroke-width="1"/>
+          <path d="M5 15 H13" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O leproso purificado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Um homem "cheio de lepra" encontra Jesus e, prostrado com o rosto em terra, faz um pedido cuidadosamente formulado: "Senhor, se quiseres, bem podes purificar-me" (5.12). Não há dúvida sobre o poder de Jesus — a dúvida do homem é sobre a vontade. A lepra, além de doença física, isolava completamente: quem a tinha era ritualmente impuro, excluído do templo, da comunidade, do contato humano comum. Pedir a alguém para ser tocado, mais do que curado, era pedir para voltar a pertencer.</p>
+          <p>Jesus "estendeu a mão, e tocou-o" (5.13) — um gesto chocante e ritualmente arriscado, que qualquer mestre da lei evitaria, pois o contato tornaria o próprio Jesus impuro segundo a tradição. Mas em Jesus a lógica se inverte: em vez de a impureza contaminar quem toca, a pureza de Jesus purifica quem é tocado. "Quero, sê purificado", diz ele, e a lepra o deixa imediatamente. Jesus então manda que o homem cumpra o que a lei exige — mostrar-se ao sacerdote e oferecer o sacrifício determinado (Levítico 14) — um sinal de que ele não abole a lei, mas a cumpre; ainda assim, a notícia se espalha, e Jesus se retira para orar em lugares desertos, buscando o mesmo Pai a quem toda a sua autoridade pertence.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o paralítico descido pelo telhado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 6 H15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 6 V11 M12 6 V11" stroke-width="1.1" stroke-dasharray="1.3 1.5"/>
+          <rect x="6" y="11" width="6" height="2.4" rx="0.5" stroke-width="1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O paralítico descido pelo telhado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Fariseus e doutores da lei, vindos "de todas as aldeias da Galileia e da Judeia, e de Jerusalém", enchem a casa onde Jesus ensina. Quatro homens trazem um amigo paralítico numa maca, mas não conseguem chegar até Jesus por causa da multidão; em vez de desistir, sobem ao telhado, abrem uma passagem e o descem, leito e tudo, bem diante de Jesus (5.18-19) — uma cena de fé tão física quanto teológica, disposta a destelhar uma casa para alcançar a cura.</p>
+          <p>"Vendo Jesus a fé deles", ele não começa pelo corpo, mas pela alma: "homem, os teus pecados te são perdoados" (5.20). Os escribas e fariseus pensam consigo mesmos: "quem é este que profere blasfêmias? Quem pode perdoar pecados, senão só Deus?" — e têm razão quanto à teologia, apenas erram quanto a quem está diante deles. Jesus responde à objeção não verbalizada com uma pergunta e uma prova: é mais fácil dizer "os teus pecados te são perdoados" ou "levanta-te e anda"? "Ora, para que saibais que o Filho do homem tem sobre a terra autoridade para perdoar pecados" — manda o paralítico se levantar, tomar o leito e ir para casa, e ele o faz imediatamente diante de todos (5.24-25). A cura visível é o sinal de uma autoridade invisível.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → a reação da multidão</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.2"/>
+          <path d="M9 5.5 V9 L11.5 10.5" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">A reação da multidão</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Diante de um homem paralítico que se levanta, toma o próprio leito e vai para casa "glorificando a Deus", a reação da multidão é imediata e unânime: "ficaram todos possuídos de temor, e glorificavam a Deus, e diziam: hoje vimos coisas maravilhosas" (5.26). Não há aqui a hostilidade que marcará confrontos posteriores — apenas assombro genuíno diante de algo que ultrapassa qualquer categoria conhecida.</p>
+          <p>As três cenas do capítulo — a pesca impossível, o leproso tocado, o paralítico perdoado e curado — formam juntas um único argumento: a autoridade de Jesus não se limita a um domínio. Ele comanda a natureza, purifica o ritualmente impuro, e perdoa pecados com a mesma naturalidade com que ordena uma rede a ser lançada. Cada milagre é, ao mesmo tempo, um sinal apontando para uma pergunta que o texto ainda não responde de forma explícita, mas que já paira sobre toda a cena: quem é este homem, afinal?</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="3" stroke-width="1.3"/>
+          <circle cx="13" cy="12" r="3" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Um homem pecador, chamado mesmo assim</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A reação mais reveladora de todo o capítulo não é a da multidão, mas a de Simão Pedro: diante do poder de Jesus, ele não pede mais peixe, pede distância — "retira-te de mim, Senhor, porque sou um homem pecador." É a reação natural de quem, de repente, se vê próximo demais de algo santo demais para a própria condição.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Lucas 5.8</span>
+          <p>Vendo isto Simão Pedro, prostrou-se de joelhos aos pés de Jesus, dizendo: Retira-te de mim, Senhor, porque sou um homem pecador.</p>
+          <span class="ref">— Lucas 5.8</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Jesus não confirma a distância pedida, nem discorda da confissão de Pedro — apenas a substitui por um chamado: "não temas; de agora em diante serás pescador de homens." A mesma consciência de indignidade que faz Pedro querer se afastar é, paradoxalmente, o que o torna pronto para ser chamado — não porque a graça ignore o pecado, mas porque ela sempre chama justamente quem se sabe indigno, nunca quem se julga suficiente por conta própria.</p>
+
+          <div class="cha-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnChaAfastar" onclick="showChaOutcome('afastar')">Afastar-se por indignidade</button>
+              <button class="toggle-btn" id="btnChaChamado" onclick="showChaOutcome('chamado')">Ser chamado apesar disso</button>
+            </div>
+            <div class="cha-outcome" id="chaOutcome">
+              <h4 id="chaTitle"></h4>
+              <p id="chaText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Lucas · a pesca milagrosa e a autoridade de Jesus</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  function showPesOutcome(type){
+    const btnA = document.getElementById('btnPesExp');
+    const btnB = document.getElementById('btnPesObe');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('pesTitle');
+    const text = document.getElementById('pesText');
+
+    if (type === 'experiencia'){
+      btnA.classList.add('active-worry');
+      title.textContent = "\"Trabalhamos a noite toda, e nada apanhamos\"";
+      text.textContent = "Simão fala como pescador experiente: já sabe, pela própria noite de trabalho, que não há peixe ali àquela hora. É um julgamento razoável, baseado em anos de ofício.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "\"Mas, à tua palavra, lançarei a rede\"";
+      text.textContent = "Mesmo sem motivo próprio para esperar resultado diferente, Simão obedece por causa de quem está falando. É esse pequeno ato de confiança que abre espaço para o milagre — e para o chamado que vem logo depois.";
+    }
+  }
+
+  function showChaOutcome(type){
+    const btnA = document.getElementById('btnChaAfastar');
+    const btnB = document.getElementById('btnChaChamado');
+    btnA.classList.remove('active-worry');
+    btnB.classList.remove('active-calm');
+    const title = document.getElementById('chaTitle');
+    const text = document.getElementById('chaText');
+
+    if (type === 'afastar'){
+      btnA.classList.add('active-worry');
+      title.textContent = "\"Retira-te de mim, Senhor\"";
+      text.textContent = "A reação instintiva de Simão diante do poder de Jesus é pedir distância — sentir-se indigno demais para permanecer perto daquilo que acabou de testemunhar.";
+    } else {
+      btnB.classList.add('active-calm');
+      title.textContent = "\"Não temas... serás pescador de homens\"";
+      text.textContent = "Jesus não afasta Simão, mas o chama para mais perto ainda — para uma missão. A graça que chama não espera que a indignidade desapareça primeiro.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

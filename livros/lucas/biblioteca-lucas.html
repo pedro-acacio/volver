@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Lucas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Evangelhos</div>
+    <h1>Lucas</h1>
+    <p class="lede">O evangelho mais longo dos quatro, escrito por um médico gentio, companheiro de Paulo, "para que tenhas plena certeza". Um relato cuidadosamente investigado, cheio de cânticos, mulheres, pobres, samaritanos e pecadores — e da maior coleção de parábolas exclusivas de todo o Novo Testamento, contada ao longo de uma longa viagem até a cruz.</p>
+    <div class="stats-row">
+      <div class="stat"><b>35</b>disponíveis</div>
+      <div class="stat"><b>6</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-lucas.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução ao Evangelho segundo Lucas</div>
+        <div class="p-ref">Autor, data, propósito e estrutura</div>
+        <p class="p-teaser">Um médico gentio investiga tudo cuidadosamente desde o início, para escrever a Teófilo — e a nós — uma exposição em ordem.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. PREPARAÇÃO DO MINISTÉRIO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. Preparação do ministério</h3>
+      <span class="cat-ref">Lucas 1—4.13</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-os-anuncios-a-zacarias-e-a-maria.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Os anúncios a Zacarias e a Maria</div>
+        <div class="p-ref">Lucas 1.5-56</div>
+        <p class="p-teaser">Um sacerdote emudecido de descrença, e uma jovem que responde "eis aqui a serva do Senhor" — e canta o Magnificat.</p>
+      </a>
+      <a class="p-card available" href="licao-o-nascimento-de-joao-batista.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O nascimento de João Batista</div>
+        <div class="p-ref">Lucas 1.57-80</div>
+        <p class="p-teaser">A língua de Zacarias se solta, e ele canta um cântico profético sobre o amanhecer que está vindo.</p>
+      </a>
+      <a class="p-card available" href="licao-o-nascimento-de-jesus-e-os-pastores.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O nascimento de Jesus e os pastores</div>
+        <div class="p-ref">Lucas 2.1-20</div>
+        <p class="p-teaser">Um decreto de César movimenta impérios só para cumprir uma profecia — e pastores, não reis, são os primeiros a saber.</p>
+      </a>
+      <a class="p-card available" href="licao-jesus-no-templo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Jesus no templo: Simeão, Ana e os doze anos</div>
+        <div class="p-ref">Lucas 2.21-52</div>
+        <p class="p-teaser">Dois idosos que esperaram a vida toda, e um menino de doze anos já ocupado "nas coisas do meu Pai".</p>
+      </a>
+      <a class="p-card available" href="licao-joao-batista-o-batismo-e-a-tentacao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">João Batista, o batismo e a tentação</div>
+        <div class="p-ref">Lucas 3.1—4.13</div>
+        <p class="p-teaser">Uma voz no deserto, uma voz do céu, e quarenta dias de confronto direto com o tentador.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. MINISTÉRIO NA GALILEIA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. Ministério na Galileia</h3>
+      <span class="cat-ref">Lucas 4.14—9.50</span>
+      <span class="cat-count">8 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-sermao-em-nazare-e-um-dia-em-cafarnaum.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O sermão em Nazaré e um dia em Cafarnaum</div>
+        <div class="p-ref">Lucas 4.14-44</div>
+        <p class="p-teaser">"O Espírito do Senhor está sobre mim" — e a própria cidade de Jesus tenta despenhá-lo por isso.</p>
+      </a>
+      <a class="p-card available" href="licao-a-pesca-milagrosa-e-a-autoridade-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A pesca milagrosa e a autoridade de Jesus</div>
+        <div class="p-ref">Lucas 5.1-26</div>
+        <p class="p-teaser">Uma rede que quase se rompe de peixes, um leproso tocado, e um paralítico descido pelo telhado.</p>
+      </a>
+      <a class="p-card available" href="licao-levi-jejum-e-o-senhor-do-sabado.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Levi, jejum e o Senhor do sábado</div>
+        <div class="p-ref">Lucas 5.27—6.11</div>
+        <p class="p-teaser">Um cobrador de impostos chamado para seguir Jesus, e vinho novo que não cabe em odres velhos.</p>
+      </a>
+      <a class="p-card available" href="licao-os-doze-e-o-sermao-da-planicie.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Os doze e o Sermão da Planície</div>
+        <div class="p-ref">Lucas 6.12-49</div>
+        <p class="p-teaser">Bem-aventuranças e "ais" lado a lado, e uma casa que só resiste à tempestade se for construída sobre a rocha.</p>
+      </a>
+      <a class="p-card available" href="licao-fe-compaixao-e-duvida.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Fé, compaixão e dúvida</div>
+        <div class="p-ref">Lucas 7.1-35</div>
+        <p class="p-teaser">A fé de um centurião gentio, um filho devolvido vivo a uma viúva, e a pergunta de um profeta preso.</p>
+      </a>
+      <a class="p-card available" href="licao-a-mulher-pecadora-e-o-semeador.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A mulher pecadora e o semeador</div>
+        <div class="p-ref">Lucas 7.36—8.21</div>
+        <p class="p-teaser">"Muito lhe foi perdoado; por isso, muito amou" — e uma parábola sobre o que acontece quando a palavra encontra o coração.</p>
+      </a>
+      <a class="p-card available" href="licao-milagres-de-poder.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Milagres de poder</div>
+        <div class="p-ref">Lucas 8.22-56</div>
+        <p class="p-teaser">Sobre a tempestade, os demônios, a doença crônica e a própria morte — quatro domínios, um só Senhor.</p>
+      </a>
+      <a class="p-card available" href="licao-o-envio-dos-doze-e-a-transfiguracao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O envio dos doze e a Transfiguração</div>
+        <div class="p-ref">Lucas 9.1-50</div>
+        <p class="p-teaser">"Tu és o Cristo de Deus" — e, no monte, por um instante, três discípulos veem a glória escondida por trás dessas palavras.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. NO CAMINHO: ENSINO E PARÁBOLAS DE GRAÇA ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. No caminho: ensino e parábolas de graça</h3>
+      <span class="cat-ref">Lucas 9.51—15.32</span>
+      <span class="cat-count">8 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-rumo-a-jerusalem-e-o-bom-samaritano.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Rumo a Jerusalém e o bom samaritano</div>
+        <div class="p-ref">Lucas 9.51—10.37</div>
+        <p class="p-teaser">"Quem é o meu próximo?" — a pergunta que gera a mais famosa de todas as parábolas de Jesus.</p>
+      </a>
+      <a class="p-card available" href="licao-maria-e-marta-e-o-ensino-sobre-oracao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Maria e Marta, e o ensino sobre oração</div>
+        <div class="p-ref">Lucas 10.38—11.13</div>
+        <p class="p-teaser">"Maria escolheu a boa parte" — e um Pai que dá muito mais do que pão a quem lhe pede.</p>
+      </a>
+      <a class="p-card available" href="licao-jesus-belzebu-e-os-ais-contra-os-fariseus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Jesus, Belzebu e os "ais" contra os fariseus</div>
+        <div class="p-ref">Lucas 11.14-54</div>
+        <p class="p-teaser">Uma acusação absurda, e sete advertências duríssimas contra uma religião só de aparência.</p>
+      </a>
+      <a class="p-card available" href="licao-o-rico-insensato-e-uma-vida-sem-ansiedade.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O rico insensato e uma vida sem ansiedade</div>
+        <div class="p-ref">Lucas 12.1-34</div>
+        <p class="p-teaser">Um homem constrói celeiros maiores na mesma noite em que Deus pede de volta sua vida.</p>
+      </a>
+      <a class="p-card available" href="licao-vigilancia-sinais-e-arrependimento-urgente.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Vigilância, sinais e arrependimento urgente</div>
+        <div class="p-ref">Lucas 12.35—13.9</div>
+        <p class="p-teaser">Servos que vigiam para quando o Senhor voltar, e uma figueira que ganha mais um ano antes do machado.</p>
+      </a>
+      <a class="p-card available" href="licao-a-mulher-curvada-o-reino-e-a-porta-estreita.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A mulher curvada, o Reino e a porta estreita</div>
+        <div class="p-ref">Lucas 13.10-35</div>
+        <p class="p-teaser">Dezoito anos curvada, libertada num sábado — e um lamento de Jesus sobre a cidade que mata os profetas.</p>
+      </a>
+      <a class="p-card available" href="licao-humildade-o-grande-banquete-e-o-discipulado.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Humildade, o grande banquete e o discipulado</div>
+        <div class="p-ref">Lucas 14.1-35</div>
+        <p class="p-teaser">Os lugares de honra ficam vazios quando os convidados certos são os pobres, aleijados e cegos.</p>
+      </a>
+      <a class="p-card available" href="licao-a-ovelha-a-moeda-e-o-filho-prodigo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ovelha, a moeda e o filho pródigo</div>
+        <div class="p-ref">Lucas 15.1-32</div>
+        <p class="p-teaser">Três histórias sobre uma coisa perdida — e um pai que corre ao encontro do filho ainda longe.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== IV. NO CAMINHO: DINHEIRO, FÉ E O REINO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">IV. No caminho: dinheiro, fé e o Reino</h3>
+      <span class="cat-ref">Lucas 16—19.27</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-mordomo-infiel-e-o-rico-e-lazaro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O mordomo infiel, e o rico e Lázaro</div>
+        <div class="p-ref">Lucas 16.1-31</div>
+        <p class="p-teaser">"Não podeis servir a Deus e às riquezas" — e um abismo que já não pode mais ser atravessado depois da morte.</p>
+      </a>
+      <a class="p-card available" href="licao-fe-perdao-e-os-dez-leprosos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Fé, perdão e os dez leprosos</div>
+        <div class="p-ref">Lucas 17.1-37</div>
+        <p class="p-teaser">Dez são curados, mas só um volta para agradecer — e ele é justamente o samaritano.</p>
+      </a>
+      <a class="p-card available" href="licao-o-juiz-injusto-o-fariseu-e-o-publicano.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O juiz injusto, o fariseu e o publicano</div>
+        <div class="p-ref">Lucas 18.1-17</div>
+        <p class="p-teaser">Uma viúva insistente, um homem que se justifica e outro que só consegue bater no peito — e as crianças que Jesus recebe.</p>
+      </a>
+      <a class="p-card available" href="licao-o-jovem-rico-e-a-profecia-da-paixao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O jovem rico e a profecia da Paixão</div>
+        <div class="p-ref">Lucas 18.18-34</div>
+        <p class="p-teaser">Um homem rico se afasta triste, no exato momento em que Jesus anuncia, com detalhes, sua própria morte.</p>
+      </a>
+      <a class="p-card available" href="licao-o-cego-de-jerico-zaqueu-e-a-parabola-das-minas.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O cego de Jericó, Zaqueu e a parábola das minas</div>
+        <div class="p-ref">Lucas 18.35—19.27</div>
+        <p class="p-teaser">Um mendigo que grita e enxerga, um homem baixinho que sobe numa árvore, e um rei que cobra contas ao voltar.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== V. MINISTÉRIO EM JERUSALÉM ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">V. Ministério em Jerusalém</h3>
+      <span class="cat-ref">Lucas 19.28—21.38</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-entrada-triunfal-e-a-purificacao-do-templo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A entrada triunfal e a purificação do templo</div>
+        <div class="p-ref">Lucas 19.28-48</div>
+        <p class="p-teaser">Jesus chora sobre a cidade antes mesmo de entrar nela — e depois expulsa os que a transformaram em covil.</p>
+      </a>
+      <a class="p-card available" href="licao-controversias-no-templo.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Controvérsias no templo</div>
+        <div class="p-ref">Lucas 20.1-47</div>
+        <p class="p-teaser">Uma sequência de armadilhas verbais contra Jesus — e ele escapa de todas, com autoridade.</p>
+      </a>
+      <a class="p-card available" href="licao-a-oferta-da-viuva-e-o-discurso-do-monte-das-oliveiras.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A oferta da viúva e o discurso do monte das Oliveiras</div>
+        <div class="p-ref">Lucas 21.1-38</div>
+        <p class="p-teaser">Duas pequenas moedas valem mais do que todo o resto — e uma profecia sobre o fim de um templo, e do mundo.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VI. PAIXÃO E RESSURREIÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VI. Paixão e Ressurreição</h3>
+      <span class="cat-ref">Lucas 22—24</span>
+      <span class="cat-count">5 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-conspiracao-e-a-ultima-ceia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A conspiração e a Última Ceia</div>
+        <div class="p-ref">Lucas 22.1-38</div>
+        <p class="p-teaser">Um pão partido, um cálice de uma nova aliança, e discípulos discutindo sobre quem é o maior na própria última ceia.</p>
+      </a>
+      <a class="p-card available" href="licao-getsemani-a-prisao-e-a-negacao-de-pedro.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Getsêmani, a prisão e a negação de Pedro</div>
+        <div class="p-ref">Lucas 22.39-62</div>
+        <p class="p-teaser">Suor como gotas de sangue, um beijo que trai, e um olhar de Jesus que quebra Pedro por dentro.</p>
+      </a>
+      <a class="p-card available" href="licao-os-julgamentos-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Os julgamentos de Jesus</div>
+        <div class="p-ref">Lucas 22.63—23.25</div>
+        <p class="p-teaser">Do sinédrio a Herodes e de volta a Pilatos — três juízes, e nenhum deles encontra motivo de morte, mas o condenam mesmo assim.</p>
+      </a>
+      <a class="p-card available" href="licao-a-crucificacao-e-a-morte-de-jesus.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A crucificação e a morte de Jesus</div>
+        <div class="p-ref">Lucas 23.26-56</div>
+        <p class="p-teaser">"Pai, perdoa-lhes" — e um criminoso ao lado recebe a promessa do paraíso ainda naquele mesmo dia.</p>
+      </a>
+      <a class="p-card available" href="licao-a-ressurreicao-emaus-e-a-ascensao.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A ressurreição, Emaús e a ascensão</div>
+        <div class="p-ref">Lucas 24.1-53</div>
+        <p class="p-teaser">Dois discípulos caminham com um estranho que explica toda a Bíblia — até reconhecê-lo ao partir o pão.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Lucas · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
