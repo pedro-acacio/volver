@@ -11,6 +11,18 @@
   var STORAGE_STREAK = 'volver_streak';
   var STREAK_MILESTONES = [3, 7, 14, 30, 60, 100, 200, 365];
 
+  var FIREBASE_CONFIG = {
+    apiKey: "AIzaSyA9csAW5ZXMAMPU0QHjc43nET7-SzIGaYM",
+    authDomain: "volver-36cb9.firebaseapp.com",
+    projectId: "volver-36cb9",
+    storageBucket: "volver-36cb9.firebasestorage.app",
+    messagingSenderId: "1081758813878",
+    appId: "1:1081758813878:web:08374248bfd94159962017",
+    measurementId: "G-407JQ3730R"
+  };
+  var FIREBASE_SDK_VERSION = '10.13.2';
+  var STORAGE_MIGRATED_PREFIX = 'volver_migrated_';
+
   var STAR_ICON = '<svg viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.5 7.5 L18.5 8.3 L14 12.4 L15.2 18.3 L10 15.3 L4.8 18.3 L6 12.4 L1.5 8.3 L7.5 7.5 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>';
   var CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 8.5 L6 12.5 L14 3.5" stroke="#12162A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var CLOCK_ICON = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#12162A" stroke-width="1.6"/><path d="M8 5 V8 L10.5 9.5" stroke="#12162A" stroke-width="1.6" stroke-linecap="round"/></svg>';
@@ -115,7 +127,27 @@
       menu_btn_aria: 'Abrir menu', sidebar_close_aria: 'Fechar menu', sidebar_home: 'Reflexões',
       sidebar_favoritos: 'Favoritos', sidebar_continue: 'Continue a Volver', sidebar_perfil: 'Perfil',
       sidebar_config: 'Configurações', sidebar_theme_label: 'Tema', theme_toggle_aria: 'Alternar tema claro/escuro',
+      sidebar_signout: 'Sair', signout_aria: 'Sair da conta',
       back_btn: 'Voltar', back_btn_aria: 'Voltar',
+      login_title: 'Entrar na Volver', login_subtitle: 'Faça login para continuar sua jornada de reflexões.',
+      login_email: 'E-mail', login_password: 'Senha',
+      login_signin_btn: 'Entrar', login_signup_btn: 'Criar conta',
+      login_google_btn: 'Continuar com Google',
+      login_toggle_to_signup: 'Ainda não tem conta? Criar conta',
+      login_toggle_to_signin: 'Já tem conta? Entrar',
+      login_forgot: 'Esqueci minha senha',
+      login_forgot_sent: 'Enviamos um link de redefinição para o seu e-mail.',
+      login_or: 'ou',
+      login_loading: 'Só um instante…',
+      err_email_already_in_use: 'Esse e-mail já está cadastrado. Tente entrar em vez de criar conta.',
+      err_invalid_email: 'E-mail inválido.',
+      err_weak_password: 'A senha precisa ter pelo menos 6 caracteres.',
+      err_user_not_found: 'Não encontramos uma conta com esse e-mail.',
+      err_wrong_password: 'Senha incorreta.',
+      err_invalid_credential: 'E-mail ou senha incorretos.',
+      err_popup_closed: 'Login com Google cancelado.',
+      err_network: 'Falha de conexão. Verifique sua internet e tente de novo.',
+      err_generic: 'Não foi possível concluir. Tente novamente.',
       methodology_strong: 'Antes de refletir:',
       methodology_text: 'a Volver é um complemento da Bíblia, não um substituto — entenda como usar a plataforma da maneira certa.',
       methodology_link: 'Como usar a Volver →',
@@ -176,7 +208,27 @@
       menu_btn_aria: 'Open menu', sidebar_close_aria: 'Close menu', sidebar_home: 'Reflections',
       sidebar_favoritos: 'Favorites', sidebar_continue: 'Continue in Volver', sidebar_perfil: 'Profile',
       sidebar_config: 'Settings', sidebar_theme_label: 'Theme', theme_toggle_aria: 'Toggle light/dark theme',
+      sidebar_signout: 'Sign out', signout_aria: 'Sign out of your account',
       back_btn: 'Back', back_btn_aria: 'Back',
+      login_title: 'Sign in to Volver', login_subtitle: 'Sign in to continue your reflection journey.',
+      login_email: 'Email', login_password: 'Password',
+      login_signin_btn: 'Sign in', login_signup_btn: 'Create account',
+      login_google_btn: 'Continue with Google',
+      login_toggle_to_signup: "Don't have an account? Create one",
+      login_toggle_to_signin: 'Already have an account? Sign in',
+      login_forgot: 'Forgot my password',
+      login_forgot_sent: 'We sent a reset link to your email.',
+      login_or: 'or',
+      login_loading: 'One moment…',
+      err_email_already_in_use: 'That email is already registered. Try signing in instead.',
+      err_invalid_email: 'Invalid email.',
+      err_weak_password: 'Password must be at least 6 characters.',
+      err_user_not_found: "We couldn't find an account with that email.",
+      err_wrong_password: 'Incorrect password.',
+      err_invalid_credential: 'Incorrect email or password.',
+      err_popup_closed: 'Google sign-in cancelled.',
+      err_network: 'Connection failed. Check your internet and try again.',
+      err_generic: "Couldn't complete this. Please try again.",
       methodology_strong: 'Before you reflect:',
       methodology_text: 'Volver is a complement to the Bible, not a substitute — learn how to use the platform the right way.',
       methodology_link: 'How to use Volver →',
@@ -237,7 +289,27 @@
       menu_btn_aria: 'Abrir menú', sidebar_close_aria: 'Cerrar menú', sidebar_home: 'Reflexiones',
       sidebar_favoritos: 'Favoritos', sidebar_continue: 'Continuar en Volver', sidebar_perfil: 'Perfil',
       sidebar_config: 'Configuración', sidebar_theme_label: 'Tema', theme_toggle_aria: 'Alternar tema claro/oscuro',
+      sidebar_signout: 'Cerrar sesión', signout_aria: 'Cerrar sesión de la cuenta',
       back_btn: 'Volver', back_btn_aria: 'Volver',
+      login_title: 'Entrar a Volver', login_subtitle: 'Inicia sesión para continuar tu recorrido de reflexiones.',
+      login_email: 'Correo electrónico', login_password: 'Contraseña',
+      login_signin_btn: 'Entrar', login_signup_btn: 'Crear cuenta',
+      login_google_btn: 'Continuar con Google',
+      login_toggle_to_signup: '¿Aún no tienes cuenta? Crear cuenta',
+      login_toggle_to_signin: '¿Ya tienes cuenta? Entrar',
+      login_forgot: 'Olvidé mi contraseña',
+      login_forgot_sent: 'Enviamos un enlace de restablecimiento a tu correo.',
+      login_or: 'o',
+      login_loading: 'Un momento…',
+      err_email_already_in_use: 'Ese correo ya está registrado. Intenta iniciar sesión en su lugar.',
+      err_invalid_email: 'Correo inválido.',
+      err_weak_password: 'La contraseña debe tener al menos 6 caracteres.',
+      err_user_not_found: 'No encontramos una cuenta con ese correo.',
+      err_wrong_password: 'Contraseña incorrecta.',
+      err_invalid_credential: 'Correo o contraseña incorrectos.',
+      err_popup_closed: 'Inicio de sesión con Google cancelado.',
+      err_network: 'Fallo de conexión. Verifica tu internet e intenta de nuevo.',
+      err_generic: 'No se pudo completar. Intenta de nuevo.',
       methodology_strong: 'Antes de reflexionar:',
       methodology_text: 'Volver es un complemento de la Biblia, no un sustituto — entiende cómo usar la plataforma de la manera correcta.',
       methodology_link: 'Cómo usar Volver →',
@@ -416,7 +488,13 @@
     sv_cta_ghost: 'See how to use the platform',
     sv_footer: 'Volver · introduction · the meaning of the name',
     row_count_available: '{n} available',
-    row_count_livros: '{n} of {n2} available'
+    row_count_livros: '{n} of {n2} available',
+    login_title: 'Sign in to Volver', login_subtitle: 'Sign in to continue your reflection journey.',
+    login_email: 'Email', login_password: 'Password', login_google_btn: 'Continue with Google',
+    login_signin_btn: 'Sign in', login_signup_btn: 'Create account',
+    login_toggle_to_signup: "Don't have an account? Create one",
+    login_toggle_to_signin: 'Already have an account? Sign in',
+    login_forgot: 'Forgot my password', login_or: 'or'
   });
   Object.assign(I18N_STATIC.es, {
     search_placeholder: 'Buscar reflexión, referencia o tema…',
@@ -530,7 +608,13 @@
     sv_cta_ghost: 'Ver cómo usar la plataforma',
     sv_footer: 'Volver · presentación · el significado del nombre',
     row_count_available: '{n} disponibles',
-    row_count_livros: '{n} de {n2} disponibles'
+    row_count_livros: '{n} de {n2} disponibles',
+    login_title: 'Entrar a Volver', login_subtitle: 'Inicia sesión para continuar tu recorrido de reflexiones.',
+    login_email: 'Correo electrónico', login_password: 'Contraseña', login_google_btn: 'Continuar con Google',
+    login_signin_btn: 'Entrar', login_signup_btn: 'Crear cuenta',
+    login_toggle_to_signup: '¿Aún no tienes cuenta? Crear cuenta',
+    login_toggle_to_signin: '¿Ya tienes cuenta? Entrar',
+    login_forgot: 'Olvidé mi contraseña', login_or: 'o'
   });
 
   function getLang(){
@@ -678,6 +762,24 @@
         streakEl.innerHTML = FLAME_ICON + '<b>' + streakInfo.current + '</b>';
         foot.appendChild(streakEl);
       }
+
+      var signOutBtn = document.createElement('button');
+      signOutBtn.type = 'button';
+      signOutBtn.className = 'theme-toggle';
+      signOutBtn.setAttribute('aria-label', t('signout_aria'));
+      signOutBtn.title = t('sidebar_signout');
+      signOutBtn.innerHTML = SHARE_ICON;
+      signOutBtn.addEventListener('click', function(){
+        loadFirebase().then(function(fb){
+          return fb.authMod.signOut(fb.auth);
+        }).then(function(){
+          location.replace(root + 'login.html');
+        });
+      });
+      foot.appendChild(signOutBtn);
+      var signOutLabel = document.createElement('span');
+      signOutLabel.textContent = t('sidebar_signout');
+      foot.appendChild(signOutLabel);
 
       nav.querySelector('#volverSidebarClose').addEventListener('click', closeSidebar);
       var homeToggle = nav.querySelector('#sidebarHomeToggle');
@@ -1498,26 +1600,130 @@
     });
   }
 
+  // ---------------- Firebase / Auth ----------------
+  var _fbPromise = null;
+  function loadFirebase(){
+    if(_fbPromise) return _fbPromise;
+    var base = 'https://www.gstatic.com/firebasejs/' + FIREBASE_SDK_VERSION + '/';
+    _fbPromise = Promise.all([
+      import(base + 'firebase-app.js'),
+      import(base + 'firebase-auth.js'),
+      import(base + 'firebase-firestore.js')
+    ]).then(function(mods){
+      var appMod = mods[0], authMod = mods[1], fsMod = mods[2];
+      var app = appMod.initializeApp(FIREBASE_CONFIG);
+      var auth = authMod.getAuth(app);
+      var db = fsMod.getFirestore(app);
+      return { appMod: appMod, authMod: authMod, fsMod: fsMod, app: app, auth: auth, db: db };
+    });
+    return _fbPromise;
+  }
+
+  function rootPrefix(){
+    var d = pathParts().dir;
+    if(!d) return '';
+    return d.split('/').map(function(){ return '..'; }).join('/') + '/';
+  }
+
+  function sanitizeDocId(key){ return key.replace(/\//g, '__'); }
+
+  function migrateLocalDataToFirestore(fb, uid){
+    var flagKey = STORAGE_MIGRATED_PREFIX + uid;
+    if(localStorage.getItem(flagKey)) return Promise.resolve();
+    var fs = fb.fsMod;
+    var favMap = readJSON(STORAGE_FAV);
+    var completedMap = readJSON(STORAGE_COMPLETED);
+    var visitedMap = readJSON(STORAGE_VISITED);
+    var stageMap = readJSON(STORAGE_STAGE);
+    var writes = [];
+
+    writes.push(fs.setDoc(fs.doc(fb.db, 'users', uid), { plan: 'free' }, { merge: true }).catch(function(){}));
+
+    Object.keys(favMap).forEach(function(key){
+      var ref = fs.doc(fb.db, 'users', uid, 'favoritos', sanitizeDocId(key));
+      writes.push(fs.setDoc(ref, favMap[key], { merge: true }).catch(function(){}));
+    });
+
+    var progressKeys = Array.from(new Set(Object.keys(visitedMap).concat(Object.keys(completedMap))));
+    progressKeys.forEach(function(key){
+      var base = visitedMap[key] || completedMap[key] || {};
+      var entry = {
+        title: base.title || '', ref: base.ref || '', href: base.href || '', category: base.category || '',
+        ts: base.ts || Date.now(),
+        completed: !!completedMap[key],
+        stage: stageMap[key] || 0
+      };
+      var ref = fs.doc(fb.db, 'users', uid, 'progresso', sanitizeDocId(key));
+      writes.push(fs.setDoc(ref, entry, { merge: true }).catch(function(){}));
+    });
+
+    return Promise.all(writes).then(function(){ localStorage.setItem(flagKey, '1'); });
+  }
+
+  var AUTH_ERROR_KEYS = {
+    'auth/email-already-in-use': 'err_email_already_in_use',
+    'auth/invalid-email': 'err_invalid_email',
+    'auth/weak-password': 'err_weak_password',
+    'auth/user-not-found': 'err_user_not_found',
+    'auth/wrong-password': 'err_wrong_password',
+    'auth/invalid-credential': 'err_invalid_credential',
+    'auth/popup-closed-by-user': 'err_popup_closed',
+    'auth/cancelled-popup-request': 'err_popup_closed',
+    'auth/network-request-failed': 'err_network'
+  };
+  function authErrorMessage(err){
+    var code = err && err.code;
+    return t(AUTH_ERROR_KEYS[code] || 'err_generic');
+  }
+
+  function runAuthGate(cb){
+    var p = pathParts();
+    var isLoginPage = (p.dir === '' && p.file === 'login.html');
+    loadFirebase().then(function(fb){
+      fb.authMod.onAuthStateChanged(fb.auth, function(user){
+        if(user){
+          migrateLocalDataToFirestore(fb, user.uid).catch(function(){});
+          if(isLoginPage){
+            var params = new URLSearchParams(location.search);
+            var next = params.get('next');
+            location.replace(next || (rootPrefix() + 'index.html'));
+            return;
+          }
+          cb();
+        } else if(!isLoginPage){
+          location.replace(rootPrefix() + 'login.html?next=' + encodeURIComponent(location.pathname + location.search));
+        } else {
+          cb();
+        }
+      });
+    }).catch(function(){
+      // Firebase failed to load (offline, blocked CDN, etc.) — fail open so the site stays usable.
+      cb();
+    });
+  }
+
   // ---------------- boot ----------------
   function init(){
-    migrateNestedHrefs();
-    applyTheme();
-    applyFontSize();
-    applyLanguage();
-    var p = pathParts();
-    if(p.folder === null && p.file === 'index.html'){
-      buildIntroSplash();
-      enhanceIndexPage();
-      injectSidebar();
-    } else if(p.file.indexOf('licao-') === 0){
-      injectBackButton();
-      enhanceLessonPage();
-    } else if(p.file.indexOf('biblioteca-') === 0){
-      injectBackButton();
-      enhanceHubPage();
-    } else {
-      injectBackButton();
-    }
+    runAuthGate(function(){
+      migrateNestedHrefs();
+      applyTheme();
+      applyFontSize();
+      applyLanguage();
+      var p = pathParts();
+      if(p.folder === null && p.file === 'index.html'){
+        buildIntroSplash();
+        enhanceIndexPage();
+        injectSidebar();
+      } else if(p.file.indexOf('licao-') === 0){
+        injectBackButton();
+        enhanceLessonPage();
+      } else if(p.file.indexOf('biblioteca-') === 0){
+        injectBackButton();
+        enhanceHubPage();
+      } else {
+        injectBackButton();
+      }
+    });
   }
 
   if(document.readyState === 'loading'){
@@ -1544,6 +1750,35 @@
     getStreakInfo: getStreakInfo,
     getStreakHistory: getStreakHistory,
     resetStreak: resetStreak,
-    streakLabel: streakLabel
+    streakLabel: streakLabel,
+    auth: {
+      signUpWithEmail: function(email, password){
+        return loadFirebase().then(function(fb){
+          return fb.authMod.createUserWithEmailAndPassword(fb.auth, email, password);
+        });
+      },
+      signInWithEmail: function(email, password){
+        return loadFirebase().then(function(fb){
+          return fb.authMod.signInWithEmailAndPassword(fb.auth, email, password);
+        });
+      },
+      signInWithGoogle: function(){
+        return loadFirebase().then(function(fb){
+          var provider = new fb.authMod.GoogleAuthProvider();
+          return fb.authMod.signInWithPopup(fb.auth, provider);
+        });
+      },
+      sendPasswordReset: function(email){
+        return loadFirebase().then(function(fb){
+          return fb.authMod.sendPasswordResetEmail(fb.auth, email);
+        });
+      },
+      signOutUser: function(){
+        return loadFirebase().then(function(fb){
+          return fb.authMod.signOut(fb.auth);
+        });
+      },
+      errorMessage: authErrorMessage
+    }
   };
 })();

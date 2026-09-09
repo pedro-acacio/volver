@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Rascunho de Security Rules do Firestore para o Volver.
+// Modelo de dados assumido:
+//   users/{userId}                          -> perfil + plano (doc único)
+//   users/{userId}/favoritos/{itemId}        -> itens favoritados
+//   users/{userId}/progresso/{itemId}        -> progresso de leitura/estudo
+//
+// Ajuste os nomes de coleção/campos aqui conforme o schema real for definido.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Campos que só o backend (Admin SDK / Cloud Functions) pode alterar.
+    // O cliente nunca deve conseguir se auto-promover a "premium".
+    function keepsProtectedFields() {
+      let protectedKeys = ['plan', 'planExpiresAt', 'stripeCustomerId'];
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(protectedKeys);
+    }
+
+    // Perfil do usuário: nome, e-mail, preferências, plano, etc.
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+
+      // Criação do próprio documento (ex: no primeiro login/cadastro).
+      // O plano inicial é sempre "free" — nunca aceito vindo do cliente como outra coisa.
+      allow create: if isOwner(userId)
+        && request.resource.data.plan == 'free';
+
+      // Atualização: só o dono, e só de campos que não sejam os protegidos.
+      allow update: if isOwner(userId) && keepsProtectedFields();
+
+      allow delete: if isOwner(userId);
+
+      // Favoritos do usuário.
+      match /favoritos/{itemId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Progresso de leitura/estudo do usuário.
+      match /progresso/{itemId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Qualquer coisa fora do que foi liberado acima fica bloqueada por padrão.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
