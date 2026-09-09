@@ -674,6 +674,7 @@
     writeJSON(STORAGE_COMPLETED, completedMap);
     writeJSON(STORAGE_VISITED, visitedMap);
     writeJSON(STORAGE_STAGE, stageMap);
+    keys.forEach(syncProgressToCloud);
   }
 
   function getSummary(){
@@ -860,10 +861,12 @@
 
   function recordVisit(entry){
     var data = readJSON(STORAGE_VISITED);
-    data[keyOf(entry.category, entry.slug)] = {
+    var key = keyOf(entry.category, entry.slug);
+    data[key] = {
       title: entry.title, ref: entry.ref, href: entry.href, category: entry.category, ts: Date.now()
     };
     writeJSON(STORAGE_VISITED, data);
+    syncProgressToCloud(key);
   }
   function isVisited(category, slug){
     return !!readJSON(STORAGE_VISITED)[keyOf(category, slug)];
@@ -874,6 +877,7 @@
     if(data[k]){ delete data[k]; }
     else{ data[k] = { title: entry.title, ref: entry.ref, href: entry.href, category: entry.category, ts: Date.now() }; }
     writeJSON(STORAGE_FAV, data);
+    syncFavoriteToCloud(k);
     return !!data[k];
   }
   function isFavorite(category, slug){
@@ -881,18 +885,22 @@
   }
   function markCompleted(entry){
     var data = readJSON(STORAGE_COMPLETED);
-    data[keyOf(entry.category, entry.slug)] = {
+    var key = keyOf(entry.category, entry.slug);
+    data[key] = {
       title: entry.title, ref: entry.ref, href: entry.href, category: entry.category, ts: Date.now()
     };
     writeJSON(STORAGE_COMPLETED, data);
+    syncProgressToCloud(key);
   }
   function isCompleted(category, slug){
     return !!readJSON(STORAGE_COMPLETED)[keyOf(category, slug)];
   }
   function saveStage(category, slug, n){
     var data = readJSON(STORAGE_STAGE);
-    data[keyOf(category, slug)] = n;
+    var key = keyOf(category, slug);
+    data[key] = n;
     writeJSON(STORAGE_STAGE, data);
+    syncProgressToCloud(key);
   }
   function getStage(category, slug){
     return readJSON(STORAGE_STAGE)[keyOf(category, slug)] || 0;
@@ -1602,6 +1610,8 @@
 
   // ---------------- Firebase / Auth ----------------
   var _fbPromise = null;
+  var _cloudUser = null;
+  var _cloudFb = null;
   function loadFirebase(){
     if(_fbPromise) return _fbPromise;
     var base = 'https://www.gstatic.com/firebasejs/' + FIREBASE_SDK_VERSION + '/';
@@ -1660,6 +1670,78 @@
     return Promise.all(writes).then(function(){ localStorage.setItem(flagKey, '1'); });
   }
 
+  function pullCloudIntoLocal(fb, uid){
+    var fs = fb.fsMod;
+    return Promise.all([
+      fs.getDocs(fs.collection(fb.db, 'users', uid, 'favoritos')),
+      fs.getDocs(fs.collection(fb.db, 'users', uid, 'progresso'))
+    ]).then(function(results){
+      var favSnap = results[0], progSnap = results[1];
+      var favMap = {}, visitedMap = {}, completedMap = {}, stageMap = {};
+      favSnap.forEach(function(d){
+        favMap[d.id.split('__').join('/')] = d.data();
+      });
+      progSnap.forEach(function(d){
+        var key = d.id.split('__').join('/');
+        var data = d.data();
+        var entry = { title: data.title, ref: data.ref, href: data.href, category: data.category, ts: data.ts };
+        visitedMap[key] = entry;
+        if(data.completed) completedMap[key] = entry;
+        if(data.stage) stageMap[key] = data.stage;
+      });
+      writeJSON(STORAGE_FAV, favMap);
+      writeJSON(STORAGE_VISITED, visitedMap);
+      writeJSON(STORAGE_COMPLETED, completedMap);
+      writeJSON(STORAGE_STAGE, stageMap);
+    });
+  }
+
+  // Runs once per browser session (not on every page navigation, to avoid a
+  // Firestore round-trip on every single click) so other devices' changes
+  // show up whenever the user starts a fresh visit to the site.
+  function runCloudSync(fb, uid){
+    var sessionFlag = STORAGE_MIGRATED_PREFIX + uid + '_synced';
+    try{
+      if(sessionStorage.getItem(sessionFlag)) return Promise.resolve();
+    }catch(e){}
+    var alreadyMigrated = !!localStorage.getItem(STORAGE_MIGRATED_PREFIX + uid);
+    var pre = alreadyMigrated ? Promise.resolve() : migrateLocalDataToFirestore(fb, uid);
+    return pre.then(function(){
+      return pullCloudIntoLocal(fb, uid);
+    }).then(function(){
+      try{ sessionStorage.setItem(sessionFlag, '1'); }catch(e){}
+    });
+  }
+
+  function syncFavoriteToCloud(key){
+    if(!_cloudUser || !_cloudFb) return;
+    var favMap = readJSON(STORAGE_FAV);
+    var fs = _cloudFb.fsMod;
+    var ref = fs.doc(_cloudFb.db, 'users', _cloudUser.uid, 'favoritos', sanitizeDocId(key));
+    var op = favMap[key] ? fs.setDoc(ref, favMap[key]) : fs.deleteDoc(ref);
+    op.catch(function(){});
+  }
+
+  function syncProgressToCloud(key){
+    if(!_cloudUser || !_cloudFb) return;
+    var completedMap = readJSON(STORAGE_COMPLETED);
+    var visitedMap = readJSON(STORAGE_VISITED);
+    var stageMap = readJSON(STORAGE_STAGE);
+    var base = visitedMap[key] || completedMap[key];
+    var fs = _cloudFb.fsMod;
+    var ref = fs.doc(_cloudFb.db, 'users', _cloudUser.uid, 'progresso', sanitizeDocId(key));
+    var op;
+    if(!base){
+      op = fs.deleteDoc(ref);
+    } else {
+      op = fs.setDoc(ref, {
+        title: base.title || '', ref: base.ref || '', href: base.href || '', category: base.category || '',
+        ts: base.ts || Date.now(), completed: !!completedMap[key], stage: stageMap[key] || 0
+      });
+    }
+    op.catch(function(){});
+  }
+
   var AUTH_ERROR_KEYS = {
     'auth/email-already-in-use': 'err_email_already_in_use',
     'auth/invalid-email': 'err_invalid_email',
@@ -1682,14 +1764,15 @@
     loadFirebase().then(function(fb){
       fb.authMod.onAuthStateChanged(fb.auth, function(user){
         if(user){
-          migrateLocalDataToFirestore(fb, user.uid).catch(function(){});
+          _cloudUser = user;
+          _cloudFb = fb;
           if(isLoginPage){
             var params = new URLSearchParams(location.search);
             var next = params.get('next');
             location.replace(next || (rootPrefix() + 'index.html'));
             return;
           }
-          cb();
+          runCloudSync(fb, user.uid).catch(function(){}).then(cb);
         } else if(!isLoginPage){
           location.replace(rootPrefix() + 'login.html?next=' + encodeURIComponent(location.pathname + location.search));
         } else {
