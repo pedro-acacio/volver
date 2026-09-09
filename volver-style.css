@@ -404,6 +404,20 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
   .methodology-banner{ flex-direction:column; align-items:flex-start; }
 }
 
+.verify-banner{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:10px 20px; background: rgba(217,164,65,0.12); border-bottom:1px solid rgba(217,164,65,0.3);
+}
+.verify-banner span{ font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; color: var(--text-dim); }
+.verify-banner button{
+  border:none; background:none; padding:0; cursor:pointer;
+  font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:600;
+}
+.verify-banner #volverVerifyResend{ color: var(--gold); text-decoration:underline; }
+.verify-banner #volverVerifyResend:disabled{ color: var(--calm); text-decoration:none; cursor:default; }
+.verify-banner .verify-close{ margin-left:auto; font-size:18px; line-height:1; color: var(--text-faint); }
+.verify-banner .verify-close:hover{ color: var(--text); }
+
 /* ---- intro splash (homepage only) ---- */
 .intro-splash{
   position:fixed; inset:0; z-index:9999; background: var(--bg);

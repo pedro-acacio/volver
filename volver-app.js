@@ -148,6 +148,9 @@
       err_popup_closed: 'Login com Google cancelado.',
       err_network: 'Falha de conexão. Verifique sua internet e tente de novo.',
       err_generic: 'Não foi possível concluir. Tente novamente.',
+      verify_banner_text: 'Confirme seu e-mail: enviamos um link para {email}.',
+      verify_banner_resend: 'Reenviar', verify_banner_resent: 'Enviado ✓',
+      verify_close_aria: 'Dispensar aviso',
       methodology_strong: 'Antes de refletir:',
       methodology_text: 'a Volver é um complemento da Bíblia, não um substituto — entenda como usar a plataforma da maneira certa.',
       methodology_link: 'Como usar a Volver →',
@@ -229,6 +232,9 @@
       err_popup_closed: 'Google sign-in cancelled.',
       err_network: 'Connection failed. Check your internet and try again.',
       err_generic: "Couldn't complete this. Please try again.",
+      verify_banner_text: 'Confirm your email: we sent a link to {email}.',
+      verify_banner_resend: 'Resend', verify_banner_resent: 'Sent ✓',
+      verify_close_aria: 'Dismiss notice',
       methodology_strong: 'Before you reflect:',
       methodology_text: 'Volver is a complement to the Bible, not a substitute — learn how to use the platform the right way.',
       methodology_link: 'How to use Volver →',
@@ -310,6 +316,9 @@
       err_popup_closed: 'Inicio de sesión con Google cancelado.',
       err_network: 'Fallo de conexión. Verifica tu internet e intenta de nuevo.',
       err_generic: 'No se pudo completar. Intenta de nuevo.',
+      verify_banner_text: 'Confirma tu correo: enviamos un enlace a {email}.',
+      verify_banner_resend: 'Reenviar', verify_banner_resent: 'Enviado ✓',
+      verify_close_aria: 'Descartar aviso',
       methodology_strong: 'Antes de reflexionar:',
       methodology_text: 'Volver es un complemento de la Biblia, no un sustituto — entiende cómo usar la plataforma de la manera correcta.',
       methodology_link: 'Cómo usar Volver →',
@@ -854,6 +863,41 @@
     render();
     document.addEventListener('volver:lang', render);
     if(beforeEl){ target.insertBefore(banner, beforeEl); } else { target.appendChild(banner); }
+  }
+
+  function injectVerifyBanner(){
+    if(!_cloudUser || document.getElementById('volverVerifyBanner')) return;
+    var isPasswordUser = _cloudUser.providerData.some(function(p){ return p.providerId === 'password'; });
+    if(!isPasswordUser || _cloudUser.emailVerified) return;
+    var dismissKey = 'volver_verify_dismissed';
+    try{ if(sessionStorage.getItem(dismissKey)) return; }catch(e){}
+
+    var banner = document.createElement('div');
+    banner.id = 'volverVerifyBanner';
+    banner.className = 'verify-banner';
+
+    function render(){
+      banner.innerHTML =
+        '<span>' + t('verify_banner_text').split('{email}').join(_cloudUser.email) + '</span>' +
+        '<button type="button" id="volverVerifyResend">' + t('verify_banner_resend') + '</button>' +
+        '<button type="button" class="verify-close" aria-label="' + t('verify_close_aria') + '">&times;</button>';
+      banner.querySelector('#volverVerifyResend').addEventListener('click', function(){
+        var btn = banner.querySelector('#volverVerifyResend');
+        btn.disabled = true;
+        loadFirebase().then(function(fb){
+          return fb.authMod.sendEmailVerification(_cloudUser);
+        }).then(function(){
+          btn.textContent = t('verify_banner_resent');
+        }).catch(function(){ btn.disabled = false; });
+      });
+      banner.querySelector('.verify-close').addEventListener('click', function(){
+        try{ sessionStorage.setItem(dismissKey, '1'); }catch(e){}
+        banner.remove();
+      });
+    }
+    render();
+    document.addEventListener('volver:lang', render);
+    document.body.insertBefore(banner, document.body.firstChild);
   }
 
   // ---------------- storage helpers ----------------
@@ -1788,6 +1832,7 @@
   // ---------------- boot ----------------
   function init(){
     runAuthGate(function(){
+      injectVerifyBanner();
       migrateNestedHrefs();
       applyTheme();
       applyFontSize();
@@ -1837,7 +1882,10 @@
     auth: {
       signUpWithEmail: function(email, password){
         return loadFirebase().then(function(fb){
-          return fb.authMod.createUserWithEmailAndPassword(fb.auth, email, password);
+          return fb.authMod.createUserWithEmailAndPassword(fb.auth, email, password).then(function(cred){
+            fb.authMod.sendEmailVerification(cred.user).catch(function(){});
+            return cred;
+          });
         });
       },
       signInWithEmail: function(email, password){
