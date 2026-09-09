@@ -151,6 +151,13 @@
       verify_banner_text: 'Confirme seu e-mail: enviamos um link para {email}.',
       verify_banner_resend: 'Reenviar', verify_banner_resent: 'Enviado ✓',
       verify_close_aria: 'Dispensar aviso',
+      account_provider_google: 'Google', account_provider_password: 'E-mail e senha',
+      profile_account_delete: 'Excluir conta',
+      profile_account_delete_desc: 'Remove sua conta e todos os dados salvos na nuvem (favoritos e progresso). Essa ação não pode ser desfeita.',
+      profile_account_reauth_needed: 'Por segurança, confirme sua identidade de novo para excluir a conta.',
+      profile_account_reauth_password_label: 'Digite sua senha',
+      profile_account_reauth_password_btn: 'Confirmar e excluir',
+      profile_account_delete_error: 'Não foi possível excluir a conta. Tente novamente.',
       methodology_strong: 'Antes de refletir:',
       methodology_text: 'a Volver é um complemento da Bíblia, não um substituto — entenda como usar a plataforma da maneira certa.',
       methodology_link: 'Como usar a Volver →',
@@ -235,6 +242,13 @@
       verify_banner_text: 'Confirm your email: we sent a link to {email}.',
       verify_banner_resend: 'Resend', verify_banner_resent: 'Sent ✓',
       verify_close_aria: 'Dismiss notice',
+      account_provider_google: 'Google', account_provider_password: 'Email and password',
+      profile_account_delete: 'Delete account',
+      profile_account_delete_desc: 'Removes your account and everything saved in the cloud (favorites and progress). This cannot be undone.',
+      profile_account_reauth_needed: 'For security, confirm your identity again to delete the account.',
+      profile_account_reauth_password_label: 'Enter your password',
+      profile_account_reauth_password_btn: 'Confirm and delete',
+      profile_account_delete_error: "Couldn't delete the account. Please try again.",
       methodology_strong: 'Before you reflect:',
       methodology_text: 'Volver is a complement to the Bible, not a substitute — learn how to use the platform the right way.',
       methodology_link: 'How to use Volver →',
@@ -319,6 +333,13 @@
       verify_banner_text: 'Confirma tu correo: enviamos un enlace a {email}.',
       verify_banner_resend: 'Reenviar', verify_banner_resent: 'Enviado ✓',
       verify_close_aria: 'Descartar aviso',
+      account_provider_google: 'Google', account_provider_password: 'Correo y contraseña',
+      profile_account_delete: 'Eliminar cuenta',
+      profile_account_delete_desc: 'Elimina tu cuenta y todos los datos guardados en la nube (favoritos y progreso). Esta acción no se puede deshacer.',
+      profile_account_reauth_needed: 'Por seguridad, confirma tu identidad de nuevo para eliminar la cuenta.',
+      profile_account_reauth_password_label: 'Escribe tu contraseña',
+      profile_account_reauth_password_btn: 'Confirmar y eliminar',
+      profile_account_delete_error: 'No se pudo eliminar la cuenta. Intenta de nuevo.',
       methodology_strong: 'Antes de reflexionar:',
       methodology_text: 'Volver es un complemento de la Biblia, no un sustituto — entiende cómo usar la plataforma de la manera correcta.',
       methodology_link: 'Cómo usar Volver →',
@@ -1786,6 +1807,31 @@
     op.catch(function(){});
   }
 
+  function getCurrentUserInfo(){
+    if(!_cloudUser) return null;
+    var providerId = (_cloudUser.providerData[0] && _cloudUser.providerData[0].providerId) || 'password';
+    return {
+      displayName: _cloudUser.displayName,
+      email: _cloudUser.email,
+      photoURL: _cloudUser.photoURL,
+      providerId: providerId
+    };
+  }
+
+  function wipeUserFirestoreData(fb, uid){
+    var fs = fb.fsMod;
+    return Promise.all([
+      fs.getDocs(fs.collection(fb.db, 'users', uid, 'favoritos')),
+      fs.getDocs(fs.collection(fb.db, 'users', uid, 'progresso'))
+    ]).then(function(results){
+      var deletes = [];
+      results[0].forEach(function(d){ deletes.push(fs.deleteDoc(d.ref).catch(function(){})); });
+      results[1].forEach(function(d){ deletes.push(fs.deleteDoc(d.ref).catch(function(){})); });
+      deletes.push(fs.deleteDoc(fs.doc(fb.db, 'users', uid)).catch(function(){}));
+      return Promise.all(deletes);
+    });
+  }
+
   var AUTH_ERROR_KEYS = {
     'auth/email-already-in-use': 'err_email_already_in_use',
     'auth/invalid-email': 'err_invalid_email',
@@ -1879,6 +1925,7 @@
     getStreakHistory: getStreakHistory,
     resetStreak: resetStreak,
     streakLabel: streakLabel,
+    getCurrentUserInfo: getCurrentUserInfo,
     auth: {
       signUpWithEmail: function(email, password){
         return loadFirebase().then(function(fb){
@@ -1907,6 +1954,28 @@
       signOutUser: function(){
         return loadFirebase().then(function(fb){
           return fb.authMod.signOut(fb.auth);
+        });
+      },
+      reauthenticateWithGoogle: function(){
+        return loadFirebase().then(function(fb){
+          var provider = new fb.authMod.GoogleAuthProvider();
+          return fb.authMod.reauthenticateWithPopup(fb.auth.currentUser, provider);
+        });
+      },
+      reauthenticateWithPassword: function(password){
+        return loadFirebase().then(function(fb){
+          var user = fb.auth.currentUser;
+          var cred = fb.authMod.EmailAuthProvider.credential(user.email, password);
+          return fb.authMod.reauthenticateWithCredential(user, cred);
+        });
+      },
+      deleteAccount: function(){
+        return loadFirebase().then(function(fb){
+          var user = fb.auth.currentUser;
+          if(!user) return Promise.reject({ code: 'auth/no-current-user' });
+          return wipeUserFirestoreData(fb, user.uid).catch(function(){}).then(function(){
+            return fb.authMod.deleteUser(user);
+          });
         });
       },
       errorMessage: authErrorMessage

@@ -53,6 +53,36 @@
   .profile-item .t{ font-size:13.5px; color: var(--text); }
   .profile-item .r{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); white-space:nowrap; }
   .profile-empty{ font-size:13px; color: var(--text-faint); font-family:'IBM Plex Mono', monospace; }
+
+  .account-card{
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    background: var(--panel); border:1px solid var(--panel-line); border-radius:14px;
+    padding:18px 20px; margin-top:24px;
+  }
+  .account-info{ display:flex; align-items:center; gap:14px; min-width:0; }
+  .account-avatar{ width:44px; height:44px; border-radius:50%; flex-shrink:0; object-fit:cover; }
+  .account-avatar-fallback{
+    display:flex; align-items:center; justify-content:center; background: var(--gold); color:#12162A;
+    font-family:'Fraunces', serif; font-weight:600; font-size:18px;
+  }
+  .account-name{ font-size:14.5px; color: var(--text); font-weight:600; }
+  .account-email{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .settings-btn{
+    flex-shrink:0; padding:10px 18px; border-radius:9px; border:1px solid var(--panel-line);
+    background: var(--bg); color: var(--text); font-family:'IBM Plex Sans', sans-serif;
+    font-size:13px; font-weight:600; cursor:pointer; transition: all .2s ease; white-space:nowrap;
+  }
+  .settings-btn:hover{ border-color: var(--gold); }
+  .settings-btn.danger{ color: var(--worry); border-color: rgba(168,92,107,0.4); }
+  .settings-btn.danger:hover{ border-color: var(--worry); }
+  .account-danger-panel{ width:100%; margin-top:16px; padding-top:16px; border-top:1px solid var(--panel-line); }
+  .account-danger-desc{ font-size:12.5px; line-height:1.5; color: var(--worry); margin:0 0 14px; }
+  .account-reauth{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .account-reauth input{
+    flex:1; min-width:160px; padding:10px 12px; border-radius:9px; border:1px solid var(--panel-line);
+    background: var(--bg); color: var(--text); font-family:'IBM Plex Sans', sans-serif; font-size:13.5px;
+  }
+  .account-reauth input:focus{ outline:none; border-color: var(--gold); }
 </style>
 </head>
 <body>
@@ -70,6 +100,8 @@
   <div class="eyebrow" data-i18n="profile_eyebrow">Sua jornada</div>
   <h1 data-i18n="profile_title">Perfil</h1>
   <p class="sub" data-i18n="profile_sub">Um resumo do que você já concluiu, do que está em andamento e do que favoritou — tudo salvo neste navegador.</p>
+
+  <div class="account-card" id="accountCard" hidden></div>
 
   <div class="streak-banner" id="streakBanner"></div>
 
@@ -95,6 +127,98 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function(){
+    function armConfirm(btn, onConfirm, resyncLabel){
+      if(btn.dataset.confirming === '1'){
+        clearTimeout(btn._volverTimer);
+        delete btn.dataset.confirming;
+        onConfirm();
+        return;
+      }
+      btn.dataset.confirming = '1';
+      var original = btn.textContent;
+      btn.textContent = window.Volver.t('cfg_clear_confirm');
+      btn._volverTimer = setTimeout(function(){
+        delete btn.dataset.confirming;
+        btn.textContent = original;
+      }, 4000);
+    }
+
+    function renderAccount(){
+      var V = window.Volver;
+      var info = V.getCurrentUserInfo();
+      var card = document.getElementById('accountCard');
+      if(!info){ card.hidden = true; return; }
+      card.hidden = false;
+
+      var avatarHtml = info.photoURL
+        ? '<img src="' + info.photoURL + '" alt="" class="account-avatar">'
+        : '<div class="account-avatar account-avatar-fallback">' + (info.displayName || info.email || '?').charAt(0).toUpperCase() + '</div>';
+      var providerLabel = info.providerId === 'google.com' ? V.t('account_provider_google') : V.t('account_provider_password');
+
+      card.innerHTML =
+        '<div class="account-info">' + avatarHtml +
+          '<div><div class="account-name">' + (info.displayName || info.email) + '</div>' +
+          '<div class="account-email">' + info.email + ' · ' + providerLabel + '</div></div>' +
+        '</div>' +
+        '<button type="button" id="accountDeleteBtn" class="settings-btn danger">' + V.t('profile_account_delete') + '</button>' +
+        '<div class="account-danger-panel" id="accountDangerPanel" hidden>' +
+          '<p class="account-danger-desc" id="accountDangerDesc">' + V.t('profile_account_delete_desc') + '</p>' +
+          '<div class="account-reauth" id="accountReauthRow" hidden>' +
+            '<input type="password" id="accountReauthPassword" autocomplete="current-password" placeholder="' + V.t('profile_account_reauth_password_label') + '">' +
+            '<button type="button" id="accountReauthBtn" class="settings-btn danger">' + V.t('profile_account_reauth_password_btn') + '</button>' +
+          '</div>' +
+        '</div>';
+
+      var deleteBtn = document.getElementById('accountDeleteBtn');
+      var dangerPanel = document.getElementById('accountDangerPanel');
+      var dangerDesc = document.getElementById('accountDangerDesc');
+      var reauthRow = document.getElementById('accountReauthRow');
+      var reauthPassword = document.getElementById('accountReauthPassword');
+      var reauthBtn = document.getElementById('accountReauthBtn');
+
+      function showError(msg){
+        dangerDesc.textContent = msg;
+        dangerDesc.style.color = 'var(--worry)';
+      }
+
+      function runDelete(){
+        deleteBtn.disabled = true;
+        V.auth.deleteAccount().then(function(){
+          location.href = 'login.html';
+        }).catch(function(err){
+          deleteBtn.disabled = false;
+          if(err && err.code === 'auth/requires-recent-login'){
+            dangerPanel.hidden = false;
+            if(info.providerId === 'google.com'){
+              V.auth.reauthenticateWithGoogle().then(runDelete).catch(function(){
+                showError(V.t('profile_account_delete_error'));
+              });
+            } else {
+              reauthRow.hidden = false;
+              showError(V.t('profile_account_reauth_needed'));
+            }
+          } else {
+            showError(V.t('profile_account_delete_error'));
+          }
+        });
+      }
+
+      deleteBtn.addEventListener('click', function(){
+        if(dangerPanel.hidden){ dangerPanel.hidden = false; return; }
+        armConfirm(deleteBtn, runDelete);
+      });
+
+      reauthBtn.addEventListener('click', function(){
+        var pw = reauthPassword.value;
+        if(!pw) return;
+        reauthBtn.disabled = true;
+        V.auth.reauthenticateWithPassword(pw).then(runDelete).catch(function(){
+          reauthBtn.disabled = false;
+          showError(V.t('profile_account_delete_error'));
+        });
+      });
+    }
+
     function renderStreak(){
       var V = window.Volver;
       var info = V.getStreakInfo();
@@ -126,6 +250,7 @@
       if(!window.Volver) return;
       var V = window.Volver;
       var s = V.getSummary();
+      renderAccount();
       renderStreak();
       document.getElementById('profileGrid').innerHTML =
         '<div class="profile-stat"><b>' + s.completed.length + '</b><span>' + V.t('stat_completed') + '</span></div>' +
