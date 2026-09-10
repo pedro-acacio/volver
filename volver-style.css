@@ -288,9 +288,14 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
 }
 .sidebar-sublink:hover{ background: rgba(217,164,65,0.08); color: var(--text); }
 
-.sidebar-foot{ padding:14px 18px; border-top:1px solid var(--panel-line); display:flex; align-items:center; gap:10px; }
+.sidebar-foot{ padding:8px 10px 14px; border-top:1px solid var(--panel-line); display:flex; flex-direction:column; gap:2px; }
 .sidebar-foot .theme-toggle{ margin:0; }
 .sidebar-foot span{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-faint); }
+.sidebar-link.signout-link{
+  width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  color: var(--worry);
+}
+.sidebar-link.signout-link:hover{ background: rgba(168,92,107,0.1); color: var(--worry); }
 .sidebar-streak{
   margin-left:auto; display:flex; align-items:center; gap:5px;
   font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:600; color: var(--gold);
@@ -323,12 +328,6 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
 .theme-toggle .icon-sun{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
-
-.sidebar-foot .signout-btn{
-  margin-left:auto; padding:0; border:none; background:none; cursor:pointer;
-  color: var(--worry); font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; font-weight:600;
-}
-.sidebar-foot .signout-btn:hover{ text-decoration: underline; }
 
 .fav-star-inline{
   display:inline-flex; align-items:center; gap:6px; margin-left:10px;

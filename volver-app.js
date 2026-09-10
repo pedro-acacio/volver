@@ -819,7 +819,7 @@
 
       var signOutBtn = document.createElement('button');
       signOutBtn.type = 'button';
-      signOutBtn.className = 'signout-btn';
+      signOutBtn.className = 'sidebar-link signout-link';
       signOutBtn.setAttribute('aria-label', t('signout_aria'));
       signOutBtn.textContent = t('sidebar_signout');
       signOutBtn.addEventListener('click', function(){
