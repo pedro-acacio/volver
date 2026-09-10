@@ -324,10 +324,16 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 
-.signout-btn{ border-color: rgba(168,92,107,0.4); }
-.signout-btn:hover{ border-color: var(--worry); }
-.signout-btn path, .signout-btn circle{ stroke: var(--worry); }
-.sidebar-foot .signout-label{ color: var(--worry); }
+.sidebar-foot .signout-btn{
+  display:flex; align-items:center; gap:8px; margin-left:auto;
+  padding:8px 14px; border-radius:10px; cursor:pointer;
+  border:1px solid rgba(168,92,107,0.4); background: rgba(168,92,107,0.12); color: var(--worry);
+  font-family:'IBM Plex Sans', sans-serif; font-size:12px; font-weight:600;
+  transition: background .2s ease, border-color .2s ease;
+}
+.sidebar-foot .signout-btn:hover{ background: rgba(168,92,107,0.22); border-color: var(--worry); }
+.sidebar-foot .signout-btn svg{ width:15px; height:15px; flex-shrink:0; }
+.sidebar-foot .signout-btn path{ stroke: var(--worry); }
 
 .fav-star-inline{
   display:inline-flex; align-items:center; gap:6px; margin-left:10px;

@@ -819,20 +819,15 @@
 
       var signOutBtn = document.createElement('button');
       signOutBtn.type = 'button';
-      signOutBtn.className = 'theme-toggle signout-btn';
+      signOutBtn.className = 'signout-btn';
       signOutBtn.setAttribute('aria-label', t('signout_aria'));
-      signOutBtn.title = t('sidebar_signout');
-      signOutBtn.innerHTML = SHARE_ICON;
+      signOutBtn.innerHTML = SHARE_ICON + '<span>' + t('sidebar_signout') + '</span>';
       signOutBtn.addEventListener('click', function(){
         window.Volver.auth.signOutUser().then(function(){
           location.replace(root + 'login.html');
         });
       });
       foot.appendChild(signOutBtn);
-      var signOutLabel = document.createElement('span');
-      signOutLabel.className = 'signout-label';
-      signOutLabel.textContent = t('sidebar_signout');
-      foot.appendChild(signOutLabel);
 
       nav.querySelector('#volverSidebarClose').addEventListener('click', closeSidebar);
       var homeToggle = nav.querySelector('#sidebarHomeToggle');
