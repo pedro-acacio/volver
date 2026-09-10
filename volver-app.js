@@ -685,8 +685,10 @@
     return (l === 'en' || l === 'es') ? l : 'pt';
   }
   function setLang(l){
-    localStorage.setItem(STORAGE_LANG, (l === 'en' || l === 'es') ? l : 'pt');
+    l = (l === 'en' || l === 'es') ? l : 'pt';
+    localStorage.setItem(STORAGE_LANG, l);
     applyLanguage();
+    syncLangToCloud(l);
   }
   function t(key){
     var lang = getLang();
@@ -1692,12 +1694,12 @@
   var _cloudFb = null;
   var _cloudProfileExtra = {};
 
-  // Progress/favorites/streak belong to the signed-in account, not the device —
-  // must be wiped on sign-out so a second account on the same browser doesn't
-  // inherit (and re-migrate) the previous account's local cache. Theme/font
-  // size/language are device preferences and are deliberately left alone.
+  // Progress/favorites/streak/language belong to the signed-in account, not
+  // the device — must be wiped on sign-out so a second account on the same
+  // browser doesn't inherit (and re-migrate) the previous account's local
+  // cache. Theme/font size stay device preferences and are left alone.
   function clearLocalAccountData(){
-    [STORAGE_FAV, STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_STAGE, STORAGE_STREAK].forEach(function(k){
+    [STORAGE_FAV, STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_STAGE, STORAGE_STREAK, STORAGE_LANG].forEach(function(k){
       try{ localStorage.removeItem(k); }catch(e){}
     });
   }
@@ -1801,6 +1803,9 @@
     var fs = fb.fsMod;
     return fs.getDoc(fs.doc(fb.db, 'users', uid)).then(function(snap){
       _cloudProfileExtra = snap.exists() ? snap.data() : {};
+      if(_cloudProfileExtra.lang === 'en' || _cloudProfileExtra.lang === 'es' || _cloudProfileExtra.lang === 'pt'){
+        localStorage.setItem(STORAGE_LANG, _cloudProfileExtra.lang);
+      }
     }).catch(function(){});
   }
 
@@ -1845,6 +1850,13 @@
       });
     }
     op.catch(function(){});
+  }
+
+  function syncLangToCloud(l){
+    if(!_cloudUser || !_cloudFb) return;
+    var fs = _cloudFb.fsMod;
+    _cloudProfileExtra.lang = l;
+    fs.setDoc(fs.doc(_cloudFb.db, 'users', _cloudUser.uid), { lang: l }, { merge: true }).catch(function(){});
   }
 
   function getCurrentUserInfo(){
