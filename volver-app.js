@@ -130,7 +130,7 @@
       sidebar_signout: 'Sair', signout_aria: 'Sair da conta',
       back_btn: 'Voltar', back_btn_aria: 'Voltar',
       login_title: 'Entrar na Volver', login_subtitle: 'Faça login para continuar sua jornada de reflexões.',
-      login_email: 'E-mail', login_password: 'Senha',
+      login_name: 'Nome', login_email: 'E-mail', login_password: 'Senha',
       login_signin_btn: 'Entrar', login_signup_btn: 'Criar conta',
       login_google_btn: 'Continuar com Google',
       login_toggle_to_signup: 'Ainda não tem conta? Criar conta',
@@ -148,10 +148,15 @@
       err_popup_closed: 'Login com Google cancelado.',
       err_network: 'Falha de conexão. Verifique sua internet e tente de novo.',
       err_generic: 'Não foi possível concluir. Tente novamente.',
-      verify_banner_text: 'Confirme seu e-mail: enviamos um link para {email}.',
-      verify_banner_resend: 'Reenviar', verify_banner_resent: 'Enviado ✓',
-      verify_close_aria: 'Dispensar aviso',
+      verify_page_title: 'Confirme seu e-mail',
+      verify_page_desc: 'Enviamos um link de confirmação para {email}. Abra o e-mail e clique no link para continuar.',
+      verify_page_check_btn: 'Já confirmei, continuar',
+      verify_page_resend_btn: 'Reenviar e-mail',
+      verify_page_resent: 'E-mail reenviado ✓',
+      verify_page_still_unverified: 'Ainda não identificamos a confirmação. Confira sua caixa de entrada (e o spam) e tente de novo.',
+      verify_page_signout: 'Sair e usar outra conta',
       account_provider_google: 'Google', account_provider_password: 'E-mail e senha',
+      profile_photo_change: 'Trocar foto de perfil',
       profile_account_delete: 'Excluir conta',
       profile_account_delete_desc: 'Remove sua conta e todos os dados salvos na nuvem (favoritos e progresso). Essa ação não pode ser desfeita.',
       profile_account_reauth_needed: 'Por segurança, confirme sua identidade de novo para excluir a conta.',
@@ -221,7 +226,7 @@
       sidebar_signout: 'Sign out', signout_aria: 'Sign out of your account',
       back_btn: 'Back', back_btn_aria: 'Back',
       login_title: 'Sign in to Volver', login_subtitle: 'Sign in to continue your reflection journey.',
-      login_email: 'Email', login_password: 'Password',
+      login_name: 'Name', login_email: 'Email', login_password: 'Password',
       login_signin_btn: 'Sign in', login_signup_btn: 'Create account',
       login_google_btn: 'Continue with Google',
       login_toggle_to_signup: "Don't have an account? Create one",
@@ -239,10 +244,15 @@
       err_popup_closed: 'Google sign-in cancelled.',
       err_network: 'Connection failed. Check your internet and try again.',
       err_generic: "Couldn't complete this. Please try again.",
-      verify_banner_text: 'Confirm your email: we sent a link to {email}.',
-      verify_banner_resend: 'Resend', verify_banner_resent: 'Sent ✓',
-      verify_close_aria: 'Dismiss notice',
+      verify_page_title: 'Confirm your email',
+      verify_page_desc: 'We sent a confirmation link to {email}. Open the email and click the link to continue.',
+      verify_page_check_btn: "I've confirmed, continue",
+      verify_page_resend_btn: 'Resend email',
+      verify_page_resent: 'Email resent ✓',
+      verify_page_still_unverified: "We still can't see the confirmation. Check your inbox (and spam) and try again.",
+      verify_page_signout: 'Sign out and use another account',
       account_provider_google: 'Google', account_provider_password: 'Email and password',
+      profile_photo_change: 'Change profile photo',
       profile_account_delete: 'Delete account',
       profile_account_delete_desc: 'Removes your account and everything saved in the cloud (favorites and progress). This cannot be undone.',
       profile_account_reauth_needed: 'For security, confirm your identity again to delete the account.',
@@ -312,7 +322,7 @@
       sidebar_signout: 'Cerrar sesión', signout_aria: 'Cerrar sesión de la cuenta',
       back_btn: 'Volver', back_btn_aria: 'Volver',
       login_title: 'Entrar a Volver', login_subtitle: 'Inicia sesión para continuar tu recorrido de reflexiones.',
-      login_email: 'Correo electrónico', login_password: 'Contraseña',
+      login_name: 'Nombre', login_email: 'Correo electrónico', login_password: 'Contraseña',
       login_signin_btn: 'Entrar', login_signup_btn: 'Crear cuenta',
       login_google_btn: 'Continuar con Google',
       login_toggle_to_signup: '¿Aún no tienes cuenta? Crear cuenta',
@@ -330,10 +340,15 @@
       err_popup_closed: 'Inicio de sesión con Google cancelado.',
       err_network: 'Fallo de conexión. Verifica tu internet e intenta de nuevo.',
       err_generic: 'No se pudo completar. Intenta de nuevo.',
-      verify_banner_text: 'Confirma tu correo: enviamos un enlace a {email}.',
-      verify_banner_resend: 'Reenviar', verify_banner_resent: 'Enviado ✓',
-      verify_close_aria: 'Descartar aviso',
+      verify_page_title: 'Confirma tu correo',
+      verify_page_desc: 'Enviamos un enlace de confirmación a {email}. Abre el correo y haz clic en el enlace para continuar.',
+      verify_page_check_btn: 'Ya confirmé, continuar',
+      verify_page_resend_btn: 'Reenviar correo',
+      verify_page_resent: 'Correo reenviado ✓',
+      verify_page_still_unverified: 'Todavía no detectamos la confirmación. Revisa tu bandeja de entrada (y spam) e intenta de nuevo.',
+      verify_page_signout: 'Cerrar sesión y usar otra cuenta',
       account_provider_google: 'Google', account_provider_password: 'Correo y contraseña',
+      profile_photo_change: 'Cambiar foto de perfil',
       profile_account_delete: 'Eliminar cuenta',
       profile_account_delete_desc: 'Elimina tu cuenta y todos los datos guardados en la nube (favoritos y progreso). Esta acción no se puede deshacer.',
       profile_account_reauth_needed: 'Por seguridad, confirma tu identidad de nuevo para eliminar la cuenta.',
@@ -520,7 +535,7 @@
     row_count_available: '{n} available',
     row_count_livros: '{n} of {n2} available',
     login_title: 'Sign in to Volver', login_subtitle: 'Sign in to continue your reflection journey.',
-    login_email: 'Email', login_password: 'Password', login_google_btn: 'Continue with Google',
+    login_name: 'Name', login_email: 'Email', login_password: 'Password', login_google_btn: 'Continue with Google',
     login_signin_btn: 'Sign in', login_signup_btn: 'Create account',
     login_toggle_to_signup: "Don't have an account? Create one",
     login_toggle_to_signin: 'Already have an account? Sign in',
@@ -640,7 +655,7 @@
     row_count_available: '{n} disponibles',
     row_count_livros: '{n} de {n2} disponibles',
     login_title: 'Entrar a Volver', login_subtitle: 'Inicia sesión para continuar tu recorrido de reflexiones.',
-    login_email: 'Correo electrónico', login_password: 'Contraseña', login_google_btn: 'Continuar con Google',
+    login_name: 'Nombre', login_email: 'Correo electrónico', login_password: 'Contraseña', login_google_btn: 'Continuar con Google',
     login_signin_btn: 'Entrar', login_signup_btn: 'Crear cuenta',
     login_toggle_to_signup: '¿Aún no tienes cuenta? Crear cuenta',
     login_toggle_to_signin: '¿Ya tienes cuenta? Entrar',
@@ -801,9 +816,7 @@
       signOutBtn.title = t('sidebar_signout');
       signOutBtn.innerHTML = SHARE_ICON;
       signOutBtn.addEventListener('click', function(){
-        loadFirebase().then(function(fb){
-          return fb.authMod.signOut(fb.auth);
-        }).then(function(){
+        window.Volver.auth.signOutUser().then(function(){
           location.replace(root + 'login.html');
         });
       });
@@ -884,41 +897,6 @@
     render();
     document.addEventListener('volver:lang', render);
     if(beforeEl){ target.insertBefore(banner, beforeEl); } else { target.appendChild(banner); }
-  }
-
-  function injectVerifyBanner(){
-    if(!_cloudUser || document.getElementById('volverVerifyBanner')) return;
-    var isPasswordUser = _cloudUser.providerData.some(function(p){ return p.providerId === 'password'; });
-    if(!isPasswordUser || _cloudUser.emailVerified) return;
-    var dismissKey = 'volver_verify_dismissed';
-    try{ if(sessionStorage.getItem(dismissKey)) return; }catch(e){}
-
-    var banner = document.createElement('div');
-    banner.id = 'volverVerifyBanner';
-    banner.className = 'verify-banner';
-
-    function render(){
-      banner.innerHTML =
-        '<span>' + t('verify_banner_text').split('{email}').join(_cloudUser.email) + '</span>' +
-        '<button type="button" id="volverVerifyResend">' + t('verify_banner_resend') + '</button>' +
-        '<button type="button" class="verify-close" aria-label="' + t('verify_close_aria') + '">&times;</button>';
-      banner.querySelector('#volverVerifyResend').addEventListener('click', function(){
-        var btn = banner.querySelector('#volverVerifyResend');
-        btn.disabled = true;
-        loadFirebase().then(function(fb){
-          return fb.authMod.sendEmailVerification(_cloudUser);
-        }).then(function(){
-          btn.textContent = t('verify_banner_resent');
-        }).catch(function(){ btn.disabled = false; });
-      });
-      banner.querySelector('.verify-close').addEventListener('click', function(){
-        try{ sessionStorage.setItem(dismissKey, '1'); }catch(e){}
-        banner.remove();
-      });
-    }
-    render();
-    document.addEventListener('volver:lang', render);
-    document.body.insertBefore(banner, document.body.firstChild);
   }
 
   // ---------------- storage helpers ----------------
@@ -1677,6 +1655,17 @@
   var _fbPromise = null;
   var _cloudUser = null;
   var _cloudFb = null;
+  var _cloudProfileExtra = {};
+
+  // Progress/favorites/streak belong to the signed-in account, not the device —
+  // must be wiped on sign-out so a second account on the same browser doesn't
+  // inherit (and re-migrate) the previous account's local cache. Theme/font
+  // size/language are device preferences and are deliberately left alone.
+  function clearLocalAccountData(){
+    [STORAGE_FAV, STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_STAGE, STORAGE_STREAK].forEach(function(k){
+      try{ localStorage.removeItem(k); }catch(e){}
+    });
+  }
   function loadFirebase(){
     if(_fbPromise) return _fbPromise;
     var base = 'https://www.gstatic.com/firebasejs/' + FIREBASE_SDK_VERSION + '/';
@@ -1764,15 +1753,22 @@
   // Runs once per browser session (not on every page navigation, to avoid a
   // Firestore round-trip on every single click) so other devices' changes
   // show up whenever the user starts a fresh visit to the site.
+  function loadProfileExtra(fb, uid){
+    var fs = fb.fsMod;
+    return fs.getDoc(fs.doc(fb.db, 'users', uid)).then(function(snap){
+      _cloudProfileExtra = snap.exists() ? snap.data() : {};
+    }).catch(function(){});
+  }
+
   function runCloudSync(fb, uid){
     var sessionFlag = STORAGE_MIGRATED_PREFIX + uid + '_synced';
     try{
-      if(sessionStorage.getItem(sessionFlag)) return Promise.resolve();
+      if(sessionStorage.getItem(sessionFlag)) return loadProfileExtra(fb, uid);
     }catch(e){}
     var alreadyMigrated = !!localStorage.getItem(STORAGE_MIGRATED_PREFIX + uid);
     var pre = alreadyMigrated ? Promise.resolve() : migrateLocalDataToFirestore(fb, uid);
     return pre.then(function(){
-      return pullCloudIntoLocal(fb, uid);
+      return Promise.all([pullCloudIntoLocal(fb, uid), loadProfileExtra(fb, uid)]);
     }).then(function(){
       try{ sessionStorage.setItem(sessionFlag, '1'); }catch(e){}
     });
@@ -1813,7 +1809,7 @@
     return {
       displayName: _cloudUser.displayName,
       email: _cloudUser.email,
-      photoURL: _cloudUser.photoURL,
+      photoURL: _cloudProfileExtra.photoDataUrl || _cloudUser.photoURL,
       providerId: providerId
     };
   }
@@ -1848,14 +1844,27 @@
     return t(AUTH_ERROR_KEYS[code] || 'err_generic');
   }
 
+  function isPasswordAccount(user){
+    return user.providerData.some(function(p){ return p.providerId === 'password'; });
+  }
+
   function runAuthGate(cb){
     var p = pathParts();
     var isLoginPage = (p.dir === '' && p.file === 'login.html');
+    var isVerifyPage = (p.dir === '' && p.file === 'verificar-email.html');
     loadFirebase().then(function(fb){
       fb.authMod.onAuthStateChanged(fb.auth, function(user){
         if(user){
           _cloudUser = user;
           _cloudFb = fb;
+          var needsVerification = !user.emailVerified && isPasswordAccount(user);
+
+          if(needsVerification){
+            if(!isVerifyPage){ location.replace(rootPrefix() + 'verificar-email.html'); return; }
+            cb();
+            return;
+          }
+          if(isVerifyPage){ location.replace(rootPrefix() + 'index.html'); return; }
           if(isLoginPage){
             var params = new URLSearchParams(location.search);
             var next = params.get('next');
@@ -1878,7 +1887,6 @@
   // ---------------- boot ----------------
   function init(){
     runAuthGate(function(){
-      injectVerifyBanner();
       migrateNestedHrefs();
       applyTheme();
       applyFontSize();
@@ -1927,11 +1935,14 @@
     streakLabel: streakLabel,
     getCurrentUserInfo: getCurrentUserInfo,
     auth: {
-      signUpWithEmail: function(email, password){
+      signUpWithEmail: function(email, password, name){
         return loadFirebase().then(function(fb){
           return fb.authMod.createUserWithEmailAndPassword(fb.auth, email, password).then(function(cred){
-            fb.authMod.sendEmailVerification(cred.user).catch(function(){});
-            return cred;
+            var updates = [fb.authMod.sendEmailVerification(cred.user).catch(function(){})];
+            if(name){
+              updates.push(fb.authMod.updateProfile(cred.user, { displayName: name }).catch(function(){}));
+            }
+            return Promise.all(updates).then(function(){ return cred; });
           });
         });
       },
@@ -1946,6 +1957,18 @@
           return fb.authMod.signInWithPopup(fb.auth, provider);
         });
       },
+      reloadCurrentUser: function(){
+        return loadFirebase().then(function(fb){
+          var user = fb.auth.currentUser;
+          if(!user) return false;
+          return user.reload().then(function(){ return user.emailVerified; });
+        });
+      },
+      resendVerificationEmail: function(){
+        return loadFirebase().then(function(fb){
+          return fb.authMod.sendEmailVerification(fb.auth.currentUser);
+        });
+      },
       sendPasswordReset: function(email){
         return loadFirebase().then(function(fb){
           return fb.authMod.sendPasswordResetEmail(fb.auth, email);
@@ -1954,6 +1977,11 @@
       signOutUser: function(){
         return loadFirebase().then(function(fb){
           return fb.authMod.signOut(fb.auth);
+        }).then(function(){
+          clearLocalAccountData();
+          _cloudUser = null;
+          _cloudFb = null;
+          _cloudProfileExtra = {};
         });
       },
       reauthenticateWithGoogle: function(){
@@ -1967,6 +1995,15 @@
           var user = fb.auth.currentUser;
           var cred = fb.authMod.EmailAuthProvider.credential(user.email, password);
           return fb.authMod.reauthenticateWithCredential(user, cred);
+        });
+      },
+      uploadProfilePhoto: function(dataUrl){
+        return loadFirebase().then(function(fb){
+          var user = fb.auth.currentUser;
+          var fs = fb.fsMod;
+          return fs.setDoc(fs.doc(fb.db, 'users', user.uid), { photoDataUrl: dataUrl }, { merge: true }).then(function(){
+            _cloudProfileExtra.photoDataUrl = dataUrl;
+          });
         });
       },
       deleteAccount: function(){

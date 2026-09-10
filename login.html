@@ -85,6 +85,10 @@
   <div id="loginNotice" class="login-notice" hidden></div>
 
   <form id="loginForm">
+    <div class="login-field" id="loginNameField" hidden>
+      <label for="loginName" data-i18n="login_name">Nome</label>
+      <input type="text" id="loginName" autocomplete="name">
+    </div>
     <div class="login-field">
       <label for="loginEmail" data-i18n="login_email">E-mail</label>
       <input type="email" id="loginEmail" autocomplete="email" required>
@@ -131,9 +135,14 @@
     function showNotice(msg){ errorBox.hidden = true; noticeBox.textContent = msg; noticeBox.hidden = false; }
     function clearMessages(){ errorBox.hidden = true; noticeBox.hidden = true; }
 
+    var nameField = document.getElementById('loginNameField');
+    var nameInput = document.getElementById('loginName');
+
     function syncMode(){
       submitBtn.textContent = mode === 'signin' ? V.t('login_signin_btn') : V.t('login_signup_btn');
       toggleBtn.textContent = mode === 'signin' ? V.t('login_toggle_to_signup') : V.t('login_toggle_to_signin');
+      nameField.hidden = mode !== 'signup';
+      nameInput.required = mode === 'signup';
       clearMessages();
     }
     syncMode();
@@ -149,7 +158,7 @@
       submitBtn.disabled = true;
       var email = emailInput.value.trim();
       var password = passwordInput.value;
-      var action = mode === 'signin' ? V.auth.signInWithEmail(email, password) : V.auth.signUpWithEmail(email, password);
+      var action = mode === 'signin' ? V.auth.signInWithEmail(email, password) : V.auth.signUpWithEmail(email, password, nameInput.value.trim());
       action.catch(function(err){
         showError(V.auth.errorMessage(err));
       }).finally(function(){

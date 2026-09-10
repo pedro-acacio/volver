@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Confirme seu e-mail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; align-items:center; min-height:100vh; }
+  .verify-wrap{ max-width:420px; width:100%; padding:32px 24px; text-align:center; }
+  .verify-wrap .brand-bar{ justify-content:center; margin-bottom:28px; }
+  .verify-wrap h1{ font-size:24px; }
+  .verify-wrap .sub{ margin-bottom:26px; }
+
+  .verify-icon{ width:52px; height:52px; margin:0 auto 20px; }
+  .verify-icon path, .verify-icon circle{ stroke: var(--gold); }
+
+  .verify-primary-btn{
+    width:100%; padding:13px; border-radius:10px; border:none; margin-bottom:10px;
+    background:var(--gold); color:#12162A; font-family:'IBM Plex Sans', sans-serif;
+    font-size:14px; font-weight:600; cursor:pointer; transition:opacity .2s ease;
+  }
+  .verify-primary-btn:hover{ opacity:.9; }
+  .verify-primary-btn:disabled{ opacity:.5; cursor:not-allowed; }
+
+  .verify-ghost-btn{
+    width:100%; padding:12px; border-radius:10px; border:1px solid var(--panel-line);
+    background:none; color: var(--text-dim); font-family:'IBM Plex Sans', sans-serif;
+    font-size:13.5px; cursor:pointer; transition:border-color .2s ease; margin-bottom:10px;
+  }
+  .verify-ghost-btn:hover{ border-color: var(--gold); }
+  .verify-ghost-btn:disabled{ opacity:.6; cursor:not-allowed; }
+
+  .verify-signout{
+    background:none; border:none; padding:0; margin-top:8px;
+    font-family:'IBM Plex Sans', sans-serif; font-size:12.5px; color: var(--text-faint);
+    text-decoration:underline; cursor:pointer;
+  }
+  .verify-signout:hover{ color: var(--text); }
+
+  .verify-notice{
+    font-size:12.5px; line-height:1.5; margin:0 0 16px; padding:10px 14px; border-radius:10px;
+  }
+  .verify-notice.warn{ color: var(--worry); background: rgba(168,92,107,0.08); border:1px solid rgba(168,92,107,0.3); }
+  .verify-notice.ok{ color: var(--calm); background: rgba(124,154,120,0.08); border:1px solid rgba(124,154,120,0.3); }
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+<div class="stage-wrap verify-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <span class="brand-word">Volver</span>
+  </div>
+
+  <svg class="verify-icon" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke-width="1.4"/><path d="M2 6l10 7 10-7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+  <h1 id="verifyTitle"></h1>
+  <p class="sub" id="verifyDesc"></p>
+
+  <div id="verifyNotice" class="verify-notice" hidden></div>
+
+  <button type="button" id="verifyCheckBtn" class="verify-primary-btn"></button>
+  <button type="button" id="verifyResendBtn" class="verify-ghost-btn"></button>
+  <div>
+    <button type="button" id="verifySignoutBtn" class="verify-signout"></button>
+  </div>
+
+  <footer>Volver</footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!window.Volver) return;
+    var V = window.Volver;
+
+    function render(){
+      var info = V.getCurrentUserInfo();
+      var email = info ? info.email : '';
+      document.getElementById('verifyTitle').textContent = V.t('verify_page_title');
+      document.getElementById('verifyDesc').textContent = V.t('verify_page_desc').split('{email}').join(email);
+      document.getElementById('verifyCheckBtn').textContent = V.t('verify_page_check_btn');
+      document.getElementById('verifyResendBtn').textContent = V.t('verify_page_resend_btn');
+      document.getElementById('verifySignoutBtn').textContent = V.t('verify_page_signout');
+    }
+    render();
+    document.addEventListener('volver:lang', render);
+
+    var notice = document.getElementById('verifyNotice');
+    function showNotice(msg, kind){
+      notice.textContent = msg;
+      notice.className = 'verify-notice ' + kind;
+      notice.hidden = false;
+    }
+
+    document.getElementById('verifyCheckBtn').addEventListener('click', function(){
+      var btn = this;
+      btn.disabled = true;
+      V.auth.reloadCurrentUser().then(function(verified){
+        btn.disabled = false;
+        if(verified){
+          location.reload();
+        } else {
+          showNotice(V.t('verify_page_still_unverified'), 'warn');
+        }
+      }).catch(function(){ btn.disabled = false; });
+    });
+
+    document.getElementById('verifyResendBtn').addEventListener('click', function(){
+      var btn = this;
+      btn.disabled = true;
+      V.auth.resendVerificationEmail().then(function(){
+        showNotice(V.t('verify_page_resent'), 'ok');
+      }).catch(function(){
+        btn.disabled = false;
+      });
+    });
+
+    document.getElementById('verifySignoutBtn').addEventListener('click', function(){
+      V.auth.signOutUser().then(function(){
+        location.href = 'login.html';
+      });
+    });
+  });
+</script>
+<script defer src="volver-app.js"></script>
+</body>
+</html>

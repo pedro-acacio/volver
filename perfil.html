@@ -60,11 +60,19 @@
     padding:18px 20px; margin-top:24px;
   }
   .account-info{ display:flex; align-items:center; gap:14px; min-width:0; }
-  .account-avatar{ width:44px; height:44px; border-radius:50%; flex-shrink:0; object-fit:cover; }
+  .account-avatar-wrap{ position:relative; flex-shrink:0; width:44px; height:44px; }
+  .account-avatar{ width:44px; height:44px; border-radius:50%; object-fit:cover; display:block; }
   .account-avatar-fallback{
     display:flex; align-items:center; justify-content:center; background: var(--gold); color:#12162A;
     font-family:'Fraunces', serif; font-weight:600; font-size:18px;
   }
+  .account-avatar-edit{
+    position:absolute; bottom:-2px; right:-2px; width:19px; height:19px; border-radius:50%;
+    background: var(--gold); border:2px solid var(--panel); display:flex; align-items:center;
+    justify-content:center; cursor:pointer; padding:0;
+  }
+  .account-avatar-edit svg{ width:10px; height:10px; }
+  .account-avatar-edit path{ stroke:#12162A; }
   .account-name{ font-size:14.5px; color: var(--text); font-weight:600; }
   .account-email{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .settings-btn{
@@ -127,6 +135,30 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function(){
+    function resizeImageFile(file, size){
+      return new Promise(function(resolve, reject){
+        var reader = new FileReader();
+        reader.onerror = reject;
+        reader.onload = function(){
+          var img = new Image();
+          img.onerror = reject;
+          img.onload = function(){
+            var side = Math.min(img.width, img.height);
+            var sx = (img.width - side) / 2;
+            var sy = (img.height - side) / 2;
+            var canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, sx, sy, side, side, 0, 0, size, size);
+            resolve(canvas.toDataURL('image/jpeg', 0.82));
+          };
+          img.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
     function armConfirm(btn, onConfirm, resyncLabel){
       if(btn.dataset.confirming === '1'){
         clearTimeout(btn._volverTimer);
@@ -156,7 +188,13 @@
       var providerLabel = info.providerId === 'google.com' ? V.t('account_provider_google') : V.t('account_provider_password');
 
       card.innerHTML =
-        '<div class="account-info">' + avatarHtml +
+        '<div class="account-info">' +
+          '<div class="account-avatar-wrap">' + avatarHtml +
+            '<button type="button" id="accountAvatarEditBtn" class="account-avatar-edit" aria-label="' + V.t('profile_photo_change') + '">' +
+              '<svg viewBox="0 0 16 16" fill="none"><path d="M11 2.5L13.5 5L5 13.5H2.5V11L11 2.5Z" stroke-width="1.3" stroke-linejoin="round"/></svg>' +
+            '</button>' +
+            '<input type="file" id="accountAvatarInput" accept="image/*" hidden>' +
+          '</div>' +
           '<div><div class="account-name">' + (info.displayName || info.email) + '</div>' +
           '<div class="account-email">' + info.email + ' · ' + providerLabel + '</div></div>' +
         '</div>' +
@@ -168,6 +206,22 @@
             '<button type="button" id="accountReauthBtn" class="settings-btn danger">' + V.t('profile_account_reauth_password_btn') + '</button>' +
           '</div>' +
         '</div>';
+
+      var avatarEditBtn = document.getElementById('accountAvatarEditBtn');
+      var avatarInput = document.getElementById('accountAvatarInput');
+      avatarEditBtn.addEventListener('click', function(){ avatarInput.click(); });
+      avatarInput.addEventListener('change', function(){
+        var file = avatarInput.files[0];
+        if(!file) return;
+        avatarEditBtn.disabled = true;
+        resizeImageFile(file, 160).then(function(dataUrl){
+          return V.auth.uploadProfilePhoto(dataUrl);
+        }).then(function(){
+          renderAccount();
+        }).catch(function(){
+          avatarEditBtn.disabled = false;
+        });
+      });
 
       var deleteBtn = document.getElementById('accountDeleteBtn');
       var dangerPanel = document.getElementById('accountDangerPanel');
