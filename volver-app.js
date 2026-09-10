@@ -821,7 +821,7 @@
       signOutBtn.type = 'button';
       signOutBtn.className = 'signout-btn';
       signOutBtn.setAttribute('aria-label', t('signout_aria'));
-      signOutBtn.innerHTML = SHARE_ICON + '<span>' + t('sidebar_signout') + '</span>';
+      signOutBtn.textContent = t('sidebar_signout');
       signOutBtn.addEventListener('click', function(){
         window.Volver.auth.signOutUser().then(function(){
           location.replace(root + 'login.html');
