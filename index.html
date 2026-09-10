@@ -501,6 +501,8 @@
   var welcomeKind = sessionStorage.getItem('volver_welcome_pending');
   if(welcomeKind){ sessionStorage.removeItem('volver_welcome_pending'); }
   window.__volverWelcomeKind = welcomeKind;
+  if(sessionStorage.getItem('volver_boot_splash_shown')) return;
+  sessionStorage.setItem('volver_boot_splash_shown', '1');
   document.write(
     '<div class="intro-splash" id="volverIntroSplash">' +
       '<div class="intro-boat-wrap">' +

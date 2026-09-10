@@ -1951,9 +1951,9 @@
       applyTheme();
       applyFontSize();
       applyLanguage();
+      buildIntroSplash();
       var p = pathParts();
       if(p.folder === null && p.file === 'index.html'){
-        buildIntroSplash();
         enhanceIndexPage();
         injectSidebar();
       } else if(p.file.indexOf('licao-') === 0){
