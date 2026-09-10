@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dalila e a última façanha — Juízes 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-juizes.html">Volver</a>
+    <span class="brand-track">Sansão</span>
+  </div>
+
+  <div class="eyebrow">VII. Sansão · <span class="ref-tag">Juízes 16</span></div>
+  <h1>Dalila e a última façanha</h1>
+  <p class="sub">Uma força que nunca parece medir o perigo, um segredo entregue depois de três mentiras, e uma última oração que muda tudo — a queda e a graça mais próximas uma da outra em toda a história de Sansão.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 4 V14 M14 4 V14" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M4 9 H14" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="1.5 1.8"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Gaza e as portas arrancadas</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sansão vai a Gaza, cidade filisteia, e passa a noite na casa de uma prostituta; ao saberem que ele está ali, os homens da cidade cercam os portões durante toda a noite, planejando matá-lo pela manhã, assim que amanhecer (16.1-2). É um padrão já conhecido do leitor: Sansão se aproxima repetidamente do perigo filisteu sem medir as consequências, confiando na própria força para escapar de situações que ele mesmo cria.</p>
+          <p>À meia-noite, porém, ele se levanta, arranca as portas da cidade das dobradiças, junto com os umbrais e a tranca, e as carrega nos ombros até o alto de um monte perto de Hebrom, a mais de sessenta quilômetros de distância (16.3) — uma demonstração de força quase cômica na escala, mas que também revela algo mais sério: mesmo cercado por inimigos, ainda não há nenhum sinal de que Sansão vá mudar o rumo de sua vida.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Dalila e o suborno</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="7" r="3" stroke-width="1.2"/>
+          <path d="M4 15 C4 11.5 6 10 9 10 C12 10 14 11.5 14 15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Dalila e o suborno</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Sansão se apaixona por uma mulher chamada Dalila, no vale de Soreque. Os chefes filisteus a procuram e oferecem mil e cem moedas de prata cada um se ela descobrir o segredo da força dele e os ajudar a dominá-lo (16.4-5) — uma soma enorme, oferecida abertamente, sem disfarce nenhum sobre a intenção.</p>
+          <p>Três vezes Dalila pergunta, e três vezes Sansão mente: cordas de tendão úmidas, cordas novas nunca usadas, e por fim seu cabelo tecido junto à teia de um tear (16.6-14). E três vezes, apesar de ver os filisteus emboscados esperando no quarto ao lado, ele escapa sem parecer perceber — ou sem querer perceber — o padrão óbvio de traição se repetindo diante dele.</p>
+
+          <div class="chip-row" id="dllMentiraRow"></div>
+          <div class="chip-text" id="dllMentiraText">Toque em cada mentira para ver o texto e o resultado.</div>
+
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o segredo revelado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 Q9 6 14 14" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M6 6 L6.5 9 M9 4.5 L9 8 M12 6 L11.5 9" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O segredo revelado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Pressionado dia após dia, com palavras que o texto descreve como capazes de angustiar "a alma até a morte" (16.16), Sansão finalmente conta a verdade inteira: o voto nazireu, o cabelo que nunca foi cortado desde o ventre, a fonte visível de uma força que nunca foi dele por direito próprio.</p>
+          <p>Dalila o faz dormir em seu colo, chama um homem para raspar as sete tranças de sua cabeça, e o texto registra a frase mais dura de todo o relato de Sansão: "o Senhor já se tinha retirado dele" (16.20), embora ele mesmo, ao acordar, ainda pense poder sacudir-se como das outras vezes. Não foi o cabelo em si que sustentava sua força — era a presença do Senhor associada ao voto que o cabelo simbolizava, e Sansão, sem perceber, já a havia perdido antes mesmo da navalha tocar sua cabeça.</p>
+          <button class="continue-btn" onclick="openStage(4)">Continuar → os olhos vazados e o moinho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="6" stroke-width="1.2"/>
+          <path d="M9 3 V6 M9 12 V15 M3 9 H6 M12 9 H15" stroke-width="1" stroke-linecap="round" stroke-dasharray="1.3 1.7"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Os olhos vazados e o moinho</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Os filisteus capturam Sansão, vazam seus olhos, e o levam a Gaza, onde o prendem com correntes de bronze para girar um moinho na prisão — trabalho reservado a animais, agora imposto a um homem que via longe demais e raramente parava para refletir sobre as próprias escolhas, e agora está literalmente cego (16.21).</p>
+          <p>Mas o narrador nota, quase em segredo, um detalhe que muda tudo o que vem depois: "o cabelo da sua cabeça começou a crescer, depois que foi rapado" (16.22) — uma semente de esperança plantada exatamente no fundo da humilhação mais profunda que Sansão já viveu, longe de qualquer olho filisteu que pudesse notar o que estava recomeçando.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 15 V4 M13 15 V4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 4 L13 15 M13 4 L5 15" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Uma última oração, respondida em graça</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Num banquete de celebração a Dagom, deus dos filisteus, Sansão é trazido da prisão para divertir a multidão reunida. Ele pede ao menino que o guia para deixá-lo encostar-se às colunas centrais do templo — e ora, pela última vez registrada em toda a narrativa, pedindo força a Deus não por vaidade ou vingança pessoal, mas para retribuir aos filisteus por seus dois olhos (16.28). Ele empurra as colunas, o templo desaba, e mata mais filisteus nessa morte do que em toda a sua vida (16.30).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Juízes 16.28</span>
+          <p>Então, clamou Sansão ao Senhor, e disse: Senhor Jeová, peço-te que te lembres de mim, e esforça-me agora só esta vez, ó Deus...</p>
+          <span class="ref">— Sansão, cego, entre as colunas do templo de Dagom</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Quase toda a história de Sansão é um relato de força desperdiçada em impulso, orgulho e desejo próprio — e, ainda assim, o livro fecha com uma oração genuína, ouvida e respondida em graça. É por isso que Hebreus 11.32 pode listar Sansão entre os heróis da fé, não por seu caráter, tantas vezes falho, mas pela graça de Deus que operou apesar dele — um lembrete de que nenhuma vida está longe demais para que Deus ainda a use e responda a um clamor sincero.</p>
+
+          <div class="toggle-row">
+            <button class="toggle-btn" id="btnDllImpulso" onclick="showDllOutcome('impulso')">Uma vida de força desperdiçada em impulso</button>
+            <button class="toggle-btn" id="btnDllGraca" onclick="showDllOutcome('graca')">Uma última oração, respondida em graça</button>
+          </div>
+          <div class="outcome" id="dllOutcome">
+            <h3 id="dllTitle"></h3>
+            <p id="dllText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Juízes · Dalila e a última façanha</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const dllMentiras = [
+    { label: "1ª · cordas de tendão", cls: "chip-worry", quote: "\"Se me ligarem com sete vergas de tendões frescos...\" (16.7) — cordas úmidas, feitas para prender animais; Sansão as rompe como se rompe um fio de estopa quando toca o fogo, assim que os filisteus tentam capturá-lo (16.9)." },
+    { label: "2ª · cordas novas", cls: "chip-worry", quote: "\"Se me ligarem bem com cordas novas, com que se não fez ainda obra alguma...\" (16.11) — de novo ele as arrebenta dos braços como fio, e de novo Dalila vê e não desiste (16.12)." },
+    { label: "3ª · o cabelo no tear", cls: "chip-worry", quote: "\"Se teceres as sete tranças da minha cabeça com a urdidura...\" (16.13) — Sansão chega perto demais do segredo real sem entregá-lo por completo, e mesmo assim escapa ao despertar (16.14)." }
+  ];
+
+  function buildDllChips(){
+    const row = document.getElementById('dllMentiraRow');
+    dllMentiras.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'chip-btn ' + s.cls;
+      b.textContent = s.label;
+      b.onclick = function(){ revealDllChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildDllChips();
+
+  function revealDllChip(btn, i){
+    document.querySelectorAll('#dllMentiraRow .chip-btn').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('dllMentiraText').textContent = dllMentiras[i].quote;
+  }
+
+  function showDllOutcome(type){
+    const btnImpulso = document.getElementById('btnDllImpulso');
+    const btnGraca = document.getElementById('btnDllGraca');
+    btnImpulso.classList.remove('active-worry');
+    btnGraca.classList.remove('active-calm');
+    const title = document.getElementById('dllTitle');
+    const text = document.getElementById('dllText');
+
+    if (type === 'impulso'){
+      btnImpulso.classList.add('active-worry');
+      title.textContent = "Um padrão que se repete até o fim quase chegar";
+      text.textContent = "De Timna a Gaza, quase todo uso da força de Sansão nasce de atração, orgulho ferido ou vingança pessoal — capítulo após capítulo, sem que ele pareça aprender com o padrão que se repete.";
+    } else {
+      btnGraca.classList.add('active-calm');
+      title.textContent = "Uma graça que não depende do histórico do suplicante";
+      text.textContent = "Mesmo depois de tanta infidelidade, Deus ainda responde ao clamor sincero de Sansão (16.28) — e Hebreus 11.32 o lista entre os heróis da fé não por seu caráter, mas pela graça que operou apesar dele, o mesmo padrão que sustenta qualquer pecador que clama a Deus de verdade.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

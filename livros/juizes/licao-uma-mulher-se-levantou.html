@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uma mulher se levantou — Juízes 4—5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — duas mulheres inesperadas: Débora e Jael */
+  .deb-chip-outer{ margin-top:16px; }
+  .deb-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .deb-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .deb-chip{ border:1px solid var(--panel-line); background:var(--bg); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); cursor:pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .deb-chip.active{ background:var(--calm); border-color:var(--calm); color:#fff; }
+  .deb-chip-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row do desfecho */
+  .deb-toggle-outer{ margin-top:16px; }
+  .deb-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .deb-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .deb-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-juizes.html">Volver</a>
+    <span class="brand-track">Débora e Baraque</span>
+  </div>
+
+  <div class="eyebrow">III. Débora e Baraque · <span class="ref-tag">Juízes 4—5</span></div>
+  <h1>Uma mulher se levantou</h1>
+  <p class="sub">Uma profetisa convoca a guerra debaixo de uma palmeira; um general hesita sem sua presença; e a vitória final se cumpre de um jeito totalmente inesperado — numa tenda, com uma estaca, pelas mãos de uma mulher que ninguém esperaria.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 4 C6.5 5 5 6.5 4 8 C6 7.5 7.5 7 9 7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 4 C11.5 5 13 6.5 14 8 C12 7.5 10.5 7 9 7" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Débora, profetisa e juíza</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel recai sob o domínio de Jabim, rei cananeu, e de seu general Sísera, que comanda novecentos carros de ferro — vinte anos de opressão dura. Débora, "profetisa, mulher de Lapidote", já julgava Israel debaixo de uma palmeira entre Ramá e Betel (4.4-5), num período em que nenhum homem havia se levantado para essa função. Ela é a única juíza mulher de todo o livro.</p>
+          <p>É Débora quem convoca Baraque, dando-lhe uma ordem explícita da parte de Deus: reunir dez mil homens de Naftali e Zebulom e enfrentar Sísera no monte Tabor, onde o Senhor entregaria o general cananeu e seus carros de ferro nas mãos de Israel. A iniciativa da guerra não parte de um general nem de um rei — parte de uma palavra profética, entregue por uma mulher.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → a hesitação de Baraque</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 9 H12" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 6 L12 9 L9 12" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 5 V13" stroke-width="1.1" stroke-dasharray="1.1 1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">A hesitação de Baraque</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Baraque responde à ordem de Débora com uma condição: "Se fores comigo, irei; porém, se não fores comigo, não irei" (4.8). É uma fé real — ele não recusa a missão, não duvida da palavra do Senhor por Débora — mas é uma fé hesitante, que só se move amparada pela presença física da profetisa ao seu lado.</p>
+          <p>Débora concorda em acompanhá-lo, mas avisa de imediato que a condição de Baraque terá um custo para a sua própria honra: "o Senhor venderá Sísera nas mãos de uma mulher" (4.9). É uma profecia enigmática naquele momento — ninguém ainda sabe que se cumprirá de um jeito completamente diferente do que Baraque poderia imaginar.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a batalha e Jael</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 4 L5 15" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M5 4 L13 4 L11 7 L13 10 L5 10" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A batalha e Jael</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel desce do monte Tabor e derrota o exército de Sísera; ele foge a pé, abandonando seus carros, e busca refúgio na tenda de Jael, mulher de Héber, o quenêu, aliado do rei cananeu. Ela o recebe com aparente hospitalidade, o esconde, lhe dá leite em vez da água que ele pediu — e, enquanto ele dorme exausto, crava uma estaca de tenda em sua cabeça (4.17-21).</p>
+          <p>A profecia de Débora se cumpre da forma mais literal possível: não foi Baraque quem matou o inimigo principal daquela guerra, mas uma mulher, dentro de uma tenda, usando uma ferramenta doméstica. A honra da vitória final escapa por completo das mãos do general que hesitou em ir sozinho.</p>
+
+          <div class="deb-chip-outer">
+            <div class="deb-chip-label">Duas mulheres inesperadas</div>
+            <div class="deb-chip-row" id="debChipRow"></div>
+            <div class="deb-chip-caption" id="debChipCaption">Toque em cada nome para ver como Deus a usou.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o cântico de Débora</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M5 14 V6 Q5 4 7 4 H13" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="5" cy="14" r="1.6" stroke-width="1.1"/>
+          <path d="M9 8 Q9 6 11 6 H13" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O cântico de Débora</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Juízes 5 preserva um dos textos poéticos mais antigos de toda a Bíblia — o cântico de Débora e Baraque, celebrando a vitória. O cântico louva as tribos que se apresentaram voluntariamente para a guerra, e repreende com dureza as que ficaram em casa, alheias ao perigo comum de todo o povo (5.15-17).</p>
+          <p>O cântico termina com duas cenas contrastantes: uma bênção sobre Jael, "bendita seja... sobre as mulheres" (5.24), e, logo em seguida, uma cena amarga — a mãe de Sísera espera junto à janela pela vitória do filho, sem saber que ele já está morto (5.28-30). É um lembrete que a própria poesia bíblica não esconde: toda vitória, mesmo a mais justa, carrega um custo humano dos dois lados do conflito.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="9" cy="9" r="3.4" stroke-width="1.2"/>
+          <path d="M9 2.5 V4.5 M9 13.5 V15.5 M2.5 9 H4.5 M13.5 9 H15.5" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">A força que ninguém esperaria</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>A terra descansa quarenta anos depois dessa vitória. Toda a narrativa de Débora e Baraque é construída sobre uma reviravolta deliberada: o general hesita, a profetisa comanda, e a honra final da vitória cai sobre uma mulher que nem sequer pertencia formalmente ao exército de Israel — uma estranha numa tenda, com uma estaca nas mãos.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Juízes 5.31</span>
+          <p>...perecerão assim todos os teus inimigos, ó Senhor! Porém os que o amam sejam como o sol quando se levanta na sua força. E a terra teve sossego quarenta anos.</p>
+          <span class="ref">— conclusão do cântico de Débora e Baraque</span>
+        </div>
+
+        <div class="tl-card">
+          <p>É um padrão que se repete por toda a Escritura: Deus repetidamente escolhe o instrumento que ninguém escolheria — um caçula pastor de ovelhas, uma jovem noiva estrangeira, pescadores sem instrução — precisamente para que, ao final, a glória não possa ser atribuída à força ou à posição do instrumento, mas somente a quem o usou.</p>
+
+          <div class="deb-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnDebEsperada" onclick="showDebOutcome('esperada')">A força esperada</button>
+              <button class="toggle-btn" id="btnDebInesperada" onclick="showDebOutcome('inesperada')">A força inesperada</button>
+            </div>
+            <div class="deb-outcome" id="debOutcome">
+              <h4 id="debTitle"></h4>
+              <p id="debText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Juízes · uma mulher se levantou</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const debMulheres = [
+    { label: "Débora — a juíza-profetisa", quote: "E ela mandou chamar a Baraque... e disse-lhe: Não ordenou o Senhor Deus de Israel, dizendo: Vai, e põe-te sobre o monte Tabor? (4.6)" },
+    { label: "Jael — a anfitriã com a estaca", quote: "Então, Jael, mulher de Héber, tomou uma estaca da tenda... e a cravou-lhe nas fontes, e a fixou na terra... e assim morreu (4.21)." }
+  ];
+
+  function buildDebChips(){
+    const row = document.getElementById('debChipRow');
+    debMulheres.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'deb-chip';
+      b.textContent = r.label;
+      b.onclick = function(){ revealDebChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildDebChips();
+
+  function revealDebChip(btn, i){
+    document.querySelectorAll('.deb-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const r = debMulheres[i];
+    document.getElementById('debChipCaption').textContent = "\"" + r.quote + "\"";
+  }
+
+  function showDebOutcome(type){
+    const btnE = document.getElementById('btnDebEsperada');
+    const btnI = document.getElementById('btnDebInesperada');
+    btnE.classList.remove('active-worry');
+    btnI.classList.remove('active-calm');
+    const title = document.getElementById('debTitle');
+    const text = document.getElementById('debText');
+
+    if (type === 'esperada'){
+      btnE.classList.add('active-worry');
+      title.textContent = "O caminho óbvio de vitória";
+      text.textContent = "Baraque, o general, a espada, os dez mil homens reunidos no Tabor — era esse o caminho que qualquer estrategista militar esperaria ver decidir a batalha. E, de fato, decide a batalha aberta. Mas não decide o desfecho final da história.";
+    } else {
+      btnI.classList.add('active-calm');
+      title.textContent = "O instrumento que ninguém escolheria";
+      text.textContent = "Uma juíza debaixo de uma palmeira, uma estranha numa tenda com uma estaca — Deus entrega a vitória decisiva por meio de quem estava fora de qualquer plano militar, exatamente para que ninguém pudesse reivindicar o crédito humano por ela.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver — Trilha de Juízes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  :root{
+    --bg: #12162A; --panel: #1B2140; --panel-line: #2C3459;
+    --text: #E9E4D8; --text-dim: #A6A9BF; --text-faint: #6C7092;
+    --gold: #D9A441; --worry: #A85C6B; --calm: #7C9A78;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background: radial-gradient(ellipse 120% 60% at 50% -10%, #1A2044 0%, var(--bg) 55%);
+    color: var(--text); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  a{ text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding: 0 22px 90px; }
+
+  .brand-bar{ display:flex; align-items:center; gap:8px; padding: 26px 0 8px; }
+  .brand-mark{ width:22px; height:22px; }
+  .brand-word{ font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); }
+
+  .hero{ padding: 30px 0 44px; }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.14em;
+    text-transform:uppercase; color: var(--gold); margin-bottom:12px;
+  }
+  h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(30px,6vw,42px); line-height:1.1; margin:0 0 14px; }
+  .lede{ color:var(--text-dim); font-size:15.5px; line-height:1.65; max-width:58ch; margin:0; }
+
+  .stats-row{ display:flex; gap:22px; margin-top:26px; flex-wrap:wrap; }
+  .stat{ font-family:'IBM Plex Mono', monospace; font-size:12px; color: var(--text-faint); }
+  .stat b{ color: var(--gold); font-size:15px; display:block; font-family:'Fraunces', serif; font-weight:600; }
+
+  .category{ margin-top: 44px; }
+  .cat-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:18px;
+    border-bottom:1px solid var(--panel-line); padding-bottom:14px;
+  }
+  .cat-title{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:0; }
+  .cat-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--gold); }
+  .cat-count{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; color: var(--text-faint); margin-left:auto; white-space:nowrap; }
+
+  .card-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .card-grid{ grid-template-columns: 1fr; } }
+  @media (max-width:520px){
+    .cat-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+    .cat-count{ margin-left:0; }
+    .stats-row{ gap:16px; }
+  }
+
+  .p-card{
+    display:block; background: var(--panel); border:1px solid var(--panel-line);
+    border-radius:13px; padding:17px 18px; position:relative;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .p-card.available{ cursor:pointer; }
+  .p-card.available:hover{ border-color: var(--gold); transform: translateY(-1px); }
+  .p-card.locked{ opacity:.55; }
+
+  .p-title{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; color:var(--text); margin:0 0 5px; padding-right:78px; }
+  .p-ref{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-bottom:9px; }
+  .p-teaser{ font-size:12.5px; line-height:1.5; color: var(--text-dim); margin:0; }
+
+  .badge{
+    position:absolute; top:14px; right:14px;
+    font-family:'IBM Plex Mono', monospace; font-size:9.5px; letter-spacing:.05em;
+    text-transform:uppercase; padding:3px 8px; border-radius:20px;
+  }
+  .badge.on{ background: rgba(124,154,120,0.15); color: var(--calm); border:1px solid rgba(124,154,120,0.4); }
+  .badge.off{ background: rgba(255,255,255,0.03); color: var(--text-faint); border:1px solid var(--panel-line); }
+
+  footer{ text-align:center; margin-top:60px; color: var(--text-faint); font-size:12px; font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="../../index.html">Volver</a>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Trilha de reflexões · Históricos</div>
+    <h1>Juízes</h1>
+    <p class="lede">Depois de Josué, a terra prometida está ocupada — mas não conquistada por completo, e o povo esquece o Senhor mais rápido do que aprende a obedecê-lo. Juízes conta o ciclo doloroso de pecado, opressão e libertação que se repete geração após geração, até a conclusão amarga que resume o livro inteiro: "não havia rei em Israel."</p>
+    <div class="stats-row">
+      <div class="stat"><b>13</b>disponíveis</div>
+      <div class="stat"><b>8</b>partes do livro</div>
+    </div>
+  </div>
+
+  <!-- ===== INTRODUÇÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">Introdução</h3>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-introducao-juizes.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Introdução a Juízes</div>
+        <div class="p-ref">Autor, o ciclo dos juízes e Cristo em Juízes</div>
+        <p class="p-teaser">Um livro inteiro repetindo o mesmo padrão de queda e resgate — até a frase que resume tudo: "cada um fazia o que parecia bem aos seus próprios olhos."</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== I. O PRÓLOGO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">I. O prólogo — um povo sem rei</h3>
+      <span class="cat-ref">Juízes 1—3.6</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-cada-um-fazia-o-que-bem-lhe-parecia.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Cada um fazia o que bem lhe parecia</div>
+        <div class="p-ref">Juízes 1—3.6</div>
+        <p class="p-teaser">Uma conquista que fica cada vez mais incompleta, tribo por tribo, até uma geração inteira que já não conhece o Senhor.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== II. OS PRIMEIROS LIBERTADORES ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">II. Os primeiros libertadores</h3>
+      <span class="cat-ref">Juízes 3.7—31</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-otoniel-eude-e-sangar.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Otoniel, Eúde e Sangar</div>
+        <div class="p-ref">Juízes 3.7—31</div>
+        <p class="p-teaser">Uma espada, uma adaga escondida e uma aguilhada de bois — três libertações, um só Senhor por trás de todas.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== III. DÉBORA E BARAQUE ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">III. Débora e Baraque</h3>
+      <span class="cat-ref">Juízes 4—5</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-uma-mulher-se-levantou.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Uma mulher se levantou</div>
+        <div class="p-ref">Juízes 4—5</div>
+        <p class="p-teaser">Uma profetisa convoca a guerra; uma estranha numa tenda cumpre a profecia com uma estaca.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== IV. GIDEÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">IV. Gideão</h3>
+      <span class="cat-ref">Juízes 6—8</span>
+      <span class="cat-count">2 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-chamado-do-temeroso.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O chamado do temeroso</div>
+        <div class="p-ref">Juízes 6</div>
+        <p class="p-teaser">Um homem escondido num lagar, com medo, é chamado "homem valente" antes de acreditar que seja um.</p>
+      </a>
+      <a class="p-card available" href="licao-os-trezentos.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Os trezentos</div>
+        <div class="p-ref">Juízes 7—8</div>
+        <p class="p-teaser">Trombetas, cântaros vazios e tochas escondidas — trezentos homens vencem um exército sem desembainhar uma espada.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== V. ABIMELEQUE ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">V. Abimeleque</h3>
+      <span class="cat-ref">Juízes 9</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-a-parabola-das-arvores.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A parábola das árvores</div>
+        <div class="p-ref">Juízes 9</div>
+        <p class="p-teaser">Um filho toma pela força a coroa que o pai recusou por convicção — e uma parábola do alto de um monte prevê como isso termina.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VI. JEFTÉ ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VI. Jefté</h3>
+      <span class="cat-ref">Juízes 10—12</span>
+      <span class="cat-count">1 disponível</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-voto-imprudente.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O voto imprudente</div>
+        <div class="p-ref">Juízes 10—12</div>
+        <p class="p-teaser">Um rejeitado se torna general; antes da vitória, faz um voto que não pensou até o fim.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VII. SANSÃO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VII. Sansão</h3>
+      <span class="cat-ref">Juízes 13—16</span>
+      <span class="cat-count">3 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-o-nazireu-desde-o-ventre.html"><span class="badge on">Disponível</span>
+        <div class="p-title">O nazireu desde o ventre</div>
+        <div class="p-ref">Juízes 13</div>
+        <p class="p-teaser">O anúncio angélico mais elaborado do Antigo Testamento antes de João Batista — para um homem que vai falhar repetidamente.</p>
+      </a>
+      <a class="p-card available" href="licao-as-bodas-em-timna.html"><span class="badge on">Disponível</span>
+        <div class="p-title">As bodas em Timna</div>
+        <div class="p-ref">Juízes 14—15</div>
+        <p class="p-teaser">Um enigma, uma traição, trezentas raposas em chamas — um ciclo de vingança pessoal que Deus ainda assim usa.</p>
+      </a>
+      <a class="p-card available" href="licao-dalila-e-a-ultima-facanha.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Dalila e a última façanha</div>
+        <div class="p-ref">Juízes 16</div>
+        <p class="p-teaser">"O Senhor já se tinha retirado dele" — e ainda assim, uma última oração é respondida em graça.</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== VIII. EPÍLOGO ===== -->
+  <div class="category">
+    <div class="cat-head">
+      <h3 class="cat-title">VIII. Epílogo — sem rei em Israel</h3>
+      <span class="cat-ref">Juízes 17—21</span>
+      <span class="cat-count">2 disponíveis</span>
+    </div>
+    <div class="card-grid">
+      <a class="p-card available" href="licao-mica-e-os-levitas-errantes.html"><span class="badge on">Disponível</span>
+        <div class="p-title">Mica e os levitas errantes</div>
+        <div class="p-ref">Juízes 17—18</div>
+        <p class="p-teaser">Um ídolo em casa, um sacerdote contratado por salário — uma fé desenhada sob medida, roubada por uma tribo inteira.</p>
+      </a>
+      <a class="p-card available" href="licao-a-guerra-contra-benjamim.html"><span class="badge on">Disponível</span>
+        <div class="p-title">A guerra contra Benjamim</div>
+        <div class="p-ref">Juízes 19—21</div>
+        <p class="p-teaser">O capítulo mais sombrio do livro — e a frase final que resume todo o período: cada um fazia o que bem lhe parecia.</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>Volver · trilha de Juízes · biblioteca de reflexões</footer>
+</div>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

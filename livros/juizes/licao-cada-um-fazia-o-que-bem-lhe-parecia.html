@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cada um fazia o que bem lhe parecia — Juízes 1—3.6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — o ciclo, repetido com foco no v.19 */
+  .prol-chip-outer{ margin-top:16px; }
+  .prol-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .prol-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .prol-chip{ border:1px solid var(--panel-line); background:var(--bg); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); cursor:pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .prol-chip.active{ background:var(--worry); border-color:var(--worry); color:#fff; }
+  .prol-chip-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row do desfecho */
+  .prol-toggle-outer{ margin-top:16px; }
+  .prol-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .prol-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .prol-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-juizes.html">Volver</a>
+    <span class="brand-track">O prólogo</span>
+  </div>
+
+  <div class="eyebrow">I. O prólogo — um povo sem rei · <span class="ref-tag">Juízes 1—3.6</span></div>
+  <h1>Cada um fazia o que bem lhe parecia</h1>
+  <p class="sub">Antes do primeiro juiz ser levantado, o livro já mostra o problema de raiz: uma conquista que fica cada vez mais incompleta, tribo por tribo, até uma geração inteira que já não conhece o Senhor nem as obras que fez por Israel.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 14 L7 14 L7 9 L11 9 L11 6 L15 6 L15 14 L3 14" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M3 14 H15" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">A conquista incompleta</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O livro abre com Judá e Simeão avançando juntos com sucesso relativo: capturam Jerusalém, Hebrom, Debir (1.1-20). Mas a partir do v.21 o padrão muda de forma abrupta e vai se repetindo, tribo após tribo: "os filhos de Benjamim não expulsaram os jebuseus" (1.21) — e a mesma frase, com pequenas variações, volta para Manassés, Efraim, Zebulom, Aser, Naftali e Dã. A lista fica cada vez mais curta, cada vez menos detalhada, como um lento apagar de luzes.</p>
+          <p>O texto é explícito quanto à causa: não é falta de poder da parte de Deus, que já havia entregado a terra na mão de Israel. É falta de obediência. Várias tribos escolhem viver ao lado dos cananeus em vez de expulsá-los — algumas chegam a escravizá-los em vez de cumprir a ordem de expulsão (1.28), preferindo o proveito econômico imediato à obediência integral que Deus havia pedido.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o anjo do Senhor em Boquim</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 C6 7 5 9.5 5 11.5 A4 4 0 0 0 13 11.5 C13 9.5 12 7 9 3 Z" stroke-width="1.2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O anjo do Senhor em Boquim</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O anjo do Senhor sobe de Gilgal a Boquim e confronta diretamente o povo. Deus lembra que havia prometido nunca quebrar sua aliança, mas também havia ordenado que Israel não fizesse aliança com os habitantes da terra, nem poupasse seus altares — "mas vós não obedecestes à minha voz; por que fizestes isso?" (2.2). É uma repreensão direta, sem rodeios, dirigida a um povo que já começou a acomodar sua obediência.</p>
+          <p>O povo chora diante da repreensão — por isso o lugar recebe o nome de Boquim, "os que choram" — e oferece sacrifícios ao Senhor. É um arrependimento real, não fingido. Mas o restante do livro vai mostrar, capítulo após capítulo, que esse choro não se traduz em uma mudança de rumo duradoura. A lágrima vem fácil; a obediência sustentada, não.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a geração que não conhecia o Senhor</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="1.8" stroke-width="1.2"/>
+          <circle cx="12" cy="12" r="1.8" stroke-width="1.2"/>
+          <path d="M7.5 7.5 L10.5 10.5" stroke-width="1.1" stroke-dasharray="1.1 1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A geração que não conhecia o Senhor</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois da morte de Josué, e depois da morte de toda aquela geração que havia testemunhado a conquista, levanta-se "outra geração, que não conhecia ao Senhor, nem tampouco as obras que fizera a Israel" (2.10). Não é uma falta de informação disponível — a história estava ali, registrada, contável. É uma falta de transmissão viva da fé, de pais para filhos, geração a geração.</p>
+          <p>Essa nova geração, sem memória própria do que Deus havia feito, passa a servir a Baal e Astarote, os deuses das nações vizinhas com quem os israelitas agora viviam lado a lado por não terem expulsado. A idolatria não chega como uma invasão súbita de fora — chega como um vazio de dentro, preenchido pelo que estava mais à mão, provocando a ira do Senhor.</p>
+
+          <div class="prol-chip-outer">
+            <div class="prol-chip-label">O ciclo de 2.11-19 — foco no versículo 19, a espiral</div>
+            <div class="prol-chip-row" id="prolChipRow"></div>
+            <div class="prol-chip-caption" id="prolChipCaption">Toque em cada etapa para ver o texto — repare como a última não fecha o círculo, ela o empurra para baixo.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → o padrão do ciclo explicado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 A6 6 0 1 1 3.6 6.4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3.6 3.4 L3.6 6.4 L6.6 6.4" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">O padrão do ciclo explicado</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A passagem de 2.11-19 nomeia de forma explícita o padrão que vai se repetir ao longo de todo o livro: pecado, entrega a opressores, clamor, levantamento de um juiz libertador, e paz enquanto esse juiz vive. É um resumo teológico colocado logo no início, como uma chave de leitura para tudo o que vem depois.</p>
+          <p>Mas o texto não descreve um círculo que simplesmente retorna ao mesmo ponto — descreve uma recaída pior a cada volta, assim que o juiz morre, "porque não deixavam os seus feitos, nem o seu caminho obstinado" (2.19). É uma espiral descendente, não um ciclo estável, e o restante do livro vai confirmar isso: cada geração de opressão, cada juiz seguinte, carrega um problema moral mais profundo do que o anterior.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 15 V9 L9 4 L14 9 V15" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M7 15 V11 H11 V15" stroke-width="1.1"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Deixados de propósito, e a queda que se segue</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Juízes 2.20—3.6 explica por que Deus, de propósito, deixou algumas nações na terra em vez de as expulsar por meio de Josué: para testar se Israel guardaria o caminho do Senhor, andando nele como seus pais o guardaram (2.22), e para ensinar a guerra às gerações seguintes, que ainda não a conheciam (3.1-2). Era uma prova com um propósito formativo — e, tragicamente, o povo falha nela: toma as filhas dessas nações por mulheres, dá suas próprias filhas a eles, e passa a servir a seus deuses (3.5-6).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Juízes 2.10</span>
+          <p>...e levantou-se depois dele outra geração, que não conhecia ao Senhor, nem tampouco as obras que fizera a Israel.</p>
+          <span class="ref">— sobre a geração que sucedeu a Josué</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Esse versículo é o dobradiço de todo o livro: não é a espada dos inimigos que ameaça mais a Israel, é o esquecimento. O restante de Juízes só vai narrar, em episódios cada vez mais vívidos, as consequências dessa memória que não foi transmitida — até que o problema chegue ao ponto de precisar de um Rei que a Palavra jamais deixe esquecer, cumprido por fim em Cristo, que é a própria Palavra feita carne, impossível de se esquecer por completo (João 1.14).</p>
+
+          <div class="prol-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnProlParcial" onclick="showProlOutcome('parcial')">A obediência parcial</button>
+              <button class="toggle-btn" id="btnProlCompleta" onclick="showProlOutcome('completa')">A obediência completa</button>
+            </div>
+            <div class="prol-outcome" id="prolOutcome">
+              <h4 id="prolTitle"></h4>
+              <p id="prolText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Juízes · cada um fazia o que bem lhe parecia</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const prolCiclo = [
+    { label: "Pecado", quote: "Fizeram o que parecia mal aos olhos do Senhor, e serviram aos baalins." },
+    { label: "Opressão", quote: "A ira do Senhor se acendeu contra Israel, e os entregou na mão dos que os saqueavam." },
+    { label: "Clamor", quote: "Contudo, também não ouviram os seus juízes; antes se prostituíram após outros deuses." },
+    { label: "Libertação", quote: "O Senhor se comovia com o seu gemido... e o Senhor era com o juiz, e os livrava." },
+    { label: "Recaída (v.19)", quote: "Morrendo o juiz, tornavam a corromper-se mais do que seus pais; não deixavam os seus feitos, nem o seu caminho obstinado." }
+  ];
+
+  function buildProlChips(){
+    const row = document.getElementById('prolChipRow');
+    prolCiclo.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'prol-chip';
+      b.textContent = r.label;
+      b.onclick = function(){ revealProlChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildProlChips();
+
+  function revealProlChip(btn, i){
+    document.querySelectorAll('.prol-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const r = prolCiclo[i];
+    document.getElementById('prolChipCaption').textContent = "\"" + r.quote + "\" (2.11-19)";
+  }
+
+  function showProlOutcome(type){
+    const btnP = document.getElementById('btnProlParcial');
+    const btnC = document.getElementById('btnProlCompleta');
+    btnP.classList.remove('active-worry');
+    btnC.classList.remove('active-calm');
+    const title = document.getElementById('prolTitle');
+    const text = document.getElementById('prolText');
+
+    if (type === 'parcial'){
+      btnP.classList.add('active-worry');
+      title.textContent = "Parece prudente, semeia a idolatria";
+      text.textContent = "Deixar cananeus e altares de pé \"por enquanto\" parecia uma solução razoável — menos guerra, mais convivência. Mas é exatamente essa meia-obediência que planta a idolatria que a geração seguinte, sem memória própria de Deus, vai colher (2.10-13).";
+    } else {
+      btnC.classList.add('active-calm');
+      title.textContent = "O padrão pedido desde o início";
+      text.textContent = "A obediência completa não é legalismo — é proteção. Foi o padrão que Deus pediu a Israel desde o Pentateuco, não por rigidez arbitrária, mas porque só a obediência plena guarda a fé dos filhos de um desvio que começa pequeno e termina em esquecimento total.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

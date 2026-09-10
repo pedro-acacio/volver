@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introdução a Juízes — Juízes 1–21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — o ciclo dos juízes, cinco elos */
+  .intro-chip-outer{ margin-top:16px; }
+  .intro-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .intro-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .intro-chip{ border:1px solid var(--panel-line); background:var(--bg); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); cursor:pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .intro-chip.active{ background:var(--calm); border-color:var(--calm); color:#fff; }
+  .intro-chip-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row do desfecho: um juiz por vez x um rei para sempre */
+  .intro-toggle-outer{ margin-top:16px; }
+  .intro-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .intro-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .intro-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-juizes.html">Volver</a>
+    <span class="brand-track">Introdução</span>
+  </div>
+
+  <div class="eyebrow">Introdução · <span class="ref-tag">Juízes 1–21</span></div>
+  <h1>Introdução a Juízes</h1>
+  <p class="sub">Depois da morte de Josué, a terra está ocupada, mas não conquistada por completo — e o povo esquece o Senhor com uma velocidade assustadora. Juízes narra cerca de trezentos anos de um mesmo ciclo se repetindo, cada vez pior, até a frase que resume tudo: "cada um fazia o que parecia bem aos seus próprios olhos."</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 3 H12 L14 5 V15 H4 Z" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M6 7 H11 M6 10 H11 M6 13 H9" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Autor, data e o elo com Josué</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A tradição judaica, registrada no Talmude, atribui a autoria de Juízes a Samuel, ou a um profeta muito próximo de seu círculo — alguém que já olhava para trás, para um período encerrado, com a distância necessária para julgá-lo teologicamente. O livro cobre o intervalo entre a morte de Josué, no fim do livro anterior, e o início da monarquia em Israel: cerca de trezentos anos de instabilidade, sem um governo central, sem um rei.</p>
+          <p>A própria primeira frase amarra os dois livros: "sucedeu que, depois da morte de Josué..." (1.1). É a mesma terra, as mesmas tribos, a mesma promessa de Deus — mas nem o mesmo líder, nem a mesma fidelidade. Juízes não começa uma história nova; continua uma história que já começou a se desviar antes mesmo de a primeira página virar.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → o refrão do livro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 6 Q4 4 6 4" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M4 6 V9 Q4 10 5 10" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M12 6 Q12 4 14 4" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M12 6 V9 Q12 10 13 10" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M4 13 H14" stroke-width="1.1" stroke-dasharray="1.2 1.6"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">O refrão do livro</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Duas frases funcionam como um refrão que emoldura Juízes. "Cada um fazia o que parecia bem aos seus próprios olhos" aparece de forma quase idêntica em 17.6 e 21.25, abrindo e fechando o epílogo do livro (capítulos 17—21). E a frase "não havia rei em Israel" aparece quatro vezes — 17.6; 18.1; 19.1; 21.25 — como uma explicação repetida à exaustão para cada novo colapso moral que o narrador relata.</p>
+          <p>Isso não é um detalhe estilístico apenas. É a tese do livro inteiro, dita e redita: sem um rei fiel a Deus para guardar o povo no caminho da aliança, Israel mergulha em caos moral e espiritual — cada tribo, cada família, cada homem se tornando lei para si mesmo. Juízes é, ao mesmo tempo, uma crônica histórica e um argumento teológico cuidadosamente construído.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → o ciclo dos juízes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 A6 6 0 1 1 3.6 6.4" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M3.6 3.4 L3.6 6.4 L6.6 6.4" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">O ciclo dos juízes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>A passagem de 2.11-19 nomeia explicitamente o padrão que se repete ao longo de todo o livro: Israel peca (servindo a Baal e Astarote, os deuses das nações vizinhas); Deus os entrega a um opressor; o povo, sob o peso do sofrimento, clama a Deus; Deus levanta um juiz que os liberta; e a terra descansa — até a geração seguinte esquecer tudo de novo e o ciclo recomeçar.</p>
+          <p>O detalhe mais grave não é o ciclo em si, mas sua direção: a cada volta ele piora, "porquanto logo se corrompiam mais do que seus pais" (2.19). Não é um círculo estável que se repete no mesmo nível — é uma espiral descendente, e o restante do livro vai mostrar essa queda ficando cada vez mais visível, dos primeiros libertadores relativamente íntegros até o caos moral do epílogo.</p>
+
+          <div class="intro-chip-outer">
+            <div class="intro-chip-label">O ciclo de 2.11-19 — toque em cada elo</div>
+            <div class="intro-chip-row" id="introChipRow"></div>
+            <div class="intro-chip-caption" id="introChipCaption">Toque em um dos cinco elos para ver o texto correspondente.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → os doze juízes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="2" stroke-width="1.2"/>
+          <circle cx="12" cy="6" r="2" stroke-width="1.2"/>
+          <path d="M3 15 C3 11.5 4.7 10 6 10 C7.3 10 9 11.5 9 15" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M9 15 C9 11.5 10.7 10 12 10 C13.3 10 15 11.5 15 15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Movimento 4</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Os doze juízes</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>O livro apresenta doze figuras chamadas de "juízes": seis "maiores", com narrativa própria e desenvolvida — Otoniel, Eúde, Baraque (ao lado de Débora), Gideão, Jefté e Sansão — e seis "menores", citados em poucos versículos: Sangar, Tola, Jair, Ibzã, Elom e Abdom. O termo "juiz" aqui não descreve um cargo judicial no sentido moderno, mas alguém levantado por Deus para libertar e liderar o povo por um tempo.</p>
+          <p>É significativo que nem todos sejam heróis exemplares. Sansão é moralmente falho do início ao fim de sua narrativa; Jefté faz um voto trágico que ele mesmo não pensou até as últimas consequências. O livro não está glorificando seus juízes como modelos de virtude — está mostrando, pela repetição de fraquezas humanas mesmo nos libertadores, que Israel precisa de algo além de um homem forte a cada geração: precisa de um libertador que não falhe.</p>
+          <button class="continue-btn" onclick="openStage(5)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 5: DESFECHO -->
+    <div class="tl-item locked" data-stage="5">
+      <div class="tl-marker" onclick="openStage(5)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 L10.6 7 L15 7.4 L11.7 10.3 L12.7 14.6 L9 12.2 L5.3 14.6 L6.3 10.3 L3 7.4 L7.4 7 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(5)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(5)">Cristo em Juízes</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Cada juiz liberta o povo por um tempo — quarenta anos, oitenta anos, uma geração — mas nenhum deles resolve o problema na raiz, porque o problema nunca foi apenas os opressores estrangeiros. O problema era, e continua sendo ao longo de todo o livro, o coração do próprio povo, que volta a se desviar assim que o libertador morre.</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Juízes 21.25</span>
+          <p>Naquele tempo não havia rei em Israel; cada um fazia o que parecia bem aos seus próprios olhos.</p>
+          <span class="ref">— conclusão do livro</span>
+        </div>
+
+        <div class="tl-card">
+          <p>Essa conclusão amarga não é o ponto final da história. O livro de Rute, ambientado "no tempo em que os juízes governavam" (Rute 1.1), mostra o contraponto silencioso — fidelidade em meio ao caos — e sua genealogia final conduz à linhagem de Davi. Séculos depois, o profeta anuncia o Rei que essa linhagem prepara: "o principado está sobre os seus ombros... da paz não haverá fim, sobre o trono de Davi e sobre o seu reino" (Isaías 9.6-7). Juízes termina sem rei porque a Escritura inteira está caminhando para um Rei que Juízes ainda não conhece.</p>
+
+          <div class="intro-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnIntroJuiz" onclick="showIntroOutcome('juiz')">Um juiz por vez</button>
+              <button class="toggle-btn" id="btnIntroRei" onclick="showIntroOutcome('rei')">Um Rei para sempre</button>
+            </div>
+            <div class="intro-outcome" id="introOutcome">
+              <h4 id="introTitle"></h4>
+              <p id="introText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Juízes · introdução a Juízes</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const introCiclo = [
+    { label: "Pecado", quote: "Então, os filhos de Israel fizeram o que parecia mal aos olhos do Senhor, e serviram aos baalins... e provocaram o Senhor à ira." },
+    { label: "Opressão", quote: "E a ira do Senhor se acendeu contra Israel, e os entregou na mão dos que os saqueavam... e já não podiam parar diante de seus inimigos." },
+    { label: "Clamor", quote: "E, tendo-lhes o Senhor levantado juízes... contudo, também não ouviram os seus juízes; antes se prostituíam após outros deuses." },
+    { label: "Libertação", quote: "Porque o Senhor se comovia com o seu gemido... e o Senhor era com o juiz, e os livrava da mão de seus inimigos." },
+    { label: "Paz", quote: "Sucedia, porém, que, morrendo o juiz, tornavam a corromper-se mais do que seus pais... não deixavam os seus feitos, nem o seu caminho obstinado." }
+  ];
+
+  function buildIntroChips(){
+    const row = document.getElementById('introChipRow');
+    introCiclo.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'intro-chip';
+      b.textContent = r.label;
+      b.onclick = function(){ revealIntroChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildIntroChips();
+
+  function revealIntroChip(btn, i){
+    document.querySelectorAll('.intro-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const r = introCiclo[i];
+    document.getElementById('introChipCaption').textContent = "\"" + r.quote + "\" (2.11-19)";
+  }
+
+  function showIntroOutcome(type){
+    const btnJ = document.getElementById('btnIntroJuiz');
+    const btnR = document.getElementById('btnIntroRei');
+    btnJ.classList.remove('active-worry');
+    btnR.classList.remove('active-calm');
+    const title = document.getElementById('introTitle');
+    const text = document.getElementById('introText');
+
+    if (type === 'juiz'){
+      btnJ.classList.add('active-worry');
+      title.textContent = "Libertação parcial, temporária";
+      text.textContent = "Cada juiz resolve o problema imediato — o opressor estrangeiro — mas nunca o problema de fundo. Assim que ele morre, a geração seguinte volta a fazer o que parece bem aos seus próprios olhos, e o ciclo recomeça, cada vez pior.";
+    } else {
+      btnR.classList.add('active-calm');
+      title.textContent = "Um Rei que quebra o ciclo de vez";
+      text.textContent = "A promessa messiânica aponta para um Rei justo que não liberta por uma geração, mas eternamente — que não precisa ser substituído porque não falha nem morre deixando o povo entregue a si mesmo outra vez. É o Rei que Juízes procura sem encontrar.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Otoniel, Eúde e Sangar — Juízes 3.7-31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../volver-style.css">
+<style>
+  body{ display:flex; justify-content:center; }
+
+  /* Padrão B — Eúde e Sangar, dois métodos improváveis */
+  .prim-chip-outer{ margin-top:16px; }
+  .prim-chip-label{ font-size:12.5px; color:var(--text-faint); margin-bottom:10px; }
+  .prim-chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .prim-chip{ border:1px solid var(--panel-line); background:var(--bg); border-radius:999px; padding:7px 14px; font-family:'IBM Plex Sans', sans-serif; font-size:13px; color:var(--text-dim); cursor:pointer; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+  .prim-chip.active{ background:var(--calm); border-color:var(--calm); color:#fff; }
+  .prim-chip-caption{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin-top:8px; min-height:18px; }
+
+  /* Padrão A — toggle-row do desfecho */
+  .prim-toggle-outer{ margin-top:16px; }
+  .prim-outcome{ border-radius:12px; padding:18px 18px 20px; border:1px solid var(--panel-line); background: var(--bg); margin-top:4px; }
+  .prim-outcome h4{ font-family:'Fraunces', serif; font-weight:500; font-size:15.5px; margin:0 0 6px; color:var(--text); }
+  .prim-outcome p{ font-size:13.5px; line-height:1.58; color:var(--text-dim); margin:0; }
+</style>
+</head>
+<body>
+<div class="stage-wrap">
+
+  <div class="brand-bar">
+    <svg class="brand-mark" viewBox="0 0 52 52" fill="none">
+      <path d="M9 25 L20 35 L32 35 L43 25" stroke="#2C3459" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M9 25 L26 8 L43 25 Z" fill="#D9A441"/>
+      <path d="M26 8 L26 25" stroke="#2C3459" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    <a class="brand-word" href="biblioteca-juizes.html">Volver</a>
+    <span class="brand-track">Os primeiros libertadores</span>
+  </div>
+
+  <div class="eyebrow">II. Os primeiros libertadores · <span class="ref-tag">Juízes 3.7—31</span></div>
+  <h1>Otoniel, Eúde e Sangar</h1>
+  <p class="sub">Uma espada, uma adaga escondida e uma aguilhada de bois — três libertações completamente diferentes na forma, mas com o mesmo denominador comum: não foi a estratégia humana que decidiu a vitória, foi o Senhor que levantou um libertador.</p>
+
+  <div class="timeline" id="timeline">
+
+    <!-- STAGE 1 -->
+    <div class="tl-item" data-stage="1">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(1)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M9 3 V12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 4.5 H12" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M6 12 H12 L9 15 Z" stroke-width="1.1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(1)"><span class="tl-eyebrow">Movimento 1</span></div>
+      <div class="tl-title-short" onclick="openStage(1)">Otoniel, o modelo do ciclo</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel esquece o Senhor e serve aos baalins; Deus os entrega a Cusã-Risataim, rei da Mesopotâmia, por oito anos. O povo clama, e Deus levanta Otoniel — sobrinho de Calebe, já conhecido de Josué 15.16-17, onde havia conquistado Debir e recebido a filha de Calebe por esposa como recompensa. "O Espírito do Senhor veio sobre ele" (3.10): ele julga Israel, vai à guerra, vence, e a terra descansa quarenta anos.</p>
+          <p>É o relato mais breve e mais "limpo" de todo o livro — sem complicação moral, sem ambiguidade no caráter do libertador, sem sombra alguma na narrativa. É o modelo puro do ciclo de pecado, opressão, clamor e libertação, colocado logo no início como um padrão de referência contra o qual todos os relatos seguintes serão, implicitamente, comparados — e a comparação vai revelar libertadores cada vez mais complicados.</p>
+          <button class="continue-btn" onclick="openStage(2)">Continuar → Eúde, o canhoto e a adaga escondida</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="tl-item locked" data-stage="2">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(2)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M4 14 L12 6" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M9 3 L12 6 L15 9" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(2)"><span class="tl-eyebrow">Movimento 2</span></div>
+      <div class="tl-title-short" onclick="openStage(2)">Eúde, o canhoto e a adaga escondida</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Israel recai; Deus fortalece Eglom, rei de Moabe, contra Israel por dezoito anos. Dessa vez o libertador é Eúde, da tribo de Benjamim, e canhoto — um detalhe que a narrativa usa de propósito, não por acaso. Ele esconde uma adaga de dois gumes na coxa direita, exatamente o lugar onde ninguém revistaria um homem destro à procura de uma arma.</p>
+          <p>Eúde pede uma audiência particular com Eglom sob o pretexto de trazer "uma palavra secreta da parte de Deus" (3.19-20) — e, a sós com o rei, o mata. É um plano dissimulado, quase teatral, muito distante da batalha aberta de Otoniel — mas igualmente usado por Deus como instrumento de libertação para o seu povo.</p>
+          <button class="continue-btn" onclick="openStage(3)">Continuar → a vitória em Moabe</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="tl-item locked" data-stage="3">
+      <div class="tl-line"></div>
+      <div class="tl-marker" onclick="openStage(3)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <path d="M3 12 Q9 4 15 12" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M3 12 H15" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(3)"><span class="tl-eyebrow">Movimento 3</span></div>
+      <div class="tl-title-short" onclick="openStage(3)">A vitória em Moabe</div>
+      <div class="tl-body">
+        <div class="tl-card">
+          <p>Depois de matar Eglom, Eúde escapa, foge para o monte Efraim e convoca Israel com a trombeta. Ele toma os vaus do Jordão, cortando a rota de fuga dos moabitas de volta ao seu próprio território, e Israel mata cerca de dez mil homens, "robustos, e valentes, e nenhum deles escapou" (3.29) — a terra descansa oitenta anos, o período de paz mais longo de todo o livro de Juízes.</p>
+          <p>Sangar recebe apenas um único versículo (3.31): mata seiscentos filisteus usando uma aguilhada de bois, uma vara comprida com ponta de ferro usada para guiar o gado — não uma arma de guerra, mas uma ferramenta de lavrador. É um herói totalmente inesperado, quase esquecido pelo próprio narrador em número de palavras, e ainda assim contado entre os libertadores de Israel.</p>
+
+          <div class="prim-chip-outer">
+            <div class="prim-chip-label">Dois métodos, um só Senhor por trás</div>
+            <div class="prim-chip-row" id="primChipRow"></div>
+            <div class="prim-chip-caption" id="primChipCaption">Toque em cada nome para ver o detalhe da sua vitória.</div>
+          </div>
+
+          <button class="continue-btn" onclick="openStage(4)">Continuar → Desfecho</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 4: DESFECHO -->
+    <div class="tl-item locked" data-stage="4">
+      <div class="tl-marker" onclick="openStage(4)">
+        <svg class="icon" width="16" height="16" viewBox="0 0 18 18" fill="none">
+          <circle cx="6" cy="6" r="2.2" stroke-width="1.2"/>
+          <circle cx="9" cy="9" r="2.2" stroke-width="1.2"/>
+          <circle cx="12" cy="12" r="2.2" stroke-width="1.2"/>
+        </svg>
+      </div>
+      <div class="tl-head" onclick="openStage(4)"><span class="tl-eyebrow">Desfecho</span></div>
+      <div class="tl-title-short" onclick="openStage(4)">Um só Senhor, três libertadores diferentes</div>
+      <div class="tl-body">
+
+        <div class="tl-card">
+          <p>Três libertadores, três métodos completamente diferentes: guerra aberta e convencional em Otoniel, um plano dissimulado e pessoal em Eúde, uma arma de lavrador improvisada em Sangar. O denominador comum entre os três não é a estratégia humana, nem sequer um tipo específico de coragem — é que, em cada um dos três casos, "o Senhor levantou um libertador" (3.9,15).</p>
+        </div>
+
+        <div class="verse-card" style="margin-top:16px;">
+          <span class="tag">Juízes 3.9</span>
+          <p>Então, os filhos de Israel clamaram ao Senhor, e o Senhor levantou um libertador aos filhos de Israel, que os livrou...</p>
+          <span class="ref">— sobre Otoniel, o primeiro dos juízes</span>
+        </div>
+
+        <div class="tl-card">
+          <p>O padrão se repete três vezes em poucos versículos, e vai se repetir ainda por dez capítulos: Deus não depende de um único tipo de instrumento para libertar o seu povo — usa um general, um homem canhoto com uma adaga, um lavrador com sua aguilhada. O que todos têm em comum aponta para além de si mesmos, para o único libertador cuja obra não precisa ser repetida a cada geração.</p>
+
+          <div class="prim-toggle-outer">
+            <div class="toggle-row">
+              <button class="toggle-btn" id="btnPrimGeracao" onclick="showPrimOutcome('geracao')">Um libertador por geração</button>
+              <button class="toggle-btn" id="btnPrimSempre" onclick="showPrimOutcome('sempre')">O libertador que não precisa ser levantado de novo</button>
+            </div>
+            <div class="prim-outcome" id="primOutcome">
+              <h4 id="primTitle"></h4>
+              <p id="primText"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Volver · trilha de Juízes · Otoniel, Eúde e Sangar</footer>
+</div>
+
+<script>
+  let currentMax = 1;
+
+  function openStage(n){
+    if (n > currentMax + 1) return;
+    if (n > currentMax) currentMax = n;
+    document.querySelectorAll('.tl-item').forEach(item => {
+      const s = parseInt(item.dataset.stage);
+      item.classList.remove('active','locked');
+      if (s < n) item.classList.add('done');
+      if (s === n) item.classList.add('active');
+      if (s > currentMax) item.classList.add('locked');
+    });
+    setTimeout(() => {
+      document.querySelector('.tl-item[data-stage="'+n+'"]').scrollIntoView({behavior:'smooth', block:'start'});
+    }, 120);
+  }
+  openStage(1);
+
+  const primHerois = [
+    { label: "Eúde — os vaus do Jordão", quote: "Tomaram os vaus do Jordão, diante dos moabitas, e não deixaram passar a ninguém... e mataram naquele tempo dos moabitas cerca de dez mil homens, todos robustos e valentes, e nenhum deles escapou (3.28-29)." },
+    { label: "Sangar — a aguilhada", quote: "E, depois dele, foi Sangar, filho de Anate, o qual feriu seiscentos homens dos filisteus com uma aguilhada de bois; e ele também libertou a Israel (3.31)." }
+  ];
+
+  function buildPrimChips(){
+    const row = document.getElementById('primChipRow');
+    primHerois.forEach((r, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'prim-chip';
+      b.textContent = r.label;
+      b.onclick = function(){ revealPrimChip(b, i); };
+      row.appendChild(b);
+    });
+  }
+  buildPrimChips();
+
+  function revealPrimChip(btn, i){
+    document.querySelectorAll('.prim-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    const r = primHerois[i];
+    document.getElementById('primChipCaption').textContent = "\"" + r.quote + "\"";
+  }
+
+  function showPrimOutcome(type){
+    const btnG = document.getElementById('btnPrimGeracao');
+    const btnS = document.getElementById('btnPrimSempre');
+    btnG.classList.remove('active-worry');
+    btnS.classList.remove('active-calm');
+    const title = document.getElementById('primTitle');
+    const text = document.getElementById('primText');
+
+    if (type === 'geracao'){
+      btnG.classList.add('active-worry');
+      title.textContent = "Décadas de paz, nunca definitivas";
+      text.textContent = "Quarenta anos com Otoniel, oitenta com Eúde — vitórias reais, mas nenhuma delas resolve o problema para sempre. Assim que a geração do libertador morre, o ciclo do capítulo 2 recomeça, e Israel volta a precisar de um novo resgate.";
+    } else {
+      btnS.classList.add('active-calm');
+      title.textContent = "Uma vitória que não precisa ser repetida";
+      text.textContent = "Cristo, cuja vitória sobre o pecado e a morte não é mais um capítulo num ciclo que vai recomeçar — é definitiva, \"uma vez por todas\" (Hebreus 9.26-28). Ele não precisa ser levantado de novo a cada geração; permanece, ele mesmo, o libertador.";
+    }
+  }
+</script>
+<script defer src="../../volver-app.js"></script>
+</body>
+</html>
