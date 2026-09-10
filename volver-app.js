@@ -60,8 +60,10 @@
   }
   function toggleTheme(){
     var cur = localStorage.getItem(STORAGE_THEME) === 'light' ? 'light' : 'dark';
-    localStorage.setItem(STORAGE_THEME, cur === 'light' ? 'dark' : 'light');
+    var next = cur === 'light' ? 'dark' : 'light';
+    localStorage.setItem(STORAGE_THEME, next);
     applyTheme();
+    syncSettingToCloud('theme', next);
   }
 
   // ---------------- font size (5-level scale) ----------------
@@ -83,6 +85,7 @@
     n = Math.max(0, Math.min(FONT_SIZE_ZOOM.length - 1, n));
     localStorage.setItem(STORAGE_FONTSIZE, String(n));
     applyFontSize();
+    syncSettingToCloud('fontsize', n);
     return n;
   }
   function increaseFontSize(){ return setFontSizeIndex(getFontSizeIndex() + 1); }
@@ -688,7 +691,7 @@
     l = (l === 'en' || l === 'es') ? l : 'pt';
     localStorage.setItem(STORAGE_LANG, l);
     applyLanguage();
-    syncLangToCloud(l);
+    syncSettingToCloud('lang', l);
   }
   function t(key){
     var lang = getLang();
@@ -1002,6 +1005,7 @@
     var isNewLongest = current > data.longest;
     if(isNewLongest) data.longest = current;
     writeJSON(STORAGE_STREAK, data);
+    syncSettingToCloud('streak', data);
     return {
       current: current,
       longest: data.longest,
@@ -1033,7 +1037,9 @@
     return out;
   }
   function resetStreak(){
-    writeJSON(STORAGE_STREAK, { days: {}, longest: 0 });
+    var data = { days: {}, longest: 0 };
+    writeJSON(STORAGE_STREAK, data);
+    syncSettingToCloud('streak', data);
   }
   function streakLabel(n){
     return t(n === 1 ? 'streak_badge_one' : 'streak_badge_many').replace('{n}', n);
@@ -1694,12 +1700,16 @@
   var _cloudFb = null;
   var _cloudProfileExtra = {};
 
-  // Progress/favorites/streak/language belong to the signed-in account, not
-  // the device — must be wiped on sign-out so a second account on the same
-  // browser doesn't inherit (and re-migrate) the previous account's local
-  // cache. Theme/font size stay device preferences and are left alone.
+  // Every local setting/cache below belongs to the signed-in account, not the
+  // device — all of it must be wiped on sign-out so a second account on the
+  // same browser doesn't inherit (and re-migrate) the previous account's
+  // local state. Each one is written back to this account's own Firestore
+  // doc via syncSettingToCloud() and restored on the next login via
+  // loadProfileExtra(), so nothing is actually lost — it just stops leaking
+  // into whichever account is signed in next.
   function clearLocalAccountData(){
-    [STORAGE_FAV, STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_STAGE, STORAGE_STREAK, STORAGE_LANG].forEach(function(k){
+    [STORAGE_FAV, STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_STAGE, STORAGE_STREAK,
+      STORAGE_LANG, STORAGE_THEME, STORAGE_FONTSIZE].forEach(function(k){
       try{ localStorage.removeItem(k); }catch(e){}
     });
   }
@@ -1803,8 +1813,18 @@
     var fs = fb.fsMod;
     return fs.getDoc(fs.doc(fb.db, 'users', uid)).then(function(snap){
       _cloudProfileExtra = snap.exists() ? snap.data() : {};
-      if(_cloudProfileExtra.lang === 'en' || _cloudProfileExtra.lang === 'es' || _cloudProfileExtra.lang === 'pt'){
-        localStorage.setItem(STORAGE_LANG, _cloudProfileExtra.lang);
+      var p = _cloudProfileExtra;
+      if(p.lang === 'en' || p.lang === 'es' || p.lang === 'pt'){
+        localStorage.setItem(STORAGE_LANG, p.lang);
+      }
+      if(p.theme === 'light' || p.theme === 'dark'){
+        localStorage.setItem(STORAGE_THEME, p.theme);
+      }
+      if(typeof p.fontsize === 'number' && p.fontsize >= 0 && p.fontsize < FONT_SIZE_ZOOM.length){
+        localStorage.setItem(STORAGE_FONTSIZE, String(p.fontsize));
+      }
+      if(p.streak && typeof p.streak === 'object'){
+        writeJSON(STORAGE_STREAK, p.streak);
       }
     }).catch(function(){});
   }
@@ -1852,11 +1872,13 @@
     op.catch(function(){});
   }
 
-  function syncLangToCloud(l){
+  function syncSettingToCloud(field, value){
     if(!_cloudUser || !_cloudFb) return;
     var fs = _cloudFb.fsMod;
-    _cloudProfileExtra.lang = l;
-    fs.setDoc(fs.doc(_cloudFb.db, 'users', _cloudUser.uid), { lang: l }, { merge: true }).catch(function(){});
+    _cloudProfileExtra[field] = value;
+    var data = {};
+    data[field] = value;
+    fs.setDoc(fs.doc(_cloudFb.db, 'users', _cloudUser.uid), data, { merge: true }).catch(function(){});
   }
 
   function getCurrentUserInfo(){
