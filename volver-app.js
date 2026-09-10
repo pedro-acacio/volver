@@ -25,8 +25,6 @@
   var STAR_ICON = '<svg viewBox="0 0 20 20" fill="none"><path d="M10 2 L12.5 7.5 L18.5 8.3 L14 12.4 L15.2 18.3 L10 15.3 L4.8 18.3 L6 12.4 L1.5 8.3 L7.5 7.5 Z" stroke-width="1.3" stroke-linejoin="round"/></svg>';
   var CHECK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M2 8.5 L6 12.5 L14 3.5" stroke="#12162A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var CLOCK_ICON = '<svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#12162A" stroke-width="1.6"/><path d="M8 5 V8 L10.5 9.5" stroke="#12162A" stroke-width="1.6" stroke-linecap="round"/></svg>';
-  var SUN_ICON = '<svg class="icon-sun" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke-width="1.4"/><path d="M10 1.5V4M10 16v2.5M2.5 10H5M15 10h2.5M4.6 4.6l1.8 1.8M13.6 13.6l1.8 1.8M4.6 15.4l1.8-1.8M13.6 6.4l1.8-1.8" stroke-width="1.4" stroke-linecap="round"/></svg>';
-  var MOON_ICON = '<svg class="icon-moon" viewBox="0 0 20 20" fill="none"><path d="M17 12.5A7.5 7.5 0 1 1 7.5 3 6 6 0 0 0 17 12.5Z" stroke-width="1.4" stroke-linejoin="round"/></svg>';
   var BACK_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M10 3 L4 8 L10 13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var SHARE_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 10.5V2M8 2L5 5M8 2L11 5M3 8V12.5C3 13.05 3.45 13.5 4 13.5H12C12.55 13.5 13 13.05 13 12.5V8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var DOWNLOAD_ICON = '<svg viewBox="0 0 16 16" fill="none"><path d="M8 2V10.5M8 10.5L5 7.5M8 10.5L11 7.5M3 13H13" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -125,7 +123,7 @@
     pt: {
       menu_btn_aria: 'Abrir menu', sidebar_close_aria: 'Fechar menu', sidebar_home: 'Reflexões',
       sidebar_favoritos: 'Favoritos', sidebar_continue: 'Continue a Volver', sidebar_perfil: 'Perfil',
-      sidebar_config: 'Configurações', sidebar_theme_label: 'Tema', theme_toggle_aria: 'Alternar tema claro/escuro',
+      sidebar_config: 'Configurações',
       sidebar_signout: 'Sair', signout_aria: 'Sair da conta',
       back_btn: 'Voltar', back_btn_aria: 'Voltar',
       login_title: 'Entrar na Volver', login_subtitle: 'Faça login para continuar sua jornada de reflexões.',
@@ -228,7 +226,7 @@
     en: {
       menu_btn_aria: 'Open menu', sidebar_close_aria: 'Close menu', sidebar_home: 'Reflections',
       sidebar_favoritos: 'Favorites', sidebar_continue: 'Continue in Volver', sidebar_perfil: 'Profile',
-      sidebar_config: 'Settings', sidebar_theme_label: 'Theme', theme_toggle_aria: 'Toggle light/dark theme',
+      sidebar_config: 'Settings',
       sidebar_signout: 'Sign out', signout_aria: 'Sign out of your account',
       back_btn: 'Back', back_btn_aria: 'Back',
       login_title: 'Sign in to Volver', login_subtitle: 'Sign in to continue your reflection journey.',
@@ -331,7 +329,7 @@
     es: {
       menu_btn_aria: 'Abrir menú', sidebar_close_aria: 'Cerrar menú', sidebar_home: 'Reflexiones',
       sidebar_favoritos: 'Favoritos', sidebar_continue: 'Continuar en Volver', sidebar_perfil: 'Perfil',
-      sidebar_config: 'Configuración', sidebar_theme_label: 'Tema', theme_toggle_aria: 'Alternar tema claro/oscuro',
+      sidebar_config: 'Configuración',
       sidebar_signout: 'Cerrar sesión', signout_aria: 'Cerrar sesión de la cuenta',
       back_btn: 'Volver', back_btn_aria: 'Volver',
       login_title: 'Entrar a Volver', login_subtitle: 'Inicia sesión para continuar tu recorrido de reflexiones.',
@@ -808,17 +806,7 @@
         '</div>' +
         '<div class="sidebar-foot"></div>';
 
-      var themeBtn = document.createElement('button');
-      themeBtn.type = 'button';
-      themeBtn.className = 'theme-toggle';
-      themeBtn.setAttribute('aria-label', t('theme_toggle_aria'));
-      themeBtn.innerHTML = SUN_ICON + MOON_ICON;
-      themeBtn.addEventListener('click', toggleTheme);
       var foot = nav.querySelector('.sidebar-foot');
-      foot.appendChild(themeBtn);
-      var themeLabel = document.createElement('span');
-      themeLabel.textContent = t('sidebar_theme_label');
-      foot.appendChild(themeLabel);
 
       var streakInfo = getStreakInfo();
       if(streakInfo.current > 0){
@@ -831,7 +819,7 @@
 
       var signOutBtn = document.createElement('button');
       signOutBtn.type = 'button';
-      signOutBtn.className = 'theme-toggle';
+      signOutBtn.className = 'theme-toggle signout-btn';
       signOutBtn.setAttribute('aria-label', t('signout_aria'));
       signOutBtn.title = t('sidebar_signout');
       signOutBtn.innerHTML = SHARE_ICON;
@@ -842,6 +830,7 @@
       });
       foot.appendChild(signOutBtn);
       var signOutLabel = document.createElement('span');
+      signOutLabel.className = 'signout-label';
       signOutLabel.textContent = t('sidebar_signout');
       foot.appendChild(signOutLabel);
 
@@ -1962,7 +1951,7 @@
       } else if(p.file.indexOf('biblioteca-') === 0){
         injectBackButton();
         enhanceHubPage();
-      } else {
+      } else if(!(p.folder === null && p.file === 'login.html')){
         injectBackButton();
       }
     });

@@ -324,6 +324,11 @@ footer{ text-align:center; margin-top:36px; color: var(--text-faint); font-size:
 :root[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
 :root[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 
+.signout-btn{ border-color: rgba(168,92,107,0.4); }
+.signout-btn:hover{ border-color: var(--worry); }
+.signout-btn path, .signout-btn circle{ stroke: var(--worry); }
+.sidebar-foot .signout-label{ color: var(--worry); }
+
 .fav-star-inline{
   display:inline-flex; align-items:center; gap:6px; margin-left:10px;
   border:1px solid var(--panel-line); border-radius:20px; padding:6px 12px; background:none;
