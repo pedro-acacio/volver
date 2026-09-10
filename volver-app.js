@@ -1619,7 +1619,7 @@
 
   function buildWelcomeBalloon(){
     var kind = window.__volverWelcomeKind;
-    if(!kind){ buildOnboardingCarousel(); return; }
+    if(!kind) return;
     var info = getCurrentUserInfo();
     var name = (info && (info.displayName || (info.email && info.email.split('@')[0]))) || '';
     var titleKey = kind === 'new' ? 'welcome_new_title' : 'welcome_back_title';

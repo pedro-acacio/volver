@@ -499,8 +499,7 @@
 <script>
 (function(){
   var welcomeKind = sessionStorage.getItem('volver_welcome_pending');
-  if(!welcomeKind) return;
-  sessionStorage.removeItem('volver_welcome_pending');
+  if(welcomeKind){ sessionStorage.removeItem('volver_welcome_pending'); }
   window.__volverWelcomeKind = welcomeKind;
   document.write(
     '<div class="intro-splash" id="volverIntroSplash">' +
