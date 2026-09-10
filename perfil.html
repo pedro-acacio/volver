@@ -73,7 +73,24 @@
   }
   .account-avatar-edit svg{ width:10px; height:10px; }
   .account-avatar-edit path{ stroke:#12162A; }
+  .account-name-row{ display:flex; align-items:center; gap:8px; }
   .account-name{ font-size:14.5px; color: var(--text); font-weight:600; }
+  .account-name-edit{
+    width:20px; height:20px; border-radius:50%; border:none; background:none; padding:0;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .account-name-edit svg{ width:12px; height:12px; }
+  .account-name-edit path{ stroke: var(--text-faint); }
+  .account-name-edit:hover path{ stroke: var(--gold); }
+  .account-name-input{
+    padding:6px 10px; border-radius:8px; border:1px solid var(--panel-line);
+    background: var(--bg); color: var(--text); font-family:'IBM Plex Sans', sans-serif; font-size:13.5px;
+  }
+  .account-name-input:focus{ outline:none; border-color: var(--gold); }
+  .account-name-save{
+    border:none; background:none; padding:0; cursor:pointer;
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:600; color: var(--gold); text-decoration:underline;
+  }
   .account-email{ font-family:'IBM Plex Mono', monospace; font-size:11px; color: var(--text-faint); margin-top:3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   .settings-btn{
     flex-shrink:0; padding:10px 18px; border-radius:9px; border:1px solid var(--panel-line);
@@ -195,7 +212,12 @@
             '</button>' +
             '<input type="file" id="accountAvatarInput" accept="image/*" hidden>' +
           '</div>' +
-          '<div><div class="account-name">' + (info.displayName || info.email) + '</div>' +
+          '<div><div class="account-name-row">' +
+            '<span class="account-name" id="accountNameText">' + (info.displayName || info.email) + '</span>' +
+            '<button type="button" id="accountNameEditBtn" class="account-name-edit" aria-label="' + V.t('profile_name_edit') + '">' +
+              '<svg viewBox="0 0 16 16" fill="none"><path d="M11 2.5L13.5 5L5 13.5H2.5V11L11 2.5Z" stroke-width="1.3" stroke-linejoin="round"/></svg>' +
+            '</button>' +
+          '</div>' +
           '<div class="account-email">' + info.email + ' · ' + providerLabel + '</div></div>' +
         '</div>' +
         '<button type="button" id="accountDeleteBtn" class="settings-btn danger">' + V.t('profile_account_delete') + '</button>' +
@@ -206,6 +228,30 @@
             '<button type="button" id="accountReauthBtn" class="settings-btn danger">' + V.t('profile_account_reauth_password_btn') + '</button>' +
           '</div>' +
         '</div>';
+
+      var nameEditBtn = document.getElementById('accountNameEditBtn');
+      nameEditBtn.addEventListener('click', function(){
+        var row = nameEditBtn.parentElement;
+        var input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'account-name-input';
+        input.value = info.displayName || '';
+        var saveBtn = document.createElement('button');
+        saveBtn.type = 'button';
+        saveBtn.className = 'account-name-save';
+        saveBtn.textContent = V.t('profile_name_save');
+        row.innerHTML = '';
+        row.appendChild(input);
+        row.appendChild(saveBtn);
+        input.focus();
+        saveBtn.addEventListener('click', function(){
+          var val = input.value.trim();
+          if(!val) return;
+          saveBtn.disabled = true;
+          V.auth.updateDisplayName(val).then(renderAccount).catch(function(){ saveBtn.disabled = false; });
+        });
+        input.addEventListener('keydown', function(e){ if(e.key === 'Enter') saveBtn.click(); });
+      });
 
       var avatarEditBtn = document.getElementById('accountAvatarEditBtn');
       var avatarInput = document.getElementById('accountAvatarInput');

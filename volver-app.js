@@ -7,7 +7,6 @@
   var STORAGE_THEME = 'volver_theme';
   var STORAGE_FONTSIZE = 'volver_fontsize';
   var STORAGE_LANG = 'volver_lang';
-  var STORAGE_SESSION_SHOWN = 'volver_session_shown';
   var STORAGE_STREAK = 'volver_streak';
   var STREAK_MILESTONES = [3, 7, 14, 30, 60, 100, 200, 365];
 
@@ -157,6 +156,7 @@
       verify_page_signout: 'Sair e usar outra conta',
       account_provider_google: 'Google', account_provider_password: 'E-mail e senha',
       profile_photo_change: 'Trocar foto de perfil',
+      profile_name_edit: 'Editar nome', profile_name_save: 'Salvar',
       profile_account_delete: 'Excluir conta',
       profile_account_delete_desc: 'Remove sua conta e todos os dados salvos na nuvem (favoritos e progresso). Essa ação não pode ser desfeita.',
       profile_account_reauth_needed: 'Por segurança, confirme sua identidade de novo para excluir a conta.',
@@ -175,6 +175,12 @@
       share_text: 'Acabei de concluir "{title}"{ref} no Volver.',
       outcome_worry_tag: 'Padrão a evitar', outcome_calm_tag: 'Padrão a seguir',
       onb_back: 'Voltar', onb_next: 'Avançar', onb_enter: 'Entrar na Volver',
+      welcome_eyebrow: 'Volver',
+      welcome_new_title: 'Bem-vindo(a), {name}!',
+      welcome_new_sub: 'Sua conta foi criada. Antes de começar, um resumo rápido de como a Volver funciona.',
+      welcome_back_title: 'Bem-vindo(a) de volta, {name}!',
+      welcome_back_sub: 'Que bom te ver de novo. Segue um lembrete rápido de como usar a Volver.',
+      welcome_continue: 'Continuar',
       fontsize_0: 'Pequeno', fontsize_1: 'Reduzido', fontsize_2: 'Padrão', fontsize_3: 'Grande', fontsize_4: 'Muito grande',
       stat_completed: 'Concluídas', stat_progress: 'Em andamento', stat_favorites: 'Favoritas',
       list_completed_empty: 'Nenhuma reflexão concluída ainda.',
@@ -253,6 +259,7 @@
       verify_page_signout: 'Sign out and use another account',
       account_provider_google: 'Google', account_provider_password: 'Email and password',
       profile_photo_change: 'Change profile photo',
+      profile_name_edit: 'Edit name', profile_name_save: 'Save',
       profile_account_delete: 'Delete account',
       profile_account_delete_desc: 'Removes your account and everything saved in the cloud (favorites and progress). This cannot be undone.',
       profile_account_reauth_needed: 'For security, confirm your identity again to delete the account.',
@@ -271,6 +278,12 @@
       share_text: 'I just completed "{title}"{ref} on Volver.',
       outcome_worry_tag: 'Pattern to avoid', outcome_calm_tag: 'Pattern to follow',
       onb_back: 'Back', onb_next: 'Next', onb_enter: 'Enter Volver',
+      welcome_eyebrow: 'Volver',
+      welcome_new_title: 'Welcome, {name}!',
+      welcome_new_sub: 'Your account is ready. Before you start, a quick summary of how Volver works.',
+      welcome_back_title: 'Welcome back, {name}!',
+      welcome_back_sub: "Good to see you again. Here's a quick reminder of how to use Volver.",
+      welcome_continue: 'Continue',
       fontsize_0: 'Small', fontsize_1: 'Reduced', fontsize_2: 'Default', fontsize_3: 'Large', fontsize_4: 'Extra large',
       stat_completed: 'Completed', stat_progress: 'In progress', stat_favorites: 'Favorites',
       list_completed_empty: 'No reflections completed yet.',
@@ -349,6 +362,7 @@
       verify_page_signout: 'Cerrar sesión y usar otra cuenta',
       account_provider_google: 'Google', account_provider_password: 'Correo y contraseña',
       profile_photo_change: 'Cambiar foto de perfil',
+      profile_name_edit: 'Editar nombre', profile_name_save: 'Guardar',
       profile_account_delete: 'Eliminar cuenta',
       profile_account_delete_desc: 'Elimina tu cuenta y todos los datos guardados en la nube (favoritos y progreso). Esta acción no se puede deshacer.',
       profile_account_reauth_needed: 'Por seguridad, confirma tu identidad de nuevo para eliminar la cuenta.',
@@ -367,6 +381,12 @@
       share_text: 'Acabo de completar "{title}"{ref} en Volver.',
       outcome_worry_tag: 'Patrón a evitar', outcome_calm_tag: 'Patrón a seguir',
       onb_back: 'Atrás', onb_next: 'Siguiente', onb_enter: 'Entrar a Volver',
+      welcome_eyebrow: 'Volver',
+      welcome_new_title: '¡Bienvenido(a), {name}!',
+      welcome_new_sub: 'Tu cuenta está lista. Antes de empezar, un resumen rápido de cómo funciona Volver.',
+      welcome_back_title: '¡Bienvenido(a) de nuevo, {name}!',
+      welcome_back_sub: 'Qué bueno verte otra vez. Aquí tienes un recordatorio rápido de cómo usar Volver.',
+      welcome_continue: 'Continuar',
       fontsize_0: 'Pequeño', fontsize_1: 'Reducido', fontsize_2: 'Predeterminado', fontsize_3: 'Grande', fontsize_4: 'Muy grande',
       stat_completed: 'Concluidas', stat_progress: 'En curso', stat_favorites: 'Favoritas',
       list_completed_empty: 'Aún no hay reflexiones concluidas.',
@@ -1591,11 +1611,42 @@
     function dismiss(){
       if(el.classList.contains('fade-out')) return;
       el.classList.add('fade-out');
-      sessionStorage.setItem(STORAGE_SESSION_SHOWN, '1');
-      setTimeout(function(){ el.remove(); buildOnboardingCarousel(); }, 650);
+      setTimeout(function(){ el.remove(); buildWelcomeBalloon(); }, 650);
     }
     el.addEventListener('click', dismiss);
     setTimeout(dismiss, 2200);
+  }
+
+  function buildWelcomeBalloon(){
+    var kind = window.__volverWelcomeKind;
+    if(!kind){ buildOnboardingCarousel(); return; }
+    var info = getCurrentUserInfo();
+    var name = (info && (info.displayName || (info.email && info.email.split('@')[0]))) || '';
+    var titleKey = kind === 'new' ? 'welcome_new_title' : 'welcome_back_title';
+    var subKey = kind === 'new' ? 'welcome_new_sub' : 'welcome_back_sub';
+
+    var backdrop = document.createElement('div');
+    backdrop.className = 'welcome-backdrop';
+    backdrop.id = 'volverWelcome';
+
+    function render(){
+      backdrop.innerHTML =
+        '<div class="welcome-modal">' +
+          '<div class="welcome-eyebrow">' + t('welcome_eyebrow') + '</div>' +
+          '<h2 class="welcome-title">' + t(titleKey).split('{name}').join(name) + '</h2>' +
+          '<p class="welcome-sub">' + t(subKey) + '</p>' +
+          '<button type="button" id="volverWelcomeContinue" class="welcome-btn">' + t('welcome_continue') + '</button>' +
+        '</div>';
+      backdrop.querySelector('#volverWelcomeContinue').addEventListener('click', dismiss);
+    }
+    function dismiss(){
+      backdrop.classList.remove('open');
+      setTimeout(function(){ backdrop.remove(); buildOnboardingCarousel(); }, 300);
+    }
+    document.body.appendChild(backdrop);
+    render();
+    document.addEventListener('volver:lang', render);
+    setTimeout(function(){ backdrop.classList.add('open'); }, 20);
   }
 
   function buildOnboardingCarousel(){
@@ -1665,6 +1716,15 @@
     [STORAGE_FAV, STORAGE_VISITED, STORAGE_COMPLETED, STORAGE_STAGE, STORAGE_STREAK].forEach(function(k){
       try{ localStorage.removeItem(k); }catch(e){}
     });
+  }
+
+  // Set right at the moment of sign-up/sign-in so the very next index.html
+  // load (after any email-verification detour) knows to show the welcome
+  // balloon + usage-rules carousel — and only that one time, not on every
+  // future page open. index.html's own inline head script reads and clears
+  // this before volver-app.js even runs (see the "once per login" gate there).
+  function setWelcomePending(kind){
+    try{ sessionStorage.setItem('volver_welcome_pending', kind); }catch(e){}
   }
   function loadFirebase(){
     if(_fbPromise) return _fbPromise;
@@ -1942,19 +2002,34 @@
             if(name){
               updates.push(fb.authMod.updateProfile(cred.user, { displayName: name }).catch(function(){}));
             }
-            return Promise.all(updates).then(function(){ return cred; });
+            return Promise.all(updates).then(function(){
+              setWelcomePending('new');
+              return cred;
+            });
           });
         });
       },
       signInWithEmail: function(email, password){
         return loadFirebase().then(function(fb){
-          return fb.authMod.signInWithEmailAndPassword(fb.auth, email, password);
+          return fb.authMod.signInWithEmailAndPassword(fb.auth, email, password).then(function(cred){
+            setWelcomePending('returning');
+            return cred;
+          });
         });
       },
       signInWithGoogle: function(){
         return loadFirebase().then(function(fb){
           var provider = new fb.authMod.GoogleAuthProvider();
-          return fb.authMod.signInWithPopup(fb.auth, provider);
+          return fb.authMod.signInWithPopup(fb.auth, provider).then(function(cred){
+            var info = fb.authMod.getAdditionalUserInfo(cred);
+            setWelcomePending(info && info.isNewUser ? 'new' : 'returning');
+            return cred;
+          });
+        });
+      },
+      updateDisplayName: function(name){
+        return loadFirebase().then(function(fb){
+          return fb.authMod.updateProfile(fb.auth.currentUser, { displayName: name });
         });
       },
       reloadCurrentUser: function(){
